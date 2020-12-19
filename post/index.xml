@@ -6,7 +6,18 @@
     <description>Recent content in Posts on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>音乐播放器……</title>
+      <link>https://supersass.github.io/p/test-player/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://supersass.github.io/p/test-player/</guid>
+      <description>音乐播放器 采用的APlayer的外链播放器……
+默认会显示在文章顶部……
+如需用吸底模式，请在第一个参数输入-fixed: 1……</description>
+    </item>
+    
     <item>
       <title>Chinese Test</title>
       <link>https://supersass.github.io/p/test-chinese/</link>
@@ -67,42 +78,6 @@
 因为二分的操作使得递归的深度不会大于$log(n)$，故完全可以采用递归的方式简化代码，不用担心递归的栈溢出等缺点。
 储存方法 方法1、 struct typeNode { int val, L, R, mid, len;	//val代表储存的值，L、R分别代表区间左、右端点，mid代表区间中点，len代表区间长度 }node[4*N]; 直接用左儿子下标为2i，右儿子下标为2i+1转递。
 函数为build(int index, int l, int r)，建左儿子用则为build(2*i, l, r)。</description>
-    </item>
-    
-    <item>
-      <title>Markdown Syntax Guide</title>
-      <link>https://supersass.github.io/p/markdown-syntax-guide/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://supersass.github.io/p/markdown-syntax-guide/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Placeholder Text</title>
-      <link>https://supersass.github.io/p/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://supersass.github.io/p/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Math Typesetting</title>
-      <link>https://supersass.github.io/p/math-typesetting/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://supersass.github.io/p/math-typesetting/</guid>
-      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Emoji Support</title>
-      <link>https://supersass.github.io/p/emoji-support/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://supersass.github.io/p/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
     
   </channel>
