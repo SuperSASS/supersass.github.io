@@ -4,16 +4,61 @@
   
   <url>
     <loc>https://supersass.github.io/categories/</loc>
-    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://supersass.github.io/post/</loc>
-    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://supersass.github.io/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/tags/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/p/union-find/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/tags/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/p/segment-tree/</loc>
+    <lastmod>2020-12-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/page/</loc>
+    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://supersass.github.io/about/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -23,7 +68,7 @@
   </url>
   
   <url>
-    <loc>https://supersass.github.io/categories/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</loc>
+    <loc>https://supersass.github.io/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -43,55 +88,16 @@
   </url>
   
   <url>
-    <loc>https://supersass.github.io/categories/test/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://supersass.github.io/categories/%E7%9F%AD%E4%BB%A3%E7%A0%81/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://supersass.github.io/categories/%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://supersass.github.io/p/test-union-find/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://supersass.github.io/p/test-segment-tree/</loc>
+    <loc>https://supersass.github.io/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://supersass.github.io/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://supersass.github.io/page/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://supersass.github.io/about/</loc>
-    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://supersass.github.io/search/</loc>
-  </url>
-  
-  <url>
-    <loc>https://supersass.github.io/tags/</loc>
-  </url>
-  
-  <url>
-    <loc>https://supersass.github.io/test/</loc>
   </url>
   
 </urlset>

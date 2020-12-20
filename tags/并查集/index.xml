@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>并查集 on Super SASS……</title>
+    <link>https://supersass.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/</link>
+    <description>Recent content in 并查集 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>并查集……</title>
+      <link>https://supersass.github.io/p/union-find/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://supersass.github.io/p/union-find/</guid>
+      <description>测试 啥都没有……
+源码 /* 并查集算法 用father数组记录每个节点的父节点，数据结构类似于树 关键操作：合并、查询 详细介绍: https://zhuanlan.zhihu.com/p/93647900 */ //P3958 奶酪: https://www.luogu.com.cn/problem/P3958 #include &amp;lt;bits/stdc++.h&amp;gt;#define N 1005 using namespace std; inline int quickRead() { int f = 1, num = 0; char t = getchar(); while (t &amp;lt; &amp;#39;0&amp;#39; || t &amp;gt; &amp;#39;9&amp;#39;) f = t == &amp;#39;-&amp;#39; ? -1 : 1, t = getchar(); while (t &amp;gt;= &amp;#39;0&amp;#39; &amp;amp;&amp;amp; t &amp;lt;= &amp;#39;9&amp;#39;) num = num * 10 + t - &amp;#39;0&amp;#39;, t = getchar(); return f * num; } struct typeUnionFind { int num, father[N], rank[N]; //这里rank作用是记录节点深度（真实为深度-1），采用了按秩合并的优化  /* 按秩合并指将深度小的合并到深度大的树上，这样可以减少查询次数。 这里按秩合并与路径压缩一起使用时，rank可能会因路径压缩操作而变得不准确。 因此这里rank只是相对的判断标准，并不一定绝对会将深度小的合并到深度大的 */ void init(int n) { num = n; for (int i = 1; i &amp;lt;= num; i++) father[i] = i; } inline int find(int node) { return father[node] == node ?</description>
+    </item>
+    
+  </channel>
+</rss>

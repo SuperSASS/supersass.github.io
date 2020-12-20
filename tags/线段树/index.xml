@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>线段树 on Super SASS……</title>
+    <link>https://supersass.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+    <description>Recent content in 线段树 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线段树……</title>
+      <link>https://supersass.github.io/p/segment-tree/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://supersass.github.io/p/segment-tree/</guid>
+      <description>简介 是一种用来维护 区间信息 的数据结构。
+可以实现的操作：
+ 单点、区间修改 区间查询（区间求和、最大值、最小值） 等等  描述 线段树会将一个非点区间（即长度大于$1$）利用递归的思想，二分为两个子区间来进行操作。
+这样就会将一个线段划分转化成一个树形结构。
+其中：紫色的a[]是原数组，红色的d[]是线段树：存储的区间的和，黄色范围代表管辖区间。
+每个节点会存储并维护其所管辖的区间的当前信息。（如上图存的就是区间的和）
+可根据题目要求，确定自己所需存储维护的信息。
+实现方法 提前的宏定义 #define NOW_Node node[index]	//代表当前节点 #define NOW_LSon node[index].sonL	//代表当前节点左儿子下标 #define NOW_RSon node[index].sonR	//代表当前节点右儿子下标 0x00 建树 基本认识 根据上图可发现几个要点：
+ 每一个节点i的左儿子下标是2i，右儿子下标是2i+1。 记：i管辖的区间为$[s,t]$。
+令：$mid=\frac{s+t}{2}$。
+则左儿子2i管辖区间为$[s,mid]$，右儿子2i+1管辖区间为$[mid+1,t]$。  实现方法 之前已经介绍了递归的思想，那么只需要确定递归边界。
+由上图很容易看出，递归边界就是当长度为$1$的点。
+记：当前点为node[index]，代表区间为$[l,r]$。原数组为arr[]
+当$l=r$的时候，说明到达递归边界，这个时候的值直接为对应区间的值。
+也就是node[index] = arr[r]
+因为二分的操作使得递归的深度不会大于$log(n)$，故完全可以采用递归的方式简化代码，不用担心递归的栈溢出等缺点。
+储存方法 方法1、 struct typeNode { int val, L, R, mid, len;	//val代表储存的值，L、R分别代表区间左、右端点，mid代表区间中点，len代表区间长度 }node[4*N]; 直接用左儿子下标为2i，右儿子下标为2i+1转递。
+函数为build(int index, int l, int r)，建左儿子用则为build(2*i, l, r)。</description>
+    </item>
+    
+  </channel>
+</rss>

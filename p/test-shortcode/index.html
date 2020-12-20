@@ -12,9 +12,10 @@
 <meta property='og:description' content='Shortcode测试……'>
 <meta property='og:url' content='https://supersass.github.io/p/test-shortcode/'>
 <meta property='og:site_name' content='Super SASS……'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2020-09-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-09-09T00:00:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='测试' /><meta property='article:tag' content='短代码' /><meta property='article:published_time' content='2020-09-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-09-09T00:00:00&#43;00:00'/><meta property='og:image' content='https://supersass.github.io/p/test-shortcode/78356827_p0.jpg' />
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Shortcode Test">
-<meta name="twitter:description" content="Shortcode测试……">
+<meta name="twitter:description" content="Shortcode测试……"><meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content='https://supersass.github.io/p/test-shortcode/78356827_p0.jpg' />
 <link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
 
 
@@ -22,8 +23,10 @@
 </head>
 
 <body class="">
-    <div
-        class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+    
+    <div class="background"></div>
+
+    <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
 
         
         <aside class="sidebar left-sidebar sticky">
@@ -155,8 +158,15 @@
 
     
 
-<article class="main-article">
+<article class="has-image main-article">
     <header class="article-header">
+        <div class="article-image">
+            <img srcset="/p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_1024x0_resize_q75_box.jpg 1024w, /p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_2000x0_resize_q75_box.jpg 2000w"
+                    src="/p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_2000x0_resize_q75_box.jpg" width="1920" height="1080" loading="lazy"
+                    alt="Featured image of post Shortcode Test" />
+            
+        </div>
+    
 
     
     
@@ -165,12 +175,13 @@
     
     <header class="article-category">
         
-            
-                <a href="/categories/%E6%B5%8B%E8%AF%95/">测试</a>
-            
-        
-            
-                <a href="/categories/%E7%9F%AD%E4%BB%A3%E7%A0%81/">短代码</a>
+            <a href="/categories/%E6%B5%8B%E8%AF%95/" 
+                    class="color-tag"
+                    data-image="/p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_20x20_fill_q75_box_smart1.jpg" 
+                    data-key="test-shortcode" 
+                    data-hash="md5-scPs6IfoxrHcGmu0JHjTnA==">
+                    测试
+                </a>
             
         
     </header>
@@ -199,7 +210,11 @@
 </header>
 
     <section class="article-content">
-    <p>Shortcode的测试……</p>
+    <h1 id="shortcode">Shortcode</h1>
+<p>Hugo的Shortcode的测试……</p>
+<p>新增了Bilibili的链接……</p>
+<hr>
+<p>不知道是什么的原文x：</p>
 <blockquote>
 <p>Hugo ships with several <a class="link" href="https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes"  target="_blank" rel="noopener"
     >Built-in Shortcodes</a> for rich content, along with a <a class="link" href="https://gohugo.io/about/hugo-and-gdpr/"  target="_blank" rel="noopener"
@@ -213,16 +228,42 @@
 </div>
 
 <hr>
-<h2 id="twitter-simple-shortcode">Twitter Simple Shortcode</h2>
+<h2 id="bilibili-simple-shortcode">Bilibili Simple Shortcode</h2>
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe loading="lazy" src="https://player.bilibili.com/player.html?bvid=BV1754y1R7Nd&high_quality=1&page=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Bilibili Video"></iframe>
 </div>
+<ul>
+<li>
+<p>使用方法：</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">&lt;</span> <span class="nx">bilibili</span> <span class="nx">BV1754y1R7Nd</span> <span class="p">&gt;</span>
+</code></pre></div><p>外部加上两对大括号<code>{}</code>。</p>
+</li>
+</ul>
+<p>默认为BV号。</p>
+<ul>
+<li>可选参数：
+<ul>
+<li><code>av = &quot;...&quot;</code>：使用av号。<br>
+使用例：<code>&lt; bilibli av=&quot;10492&quot;&gt;</code></li>
+<li><code>hq = *</code>：画质。0为低画质，1为高画质。（默认值为1）</li>
+<li><code>p = *</code>：视频选集。（默认值为1）</li>
+</ul>
+</li>
+</ul>
 
 </section>
 
 
     <footer class="article-footer">
     
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+        
+            <a href="/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/">短代码</a>
+        
+    </section>
+
 
     
     <section class="article-copyright">
@@ -305,30 +346,6 @@
     </a>
 </article>
                 
-                    
-<article class="">
-    <a href="/p/test-union-find/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">笔记测试-并查集……</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="">
-    <a href="/p/test-segment-tree/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">笔记测试-线段树……</h2>
-        </div>
-    </a>
-</article>
-                
             </div>
         </div>
     
@@ -337,38 +354,20 @@
 
     
         
-    <div class="disqus-container">
-    <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "hugo-theme-stack" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
 </script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-</div>
 
 <style>
-    .disqus-container {
-        background-color: var(--card-background);
-        border-radius: var(--card-border-radius);
-        box-shadow: var(--shadow-l1);
-        padding: var(--card-padding);
+    .utterances {
+        max-width: unset;
     }
 </style>
-
 
     
 
