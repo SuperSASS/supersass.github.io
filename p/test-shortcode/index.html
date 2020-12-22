@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-CN">
+
 
 
 <head><meta charset='utf-8'>
@@ -22,11 +23,44 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
 </head>
 
-<body class="">
-    
-    <div class="background"></div>
 
-    <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+
+<body class="" data-scheme="">
+    
+    <script>
+        function get_colorScheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"
+        }
+        document.body.setAttribute("data-scheme", get_colorScheme())
+    </script>
+
+    
+    
+    
+<div class="background" id="background">
+	<script>
+		var backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		var rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		var background = backgroundList[rand];
+
+		if (background.local) {
+			backgroundElem.style.backgroundImage = "url(/"+background.src+")";	
+		}
+		else
+			backgroundElem.style.backgroundImage = "url("+background.src+")";
+		
+	</script>
+</div>
+
+    
+
+    <div
+        class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
 
         
         <aside class="sidebar left-sidebar sticky">
@@ -76,7 +110,7 @@
 
 
                 
-                <span>Home</span>
+                <span>主页</span>
             </a>
         </li>
         
@@ -94,7 +128,7 @@
 
 
                 
-                <span>About</span>
+                <span>关于</span>
             </a>
         </li>
         
@@ -113,7 +147,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>归档</span>
             </a>
         </li>
         
@@ -131,10 +165,25 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
+
+        
+        <li id="dark-mode-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+            <span>夜间模式</span>
+        </li>
     </ol>
 </aside>
 
@@ -142,7 +191,7 @@
         
         <main class="main full-width">
             
-    
+
     <div id="article-toolbar">
         <a href="https://supersass.github.io/" class="back-home">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -152,7 +201,7 @@
 
 
 
-            <span>Back</span>
+            <span>上一个页面</span>
         </a>
     </div>
 
@@ -175,14 +224,11 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%B5%8B%E8%AF%95/" 
-                    class="color-tag"
-                    data-image="/p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_20x20_fill_q75_box_smart1.jpg" 
-                    data-key="test-shortcode" 
-                    data-hash="md5-scPs6IfoxrHcGmu0JHjTnA==">
-                    测试
-                </a>
-            
+        <a href="/categories/%E6%B5%8B%E8%AF%95/" class="color-tag" data-image="/p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_20x20_fill_q75_box_smart1.jpg"
+            data-key="test-shortcode" data-hash="md5-scPs6IfoxrHcGmu0JHjTnA==">
+            测试
+        </a>
+        
         
     </header>
     
@@ -205,7 +251,24 @@
 
 
         <time class="article-time--published">2020/09/09</time>
-    </footer></div>
+    </footer>
+    <footer class="article-readingTime-container">
+        <div class="article-readingTime-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime-right">
+            <div class="char">文章字数：194</div>
+            <div class="time">预计阅读时长： <time>1</time> 分钟</div>
+        </div>
+    </footer>
+</div>
 
 </header>
 
@@ -265,18 +328,6 @@
     </section>
 
 
-    
-    <section class="article-copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
-</svg>
-
-
-
-        <span>Licensed under CC BY-NC-SA 4.0</span>
-    </section>
     </footer>
 
     
@@ -298,8 +349,6 @@
 
     
 </article>
-
-    
     
     
 
@@ -439,7 +488,7 @@
     </div>
 
 </div>
-            
+
         </main>
 
         
@@ -447,6 +496,9 @@
     
     <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+><script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -458,8 +510,7 @@
         document.head.appendChild(customFont);
     }());
 </script>
-<link rel="stylesheet" href="/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
-<link rel="stylesheet" href="/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
 
 </body>
 

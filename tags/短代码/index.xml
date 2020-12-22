@@ -5,7 +5,7 @@
     <link>https://supersass.github.io/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/</link>
     <description>Recent content in 短代码 on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-CN</language>
     <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Shortcode Test</title>
@@ -13,15 +13,7 @@
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://supersass.github.io/p/test-shortcode/</guid>
-      <description>Shortcode Hugo的Shortcode的测试……
-新增了Bilibili的链接……
- 不知道是什么的原文x：
- Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
-  YouTube Privacy Enhanced Shortcode  Bilibili Simple Shortcode    使用方法：
-&amp;lt; bilibili BV1754y1R7Nd &amp;gt; 外部加上两对大括号{}。
-  默认为BV号。
- 可选参数：  av = &amp;quot;...&amp;quot;：使用av号。
-使用例：&amp;lt; bilibli av=&amp;quot;10492&amp;quot;&amp;gt; hq = *：画质。0为低画质，1为高画质。（默认值为1） p = *：视频选集。（默认值为1）    </description>
+      <description>Shortcode Hugo的Shortcode的测试…… 新增了Bilibili的链接…… 不知道是什么的原文x： Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static</description>
     </item>
     
   </channel>

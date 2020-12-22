@@ -5,7 +5,7 @@
     <link>https://supersass.github.io/tags/%E6%B5%8B%E8%AF%95/</link>
     <description>Recent content in 测试 on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-CN</language>
     <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>并查集……</title>
@@ -13,8 +13,7 @@
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://supersass.github.io/p/union-find/</guid>
-      <description>测试 啥都没有……
-源码 /* 并查集算法 用father数组记录每个节点的父节点，数据结构类似于树 关键操作：合并、查询 详细介绍: https://zhuanlan.zhihu.com/p/93647900 */ //P3958 奶酪: https://www.luogu.com.cn/problem/P3958 #include &amp;lt;bits/stdc++.h&amp;gt;#define N 1005 using namespace std; inline int quickRead() { int f = 1, num = 0; char t = getchar(); while (t &amp;lt; &amp;#39;0&amp;#39; || t &amp;gt; &amp;#39;9&amp;#39;) f = t == &amp;#39;-&amp;#39; ? -1 : 1, t = getchar(); while (t &amp;gt;= &amp;#39;0&amp;#39; &amp;amp;&amp;amp; t &amp;lt;= &amp;#39;9&amp;#39;) num = num * 10 + t - &amp;#39;0&amp;#39;, t = getchar(); return f * num; } struct typeUnionFind { int num, father[N], rank[N]; //这里rank作用是记录节点深度（真实为深度-1），采用了按秩合并的优化  /* 按秩合并指将深度小的合并到深度大的树上，这样可以减少查询次数。 这里按秩合并与路径压缩一起使用时，rank可能会因路径压缩操作而变得不准确。 因此这里rank只是相对的判断标准，并不一定绝对会将深度小的合并到深度大的 */ void init(int n) { num = n; for (int i = 1; i &amp;lt;= num; i++) father[i] = i; } inline int find(int node) { return father[node] == node ?</description>
+      <description>测试 啥都没有…… 源码 /* 并查集算法 用father数组记录每个节点的父节点，数据结构类似于树 关键操作：合并、查询 详细介绍: https://zhuanlan.zhihu.com/p/93647900 */ //P3958 奶酪: https://www.luogu.com.cn/problem/P3958 #include &amp;lt;bits/stdc++.h&amp;gt;#define N 1005</description>
     </item>
     
     <item>
@@ -23,24 +22,7 @@
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://supersass.github.io/p/segment-tree/</guid>
-      <description>简介 是一种用来维护 区间信息 的数据结构。
-可以实现的操作：
- 单点、区间修改 区间查询（区间求和、最大值、最小值） 等等  描述 线段树会将一个非点区间（即长度大于$1$）利用递归的思想，二分为两个子区间来进行操作。
-这样就会将一个线段划分转化成一个树形结构。
-其中：紫色的a[]是原数组，红色的d[]是线段树：存储的区间的和，黄色范围代表管辖区间。
-每个节点会存储并维护其所管辖的区间的当前信息。（如上图存的就是区间的和）
-可根据题目要求，确定自己所需存储维护的信息。
-实现方法 提前的宏定义 #define NOW_Node node[index]	//代表当前节点 #define NOW_LSon node[index].sonL	//代表当前节点左儿子下标 #define NOW_RSon node[index].sonR	//代表当前节点右儿子下标 0x00 建树 基本认识 根据上图可发现几个要点：
- 每一个节点i的左儿子下标是2i，右儿子下标是2i+1。 记：i管辖的区间为$[s,t]$。
-令：$mid=\frac{s+t}{2}$。
-则左儿子2i管辖区间为$[s,mid]$，右儿子2i+1管辖区间为$[mid+1,t]$。  实现方法 之前已经介绍了递归的思想，那么只需要确定递归边界。
-由上图很容易看出，递归边界就是当长度为$1$的点。
-记：当前点为node[index]，代表区间为$[l,r]$。原数组为arr[]
-当$l=r$的时候，说明到达递归边界，这个时候的值直接为对应区间的值。
-也就是node[index] = arr[r]
-因为二分的操作使得递归的深度不会大于$log(n)$，故完全可以采用递归的方式简化代码，不用担心递归的栈溢出等缺点。
-储存方法 方法1、 struct typeNode { int val, L, R, mid, len;	//val代表储存的值，L、R分别代表区间左、右端点，mid代表区间中点，len代表区间长度 }node[4*N]; 直接用左儿子下标为2i，右儿子下标为2i+1转递。
-函数为build(int index, int l, int r)，建左儿子用则为build(2*i, l, r)。</description>
+      <description>简介 是一种用来维护 区间信息 的数据结构。 可以实现的操作： 单点、区间修改 区间查询（区间求和、最大值、最小值） 等等 描述 线段树会将一个非点区间（即长</description>
     </item>
     
     <item>
@@ -49,9 +31,7 @@
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://supersass.github.io/p/test-player/</guid>
-      <description>音乐播放器 采用的APlayer的外链播放器……
-默认会显示在文章顶部……
-如需用吸底模式，请在第一个参数输入-fixed: 1……</description>
+      <description>音乐播放器 采用的APlayer的外链播放器…… 默认会显示在文章顶部…… 如需用吸底模式，请在第一个参数输入-fixed: 1……</description>
     </item>
     
     <item>
@@ -60,14 +40,7 @@
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://supersass.github.io/p/test-chinese/</guid>
-      <description>正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。
-奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。
-引用  思念是最暖的忧伤像一双翅膀
-让我停不了飞不远在过往游荡
-不告而别的你 就算为了我着想
-这么沉痛的呵护 我怎么能翱翔
-最暖的憂傷 - 田馥甄
- 图片 Photo by Florian Klauer on Unsplash Photo by Luca Bravo on Unsplash</description>
+      <description>正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的</description>
     </item>
     
     <item>
@@ -76,15 +49,7 @@
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://supersass.github.io/p/test-shortcode/</guid>
-      <description>Shortcode Hugo的Shortcode的测试……
-新增了Bilibili的链接……
- 不知道是什么的原文x：
- Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.
-  YouTube Privacy Enhanced Shortcode  Bilibili Simple Shortcode    使用方法：
-&amp;lt; bilibili BV1754y1R7Nd &amp;gt; 外部加上两对大括号{}。
-  默认为BV号。
- 可选参数：  av = &amp;quot;...&amp;quot;：使用av号。
-使用例：&amp;lt; bilibli av=&amp;quot;10492&amp;quot;&amp;gt; hq = *：画质。0为低画质，1为高画质。（默认值为1） p = *：视频选集。（默认值为1）    </description>
+      <description>Shortcode Hugo的Shortcode的测试…… 新增了Bilibili的链接…… 不知道是什么的原文x： Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static</description>
     </item>
     
   </channel>

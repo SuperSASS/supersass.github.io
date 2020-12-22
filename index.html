@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-CN">
+
 
 
 <head>
@@ -13,7 +14,7 @@
 <meta property='og:description' content='万华散尽……'>
 <meta property='og:url' content='https://supersass.github.io/'>
 <meta property='og:site_name' content='Super SASS……'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2020-12-20T00:00:00&#43;00:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2020-12-21T00:00:00&#43;00:00 '/>
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Super SASS……">
 <meta name="twitter:description" content="万华散尽……"><link rel="alternate" type="application/rss&#43;xml" href="https://supersass.github.io/index.xml">
 <link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
@@ -22,11 +23,44 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
 </head>
 
-<body class="">
-    
-    <div class="background"></div>
 
-    <div class="container flex on-phone--column align-items--flex-start extended ">
+
+<body class="" data-scheme="">
+    
+    <script>
+        function get_colorScheme() {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"
+        }
+        document.body.setAttribute("data-scheme", get_colorScheme())
+    </script>
+
+    
+    
+    
+<div class="background" id="background">
+	<script>
+		var backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		var rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		var background = backgroundList[rand];
+
+		if (background.local) {
+			backgroundElem.style.backgroundImage = "url(/"+background.src+")";	
+		}
+		else
+			backgroundElem.style.backgroundImage = "url("+background.src+")";
+		
+	</script>
+</div>
+
+    
+
+    <div
+        class="container flex on-phone--column align-items--flex-start extended ">
 
         
         <aside class="sidebar left-sidebar sticky">
@@ -76,7 +110,7 @@
 
 
                 
-                <span>Home</span>
+                <span>主页</span>
             </a>
         </li>
         
@@ -94,7 +128,7 @@
 
 
                 
-                <span>About</span>
+                <span>关于</span>
             </a>
         </li>
         
@@ -113,7 +147,7 @@
 
 
                 
-                <span>Archives</span>
+                <span>归档</span>
             </a>
         </li>
         
@@ -131,10 +165,25 @@
 
 
                 
-                <span>Search</span>
+                <span>搜索</span>
             </a>
         </li>
         
+
+        
+        <li id="dark-mode-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+            <span>夜间模式</span>
+        </li>
     </ol>
 </aside>
 
@@ -220,14 +269,11 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" 
-                    class="color-tag"
-                    data-image="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_20x20_fill_q75_box_smart1.jpg" 
-                    data-key="union-find" 
-                    data-hash="md5-oHqD&#43;hVk4u4jXkDxsZ/7sA==">
-                    数据结构
-                </a>
-            
+        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="color-tag" data-image="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_20x20_fill_q75_box_smart1.jpg"
+            data-key="union-find" data-hash="md5-oHqD&#43;hVk4u4jXkDxsZ/7sA==">
+            数据结构
+        </a>
+        
         
     </header>
     
@@ -250,7 +296,24 @@
 
 
         <time class="article-time--published">2020/12/20</time>
-    </footer></div>
+    </footer>
+    <footer class="article-readingTime-container">
+        <div class="article-readingTime-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime-right">
+            <div class="char">文章字数：744</div>
+            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
+        </div>
+    </footer>
+</div>
 </article>
         
             
@@ -271,14 +334,11 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" 
-                    class="color-tag"
-                    data-image="/p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_20x20_fill_box_smart1_2.png" 
-                    data-key="segment-tree" 
-                    data-hash="md5-xcsxGUp&#43;TKU52aT7CNjG7A==">
-                    数据结构
-                </a>
-            
+        <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="color-tag" data-image="/p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_20x20_fill_box_smart1_2.png"
+            data-key="segment-tree" data-hash="md5-xcsxGUp&#43;TKU52aT7CNjG7A==">
+            数据结构
+        </a>
+        
         
     </header>
     
@@ -301,7 +361,24 @@
 
 
         <time class="article-time--published">2020/12/20</time>
-    </footer></div>
+    </footer>
+    <footer class="article-readingTime-container">
+        <div class="article-readingTime-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime-right">
+            <div class="char">文章字数：3871</div>
+            <div class="time">预计阅读时长： <time>8</time> 分钟</div>
+        </div>
+    </footer>
+</div>
 </article>
         
             
@@ -322,14 +399,11 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%B5%8B%E8%AF%95/" 
-                    class="color-tag"
-                    data-image="/p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_20x20_fill_q75_box_smart1.jpg" 
-                    data-key="test-player" 
-                    data-hash="md5-5XDvfZ&#43;i8vCmjUCXS6tASQ==">
-                    测试
-                </a>
-            
+        <a href="/categories/%E6%B5%8B%E8%AF%95/" class="color-tag" data-image="/p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_20x20_fill_q75_box_smart1.jpg"
+            data-key="test-player" data-hash="md5-5XDvfZ&#43;i8vCmjUCXS6tASQ==">
+            测试
+        </a>
+        
         
     </header>
     
@@ -352,7 +426,24 @@
 
 
         <time class="article-time--published">2020/12/19</time>
-    </footer></div>
+    </footer>
+    <footer class="article-readingTime-container">
+        <div class="article-readingTime-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime-right">
+            <div class="char">文章字数：62</div>
+            <div class="time">预计阅读时长： <time>1</time> 分钟</div>
+        </div>
+    </footer>
+</div>
 </article>
         
             
@@ -373,14 +464,11 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%B5%8B%E8%AF%95/" 
-                    class="color-tag"
-                    data-image="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_20x20_fill_q75_box_smart1.jpg" 
-                    data-key="test-chinese" 
-                    data-hash="md5-RvYejqai34/Fvx0koXxEpg==">
-                    测试
-                </a>
-            
+        <a href="/categories/%E6%B5%8B%E8%AF%95/" class="color-tag" data-image="/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_20x20_fill_q75_box_smart1.jpg"
+            data-key="test-chinese" data-hash="md5-RvYejqai34/Fvx0koXxEpg==">
+            测试
+        </a>
+        
         
     </header>
     
@@ -403,7 +491,24 @@
 
 
         <time class="article-time--published">2020/09/09</time>
-    </footer></div>
+    </footer>
+    <footer class="article-readingTime-container">
+        <div class="article-readingTime-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime-right">
+            <div class="char">文章字数：982</div>
+            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
+        </div>
+    </footer>
+</div>
 </article>
         
             
@@ -424,14 +529,11 @@
     
     <header class="article-category">
         
-            <a href="/categories/%E6%B5%8B%E8%AF%95/" 
-                    class="color-tag"
-                    data-image="/p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_20x20_fill_q75_box_smart1.jpg" 
-                    data-key="test-shortcode" 
-                    data-hash="md5-scPs6IfoxrHcGmu0JHjTnA==">
-                    测试
-                </a>
-            
+        <a href="/categories/%E6%B5%8B%E8%AF%95/" class="color-tag" data-image="/p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_20x20_fill_q75_box_smart1.jpg"
+            data-key="test-shortcode" data-hash="md5-scPs6IfoxrHcGmu0JHjTnA==">
+            测试
+        </a>
+        
         
     </header>
     
@@ -454,7 +556,24 @@
 
 
         <time class="article-time--published">2020/09/09</time>
-    </footer></div>
+    </footer>
+    <footer class="article-readingTime-container">
+        <div class="article-readingTime-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime-right">
+            <div class="char">文章字数：194</div>
+            <div class="time">预计阅读时长： <time>1</time> 分钟</div>
+        </div>
+    </footer>
+</div>
 </article>
         
     </section>
@@ -468,7 +587,7 @@
     </section>
 </footer>
 
-            
+
         </main>
 
         
@@ -596,7 +715,7 @@
           
             <ul>
               <li>
-                <a href="https://blog.jimmycai.com/"> JimmyCai的树洞…… </a>
+                <a href="https://blog.jimmycai.com/"> JimmyCai…… </a>
               </li>
             </ul>
           
@@ -636,6 +755,9 @@
     
     <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+><script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+
 <script>
     (function () {
         const customFont = document.createElement('link');
@@ -647,8 +769,7 @@
         document.head.appendChild(customFont);
     }());
 </script>
-<link rel="stylesheet" href="/css/highlight/light.min.css" media="(prefers-color-scheme: light)">
-<link rel="stylesheet" href="/css/highlight/dark.min.css" media="(prefers-color-scheme: dark)">
+
 
 </body>
 
