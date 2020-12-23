@@ -13,7 +13,7 @@
 <meta property='og:description' content='Part.7 Data Structure……'>
 <meta property='og:url' content='https://supersass.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/'>
 <meta property='og:site_name' content='Super SASS……'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2020-12-21T00:00:00&#43;00:00 '/><meta property='og:image' content='https://supersass.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/86336401_p0.jpg' />
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2020-12-24T00:37:00&#43;00:00 '/><meta property='og:image' content='https://supersass.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/86336401_p0.jpg' />
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Category: 数据结构 - Super SASS……">
 <meta name="twitter:description" content="Part.7 Data Structure……"><meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:image" content='https://supersass.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/86336401_p0.jpg' /><link rel="alternate" type="application/rss&#43;xml" href="https://supersass.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.xml">
@@ -21,46 +21,45 @@
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 
 
 <body class="" data-scheme="">
     
-    <script>
-        function get_colorScheme() {
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"
-        }
-        document.body.setAttribute("data-scheme", get_colorScheme())
-    </script>
-
-    
     
     
 <div class="background" id="background">
 	<script>
-		var backgroundElem = document.getElementById("background"),
+		let backgroundElem = document.getElementById("background"),
 			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
 		_length = backgroundList.length;
 
 		
-		var rand = Math.floor(Math.random() * _length);
+		let rand = Math.floor(Math.random() * _length);
 		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
-		var background = backgroundList[rand];
+		let background = backgroundList[rand];
 
-		if (background.local) {
-			backgroundElem.style.backgroundImage = "url(/"+background.src+")";	
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
 		}
-		else
-			backgroundElem.style.backgroundImage = "url("+background.src+")";
-		
+
 	</script>
 </div>
 
-    
 
-    <div
-        class="container flex on-phone--column align-items--flex-start extended ">
+    <div class="container flex on-phone--column align-items--flex-start extended ">
 
         
         <aside class="sidebar left-sidebar sticky">
@@ -263,7 +262,7 @@
     <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
 
-><script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+<script type="text/javascript" src="/ts/changeScheme.js" defer></script>
 
 <script>
     (function () {

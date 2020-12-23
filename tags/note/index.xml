@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Note on Super SASS……</title>
+    <link>https://supersass.github.io/tags/note/</link>
+    <description>Recent content in Note on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 23 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/tags/note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NoteBlock测试……</title>
+      <link>https://supersass.github.io/p/test-note/</link>
+      <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://supersass.github.io/p/test-note/</guid>
+      <description>又整新活！x…… Note测试…… 对Volantis主题的note移植测试…… NoteBlock 是 Blockquote 的增强版，在左边显示图标，并且可以自定颜色。 完成…… 使用方</description>
+    </item>
+    
+  </channel>
+</rss>

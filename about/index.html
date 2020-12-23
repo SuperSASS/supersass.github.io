@@ -5,61 +5,60 @@
 
 
 <head><meta charset='utf-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='关于我 这里淺真，也可以叫我Super SASS或者nico…… 现在还在各种折腾这个博客qwqqq……'><title>关于</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='【会有自选BGM自动播放请注意xd…… 关于我 这里淺真，也可以叫我Super SASS或者nico…… 一个蒟蒻OIer…… 现在还在各种折腾这个博'><title>关于</title>
 
 <link rel='canonical' href='https://supersass.github.io/about/'>
 
 <link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='关于'>
-<meta property='og:description' content='关于我 这里淺真，也可以叫我Super SASS或者nico…… 现在还在各种折腾这个博客qwqqq……'>
+<meta property='og:description' content='【会有自选BGM自动播放请注意xd…… 关于我 这里淺真，也可以叫我Super SASS或者nico…… 一个蒟蒻OIer…… 现在还在各种折腾这个博'>
 <meta property='og:url' content='https://supersass.github.io/about/'>
 <meta property='og:site_name' content='Super SASS……'>
-<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:published_time' content='2020-12-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-21T00:00:00&#43;00:00'/>
+<meta property='og:type' content='article'><meta property='article:section' content='Page' /><meta property='article:published_time' content='2020-12-19T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-24T00:37:00&#43;00:00'/>
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="关于我 这里淺真，也可以叫我Super SASS或者nico…… 现在还在各种折腾这个博客qwqqq……">
+<meta name="twitter:description" content="【会有自选BGM自动播放请注意xd…… 关于我 这里淺真，也可以叫我Super SASS或者nico…… 一个蒟蒻OIer…… 现在还在各种折腾这个博">
 <link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
 
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 
 
 <body class="article-page keep-sidebar" data-scheme="">
     
-    <script>
-        function get_colorScheme() {
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light"
-        }
-        document.body.setAttribute("data-scheme", get_colorScheme())
-    </script>
-
-    
     
     
 <div class="background" id="background">
 	<script>
-		var backgroundElem = document.getElementById("background"),
+		let backgroundElem = document.getElementById("background"),
 			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
 		_length = backgroundList.length;
 
 		
-		var rand = Math.floor(Math.random() * _length);
+		let rand = Math.floor(Math.random() * _length);
 		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
-		var background = backgroundList[rand];
+		let background = backgroundList[rand];
 
-		if (background.local) {
-			backgroundElem.style.backgroundImage = "url(/"+background.src+")";	
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
 		}
-		else
-			backgroundElem.style.backgroundImage = "url("+background.src+")";
-		
+
 	</script>
 </div>
 
-    
 
-    <div
-        class="container flex on-phone--column align-items--flex-start extended ">
+    <div class="container flex on-phone--column align-items--flex-start extended ">
 
         
         <aside class="sidebar left-sidebar sticky">
@@ -274,7 +273,7 @@
 </svg>
         </div>
         <div class="article-readingTime-right">
-            <div class="char">文章字数：49</div>
+            <div class="char">文章字数：106</div>
             <div class="time">预计阅读时长： <time>1</time> 分钟</div>
         </div>
     </footer>
@@ -283,9 +282,13 @@
 </header>
 
     <section class="article-content">
-    <h1 id="关于我">关于我</h1>
+    <p><em>【会有自选BGM<strong>自动播放</strong>请注意xd……</em></p>
+<h1 id="关于我">关于我</h1>
 <p>这里淺真，也可以叫我Super SASS或者nico……</p>
+<p>一个蒟蒻OIer……</p>
+<hr>
 <p>现在还在各种折腾这个博客qwqqq……</p>
+<p>等整到累了再把之前写的OI笔记放上来_(:з」∠)_……</p>
 
 </section>
 
@@ -303,7 +306,7 @@
 
 
         <span class="article-time--modified">
-            最后更新于 2020/12/21 00:00
+            最后更新于 2020/12/24 00:37
         </span>
     </section></footer>
 
@@ -426,7 +429,7 @@
     <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
 
-><script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+<script type="text/javascript" src="/ts/changeScheme.js" defer></script>
 
 <script>
     (function () {

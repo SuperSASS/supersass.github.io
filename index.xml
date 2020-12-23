@@ -6,7 +6,66 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 23 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>NoteBlock测试……</title>
+        <link>https://supersass.github.io/p/test-note/</link>
+        <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://supersass.github.io/p/test-note/</guid>
+        <description>&lt;img src="https://supersass.github.io/p/test-note/yande.re%20713907%20bra%20momoko_%28momopoco%29%20oshiego_ni_kyouhaku_sareru_no_wa_hanzai_desu_ka_%20pajama%20tsutsukakushi_seika.jpg" alt="Featured image of post NoteBlock测试……" /&gt;&lt;p&gt;又整新活！x……&lt;/p&gt;
+&lt;h1 id=&#34;note测试&#34;&gt;Note测试……&lt;/h1&gt;
+&lt;p&gt;对&lt;a class=&#34;link&#34; href=&#34;https://volantis.js.org/v2/tag-plugins/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Volantis主题的note&lt;/a&gt;移植测试……&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NoteBlock 是 Blockquote 的增强版，在左边显示图标，并且可以自定颜色。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;snote done&#34;&gt;
+	&lt;p&gt; 完成…… &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;done&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;snote done&#34;&gt;
+	&lt;p&gt; 成功…… &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;【这个图标可能有误，待修复……&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;success&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;snote error&#34;&gt;
+	&lt;p&gt; 错误…… &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;snote warning&#34;&gt;
+	&lt;p&gt; 警告…… &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;warning&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;snote danger&#34;&gt;
+	&lt;p&gt; 危险…… &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;【这个图标可能有误，待修复……&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;danger&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;注：图标错误原因可能是Font Awesome的版本不同……&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;样式来自于：&lt;br&gt;
+小康博客的&lt;a class=&#34;link&#34; href=&#34;https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84note%E6%A0%87%E7%AD%BE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hexo博客之butterfly主题优雅魔改系列（持续更新）&lt;/a&gt;&lt;br&gt;
+更多note也可以参见该博客……&lt;/p&gt;
+&lt;p&gt;同时滚动条样式也参考了这位dalao然后自己改的【感恩……&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>并查集……</title>
         <link>https://supersass.github.io/p/union-find/</link>
         <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
