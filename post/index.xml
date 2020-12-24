@@ -2,107 +2,107 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Super SASS……</title>
-    <link>https://blog.supersassw.com/post/</link>
+    <link>https://supersass.github.io/post/</link>
     <description>Recent content in Posts on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Timeline测试……</title>
-      <link>https://blog.supersassw.com/p/test-timeline/</link>
+      <link>https://supersass.github.io/p/test-timeline/</link>
       <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/test-timeline/</guid>
+      <guid>https://supersass.github.io/p/test-timeline/</guid>
       <description>Timeline…… 时间线标签的移植测试…… 测试 总历程…… 2020-12-24 19:00提出构想…… 这个时间线好好看啊，我也要实现！…… 这里面还能套娃哦x……</description>
     </item>
     
     <item>
       <title>NoteBlock测试……</title>
-      <link>https://blog.supersassw.com/p/test-note/</link>
+      <link>https://supersass.github.io/p/test-note/</link>
       <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/test-note/</guid>
+      <guid>https://supersass.github.io/p/test-note/</guid>
       <description>Note测试…… 对Hexo中Volantis主题的note移植测试…… NoteBlock 是 Blockquote 的增强版，在左边显示图标，并且可以自定颜色。 长Note 适用于需要</description>
     </item>
     
     <item>
       <title>并查集……</title>
-      <link>https://blog.supersassw.com/p/union-find/</link>
+      <link>https://supersass.github.io/p/union-find/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/union-find/</guid>
+      <guid>https://supersass.github.io/p/union-find/</guid>
       <description>测试 啥都没有…… 源码 /* 并查集算法 用father数组记录每个节点的父节点，数据结构类似于树 关键操作：合并、查询 详细介绍: https://zhuanlan.zhihu.com/p/93647900 */ //P3958 奶酪: https://www.luogu.com.cn/problem/P3958 #include &amp;lt;bits/stdc++.h&amp;gt;#define N 1005</description>
     </item>
     
     <item>
       <title>线段树……</title>
-      <link>https://blog.supersassw.com/p/segment-tree/</link>
+      <link>https://supersass.github.io/p/segment-tree/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/segment-tree/</guid>
+      <guid>https://supersass.github.io/p/segment-tree/</guid>
       <description>简介 是一种用来维护 区间信息 的数据结构。 可以实现的操作： 单点、区间修改 区间查询（区间求和、最大值、最小值） 等等 描述 线段树会将一个非点区间（即长</description>
     </item>
     
     <item>
       <title>音乐播放器……</title>
-      <link>https://blog.supersassw.com/p/test-player/</link>
+      <link>https://supersass.github.io/p/test-player/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/test-player/</guid>
+      <guid>https://supersass.github.io/p/test-player/</guid>
       <description>音乐播放器 采用的APlayer的外链播放器…… 默认会显示在文章顶部…… 如需用吸底模式，请在第一个参数输入-fixed: 1……</description>
     </item>
     
     <item>
       <title>邻项比较排序……</title>
-      <link>https://blog.supersassw.com/p/neighbor-sort/</link>
+      <link>https://supersass.github.io/p/neighbor-sort/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/neighbor-sort/</guid>
+      <guid>https://supersass.github.io/p/neighbor-sort/</guid>
       <description>邻项比较排序 定义 本来的排序型贪心，我们需要任意两个项都满足决策条件。 但我们发现，如果数列每对相邻两项都满足决策条件，根据不等式的传递性，那么</description>
     </item>
     
     <item>
       <title>贪心……</title>
-      <link>https://blog.supersassw.com/p/greedy/</link>
+      <link>https://supersass.github.io/p/greedy/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/greedy/</guid>
+      <guid>https://supersass.github.io/p/greedy/</guid>
       <description>贪心 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通过局部最优解拓展得到全局最优解。 用处 寻找最优解（如：找最大(小)值） 贪心类别 一、排序</description>
     </item>
     
     <item>
       <title>STL……</title>
-      <link>https://blog.supersassw.com/p/stl/</link>
+      <link>https://supersass.github.io/p/stl/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/stl/</guid>
+      <guid>https://supersass.github.io/p/stl/</guid>
       <description>STL 详解 set——集合 set&amp;lt;int&amp;gt; STL_set set为关联容器。为一种体现集合性质的容器。 其中不允许有重复元素。 并且set中的元素是排好序的（升序）。 用法： set&amp;lt;int&amp;gt; STL_set; /</description>
     </item>
     
     <item>
       <title>排序……</title>
-      <link>https://blog.supersassw.com/p/sort/</link>
+      <link>https://supersass.github.io/p/sort/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/sort/</guid>
+      <guid>https://supersass.github.io/p/sort/</guid>
       <description>排序 不考虑算法 选择排序、冒泡排序、插入排序 $O(n^2)$ 计数排序、基数排序、桶排序 $O(n+w)$ 计数排序 希尔排序、锦标赛排序 快速排序 应用 寻找第k大的数 归并排序 应用 寻</description>
     </item>
     
     <item>
       <title>Shortcode测试……</title>
-      <link>https://blog.supersassw.com/p/test-shortcode/</link>
+      <link>https://supersass.github.io/p/test-shortcode/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/test-shortcode/</guid>
+      <guid>https://supersass.github.io/p/test-shortcode/</guid>
       <description>Shortcode Hugo的Shortcode的测试…… 新增了Bilibili的链接…… 不知道是什么的原文x： Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static</description>
     </item>
     
     <item>
       <title>页面测试……</title>
-      <link>https://blog.supersassw.com/p/test-chinese/</link>
+      <link>https://supersass.github.io/p/test-chinese/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/test-chinese/</guid>
+      <guid>https://supersass.github.io/p/test-chinese/</guid>
       <description>正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的</description>
     </item>
     

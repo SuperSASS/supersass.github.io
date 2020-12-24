@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Super SASS……</title>
-    <link>https://blog.supersassw.com/categories/</link>
+    <link>https://supersass.github.io/categories/</link>
     <description>Recent content in Categories on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>测试</title>
-      <link>https://blog.supersassw.com/categories/test/</link>
+      <link>https://supersass.github.io/categories/test/</link>
       <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/categories/test/</guid>
+      <guid>https://supersass.github.io/categories/test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>数据结构</title>
-      <link>https://blog.supersassw.com/categories/data-structure/</link>
+      <link>https://supersass.github.io/categories/data-structure/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/categories/data-structure/</guid>
+      <guid>https://supersass.github.io/categories/data-structure/</guid>
       <description></description>
     </item>
     
     <item>
       <title>基础部分</title>
-      <link>https://blog.supersassw.com/categories/basic/</link>
+      <link>https://supersass.github.io/categories/basic/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/categories/basic/</guid>
+      <guid>https://supersass.github.io/categories/basic/</guid>
       <description></description>
     </item>
     

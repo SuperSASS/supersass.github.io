@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>邻项比较排序 on Super SASS……</title>
-    <link>https://blog.supersassw.com/tags/%E9%82%BB%E9%A1%B9%E6%AF%94%E8%BE%83%E6%8E%92%E5%BA%8F/</link>
+    <link>https://supersass.github.io/tags/%E9%82%BB%E9%A1%B9%E6%AF%94%E8%BE%83%E6%8E%92%E5%BA%8F/</link>
     <description>Recent content in 邻项比较排序 on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E9%82%BB%E9%A1%B9%E6%AF%94%E8%BE%83%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/tags/%E9%82%BB%E9%A1%B9%E6%AF%94%E8%BE%83%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>邻项比较排序……</title>
-      <link>https://blog.supersassw.com/p/neighbor-sort/</link>
+      <link>https://supersass.github.io/p/neighbor-sort/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/neighbor-sort/</guid>
+      <guid>https://supersass.github.io/p/neighbor-sort/</guid>
       <description>邻项比较排序 定义 本来的排序型贪心，我们需要任意两个项都满足决策条件。 但我们发现，如果数列每对相邻两项都满足决策条件，根据不等式的传递性，那么</description>
     </item>
     

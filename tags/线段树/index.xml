@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>线段树 on Super SASS……</title>
-    <link>https://blog.supersassw.com/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
+    <link>https://supersass.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
     <description>Recent content in 线段树 on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>线段树……</title>
-      <link>https://blog.supersassw.com/p/segment-tree/</link>
+      <link>https://supersass.github.io/p/segment-tree/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/segment-tree/</guid>
+      <guid>https://supersass.github.io/p/segment-tree/</guid>
       <description>简介 是一种用来维护 区间信息 的数据结构。 可以实现的操作： 单点、区间修改 区间查询（区间求和、最大值、最小值） 等等 描述 线段树会将一个非点区间（即长</description>
     </item>
     
