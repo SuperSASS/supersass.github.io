@@ -2,76 +2,233 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Super SASS……</title>
-        <link>https://supersass.github.io/</link>
+        <link>https://blog.supersassw.com/</link>
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Wed, 23 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Timeline测试……</title>
+        <link>https://blog.supersassw.com/p/test-timeline/</link>
+        <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/test-timeline/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/test-timeline/pixiv61107110.jpg" alt="Featured image of post Timeline测试……" /&gt;&lt;h1 id=&#34;timeline&#34;&gt;Timeline……&lt;/h1&gt;
+&lt;p&gt;时间线标签的移植测试……&lt;/p&gt;
+&lt;h2 id=&#34;测试&#34;&gt;测试&lt;/h2&gt;
+&lt;div class=&#34;timeline&#34;&gt;
+	
+		&lt;p class=&#34;p h2&#34;&gt;总历程……&lt;/p&gt;
+	
+	
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2020-12-24 19:00&lt;div class=&#34;title&#34;&gt;提出构想……&lt;/div&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;
+		&lt;p&gt;这个时间线好好看啊，我也要实现！……&lt;/p&gt;
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 这里面还能套娃哦x…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2020-12-25&lt;a target=&#34;_blank&#34; rel=&#34;noopener&#34; href=&#34;https://www.bilibili.com&#34;&gt;这里想要测试下所以这里的标题要非常非常非常的长这样才能测试是否全平台适配……&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;
+		&lt;p&gt;到了明天【？……&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 感觉实现了……&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这里面用Markdown写！……&lt;br&gt;
+然后这里也要非常非常非常非常非常非非常非常非常非常非常非常常非常非常非常非常非常非常的长……&lt;/p&gt;
+
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2020-12-25 233:33:33&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;
+		&lt;p&gt;&lt;em&gt;time其实内容随意（没有检测直接原样输出），填个不是时间的也可以……&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;最后一个测试了！……&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;来个公式：
+&lt;blockquote&gt;
+&lt;p&gt;$$[{2{x^T}(t)x(t - \tau ) = {x^T}(t){Q^{ - \frac{1}{2}}}x(t - \tau ) \le \frac{1}{\alpha }{x^T}(t)Px(t) + \alpha {x^T}(t - \tau )x(t - \tau )}]$$
+我也不知道这是啥_(:з」∠)_……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;来个代码：
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;n&#34;&gt;freopen&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;ans.out&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;r&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;stdin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;qwq&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2020-12-24 20:28&lt;div class=&#34;title&#34;&gt;正式实现并适配……&lt;/div&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;
+		&lt;p&gt;实现了！……&lt;/p&gt;
+&lt;p&gt;也不知道会不会出问题，反正能跑就行.jpg……&lt;/p&gt;
+&lt;p&gt;改后的样式配上这个主题感觉还是很好看的√……&lt;/p&gt;
+&lt;p&gt;不过markdown里看着好乱啊也没办法的&#39;_&amp;gt;&#39;……&lt;/p&gt;
+&lt;p&gt;好累orz……&lt;/p&gt;
+
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;/div&gt;
+&lt;h2 id=&#34;实现方法&#34;&gt;实现方法&lt;/h2&gt;
+&lt;p&gt;又又又又又是Shortcode！……&lt;/p&gt;
+&lt;p&gt;换行输入模式……&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;timeline&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;timeline&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;node&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;内容&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;......&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;timeline&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;node&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;timeline&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;node&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;内容&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;......&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;timeline&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;node&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;timeline&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;外层：&lt;br&gt;
+&lt;code&gt;name&lt;/code&gt;（可选项）：为这条时间线的标题……&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内层：&lt;br&gt;
+&lt;code&gt;time&lt;/code&gt;（必填项）：节点时间……&lt;br&gt;
+&lt;code&gt;title&lt;/code&gt;（可选项）：节点名称……&lt;br&gt;
+&lt;code&gt;url&lt;/code&gt;（可选项）：节点链接（外部链接要加&lt;code&gt;https://&lt;/code&gt;）……&lt;br&gt;
+&lt;code&gt;new&lt;/code&gt;（可选项）：如果填了&lt;code&gt;url&lt;/code&gt;，将new设为&lt;code&gt;1&lt;/code&gt;可以在新窗口打开标签……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;想法还是来自于：&lt;br&gt;
+小康博客 —— &lt;a href=&#34;https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84link%E6%A0%87%E7%AD%BE%E4%B8%8E%E6%97%B6%E9%97%B4%E7%BA%BF%E6%A0%87%E7%AD%BE&#34;&gt;Hexo博客之butterfly主题优雅魔改系列（持续更新）&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;个人在其基础上修改了CSS以适配此主题……&lt;br&gt;
+并以Shortcode的形式完成对Hugo的移植……&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>NoteBlock测试……</title>
-        <link>https://supersass.github.io/p/test-note/</link>
+        <link>https://blog.supersassw.com/p/test-note/</link>
         <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://supersass.github.io/p/test-note/</guid>
-        <description>&lt;img src="https://supersass.github.io/p/test-note/yandere_713907.jpg" alt="Featured image of post NoteBlock测试……" /&gt;&lt;p&gt;又整新活！x……&lt;/p&gt;
-&lt;h1 id=&#34;note测试&#34;&gt;Note测试……&lt;/h1&gt;
-&lt;p&gt;对&lt;a class=&#34;link&#34; href=&#34;https://volantis.js.org/v2/tag-plugins/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <guid>https://blog.supersassw.com/p/test-note/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/test-note/Yande-713907.jpg" alt="Featured image of post NoteBlock测试……" /&gt;&lt;h1 id=&#34;note测试&#34;&gt;Note测试……&lt;/h1&gt;
+&lt;p&gt;对Hexo中&lt;a class=&#34;link&#34; href=&#34;https://volantis.js.org/v2/tag-plugins/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Volantis主题的note&lt;/a&gt;移植测试……&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;NoteBlock 是 Blockquote 的增强版，在左边显示图标，并且可以自定颜色。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;h2 id=&#34;长note&#34;&gt;长Note&lt;/h2&gt;
+&lt;p&gt;适用于需要换行输入的note……&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;div class=&#34;snote done&#34;&gt;
-	&lt;p&gt; 完成…… &lt;/p&gt;
+
+
+&lt;div class=&#34;snote guide blue &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;很长很长的note！……&lt;br&gt;
+还可以换行！……&lt;/p&gt;
+&lt;p&gt;因为内容是Markdown格式……&lt;br&gt;
+&lt;a href=&#34;http://game.granbluefantasy.jp/&#34;&gt;里面干什么都可以_(:з」∠)_……&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;这句话是一句很长的话我用来测试他能否在不同移动端上也能正常显示我希望他真的能正常显示不然我又要去改scss了呜呜呜x但是现在这个长度还不够我还要再加长点嗯现在应该够了让我们看看效果吧！……&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;使用方法：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;done&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;guide&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;blue&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;......&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;snote done&#34;&gt;
-	&lt;p&gt; 成功…… &lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;em&gt;【这个图标可能有误，待修复……&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;使用方法：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;success&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;snote error&#34;&gt;
-	&lt;p&gt; 错误…… &lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;使用方法：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;snote warning&#34;&gt;
-	&lt;p&gt; 警告…… &lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;使用方法：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;warning&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;div class=&#34;snote danger&#34;&gt;
-	&lt;p&gt; 危险…… &lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;em&gt;【这个图标可能有误，待修复……&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;使用方法：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;danger&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-&lt;p&gt;注：图标错误原因可能是Font Awesome的版本不同……&lt;/p&gt;
+&lt;p&gt;注意：如果要在引用内容（&lt;code&gt;&amp;gt;&lt;/code&gt;）中使用，&lt;br&gt;
+则只能在开头写一个&lt;code&gt;&amp;gt;&lt;/code&gt;，其内容和结束部分都不能打&lt;code&gt;&amp;gt;&lt;/code&gt;……&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;样式来自于：&lt;br&gt;
-小康博客的&lt;a class=&#34;link&#34; href=&#34;https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84note%E6%A0%87%E7%AD%BE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Hexo博客之butterfly主题优雅魔改系列（持续更新）&lt;/a&gt;&lt;br&gt;
-更多note也可以参见该博客……&lt;/p&gt;
+&lt;h2 id=&#34;短note&#34;&gt;短Note&lt;/h2&gt;
+&lt;p&gt;适用于很短的一句话的note……&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;不带颜色的……&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;snote success &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 成功（success）…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;snote&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;success&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;带颜色的……&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;snote link cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 背景是SuperSASS蓝（cyan）的链接图示（link）…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;snote&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;link&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;clear&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 发现部分图标有误，错误原因可能是Font Awesome的版本不同…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;想法来自于：&lt;br&gt;
+小康博客 —— &lt;a href=&#34;https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84note%E6%A0%87%E7%AD%BE&#34;&gt;Hexo博客之butterfly主题优雅魔改系列（持续更新）&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;使用了其CSS后，用基于Hugo的Shortcode实现，并更改部分CSS使得匹配该主题……&lt;br&gt;
+更多note也可以参见该页面……&lt;/p&gt;
 &lt;p&gt;同时滚动条样式也参考了这位dalao然后自己改的【感恩……&lt;/p&gt;
 </description>
         </item>
         <item>
         <title>并查集……</title>
-        <link>https://supersass.github.io/p/union-find/</link>
+        <link>https://blog.supersassw.com/p/union-find/</link>
         <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://supersass.github.io/p/union-find/</guid>
-        <description>&lt;img src="https://supersass.github.io/p/union-find/60855211_p0.jpg" alt="Featured image of post 并查集……" /&gt;&lt;h1 id=&#34;测试&#34;&gt;测试&lt;/h1&gt;
+        <guid>https://blog.supersassw.com/p/union-find/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/union-find/60855211_p0.jpg" alt="Featured image of post 并查集……" /&gt;&lt;h1 id=&#34;测试&#34;&gt;测试&lt;/h1&gt;
 &lt;p&gt;啥都没有……&lt;/p&gt;
 &lt;h2 id=&#34;源码&#34;&gt;源码&lt;/h2&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cm&#34;&gt;/*
@@ -177,11 +334,11 @@
         </item>
         <item>
         <title>线段树……</title>
-        <link>https://supersass.github.io/p/segment-tree/</link>
+        <link>https://blog.supersassw.com/p/segment-tree/</link>
         <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://supersass.github.io/p/segment-tree/</guid>
-        <description>&lt;img src="https://supersass.github.io/p/segment-tree/67957130_p0.png" alt="Featured image of post 线段树……" /&gt;&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
+        <guid>https://blog.supersassw.com/p/segment-tree/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/segment-tree/67957130_p0.png" alt="Featured image of post 线段树……" /&gt;&lt;h1 id=&#34;简介&#34;&gt;简介&lt;/h1&gt;
 &lt;p&gt;是一种用来维护 &lt;strong&gt;区间信息&lt;/strong&gt; 的数据结构。&lt;/p&gt;
 &lt;p&gt;可以实现的操作：&lt;/p&gt;
 &lt;ul&gt;
@@ -280,10 +437,11 @@
 &lt;ul&gt;
 &lt;li&gt;如果&lt;strong&gt;查询区间的左端点&lt;/strong&gt;小于等于&lt;strong&gt;当前区间中点&lt;/strong&gt;，则查询范围会存在于左儿子区间里，要查询左儿子。&lt;/li&gt;
 &lt;li&gt;如果&lt;strong&gt;查询区间的右端点&lt;/strong&gt;大于&lt;strong&gt;当前区间中点&lt;/strong&gt;，则查询范围会存在于右儿子区间里，要查询右儿子。
-&lt;blockquote&gt;
-&lt;p&gt;⚠注意：这里为大于！因为中点是算在左区间里的！……&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 注意：这里为大于！因为中点是算在左区间里的！…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -509,23 +667,1281 @@
         </item>
         <item>
         <title>音乐播放器……</title>
-        <link>https://supersass.github.io/p/test-player/</link>
+        <link>https://blog.supersassw.com/p/test-player/</link>
         <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://supersass.github.io/p/test-player/</guid>
-        <description>&lt;img src="https://supersass.github.io/p/test-player/84038692_p0.jpg" alt="Featured image of post 音乐播放器……" /&gt;&lt;h1 id=&#34;音乐播放器&#34;&gt;音乐播放器&lt;/h1&gt;
+        <guid>https://blog.supersassw.com/p/test-player/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/test-player/84038692_p0.jpg" alt="Featured image of post 音乐播放器……" /&gt;&lt;h1 id=&#34;音乐播放器&#34;&gt;音乐播放器&lt;/h1&gt;
 &lt;p&gt;采用的APlayer的外链播放器……&lt;/p&gt;
 &lt;p&gt;默认会显示在文章顶部……&lt;/p&gt;
 &lt;p&gt;如需用吸底模式，请在第一个参数输入&lt;code&gt;-fixed: 1&lt;/code&gt;……&lt;/p&gt;
 </description>
         </item>
         <item>
-        <title>Chinese Test</title>
-        <link>https://supersass.github.io/p/test-chinese/</link>
+        <title>邻项比较排序……</title>
+        <link>https://blog.supersassw.com/p/neighbor-sort/</link>
+        <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/neighbor-sort/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/neighbor-sort/71111285_p0.png" alt="Featured image of post 邻项比较排序……" /&gt;&lt;h1 id=&#34;邻项比较排序&#34;&gt;邻项比较排序&lt;/h1&gt;
+&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;本来的排序型贪心，我们需要&lt;strong&gt;任意两个项都满足决策条件&lt;/strong&gt;。&lt;br&gt;
+但我们发现，如果数列每对&lt;strong&gt;相邻两项都满足决策条件&lt;/strong&gt;，根据&lt;strong&gt;不等式的传递性&lt;/strong&gt;，那么也就可以推出任意两项满足决策条件。&lt;/p&gt;
+&lt;p&gt;于是我们分析决策条件时，就不用分析任意两项，可以就分析邻项然后推出决策条件。&lt;/p&gt;
+&lt;p&gt;【主要用于如果决策条件复合了其他数据（比如：结果计算为$\sum_{i=1}^na_i$，复合之前的数列），这样分析可以减少分析难度】&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;典型例题：&lt;br&gt;
+P1080 &lt;a class=&#34;link&#34; href=&#34;https://www.luogu.com.cn/problem/P1080&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;国王游戏&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以见到这题便有一个「排在&lt;strong&gt;该大臣前面的&lt;/strong&gt;所有人的左手上的数的乘积」这句话，&lt;br&gt;
+如果我们分析任意两项的话，还要考虑两者中间的数据。&lt;/p&gt;
+&lt;p&gt;所以我们可以指通过分析相邻两项，然后通过传递性，推及任意两项都满足。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;【其实用任意两项分析也完全可以，而且分析也不难_(:з」∠)_……&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那么实现的关键就是&lt;strong&gt;找到最终的决策方案&lt;/strong&gt;（序列满足的条件），然后根据这个决策&lt;code&gt;sort&lt;/code&gt;就行了_(:з」∠)_……&lt;br&gt;
+【但是会有注意点后面会讲到……&lt;/p&gt;
+&lt;h2 id=&#34;题目解决方法&#34;&gt;题目解决方法&lt;/h2&gt;
+&lt;h3 id=&#34;引例&#34;&gt;引例&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以下以此例题为例具体讲解：&lt;br&gt;
+SWJTU OJ——10.31 A &lt;a class=&#34;link&#34; href=&#34;https://oj.swjtu.edu.cn/contest/23/problem/A&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;排队&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;题目与国王游戏类似，用邻项交换排序的思想来找&lt;strong&gt;决策条件&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;1找出每种状态的ans选邻项代入&#34;&gt;1、找出每种状态的&lt;code&gt;ans&lt;/code&gt;，选邻项代入&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目描述：&lt;br&gt;
+也就是说，请重新给班尼特排队，要求是最大化$\min_{i=1}^n{-h_i+\sum_{j=1}^i v_j}$。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么每种状态的&lt;code&gt;ans&lt;/code&gt;$=\min_{i=1}^nw_i$。&lt;/p&gt;
+&lt;p&gt;既然要求$\min_{i=1}^n{w_i}$，所以我们就比较邻项的$w_i,w_j$，比较其两项的$\min(w_i,w_j)$，选择最大&lt;code&gt;ans&lt;/code&gt;的状态。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么我们这样排序，能使&lt;code&gt;ans&lt;/code&gt;$=\min_{i=1}^nw_i$取得最小？
+&lt;blockquote&gt;
+&lt;p&gt;就相当于把比较时候的最小值看成短板，每次比较一次选最高的那个，就会把短板提上去一点，这样最后得到的就是最高的短板，也就是最大的$\min$……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2假设相邻位置写出两种状态的ans&#34;&gt;2、假设相邻位置，写出两种状态的&lt;code&gt;ans&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;我们首先要把每个位置的&lt;strong&gt;收益表达式&lt;/strong&gt;写出来：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目描述：治疗第$i$个班尼特的收益$w_i$等于前面治疗的所有班尼特的$v$之和减去$h_i$。
+$$
+w_i=\sum_{j=1}^iv_j-h_i
+$$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么我们&lt;strong&gt;假设两个相邻位置&lt;/strong&gt;$i,j$。其中$i$在$j$前，即$i=j-1$。【必须先假设一个在另一个前后，否则不可能$i$在$j$前满足，$j$在$i$前也满足】&lt;br&gt;
+记：两者之前的$\sum v$为$sum$。【将一些求$w$要用到的比如$\sum$记为其他符号表示，可以简化式子】&lt;/p&gt;
+&lt;p&gt;然后分别讨论$i$在$j$前和$j$在$i$前的情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;原本状态：$i$在$j$前&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$$
+\begin{matrix}
+h &amp;amp; v \&lt;br&gt;
+\vdots &amp;amp; \vdots(sum) \&lt;br&gt;
+h_i &amp;amp; v_i \&lt;br&gt;
+h_j &amp;amp; v_j \&lt;br&gt;
+\vdots &amp;amp; \vdots \&lt;br&gt;
+\end{matrix}
+$$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对$i$的收益：$w_{i1}=sum+v_i-h_i$&lt;br&gt;
+对$j$的收益：$w_{j1}=sum+v_i+v_j-h_j$&lt;br&gt;
+此状态的&lt;code&gt;ans&lt;/code&gt;=$\min(w_{i1},w_{j1})$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果交换：$j$在$i$前&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$
+\begin{matrix}
+h &amp;amp; v \&lt;br&gt;
+\vdots &amp;amp; \vdots(sum) \&lt;br&gt;
+h_j &amp;amp; v_j \&lt;br&gt;
+h_i &amp;amp; v_i \&lt;br&gt;
+\vdots &amp;amp; \vdots \&lt;br&gt;
+\end{matrix}
+$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对$i$的收益：$w_{i2}=sum+v_j+v_i-h_i$，&lt;br&gt;
+对$j$的收益：$w_{j2}=sum+v_j-h_j$&lt;br&gt;
+此状态的&lt;code&gt;ans&lt;/code&gt;=$\min(w_{i2},w_{j2})$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;3根据题意写出排序条件并化简得到最终决策方案&#34;&gt;3、根据题意写出排序条件并化简，得到最终决策方案&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目描述：芭芭拉想让治疗每个班尼特收益的最小值最大。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;题意要求使&lt;strong&gt;最小收益最大化&lt;/strong&gt;，&lt;br&gt;
+则&lt;strong&gt;最初排序条件&lt;/strong&gt;为：$\min(w_{i1},w_{j1})\ge\min(w_{j2},w_{i2})$&lt;br&gt;
+【或者说**交换条件**为：$\text{if} \quad (\min(w_{i1},w_{j1})&amp;lt;\min(w_{j2},w_{i2})) \quad \text{swap}(i,j)$】&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;*其他例子：国王游戏中，是使&lt;strong&gt;最大收益最小化&lt;/strong&gt;。则排序条件为：$\max(w_{i1},w_{j1})\le\max(w_{i2},w_{j2})$*&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后对这个决策条件&lt;strong&gt;化简&lt;/strong&gt;，使得能直接表达出来。&lt;br&gt;
+【所谓不能直接表达的，便是条件中含有如$\sum$之类的运算。而我们不可能用循环专门去求，只能通过化简把他消掉】&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;化简方法：&lt;/p&gt;
+&lt;p&gt;下列所提到的化简方法参考&lt;a class=&#34;link&#34; href=&#34;../../../Part%209%20Others/%e5%90%abmax%e3%80%81min%e7%9a%84%e4%b8%8d%e7%ad%89%e5%bc%8f.md&#34; &gt;含max、min的不等式&lt;/a&gt;。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;利用“&lt;strong&gt;完全展开法则&lt;/strong&gt;”，观察是否含有&lt;strong&gt;恒成立或恒不成立&lt;/strong&gt;。&lt;br&gt;
+【或者直接观察题目中$w_{i1},w_{j1},w_{j2},w_{i2}$间的关系，找出恒成立或恒不成立，然后利用“**消元法则**”】&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;利用排序规则下特殊的“&lt;strong&gt;相同无关原则&lt;/strong&gt;”，结合“&lt;strong&gt;取反性&lt;/strong&gt;、&lt;strong&gt;结合性&lt;/strong&gt;”等性质，化简并得到最终的最简决策&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;则本题中：&lt;br&gt;
+展开为$\text{if} \quad ((w_{i1}&amp;lt;w_{i2} &amp;amp; w_{i1}&amp;lt;w_{j2}) | (w_{j1}&amp;lt;w_{i2} &amp;amp; w_{j1}&amp;lt;w_{j2})) \quad \text{swap}$。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;发现$w_{i1}&amp;lt;w_{i2}$恒成立：
+&lt;blockquote&gt;
+&lt;p&gt;$\sout{sum+v_i-h_i} \quad?\quad \sout{sum}+v_j\sout{+v_i-h_i}$&lt;br&gt;
+$\implies 0&amp;lt;v_j$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;发现$w_{j1}&amp;lt;w_{j2}$恒不成立：
+&lt;blockquote&gt;
+&lt;p&gt;$\sout{sum}+v_i\sout{+v_j-h_j} \quad?\quad \sout{sum+v_j-h_j}$&lt;br&gt;
+$\implies v_i&amp;gt;0$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;故原式可简化为：&lt;br&gt;
+$\text{if} \quad (w_{i1}&amp;lt;w_{j2}) \quad \text{swap}$&lt;br&gt;
+$\implies \text{if} \quad (v_i-h_i &amp;lt; v_j-h_j) \quad \text{swap}$&lt;br&gt;
+这便是化简后的**决策条件**。&lt;/p&gt;
+&lt;hr&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;注意的点：&lt;/p&gt;
+&lt;p&gt;不一定要化到最简，只要能在代码里直接表达就行。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本题中原始条件经过部分化简：&lt;br&gt;
+&lt;img src=&#34;./pic/raw_case.png&#34; alt=&#34;raw_case&#34;&gt;&lt;br&gt;
+运行结果：&lt;br&gt;
+&lt;img src=&#34;./pic/raw_result.png&#34; alt=&#34;raw_result&#34;&gt;&lt;/p&gt;
+&lt;p&gt;而完全化简后为：&lt;br&gt;
+&lt;img src=&#34;./pic/process_case.png&#34; alt=&#34;process_case&#34;&gt;&lt;br&gt;
+运行结果：&lt;br&gt;
+&lt;img src=&#34;./pic/process_result.png&#34; alt=&#34;process_result&#34;&gt;&lt;/p&gt;
+&lt;p&gt;可见差异并不大，所以说只要能化简到能表达的地步就可以。&lt;br&gt;
+当然如果能化到最简更好，肯定还是比带&lt;code&gt;min&lt;/code&gt;的条件快的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;4自定义结构体重载运算符使用sort遍历寻答案&#34;&gt;4、自定义结构体，重载&lt;code&gt;&amp;lt;&lt;/code&gt;运算符，使用&lt;code&gt;sort&lt;/code&gt;，遍历寻答案&lt;/h3&gt;
+&lt;p&gt;这一步就不多说了，重载的时候按自己分析到的最终最简决策重载就行。&lt;/p&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;&lt;strong&gt;但重点是&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;这样排序出来后&lt;strong&gt;只是最优状态&lt;/strong&gt;，&lt;br&gt;
+至于&lt;strong&gt;最终答案&lt;code&gt;ans&lt;/code&gt;要从头到尾遍历寻找&lt;/strong&gt;，即不一定是第一个为最终答案。&lt;br&gt;
+可能后面计算结果不是递增或递减，则最终答案不是第一个。【具体题目具体分析】&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;标程代码&#34;&gt;标程代码&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100010&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Data&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//以推出的最终最简决策重载&amp;lt;运算符
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+	&lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//就一个sort
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tmp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1e9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;tmp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;v&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;res&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;tmp&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//从头到尾遍历，res记录最终答案
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;res&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;使用注意事项&#34;&gt;使用注意事项&lt;/h1&gt;
+&lt;p&gt;注意之前我们定义中存在一个推论：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果数列每对相邻两项都满足决策条件，&lt;strong&gt;根据不等式的传递性&lt;/strong&gt;，那么也就可以推出任意两项满足决策条件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所以假如我们所推的某个决策条件，&lt;strong&gt;不满足不等式的传递性&lt;/strong&gt;，那么用这个方法就&lt;strong&gt;会造成错误&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;而这种必须要满足不等性的传递性，有个专门术语叫做“&lt;strong&gt;严格弱序&lt;/strong&gt;”。&lt;/p&gt;
+&lt;h2 id=&#34;先前知识严格弱序&#34;&gt;先前知识——严格弱序&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;$X \not&amp;lt; X$（比较条件非自反性）&lt;br&gt;
+意思是：$X$与$X$本身，不满足比较条件。
+&lt;ul&gt;
+&lt;li&gt;反例：比较条件是$a_i \ge a_j$。&lt;br&gt;
+那么$X(a_i) \ge X(a_i)$满足比较条件，为$X &amp;lt; X$，故不是严格弱序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;若$X &amp;lt; Y$，则$Y \not&amp;lt; X$（比较条件非对称性）&lt;br&gt;
+意思是：$X$和$Y$比较若满足比较条件，则$Y$和$X$比较不会满足条件。
+&lt;ul&gt;
+&lt;li&gt;反例：比较条件是$a_i \ge a_j$。&lt;br&gt;
+那么若$a_i=a_j$，$X(a_i) \ge Y(a_j)$满足条件，&lt;br&gt;
+但$Y(a_j) \ge X(a_i)$也满足条件，故不是严格弱序。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;若$X &amp;lt; Y,Y &amp;lt; Z$，则$X &amp;lt; Z$（比较条件不等&lt;strong&gt;传递性&lt;/strong&gt;）&lt;br&gt;
+意思是：$X$和$Y$满足比较条件，$Y$和$Z$满足比较条件，则$X$和$Y$满足比较条件。
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;反例：比较条件是$\min(a_i,b_j) \le \min(a_j,b_i)$。&lt;br&gt;
+那么对于下组数据：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;$a$&lt;/th&gt;
+&lt;th&gt;$b$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$i$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$j$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$k$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;$X(\min(a_i,b_j)=1)&amp;lt;Y(\min(a_j,b_i)=1)$&lt;br&gt;
+$Y(\min(a_j,b_k)=1)&amp;lt;Z(\min(a_k,b_j)=1)$&lt;br&gt;
+但$X(\min(a_i,b_k)=2) \not&amp;lt; Z(\min(a_k,b_i)=1)$，故不是严格弱序。
+【再次提示这里的$&amp;lt;$并不代表小于，而是代表符合比较条件的意思。】&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;若$X=Y,Y=Z$，则$X=Z$（比较条件相等&lt;strong&gt;传递性&lt;/strong&gt;）&lt;br&gt;
+意思同上。&lt;br&gt;
+&lt;em&gt;在“ouuan”dalao的讲解种写的是$x\not&amp;lt;y,y\not&amp;lt;x,y\not&amp;lt;z,z\not&amp;lt;y$（不可比性的传递性）。我改成这样更好理解。&lt;/em&gt;&lt;br&gt;
+&lt;em&gt;不过注意判断相等的方法是$x\not&amp;lt;y,y\not&amp;lt;x$这么判断的。&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;反例见下引例的「错误分析」&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;这里的$X$、$Y$、$Z$代表的是取某下标$i$、$j$后的&lt;strong&gt;决策条件的一侧元素&lt;/strong&gt;。并不一定是某一具体数据。&lt;/li&gt;
+&lt;li&gt;这里的$&amp;lt;$并不代表小于的意思，而是代表&lt;strong&gt;满足比较条件&lt;/strong&gt;，那么$\not&amp;lt;$则代表不满足比较条件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;引例-1&#34;&gt;引例&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;P2123 &lt;a class=&#34;link&#34; href=&#34;https://www.luogu.com.cn/problem/P2123&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;皇后游戏&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;按照之前的方法尝试解决&#34;&gt;按照之前的方法尝试解决&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;找出每种状态的&lt;code&gt;ans&lt;/code&gt;，选邻项代入&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题目描述：&lt;br&gt;
+她想请你来重新安排一下队伍的顺序，使得获得奖金最多的大臣，所获奖金数目尽可能的少。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可知每种状态的&lt;code&gt;ans&lt;/code&gt;$=\max_{i=1}^nw_i$。&lt;/p&gt;
+&lt;p&gt;那么比较邻项$i,j$，就是$max(w_i,w_j)$。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;假设相邻位置，写出两种状态的ans&lt;/p&gt;
+&lt;p&gt;首先先写收益表达式：&lt;br&gt;
+$$
+w_i=\max(w_{i-1},\sum_{j=1}^ia_j)+b_i
+$$
+【第一位的收益可以合并到这个表达式里，令$w_0=0$就可以了。】&lt;/p&gt;
+&lt;p&gt;假设相邻位置$i,j$。其中$i$在$j$前，即$i=j-1$。&lt;br&gt;
+记：之前的$\sum a$为$sum$，前一项的$c_{i-1}$为$pre_w$。&lt;/p&gt;
+&lt;p&gt;会发现，由于$a,b&amp;gt;0$，整个收益表达式中又没出现会使收益变少的运算，故&lt;strong&gt;收益单增&lt;/strong&gt;。&lt;br&gt;
+即在&lt;strong&gt;后面的&lt;/strong&gt;大臣的收益&lt;strong&gt;一定大于&lt;/strong&gt;在&lt;strong&gt;前面的&lt;/strong&gt;。&lt;br&gt;
+$i$在$j$前时，则$w_j$一定大于$w_i$，所以$\max(w_i,w_j)=w_j$，可以拆开一层$\max$。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;原本状态：$i$在$j$前&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$
+\begin{matrix}
+a &amp;amp; b &amp;amp; c \&lt;br&gt;
+\vdots(sum) &amp;amp; \vdots &amp;amp; \vdots(pre_w) \&lt;br&gt;
+a_i &amp;amp; b_i &amp;amp; w_{i1} \&lt;br&gt;
+a_j &amp;amp; b_j &amp;amp; w_{j1} \&lt;br&gt;
+\vdots &amp;amp; \vdots &amp;amp; \vdots \&lt;br&gt;
+\end{matrix}
+$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$w_{i1}=\max(pre_w,sum+a_i)+b_i$&lt;br&gt;
+$w_{j1}=\max(w_{i1},sum+a_i+a_j)+b_j$&lt;br&gt;
+此状态的&lt;code&gt;ans&lt;/code&gt;=$\max(w_{i1},w_{j1})=w_{j1}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果交换：$j$在$i$前&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;$
+\begin{matrix}
+a &amp;amp; b &amp;amp; c \&lt;br&gt;
+\vdots(sum) &amp;amp; \vdots &amp;amp; \vdots(pre_w) \&lt;br&gt;
+a_j &amp;amp; b_j &amp;amp; w_{j2} \&lt;br&gt;
+a_i &amp;amp; b_i &amp;amp; w_{i2} \&lt;br&gt;
+\vdots &amp;amp; \vdots &amp;amp; \vdots \&lt;br&gt;
+\end{matrix}
+$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;$w_{i2}=\max(w_{j2},sum+a_j+a_i)+b_i$&lt;br&gt;
+$w_{j2}=\max(pre_w,sum+a_j)+b_j$&lt;br&gt;
+此状态的&lt;code&gt;ans&lt;/code&gt;=$\max(w_{i2},w_{j2})=w_{i2}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;根据题意写出排序条件并化简，得到最终决策方案&lt;/p&gt;
+&lt;p&gt;题意要求使&lt;strong&gt;最大收益最小化&lt;/strong&gt;，&lt;br&gt;
+则&lt;strong&gt;排序条件&lt;/strong&gt;：$\max(w_{i1},w_{j1}) \le \max(w_{i2},w_{j2})$&lt;/p&gt;
+&lt;p&gt;开始化简：&lt;br&gt;
+$\max(w_{i1},w_{j1}) \le \max(w_{i2},w_{j2})$&lt;br&gt;
+$\implies w_{j1} \le w_{j2}$&lt;br&gt;
+$\implies \max(\sout{pre_w+b_i+b_j},\underline{sum+a_i}+b_i+\underline{b_j},\underline{sum+a_i}+a_j+\underline{b_j}) \le \max(\sout{pre_w+b_j+b_i},\underline{sum+a_j}+b_j+\underline{b_i},\underline{sum+a_j}+a_i+\underline{b_i})$&lt;br&gt;
+【删除线的部分代表根据相同无关原则可以消去；下划线的部分代表根据结合性可以提出来】&lt;br&gt;
+$\implies \max(b_i,a_j)+sum+a_i+b_j \le \max(b_j,a+i)+sum+a_j+b_i$&lt;br&gt;
+$\implies \max(b_i,a_j)-a_j-b_i \le \max(b_j,a_i)-a_i-b_j$&lt;br&gt;
+$\implies \max(-a_j,-b_i) \le \max(-a_i,-b_j)$&lt;br&gt;
+$\implies -\min(a_j,b_i) \le -\min(a_i,b_j)$&lt;br&gt;
+$\implies \min(a_j,b_i) &amp;gt; \min(a_i,b_j)$&lt;/p&gt;
+&lt;p&gt;最终的&lt;strong&gt;决策条件&lt;/strong&gt;：$\min(a_j,b_i) &amp;gt; \min(a_i,b_j)$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;那就开写呗……&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;然后交上去会WA，80分。&lt;br&gt;
+证明我们这种方法&lt;strong&gt;有思路缺陷&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;错误分析&#34;&gt;错误分析&lt;/h3&gt;
+&lt;p&gt;这里便不满足严格弱序的&lt;strong&gt;相等传递性&lt;/strong&gt;这个性质。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当取$i,j$时，若$\min(a_i,b_j)=\min(a_j,b_i)$，&lt;br&gt;
+当取$j,k$时，若$\min(a_j,b_k)=\min(a_k,b_j)$，&lt;br&gt;
+则需要满足：取$i,k$时，$\min(a_i,b_k)=\min(a_k,b_i)$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;反例：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;$a$&lt;/th&gt;
+&lt;th&gt;$b$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$i$&lt;/td&gt;
+&lt;td&gt;$3$&lt;/td&gt;
+&lt;td&gt;$5$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$j$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$k$&lt;/td&gt;
+&lt;td&gt;$7$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;虽然$\min(a_i,b_j)=\min(a_j,b_i)$和$\min(a_j,b_k)=\min(a_k,b_j)$都满足，&lt;br&gt;
+但却不满足$\min(a_i,b_k)=\min(a_k,b_i)$。&lt;br&gt;
+【只需要让$a_j,b_j$相等，就可以构建众多反例。】&lt;/p&gt;
+&lt;h4 id=&#34;错误根本原因新内容&#34;&gt;错误根本原因（新内容！）&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;为什么不满足严格弱序中传递性就会造成错误&lt;/strong&gt;：
+&lt;blockquote&gt;
+&lt;p&gt;因为&lt;code&gt;sort&lt;/code&gt;实现时，采用了&lt;strong&gt;分治&lt;/strong&gt;的思想。&lt;br&gt;
+会将数据分为两个部分，对两个部分进行排序，然后使数列直接有序。&lt;br&gt;
+但问题就刚好出在这个“直接有序”上。&lt;/p&gt;
+&lt;p&gt;之所以在左右都有序后，会认为整个数列直接有序，&lt;br&gt;
+就是因为利用了&lt;strong&gt;严格弱序中的传递性&lt;/strong&gt;：&lt;br&gt;
+认为$X &amp;lt; Y,Y &amp;lt; Z$，则$X &amp;lt; Z$，&lt;br&gt;
+以及$X = Y,Y = Z$，则$X = Z$。&lt;/p&gt;
+&lt;p&gt;但假如不满足的第一条的话，分治处理过后：&lt;br&gt;
+左侧的数是小于中间的，中间的数也是小于右边的，但左侧的是却不一定小于右边的了。&lt;br&gt;
+会造成很严重的合并后错误。&lt;/p&gt;
+&lt;p&gt;但假如不满足的第二条的话，分治处理过后：&lt;br&gt;
+如果&lt;strong&gt;都是小于条件&lt;/strong&gt;，根据第一条可推合并后也有序，&lt;strong&gt;没有问题&lt;/strong&gt;。
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 这也就是为什么我们这个方法还能得部分分的原因——决策判断时没判断出相等。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;但一旦&lt;strong&gt;出现等于条件&lt;/strong&gt;的情况，则不&lt;strong&gt;能推得左边的也等于右边的&lt;/strong&gt;，&lt;br&gt;
+同时$X=Y, Y&amp;lt;Z \implies X&amp;lt;Z$、$X&amp;lt;Y, Y=Z \implies X&amp;lt;Z$也无法推得。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;举例：判断条件为$\min(a_i,b_j) &amp;lt; \min(a_j,b_i)$【就本题我们推的条件……
+对以下两组数据：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;$a$&lt;/th&gt;
+&lt;th&gt;$b$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$i$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$j$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$k$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;其中$X(i,j)=Y(j,i),Y(j,k)&amp;lt;Z(k,j)$，但$X(i,k) \not&amp;lt; Z(k,i)$，为$X=Z$。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;$a$&lt;/th&gt;
+&lt;th&gt;$b$&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;$i$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$j$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;$k$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;其中$X(i,j)&amp;lt;Y(j,i),Y(j,k)=Z(k,j)$，但$X(i,k) \not&amp;lt; Z(k,i)$，为$X=Z$。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么&lt;strong&gt;不满足传递性&lt;/strong&gt;，就会导致&lt;strong&gt;虽然序列大部分满足决策条件&lt;/strong&gt;，但&lt;strong&gt;并不是任意两项都满足条件的&lt;/strong&gt;。&lt;br&gt;
+而回到我们贪心的基本要求：需要&lt;strong&gt;任意两个元素都满足决策条件&lt;/strong&gt;。&lt;br&gt;
+故会造成错误。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;改进方法&#34;&gt;改进方法&lt;/h3&gt;
+&lt;p&gt;其实上述主要问题都归结于我们&lt;strong&gt;对相等状况的定义模棱两可&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于满足严格弱序中的传递性的数据来说：&lt;br&gt;
+出现相等状况，&lt;strong&gt;交换或者不交换都无所谓&lt;/strong&gt;，因为可以通过传递性证得交换后对数列无影响。&lt;br&gt;
+所以可以保持这种模棱两可的定义。
+&lt;blockquote&gt;
+&lt;p&gt;也就是说这种数据，我们即使将判断中的不取等判断&lt;strong&gt;改为取等的判断&lt;/strong&gt;，也依旧&lt;strong&gt;不会有影响&lt;/strong&gt;。只不过会多交换几次，让&lt;strong&gt;状态变得不同&lt;/strong&gt;，但最终结果一致。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;对于不满足严格弱序中的传递性的数据来说：&lt;br&gt;
+我们就必须对相等状况作出严格的操作规定了，否则&lt;strong&gt;两种不同的状态&lt;/strong&gt;会导致数据&lt;strong&gt;最终结果的不一致&lt;/strong&gt;。&lt;br&gt;
+也就是说我们要对&lt;strong&gt;相等状况&lt;/strong&gt;进行&lt;strong&gt;特判&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那么我们就来考虑在$\max(w_{i1},w_{j1}) = \max(w_{i2},w_{j2})$的相等条件下，又该加什么判断。&lt;br&gt;
+也就是说，除了这个很显然的条件在影响&lt;code&gt;ans&lt;/code&gt;外，还有没有什么可能影响&lt;code&gt;ans&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;根据个人看法不同，会有很多种可能的条件，以下列举两种正确的：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;会发现：$a$的前缀和会影响$\max(c_{i-1},\sum_{j=1}^ia_j)$这个的选择，从而影响$w_i$，从而影响&lt;code&gt;ans&lt;/code&gt;。&lt;br&gt;
+因为要找最小的&lt;code&gt;ans&lt;/code&gt;，所以我们**把$a$更小的放在前面**，这样就能让更加保证所得状态是最优的了。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;会发现：两种状态的前后两项$w$，后者是一样的【我们比较条件就是用的两状态的后者】，因此我们要让前者尽量小，从而确保&lt;code&gt;ans&lt;/code&gt;更小。&lt;br&gt;
+所以我们&lt;strong&gt;把$b$更小的放在前面&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;那么假如这两个条件判断出来也是相等的，需不需要再特判呢？
+&lt;blockquote&gt;
+&lt;p&gt;假如$\min(a_j,b_i) = \min(a_i,b_j)$和$a_i = a_j$（或者$b_i = b_j$）同时满足，&lt;br&gt;
+则可以推出$a_i=a_j,b_i=b_j$，也就是这两项的数据完全一致，并不是比较用数据一致，因此我们这里也可以即交换又不交换，保持模棱两可定义。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;很特殊的hack数据&#34;&gt;很特殊的hack数据&lt;/h3&gt;
+&lt;p&gt;在这里，我们会惊讶地发现，如果&lt;strong&gt;用选择排序的话&lt;/strong&gt;，虽然是会&lt;code&gt;TLE&lt;/code&gt;，但其&lt;strong&gt;结果是正确的&lt;/strong&gt;。&lt;br&gt;
+【相关原因请查看后面的「有关排序的深层理解」部分】&lt;/p&gt;
+&lt;p&gt;个人发现了选择排序答案是正确的后，对各种排序的实现展开了思考和实验。&lt;/p&gt;
+&lt;p&gt;认为像快速排序或归并排序等，是因为采用典型的分治思想才导致需要满足严格弱序的。&lt;br&gt;
+那么对于其他排序方法比如“希尔排序”、“堆排序”、“锦标赛排序”等是否不需要满足严格弱序呢？&lt;br&gt;
+【这里没考虑“计数排序”、“基数排序”和“桶排序”这三种非比较式排序算法。因为这里没有关键字，无法使用这三种排序方法。&lt;/p&gt;
+&lt;p&gt;所以在实验的时候就弄出了一些其他的hack数据，&lt;br&gt;
+然后其中发现了一组很特殊的hack数据！&lt;em&gt;(:з」∠)&lt;/em&gt;……&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;数据：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1&lt;br&gt;
+5&lt;/p&gt;
+&lt;p&gt;9 7&lt;br&gt;
+1 1&lt;br&gt;
+4 5&lt;br&gt;
+1 2&lt;br&gt;
+6 5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;*以下表格中的option表示$\max(c_{i-1},\sum_{j=1}^ia_j)$选择的哪个*。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;标准答案：&lt;code&gt;27&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;利用选择排序后的结果&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;$a$&lt;/th&gt;
+&lt;th&gt;$b$&lt;/th&gt;
+&lt;th&gt;$c$&lt;/th&gt;
+&lt;th&gt;option&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;td&gt;$3$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$4$&lt;/td&gt;
+&lt;td&gt;$c$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;$4$&lt;/td&gt;
+&lt;td&gt;$5$&lt;/td&gt;
+&lt;td&gt;$11$&lt;/td&gt;
+&lt;td&gt;$\sum a$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;$9$&lt;/td&gt;
+&lt;td&gt;$7$&lt;/td&gt;
+&lt;td&gt;$22$&lt;/td&gt;
+&lt;td&gt;$\sum a$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;$6$&lt;/td&gt;
+&lt;td&gt;$5$&lt;/td&gt;
+&lt;td&gt;$27$&lt;/td&gt;
+&lt;td&gt;$c$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;特殊性&lt;br&gt;
+我们如果排序成：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;$a$&lt;/th&gt;
+&lt;th&gt;$b$&lt;/th&gt;
+&lt;th&gt;$c$&lt;/th&gt;
+&lt;th&gt;option&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;$4$&lt;/td&gt;
+&lt;td&gt;$5$&lt;/td&gt;
+&lt;td&gt;$9$&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$2$&lt;/td&gt;
+&lt;td&gt;$11$&lt;/td&gt;
+&lt;td&gt;$c$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;$9$&lt;/td&gt;
+&lt;td&gt;$7$&lt;/td&gt;
+&lt;td&gt;$21$&lt;/td&gt;
+&lt;td&gt;$\sum a$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$1$&lt;/td&gt;
+&lt;td&gt;$22$&lt;/td&gt;
+&lt;td&gt;$c$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;$6$&lt;/td&gt;
+&lt;td&gt;$5$&lt;/td&gt;
+&lt;td&gt;$27$&lt;/td&gt;
+&lt;td&gt;$c$&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;会发现$1$和$2$（$i=1,j=2$）这两组数据，&lt;br&gt;
+&lt;strong&gt;其实是不满足$\min(a_i,b_j) &amp;lt; \min(a_j,b_i)$这个条件的！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;故这也告诉了我们：最优解也&lt;strong&gt;可能存在有两项不满足决策条件&lt;/strong&gt;的状态。&lt;br&gt;
+【更准确叙述请查看后面的「有关贪心决策的满足度影响」部分】&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;有关自己使用其他排序方法验证的代码，以及其他两组hack数据可见&lt;a class=&#34;link&#34; href=&#34;https://paste.ubuntu.com/p/KjHc2bMCj6/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pastebin&lt;/a&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;决策条件是否正确的判断方法&#34;&gt;决策条件是否正确的判断方法&lt;/h2&gt;
+&lt;h3 id=&#34;1条件检查器&#34;&gt;1、条件检查器&lt;/h3&gt;
+&lt;p&gt;基于以上分析，我们发现：&lt;br&gt;
+如果按上述“基本决策寻找方法”得到的决策条件$P$是正确的，必须要满足基本的排序型贪心的条件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数列&lt;strong&gt;任意两项满足决策条件&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果决策条件$P$满足以下条件，则可证得排序后一定满足该基本条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;满足严格弱序中的&lt;strong&gt;两个传递性&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;根据以上一点，我们可以编写一个条件检查器。&lt;br&gt;
+【这个条件检查器的方法是参考自&lt;a class=&#34;link&#34; href=&#34;%28https://ouuan.github.io/post/%E6%B5%85%E8%B0%88%E9%82%BB%E9%A1%B9%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BA%94%E7%94%A8%E4%BB%A5%E5%8F%8A%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/#%E4%BD%BF%E7%94%A8%E9%82%BB%E9%A1%B9%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98%29&#34; &gt;“ouuan”的博客&lt;/a&gt;后了解的，个人在其基础之上有所修改并加入了注释……&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//构造第一组a,b数组数据：用来判断自反性
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//不满足自反性。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                           &lt;span class=&#34;c1&#34;&gt;//分析知这条对于贪心思路并不是很重要，所以注释了。但如果用sort就很重要。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                &lt;span class=&#34;c1&#34;&gt;//printf(&amp;#34;No irreflexivity: %d %d\n&amp;#34;, a[0], b[0]);
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;            &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+                &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//构造第二组a,b数组数据：用来判断非对称性
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//非对称性的判断
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;No asymmetric: %d %d %d %d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+                    &lt;span class=&#34;cm&#34;&gt;/* 这部分原本是判断 我们新的决策条件 与 最开始分析的决策条件 是否判断一致，但其实可以不用判断。
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                    //同理，在ouuan所写的判断器中：有一个关于「排序完成后任意交换相邻元素均不会使答案更优」这个的判断，但实际上如果满足了严格弱序一定也会满足这个条件，也不用判断。
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                    bool our_judge = cmp(0, 1),
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                         real_judge = min(a[0], b[1]) &amp;lt; min(a[1], b[0]),
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                         if_equal = min(a[0], b[1]) == min(a[1], b[0]);
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                    //注意这里真实判断（以决策条件判断），如果为0：有可能真的不满足，但也有可能是相等情况；如果为1：那就一定是满足
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                    //所以我们要加个if_equal，如果是相同状况则不判断是否与真是判断相同
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                    if (!if_equal &amp;amp;&amp;amp; our_judge != real_judge) //与真正决策条件判断不同
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                        printf(&amp;#34;Not correct(%s): %d %d %d %d\n&amp;#34;, (our_judge == 1 ? &amp;#34;We judge it&amp;#39;s right, but truth is wrong.&amp;#34; : &amp;#34;We judge it&amp;#39;s wrong, but truth is right&amp;#34;), a[0], b[0], a[1], b[1]);
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                    */&lt;/span&gt;
+                    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//构造第三组a,b数据：用来判断传递性
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt;
+                        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                            &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag_inequ&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+                                 &lt;span class=&#34;n&#34;&gt;flag_equ&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+                            &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                 &lt;span class=&#34;n&#34;&gt;cmp_12&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                 &lt;span class=&#34;n&#34;&gt;cmp_02&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+                            &lt;span class=&#34;c1&#34;&gt;//注意我们判断两状态是否是用的!cmp(i,j) &amp;amp;&amp;amp; !cmp(j,i)（非对称性的利用）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                            &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euqal_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                 &lt;span class=&#34;n&#34;&gt;euqal_12&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                 &lt;span class=&#34;n&#34;&gt;euqal_02&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+                            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp_12&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euqal_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euqal_12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp_02&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//不符合不等传递性
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                            &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                                &lt;span class=&#34;cm&#34;&gt;/* 怎么才算符合不等传递性：
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                1 1 -&amp;gt; 1
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                1 0 -&amp;gt; ? (2 &amp;lt; 7, 7 \not&amp;lt; 5 ---&amp;gt; 2 &amp;lt; 5)(2 &amp;lt; 7, 7 \not&amp;lt; 1 ---&amp;gt; 2 \not&amp;lt; 1)
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                0 1 -&amp;gt; ? (Same way)
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                0 0 -&amp;gt; 0 //但要注意这里cmp为0：有可能是不满足，也有可能是因为等于的情况。所以要加!euqal来排除等于情况
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                */&lt;/span&gt;
+                                &lt;span class=&#34;n&#34;&gt;flag_inequ&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+                                &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;No transitivity of inequivalence: %d %d %d %d %d %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+                            &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+                            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euqal_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euqal_12&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euqal_01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euqal_12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euqal_02&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//相等传递性
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                            &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                                &lt;span class=&#34;cm&#34;&gt;/* 怎么才算符合相等传递性：
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                1 1 -&amp;gt; 1
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                1 0 -&amp;gt; 0
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                0 1 -&amp;gt; 0
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                0 0 -&amp;gt; ? (2 ≠ 3, 3 ≠ 2 ---&amp;gt; 2 = 2)//这个很好知道吧【…… 
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;                                */&lt;/span&gt;
+                                &lt;span class=&#34;n&#34;&gt;flag_equ&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+                                &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;No transitivity of equivalence: %d %d %d %d %d %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+                            &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+                            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;flag_inequ&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag_equ&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//私货：求证如果满足不等传递性，但不满足相等传递性，是否X=Y,Y&amp;lt;Z---&amp;gt;X&amp;lt;Z；X&amp;lt;Y,Y=Z---&amp;gt;X&amp;lt;Z？
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                            &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                                &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;===In Case===&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+                                &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euqal_cmp01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                     &lt;span class=&#34;n&#34;&gt;ineuq_cmp01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                     &lt;span class=&#34;n&#34;&gt;euqal_cmp12&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                     &lt;span class=&#34;n&#34;&gt;ineuq_cmp12&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                     &lt;span class=&#34;n&#34;&gt;euqal_cmp02&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+                                     &lt;span class=&#34;n&#34;&gt;ineuq_cmp02&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+                                &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euqal_cmp01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ineuq_cmp12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                                &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                                    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ineuq_cmp02&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euqal_cmp02&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                                        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;---X=Y,Y&amp;lt;Z---&amp;gt;X not&amp;lt; Z: %d %d %d %d %d %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+                                    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ineuq_cmp02&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                                        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;---X=Y,Y&amp;lt;Z---&amp;gt;X = Z: %d %d %d %d %d %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+                                &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+                                &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ineuq_cmp01&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;euqal_cmp12&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                                &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+                                    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ineuq_cmp02&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;euqal_cmp02&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                                        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;---X&amp;lt;Y,Y=Z---&amp;gt;X not&amp;lt; Z: %d %d %d %d %d %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+                                    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ineuq_cmp02&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                                        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;---X&amp;lt;Y,Y=Z---&amp;gt;X = Z: %d %d %d %d %d %d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+                                &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+                            &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+                        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+                &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;cm&#34;&gt;/* 展开式：【用来debug方便watch的……
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;    int min_ij = min(a[i], b[j]),
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;        min_ji = min(a[j], b[i]);
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;    bool ans = 0;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;    if (min_ij == min_ji)
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;        ans = a[i] &amp;lt; a[j];
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;    else
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;        ans = min_ij &amp;lt; min_ji;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;    return ans;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;    */&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;min&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;                                                    &lt;span class=&#34;c1&#34;&gt;//Case.1
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;//return min(a[i], b[j]) &amp;lt;= min(a[j], b[i]);                                                   //Case.2
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;//return min(a[i], b[j]) == min(a[j], b[i]) ? a[i] &amp;gt; a[j] : min(a[i], b[j]) &amp;lt; min(a[j], b[i]); //Case.3
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;//return min(a[i], b[j]) == min(a[j], b[i]) ? a[i] &amp;lt; a[j] : min(a[i], b[j]) &amp;lt; min(a[j], b[i]); //Case.4
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上述提到了：如果满足了严格弱序一定也会满足「排序完成后任意交换相邻元素均不会使答案更优」这个条件。&lt;br&gt;
+所以我并没有写上“ouuan”博客中的那个条件。&lt;br&gt;
+而且对于严格弱序，我也认为只用判断传递性即可。&lt;br&gt;
+【如果这种修改有误，请务必告诉我！……&lt;/p&gt;
+&lt;p&gt;因为决策条件$P$满足严格弱序后，我们按照$P$排序后，一定会使任意两项均满足$P$，则满足我们的贪心的思想，使得肯定这个状态是最优解状态。&lt;br&gt;
+【但这种口头解释没有严格证明可能没有说服力，可以自己在判断器里删掉注释然后验证一下_(:з」∠)_……&lt;/p&gt;
+&lt;h3 id=&#34;2与选择排序对拍&#34;&gt;2、与选择排序对拍&lt;/h3&gt;
+&lt;p&gt;当然，我们发现了：用选择排序的话结果是正确的。&lt;/p&gt;
+&lt;p&gt;所以我们也可以很快地写个选择排序，然后跟我们新的方法进行对拍。&lt;/p&gt;
+&lt;h1 id=&#34;其他补充点&#34;&gt;其他补充点&lt;/h1&gt;
+&lt;h2 id=&#34;有关排序的深层理解&#34;&gt;有关排序的深层理解&lt;/h2&gt;
+&lt;p&gt;我们发现&lt;strong&gt;选择排序用之前的条件&lt;/strong&gt;，虽然会TLE，但是是&lt;strong&gt;正确的&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;洛谷上测试状态【其余未放出的均AC】：&lt;br&gt;
+&lt;img src=&#34;./pic/Selection_status.png&#34; alt=&#34;Selection_status&#34;  /&gt;&lt;br&gt;
+将其两组数据放到本地测评：&lt;br&gt;
+&lt;img src=&#34;./pic/Selection_AC.png&#34; alt=&#34;Selection_AC&#34;  /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;主要就是因为排序这种绝对的$O(n^2)$的算法，是&lt;strong&gt;严格让所有数据都两两比较&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;正式因为其两两比较，使得不需要利用满足数据严格弱序的传递性。&lt;br&gt;
+不会像快排或归并等其他非$O(n^2)$的算法一样，利用严格弱序中的传递性，来对某些情况减少判断，达成了降低复杂度的办法。&lt;/p&gt;
+&lt;p&gt;也就是说，他们&lt;strong&gt;为了提高速度&lt;/strong&gt;，&lt;strong&gt;省略了一些比较&lt;/strong&gt;。代价就是数据必须要满足一定的条件，即严格弱序。&lt;/p&gt;
+&lt;p&gt;同样，就连冒泡排序这种本来也是$O(n^2)$的排序算法【但实际上并不是绝对的$O(n^2)$，其最坏是$\frac{(n-1)n}{2}$次操作】，&lt;br&gt;
+因为只是比较相邻的数据，并未严格任意两两比较。也是利用了传递性。&lt;/p&gt;
+&lt;h2 id=&#34;有关贪心决策的满足度影响&#34;&gt;有关贪心决策的满足度影响&lt;/h2&gt;
+&lt;p&gt;之前发现：&lt;/p&gt;
+&lt;p&gt;让&lt;strong&gt;任意两项都满足决策条件&lt;/strong&gt;，是&lt;strong&gt;一定是最优解&lt;/strong&gt;的。&lt;br&gt;
+但之前发现：如果&lt;strong&gt;存在两项不满足&lt;/strong&gt;，也有&lt;strong&gt;可能是最优解&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;也就是&lt;strong&gt;任意两项都满足&lt;/strong&gt;决策条件的这种状态，是&lt;strong&gt;最优解状态的一种&lt;/strong&gt;，为$∈$关系。&lt;/p&gt;
+&lt;p&gt;但我们&lt;strong&gt;只能去找任意两项均满足的这种状态&lt;/strong&gt;。因为对于存在两项不满足的，也有可能不是最优解，就成了概率问题。&lt;br&gt;
+【而这道题概率出来就是80分……&lt;/p&gt;
+&lt;h2 id=&#34;有关排序对严格弱序的不同要求&#34;&gt;有关排序对严格弱序的不同要求&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;$X \not&amp;lt; X$（比较条件非自反性）&lt;/li&gt;
+&lt;li&gt;若$X &amp;lt; Y$，则$Y \not&amp;lt; X$（比较条件非对称性）&lt;/li&gt;
+&lt;li&gt;若$X &amp;lt; Y,Y &amp;lt; Z$，则$X &amp;lt; Z$（比较条件不等&lt;strong&gt;传递性&lt;/strong&gt;）&lt;/li&gt;
+&lt;li&gt;若$X=Y,Y=Z$，则$X=Z$（比较条件相等&lt;strong&gt;传递性&lt;/strong&gt;）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;前面已经说了，对于1、2点，其实对于贪心的题目要求并不严格。&lt;br&gt;
+不满足的话只是会多交换几次，导致状态不同，但最终的&lt;code&gt;ans&lt;/code&gt;是一样的。&lt;/p&gt;
+&lt;p&gt;但某些算法要求必须要遵守1、2点。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;对于用STL库的&lt;code&gt;sort()&lt;/code&gt;：&lt;br&gt;
+其必须还要考虑1、2点&lt;strong&gt;非自反性和非对称性&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;因为内部的算法实现，对下标的判断需要用到这两个性质，否则会越界导致&lt;code&gt;RE&lt;/code&gt;。&lt;br&gt;
+【不过我没有具体去看函数内部的代码实现，只是根据网上搜的以及自己实验得出来的，不一定准确。但确实不考虑这两个的话会出现&lt;code&gt;RE&lt;/code&gt;……&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于其他非$O(n^2)$排序方法：&lt;br&gt;
+如：归并排序&lt;code&gt;merge&lt;/code&gt;：&lt;br&gt;
+则不用考虑1、2点。&lt;br&gt;
+【当然还是要根据自己的排序写法来判断是否需要满足1、2点……&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;有关传递性的简单判断&#34;&gt;有关传递性的简单判断&lt;/h2&gt;
+&lt;p&gt;我们排序比较时，只会比较两个元素，也就是两个下标，一般用$i,j$代表。&lt;br&gt;
+而&lt;strong&gt;排序（决策）条件&lt;/strong&gt;，也一定是与$a_i$和$a_j$的衍生关系。&lt;/p&gt;
+&lt;p&gt;那么排序条件的下标会有两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;一侧只有一个下标&lt;br&gt;
+形如：$cmp(x,y)=A_x?A_y$&lt;/p&gt;
+&lt;p&gt;当比较条件一侧只有一个下标的时候很好理解，就是普通的数列排序。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;单侧下标时&lt;/strong&gt;，两个下标的选择&lt;strong&gt;不会影响&lt;/strong&gt;其对应的&lt;strong&gt;比较用数据&lt;/strong&gt;的值，&lt;br&gt;
+故一般能符合&lt;strong&gt;比较条件不等传递性&lt;/strong&gt;和&lt;strong&gt;比较条件相等传递性&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;举例：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;条件为$a_i&amp;gt;a_j$&lt;br&gt;
+取$i,j$：$a_i=a_j$&lt;br&gt;
+取$j,k$：$a_j=a_k$&lt;br&gt;
+取$i,k$：$a_i=a_k$&lt;/li&gt;
+&lt;li&gt;条件为$a_i+a_{i+1}&amp;gt;a_j+a_{j+1}$&lt;br&gt;
+取$i,j$：$a_i+a_{i+1}=a_j+a_{j+1}$&lt;br&gt;
+取$j,k$：$a_j+a_{j+1}=a_k+a_{k+1}$&lt;br&gt;
+【则可直接推得$a_i+a_{i+1}=a_j+a_{j+1}=a_j+a_{j+1}=a_k+a_{k+1}$】&lt;br&gt;
+取$i,k$：$a_i+a_{i+1}=a_k+a_{k+1}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一侧两个下标都有&lt;br&gt;
+形如：$cmp(x,y)=A_{x,y}?A_{y,x}$&lt;/p&gt;
+&lt;p&gt;当一侧两种下标都有时，则不同下标的选择&lt;strong&gt;会影响&lt;/strong&gt;其对应的&lt;strong&gt;比较用数据&lt;/strong&gt;的值。&lt;br&gt;
+故需要具体判断是否&lt;strong&gt;比较条件传递性&lt;/strong&gt;和&lt;strong&gt;比较条件相等传递性&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;举例：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;条件为$a_i+a_{j+1}&amp;gt;a_j+a_{i+1}$&lt;br&gt;
+取$i,j$：$a_i+a_{j+1}=a_j+a_{i+1}$&lt;br&gt;
+取$j,k$：$a_j+a_{k+1}=a_k+a_{j+1}$&lt;br&gt;
+【不可直接推得$a_i+a_{j+1}=a_j+a_{i+1}=a_j+a_{k+1}=a_k+a_{j+1}$】&lt;br&gt;
+但可证得：取$i,k$：$a_i+a_{k+1}=a_k+a_{i+1}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;总结&#34;&gt;总结&lt;/h1&gt;
+&lt;p&gt;有关排序型贪心，最基本的条件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;数列&lt;strong&gt;任意两项满足决策条件&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而我们可以&lt;strong&gt;利用传递性&lt;/strong&gt;，只用分析相邻两项，来得到决策条件。&lt;/p&gt;
+&lt;p&gt;但在找到决策条件之后，要判定其&lt;strong&gt;是否满足&lt;/strong&gt;严格弱序中的“&lt;strong&gt;相等传递性&lt;/strong&gt;”和“&lt;strong&gt;不等传递性&lt;/strong&gt;”&lt;/p&gt;
+&lt;p&gt;因此题目解决大致思路方法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;找出每种状态的&lt;code&gt;ans&lt;/code&gt;，选邻项代入&lt;/li&gt;
+&lt;li&gt;假设相邻位置，写出两种状态的&lt;code&gt;ans&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;根据题意写出排序条件并化简，得到最终决策方案（不一定划到最简）&lt;/li&gt;
+&lt;li&gt;判断是否满足传递性&lt;/li&gt;
+&lt;li&gt;如满足：自定义结构体，重载&lt;code&gt;&amp;lt;&lt;/code&gt;运算符，使用&lt;code&gt;sort&lt;/code&gt;，遍历寻答案&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;以上部分参考自“ouuon”的&lt;a class=&#34;link&#34; href=&#34;https://ouuan.github.io/post/%E6%B5%85%E8%B0%88%E9%82%BB%E9%A1%B9%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BA%94%E7%94%A8%E4%BB%A5%E5%8F%8A%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「浅谈邻项交换排序的应用以及需要注意的问题」&lt;/a&gt;，以及“Joker&amp;amp;Liar”的&lt;a class=&#34;link&#34; href=&#34;https://www.cnblogs.com/17134h/p/12706408.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「浅谈邻项交换排序」&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;写在最后：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;真的没想到写了这么多orz……弄了整整四天来写这一个东西qwqqq……&lt;br&gt;
+写这么长而且也很混乱，估计以后自己或者其他人也根本看不下去吧x【……&lt;br&gt;
+不过其实这里面还是有很多新发现的。比如快速排序算法的快速原因，以及最珍贵的就是那个不符合任意两项满足条件但是也对的hack数据什么的……&lt;br&gt;
+也算是很深入地去理解贪心中这排序型贪心的本质……并且有一些也是在“ouuan”dalao博客里所没有的新发现，也算是比较安慰了【？……&lt;br&gt;
+就这样吧，最近刚好也发生了很多事……&lt;br&gt;
+按照自己的步调前行吧……&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
+        <title>贪心……</title>
+        <link>https://blog.supersassw.com/p/greedy/</link>
+        <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/greedy/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/greedy/80942286_p0.png" alt="Featured image of post 贪心……" /&gt;&lt;h1 id=&#34;贪心&#34;&gt;贪心&lt;/h1&gt;
+&lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;贪心，指的是决策时都采取&lt;strong&gt;当前最优解&lt;/strong&gt;的算法。&lt;br&gt;
+可以通过&lt;strong&gt;局部最优解&lt;/strong&gt;拓展得到&lt;strong&gt;全局最优解&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;用处&#34;&gt;用处&lt;/h2&gt;
+&lt;p&gt;寻找&lt;strong&gt;最优解&lt;/strong&gt;（如：找最大(小)值）&lt;/p&gt;
+&lt;h1 id=&#34;贪心类别&#34;&gt;贪心类别&lt;/h1&gt;
+&lt;h2 id=&#34;一排序型贪心&#34;&gt;一、排序型贪心&lt;/h2&gt;
+&lt;p&gt;这种类型就是通过给数据排序，不同的排序方法演绎下去就会有不同的答案&lt;code&gt;ans&lt;/code&gt;。&lt;br&gt;
+然后要比较所有排序方法，选让&lt;strong&gt;这些&lt;code&gt;ans&lt;/code&gt;的最值&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;为什么会想到排序？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;虽然我们只看重眼前利益选择当前的最优解，随时准备开冲去比较两者选获利最大的【指直接从头开始遍历然后选择】。&lt;/p&gt;
+&lt;p&gt;但这个时候我们暂且压一下枪理智一下：我们怎么知道我们现在选的是不是最优解呢？&lt;br&gt;
+也就是说，可能现在这两个中，我选了一个当前最优解，但实际上跟后面比起来，这两个都不是最优解。&lt;br&gt;
+也就是著名的苏格拉底的“拣麦穗的故事”。&lt;/p&gt;
+&lt;p&gt;所以我们以全局眼光来看这些数据，飞到这片麦田之上，就会发现：“哦~原来利益最大的在那个地方、第二大的又在另个地方……”&lt;br&gt;
+然后我们知道这些获利最大的点在哪里，就用原力把他们放到我们面前来，然后直接取走就行了。&lt;br&gt;
+或者说：我们先辛苦一下&lt;strong&gt;对这些数据排下序&lt;/strong&gt;，然后直接&lt;strong&gt;取最优结果&lt;/strong&gt;就可以了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;所以我们就能得到有关排序型贪心的定义：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;通过对数据，按照&lt;strong&gt;某种决策条件&lt;/strong&gt;排序，使得&lt;strong&gt;任意两项均满足&lt;/strong&gt;该决策条件，而找到最优解。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;实现方法&#34;&gt;实现方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;根据题意，分析每种状态的&lt;code&gt;ans&lt;/code&gt;如何计算，以及题目要求取&lt;code&gt;ans&lt;/code&gt;的什么最值。&lt;/li&gt;
+&lt;li&gt;采用邻项交换排序思想，选取相邻两项$i,i+1$，比较两种状态的&lt;code&gt;ans&lt;/code&gt;，选择最优的&lt;code&gt;ans&lt;/code&gt;。由此可以推出一种基于数据比较的&lt;strong&gt;决策方案&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;按照该决策方案排序，算出排序后状态的&lt;code&gt;ans&lt;/code&gt;值，即为结果。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;邻项交换排序&#34;&gt;邻项交换排序&lt;/h3&gt;
+&lt;p&gt;这一部分请查看&lt;a class=&#34;link&#34; href=&#34;../neighbor-sort/&#34; &gt;邻项交换排序&lt;/a&gt;笔记。&lt;/p&gt;
+&lt;h2 id=&#34;二反悔型贪心&#34;&gt;二、反悔型贪心&lt;/h2&gt;
+&lt;p&gt;依然是上面的引例：&lt;/p&gt;
+&lt;p&gt;【我管不了那么多了我现在就要开冲.jpg……&lt;/p&gt;
+&lt;p&gt;但一路冲下去，如果发现有比之前选择的更好的数据，&lt;br&gt;
+我们是不是就会觉得后悔，觉得如果之前不选那个而选这个该多好。&lt;/p&gt;
+&lt;p&gt;因此我们就可以从&lt;strong&gt;之前所选择的&lt;/strong&gt;当中，&lt;strong&gt;取一个最差的&lt;/strong&gt;，然后&lt;strong&gt;跟这个最好的换一下&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;这就是反悔贪心法的基本思路：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;无论当前的选项是否最优都先接受，然后继续往后进行比较。&lt;br&gt;
+如果发现有比之前选择更优的，则反悔，舍弃之前最差的换成这个选项；否则继续往后比较。直到序列遍历完。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;要记录之前所选择的，则一般采用&lt;strong&gt;优先队列&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>STL……</title>
+        <link>https://blog.supersassw.com/p/stl/</link>
+        <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/stl/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/stl/79059953_p0.png" alt="Featured image of post STL……" /&gt;&lt;h1 id=&#34;stl-详解&#34;&gt;STL 详解&lt;/h1&gt;
+&lt;h2 id=&#34;set集合&#34;&gt;set——集合&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;set&amp;lt;int&amp;gt; STL_set&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;set为关联容器。为一种体现集合性质的容器。&lt;/p&gt;
+&lt;p&gt;其中&lt;strong&gt;不允许有重复元素&lt;/strong&gt;。&lt;br&gt;
+并且set中的元素是&lt;strong&gt;排好序的&lt;/strong&gt;（升序）。&lt;/p&gt;
+&lt;h3 id=&#34;用法&#34;&gt;用法：&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;n&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;//---对整体的操作---
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;clear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//清空
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;empty&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回是否为空
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回元素个数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//---对元素的操作---
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;insert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//在集合中插入元素
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;erase&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//删除集合中的元素
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回元素的个数【由于set不能存在重复元素，故只能返回0或1
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//---迭代器---
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;begin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;		&lt;span class=&#34;c1&#34;&gt;//返回一个指向被查找到元素的迭代器，未找到返回set::end()
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lower_bound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回大于等于某值的第一个元素的迭代器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_set&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;upper_bound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回大于某个值元素的迭代器
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;自定义性&#34;&gt;自定义性：&lt;/h3&gt;
+&lt;p&gt;set可支持自定义类型，但需要重载&lt;code&gt;&amp;lt;&lt;/code&gt;运算符。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;type&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;//用来存棋盘状态
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;...;&lt;/span&gt;
+
+	&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...;&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;实现&#34;&gt;实现：&lt;/h3&gt;
+&lt;p&gt;内部以红黑树的形式实现。&lt;/p&gt;
+&lt;h3 id=&#34;应用场景&#34;&gt;应用场景：&lt;/h3&gt;
+&lt;p&gt;set就是关键字的简单集合。当只是想知道一个值是否存在时，set是最有用的。&lt;br&gt;
+同时可以实现数据去重。&lt;/p&gt;
+&lt;h3 id=&#34;衍生stl&#34;&gt;衍生STL：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;multiset: 关键字可重复出现的set。&lt;/li&gt;
+&lt;li&gt;unordered_set: 未排序的set（用hash函数组织）。&lt;/li&gt;
+&lt;li&gt;unordered_multiset: 未排序的可重复出现的set。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;map映射&#34;&gt;map——映射&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;map&amp;lt;int, int&amp;gt; STL_map&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;map为关联容器。为一种体现映射关系的容器，每个关键字对应一个值。&lt;/p&gt;
+&lt;p&gt;数据会根据&lt;strong&gt;键值大小关系排序&lt;/strong&gt;（升序）。&lt;/p&gt;
+&lt;p&gt;数据元素都是成对出现(&lt;code&gt;pair&lt;/code&gt;)。&lt;br&gt;
+每一对中的第一个值称之为关键字(key)（也称键值），每个&lt;strong&gt;关键字只能&lt;/strong&gt;在map中&lt;strong&gt;出现一次&lt;/strong&gt;。&lt;br&gt;
+第二个称之为该关键字的对应值(value)（也称实值）。&lt;/p&gt;
+&lt;h3 id=&#34;用法-1&#34;&gt;用法：&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;n&#34;&gt;map&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;string&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;//---初始构造---
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;b&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}};&lt;/span&gt;		&lt;span class=&#34;c1&#34;&gt;//为c++11标准
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//---数组操作---
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;25252&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;niconiconi&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//如果没有对应key则插入，如果已经存在则会修改value
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//---对整体的操作---
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;clear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;empty&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;c1&#34;&gt;//---对元素的操作---
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//insert过于麻烦不予讲解。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;erase&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//删除对应key的元素，成功删除返回1，否则返回0
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回对应key元素的个数【由于map不能存在重复key，故只能返回0或1
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//---迭代器---
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;begin&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回查找元素的迭代器，未找到返回map::end()
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;lower_bound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回key大于等于某值的第一个元素的迭代器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;STL_map&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;upper_bound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//返回key大于某个值元素的迭代器
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;自定义性-1&#34;&gt;自定义性：&lt;/h3&gt;
+&lt;p&gt;set可支持自定义类型，但需要重载&lt;code&gt;&amp;lt;&lt;/code&gt;运算符。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;type&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;//用来存棋盘状态
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;...;&lt;/span&gt;
+
+	&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...;&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;实现-1&#34;&gt;实现：&lt;/h3&gt;
+&lt;p&gt;内部以红黑树的形式实现。&lt;/p&gt;
+&lt;h3 id=&#34;应用场景-1&#34;&gt;应用场景：&lt;/h3&gt;
+&lt;p&gt;hash&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>排序……</title>
+        <link>https://blog.supersassw.com/p/sort/</link>
+        <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/sort/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/sort/86036732_p0.png" alt="Featured image of post 排序……" /&gt;&lt;h1 id=&#34;排序&#34;&gt;排序&lt;/h1&gt;
+&lt;h2 id=&#34;不考虑算法&#34;&gt;不考虑算法&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;选择排序、冒泡排序、插入排序 $O(n^2)$&lt;/li&gt;
+&lt;li&gt;计数排序、基数排序、桶排序 $O(n+w)$
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;a href=&#34;./template/Counting_Sort.cpp&#34;&gt;计数排序&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;希尔排序、锦标赛排序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;快速排序&#34;&gt;快速排序&lt;/h1&gt;
+&lt;h2 id=&#34;应用&#34;&gt;应用&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;寻找第k大的数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;归并排序&#34;&gt;归并排序&lt;/h1&gt;
+&lt;h2 id=&#34;应用-1&#34;&gt;应用&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;寻找逆序对&lt;br&gt;
+可见&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/qq_31029725/article/details/78073131&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;之前笔记&lt;/a&gt;。&lt;br&gt;
+&lt;em&gt;（有关逆序对的问题还可以用&lt;strong&gt;树状数组&lt;/strong&gt;或&lt;strong&gt;线段树&lt;/strong&gt;来解决。）&lt;/em&gt;
+&lt;ul&gt;
+&lt;li&gt;对于逆序对问题的抽象：
+&lt;ol&gt;
+&lt;li&gt;询问最少经过几次（可能为&lt;strong&gt;相邻元素交换&lt;/strong&gt;）交换，可使数列有序。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如果限制了为&lt;strong&gt;相邻元素交换&lt;/strong&gt;，最开始很容易想到采用冒泡排序来做，但这样$O(n^2)$很容易TLE……&lt;br&gt;
+发现即便是相邻交换，也是因为存在了逆序对才交换的……&lt;br&gt;
+而每次交换后，&lt;strong&gt;能且仅能消除一个逆序对&lt;/strong&gt;……&lt;br&gt;
+要使序列达到最终有序，则肯定需要消除全部逆序对……&lt;br&gt;
+故此类题目仍为求逆序对，且答案就为逆序对个数……&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;如果&lt;strong&gt;没有限制相邻元素交换&lt;/strong&gt;，那么处理一位数，就能&lt;strong&gt;消除这位数的所有逆序对个数&lt;/strong&gt;（与相邻交换的区别）&lt;br&gt;
+所以就变成了找&lt;strong&gt;存在逆序对的位&lt;/strong&gt;（简称：逆位）的个数。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;模板题：&lt;br&gt;
+P1908 &lt;a class=&#34;link&#34; href=&#34;https://www.luogu.com.cn/problem/P1908&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;逆序对&lt;/a&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;P1908.cpp&#34; &gt;本地代码+题目分析+归并排序讲解+WA记录&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;总应用&#34;&gt;总应用&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;贪心中的&lt;strong&gt;邻项交换排序&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;例题&#34;&gt;例题&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;P1774 &lt;a class=&#34;link&#34; href=&#34;https://www.luogu.com.cn/problem/P1774&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;最接近神的人&lt;/a&gt;
+&lt;blockquote&gt;
+&lt;p&gt;考点：归并排序、逆序对&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;%22../../../../Daily/11.25_P1774.cpp&#34; &gt;本地代码+题目分析+WA记录&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;SWJTU OJ-12.13 F &lt;a class=&#34;link&#34; href=&#34;https://oj.swjtu.edu.cn/contest/26/problem/F&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;XCPC&lt;/a&gt;
+&lt;blockquote&gt;
+&lt;p&gt;考点：归并排序、逆序对（没有相邻元素交换）&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;%22../../../../../Competition/12.13/F.cpp&#34; &gt;题目分析&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 以上部分本地链接无法加载，需要修正…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
+        <title>Shortcode测试……</title>
+        <link>https://blog.supersassw.com/p/test-shortcode/</link>
         <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://supersass.github.io/p/test-chinese/</guid>
-        <description>&lt;img src="https://supersass.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试&lt;/h2&gt;
+        <guid>https://blog.supersassw.com/p/test-shortcode/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/test-shortcode/78356827_p0.jpg" alt="Featured image of post Shortcode测试……" /&gt;&lt;h1 id=&#34;shortcode&#34;&gt;Shortcode&lt;/h1&gt;
+&lt;p&gt;Hugo的Shortcode的测试……&lt;/p&gt;
+&lt;p&gt;新增了Bilibili的链接……&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;不知道是什么的原文x：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hugo ships with several &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;详解&#34;&gt;详解&lt;/h2&gt;
+&lt;p&gt;使用方法类似于&lt;code&gt;Hexo&lt;/code&gt;当中的&lt;a class=&#34;link&#34; href=&#34;https://hexo.bootcss.com/docs/tag-plugins.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;标签插件（Tag Plugins）&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;有两种Shortcode的使用方法&lt;/p&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;为了表示出来，以下实例的两队&lt;code&gt;{}&lt;/code&gt;之间插入了空格……&lt;br&gt;
+使用的时候需要删除……&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;内嵌Shortcode&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;content&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Shortcode块&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; 
+&lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; \&lt;span class=&#34;nb&#34;&gt;type&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;对于内容的解析也有两种方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;内容解析为HTML&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;内容解析为Markdown&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;...&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;一般这个不常用，个人自写的所有Shotrcode都是基于&lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;来处理的……&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;功能测试&#34;&gt;功能测试&lt;/h2&gt;
+&lt;h2 id=&#34;youtube-privacy-enhanced-shortcode&#34;&gt;YouTube Privacy Enhanced Shortcode&lt;/h2&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe loading=&#34;lazy&#34; src=&#34;https://www.youtube.com/embed/u7L-grhaV5I&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;需要科学上网才能查看……&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;bilibili-simple-shortcode&#34;&gt;Bilibili Simple Shortcode&lt;/h2&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe loading=&#34;lazy&#34; src=&#34;https://player.bilibili.com/player.html?bvid=BV1754y1R7Nd&amp;high_quality=1&amp;page=1&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;Bilibili Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;使用方法：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;bilibili&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;BV1754y1R7Nd&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;默认为BV号。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可选参数：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;av = &amp;quot;...&amp;quot;&lt;/code&gt;：使用av号。&lt;br&gt;
+使用例：&lt;code&gt;&amp;lt; bilibli av=&amp;quot;10492&amp;quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hq = *&lt;/code&gt;：画质。0为低画质，1为高画质。（默认值为1）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p = *&lt;/code&gt;：视频选集。（默认值为1）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>页面测试……</title>
+        <link>https://blog.supersassw.com/p/test-chinese/</link>
+        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/test-chinese/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/test-chinese/Yande-331204.png" alt="Featured image of post 页面测试……" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试&lt;/h2&gt;
 &lt;p&gt;而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 我们不得不面对一个非常尴尬的事实，那就是， 可是，即使是这样，学生会退会的出现仍然代表了一定的意义。 学生会退会，发生了会如何，不发生又会如何。 经过上述讨论， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 学生会退会，到底应该如何实现。 这样看来， 在这种困难的抉择下，本人思来想去，寝食难安。 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 就我个人来说，学生会退会对我的意义，不能不说非常重大。 莎士比亚曾经提到过，人的一生是短的，但如果卑劣地过这一生，就太长了。这似乎解答了我的疑惑。 莫扎特说过一句富有哲理的话，谁和我一样用功，谁就会和我一样成功。这启发了我， 对我个人而言，学生会退会不仅仅是一个重大的事件，还可能会改变我的人生。 学生会退会，到底应该如何实现。 一般来说， 从这个角度来看， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 在这种困难的抉择下，本人思来想去，寝食难安。 了解清楚学生会退会到底是一种怎么样的存在，是解决一切问题的关键。 一般来说， 生活中，若学生会退会出现了，我们就不得不考虑它出现了的事实。 问题的关键究竟为何？ 而这些并不是完全重要，更加重要的问题是。&lt;/p&gt;
 &lt;p&gt;奥斯特洛夫斯基曾经说过，共同的事业，共同的斗争，可以使人们产生忍受一切的力量。　带着这句话，我们还要更加慎重的审视这个问题： 一般来讲，我们都必须务必慎重的考虑考虑。 既然如此， 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 带着这些问题，我们来审视一下学生会退会。 我认为， 我认为， 在这种困难的抉择下，本人思来想去，寝食难安。 问题的关键究竟为何？ 每个人都不得不面对这些问题。 在面对这种问题时， 要想清楚，学生会退会，到底是一种怎么样的存在。 我认为， 既然如此， 每个人都不得不面对这些问题。 在面对这种问题时， 那么， 我认为， 学生会退会因何而发生。&lt;/p&gt;
 &lt;h2 id=&#34;引用&#34;&gt;引用&lt;/h2&gt;
@@ -539,18 +1955,18 @@
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;图片&#34;&gt;图片&lt;/h2&gt;
 &lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://supersass.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34; data-size=&#34;667x1000&#34;&gt;
-			&lt;img srcset=&#34;https://supersass.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_480x0_resize_q75_box.jpg 480w, https://supersass.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1024x0_resize_q75_box.jpg 1024w&#34;
-				src=&#34;https://supersass.github.io/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34; width=&#34;667&#34; height=&#34;1000&#34; loading=&#34;lazy&#34;
+		&lt;a href=&#34;https://blog.supersassw.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34; data-size=&#34;667x1000&#34;&gt;
+			&lt;img srcset=&#34;https://blog.supersassw.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash_hu595aaf3b3dbbb41af5aed8d3958cc9f9_13854_1024x0_resize_q75_box.jpg 1024w&#34;
+				src=&#34;https://blog.supersassw.com/p/test-chinese/florian-klauer-nptLmg6jqDo-unsplash.jpg&#34; width=&#34;667&#34; height=&#34;1000&#34; loading=&#34;lazy&#34;
 				alt=&#34;Photo by Florian Klauer on Unsplash&#34;&gt;
 		&lt;/a&gt;
 		
 		&lt;figcaption&gt;Photo by Florian Klauer on Unsplash&lt;/figcaption&gt;
 		
 	&lt;/figure&gt;  &lt;figure&gt;
-		&lt;a href=&#34;https://supersass.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34; data-size=&#34;1000x667&#34;&gt;
-			&lt;img srcset=&#34;https://supersass.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_480x0_resize_q75_box.jpg 480w, https://supersass.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_1024x0_resize_q75_box.jpg 1024w&#34;
-				src=&#34;https://supersass.github.io/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34; width=&#34;1000&#34; height=&#34;667&#34; loading=&#34;lazy&#34;
+		&lt;a href=&#34;https://blog.supersassw.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34; data-size=&#34;1000x667&#34;&gt;
+			&lt;img srcset=&#34;https://blog.supersassw.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash_hu0a3f1163de68d0b9471979ebf0ecf11e_32400_1024x0_resize_q75_box.jpg 1024w&#34;
+				src=&#34;https://blog.supersassw.com/p/test-chinese/luca-bravo-alS7ewQ41M8-unsplash.jpg&#34; width=&#34;1000&#34; height=&#34;667&#34; loading=&#34;lazy&#34;
 				alt=&#34;Photo by Luca Bravo on Unsplash&#34;&gt;
 		&lt;/a&gt;
 		
@@ -558,18 +1974,18 @@
 		
 	&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;figure&gt;
-		&lt;a href=&#34;https://supersass.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34; data-size=&#34;1000x750&#34;&gt;
-			&lt;img srcset=&#34;https://supersass.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_480x0_resize_q75_box.jpg 480w, https://supersass.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_1024x0_resize_q75_box.jpg 1024w&#34;
-				src=&#34;https://supersass.github.io/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34; width=&#34;1000&#34; height=&#34;750&#34; loading=&#34;lazy&#34;
+		&lt;a href=&#34;https://blog.supersassw.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34; data-size=&#34;1000x750&#34;&gt;
+			&lt;img srcset=&#34;https://blog.supersassw.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash_hu45a5e3ad5e058da6a00650ed8fd40bea_15530_1024x0_resize_q75_box.jpg 1024w&#34;
+				src=&#34;https://blog.supersassw.com/p/test-chinese/helena-hertz-wWZzXlDpMog-unsplash.jpg&#34; width=&#34;1000&#34; height=&#34;750&#34; loading=&#34;lazy&#34;
 				alt=&#34;Photo by Helena Hertz on Unsplash&#34;&gt;
 		&lt;/a&gt;
 		
 		&lt;figcaption&gt;Photo by Helena Hertz on Unsplash&lt;/figcaption&gt;
 		
 	&lt;/figure&gt;  &lt;figure&gt;
-		&lt;a href=&#34;https://supersass.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34; data-size=&#34;667x1000&#34;&gt;
-			&lt;img srcset=&#34;https://supersass.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_480x0_resize_q75_box.jpg 480w, https://supersass.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_1024x0_resize_q75_box.jpg 1024w&#34;
-				src=&#34;https://supersass.github.io/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34; width=&#34;667&#34; height=&#34;1000&#34; loading=&#34;lazy&#34;
+		&lt;a href=&#34;https://blog.supersassw.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34; data-size=&#34;667x1000&#34;&gt;
+			&lt;img srcset=&#34;https://blog.supersassw.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash_hub241c2a9c7a2caf7e16a2a5bbc7141ff_18711_1024x0_resize_q75_box.jpg 1024w&#34;
+				src=&#34;https://blog.supersassw.com/p/test-chinese/hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&#34; width=&#34;667&#34; height=&#34;1000&#34; loading=&#34;lazy&#34;
 				alt=&#34;Photo by Hudai Gayiran on Unsplash&#34;&gt;
 		&lt;/a&gt;
 		
@@ -581,54 +1997,6 @@
 ![&lt;span class=&#34;nt&#34;&gt;Photo by Helena Hertz on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;helena-hertz-wWZzXlDpMog-unsplash.jpg&lt;/span&gt;)  ![&lt;span class=&#34;nt&#34;&gt;Photo by Hudai Gayiran on Unsplash&lt;/span&gt;](&lt;span class=&#34;na&#34;&gt;hudai-gayiran-3Od_VKcDEAA-unsplash.jpg&lt;/span&gt;)
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;相册语法来自 &lt;a class=&#34;link&#34; href=&#34;https://typlog.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Typlog&lt;/a&gt;&lt;/p&gt;
-</description>
-        </item>
-        <item>
-        <title>Shortcode Test</title>
-        <link>https://supersass.github.io/p/test-shortcode/</link>
-        <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
-        
-        <guid>https://supersass.github.io/p/test-shortcode/</guid>
-        <description>&lt;img src="https://supersass.github.io/p/test-shortcode/78356827_p0.jpg" alt="Featured image of post Shortcode Test" /&gt;&lt;h1 id=&#34;shortcode&#34;&gt;Shortcode&lt;/h1&gt;
-&lt;p&gt;Hugo的Shortcode的测试……&lt;/p&gt;
-&lt;p&gt;新增了Bilibili的链接……&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;不知道是什么的原文x：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Hugo ships with several &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;youtube-privacy-enhanced-shortcode&#34;&gt;YouTube Privacy Enhanced Shortcode&lt;/h2&gt;
-
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe loading=&#34;lazy&#34; src=&#34;https://www.youtube.com/embed/ZJthWmvUzzc&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;hr&gt;
-&lt;h2 id=&#34;bilibili-simple-shortcode&#34;&gt;Bilibili Simple Shortcode&lt;/h2&gt;
-&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
-  &lt;iframe loading=&#34;lazy&#34; src=&#34;https://player.bilibili.com/player.html?bvid=BV1754y1R7Nd&amp;high_quality=1&amp;page=1&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;Bilibili Video&#34;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;使用方法：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;bilibili&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;BV1754y1R7Nd&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;外部加上两对大括号&lt;code&gt;{}&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;默认为BV号。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;可选参数：
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;av = &amp;quot;...&amp;quot;&lt;/code&gt;：使用av号。&lt;br&gt;
-使用例：&lt;code&gt;&amp;lt; bilibli av=&amp;quot;10492&amp;quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hq = *&lt;/code&gt;：画质。0为低画质，1为高画质。（默认值为1）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;p = *&lt;/code&gt;：视频选集。（默认值为1）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 </description>
         </item>
         

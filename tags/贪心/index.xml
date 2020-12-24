@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>贪心 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E8%B4%AA%E5%BF%83/</link>
+    <description>Recent content in 贪心 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E8%B4%AA%E5%BF%83/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>邻项比较排序……</title>
+      <link>https://blog.supersassw.com/p/neighbor-sort/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/neighbor-sort/</guid>
+      <description>邻项比较排序 定义 本来的排序型贪心，我们需要任意两个项都满足决策条件。 但我们发现，如果数列每对相邻两项都满足决策条件，根据不等式的传递性，那么</description>
+    </item>
+    
+    <item>
+      <title>贪心……</title>
+      <link>https://blog.supersassw.com/p/greedy/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/greedy/</guid>
+      <description>贪心 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通过局部最优解拓展得到全局最优解。 用处 寻找最优解（如：找最大(小)值） 贪心类别 一、排序</description>
+    </item>
+    
+  </channel>
+</rss>

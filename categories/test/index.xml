@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>测试 on Super SASS……</title>
+    <link>https://blog.supersassw.com/categories/test/</link>
+    <description>Recent content in 测试 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/test/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Timeline测试……</title>
+      <link>https://blog.supersassw.com/p/test-timeline/</link>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/test-timeline/</guid>
+      <description>Timeline…… 时间线标签的移植测试…… 测试 总历程…… 2020-12-24 19:00提出构想…… 这个时间线好好看啊，我也要实现！…… 这里面还能套娃哦x……</description>
+    </item>
+    
+    <item>
+      <title>NoteBlock测试……</title>
+      <link>https://blog.supersassw.com/p/test-note/</link>
+      <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/test-note/</guid>
+      <description>Note测试…… 对Hexo中Volantis主题的note移植测试…… NoteBlock 是 Blockquote 的增强版，在左边显示图标，并且可以自定颜色。 长Note 适用于需要</description>
+    </item>
+    
+    <item>
+      <title>音乐播放器……</title>
+      <link>https://blog.supersassw.com/p/test-player/</link>
+      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/test-player/</guid>
+      <description>音乐播放器 采用的APlayer的外链播放器…… 默认会显示在文章顶部…… 如需用吸底模式，请在第一个参数输入-fixed: 1……</description>
+    </item>
+    
+    <item>
+      <title>Shortcode测试……</title>
+      <link>https://blog.supersassw.com/p/test-shortcode/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/test-shortcode/</guid>
+      <description>Shortcode Hugo的Shortcode的测试…… 新增了Bilibili的链接…… 不知道是什么的原文x： Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static</description>
+    </item>
+    
+    <item>
+      <title>页面测试……</title>
+      <link>https://blog.supersassw.com/p/test-chinese/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/test-chinese/</guid>
+      <description>正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的</description>
+    </item>
+    
+  </channel>
+</rss>

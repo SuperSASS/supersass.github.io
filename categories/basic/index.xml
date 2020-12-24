@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础部分 on Super SASS……</title>
+    <link>https://blog.supersassw.com/categories/basic/</link>
+    <description>Recent content in 基础部分 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/basic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>邻项比较排序……</title>
+      <link>https://blog.supersassw.com/p/neighbor-sort/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/neighbor-sort/</guid>
+      <description>邻项比较排序 定义 本来的排序型贪心，我们需要任意两个项都满足决策条件。 但我们发现，如果数列每对相邻两项都满足决策条件，根据不等式的传递性，那么</description>
+    </item>
+    
+    <item>
+      <title>贪心……</title>
+      <link>https://blog.supersassw.com/p/greedy/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/greedy/</guid>
+      <description>贪心 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通过局部最优解拓展得到全局最优解。 用处 寻找最优解（如：找最大(小)值） 贪心类别 一、排序</description>
+    </item>
+    
+    <item>
+      <title>STL……</title>
+      <link>https://blog.supersassw.com/p/stl/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/stl/</guid>
+      <description>STL 详解 set——集合 set&amp;lt;int&amp;gt; STL_set set为关联容器。为一种体现集合性质的容器。 其中不允许有重复元素。 并且set中的元素是排好序的（升序）。 用法： set&amp;lt;int&amp;gt; STL_set; /</description>
+    </item>
+    
+    <item>
+      <title>排序……</title>
+      <link>https://blog.supersassw.com/p/sort/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/sort/</guid>
+      <description>排序 不考虑算法 选择排序、冒泡排序、插入排序 $O(n^2)$ 计数排序、基数排序、桶排序 $O(n+w)$ 计数排序 希尔排序、锦标赛排序 快速排序 应用 寻找第k大的数 归并排序 应用 寻</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+<head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='贪心算法的讲解……'><title>贪心……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/greedy/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='贪心……'>
+<meta property='og:description' content='贪心算法的讲解……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/greedy/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='基础部分' /><meta property='article:tag' content='贪心' /><meta property='article:published_time' content='2020-12-14T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-16T23:19:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/greedy/80942286_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="贪心……">
+<meta name="twitter:description" content="贪心算法的讲解……"><meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content='https://blog.supersassw.com/p/greedy/80942286_p0.png' />
+<link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+
+
+<body class="" data-scheme="">
+    
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+    <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+
+        
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        
+        <li id="dark-mode-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+            <span>夜间模式</span>
+        </li>
+    </ol>
+</aside>
+
+
+        
+        <main class="main full-width">
+            
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>上一个页面</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <img srcset="/p/greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_1024x0_resize_box_2.png 1024w, /p/greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_2000x0_resize_box_2.png 2000w"
+                    src="/p/greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_2000x0_resize_box_2.png" width="2000" height="1125" loading="lazy"
+                    alt="Featured image of post 贪心……" />
+            
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+        <a href="/categories/basic/" class="color-tag" data-image="/p/greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_20x20_fill_box_smart1_2.png"
+            data-key="greedy" data-hash="md5-9Kzg8B0Z3M5oH9zlHMl9CA==">
+            基础部分
+        </a>
+        
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/greedy/">贪心……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        贪心算法的讲解……
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/12/14</time>
+    </footer>
+    <footer class="article-readingTime-container">
+        <div class="article-readingTime-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime-right">
+            <div class="char">文章字数：886</div>
+            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+
+</header>
+
+    <section class="article-content">
+    <h1 id="贪心">贪心</h1>
+<h2 id="定义">定义</h2>
+<p>贪心，指的是决策时都采取<strong>当前最优解</strong>的算法。<br>
+可以通过<strong>局部最优解</strong>拓展得到<strong>全局最优解</strong>。</p>
+<h2 id="用处">用处</h2>
+<p>寻找<strong>最优解</strong>（如：找最大(小)值）</p>
+<h1 id="贪心类别">贪心类别</h1>
+<h2 id="一排序型贪心">一、排序型贪心</h2>
+<p>这种类型就是通过给数据排序，不同的排序方法演绎下去就会有不同的答案<code>ans</code>。<br>
+然后要比较所有排序方法，选让<strong>这些<code>ans</code>的最值</strong>。</p>
+<ul>
+<li>
+<p>为什么会想到排序？</p>
+<blockquote>
+<p>虽然我们只看重眼前利益选择当前的最优解，随时准备开冲去比较两者选获利最大的【指直接从头开始遍历然后选择】。</p>
+<p>但这个时候我们暂且压一下枪理智一下：我们怎么知道我们现在选的是不是最优解呢？<br>
+也就是说，可能现在这两个中，我选了一个当前最优解，但实际上跟后面比起来，这两个都不是最优解。<br>
+也就是著名的苏格拉底的“拣麦穗的故事”。</p>
+<p>所以我们以全局眼光来看这些数据，飞到这片麦田之上，就会发现：“哦~原来利益最大的在那个地方、第二大的又在另个地方……”<br>
+然后我们知道这些获利最大的点在哪里，就用原力把他们放到我们面前来，然后直接取走就行了。<br>
+或者说：我们先辛苦一下<strong>对这些数据排下序</strong>，然后直接<strong>取最优结果</strong>就可以了。</p>
+</blockquote>
+</li>
+</ul>
+<p>所以我们就能得到有关排序型贪心的定义：</p>
+<blockquote>
+<p>通过对数据，按照<strong>某种决策条件</strong>排序，使得<strong>任意两项均满足</strong>该决策条件，而找到最优解。</p>
+</blockquote>
+<h3 id="实现方法">实现方法</h3>
+<ol>
+<li>根据题意，分析每种状态的<code>ans</code>如何计算，以及题目要求取<code>ans</code>的什么最值。</li>
+<li>采用邻项交换排序思想，选取相邻两项$i,i+1$，比较两种状态的<code>ans</code>，选择最优的<code>ans</code>。由此可以推出一种基于数据比较的<strong>决策方案</strong>。</li>
+<li>按照该决策方案排序，算出排序后状态的<code>ans</code>值，即为结果。</li>
+</ol>
+<h3 id="邻项交换排序">邻项交换排序</h3>
+<p>这一部分请查看<a class="link" href="../neighbor-sort/" >邻项交换排序</a>笔记。</p>
+<h2 id="二反悔型贪心">二、反悔型贪心</h2>
+<p>依然是上面的引例：</p>
+<p>【我管不了那么多了我现在就要开冲.jpg……</p>
+<p>但一路冲下去，如果发现有比之前选择的更好的数据，<br>
+我们是不是就会觉得后悔，觉得如果之前不选那个而选这个该多好。</p>
+<p>因此我们就可以从<strong>之前所选择的</strong>当中，<strong>取一个最差的</strong>，然后<strong>跟这个最好的换一下</strong>。</p>
+<p>这就是反悔贪心法的基本思路：</p>
+<blockquote>
+<p>无论当前的选项是否最优都先接受，然后继续往后进行比较。<br>
+如果发现有比之前选择更优的，则反悔，舍弃之前最差的换成这个选项；否则继续往后比较。直到序列遍历完。</p>
+</blockquote>
+<ul>
+<li>要记录之前所选择的，则一般采用<strong>优先队列</strong>。</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86/">基础部分</a>
+        
+            <a href="/tags/%E8%B4%AA%E5%BF%83/">贪心</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2020/12/16 23:19
+        </span>
+    </section><section class="article-backgroundID">
+        <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+        <span class="article-background--pixivID">
+            文章封面配图Pixiv ID：80942286
+        </span>
+    </section></footer>
+
+    
+        
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/contrib/auto-render.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "$", right: "$", display: false}
+              ]
+          });
+    });
+</script>
+
+    
+</article>
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/neighbor-sort/">
+        
+        
+            <div class="article-image">
+                <img src="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_250x150_fill_box_smart1_2.png" width="250" height="150" 
+                        loading="lazy" data-key="neighbor-sort" data-hash="md5-r334/EVJGtAzPFGKrF0AwQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">邻项比较排序……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/stl/">
+        
+        
+            <div class="article-image">
+                <img src="/p/stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_250x150_fill_box_smart1_2.png" width="250" height="150" 
+                        loading="lazy" data-key="STL" data-hash="md5-cv&#43;5BWEAZy9bG4tcU&#43;2P5g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">STL……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/sort/">
+        
+        
+            <div class="article-image">
+                <img src="/p/sort/86036732_p0_hud48aef1ba1119480544a4ab4b9f32654_3422651_250x150_fill_box_smart1_2.png" width="250" height="150" 
+                        loading="lazy" data-key="sort" data-hash="md5-3qBWkZGIt6eBhz2yr3I6HQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">排序……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 Super SASS……</section>
+    <section class="powerby">Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </main>
+
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+</body>
+
+</html>

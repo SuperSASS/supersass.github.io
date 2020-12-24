@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+<head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='时间线测试……'><title>Timeline测试……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/test-timeline/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Timeline测试……'>
+<meta property='og:description' content='时间线测试……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/test-timeline/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='测试' /><meta property='article:tag' content='时间线' /><meta property='article:published_time' content='2020-12-24T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-25T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/test-timeline/pixiv61107110.jpg' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Timeline测试……">
+<meta name="twitter:description" content="时间线测试……"><meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content='https://blog.supersassw.com/p/test-timeline/pixiv61107110.jpg' />
+<link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+
+
+<body class="" data-scheme="">
+    
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+    <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
+
+        
+        <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        
+        <li id="dark-mode-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+            <span>夜间模式</span>
+        </li>
+    </ol>
+</aside>
+
+
+        
+        <main class="main full-width">
+            
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>上一个页面</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <img srcset="/p/test-timeline/pixiv61107110_huba53cd19c95d0fe8cd12b027cea0c3df_3255125_1024x0_resize_q75_box.jpg 1024w, /p/test-timeline/pixiv61107110_huba53cd19c95d0fe8cd12b027cea0c3df_3255125_2000x0_resize_q75_box.jpg 2000w"
+                    src="/p/test-timeline/pixiv61107110_huba53cd19c95d0fe8cd12b027cea0c3df_3255125_2000x0_resize_q75_box.jpg" width="3508" height="2386" loading="lazy"
+                    alt="Featured image of post Timeline测试……" />
+            
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+        <a href="/categories/test/" class="color-tag" data-image="/p/test-timeline/pixiv61107110_huba53cd19c95d0fe8cd12b027cea0c3df_3255125_20x20_fill_q75_box_smart1.jpg"
+            data-key="test-timeline" data-hash="md5-gw0ebJ130gSVMm5U9lAa&#43;g==">
+            测试
+        </a>
+        
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/test-timeline/">Timeline测试……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        时间线测试……
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/12/24</time>
+    </footer>
+    <footer class="article-readingTime-container">
+        <div class="article-readingTime-left">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime-right">
+            <div class="char">文章字数：696</div>
+            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+
+</header>
+
+    <section class="article-content">
+    <h1 id="timeline">Timeline……</h1>
+<p>时间线标签的移植测试……</p>
+<h2 id="测试">测试</h2>
+<div class="timeline">
+	
+		<p class="p h2">总历程……</p>
+	
+	
+
+
+
+<div class="timenode">
+	<div class="meta">
+		<p>2020-12-24 19:00<div class="title">提出构想……</div></p>
+	</div>
+	<div class="body">
+		<p>这个时间线好好看啊，我也要实现！……</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 这里面还能套娃哦x…… </p>
+	</div>
+</div>
+
+	</div>
+</div>
+
+
+
+<div class="timenode">
+	<div class="meta">
+		<p>2020-12-25<a target="_blank" rel="noopener" href="https://www.bilibili.com">这里想要测试下所以这里的标题要非常非常非常的长这样才能测试是否全平台适配……</a></p>
+	</div>
+	<div class="body">
+		<p>到了明天【？……</p>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 感觉实现了……</li>
+</ul>
+<p>这里面用Markdown写！……<br>
+然后这里也要非常非常非常非常非常非非常非常非常非常非常非常常非常非常非常非常非常非常的长……</p>
+
+	</div>
+</div>
+
+
+
+<div class="timenode">
+	<div class="meta">
+		<p>2020-12-25 233:33:33</p>
+	</div>
+	<div class="body">
+		<p><em>time其实内容随意（没有检测直接原样输出），填个不是时间的也可以……</em></p>
+<p>最后一个测试了！……</p>
+<ul>
+<li>来个公式：
+<blockquote>
+<p>$$[{2{x^T}(t)x(t - \tau ) = {x^T}(t){Q^{ - \frac{1}{2}}}x(t - \tau ) \le \frac{1}{\alpha }{x^T}(t)Px(t) + \alpha {x^T}(t - \tau )x(t - \tau )}]$$
+我也不知道这是啥_(:з」∠)_……</p>
+</blockquote>
+</li>
+<li>来个代码：
+<blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">freopen</span><span class="p">(</span><span class="s">&#34;ans.out&#34;</span><span class="p">,</span><span class="s">&#34;r&#34;</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
+<span class="n">printf</span><span class="p">(</span><span class="s">&#34;qwq&#34;</span><span class="p">);</span>
+</code></pre></div></blockquote>
+</li>
+</ul>
+
+	</div>
+</div>
+
+
+
+<div class="timenode">
+	<div class="meta">
+		<p>2020-12-24 20:28<div class="title">正式实现并适配……</div></p>
+	</div>
+	<div class="body">
+		<p>实现了！……</p>
+<p>也不知道会不会出问题，反正能跑就行.jpg……</p>
+<p>改后的样式配上这个主题感觉还是很好看的√……</p>
+<p>不过markdown里看着好乱啊也没办法的'_&gt;'……</p>
+<p>好累orz……</p>
+
+	</div>
+</div>
+
+
+</div>
+<h2 id="实现方法">实现方法</h2>
+<p>又又又又又是Shortcode！……</p>
+<p>换行输入模式……</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span> <span class="nx">theme</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="p">&gt;}</span> <span class="p">}</span>
+
+
+<span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="nx">time</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;}</span> <span class="p">}</span>
+<span class="nx">内容</span><span class="o">......</span>
+<span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="p">&gt;}</span> <span class="p">}</span>
+
+<span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="nx">time</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">url</span><span class="p">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;}</span> <span class="p">}</span>
+<span class="nx">内容</span><span class="o">......</span>
+<span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="p">&gt;}</span> <span class="p">}</span>
+
+
+<span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span> <span class="p">&gt;}</span> <span class="p">}</span>
+</code></pre></div><blockquote>
+<p>外层：<br>
+<code>name</code>（可选项）：为这条时间线的标题……</p>
+<blockquote>
+<p>内层：<br>
+<code>time</code>（必填项）：节点时间……<br>
+<code>title</code>（可选项）：节点名称……<br>
+<code>url</code>（可选项）：节点链接（外部链接要加<code>https://</code>）……<br>
+<code>new</code>（可选项）：如果填了<code>url</code>，将new设为<code>1</code>可以在新窗口打开标签……</p>
+</blockquote>
+</blockquote>
+<hr>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p>想法还是来自于：<br>
+小康博客 —— <a href="https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84link%E6%A0%87%E7%AD%BE%E4%B8%8E%E6%97%B6%E9%97%B4%E7%BA%BF%E6%A0%87%E7%AD%BE">Hexo博客之butterfly主题优雅魔改系列（持续更新）</a></p>
+	</div>
+</div>
+<p>个人在其基础上修改了CSS以适配此主题……<br>
+并以Shortcode的形式完成对Hugo的移植……</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+        
+            <a href="/tags/%E6%97%B6%E9%97%B4%E7%BA%BF/">时间线</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2020/12/25 00:00
+        </span>
+    </section><section class="article-backgroundID">
+        <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+        <span class="article-background--pixivID">
+            文章封面配图Pixiv ID：61107110
+        </span>
+    </section></footer>
+
+    
+        
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/contrib/auto-render.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+              delimiters: [
+                  {left: "$$", right: "$$", display: true},
+                  {left: "$", right: "$", display: false}
+              ]
+          });
+    });
+</script>
+
+    
+</article>
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/test-note/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-note/Yande-713907_hu78325a06b1473fc65240ca2cf12d1105_794019_250x150_fill_q75_box_smart1.jpg" width="250" height="150" 
+                        loading="lazy" data-key="test-note" data-hash="md5-gOASp&#43;VPMsBLjvKO2CQC4w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">NoteBlock测试……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/test-player/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_250x150_fill_q75_box_smart1.jpg" width="250" height="150" 
+                        loading="lazy" data-key="test-player" data-hash="md5-5XDvfZ&#43;i8vCmjUCXS6tASQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">音乐播放器……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/test-shortcode/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-shortcode/78356827_p0_huc21610886fa327c8e802235e20e8c4e7_690415_250x150_fill_q75_box_smart1.jpg" width="250" height="150" 
+                        loading="lazy" data-key="test-shortcode" data-hash="md5-scPs6IfoxrHcGmu0JHjTnA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Shortcode测试……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/test-chinese/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-chinese/Yande-331204_hu78842091091c5acfc10d1d28fbf3f867_2198432_250x150_fill_box_smart1_2.png" width="250" height="150" 
+                        loading="lazy" data-key="test-chinese" data-hash="md5-i2PsdkusZW5f3G052taQwg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">页面测试……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">&copy; 2020 Super SASS……</section>
+    <section class="powerby">Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="1.1.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true" style="display:none">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        </main>
+
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+
+</body>
+
+</html>
