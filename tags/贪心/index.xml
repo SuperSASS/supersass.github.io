@@ -13,7 +13,7 @@
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://supersass.github.io/p/neighbor-sort/</guid>
-      <description>邻项比较排序 定义 本来的排序型贪心，我们需要任意两个项都满足决策条件。 但我们发现，如果数列每对相邻两项都满足决策条件，根据不等式的传递性，那么</description>
+      <description>以下为之前的笔记直接放过来的，部分样式会有错误（如KaTeX没有渲染等）…… 邻项比较排序 定义 本来的排序型贪心，我们需要任意两个项都满足决策条</description>
     </item>
     
     <item>

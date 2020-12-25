@@ -683,7 +683,12 @@
         <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
         
         <guid>https://supersass.github.io/p/neighbor-sort/</guid>
-        <description>&lt;img src="https://supersass.github.io/p/neighbor-sort/71111285_p0.png" alt="Featured image of post 邻项比较排序……" /&gt;&lt;h1 id=&#34;邻项比较排序&#34;&gt;邻项比较排序&lt;/h1&gt;
+        <description>&lt;img src="https://supersass.github.io/p/neighbor-sort/71111285_p0.png" alt="Featured image of post 邻项比较排序……" /&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 以下为之前的笔记直接放过来的，部分样式会有错误（如KaTeX没有渲染等）…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;邻项比较排序&#34;&gt;邻项比较排序&lt;/h1&gt;
 &lt;h2 id=&#34;定义&#34;&gt;定义&lt;/h2&gt;
 &lt;p&gt;本来的排序型贪心，我们需要&lt;strong&gt;任意两个项都满足决策条件&lt;/strong&gt;。&lt;br&gt;
 但我们发现，如果数列每对&lt;strong&gt;相邻两项都满足决策条件&lt;/strong&gt;，根据&lt;strong&gt;不等式的传递性&lt;/strong&gt;，那么也就可以推出任意两项满足决策条件。&lt;/p&gt;
@@ -1768,7 +1773,12 @@ $\implies \min(a_j,b_i) &amp;gt; \min(a_i,b_j)$&lt;/p&gt;
         <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
         
         <guid>https://supersass.github.io/p/sort/</guid>
-        <description>&lt;img src="https://supersass.github.io/p/sort/86036732_p0.png" alt="Featured image of post 排序……" /&gt;&lt;h1 id=&#34;排序&#34;&gt;排序&lt;/h1&gt;
+        <description>&lt;img src="https://supersass.github.io/p/sort/86036732_p0.png" alt="Featured image of post 排序……" /&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 以下部分本地链接无法加载，需要修正…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;排序&#34;&gt;排序&lt;/h1&gt;
 &lt;h2 id=&#34;不考虑算法&#34;&gt;不考虑算法&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;选择排序、冒泡排序、插入排序 $O(n^2)$&lt;/li&gt;
@@ -1841,12 +1851,6 @@ P1908 &lt;a class=&#34;link&#34; href=&#34;https://www.luogu.com.cn/problem/P190
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;hr&gt;
-&lt;div class=&#34;snote error &#34;&gt;
-	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt; 以上部分本地链接无法加载，需要修正…… &lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
 </description>
         </item>
         <item>
