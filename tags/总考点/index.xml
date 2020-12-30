@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>总考点 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E6%80%BB%E8%80%83%E7%82%B9/</link>
+    <description>Recent content in 总考点 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 26 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%80%BB%E8%80%83%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>考点总结……</title>
+      <link>https://blog.supersassw.com/p/summary-all/</link>
+      <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/summary-all/</guid>
+      <description>一、注意的点 1、用作为“累加、累乘的变量”的注意事项 如： sum1 = sum1 + a;——作为累加求和。 sum2 = sum2 * a;——作为累乘求和。 是否定义时赋初值？ int sum1 =</description>
+    </item>
+    
+  </channel>
+</rss>

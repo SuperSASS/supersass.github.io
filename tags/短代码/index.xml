@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>短代码 on Super SASS……</title>
-    <link>https://supersass.github.io/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/</link>
+    <link>https://blog.supersassw.com/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/</link>
     <description>Recent content in 短代码 on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://supersass.github.io/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Shortcode测试……</title>
-      <link>https://supersass.github.io/p/test-shortcode/</link>
+      <link>https://blog.supersassw.com/p/test-shortcode/</link>
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://supersass.github.io/p/test-shortcode/</guid>
+      <guid>https://blog.supersassw.com/p/test-shortcode/</guid>
       <description>Shortcode Hugo的Shortcode的测试…… 新增了Bilibili的链接…… 不知道是什么的原文x： Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static</description>
     </item>
     
