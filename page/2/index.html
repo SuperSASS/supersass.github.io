@@ -1,10 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
-
-<head>
+    <head>
 	<meta name="generator" content="Hugo 0.79.0" /><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='万华散尽……'><title>Super SASS……</title>
 
@@ -14,17 +11,15 @@
 <meta property='og:description' content='万华散尽……'>
 <meta property='og:url' content='https://blog.supersassw.com/'>
 <meta property='og:site_name' content='Super SASS……'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2020-12-26T00:00:00&#43;00:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2021-01-04T00:00:00&#43;00:00 '/>
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Super SASS……">
 <meta name="twitter:description" content="万华散尽……"><link rel="alternate" type="application/rss&#43;xml" href="https://blog.supersassw.com/index.xml">
-<link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
-
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
 
 
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
 
 
@@ -39,13 +34,30 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-</head>
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-
-
-<body class="" data-scheme="">
-    
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
     
     
 <div class="background" id="background">
@@ -75,10 +87,8 @@ if (!doNotTrack) {
 </div>
 
 
-    <div class="container flex on-phone--column align-items--flex-start extended ">
-
-        
-        <aside class="sidebar left-sidebar sticky">
+        <div class="container main-container flex on-phone--column extended ">
+            <aside class="sidebar left-sidebar sticky">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -112,7 +122,8 @@ if (!doNotTrack) {
         
         
 
-        <li  class='current' >
+        
+        <li  class='current'  id='basic'>
             <a href='/'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -131,7 +142,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/about'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -149,7 +161,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/archives'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -168,7 +181,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/search'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -186,27 +200,33 @@ if (!doNotTrack) {
         
 
         
-        <li id="dark-mode-toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
 </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
 </svg>
-            <span>夜间模式</span>
-        </li>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
     </ol>
 </aside>
 
-
-        
-        <main class="main full-width">
-            
-    
+            <main class="main full-width">
     
     
     
@@ -263,17 +283,21 @@ if (!doNotTrack) {
 		});
 	</script>
 
-    
     <section class="article-list">
         
             
 <article class="has-image">
     <header class="article-header">
         <div class="article-image">
-            <img srcset="/p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_1024x0_resize_box_2.png 1024w, /p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_2000x0_resize_box_2.png 2000w"
-                    src="/p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_2000x0_resize_box_2.png" width="2500" height="1833" loading="lazy"
-                    alt="Featured image of post 线段树……" />
-            
+            <a href="/p/test-note/">
+                <img src="/p/test-note/Yande-713907_hu78325a06b1473fc65240ca2cf12d1105_794019_800x0_resize_q75_box.jpg"
+                        srcset="/p/test-note/Yande-713907_hu78325a06b1473fc65240ca2cf12d1105_794019_800x0_resize_q75_box.jpg 800w, /p/test-note/Yande-713907_hu78325a06b1473fc65240ca2cf12d1105_794019_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post NoteBlock测试……" />
+                
+            </a>
         </div>
     
 
@@ -284,11 +308,147 @@ if (!doNotTrack) {
     
     <header class="article-category">
         
-        <a href="/categories/data-structure/" class="color-tag" data-image="/p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_20x20_fill_box_smart1_2.png"
-            data-key="segment-tree" data-hash="md5-xcsxGUp&#43;TKU52aT7CNjG7A==">
-            数据结构
-        </a>
+            <a href="/categories/test/" >
+                测试
+            </a>
         
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/test-note/">NoteBlock测试……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        测试NoteBlock的移植……
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/12/23</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：686</div>
+            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+</article>
+        
+            
+<article class="has-image">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/union-find/">
+                <img src="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_800x0_resize_q75_box.jpg"
+                        srcset="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_800x0_resize_q75_box.jpg 800w, /p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="523" 
+                        loading="lazy"
+                        alt="Featured image of post 并查集……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/data-structure/" >
+                数据结构
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/union-find/">并查集……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        也是测试……
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/12/20</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：744</div>
+            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+</article>
+        
+            
+<article class="has-image">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/segment-tree/">
+                <img src="/p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_800x0_resize_box_2.png"
+                        srcset="/p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_800x0_resize_box_2.png 800w, /p/segment-tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="587" 
+                        loading="lazy"
+                        alt="Featured image of post 线段树……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/data-structure/" >
+                数据结构
+            </a>
         
     </header>
     
@@ -312,8 +472,8 @@ if (!doNotTrack) {
 
         <time class="article-time--published">2020/12/20</time>
     </footer>
-    <footer class="article-readingTime-container">
-        <div class="article-readingTime-left">
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
@@ -323,13 +483,12 @@ if (!doNotTrack) {
   <line x1="13" y1="17" x2="15" y2="17" />
 </svg>
         </div>
-        <div class="article-readingTime-right">
+        <div class="article-readingTime--details">
             <div class="char">文章字数：3870</div>
             <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
 </div>
-
 </header>
 </article>
         
@@ -337,10 +496,15 @@ if (!doNotTrack) {
 <article class="has-image">
     <header class="article-header">
         <div class="article-image">
-            <img srcset="/p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_1024x0_resize_q75_box.jpg 1024w, /p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_2000x0_resize_q75_box.jpg 2000w"
-                    src="/p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_2000x0_resize_q75_box.jpg" width="1777" height="1000" loading="lazy"
-                    alt="Featured image of post 音乐播放器……" />
-            
+            <a href="/p/test-player/">
+                <img src="/p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_800x0_resize_q75_box.jpg"
+                        srcset="/p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_800x0_resize_q75_box.jpg 800w, /p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post 音乐播放器……" />
+                
+            </a>
         </div>
     
 
@@ -353,11 +517,9 @@ if (!doNotTrack) {
     
     <header class="article-category">
         
-        <a href="/categories/test/" class="color-tag" data-image="/p/test-player/84038692_p0_hu3b9cb195d3b981b9da74048e9a17f8de_395719_20x20_fill_q75_box_smart1.jpg"
-            data-key="test-player" data-hash="md5-5XDvfZ&#43;i8vCmjUCXS6tASQ==">
-            测试
-        </a>
-        
+            <a href="/categories/test/" >
+                测试
+            </a>
         
     </header>
     
@@ -381,8 +543,8 @@ if (!doNotTrack) {
 
         <time class="article-time--published">2020/12/19</time>
     </footer>
-    <footer class="article-readingTime-container">
-        <div class="article-readingTime-left">
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
@@ -392,13 +554,12 @@ if (!doNotTrack) {
   <line x1="13" y1="17" x2="15" y2="17" />
 </svg>
         </div>
-        <div class="article-readingTime-right">
+        <div class="article-readingTime--details">
             <div class="char">文章字数：62</div>
             <div class="time">预计阅读时长： <time>1</time> 分钟</div>
         </div>
     </footer>
 </div>
-
 </header>
 </article>
         
@@ -406,10 +567,15 @@ if (!doNotTrack) {
 <article class="has-image">
     <header class="article-header">
         <div class="article-image">
-            <img srcset="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_1024x0_resize_box_2.png 1024w, /p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_2000x0_resize_box_2.png 2000w"
-                    src="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_2000x0_resize_box_2.png" width="1500" height="1142" loading="lazy"
-                    alt="Featured image of post 邻项比较排序……" />
-            
+            <a href="/p/neighbor-sort/">
+                <img src="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_800x0_resize_box_2.png"
+                        srcset="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_800x0_resize_box_2.png 800w, /p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="609" 
+                        loading="lazy"
+                        alt="Featured image of post 邻项比较排序……" />
+                
+            </a>
         </div>
     
 
@@ -420,11 +586,9 @@ if (!doNotTrack) {
     
     <header class="article-category">
         
-        <a href="/categories/basic/" class="color-tag" data-image="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_20x20_fill_box_smart1_2.png"
-            data-key="neighbor-sort" data-hash="md5-r334/EVJGtAzPFGKrF0AwQ==">
-            基础部分
-        </a>
-        
+            <a href="/categories/basic/" >
+                基础部分
+            </a>
         
     </header>
     
@@ -448,8 +612,8 @@ if (!doNotTrack) {
 
         <time class="article-time--published">2020/12/15</time>
     </footer>
-    <footer class="article-readingTime-container">
-        <div class="article-readingTime-left">
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
@@ -459,153 +623,16 @@ if (!doNotTrack) {
   <line x1="13" y1="17" x2="15" y2="17" />
 </svg>
         </div>
-        <div class="article-readingTime-right">
+        <div class="article-readingTime--details">
             <div class="char">文章字数：10179</div>
             <div class="time">预计阅读时长： <time>21</time> 分钟</div>
         </div>
     </footer>
 </div>
-
-</header>
-</article>
-        
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
-            <img srcset="/p/greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_1024x0_resize_box_2.png 1024w, /p/greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_2000x0_resize_box_2.png 2000w"
-                    src="/p/greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_2000x0_resize_box_2.png" width="2000" height="1125" loading="lazy"
-                    alt="Featured image of post 贪心……" />
-            
-        </div>
-    
-
-    
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-        <a href="/categories/basic/" class="color-tag" data-image="/p/greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_20x20_fill_box_smart1_2.png"
-            data-key="greedy" data-hash="md5-9Kzg8B0Z3M5oH9zlHMl9CA==">
-            基础部分
-        </a>
-        
-        
-    </header>
-    
-
-    <h2 class="article-title">
-        <a href="/p/greedy/">贪心……</a>
-    </h2>
-
-    
-    <h3 class="article-subtitle">
-        贪心算法的讲解……
-    </h3>
-    <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <time class="article-time--published">2020/12/14</time>
-    </footer>
-    <footer class="article-readingTime-container">
-        <div class="article-readingTime-left">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-  <line x1="9" y1="7" x2="10" y2="7" />
-  <line x1="9" y1="13" x2="15" y2="13" />
-  <line x1="13" y1="17" x2="15" y2="17" />
-</svg>
-        </div>
-        <div class="article-readingTime-right">
-            <div class="char">文章字数：886</div>
-            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
-        </div>
-    </footer>
-</div>
-
-</header>
-</article>
-        
-            
-<article class="has-image">
-    <header class="article-header">
-        <div class="article-image">
-            <img srcset="/p/stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_1024x0_resize_box_2.png 1024w, /p/stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_2000x0_resize_box_2.png 2000w"
-                    src="/p/stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_2000x0_resize_box_2.png" width="1500" height="1036" loading="lazy"
-                    alt="Featured image of post STL……" />
-            
-        </div>
-    
-
-    
-    
-
-    <div class="article-details">
-    
-    <header class="article-category">
-        
-        <a href="/categories/basic/" class="color-tag" data-image="/p/stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_20x20_fill_box_smart1_2.png"
-            data-key="STL" data-hash="md5-cv&#43;5BWEAZy9bG4tcU&#43;2P5g==">
-            基础部分
-        </a>
-        
-        
-    </header>
-    
-
-    <h2 class="article-title">
-        <a href="/p/stl/">STL……</a>
-    </h2>
-
-    
-    <h3 class="article-subtitle">
-        一些STL记录……
-    </h3>
-    <footer class="article-time">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z"/>
-  <circle cx="12" cy="12" r="9" />
-  <polyline points="12 7 12 12 15 15" />
-</svg>
-
-
-
-        <time class="article-time--published">2020/12/03</time>
-    </footer>
-    <footer class="article-readingTime-container">
-        <div class="article-readingTime-left">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-  <line x1="9" y1="7" x2="10" y2="7" />
-  <line x1="9" y1="13" x2="15" y2="13" />
-  <line x1="13" y1="17" x2="15" y2="17" />
-</svg>
-        </div>
-        <div class="article-readingTime-right">
-            <div class="char">文章字数：934</div>
-            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
-        </div>
-    </footer>
-</div>
-
 </header>
 </article>
         
     </section>
-
-    
     <nav class='pagination'>
         
         
@@ -625,25 +652,25 @@ if (!doNotTrack) {
             
     </nav>
 
-
-    <footer class="site-footer">
+<footer class="site-footer">
     <section class="copyright">
         &copy; 
         
-        2020 Super SASS……
+        2021 Super SASS……
     </section>
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
-</footer>
-
-
-        </main>
-
-        
     
+    
+    <section class="icp">
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a> <br />
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a>
+    </section>
+</footer>
+            </main>
     
     
     <aside class="sidebar right-sidebar sticky">
@@ -685,6 +712,14 @@ if (!doNotTrack) {
     
     <div class="widget-archive--list">
         <div class="archives-year">
+                <a href="/archives#2021">
+                    
+                        <span class="year">2021</span>
+                        <span class="count">2</span>
+                    
+                </a> 
+            </div>
+        <div class="archives-year">
                 <a href="/archives#2020">
                     
                         <span class="year">2020</span>
@@ -711,7 +746,7 @@ if (!doNotTrack) {
 
     <div class="tagCloud-tags">
         
-            <a href="/tags/%E6%B5%8B%E8%AF%95/" class="font_size_7">
+            <a href="/tags/%E6%B5%8B%E8%AF%95/" class="font_size_8">
                 测试
             </a>
         
@@ -735,6 +770,10 @@ if (!doNotTrack) {
                 STL
             </a>
         
+            <a href="/tags/%E5%85%AC%E5%BC%8F/" class="font_size_1">
+                公式
+            </a>
+        
             <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="font_size_1">
                 并查集
             </a>
@@ -745,10 +784,6 @@ if (!doNotTrack) {
         
             <a href="/tags/%E6%8E%92%E5%BA%8F/" class="font_size_1">
                 排序
-            </a>
-        
-            <a href="/tags/%E6%95%B0%E7%BB%84/" class="font_size_1">
-                数组
             </a>
         
     </div>
@@ -763,76 +798,75 @@ if (!doNotTrack) {
 </svg>
 
 
-	
+
     </div>
     <h2 class="widget-title section-title">链接</h2>
     
 
     <div class="widget-links">
-      <div class="widget-links--text">
         
+        <div class="widget-links--text">
+            
+                
+            
+                
+            
+                
+            
+                
+                <ul>
+                    <li>
+                        <a href="https://oi-wiki.org/"> OI-Wiki…… </a>
+                    </li>
+                </ul>
+                
+            
+                
+                <ul>
+                    <li>
+                        <a href="https://blog.jimmycai.com/"> JimmyCai的主页…… </a>
+                    </li>
+                </ul>
+                
+            
+        </div>
         
-          
-        
-          
-        
-          
-        
-          
-            <ul>
-              <li>
-                <a href="https://oi-wiki.org/"> OI-Wiki…… </a>
-              </li>
-            </ul>
-          
-        
-          
-            <ul>
-              <li>
-                <a href="https://blog.jimmycai.com/"> JimmyCai的主页…… </a>
-              </li>
-            </ul>
-          
-        
-      </div>
-      
-      <div class="widget-links--icon">
-        
-          
-            <a href="https://steamcommunity.com/id/mrniconiconi/">
-              <svg t="1608731941209" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5986" width="200" height="200"><path d="M704 192c-104.128 0-188.96 83.328-191.744 186.816l-117.44 167.872A143.744 143.744 0 0 0 368 544c-30.336 0-58.432 9.536-81.696 25.6L128 507.04v172.064l99.36 39.296A144.128 144.128 0 0 0 368 832a144 144 0 0 0 141.376-118.08l184.736-138.432c3.296 0.192 6.56 0.512 9.888 0.512 105.888 0 192-86.112 192-192s-86.112-192-192-192z m0 64c70.592 0 128 57.408 128 128s-57.408 128-128 128-128-57.408-128-128 57.408-128 128-128z m0 32a96 96 0 0 0 0 192 96 96 0 0 0 0-192z m-336 288c61.76 0 112 50.24 112 112S429.76 800 368 800a112 112 0 0 1-102.08-66.368l72.64 28.736c9.664 3.84 19.584 5.696 29.376 5.696a80 80 0 0 0 29.504-154.432l-72.864-28.896A111.424 111.424 0 0 1 368 576z" p-id="5987"></path></svg>
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=96428149">
-              <svg t="1608732117092" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8931" width="200" height="200"><path d="M604.71296 63.911253c-53.548373 19.667627-95.06816 77.038933-95.06816 132.222293 0 16.390827 3.822933 43.165013 8.741547 59.55584 4.911787 16.390827 7.645867 30.59712 6.557013 31.143253-0.546133 1.092267-18.03264 9.28768-38.792533 18.57536-72.669867 33.3312-124.576427 101.07904-134.956373 176.479573-18.029227 126.76096 60.101973 230.57408 173.202773 230.57408 72.666453 0 134.95296-43.165013 160.631467-110.36672 16.940373-45.89568 11.47904-104.905387-20.21376-204.89216-8.192-25.678507 54.64064 9.28768 95.617707 54.091093 50.26816 54.637227 68.297387 135.502507 46.987947 214.17984-19.124907 69.389653-77.03552 136.598187-146.428587 168.28416-184.674987 84.691627-385.737387-11.472213-440.920747-210.899627-20.763307-74.8544-13.66016-145.33632 22.401707-222.921387 27.86304-60.101973 86.326613-120.203947 146.97472-150.254933 48.626347-24.040107 58.463573-32.23552 62.83264-52.452693 3.826347-18.57536-8.741547-45.89568-25.678507-55.18336-36.061867-19.67104-118.019413 21.30944-192.8704 96.160427-68.84352 68.84352-101.625173 128.39936-119.657813 216.91392-38.792533 187.948373 57.91744 387.92192 227.84 470.429013 61.740373 30.59712 112.551253 42.06592 182.490453 42.06592 154.077867 0 289.57696-78.67392 355.689813-206.527147 32.781653-62.83264 40.977067-100.532907 37.700267-175.93344-2.73408-72.123733-10.92608-102.720853-40.98048-152.439467-49.718613-82.50368-134.406827-142.05952-216.364373-152.9856l-27.316907-3.280213-9.84064-32.781653c-13.653333-45.349547-12.56448-60.101973 4.37248-73.212587 18.029227-14.206293 37.700267-14.752427 62.286507-1.092267 46.441813 26.22464 54.64064 28.409173 73.216 22.398293 19.124907-6.007467 36.05504-30.047573 36.05504-51.357013 0-19.67104-26.76736-48.080213-63.924907-66.112853C696.507733 55.169707 639.68256 50.797227 604.71296 63.911253zM574.65856 460.032c19.12832 71.031467 20.76672 91.245227 9.291093 113.646933-18.57536 34.966187-72.666453 46.987947-99.44064 21.85216-22.401707-20.759893-29.50144-39.8848-29.50144-78.677333 0-40.434347 10.92608-67.20512 36.604587-90.699093 18.578773-17.483093 57.91744-38.2464 62.28992-33.327787C555.54048 395.014827 564.82816 425.065813 574.65856 460.032z" p-id="8932"></path></svg>
-            </a>
-          
-        
-          
-            <a href="https://space.bilibili.com/1562243">
-              <svg t="1608731797909" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4149" width="200" height="200"><path d="M306.005333 117.632L444.330667 256h135.296l138.368-138.325333a42.666667 42.666667 0 0 1 60.373333 60.373333L700.330667 256H789.333333A149.333333 149.333333 0 0 1 938.666667 405.333333v341.333334a149.333333 149.333333 0 0 1-149.333334 149.333333h-554.666666A149.333333 149.333333 0 0 1 85.333333 746.666667v-341.333334A149.333333 149.333333 0 0 1 234.666667 256h88.96L245.632 177.962667a42.666667 42.666667 0 0 1 60.373333-60.373334zM789.333333 341.333333h-554.666666a64 64 0 0 0-63.701334 57.856L170.666667 405.333333v341.333334a64 64 0 0 0 57.856 63.701333L234.666667 810.666667h554.666666a64 64 0 0 0 63.701334-57.856L853.333333 746.666667v-341.333334A64 64 0 0 0 789.333333 341.333333zM341.333333 469.333333a42.666667 42.666667 0 0 1 42.666667 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666666-42.666667z m341.333334 0a42.666667 42.666667 0 0 1 42.666666 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666667-42.666667z" p-id="4150"></path></svg>
-            </a>
-          
-        
-          
-        
-          
-        
-      </div>
+        <div class="widget-links--icon">
+            
+                
+                <a href="https://steamcommunity.com/id/mrniconiconi/">
+                    <svg t="1608731941209" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5986" width="200" height="200"><path d="M704 192c-104.128 0-188.96 83.328-191.744 186.816l-117.44 167.872A143.744 143.744 0 0 0 368 544c-30.336 0-58.432 9.536-81.696 25.6L128 507.04v172.064l99.36 39.296A144.128 144.128 0 0 0 368 832a144 144 0 0 0 141.376-118.08l184.736-138.432c3.296 0.192 6.56 0.512 9.888 0.512 105.888 0 192-86.112 192-192s-86.112-192-192-192z m0 64c70.592 0 128 57.408 128 128s-57.408 128-128 128-128-57.408-128-128 57.408-128 128-128z m0 32a96 96 0 0 0 0 192 96 96 0 0 0 0-192z m-336 288c61.76 0 112 50.24 112 112S429.76 800 368 800a112 112 0 0 1-102.08-66.368l72.64 28.736c9.664 3.84 19.584 5.696 29.376 5.696a80 80 0 0 0 29.504-154.432l-72.864-28.896A111.424 111.424 0 0 1 368 576z" p-id="5987"></path></svg>
+                </a>
+                
+            
+                
+                <a href="https://music.163.com/#/user/home?id=96428149">
+                    <svg t="1608732117092" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8931" width="200" height="200"><path d="M604.71296 63.911253c-53.548373 19.667627-95.06816 77.038933-95.06816 132.222293 0 16.390827 3.822933 43.165013 8.741547 59.55584 4.911787 16.390827 7.645867 30.59712 6.557013 31.143253-0.546133 1.092267-18.03264 9.28768-38.792533 18.57536-72.669867 33.3312-124.576427 101.07904-134.956373 176.479573-18.029227 126.76096 60.101973 230.57408 173.202773 230.57408 72.666453 0 134.95296-43.165013 160.631467-110.36672 16.940373-45.89568 11.47904-104.905387-20.21376-204.89216-8.192-25.678507 54.64064 9.28768 95.617707 54.091093 50.26816 54.637227 68.297387 135.502507 46.987947 214.17984-19.124907 69.389653-77.03552 136.598187-146.428587 168.28416-184.674987 84.691627-385.737387-11.472213-440.920747-210.899627-20.763307-74.8544-13.66016-145.33632 22.401707-222.921387 27.86304-60.101973 86.326613-120.203947 146.97472-150.254933 48.626347-24.040107 58.463573-32.23552 62.83264-52.452693 3.826347-18.57536-8.741547-45.89568-25.678507-55.18336-36.061867-19.67104-118.019413 21.30944-192.8704 96.160427-68.84352 68.84352-101.625173 128.39936-119.657813 216.91392-38.792533 187.948373 57.91744 387.92192 227.84 470.429013 61.740373 30.59712 112.551253 42.06592 182.490453 42.06592 154.077867 0 289.57696-78.67392 355.689813-206.527147 32.781653-62.83264 40.977067-100.532907 37.700267-175.93344-2.73408-72.123733-10.92608-102.720853-40.98048-152.439467-49.718613-82.50368-134.406827-142.05952-216.364373-152.9856l-27.316907-3.280213-9.84064-32.781653c-13.653333-45.349547-12.56448-60.101973 4.37248-73.212587 18.029227-14.206293 37.700267-14.752427 62.286507-1.092267 46.441813 26.22464 54.64064 28.409173 73.216 22.398293 19.124907-6.007467 36.05504-30.047573 36.05504-51.357013 0-19.67104-26.76736-48.080213-63.924907-66.112853C696.507733 55.169707 639.68256 50.797227 604.71296 63.911253zM574.65856 460.032c19.12832 71.031467 20.76672 91.245227 9.291093 113.646933-18.57536 34.966187-72.666453 46.987947-99.44064 21.85216-22.401707-20.759893-29.50144-39.8848-29.50144-78.677333 0-40.434347 10.92608-67.20512 36.604587-90.699093 18.578773-17.483093 57.91744-38.2464 62.28992-33.327787C555.54048 395.014827 564.82816 425.065813 574.65856 460.032z" p-id="8932"></path></svg>
+                </a>
+                
+            
+                
+                <a href="https://space.bilibili.com/1562243">
+                    <svg t="1608731797909" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4149" width="200" height="200"><path d="M306.005333 117.632L444.330667 256h135.296l138.368-138.325333a42.666667 42.666667 0 0 1 60.373333 60.373333L700.330667 256H789.333333A149.333333 149.333333 0 0 1 938.666667 405.333333v341.333334a149.333333 149.333333 0 0 1-149.333334 149.333333h-554.666666A149.333333 149.333333 0 0 1 85.333333 746.666667v-341.333334A149.333333 149.333333 0 0 1 234.666667 256h88.96L245.632 177.962667a42.666667 42.666667 0 0 1 60.373333-60.373334zM789.333333 341.333333h-554.666666a64 64 0 0 0-63.701334 57.856L170.666667 405.333333v341.333334a64 64 0 0 0 57.856 63.701333L234.666667 810.666667h554.666666a64 64 0 0 0 63.701334-57.856L853.333333 746.666667v-341.333334A64 64 0 0 0 789.333333 341.333333zM341.333333 469.333333a42.666667 42.666667 0 0 1 42.666667 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666666-42.666667z m341.333334 0a42.666667 42.666667 0 0 1 42.666666 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666667-42.666667z" p-id="4150"></path></svg>
+                </a>
+                
+            
+                
+            
+                
+            
+        </div>
     </div>
 </section>
         
     </aside>
 
 
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
 
-<script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
 
 <script>
     (function () {
@@ -846,6 +880,5 @@ if (!doNotTrack) {
     }());
 </script>
 
-</body>
-
+    </body>
 </html>

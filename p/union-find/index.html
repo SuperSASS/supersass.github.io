@@ -1,10 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
-
-<head><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='也是测试……'><title>并查集……</title>
 
 <link rel='canonical' href='https://blog.supersassw.com/p/union-find/'>
@@ -17,14 +14,12 @@
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="并查集……">
 <meta name="twitter:description" content="也是测试……"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://blog.supersassw.com/p/union-find/60855211_p0.jpg' />
-<link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
-
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
 
 
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
 
 
@@ -39,13 +34,30 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-</head>
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-
-
-<body class="" data-scheme="">
-    
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
     
     
 <div class="background" id="background">
@@ -75,10 +87,8 @@ if (!doNotTrack) {
 </div>
 
 
-    <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
-
-        
-        <aside class="sidebar left-sidebar sticky">
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -112,7 +122,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -131,7 +142,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/about'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -149,7 +161,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/archives'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -168,7 +181,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/search'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -185,27 +199,58 @@ if (!doNotTrack) {
         </li>
         
 
-        
-        <li id="dark-mode-toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#测试">测试</a>
+      <ul>
+        <li><a href="#源码">源码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
 </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
 </svg>
-            <span>夜间模式</span>
-        </li>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
     </ol>
 </aside>
 
-
-        
-        <main class="main full-width">
-            
+            <main class="main full-width">
 
     <div id="article-toolbar">
         <a href="https://blog.supersassw.com/" class="back-home">
@@ -225,10 +270,15 @@ if (!doNotTrack) {
 <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <img srcset="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_1024x0_resize_q75_box.jpg 1024w, /p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_2000x0_resize_q75_box.jpg 2000w"
-                    src="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_2000x0_resize_q75_box.jpg" width="2350" height="1535" loading="lazy"
-                    alt="Featured image of post 并查集……" />
-            
+            <a href="/p/union-find/">
+                <img src="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_800x0_resize_q75_box.jpg"
+                        srcset="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_800x0_resize_q75_box.jpg 800w, /p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="523" 
+                        loading="lazy"
+                        alt="Featured image of post 并查集……" />
+                
+            </a>
         </div>
     
 
@@ -239,11 +289,9 @@ if (!doNotTrack) {
     
     <header class="article-category">
         
-        <a href="/categories/data-structure/" class="color-tag" data-image="/p/union-find/60855211_p0_hu2f29f1f8fc777ac15405156777510011_1339015_20x20_fill_q75_box_smart1.jpg"
-            data-key="union-find" data-hash="md5-oHqD&#43;hVk4u4jXkDxsZ/7sA==">
-            数据结构
-        </a>
-        
+            <a href="/categories/data-structure/" >
+                数据结构
+            </a>
         
     </header>
     
@@ -267,8 +315,8 @@ if (!doNotTrack) {
 
         <time class="article-time--published">2020/12/20</time>
     </footer>
-    <footer class="article-readingTime-container">
-        <div class="article-readingTime-left">
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
@@ -278,13 +326,12 @@ if (!doNotTrack) {
   <line x1="13" y1="17" x2="15" y2="17" />
 </svg>
         </div>
-        <div class="article-readingTime-right">
+        <div class="article-readingTime--details">
             <div class="char">文章字数：744</div>
             <div class="time">预计阅读时长： <time>2</time> 分钟</div>
         </div>
     </footer>
 </div>
-
 </header>
 
     <section class="article-content">
@@ -425,24 +472,30 @@ if (!doNotTrack) {
     </section></footer>
 
     
-        
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/katex.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/katex.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/contrib/auto-render.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body, {
-              delimiters: [
-                  {left: "$$", right: "$$", display: true},
-                  {left: "$", right: "$", display: false}
-              ]
-          });
-    });
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
 </script>
-
     
 </article>
+
     
     
 
@@ -504,12 +557,18 @@ if (!doNotTrack) {
     <section class="copyright">
         &copy; 
         
-        2020 Super SASS……
+        2021 Super SASS……
     </section>
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a> <br />
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a>
     </section>
 </footer>
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -580,16 +639,12 @@ if (!doNotTrack) {
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
-
-        </main>
-
-        
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
 
-<script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
 
 <script>
     (function () {
@@ -603,6 +658,5 @@ if (!doNotTrack) {
     }());
 </script>
 
-</body>
-
+    </body>
 </html>

@@ -1,0 +1,1092 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='有关数组的知识点和例题讲解……'><title>数组……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/cpp-array/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='数组……'>
+<meta property='og:description' content='有关数组的知识点和例题讲解……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/cpp-array/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='程序设计' /><meta property='article:tag' content='数组' /><meta property='article:published_time' content='2020-12-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-26T00:00:00&#43;00:00'/>
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="数组……">
+<meta name="twitter:description" content="有关数组的知识点和例题讲解……">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3540JBNMZR', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数组">数组</a>
+      <ul>
+        <li><a href="#一什么是数组">一、什么是数组</a>
+          <ul>
+            <li><a href="#1与数学的联系数列">1、与数学的联系——数列</a></li>
+            <li><a href="#2与数学的不同">2、与数学的不同</a></li>
+            <li><a href="#3编程中的数组">3、编程中的数组</a></li>
+          </ul>
+        </li>
+        <li><a href="#二数组的声明">二、数组的声明</a></li>
+        <li><a href="#三数组的运用">三、数组的运用</a>
+          <ul>
+            <li><a href="#1对一个数组某个具体元素的运用">1、对一个数组某个具体元素的运用</a></li>
+            <li><a href="#2对一个数组多个元素的运用">2、对一个数组多个元素的运用</a></li>
+            <li><a href="#3对多个数组的运用">3、对多个数组的运用</a></li>
+          </ul>
+        </li>
+        <li><a href="#四例题讲解">四、例题讲解</a>
+          <ul>
+            <li><a href="#1题目要求">1、题目要求</a></li>
+            <li><a href="#2数组的定义分析">2、数组的定义分析</a></li>
+            <li><a href="#3数组刚开始的原样读入原样输出和求平均值">3、数组刚开始的原样读入、原样输出和求平均值</a></li>
+            <li><a href="#4调整a数组以满足题目条件形式输出">4、调整a数组，以满足题目条件形式输出</a></li>
+            <li><a href="#5总代码">5、总代码</a></li>
+          </ul>
+        </li>
+        <li><a href="#五其他提示">五、其他提示</a></li>
+      </ul>
+    </li>
+    <li><a href="#数组-1">数组</a>
+      <ul>
+        <li><a href="#个人错误">个人错误</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>上一个页面</span>
+        </a>
+    </div>
+
+    
+
+<article class="main-article">
+    <header class="article-header">
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/" >
+                课程总结
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/cpp-array/">数组……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        有关数组的知识点和例题讲解……
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/12/26</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：4137</div>
+            <div class="time">预计阅读时长： <time>9</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="数组">数组</h1>
+<h2 id="一什么是数组">一、什么是数组</h2>
+<h3 id="1与数学的联系数列">1、与数学的联系——数列</h3>
+<p>关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。</p>
+
+
+<div class="snote quote ">
+	<div class="snote-content">
+		<p><p>数学上的一个数列$a_i$：</p>
+<p>当$i=1$时，代表的是这个数列的第一个数$a_1$，当$i=3$时，代表的是这个数列的第三个数$a_3$……<br>
+同时，这个数列可以叫数列$a_i$，也可以叫$b_i、{nico}_i$……<br>
+可以用$i$来表示第几项（$a_i$），也可以用$j$来表示第几项（$a_j$）……</p>
+</p>
+	</div>
+</div>
+<h3 id="2与数学的不同">2、与数学的不同</h3>
+<ol>
+<li>数学上的数列是从第一项开始的，也就是$a_1$代表的就是$a$这个数列的第一项。<br>
+然而编程里的数组，却是从<strong>第零项</strong>开始的，也就是<code>a[1]</code>代表的是<code>a</code>这个数组里第二项，<strong><code>a[0]</code>才是第一项</strong>。</li>
+<li>数学上的数列，我们不需要提前告诉这个数列中会有多少项。<br>
+然而编程里的数组，我们需要<strong>提前告诉</strong>他这个数组里会<strong>有多少项</strong>，也就是<code>int a[100]</code>的<code>100</code>的意思，代表可能会存100项。</li>
+</ol>
+<h3 id="3编程中的数组">3、编程中的数组</h3>
+<p>那么类比到我们编程里：</p>
+<ul>
+<li>这个$a_i$的$a$，就是程序里的这个数组的名字，专业名称叫“<strong>变量名</strong>”。</li>
+<li>这个$a_i$的$i$，就是程序里的这个数组的第几项，专业名称叫“<strong>下标</strong>”。</li>
+</ul>
+<p>比如<code>arr[5]</code>代表的就是<code>arr</code>这个数组里的<strong>第6项</strong>。</p>
+<h2 id="二数组的声明">二、数组的声明</h2>
+<p>申明部分，也就是定义。如：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+</code></pre></div><blockquote>
+<p><code>int</code>——代表的是这个数组的类型：即这个数组存的是一系列int类型的数。
+<code>arr</code>——代表的是这个数组的变量名，之后用这个数组就是<code>arr[2]</code>、<code>arr[i]</code>之类的形式。
+<code>[100]</code>——代表的是这个数组的大小，也就是可能会存多少项。</p>
+</blockquote>
+
+
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><p>对于数组大小的声明，<strong>必须为常量或者常量表达式</strong>。</p>
+<div class="snote success ">
+	<div class="snote-content">
+		<p><p>正确的例子：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>	<span class="c1">//字面常量（常数）
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">b</span><span class="p">[</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">];</span>	<span class="c1">//字面常量的表达式
+</span><span class="c1"></span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="n">len</span><span class="p">];</span>	<span class="c1">//符号常量
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">d</span><span class="p">[</span><span class="n">len</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>	<span class="c1">//符号常量的表达式
+</span></code></pre></div></p>
+	</div>
+</div>
+<div class="snote error ">
+	<div class="snote-content">
+		<p><p>错误的例子：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">len</span><span class="p">];</span>	<span class="c1">//len为变量，错误
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">len</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>	<span class="c1">//len+5为变量相关的表达式，错误
+</span></code></pre></div></p>
+	</div>
+</div>
+</p>
+	</div>
+</div>
+<h2 id="三数组的运用">三、数组的运用</h2>
+<h3 id="1对一个数组某个具体元素的运用">1、对一个数组某个具体元素的运用</h3>
+<ol>
+<li>
+<p>最简单的运用，我们直接把一个常数<code>100</code>存到<code>arr</code>数组里的<strong>第三项</strong>里：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</code></pre></div></li>
+<li>
+<p>要把一个变量<code>val</code>存到<code>arr</code>数组里的<strong>第一项</strong>里：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+</code></pre></div></li>
+<li>
+<p>要输出数组<code>arr</code>中的<strong>第二项</strong>：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</code></pre></div></li>
+</ol>
+<h3 id="2对一个数组多个元素的运用">2、对一个数组多个元素的运用</h3>
+<p>很多时候我们不止运用其中的某一个具体的数。<br>
+比如我们要向这个数组<strong>读入10个数</strong>，然后<strong>输出这10个数</strong>，这就涉及了多个元素的操作。</p>
+<p>我们再类比数列，假如我们要对数列$a_i$的第一项到第十项求和：<br>
+用的是不是$\sum_{i=1}^{10}a_i$这个公式，<br>
+用个$i$来代表第几项，然后$i=1\sim10$，把$a_i$累加起来。</p>
+<p>类比到编程，同样用个<code>i</code>来代表第几项，然后<code>i=0~9</code>，把<code>arr[i]</code>累加起来存到<code>sum</code>里。<br>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 仍要注意到第一项是从0开始，所以是0~9！ </p>
+	</div>
+</div></p>
+<blockquote>
+<ol>
+<li>对数组前十项求和</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</code></pre></div></blockquote>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p>其中这里的涉及到<strong>从头到尾</strong>加起来的操作，<br>
+我们把对一个数组<strong>从头到尾</strong>进行某些操作叫做“<strong>遍历</strong>”。<br>
+以后会提到的概念注意一下。</p>
+	</div>
+</div>
+<p>那么类推一下，要向数组里读入$10$个数</p>
+<blockquote>
+<ol start="2">
+<li>读入十个数到数组前十项</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</code></pre></div></blockquote>
+<p>然后再输出</p>
+<blockquote>
+<ol start="3">
+<li>输出数组中前十项</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</code></pre></div></blockquote>
+<p>总代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">	<span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入十个数：&#34;</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;你刚才输入的十个数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;arr[&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;] = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;总和为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span><span class="p">;</span>
+</code></pre></div><p>效果为：
+<figure style="flex-grow: 109; flex-basis: 263px">
+		<a href="/p/cpp-array/1.png" data-size="247x225"><img src="/p/cpp-array/1.png"
+				srcset="/p/cpp-array/1_huf1159adaf2dbb221f29c607566aac3c5_5229_480x0_resize_box_2.png 480w, /p/cpp-array/1_huf1159adaf2dbb221f29c607566aac3c5_5229_1024x0_resize_box_2.png 1024w"
+				width="247"
+				height="225"
+				loading="lazy"
+				alt="上述代码效果">
+		</a>
+		
+		<figcaption>上述代码效果</figcaption>
+		
+	</figure></p>
+<hr>
+<p>如果为先输入一个数<code>n</code>，然后读入<code>n</code>个数，只需要改下循环条件即可。</p>
+<blockquote>
+<ol start="4">
+<li>读入n个数到数组</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//注意读n个数是(i=0;i&lt;=n-1)，就像之前读10个数是(i=0;i&lt;=9)
+</span><span class="c1">//也可以写成 for (int i = 0; i &lt; n; i++)，不过最好选择一种格式以后就这样写，不然可能会晕
+</span><span class="c1"></span>	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</code></pre></div></blockquote>
+<p>其余输出什么的同理。</p>
+<h3 id="3对多个数组的运用">3、对多个数组的运用</h3>
+<p>很多时候我们可能要从<code>a</code>数组拿出一些数放到<code>b</code>数组里，这个时候下标可能就会很疑惑。</p>
+<p>比如我们可能会把<code>arr</code>数组里十个数放到<code>b</code>数组对应位置里。<br>
+这个时候数学表示就是$b_i=arr_i(i=1\sim10)$</p>
+<blockquote>
+<ol>
+<li>把<code>arr</code>数组十个数放到<code>b</code>数组里</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</code></pre></div></blockquote>
+<p>但不一定每次都是刚好把<code>arr</code>的第i项放到<code>b</code>的第i项，也可能是比如：<br>
+从<code>arr</code>的第五项开始，取5项（即<code>a[4] ~ a[8]</code>，放到<code>b</code>的第十项后面（即(<code>b[9] ~ b[13]</code>)。<br>
+要记住数组的下标<strong>不只是用<code>i</code>来表示</strong>，也可以用其他变量来表示。</p>
+<p>因此我们可以定义两个变量<code>j</code>和<code>k</code>，来分别表示两个数组<code>arr</code>和<code>b</code>的下标。</p>
+<p>刚开始令<code>j = 4</code>，<code>k = 9</code><br>
+开始取第一项放进<code>b</code>时，也就是<code>b[9] = arr[4]</code>，这个时候就是<code>b[k] = arr[j]</code>。<br>
+然后取第二项放进<code>b</code>时，也就是<code>b[10] = arr[5]</code>，<br>
+因此我们就可以在放完一项后，让<code>k = k + 1</code>和<code>j = j + 1</code>，<br>
+这个时候的<code>b[k] = arr[j]</code>，是不是就代表<code>b[10] = arr[5]</code>了。</p>
+<blockquote>
+<ol start="2">
+<li>从<code>arr</code>的第五项开始，取5项，放到<code>b</code>的第十项后面。</li>
+</ol>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">j</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>				<span class="c1">//分别代表arr数组和b数组的下标
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>		<span class="c1">//做5次循环，代表取5项
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+	<span class="n">k</span><span class="o">++</span><span class="p">;</span>
+	<span class="n">j</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></blockquote>
+<p>这里是<strong>比较难但很重要的点</strong>，如果分析也看不懂，可以手动模拟一下：<br>
+自己按照程序一行一行执行，在本子上画两行表格，一行代表<code>arr</code>数组，一行代表<code>b</code>数组；<code>j=4</code>时就用个箭头指向<code>arr[4]</code>，j++则移动箭头指向<code>arr[5]</code>……<br>
+如果理解了，那数组差不多也都理解了。</p>
+<h2 id="四例题讲解">四、例题讲解</h2>
+<p>选择“实验8”的第1题。</p>
+<h3 id="1题目要求">1、题目要求</h3>
+<p><figure style="flex-grow: 133; flex-basis: 321px">
+		<a href="/p/cpp-array/2.png" data-size="619x462"><img src="/p/cpp-array/2.png"
+				srcset="/p/cpp-array/2_hue42fa8fac7d53e6d034df985be34302b_68736_480x0_resize_box_2.png 480w, /p/cpp-array/2_hue42fa8fac7d53e6d034df985be34302b_68736_1024x0_resize_box_2.png 1024w"
+				width="619"
+				height="462"
+				loading="lazy"
+				alt="实验8第一题">
+		</a>
+		
+		<figcaption>实验8第一题</figcaption>
+		
+	</figure></p>
+<h3 id="2数组的定义分析">2、数组的定义分析</h3>
+<p>因为要输入的是实数（小数），所以要用<code>double</code>或<code>float</code>类型。</p>
+<p>然后有15个数，但注意到要把计算后的平均值存到<code>a</code>数组最后的<code>a[15]</code>里，即实际上为16个数，长度为16。</p>
+<blockquote>
+<p>故定义数组：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">double</span> <span class="n">a</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+</code></pre></div></blockquote>
+<h3 id="3数组刚开始的原样读入原样输出和求平均值">3、数组刚开始的原样读入、原样输出和求平均值</h3>
+<p>如果认真看了之前的“数组的运用”，这里应该问题不大。<br>
+多的点就是要每行五个输出，并且域宽为10。</p>
+<blockquote>
+<p>代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">//求和变量注意清零
+</span><span class="c1"></span>
+<span class="c1">//读入部分
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//i=0~14，读入十五个数
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>		<span class="c1">//读入a[i]
+</span><span class="c1"></span>	<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	<span class="c1">//顺便对a[i]的所有项求和，方便后面求平均值
+</span><span class="c1"></span><span class="p">}</span>
+
+<span class="c1">//求平均值部分
+</span><span class="c1"></span><span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">15</span><span class="p">;</span>		<span class="c1">//求的总和除以个数，也就算的是平均值，放到题上要求的a[15]里
+</span><span class="c1"></span>
+<span class="c1">//输出部分
+</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="c1">//这里用如果(i+1)%5==0则换行，也就是i=5,10,15,...的时候换行，达成了每五个换行的效果
+</span><span class="c1"></span>	<span class="c1">//这个可以记下来，如果是每7个换行，就写 if (i%7 == 0) cout&lt;&lt;endl;
+</span><span class="c1"></span>	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	<span class="c1">//输出a[i]，setw为设置域宽
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div></blockquote>
+<h3 id="4调整a数组以满足题目条件形式输出">4、调整a数组，以满足题目条件形式输出</h3>
+<p>因为我们要调整<code>a</code>数组里的数，最终输出<code>a</code>数组。<br>
+所以可以先把<code>a</code>数组里的所有数存到<code>b</code>数组里，然后再“遍历”<code>b</code>数组，判断某一个数<code>b[i]</code>跟平均值的关系，如果大于则放到<code>a</code>数组前面，小于则放到后面。</p>
+<p>首先先来写怎么把<code>a</code>数组里的所有数存到<code>b</code>数组里，前面已经写过了这里直接写代码。</p>
+<blockquote>
+<p>代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//把a数组放到b数组里
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre></div></blockquote>
+<p>接下来就是难点了，判断出关系后，怎么样才能把<code>b[i]</code>放到<code>a</code>数组前面或者后面。<br>
+之前说过的，下标不一定只能用<code>i</code>，也可以定义新变量来表示下标。</p>
+<blockquote>
+<p>于是我们可以定义两个变量<code>begin</code>和<code>end</code>，分别代表<code>a</code>数组前面和后面的下标。<br>
+刚开始<code>begin = 0, end = 14</code>，分别代表最开始的前面的下标和后面的下标。<br>
+<figure style="flex-grow: 212; flex-basis: 510px">
+		<a href="/p/cpp-array/3.png" data-size="668x314"><img src="/p/cpp-array/3.png"
+				srcset="/p/cpp-array/3_hu7a85c322ed85aa76ff251f4d68905a47_5608_480x0_resize_box_2.png 480w, /p/cpp-array/3_hu7a85c322ed85aa76ff251f4d68905a47_5608_1024x0_resize_box_2.png 1024w"
+				width="668"
+				height="314"
+				loading="lazy"
+				alt="way_1">
+		</a>
+		
+		<figcaption>way_1</figcaption>
+		
+	</figure><br>
+<em>【注意<code>a[15]</code>为平均值】</em></p>
+</blockquote>
+<blockquote>
+<p>然后遍历<code>b</code>数组，假如第一个数<code>b[i]</code>（$i=1$）为$3$，小于平均值<code>a[15]</code>则该放到后面，也就是<code>a[end]</code>。<br>
+先让<code>a[end]=b[i]</code>，<br>
+<figure style="flex-grow: 213; flex-basis: 512px">
+		<a href="/p/cpp-array/4.png" data-size="673x315"><img src="/p/cpp-array/4.png"
+				srcset="/p/cpp-array/4_hucbfe42feb76f4854d7cf827238259a26_5746_480x0_resize_box_2.png 480w, /p/cpp-array/4_hucbfe42feb76f4854d7cf827238259a26_5746_1024x0_resize_box_2.png 1024w"
+				width="673"
+				height="315"
+				loading="lazy"
+				alt="way_2">
+		</a>
+		
+		<figcaption>way_2</figcaption>
+		
+	</figure></p>
+</blockquote>
+<blockquote>
+<p>然后再让<code>end = end - 1</code>，<br>
+<figure style="flex-grow: 223; flex-basis: 537px">
+		<a href="/p/cpp-array/5.png" data-size="645x288"><img src="/p/cpp-array/5.png"
+				srcset="/p/cpp-array/5_hu2b60ae33d41ff7d46fac7da4b1d2ddf9_5531_480x0_resize_box_2.png 480w, /p/cpp-array/5_hu2b60ae33d41ff7d46fac7da4b1d2ddf9_5531_1024x0_resize_box_2.png 1024w"
+				width="645"
+				height="288"
+				loading="lazy"
+				alt="way_3">
+		</a>
+		
+		<figcaption>way_3</figcaption>
+		
+	</figure></p>
+</blockquote>
+<blockquote>
+<p>这样，当再次找到下个小于平均值的数时，则会放到当前的最后面处；<br>
+找到下个大于平均值的数时，则会放到当前的最前面处。<br>
+如图：
+<figure style="flex-grow: 215; flex-basis: 517px">
+		<a href="/p/cpp-array/6.png" data-size="684x317"><img src="/p/cpp-array/6.png"
+				srcset="/p/cpp-array/6_hu01fe1d94b21e0162da7b5bf213406e9c_5871_480x0_resize_box_2.png 480w, /p/cpp-array/6_hu01fe1d94b21e0162da7b5bf213406e9c_5871_1024x0_resize_box_2.png 1024w"
+				width="684"
+				height="317"
+				loading="lazy"
+				alt="way_4">
+		</a>
+		
+		<figcaption>way_4</figcaption>
+		
+	</figure></p>
+</blockquote>
+<blockquote>
+<ul>
+<li>代码：</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;调整后的数据为:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//把a数组放到b数组里
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+
+  <span class="kt">int</span> <span class="n">begin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//遍历b数组，跟平均数比较，放回a数组
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">])</span>	<span class="c1">//跟平均数比较
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="n">a</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+			<span class="n">end</span><span class="o">--</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">else</span>
+  	<span class="p">{</span>
+  		<span class="n">a</span><span class="p">[</span><span class="n">begin</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+  		<span class="n">begin</span><span class="o">++</span><span class="p">;</span>
+  	<span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//输出a数组
+</span><span class="c1"></span>  <span class="p">{</span>
+  	<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+  		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+  <span class="p">}</span>
+</code></pre></div></blockquote>
+<h3 id="5总代码">5、总代码</h3>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+	<span class="kt">double</span> <span class="n">a</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+	<span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入15个实型数：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//读入
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+	<span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">15</span><span class="p">;</span>		 <span class="c1">//求平均值
+</span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//原样输出
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//【这里加了个i!=0的条件，防止最开始就换行
+</span><span class="c1"></span>		<span class="p">{</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span>
+		 <span class="o">&lt;&lt;</span> <span class="s">&#34;调整后的数据为:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//把a数组放到b数组里
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+
+	<span class="kt">int</span> <span class="n">begin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//遍历b数组，跟平均数比较，放回a数组
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">])</span>
+		<span class="p">{</span>
+			<span class="n">a</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+			<span class="n">end</span><span class="o">--</span><span class="p">;</span>
+		<span class="p">}</span>
+		<span class="k">else</span>
+		<span class="p">{</span>
+			<span class="n">a</span><span class="p">[</span><span class="n">begin</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+			<span class="n">begin</span><span class="o">++</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+
+	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//输出a数组【注意这里是遍历输出整个a数组，即a[15]这个存的平均值也要输出，所以变成了(i = 0; i &lt;16; i++)
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>这里只讲的老师的第一种方法，更好理解一些。对于第二种方法可以自行尝试，跟这个大致相同，不懂也可以自己在草稿纸上模拟一下。</li>
+</ul>
+<h2 id="五其他提示">五、其他提示</h2>
+<ol>
+<li>
+<p>数组的范围可以开大，但不能开小。
+意思就是尽管最多可能只有10个整数，你可以定义为<code>int a[100]</code>，但不可以<code>int a[9]</code>。
+<strong>推荐</strong>是比最多个数开稍微大一点，这样又可以偷懒想要开几个，又可以防止越界错误【本来只定义了15个，你访问了<code>a[20]</code>】。</p>
+</li>
+<li>
+<p>因为编程里数组第一项是从<code>a[0]</code>开始的，比较反人类x
+所以如果想按照数学习惯，完全可以从<code>a[1]</code>开始存数。</p>
+<blockquote>
+<p>比如读入15个数，原来可能写成</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</code></pre></div><p>这样就是存在<code>a[0]~a[14]</code>里。</p>
+<p>你也可以写成符合我们习惯的</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="err">这样就是存在`</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">~</span><span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="err">`里。</span>
+</code></pre></div></blockquote>
+<p>不过选择好一种自己喜欢的就这么写，不要一会从$0\sim14$一会又$1\sim15$，不然会很混乱。</p>
+</li>
+<li>
+<p>没了。</p>
+</li>
+<li>
+<p>有关排序的算法可能是常考点，各位可以自己去背一下。</p>
+</li>
+</ol>
+<p><strong>以上。</strong></p>
+<hr>
+<p>（36）37-40</p>
+<h1 id="数组-1">数组</h1>
+<ol start="9">
+<li>
+<p>字符串占用……（10）（46）（53）</p>
+</li>
+<li>
+<p>定义数组时不能用变量来定义。（35）（60）</p>
+</li>
+<li>
+<p>静态<code>static</code>数组：所有元素自动赋初值为0。</p>
+</li>
+<li>
+<p>数组不是c++基本类型</p>
+</li>
+<li>
+<p>连续存放</p>
+</li>
+<li>
+<p>string</p>
+</li>
+<li>
+<p>？</p>
+</li>
+<li>
+<p>？（43）（45）</p>
+</li>
+<li>
+<p>新题</p>
+</li>
+<li>
+<p>题有问题？</p>
+</li>
+<li>
+<p>题……</p>
+</li>
+<li>
+<p>getline、get、……</p>
+</li>
+<li>
+<p>char[]、string——sizeof、str.size()</p>
+</li>
+<li>
+<p>?</p>
+</li>
+</ol>
+<h2 id="个人错误">个人错误</h2>
+<ol>
+<li>B</li>
+<li>A</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B</li>
+<li>B?</li>
+<li>C(D)</li>
+<li>C(D)</li>
+</ol>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">程序设计</a>
+        
+            <a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议……</span>
+    </section>
+    </footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/cpp-summary/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">考点总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/am-formula/">
+        
+        
+            <div class="article-image">
+                <img src="/p/am-formula/76524292_p0.2096f1f14908039545fe8f7a9b310d5f_hu496f4562aacbed9d40936841282eb41a_2147862_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="AM-formula" 
+                        data-hash="md5-IJbx8UkIA5VF/o96mzENXw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">考前公式速记……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a> <br />
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

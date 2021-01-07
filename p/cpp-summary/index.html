@@ -1,0 +1,1176 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='所有考点总结……'><title>考点总结……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/cpp-summary/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='考点总结……'>
+<meta property='og:description' content='所有考点总结……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/cpp-summary/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='程序设计' /><meta property='article:tag' content='总考点' /><meta property='article:published_time' content='2020-12-26T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-26T00:00:00&#43;00:00'/>
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="考点总结……">
+<meta name="twitter:description" content="所有考点总结……">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3540JBNMZR', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一注意的点">一、注意的点</a>
+      <ul>
+        <li><a href="#1用作为累加累乘的变量的注意事项">1、用作为“累加、累乘的变量”的注意事项</a></li>
+        <li><a href="#2有关函数的讲解和注意事项">2、有关函数的讲解和注意事项</a>
+          <ul>
+            <li><a href="#函数的注意事项">函数的注意事项</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#二需要记住的模板">二、需要记住的模板</a>
+      <ul>
+        <li><a href="#1生成随机数">1、生成随机数</a></li>
+        <li><a href="#2最大公约数gcd和最小公倍数lcm的计算">2、最大公约数（GCD）和最小公倍数（LCM）的计算</a></li>
+        <li><a href="#3判断某数是否为质数">3、判断某数是否为质数</a></li>
+        <li><a href="#4对数组的排序">4、对数组的排序</a></li>
+        <li><a href="#5二分查找折半查找">5、二分查找（折半查找）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三常用头文件及函数">三、常用头文件及函数</a></li>
+    <li><a href="#四常见非编译问题和错误弹窗解释">四、常见非编译问题和错误弹窗解释</a>
+      <ul>
+        <li><a href="#1未赋初值类">1、未赋初值类</a></li>
+        <li><a href="#2数组越界类">2、数组越界类</a></li>
+        <li><a href="#3死循环类">3、死循环类</a></li>
+      </ul>
+    </li>
+    <li><a href="#五其他杂类">五、其他杂类</a></li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>上一个页面</span>
+        </a>
+    </div>
+
+    
+
+<article class="main-article">
+    <header class="article-header">
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/" >
+                课程总结
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/cpp-summary/">考点总结……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        所有考点总结……
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/12/26</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：4393</div>
+            <div class="time">预计阅读时长： <time>9</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="一注意的点">一、注意的点</h1>
+<h2 id="1用作为累加累乘的变量的注意事项">1、用作为“累加、累乘的变量”的注意事项</h2>
+<blockquote>
+<p>如：
+<code>sum1 = sum1 + a;</code>——作为累加求和。
+<code>sum2 = sum2 * a;</code>——作为累乘求和。</p>
+</blockquote>
+<ol>
+<li>
+<p>是否定义时<strong>赋初值？</strong></p>
+<ul>
+<li><code>int sum1 = 0;</code>——累加变量赋初值为0。</li>
+<li><code>int sum2 = 1;</code>——累乘变量赋初值为1。</li>
+</ul>
+</li>
+<li>
+<p>在<strong>循环里反复使用</strong>，要注意可能要将累加变量<strong>清零</strong>，累乘变量<strong>赋一</strong>。</p>
+
+
+<div class="snote guide cyan ">
+	<div class="snote-content">
+		<p>题目：<br>
+统计3组数据的和，其中每组数据会有n个数。</p>
+	</div>
+</div>
+<blockquote>
+<p>部分代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//赋初值为0
+</span><span class="c1"></span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//循环3组数据
+</span><span class="c1"></span><span class="p">{</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入第&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;组数据有多少个数：&#34;</span><span class="p">;</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入n个数：&#34;</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//读入并统计这组数据里n个数的和
+</span><span class="c1"></span>  <span class="p">{</span>
+  	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+  	<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">;</span>
+	<span class="p">}</span>
+
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;这组数据和为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//这里即要注意每读完一组数据要清零！否则会带着上次计算的结果算下一组
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>输出：</p>
+<ul>
+<li>加了<code>sum = 0;</code>这句清零语句：<figure style="flex-grow: 134; flex-basis: 323px">
+		<a href="/p/cpp-summary/1.png" data-size="217x161"><img src="/p/cpp-summary/1.png"
+				srcset="/p/cpp-summary/1_hu2c48dba8fb5dc6a5e02cb6ae45f6764d_7922_480x0_resize_box_2.png 480w, /p/cpp-summary/1_hu2c48dba8fb5dc6a5e02cb6ae45f6764d_7922_1024x0_resize_box_2.png 1024w"
+				width="217"
+				height="161"
+				loading="lazy"
+				alt="1">
+		</a>
+		
+		<figcaption>1</figcaption>
+		
+	</figure></li>
+<li>未加<code>sum = 0;</code>这句清零语句：<figure style="flex-grow: 140; flex-basis: 338px">
+		<a href="/p/cpp-summary/2.png" data-size="224x159"><img src="/p/cpp-summary/2.png"
+				srcset="/p/cpp-summary/2_hu3ec0fae2db203a5ae6bc9ad5805d305b_5097_480x0_resize_box_2.png 480w, /p/cpp-summary/2_hu3ec0fae2db203a5ae6bc9ad5805d305b_5097_1024x0_resize_box_2.png 1024w"
+				width="224"
+				height="159"
+				loading="lazy"
+				alt="2">
+		</a>
+		
+		<figcaption>2</figcaption>
+		
+	</figure></li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h2 id="2有关函数的讲解和注意事项">2、有关函数的讲解和注意事项</h2>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>函数的三个要点：</p>
+<ol>
+<li>我要给他什么东西？（给几个东西、这些东西是什么类型）</li>
+<li><strong>我想要这个函数干嘛、完成什么事</strong>？</li>
+<li>他要给我返回个什么东西？（只能返回一个值，否则不叫函数）</li>
+</ol>
+</p>
+	</div>
+</div>
+<p>一般要求写函数，都是基于这三点分析：</p>
+<ul>
+<li>根据1和3两点来确定怎么<strong>声明</strong>函数。</li>
+<li>根据2这点来确定怎么<strong>实现</strong>函数。</li>
+</ul>
+
+
+<div class="snote guide cyan ">
+	<div class="snote-content">
+		<p>题目：<br>
+一、要求写一个函数，用来返回两个整数的最大值。</p>
+	</div>
+</div>
+<blockquote>
+<p>则分析如下：</p>
+<ol>
+<li>我应该给这个函数两个<code>int</code>类型的数据。</li>
+<li>这个函数应该找到<strong>这两个数谁最大</strong>。</li>
+<li>这个函数应该返回给我这两个数的最大值，也是<code>int</code>类型的数据。</li>
+</ol>
+<p>故声明部分为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</code></pre></div><p>实现部分为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">max</span><span class="p">(</span><span class="kt">int</span> <span class="n">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num2</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;</span> <span class="n">num2</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">num1</span><span class="p">;</span>
+	<span class="k">else</span>
+		<span class="k">return</span> <span class="n">num2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>使用部分为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">max</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;两个数的最大值为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></blockquote>
+
+
+<div class="snote guide cyan ">
+	<div class="snote-content">
+		<p>题目：<br>
+二、要求写一个函数，用来确认某个数是否在某个数组<code>a[10]</code>里（为double类型数组）。</p>
+	</div>
+</div>
+<blockquote>
+<p>则分析如下：</p>
+<ol>
+<li>我应该给这个函数一个我要找的数，这个数为<code>double</code>类型；还要给我要找的数组，这个为数组的<code>double*</code>指针类型。</li>
+<li>这个函数判断这个数是否存在于<code>a</code>这个数组。</li>
+<li>这个函数应该返回给我这个数<strong>是否</strong>存在于<code>a</code>数组，是个<code>bool</code>类型的数据。</li>
+</ol>
+<p>故声明部分为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">bool</span> <span class="nf">if_inside</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span><span class="p">);</span>
+</code></pre></div><p>实现部分为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">bool</span> <span class="nf">if_inside</span><span class="p">(</span><span class="kt">double</span> <span class="n">num</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">arr</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span>	<span class="c1">//如果与数组中某个数相等，代表找到，返回true
+</span><span class="c1"></span>			<span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="nb">false</span><span class="p">;</span>	<span class="c1">//遍历完数组都没找到，代表真的没有，返回false
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>使用部分为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">bool</span> <span class="n">if_inside</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span><span class="p">);</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span> <span class="n">if_inside</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>	<span class="c1">//判断n是否在a数组内
+</span><span class="c1"></span>		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;n这个数在a数组内&#34;</span><span class="p">;</span>
+	<span class="k">else</span>
+		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;n这个数不在a数组内&#34;</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></blockquote>
+<h3 id="函数的注意事项">函数的注意事项</h3>
+
+
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><ol>
+<li>如果把函数实现写在<code>int main()</code>之前，便不用在<code>main</code>里<strong>声明函数</strong>了。【见书P86 第二个黑色方框】</li>
+<li>函数一旦<code>return</code>后，便<strong>不会再执行之后的语句</strong>。</li>
+<li>不同函数（包括<code>main</code>这个“主函数”）里面的变量<strong>不能互相调用</strong>。
+<blockquote>
+<p>即假如<code>main()</code>里有个<code>int a</code>，则不能在子函数<code>fx()</code>中用<code>a = 1</code>这样。<br>
+如果<code>main()</code>里有个<code>int a</code>，子函数<code>fx()</code>里也有个<code>int a</code>：则<code>main</code>里只能用<code>main</code>里的<code>a</code>，<code>fx</code>里只能用<code>fx</code>里的<code>a</code>。</p>
+</blockquote>
+</li>
+</ol>
+</p>
+	</div>
+</div>
+<h1 id="二需要记住的模板">二、需要记住的模板</h1>
+<h2 id="1生成随机数">1、生成随机数</h2>
+<ol>
+<li>
+<p><strong>必须写上的代码</strong>（提供随机种子）</p>
+<p>直接写在<code>int main()</code>后面的第一句话就好。</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+ <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+
+ <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div></li>
+<li>
+<p>使用方法</p>
+<ul>
+<li>要取得$(a,b)$的随机整数，使用<code>( rand() % (b-a+1) ) + a + 1</code>;</li>
+<li>要取得$[a,b)$的随机整数，使用<code>( rand() % (b-a) ) + a</code>;</li>
+<li>要取得$[a,b]$的随机整数，使用<code>( rand() % (b-a+1) ) + a</code>;</li>
+<li>要取得$(a,b]$的随机整数，使用<code>( rand() % (b-a) ) + a + 1</code>;</li>
+</ul>
+<blockquote>
+<p>如要随机生成1到100内的整数（含1和100）：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</code></pre></div><p>或者直接写成</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre></div></blockquote>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>记忆方法：</p>
+<p>想象$rand()$是能返回完全任意的数。<br>
+当你对这个任意的数$\mod 100$（对100取余数）后，那么余数范围只能是$0\sim99$。<br>
+再加个$1$，范围变成了$1 \sim 100$。</p>
+</p>
+	</div>
+</div>
+</li>
+</ol>
+<h2 id="2最大公约数gcd和最小公倍数lcm的计算">2、最大公约数（GCD）和最小公倍数（LCM）的计算</h2>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 这个比较重要，也很难背 </p>
+	</div>
+</div>
+<p>直接背代码。</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//求a和b的最大公约数
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="n">r</span><span class="p">;</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//保证a是两数中较小的数
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+		<span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="n">r</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">;</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">r</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>	<span class="c1">//这个过程背住orz……
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+		<span class="n">a</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+		<span class="n">r</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">;</span>
+	<span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">a</span><span class="p">;</span>	<span class="c1">//最后的a值为求得的结果
+</span><span class="c1"></span><span class="p">}</span>
+<span class="c1">//----------------------------------
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">LCM</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>	<span class="c1">//求a和b的最小公倍数
+</span><span class="c1"></span><span class="p">{</span>
+	<span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">GCD</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div><p>这里用函数的形式来写，以后求解可可以直接用这个函数。如：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;和&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span><span class="s">&#34;的最大公约数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">GCD</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;和&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span><span class="s">&#34;的最小公约数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">LCM</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+</code></pre></div><p>不用函数的话，就把那里面的东西直接写到<code>main()</code>里就行。</p>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>还有很简短的版本，采用了递归的思想。</p>
+<p>可以尝试理解下这个代码，能很好的<strong>锻炼递归思想</strong>。</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">return</span> <span class="n">b</span> <span class="o">?</span> <span class="n">GCD</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">;</span>	<span class="c1">//意思是如果b不为0，则a=b,b=b%a辗转相除；否则就返回a
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><hr>
+<p>或者采用这个递推的思想，极其好记！</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">%=</span> <span class="n">b</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>【但原理就不要求掌握了，其中的<code>^=</code>是位运算……</p>
+</p>
+	</div>
+</div>
+<h2 id="3判断某数是否为质数">3、判断某数是否为质数</h2>
+<p>直接背代码。</p>
+<p><strong>代码里有几个要注意的点。</strong></p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">bool</span> <span class="nf">if_Prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+	<span class="c1">//！特别注意！：当num=1的时候很可能之后会判断失误，故需要“打补丁”：当num=1的时候直接返回false
+</span><span class="c1"></span>
+	<span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>	<span class="c1">//刚开始假设是素数
+</span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//！注意！：这里是(2~num-1)，而不是(2~num)，很容易在这里写错
+</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="p">{</span>	<span class="c1">//找到能被(2~num-1)之中的数除尽，证明不是素数，设置flag并退出循环
+</span><span class="c1"></span>			<span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+			<span class="k">break</span><span class="p">;</span>
+		<span class="p">}</span>
+
+	<span class="k">return</span> <span class="n">flag</span><span class="p">;</span>	<span class="c1">//如果循环完都没有被除尽，证明是素数，会返回true；否则会返回flase
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><p>这里用函数的形式来写，以后判断就可以直接用这个函数。如：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+<span class="k">if</span> <span class="p">(</span> <span class="n">if_Prime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;是素数&#34;</span><span class="p">;</span>
+<span class="k">else</span>
+	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;不是素数&#34;</span><span class="p">;</span>
+</code></pre></div><h2 id="4对数组的排序">4、对数组的排序</h2>
+<p>就两种排序方法：</p>
+<ol>
+<li>冒泡排序</li>
+<li>选择排序</li>
+</ol>
+<p>两种方法仅存在写法上的区别，建议自己选择一种自己背得到的记住，<strong>！有很大几率要考！</strong></p>
+<p><em>【模板见老师的PPT，如果没记的话可以问我。】</em></p>
+<h2 id="5二分查找折半查找">5、二分查找（折半查找）</h2>
+<p>有可能要考，考的话会专门指出“请用二分查找来找出&hellip;”。
+（不然的话就可以用“从头到尾遍历数组”来找。）</p>
+<p><em>【模板见老师的PPT，如果没记的话可以问我。】</em></p>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 使用二分查找，需要先让数组有序，如果是无序的数组先要排序。 </p>
+	</div>
+</div>
+<h1 id="三常用头文件及函数">三、常用头文件及函数</h1>
+<blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;...&gt;</span><span class="cp">
+</span></code></pre></div></blockquote>
+<ol>
+<li>
+<p><code>#include&lt;iostream&gt;</code></p>
+<p><strong>最基本</strong>的库。<br>
+<code>cin</code>、<code>cout</code>等基本指令都需要这个库，写程序直接写上即可。<br>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>记忆方法：</p>
+<ul>
+<li>io ————&gt; input&amp;output 输入输出</li>
+<li>stream ————&gt; stream n.流</li>
+</ul>
+<p>即“输入输出流”。</p>
+</p>
+	</div>
+</div></p>
+</li>
+<li>
+<p><code>#include&lt;ctime&gt;</code></p>
+<p>使用<strong>随机生成</strong>时要用到的库。<br>
+即生成种子时用的<code>time()</code>需要这个库。
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>记忆：</p>
+<ul>
+<li>c ————&gt; 值c++</li>
+<li>time ————&gt; time n.时间</li>
+</ul>
+<p>即用来管时间的库。（随机函数需要用时间来作为种子，这样才能保证随机生成不重复）</p>
+</p>
+	</div>
+</div></p>
+</li>
+<li>
+<p><code>#include&lt;iomanip&gt;</code></p>
+<p>控制<strong>输出格式</strong>要用到的库。<br>
+<code>setw(...)</code>、<code>fixed()</code>、<code>precision(...)</code>（基本为这三个）需要用到这个库。
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>记忆：</p>
+<ul>
+<li>io ————&gt; input&amp;output</li>
+<li>manip ————&gt; manipulator n.操控器 的前五个字母</li>
+</ul>
+<p>即“输入输出控制器”。</p>
+</p>
+	</div>
+</div></p>
+</li>
+<li>
+<p><code>#include&lt;string&gt;</code></p>
+<p>使用c++的<strong>字符串</strong>要用到的库。<br>
+对字符串大致使用不了解的看书P132-134。（会点很基础的输入输出就行，不用太了解）</p>
+</li>
+</ol>
+<p><em>【库这些东西多写了没坏处，可以写之前就把这些库都写上，之后复制粘贴就行xd……</em></p>
+<h1 id="四常见非编译问题和错误弹窗解释">四、常见非编译问题和错误弹窗解释</h1>
+<h2 id="1未赋初值类">1、未赋初值类</h2>
+<p>弹窗显示如图：<br>
+<figure style="flex-grow: 141; flex-basis: 339px">
+		<a href="/p/cpp-summary/err1.png" data-size="924x654"><img src="/p/cpp-summary/err1.png"
+				srcset="/p/cpp-summary/err1_huf8fb917e0a7681950fbec7ad55164427_26350_480x0_resize_box_2.png 480w, /p/cpp-summary/err1_huf8fb917e0a7681950fbec7ad55164427_26350_1024x0_resize_box_2.png 1024w"
+				width="924"
+				height="654"
+				loading="lazy"
+				alt="错误类型1">
+		</a>
+		
+		<figcaption>错误类型1</figcaption>
+		
+	</figure></p>
+<ul>
+<li>中文意思：“val”（橙色圈出）这个变量没被初始化（赋初值）就在使用。</li>
+<li>出现原因：一般出现在累加变量<strong>未赋初值为0</strong>，就在用<code>sum=sum+a</code>。</li>
+<li>解决方法：找到变量名为引号里的变量，在使用其前赋相应初值。</li>
+</ul>
+<blockquote>
+<p>如图：</p>
+<p><figure style="flex-grow: 155; flex-basis: 373px">
+		<a href="/p/cpp-summary/err1_p.png" data-size="742x477"><img src="/p/cpp-summary/err1_p.png"
+				srcset="/p/cpp-summary/err1_p_hu6271747eecd2d56c215b22cec1ca844d_23585_480x0_resize_box_2.png 480w, /p/cpp-summary/err1_p_hu6271747eecd2d56c215b22cec1ca844d_23585_1024x0_resize_box_2.png 1024w"
+				width="742"
+				height="477"
+				loading="lazy"
+				alt="错误1-例">
+		</a>
+		
+		<figcaption>错误1-例</figcaption>
+		
+	</figure></p>
+<p>红色划线为对<code>val</code>的使用处，橙色划线为<code>val</code>的定义处。<br>
+很明显看到<code>val</code>在使用前未被赋初值。<br>
+故在使用前赋个初值（这里为累加变量，所以赋初值为0），即：<code>val = 0</code>。</p>
+</blockquote>
+<h2 id="2数组越界类">2、数组越界类</h2>
+<p>弹窗显示如图：<br>
+<figure style="flex-grow: 131; flex-basis: 316px">
+		<a href="/p/cpp-summary/err2.png" data-size="862x654"><img src="/p/cpp-summary/err2.png"
+				srcset="/p/cpp-summary/err2_huec0459009573e6433701548224e353f5_26727_480x0_resize_box_2.png 480w, /p/cpp-summary/err2_huec0459009573e6433701548224e353f5_26727_1024x0_resize_box_2.png 1024w"
+				width="862"
+				height="654"
+				loading="lazy"
+				alt="错误类型2">
+		</a>
+		
+		<figcaption>错误类型2</figcaption>
+		
+	</figure></p>
+<ul>
+<li>中文意思：变量“a”周围的栈被破坏。【理解不到没关系看下面_(:з」∠)_……</li>
+<li>出现原因：出现在对数组元素的访问中，访问的下标超过数组最大个数。</li>
+<li>解决方法：找到变量名为引号里的数组的声明部分，将其空间开大点。</li>
+</ul>
+<blockquote>
+<p>如图：</p>
+<p><figure style="flex-grow: 205; flex-basis: 494px">
+		<a href="/p/cpp-summary/err2_p.png" data-size="826x401"><img src="/p/cpp-summary/err2_p.png"
+				srcset="/p/cpp-summary/err2_p_hu902f0627d74d2ed7a8fb90bfa1f0ac52_19393_480x0_resize_box_2.png 480w, /p/cpp-summary/err2_p_hu902f0627d74d2ed7a8fb90bfa1f0ac52_19393_1024x0_resize_box_2.png 1024w"
+				width="826"
+				height="401"
+				loading="lazy"
+				alt="错误2-例">
+		</a>
+		
+		<figcaption>错误2-例</figcaption>
+		
+	</figure></p>
+<p>橙色划线定义个数组空间为$10$，即只能用<code>a[0]~a[9]</code>。<br>
+但在红色划线里，却用了<code>a[10]</code>，明显超出了最大范围，即越界了，所以会出现此错。<br>
+故在定义部分<code>int a[10]</code>，把它空间开大点变成<code>int a[11]</code>即可。<br>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 这也是数组中很常见的误区和错误需要注意！ </p>
+	</div>
+</div></p>
+</blockquote>
+<h2 id="3死循环类">3、死循环类</h2>
+<p>这类错误不会报错，但会感觉程序怪怪的……<br>
+比如：</p>
+<ul>
+<li>一直黑屏，没有任何反应。<br>
+（如果不确定是不是电脑卡了的原因，可在<code>int main()</code>最开始加一句<code>cout&lt;&lt;&quot;test&quot;</code>来判断：如果输出了<code>test</code>，则证明不是程序卡了。）</li>
+<li>明明只想读入几个数，却发现一直在读入。</li>
+<li>明明只想输出几个数，却发现一直在输出。</li>
+</ul>
+<p>这几类便是说明你的程序陷入了“死循环”。</p>
+<blockquote>
+<p>如下程序：</p>
+<p><figure style="flex-grow: 110; flex-basis: 264px">
+		<a href="/p/cpp-summary/err3_p.png" data-size="568x516"><img src="/p/cpp-summary/err3_p.png"
+				srcset="/p/cpp-summary/err3_p_hu6a5dc7d31485f9a38ef924fef4ee604d_21208_480x0_resize_box_2.png 480w, /p/cpp-summary/err3_p_hu6a5dc7d31485f9a38ef924fef4ee604d_21208_1024x0_resize_box_2.png 1024w"
+				width="568"
+				height="516"
+				loading="lazy"
+				alt="错误3-例">
+		</a>
+		
+		<figcaption>错误3-例</figcaption>
+		
+	</figure></p>
+<p>本意是只读入五个数，输出这五个数的和。</p>
+<p>运行时：</p>
+<p><figure style="flex-grow: 186; flex-basis: 447px">
+		<a href="/p/cpp-summary/err3.png" data-size="1958x1050"><img src="/p/cpp-summary/err3.png"
+				srcset="/p/cpp-summary/err3_hucf7cef33e400ed250ae0e2c855c83bc8_44910_480x0_resize_box_2.png 480w, /p/cpp-summary/err3_hucf7cef33e400ed250ae0e2c855c83bc8_44910_1024x0_resize_box_2.png 1024w"
+				width="1958"
+				height="1050"
+				loading="lazy"
+				alt="错误3-运行界面">
+		</a>
+		
+		<figcaption>错误3-运行界面</figcaption>
+		
+	</figure>
+发现一直在读入。</p>
+</blockquote>
+<ul>
+<li>出现原因：
+<ol>
+<li>循环变量没有改变
+<blockquote>
+<p>如忘了<code>i++</code>、<code>i--</code>、<code>i=i+2</code>等</p>
+</blockquote>
+</li>
+<li>循环条件不可能中止
+<blockquote>
+<p>如<code>for (i = 1; i &gt;= 0; i++)</code>，$i\geq 0$一直成立</p>
+</blockquote>
+</li>
+<li>循环里不小心改变了循环变量
+<blockquote>
+<p>如：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="p">...</span>
+
+	<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>每次循环<code>i</code>又会变为0，则会一直循环造成死循环。</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<p>还可能有其他各种原因，反正问题都出在循环里，<strong>仔细检查下自己写的循环部分</strong>。</p>
+<h1 id="五其他杂类">五、其他杂类</h1>
+<ol>
+<li>
+<p>有关<code>i++</code>和<code>++i</code>的区别，不懂看书P45。</p>
+</li>
+<li>
+<p>有关条件运算符<code>... ? ... : ...</code>的用法（不一定会用，但是要看得懂），不懂看书P45。</p>
+</li>
+<li>
+<p>强制类型转换<code>(int)4.8</code>、<code>(double)1</code>是否还记得？不记得看书P50。</p>
+</li>
+<li>
+<p>对<code>const</code>（符号常量）这个东西是否还记得？</p>
+<blockquote>
+<p>如<code>const double PI = 3.1415926</code></p>
+</blockquote>
+<p>不记得看书P31。</p>
+</li>
+<li>
+<p>确定<strong>是否掌握<code>setw</code>、<code>precision</code>等</strong>控制输出格式的用法，不会看书P34-P35。</p>
+</li>
+<li>
+<p>对字符数组<code>char a[100]</code>，了解这是什么即可（c里面的字符串），不必掌握。</p>
+</li>
+<li>
+<p>字符串最后会有个看不见的<code>\000</code>这个空字符：</p>
+<blockquote>
+<p>如字符串<code>&quot;MinatoAqua&quot;</code></p>
+<ul>
+<li>长度为$10$。</li>
+<li>存储时存放$11$个字符串。</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p>一定注意<code>{}</code>的匹配！
+特别牢记你的<strong>这个<code>if</code>或<code>for</code>要管哪几句话</strong>，就把哪几句话打上<code>{}</code></p>
+</li>
+<li>
+<p>强烈建议把程序写的<strong>规范一点</strong></p>
+
+
+<div class="snote guide blue ">
+	<div class="snote-content">
+		<p><ol>
+<li>一句话（用<code>;</code>结尾的）就是一行</li>
+<li><code>{</code>和<code>}</code>单独占一行</li>
+<li><code>{</code>之后的语句空两格（或者按“Tab”这个键）</li>
+<li><code>}</code>之后（包含这一行）的语句往前删两个空格（用的“Tab”的删一次就可以）</li>
+<li>具体样式就是以上我写的那种样子。</li>
+</ol>
+</p>
+	</div>
+</div>
+<p>这样不只是好看，更能让你的整体思路保持清晰，不然很容易犯<code>{}</code>不匹配的问题！</p>
+</li>
+<li>
+<p>要知道你每写一句话是在干嘛，这句话我写出来是什么目的。【有点抽象，不过确实很需要知道自己的目的，怎么实现这个目的，等熟练后这个自然也就会很清楚了orz……</p>
+</li>
+</ol>
+<hr>
+<p>以上，<br>
+祝武运昌隆！……</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">程序设计</a>
+        
+            <a href="/tags/%E6%80%BB%E8%80%83%E7%82%B9/">总考点</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议……</span>
+    </section>
+    </footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/cpp-array/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数组……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/am-formula/">
+        
+        
+            <div class="article-image">
+                <img src="/p/am-formula/76524292_p0.2096f1f14908039545fe8f7a9b310d5f_hu496f4562aacbed9d40936841282eb41a_2147862_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="AM-formula" 
+                        data-hash="md5-IJbx8UkIA5VF/o96mzENXw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">考前公式速记……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a> <br />
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

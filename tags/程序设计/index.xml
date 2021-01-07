@@ -9,19 +9,19 @@
     <lastBuildDate>Sat, 26 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>数组……</title>
-      <link>https://blog.supersassw.com/p/summary-array/</link>
+      <link>https://blog.supersassw.com/p/cpp-array/</link>
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/summary-array/</guid>
+      <guid>https://blog.supersassw.com/p/cpp-array/</guid>
       <description>数组 一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列$a_i$： 当$i=</description>
     </item>
     
     <item>
       <title>考点总结……</title>
-      <link>https://blog.supersassw.com/p/summary-all/</link>
+      <link>https://blog.supersassw.com/p/cpp-summary/</link>
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/summary-all/</guid>
+      <guid>https://blog.supersassw.com/p/cpp-summary/</guid>
       <description>一、注意的点 1、用作为“累加、累乘的变量”的注意事项 如： sum1 = sum1 + a;——作为累加求和。 sum2 = sum2 * a;——作为累乘求和。 是否定义时赋初值？ int sum1 =</description>
     </item>
     

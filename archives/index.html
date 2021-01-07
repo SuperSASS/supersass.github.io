@@ -1,10 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
-
-<head><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=''><title>归档</title>
 
 <link rel='canonical' href='https://blog.supersassw.com/archives/'>
@@ -16,14 +13,12 @@
 <meta property='og:type' content='article'><meta property='article:section' content='Page' />
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="归档">
 <meta name="twitter:description" content="">
-<link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
-
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
 
 
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
 
 
@@ -38,13 +33,30 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    </head>
+    <body class="template-archives">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-</head>
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-
-
-<body class="template-archives" data-scheme="">
-    
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
     
     
 <div class="background" id="background">
@@ -74,10 +86,8 @@ if (!doNotTrack) {
 </div>
 
 
-    <div class="container flex on-phone--column align-items--flex-start extended ">
-
-        
-        <aside class="sidebar left-sidebar sticky">
+        <div class="container main-container flex on-phone--column extended ">
+            <aside class="sidebar left-sidebar sticky">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -111,7 +121,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -130,7 +141,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/about'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -148,7 +160,8 @@ if (!doNotTrack) {
         
         
 
-        <li  class='current' >
+        
+        <li  class='current'  id='basic'>
             <a href='/archives'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -167,7 +180,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/search'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -185,44 +199,39 @@ if (!doNotTrack) {
         
 
         
-        <li id="dark-mode-toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
 </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
 </svg>
-            <span>夜间模式</span>
-        </li>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
     </ol>
 </aside>
 
-
-        
-        <main class="main full-width">
-            
+            <main class="main full-width">
     
     
     
     <h2 class="section-title">分类</h2>
     <div class="subsection-list">
         <div class="article-list--tile">
-            
-                
-<article class="">
-    <a href="/categories/%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/">
-        
-        
-
-        <div class="article-details">
-            <h2 class="article-title">课程总结</h2>
-        </div>
-    </a>
-</article>
             
                 
 <article class="has-image">
@@ -242,6 +251,18 @@ if (!doNotTrack) {
 
         <div class="article-details">
             <h2 class="article-title">测试</h2>
+        </div>
+    </a>
+</article>
+            
+                
+<article class="">
+    <a href="/categories/%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">课程总结</h2>
         </div>
     </a>
 </article>
@@ -301,12 +322,58 @@ if (!doNotTrack) {
 
     
     
+    <div class="archives-group" id="2021">
+        <h2 class="archives-date section-title"><a href="/archives/#2021">2021</a></h2>
+        <div class="article-list--compact">
+            
+                <article>
+    <a href="/p/test-toc/">
+        <div class="article-details">
+            <h2 class="article-title">Table Of Content测试……</h2>
+            <footer class="article-time">
+                <time datetime='2021-01-07T00:00:00Z'>2021/01/07</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/test-toc/66488487_p0_hu927bcdeee8a2673c7ad35386c9152871_481055_120x120_fill_box_smart1_2.png" 
+                        width="120"
+                        height="120" 
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
+            
+                <article>
+    <a href="/p/am-formula/">
+        <div class="article-details">
+            <h2 class="article-title">考前公式速记……</h2>
+            <footer class="article-time">
+                <time datetime='2021-01-04T00:00:00Z'>2021/01/04</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/am-formula/76524292_p0_hu496f4562aacbed9d40936841282eb41a_2147862_120x120_fill_q75_box_smart1.jpg" 
+                        width="120"
+                        height="120" 
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
+            
+        </div>
+    </div>
+    
+    
     <div class="archives-group" id="2020">
         <h2 class="archives-date section-title"><a href="/archives/#2020">2020</a></h2>
         <div class="article-list--compact">
             
                 <article>
-    <a href="/p/summary-all/">
+    <a href="/p/cpp-summary/">
         <div class="article-details">
             <h2 class="article-title">考点总结……</h2>
             <footer class="article-time">
@@ -317,7 +384,7 @@ if (!doNotTrack) {
 </article>
             
                 <article>
-    <a href="/p/summary-array/">
+    <a href="/p/cpp-array/">
         <div class="article-details">
             <h2 class="article-title">数组……</h2>
             <footer class="article-time">
@@ -544,25 +611,27 @@ if (!doNotTrack) {
     <section class="copyright">
         &copy; 
         
-        2020 Super SASS……
+        2021 Super SASS……
     </section>
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
     </section>
+    
+    
+    <section class="icp">
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a> <br />
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a>
+    </section>
 </footer>
 
-
-        </main>
-
-        
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
 
-<script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
 
 <script>
     (function () {
@@ -576,6 +645,5 @@ if (!doNotTrack) {
     }());
 </script>
 
-</body>
-
+    </body>
 </html>

@@ -1,10 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-
-
-<head><meta charset='utf-8'>
+    <head><meta charset='utf-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='贪心算法中邻项比较排序的详细讲解……'><title>邻项比较排序……</title>
 
 <link rel='canonical' href='https://blog.supersassw.com/p/neighbor-sort/'>
@@ -17,14 +14,12 @@
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="邻项比较排序……">
 <meta name="twitter:description" content="贪心算法中邻项比较排序的详细讲解……"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://blog.supersassw.com/p/neighbor-sort/71111285_p0.png' />
-<link rel="shortcut icon" href="https://supersass.github.io/img/favicon.ico">
-
+    <link rel="shortcut icon" href="/img/favicon.ico" />
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
 
 
-<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
 
 
 
@@ -39,13 +34,30 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-</head>
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-
-
-<body class="" data-scheme="">
-    
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
     
     
 <div class="background" id="background">
@@ -75,10 +87,8 @@ if (!doNotTrack) {
 </div>
 
 
-    <div class="container flex on-phone--column align-items--flex-start extended article-page with-toolbar">
-
-        
-        <aside class="sidebar left-sidebar sticky">
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
     <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
@@ -112,7 +122,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -131,7 +142,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/about'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -149,7 +161,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/archives'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -168,7 +181,8 @@ if (!doNotTrack) {
         
         
 
-        <li >
+        
+        <li  id='basic'>
             <a href='/search'>
                 
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -185,27 +199,96 @@ if (!doNotTrack) {
         </li>
         
 
-        
-        <li id="dark-mode-toggle">
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#邻项比较排序">邻项比较排序</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#题目解决方法">题目解决方法</a>
+          <ul>
+            <li><a href="#引例">引例</a></li>
+            <li><a href="#1找出每种状态的ans选邻项代入">1、找出每种状态的<code>ans</code>，选邻项代入</a></li>
+            <li><a href="#2假设相邻位置写出两种状态的ans">2、假设相邻位置，写出两种状态的<code>ans</code></a></li>
+            <li><a href="#3根据题意写出排序条件并化简得到最终决策方案">3、根据题意写出排序条件并化简，得到最终决策方案</a></li>
+            <li><a href="#4自定义结构体重载运算符使用sort遍历寻答案">4、自定义结构体，重载<code>&lt;</code>运算符，使用<code>sort</code>，遍历寻答案</a></li>
+          </ul>
+        </li>
+        <li><a href="#标程代码">标程代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#使用注意事项">使用注意事项</a>
+      <ul>
+        <li><a href="#先前知识严格弱序">先前知识——严格弱序</a></li>
+        <li><a href="#引例-1">引例</a>
+          <ul>
+            <li><a href="#按照之前的方法尝试解决">按照之前的方法尝试解决</a></li>
+            <li><a href="#错误分析">错误分析</a></li>
+            <li><a href="#改进方法">改进方法</a></li>
+            <li><a href="#很特殊的hack数据">很特殊的hack数据</a></li>
+          </ul>
+        </li>
+        <li><a href="#决策条件是否正确的判断方法">决策条件是否正确的判断方法</a>
+          <ul>
+            <li><a href="#1条件检查器">1、条件检查器</a></li>
+            <li><a href="#2与选择排序对拍">2、与选择排序对拍</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#其他补充点">其他补充点</a>
+      <ul>
+        <li><a href="#有关排序的深层理解">有关排序的深层理解</a></li>
+        <li><a href="#有关贪心决策的满足度影响">有关贪心决策的满足度影响</a></li>
+        <li><a href="#有关排序对严格弱序的不同要求">有关排序对严格弱序的不同要求</a></li>
+        <li><a href="#有关传递性的简单判断">有关传递性的简单判断</a></li>
+      </ul>
+    </li>
+    <li><a href="#总结">总结</a></li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="8" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
 </svg>
-            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
-  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
   <circle cx="16" cy="12" r="2" />
   <rect x="2" y="6" width="20" height="12" rx="6" />
 </svg>
-            <span>夜间模式</span>
-        </li>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
     </ol>
 </aside>
 
-
-        
-        <main class="main full-width">
-            
+            <main class="main full-width">
 
     <div id="article-toolbar">
         <a href="https://blog.supersassw.com/" class="back-home">
@@ -225,10 +308,15 @@ if (!doNotTrack) {
 <article class="has-image main-article">
     <header class="article-header">
         <div class="article-image">
-            <img srcset="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_1024x0_resize_box_2.png 1024w, /p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_2000x0_resize_box_2.png 2000w"
-                    src="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_2000x0_resize_box_2.png" width="1500" height="1142" loading="lazy"
-                    alt="Featured image of post 邻项比较排序……" />
-            
+            <a href="/p/neighbor-sort/">
+                <img src="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_800x0_resize_box_2.png"
+                        srcset="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_800x0_resize_box_2.png 800w, /p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="609" 
+                        loading="lazy"
+                        alt="Featured image of post 邻项比较排序……" />
+                
+            </a>
         </div>
     
 
@@ -239,11 +327,9 @@ if (!doNotTrack) {
     
     <header class="article-category">
         
-        <a href="/categories/basic/" class="color-tag" data-image="/p/neighbor-sort/71111285_p0_hud2648e021785c2a9f9434e425c67999f_2056049_20x20_fill_box_smart1_2.png"
-            data-key="neighbor-sort" data-hash="md5-r334/EVJGtAzPFGKrF0AwQ==">
-            基础部分
-        </a>
-        
+            <a href="/categories/basic/" >
+                基础部分
+            </a>
         
     </header>
     
@@ -267,8 +353,8 @@ if (!doNotTrack) {
 
         <time class="article-time--published">2020/12/15</time>
     </footer>
-    <footer class="article-readingTime-container">
-        <div class="article-readingTime-left">
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
   <path d="M14 3v4a1 1 0 0 0 1 1h4" />
@@ -278,13 +364,12 @@ if (!doNotTrack) {
   <line x1="13" y1="17" x2="15" y2="17" />
 </svg>
         </div>
-        <div class="article-readingTime-right">
+        <div class="article-readingTime--details">
             <div class="char">文章字数：10179</div>
             <div class="time">预计阅读时长： <time>21</time> 分钟</div>
         </div>
     </footer>
 </div>
-
 </header>
 
     <section class="article-content">
@@ -1263,24 +1348,30 @@ $\implies \min(a_j,b_i) &gt; \min(a_i,b_j)$</p>
     </section></footer>
 
     
-        
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/katex.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/katex.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc.1/contrib/auto-render.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      renderMathInElement(document.body, {
-              delimiters: [
-                  {left: "$$", right: "$$", display: true},
-                  {left: "$", right: "$", display: false}
-              ]
-          });
-    });
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
 </script>
-
     
 </article>
+
     
     
 
@@ -1386,12 +1477,18 @@ $\implies \min(a_j,b_i) &gt; \min(a_i,b_j)$</p>
     <section class="copyright">
         &copy; 
         
-        2020 Super SASS……
+        2021 Super SASS……
     </section>
     
     <section class="powerby">
         Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
         Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a> <br />
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a>
     </section>
 </footer>
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -1462,16 +1559,12 @@ $\implies \min(a_j,b_i) &gt; \min(a_i,b_j)$</p>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
-
-        </main>
-
-        
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
 
-<script type="text/javascript" src="/ts/changeScheme.js" defer></script>
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
 
 <script>
     (function () {
@@ -1485,6 +1578,5 @@ $\implies \min(a_j,b_i) &gt; \min(a_i,b_j)$</p>
     }());
 </script>
 
-</body>
-
+    </body>
 </html>
