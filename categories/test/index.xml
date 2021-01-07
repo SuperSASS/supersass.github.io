@@ -13,7 +13,16 @@
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/test-toc/</guid>
-      <description>文章目录 在左侧侧边栏增加了显示文章目录（Table Of Content）的功能…… 测试 这是h3…… 这是另一个h3…… h4以下默认是不会显示的qw</description>
+      <description>文章目录 发现锚点在个人简介(About)页面不生效，待修正…… 在左侧侧边栏增加了显示文章目录（Table Of Content）的功能…… 测试 这是</description>
+    </item>
+    
+    <item>
+      <title>扩展Shortcode测试……</title>
+      <link>https://blog.supersassw.com/p/test-shortcode-extend/</link>
+      <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/test-shortcode-extend/</guid>
+      <description>扩展Shortcode 以下Shortcode均来自Hugo的Hugo Book主题…… 一、columns 分栏显示内容…… 使用方法 {{&amp;lt; columns &amp;gt;}} Content_1 (With Markdown) &amp;lt;---&amp;gt;</description>
     </item>
     
     <item>
@@ -35,18 +44,18 @@
     </item>
     
     <item>
-      <title>音乐播放器……</title>
+      <title>音乐播放器测试……</title>
       <link>https://blog.supersassw.com/p/test-player/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/test-player/</guid>
-      <description>音乐播放器 采用的APlayer的外链播放器…… 默认会显示在文章顶部…… 如需用吸底模式，请在第一个参数输入-fixed: 1……</description>
+      <description>音乐播放器 采用的APlayer的外链播放器…… 默认会显示在文章顶部…… 如需用吸底模式，请在第一个参数输入-fixed: 1…… 当然要放我最喜欢</description>
     </item>
     
     <item>
       <title>Shortcode测试……</title>
       <link>https://blog.supersassw.com/p/test-shortcode/</link>
-      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/test-shortcode/</guid>
       <description>Shortcode Hugo的Shortcode的测试…… 新增了Bilibili的链接…… 不知道是什么的原文x： Hugo ships with several Built-in Shortcodes for rich content, along with a Privacy Config and a set of Simple Shortcodes that enable static</description>
@@ -55,7 +64,7 @@
     <item>
       <title>页面测试……</title>
       <link>https://blog.supersassw.com/p/test-chinese/</link>
-      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/test-chinese/</guid>
       <description>正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的</description>

@@ -8,12 +8,12 @@
     <language>zh-CN</language>
     <lastBuildDate>Sat, 19 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>音乐播放器……</title>
+      <title>音乐播放器测试……</title>
       <link>https://blog.supersassw.com/p/test-player/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/test-player/</guid>
-      <description>音乐播放器 采用的APlayer的外链播放器…… 默认会显示在文章顶部…… 如需用吸底模式，请在第一个参数输入-fixed: 1……</description>
+      <description>音乐播放器 采用的APlayer的外链播放器…… 默认会显示在文章顶部…… 如需用吸底模式，请在第一个参数输入-fixed: 1…… 当然要放我最喜欢</description>
     </item>
     
   </channel>

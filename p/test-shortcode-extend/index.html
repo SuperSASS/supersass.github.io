@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='从其他地方移植过来的Shortcode的测试……'><title>扩展Shortcode测试……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/test-shortcode-extend/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='扩展Shortcode测试……'>
+<meta property='og:description' content='从其他地方移植过来的Shortcode的测试……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/test-shortcode-extend/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='测试' /><meta property='article:tag' content='短代码' /><meta property='article:published_time' content='2021-01-07T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-01-07T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/test-shortcode-extend/Yande-312231.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="扩展Shortcode测试……">
+<meta name="twitter:description" content="从其他地方移植过来的Shortcode的测试……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/test-shortcode-extend/Yande-312231.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-3540JBNMZR', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#扩展shortcode">扩展Shortcode</a>
+      <ul>
+        <li><a href="#一columns">一、columns</a>
+          <ul>
+            <li><a href="#使用方法">使用方法</a></li>
+            <li><a href="#使用例">使用例</a></li>
+          </ul>
+        </li>
+        <li><a href="#二details">二、details</a>
+          <ul>
+            <li><a href="#使用方法-1">使用方法</a></li>
+            <li><a href="#使用例-1">使用例</a></li>
+            <li><a href="#嵌套测试">嵌套测试</a></li>
+          </ul>
+        </li>
+        <li><a href="#三tabs">三、tabs</a>
+          <ul>
+            <li><a href="#使用方法-2">使用方法</a></li>
+            <li><a href="#使用例-2">使用例</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>上一个页面</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/test-shortcode-extend/">
+                <img src="/p/test-shortcode-extend/Yande-312231_hub297abc0e6f09948596897695fbb9840_1998731_800x0_resize_box_2.png"
+                        srcset="/p/test-shortcode-extend/Yande-312231_hub297abc0e6f09948596897695fbb9840_1998731_800x0_resize_box_2.png 800w, /p/test-shortcode-extend/Yande-312231_hub297abc0e6f09948596897695fbb9840_1998731_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="500" 
+                        loading="lazy"
+                        alt="Featured image of post 扩展Shortcode测试……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/test/" >
+                测试
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/test-shortcode-extend/">扩展Shortcode测试……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+        从其他地方移植过来的Shortcode的测试……
+    </h3>
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/01/07</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：1707</div>
+            <div class="time">预计阅读时长： <time>4</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="扩展shortcode">扩展Shortcode</h1>
+<div class="snote link green">
+	<div class="snote-content">
+		<p> 以下Shortcode均来自Hugo的<a href="https://github.com/alex-shpak/hugo-book">Hugo Book</a>主题…… </p>
+	</div>
+</div>
+<h2 id="一columns">一、columns</h2>
+<p>分栏显示内容……</p>
+<h3 id="使用方法">使用方法</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">columns</span> <span class="p">&gt;}}</span>
+
+<span class="nf">Content_1</span> <span class="p">(</span><span class="nx">With</span> <span class="nx">Markdown</span><span class="p">)</span>
+
+<span class="o">&lt;---</span><span class="p">&gt;</span>
+
+<span class="nx">Content_2</span>
+
+<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">columns</span> <span class="p">&gt;}}</span>
+</code></pre></div><h3 id="使用例">使用例</h3>
+<div class="sc-columns">
+	
+	<div class="sc-columns--inner">
+		<h1 id="左侧栏">左侧栏</h1>
+<p>OI的发生，到底需要如何做到，不OI的发生，又会如何产生。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 塞涅卡在不经意间这样说过，真正的人生，只有在经过艰难卓绝的斗争之后才能实现。这启发了我， OI因何而发生?我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 既然如此， 了解清楚OI到底是一种怎么样的存在，是解决一切问题的关键。 既然如何， 现在，解决OI的问题，是非常非常重要的。 所以， 问题的关键究竟为何? 经过上述讨论就我个人来说，OI对我的意义，不能不说非常重大。 所谓OI，关键是OI需要如何写。 一般来讲，我们都必须务必慎重的考虑考虑。 OI的发生，到底需要如何做到，不OI的发生，又会如何产生。 既然如何， 那么， 既然如何， 我们不得不面对一个非常尴尬的事实，那就是， 歌德曾经说过，没有人事先了解自己到底有多大的力量，直到他试过以后才知道。我希望诸位也能好好地体会这句话。
+	</div>
+	
+	<div class="sc-columns--inner">
+		<h1 id="中间栏">中间栏</h1>
+<p>俾斯麦曾经说过，对于不屈不挠的人来说，没有失败这回事。带着这句话，我们还要更加慎重的审视这个问题： 要想清楚，OI，到底是一种怎么样的存在。 每个人都不得不面对这些问题。 在面对这种问题时， 培根曾经说过，要知道对好事的称颂过于夸大，也会招来人们的反感轻蔑和嫉妒。我希望诸位也能好好地体会这句话。 生活中，若OI出现了，我们就不得不考虑它出现了的事实。 就我个人来说，OI对我的意义，不能不说非常重大。 既然如何， 塞涅卡在不经意间这样说过，生命如同寓言，其价值不在与长短，而在与内容。我希望诸位也能好好地体会这句话。
+	</div>
+	
+	<div class="sc-columns--inner">
+		<h1 id="右侧栏">右侧栏</h1>
+<p>所谓OI，关键是OI需要如何写。 所谓OI，关键是OI需要如何写。 那么， 既然如何， OI，到底应该如何实现。 带着这些问题，我们来审视一下OI。 我们不得不面对一个非常尴尬的事实，那就是， 所谓OI，关键是OI需要如何写。
+	</div>
+	
+	<div class="sc-columns--inner">
+		<h1 id="偷偷摸摸栏">偷偷摸摸栏？……</h1>
+<p>测试……
+	</div>
+	
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 中间的文本尽量不要太长，不然会占用很大竖直空间…… </p>
+	</div>
+</div>
+<h2 id="二details">二、details</h2>
+<p>内容折叠栏……</p>
+<p>使用的为HTML的<code>details</code>标签……</p>
+<h3 id="使用方法-1">使用方法</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="s">&#34;Title&#34;</span> <span class="p">[</span><span class="nx">open</span><span class="p">]</span> <span class="p">&gt;}}</span>
+<span class="nx">content</span>
+<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
+</code></pre></div><ul>
+<li>open为可选项，加入open代表默认打开……</li>
+</ul>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>另一种方法：</p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;Title&#34;</span> <span class="nx">open</span><span class="p">=</span><span class="kc">true</span> <span class="p">&gt;}}</span>
+<span class="nx">content</span>
+<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
+</code></pre></div></p>
+	</div>
+</div>
+<h3 id="使用例-1">使用例</h3>
+<div class="sc-columns">
+	
+	<div class="sc-columns--inner">
+		<h2 id="源码">源码</h2>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="s">&#34;折叠内容……&#34;</span> <span class="p">&gt;}}</span>
+<span class="nx">这里面是折叠内容</span><span class="err">……</span>
+<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
+</code></pre></div>
+	</div>
+	
+	<div class="sc-columns--inner">
+		<h2 id="效果">效果</h2>
+<details class="sc-details" >
+	<summary>折叠内容……</summary>
+	<div class="sc-details--inner">这里面是折叠内容……</div>
+</details>
+
+	</div>
+	
+</div>
+<h3 id="嵌套测试">嵌套测试</h3>
+<details class="sc-details" >
+	<summary>不要点开看！……</summary>
+	<div class="sc-details--inner"><h1 id="不要看">不要看！……</h1>
+<p>都说了不要点开啦qwqqq快关上！！……<br>
+都说了不要点开啦qwqqq快关上！！……<br>
+都说了不要点开啦qwqqq快关上！！……<br>
+都说了不要点开啦qwqqq快关上！！……<br>
+都说了不要点开啦qwqqq快关上！！……</p>
+<h2 id="真的不要看啦">真的不要看啦【【……</h2>
+<p>再这么看人家超害羞的(*/ω＼*)……</p>
+<hr>
+<p>诶诶还不关上嘛！……</p>
+<p>真拿你没办法，那就给你看看我多年的代码实力吧！【x……</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#inculde(iosteam)
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">qwq</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">mian</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+    <span class="n">cin</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+    <span class="n">cout</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><hr>
+<p>诶诶不喜欢嘛？……</p>
+<p>那那来看看<strong>世界第一可爱的童田明治</strong>吧！……</p>
+<details class="sc-details" open>
+	<summary></summary>
+	<div class="sc-details--inner"><div class="bilibili-player"style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+	<iframe loading="lazy" src="https://player.bilibili.com/player.html?bvid=BV1S4411B7Rj&high_quality=1&page=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Bilibili Video"></iframe>
+</div>
+<details class="sc-details" >
+	<summary>がぶがぶ……</summary>
+	<div class="sc-details--inner">11歳の、5歳です！……</div>
+</details>
+</div>
+</details>
+</div>
+</details>
+<div class="snote error ">
+	<div class="snote-content">
+		<p> 内嵌的时候请不要使用<code>&gt; {{&lt; details &gt;}}</code>（引用加上details），否则会造成错误与样式混乱，暂时还未修复…… </p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 样式更改参考自<a href="https://www.zhangxinxu.com/wordpress/2018/01/html5-details-summary-no-js-ux/">借助HTML5 details,summary无JS实现各种交互效果</a>…… </p>
+	</div>
+</div>
+<h2 id="三tabs">三、tabs</h2>
+<p>分标签显示……</p>
+<h3 id="使用方法-2">使用方法</h3>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">tabs</span> <span class="s">&#34;uniqueID&#34;</span> <span class="p">&gt;}}</span>
+<span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;1&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_1</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
+<span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;2&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_2</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
+<span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;3&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_3</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
+<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span> <span class="p">&gt;}}</span>
+</code></pre></div><p><code>uniqueID</code>为一个独一无二的ID……</p>
+<h3 id="使用例-2">使用例</h3>
+<div class="sc-columns">
+	
+	<div class="sc-columns--inner">
+		<h2 id="源码">源码</h2>
+<div class="highlight"><pre class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span> <span class="s2">&#34;1&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第一标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">## 天才麻将少女
+</span><span class="x">打麻将真开心啊……
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第二标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">## 兽娘动物园
+</span><span class="x">是会每天没事干不务正业的Friends呢【指自己……
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第三标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">## 魔法少女小圆
+</span><span class="x">身体好轻，怀着这么幸福的感觉战斗还是第一次，已经没什么好怕的了，因为我不再是孤单一人了！……
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span><span class="x">
+</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></code></pre></div>
+	</div>
+	
+	<div class="sc-columns--inner">
+		<h2 id="效果">效果</h2>
+<div class="sc-tabs"><input type="radio" class="sc-tabs--toggle" name="tabs-1" id="tabs-1-0" checked="checked" />
+	<label for="tabs-1-0">第一标签页</label>
+	<div class="sc-tabs--content"><h2 id="天才麻将少女">天才麻将少女</h2>
+<p>打麻将真开心啊……</div><input type="radio" class="sc-tabs--toggle" name="tabs-1" id="tabs-1-1"  />
+	<label for="tabs-1-1">第二标签页</label>
+	<div class="sc-tabs--content"><h2 id="兽娘动物园">兽娘动物园</h2>
+<p>是会每天没事干不务正业的Friends呢【指自己……</div><input type="radio" class="sc-tabs--toggle" name="tabs-1" id="tabs-1-2"  />
+	<label for="tabs-1-2">第三标签页</label>
+	<div class="sc-tabs--content"><h2 id="魔法少女小圆">魔法少女小圆</h2>
+<p>身体好轻，怀着这么幸福的感觉战斗还是第一次，已经没什么好怕的了，因为我不再是孤单一人了！……</div></div>
+
+	</div>
+	
+</div>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%B5%8B%E8%AF%95/">测试</a>
+        
+            <a href="/tags/%E7%9F%AD%E4%BB%A3%E7%A0%81/">短代码</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议……</span>
+    </section>
+    </footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/test-shortcode/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-shortcode/78356827_p0.b1c3ece887e8c6b1dc1a6bb42478d39c_huc21610886fa327c8e802235e20e8c4e7_690415_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="test-shortcode" 
+                        data-hash="md5-scPs6IfoxrHcGmu0JHjTnA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Shortcode测试……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/test-toc/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-toc/66488487_p0.ad3ac9c568972143af7eff0869d35247_hu927bcdeee8a2673c7ad35386c9152871_481055_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="test-toc" 
+                        data-hash="md5-rTrJxWiXIUOvfv8IadNSRw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Table Of Content测试……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/test-timeline/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-timeline/pixiv61107110.830d1e6c9d77d20495326e54f6501afa_huba53cd19c95d0fe8cd12b027cea0c3df_3255125_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="test-timeline" 
+                        data-hash="md5-gw0ebJ130gSVMm5U9lAa&#43;g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Timeline测试……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/test-note/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-note/Yande-713907.80e012a7e54f32c04b8ef28ed82402e3_hu78325a06b1473fc65240ca2cf12d1105_794019_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="test-note" 
+                        data-hash="md5-gOASp&#43;VPMsBLjvKO2CQC4w==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">NoteBlock测试……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/test-player/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-player/84038692_p0.e570ef7d9fa2f2f0a68d40974bab4049_hu3b9cb195d3b981b9da74048e9a17f8de_395719_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="test-player" 
+                        data-hash="md5-5XDvfZ&#43;i8vCmjUCXS6tASQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">音乐播放器测试……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
