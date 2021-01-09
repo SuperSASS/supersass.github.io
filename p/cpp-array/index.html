@@ -245,11 +245,6 @@ if (!doNotTrack) {
         <li><a href="#五其他提示">五、其他提示</a></li>
       </ul>
     </li>
-    <li><a href="#数组-1">数组</a>
-      <ul>
-        <li><a href="#个人错误">个人错误</a></li>
-      </ul>
-    </li>
   </ul>
 </nav>
                 </div>
@@ -356,8 +351,8 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：4137</div>
-            <div class="time">预计阅读时长： <time>9</time> 分钟</div>
+            <div class="char">文章字数：3966</div>
+            <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
 </div>
@@ -397,8 +392,8 @@ if (!doNotTrack) {
 <p>申明部分，也就是定义。如：</p>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
 </code></pre></div><blockquote>
-<p><code>int</code>——代表的是这个数组的类型：即这个数组存的是一系列int类型的数。
-<code>arr</code>——代表的是这个数组的变量名，之后用这个数组就是<code>arr[2]</code>、<code>arr[i]</code>之类的形式。
+<p><code>int</code>——代表的是这个数组的类型：即这个数组存的是一系列int类型的数。<br>
+<code>arr</code>——代表的是这个数组的变量名，之后用这个数组就是<code>arr[2]</code>、<code>arr[i]</code>之类的形式。<br>
 <code>[100]</code>——代表的是这个数组的大小，也就是可能会存多少项。</p>
 </blockquote>
 
@@ -786,12 +781,12 @@ if (!doNotTrack) {
 <h2 id="五其他提示">五、其他提示</h2>
 <ol>
 <li>
-<p>数组的范围可以开大，但不能开小。
-意思就是尽管最多可能只有10个整数，你可以定义为<code>int a[100]</code>，但不可以<code>int a[9]</code>。
+<p>数组的范围可以开大，但不能开小。<br>
+意思就是尽管最多可能只有10个整数，你可以定义为<code>int a[100]</code>，但不可以<code>int a[9]</code>。<br>
 <strong>推荐</strong>是比最多个数开稍微大一点，这样又可以偷懒想要开几个，又可以防止越界错误【本来只定义了15个，你访问了<code>a[20]</code>】。</p>
 </li>
 <li>
-<p>因为编程里数组第一项是从<code>a[0]</code>开始的，比较反人类x
+<p>因为编程里数组第一项是从<code>a[0]</code>开始的，比较反人类x……<br>
 所以如果想按照数学习惯，完全可以从<code>a[1]</code>开始存数。</p>
 <blockquote>
 <p>比如读入15个数，原来可能写成</p>
@@ -801,9 +796,8 @@ if (!doNotTrack) {
 <p>你也可以写成符合我们习惯的</p>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-
-<span class="err">这样就是存在`</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">~</span><span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="err">`里。</span>
-</code></pre></div></blockquote>
+</code></pre></div><p>这样就是存在<code>a[1]~a[15]</code>里。</p>
+</blockquote>
 <p>不过选择好一种自己喜欢的就这么写，不要一会从$0\sim14$一会又$1\sim15$，不然会很混乱。</p>
 </li>
 <li>
@@ -814,65 +808,6 @@ if (!doNotTrack) {
 </li>
 </ol>
 <p><strong>以上。</strong></p>
-<hr>
-<p>（36）37-40</p>
-<h1 id="数组-1">数组</h1>
-<ol start="9">
-<li>
-<p>字符串占用……（10）（46）（53）</p>
-</li>
-<li>
-<p>定义数组时不能用变量来定义。（35）（60）</p>
-</li>
-<li>
-<p>静态<code>static</code>数组：所有元素自动赋初值为0。</p>
-</li>
-<li>
-<p>数组不是c++基本类型</p>
-</li>
-<li>
-<p>连续存放</p>
-</li>
-<li>
-<p>string</p>
-</li>
-<li>
-<p>？</p>
-</li>
-<li>
-<p>？（43）（45）</p>
-</li>
-<li>
-<p>新题</p>
-</li>
-<li>
-<p>题有问题？</p>
-</li>
-<li>
-<p>题……</p>
-</li>
-<li>
-<p>getline、get、……</p>
-</li>
-<li>
-<p>char[]、string——sizeof、str.size()</p>
-</li>
-<li>
-<p>?</p>
-</li>
-</ol>
-<h2 id="个人错误">个人错误</h2>
-<ol>
-<li>B</li>
-<li>A</li>
-<li>B</li>
-<li>B</li>
-<li>B</li>
-<li>B</li>
-<li>B?</li>
-<li>C(D)</li>
-<li>C(D)</li>
-</ol>
 
 </section>
 
@@ -941,6 +876,28 @@ if (!doNotTrack) {
         <h2 class="section-title">相关文章</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/prac-point/">
+        
+        
+            <div class="article-image">
+                <img src="/p/prac-point/Yande-308381.580ee22e91d55cadf865ddb7db219894_hubfc4b78b5f13c939fbd8620a241a68e1_9631758_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="prac-point" 
+                        data-hash="md5-WA7iLpHVXK34Zd232yGYlA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">习题——指针……</h2>
+        </div>
+    </a>
+</article>
                 
                     
 <article class="has-image">

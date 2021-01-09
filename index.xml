@@ -7,6 +7,778 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
         <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>习题——指针……</title>
+        <link>https://blog.supersassw.com/p/prac-point/</link>
+        <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/prac-point/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/prac-point/Yande-308381.png" alt="Featured image of post 习题——指针……" /&gt;&lt;h1 id=&#34;指针课后习题&#34;&gt;指针课后习题&lt;/h1&gt;
+&lt;h2 id=&#34;判断题&#34;&gt;判断题&lt;/h2&gt;
+&lt;h3 id=&#34;第一题&#34;&gt;第一题&lt;/h3&gt;
+&lt;div class=&#34;snote question cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 从内存单元中存取数据的方法有&lt;strong&gt;直接访问方式&lt;/strong&gt;和&lt;strong&gt;间接访问方式&lt;/strong&gt;。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;知识点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;内存单元的数据存取方式 &lt;em&gt;【书 P186】&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote success &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 正确 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;直接访问方式：通过&lt;strong&gt;变量名&lt;/strong&gt;存取变量内容。
+&lt;blockquote&gt;
+&lt;p&gt;如&lt;code&gt;a = 2&lt;/code&gt;、&lt;code&gt;cout &amp;lt;&amp;lt; a&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;间接访问方式：通过 &lt;strong&gt;地址（即指针）&lt;/strong&gt; 操作。
+&lt;blockquote&gt;
+&lt;p&gt;如&lt;code&gt;*a = 5&lt;/code&gt;、&lt;code&gt;cout &amp;lt;&amp;lt; *a&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第二题&#34;&gt;第二题&lt;/h3&gt;
+&lt;div class=&#34;snote question cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 能够直接赋值给指针变量的&lt;strong&gt;整数&lt;/strong&gt;是$0$和$1$。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;知识点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;指针赋值 &lt;em&gt;【书 P187】&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 错误 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;整数中，&lt;strong&gt;只有&lt;/strong&gt;$0$才可以赋值指针，代表空地址（&lt;code&gt;NULL&lt;/code&gt;）。&lt;/p&gt;
+&lt;h3 id=&#34;书上原话&#34;&gt;书上原话&lt;/h3&gt;
+&lt;div class=&#34;snote quote &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;“地址”，可以是变量的地址、数组名、函数名等，也可以是数值$0$（或&lt;code&gt;NULL&lt;/code&gt;）。&lt;br&gt;
+没有任何对象会被分配到地址&lt;code&gt;0&lt;/code&gt;（或&lt;code&gt;NULL&lt;/code&gt;），因此数值$0$（或&lt;code&gt;NULL&lt;/code&gt;）是可以直接赋给指针变量的唯一整数。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第四题&#34;&gt;第四题&lt;/h3&gt;
+&lt;div class=&#34;snote question cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; “变量的指针”含义是&lt;strong&gt;指该变量的地址&lt;/strong&gt;。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+&lt;p&gt;为一道很新颖的概念题。&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote success &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 正确 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;纯概念题，记住！&lt;/strong&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第九题&#34;&gt;第九题&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;在操作一个一维数组时，可能会用到两个指针变量指向该数组，&lt;br&gt;
+这两个指针变量之间可以&lt;strong&gt;进行关系运算&lt;/strong&gt;，其关系运算的&lt;strong&gt;结果表明&lt;/strong&gt;了这两个指针变量所指向的数组元素的&lt;strong&gt;先后关系&lt;/strong&gt;。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+&lt;p&gt;为一道很新颖的概念题。&lt;br&gt;
+【个人甚至都不知道这种方法……&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;知识点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;指向一维数组的指针的关系运算 &lt;em&gt;【书 P190】&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote success &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 正确 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;当有两个指针指向同一个数组时，&lt;br&gt;
+&lt;strong&gt;可以对这两个指针进行比较&lt;/strong&gt;（&lt;code&gt;&amp;lt;&lt;/code&gt;、&lt;code&gt;&amp;gt;&lt;/code&gt;），以反应这两个指针的位置关系。&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例子&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;假设：&lt;/p&gt;
+&lt;p&gt;存在数组&lt;code&gt;int a[10]&lt;/code&gt;，&lt;br&gt;
+存在两个指针&lt;code&gt;int *p1,*p2&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;这两个指针均指向数组&lt;code&gt;a&lt;/code&gt;中某个位置（如&lt;code&gt;p1=&amp;amp;a[4]&lt;/code&gt;，&lt;code&gt;p2=&amp;amp;a[8]&lt;/code&gt;）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;若&lt;code&gt;p1 &amp;lt; p2&lt;/code&gt;，则代表&lt;code&gt;p1&lt;/code&gt;所指向的数组元素，在&lt;code&gt;p2&lt;/code&gt;所指向的数组元素前面。&lt;/li&gt;
+&lt;li&gt;若&lt;code&gt;p1 = p2&lt;/code&gt;，则代表&lt;code&gt;p1&lt;/code&gt;、&lt;code&gt;p2&lt;/code&gt;指向数组中同一个元素。&lt;/li&gt;
+&lt;li&gt;若&lt;code&gt;p1 &amp;gt; p2&lt;/code&gt;，则代表&lt;code&gt;p1&lt;/code&gt;所指向的数组元素，在&lt;code&gt;p2&lt;/code&gt;所指向的数组元素后面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;具体可以看书上，有图示来解释。&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第十题&#34;&gt;第十题&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;对于已经定义好的相同类型的两个指针变量，可以进行&lt;strong&gt;加法运算、减法运算和赋值运算&lt;/strong&gt;。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+&lt;p&gt;为一道很新颖的概念题。&lt;br&gt;
+【个人甚至都不知道这种方法……&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;知识点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;指针间的运算 &lt;em&gt;【书上没找到对应知识点】&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 错误 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;指针间存在&lt;strong&gt;三种运算&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;em&gt;假设两指针&lt;code&gt;int *a,*b&lt;/code&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;赋值运算（&lt;code&gt;a = b&lt;/code&gt;）&lt;br&gt;
+代表最基本的赋值。&lt;/li&gt;
+&lt;li&gt;关系运算（&lt;code&gt;a &amp;lt; b&lt;/code&gt;）&lt;br&gt;
+代表&lt;code&gt;a&lt;/code&gt;和&lt;code&gt;b&lt;/code&gt;位置关系。【一般用于数组中，代表谁指向前面谁指向后面】&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;减法运算&lt;/strong&gt;（&lt;code&gt;a - b&lt;/code&gt;）
+代表&lt;code&gt;a&lt;/code&gt;到&lt;code&gt;b&lt;/code&gt;之间的距离。【一般用于数组中，如&lt;code&gt;a = &amp;amp;arr[5]&lt;/code&gt;，&lt;code&gt;b =&amp;amp; arr[7]&lt;/code&gt;，则&lt;code&gt;a-b&lt;/code&gt;为$2$】&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;上述题错在：&lt;strong&gt;没有加法运算&lt;/strong&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第十九题&#34;&gt;第十九题&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;使用动态储存分配时，用运算符&lt;code&gt;new&lt;/code&gt;获取的内存空间，不必须用&lt;code&gt;delete&lt;/code&gt;进行释放。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+&lt;p&gt;为一道很新颖的概念题。&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;知识点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;动态存储分配 &lt;em&gt;【书 P201】&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 错误 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;纯概念题，记住！&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;书上原话&#34;&gt;书上原话&lt;/h3&gt;
+&lt;div class=&#34;snote quote &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;用&lt;code&gt;new&lt;/code&gt;获取的内存空间，&lt;strong&gt;必须&lt;/strong&gt;用&lt;code&gt;delete&lt;/code&gt;运算进行&lt;strong&gt;释放&lt;/strong&gt;，并且对同一个内存空间&lt;strong&gt;只能执行一次&lt;/strong&gt;&lt;code&gt;delete&lt;/code&gt;。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;【虽然个人感觉确实不用的，因为程序结束会自动帮你释放xd……&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 注意只能delete一次 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第二十二题&#34;&gt;第二十二题&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;设&lt;code&gt;int a[3][4]={1,2,3,4,5,6,7,8,9,10,11,12}, (*p)[5];&lt;/code&gt;，&lt;br&gt;
+则使用&lt;code&gt;p = a&lt;/code&gt;语句是不合法的。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;知识点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数组指针变量 &lt;em&gt;【书 P196】&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 错误 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 个人暂时也不知道原因，正在询问老师【…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;感觉是题目错了……&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;选择题&#34;&gt;选择题&lt;/h2&gt;
+&lt;h3 id=&#34;第三十三三十四三十七三十八题&#34;&gt;第三十三、三十四、三十七、三十八题&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;因为这几道题考点相同，故放在一起形成对照。【区别仅在&lt;code&gt;++&lt;/code&gt;的位置】&lt;/em&gt;&lt;/p&gt;
+
+
+
+
+&lt;div class=&#34;sc-tabs&#34;&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-34x35x37x38&#34; id=&#34;tabs-34x35x37x38-0&#34; checked=&#34;checked&#34; /&gt;
+	&lt;label for=&#34;tabs-34x35x37x38-0&#34;&gt;第三十三题&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;设有如下程序段，输出的值为（）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; $8$&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; $9$&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; $8$的地址&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; $9$的地址&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;A.&lt;/strong&gt; 8 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;这里面先是运算&lt;code&gt;*p&lt;/code&gt;，得到值$8$，&lt;br&gt;
+然后就变成了&lt;code&gt;cout &amp;lt;&amp;lt; 8++ &amp;lt;&amp;lt; endl;&lt;/code&gt;，这个时候就是先返回结果再运算。&lt;/p&gt;
+&lt;p&gt;也就是先输出$8$，然后再&lt;code&gt;*p = *p + 1&lt;/code&gt;变成$9$。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-34x35x37x38&#34; id=&#34;tabs-34x35x37x38-1&#34;  /&gt;
+	&lt;label for=&#34;tabs-34x35x37x38-1&#34;&gt;第三十四题&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;设有如下程序段，输出的值为（）&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;++*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; $8$&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; $9$&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; $8$的地址&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; $9$的地址&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;B.&lt;/strong&gt; 9 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;注意这里面还是先运算&lt;code&gt;*p&lt;/code&gt;，得到值$8$，&lt;br&gt;
+然后就变成了&lt;code&gt;cout &amp;lt;&amp;lt; ++8 &amp;lt;&amp;lt; endl;&lt;/code&gt;，这个时候就变成了先运算再返回结果。&lt;/p&gt;
+&lt;p&gt;也就是先&lt;code&gt;*p = *p + 1&lt;/code&gt;变成$9$，然后再输出$9$。&lt;/p&gt;
+&lt;p&gt;总之前两道题，都是&lt;strong&gt;先运算&lt;code&gt;*p&lt;/code&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-34x35x37x38&#34; id=&#34;tabs-34x35x37x38-2&#34;  /&gt;
+	&lt;label for=&#34;tabs-34x35x37x38-2&#34;&gt;第三十七题&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;设有定义语句：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;},&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;p&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;则数值不为$3$的表达式为（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; &lt;code&gt;a[3]&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; &lt;code&gt;p[3]&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; &lt;code&gt;p += 2, *(p++)&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;p += 2, *(++p)&lt;/code&gt;&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+&lt;p&gt;为一道很容易错的操作题。&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;p += 2, *(++p)&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;首先&lt;strong&gt;A&lt;/strong&gt;、&lt;strong&gt;B&lt;/strong&gt;选项，直接能看出&lt;code&gt;a[3]&lt;/code&gt;和&lt;code&gt;p[3]&lt;/code&gt;均为数组第四个元素，即为$3$。&lt;br&gt;
+所以讨论&lt;strong&gt;C&lt;/strong&gt;、&lt;strong&gt;D&lt;/strong&gt;选项。&lt;/p&gt;
+&lt;p&gt;注意这里的指针，变成了&lt;strong&gt;指向数组的指针&lt;/strong&gt;。&lt;br&gt;
+所以是可以进行加法操作的，代表指向位置的移动。&lt;/p&gt;
+&lt;p&gt;刚开始均有一个&lt;code&gt;p += 2&lt;/code&gt;，也就是指向了第三项&lt;code&gt;a[2]&lt;/code&gt;为$2$。&lt;br&gt;
+然后这里打了括号，所以肯定先是运算括号里的东西。&lt;/p&gt;
+&lt;p&gt;那么&lt;code&gt;p++&lt;/code&gt;和&lt;code&gt;++p&lt;/code&gt;的区别，也就在于是先返回值还是先加一。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;对于&lt;code&gt;++p&lt;/code&gt;，先运算，也就指向了&lt;code&gt;a[3]&lt;/code&gt;，再返回值。那么还是$3$。&lt;/li&gt;
+&lt;li&gt;对于&lt;code&gt;p++&lt;/code&gt;，先返回值，也就是&lt;code&gt;a[2]&lt;/code&gt;，那么&lt;code&gt;a[2]&lt;/code&gt;的值就为$2$了。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;故选择&lt;strong&gt;C&lt;/strong&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-34x35x37x38&#34; id=&#34;tabs-34x35x37x38-3&#34;  /&gt;
+	&lt;label for=&#34;tabs-34x35x37x38-3&#34;&gt;练习——第三十八题&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;设&lt;code&gt;int x[] = {1,2,3,4,5,6}, *p = x;&lt;/code&gt;&lt;br&gt;
+则数值为$3$的表达式是（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; &lt;code&gt;p += 2, *++p&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; &lt;code&gt;p += 2, *p++&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; &lt;code&gt;p += 2, *p&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;p += 2, ++*p&lt;/code&gt;&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;snote up red&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 作为之前三道题的汇总练习题。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;B.&lt;/strong&gt; &lt;code&gt;p += 2, *p++&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;没打括号的时候，&lt;code&gt;*p&lt;/code&gt;最先运算。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;中，&lt;code&gt;*&lt;/code&gt;与&lt;code&gt;p&lt;/code&gt;被&lt;code&gt;++&lt;/code&gt;隔开了，所以只能先运算&lt;code&gt;++p&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 如果换成&lt;code&gt;p += 2, *(p++)&lt;/code&gt;，也是正确答案。&lt;br&gt;不过其运算过程与&lt;strong&gt;B&lt;/strong&gt;完全不一样，运算后的结果更不一样！ &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h3 id=&#34;第三十九四十四十九五十题&#34;&gt;第三十九、四十、四十九、五十题&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;因为这几道题考点相同，故放在一起形成对照。&lt;/em&gt;&lt;/p&gt;
+
+
+
+
+&lt;div class=&#34;sc-tabs&#34;&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-39x40x49x50&#34; id=&#34;tabs-39x40x49x50-0&#34; checked=&#34;checked&#34; /&gt;
+	&lt;label for=&#34;tabs-39x40x49x50-0&#34;&gt;第三十九题&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;设有定义语句：&lt;code&gt;int a[5], *p = a;&lt;/code&gt;，&lt;br&gt;
+则下列描述错误的是（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; 表达式&lt;code&gt;p = p + 1&lt;/code&gt;是合法的&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; 表达式&lt;code&gt;a = a + 1&lt;/code&gt;是合法的&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; 表达式&lt;code&gt;p - a&lt;/code&gt;是合法的&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; 表达式&lt;code&gt;a + 1&lt;/code&gt;是合法的&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;B.&lt;/strong&gt; 表达式&lt;code&gt;a = a + 1&lt;/code&gt;是合法的 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;需要注意到：数组名其实也是一个指针，代表这个数组的起始位置，相当于&lt;code&gt;&amp;amp;a[0]&lt;/code&gt;。&lt;br&gt;
+但其是常量指针，故不可以执行赋值语句。&lt;/p&gt;
+&lt;p&gt;也就是&lt;code&gt;a + 1&lt;/code&gt;是对的，代表&lt;code&gt;&amp;amp;a[0] + 1&lt;/code&gt;，&lt;br&gt;
+&lt;code&gt;a = a + 1&lt;/code&gt;是错的，没法把&lt;code&gt;&amp;amp;a[0] + 1&lt;/code&gt;赋值给&lt;code&gt;&amp;amp;a[0]&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-39x40x49x50&#34; id=&#34;tabs-39x40x49x50-1&#34;  /&gt;
+	&lt;label for=&#34;tabs-39x40x49x50-1&#34;&gt;第四十题&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;有下面语句&lt;code&gt;int a[10] = {10,9,8,7,6,5,4,3,2,1}, *p = a&lt;/code&gt;，&lt;br&gt;
+则数值为$2$的表达式是（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; &lt;code&gt;a[9]&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; &lt;code&gt;*p[8]&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; &lt;code&gt;*(a+8)&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;p+8&lt;/code&gt;&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+&lt;p&gt;【虽然是我没认真看题错的_(:з」∠)_……&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;C.&lt;/strong&gt; &lt;code&gt;*(a+8)&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;A&lt;/strong&gt;、&lt;code&gt;a[9]&lt;/code&gt;，代表的是数组第十个元素，也就是$1$。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B&lt;/strong&gt;、&lt;code&gt;p[8]&lt;/code&gt;的时候，已经代表的是第九个元素的&lt;strong&gt;值&lt;/strong&gt;了，所以不能再加&lt;code&gt;*&lt;/code&gt;。&lt;br&gt;
+也就是说如果选项是&lt;code&gt;p[8]&lt;/code&gt;就是对的，&lt;code&gt;*p[8]&lt;/code&gt;存在语法错误。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;C&lt;/strong&gt;、&lt;code&gt;*(a+8)&lt;/code&gt;，也就相当于&lt;code&gt;a[8]&lt;/code&gt;，故为$2$，正确。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;D&lt;/strong&gt;、&lt;code&gt;p+8&lt;/code&gt;，代表的是第九个元素的&lt;strong&gt;地址&lt;/strong&gt;，不是里面的值。&lt;br&gt;
+也就是说如果选项是&lt;code&gt;*(p+8)&lt;/code&gt;就是对的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-39x40x49x50&#34; id=&#34;tabs-39x40x49x50-2&#34;  /&gt;
+	&lt;label for=&#34;tabs-39x40x49x50-2&#34;&gt;第四十九题&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;若有定义&lt;code&gt;int a[10], *p = a;&lt;/code&gt;，&lt;br&gt;
+对数组元素错误的使用的语句是（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; &lt;code&gt;*(a+1)&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; &lt;code&gt;*(p++)&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; &lt;code&gt;p[1]&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;*(a++)&lt;/code&gt;&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;*(a++)&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;跟前两道题一样，关键是多了&lt;code&gt;++&lt;/code&gt;这个自增运算符。&lt;/p&gt;
+&lt;p&gt;对于&lt;strong&gt;B&lt;/strong&gt;，&lt;code&gt;p&lt;/code&gt;是个&lt;strong&gt;指针变量&lt;/strong&gt;，是可以执行自增（或说赋值）的语句的。
+而对于&lt;strong&gt;D&lt;/strong&gt;，&lt;code&gt;p&lt;/code&gt;是个&lt;strong&gt;指针常量&lt;/strong&gt;，是不能执行自增（或说赋值）的语句的。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-39x40x49x50&#34; id=&#34;tabs-39x40x49x50-3&#34;  /&gt;
+	&lt;label for=&#34;tabs-39x40x49x50-3&#34;&gt;练习——第五十题&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;若有定义&lt;code&gt;int a[] = {0,1,2,3,4,5,6,7,8,9}, *p = a, i;&lt;/code&gt;，&lt;br&gt;
+对数组元素正确的使用的语句是（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; &lt;code&gt;a[p]&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; &lt;code&gt;p[a]&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; &lt;code&gt;p+12&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;a[p-a]&lt;/code&gt;&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;snote up red&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 作为之前三道题的汇总练习题。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;a[p-a]&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;注意&lt;code&gt;[]&lt;/code&gt;里面，只能为&lt;strong&gt;具体的数值&lt;/strong&gt;&lt;br&gt;
+也就是说&lt;strong&gt;A&lt;/strong&gt;、&lt;code&gt;a[p]&lt;/code&gt;和&lt;strong&gt;B&lt;/strong&gt;、&lt;code&gt;p[a]&lt;/code&gt;均错误，&lt;br&gt;
+因为&lt;code&gt;[]&lt;/code&gt;里是地址，而不是数值。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;改为&lt;code&gt;a[*p]&lt;/code&gt;，则正确，代表&lt;code&gt;a[0]&lt;/code&gt;，&lt;br&gt;
+&lt;strong&gt;B&lt;/strong&gt;改为&lt;code&gt;p[*a]&lt;/code&gt;，则正确，代表&lt;code&gt;p[0]&lt;/code&gt;（即&lt;code&gt;a[0]&lt;/code&gt;）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;但如果数组元素换位&lt;code&gt;int a[]={-1,0,1,2,3,4,5,6,7,8}&lt;/code&gt;，&lt;br&gt;
+那么即便改为&lt;code&gt;a[*p]&lt;/code&gt;也不正确，因为其代表&lt;code&gt;a[-1]&lt;/code&gt;，对数组元素使用错误。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;C&lt;/strong&gt;是很明显的&lt;strong&gt;数组越界&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;D&lt;/strong&gt;中，前面的题（第十题）介绍过，指针间存在减法运算。&lt;br&gt;
+那么这道题中&lt;code&gt;p-a&lt;/code&gt;的运算结果为$0$（因为指向同一位置&lt;code&gt;a[0]&lt;/code&gt;，之间不存在距离），&lt;br&gt;
+然后&lt;code&gt;a[0]&lt;/code&gt;是正确使用。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr&gt;
+&lt;h3 id=&#34;第四十三题&#34;&gt;第四十三题&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;设&lt;code&gt;char str[] = &amp;quot;hello&amp;quot;, *p = str;&lt;/code&gt;，&lt;br&gt;
+则&lt;code&gt;*(p+5)&lt;/code&gt;的值是（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; 随机值&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; 字母&lt;code&gt;o&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; 字符串结束标志&lt;code&gt;\0&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; 字母&lt;code&gt;o&lt;/code&gt;内存的地址&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;C.&lt;/strong&gt; 字符串结束标志&lt;code&gt;\0&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;*(p+5)&lt;/code&gt;，也就是从字符串开头往后数$5$位。&lt;/p&gt;
+&lt;p&gt;会发现，最后只能往后数$4$位到&lt;code&gt;o&lt;/code&gt;，&lt;br&gt;
+别忘了在字符数组&lt;code&gt;char []&lt;/code&gt;中，最末尾还会有一个看不见的&lt;code&gt;\0&lt;/code&gt;这个东西，&lt;br&gt;
+所以存在&lt;code&gt;*(p+5)&lt;/code&gt;，代表的就是&lt;code&gt;\0&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第四十六题&#34;&gt;第四十六题&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;设有定义语句&lt;code&gt;int *p[4];&lt;/code&gt;，&lt;br&gt;
+则标识符&lt;code&gt;p&lt;/code&gt;是（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; 一个指向整型变量的指针变量&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; 一个指向整型的指针数组名&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; 一个指针，它指向一个含有四个整型元素的一维数组&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; 一个非法的定义语句&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+&lt;p&gt;【虽然是我没认真看题错的_(:з」∠)_……&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;B.&lt;/strong&gt; 一个指向整型的指针数组名 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;就注意一下这种定义方式，&lt;br&gt;
+其类型就是&lt;strong&gt;一个指向整型的指针数组名&lt;/strong&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第五十一题&#34;&gt;第五十一题&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;若有定义：&lt;code&gt;int a[] = {1,2,3,4,5,6,7,8,9,10}, *p = a;&lt;/code&gt;，&lt;br&gt;
+则数值为$7$的表达式为（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; &lt;code&gt;*(p+7)&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; &lt;code&gt;p[*(a+6)]&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; &lt;code&gt;p+6&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;a[*(p+5)]&lt;/code&gt;&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;a[*(p+5)]&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;首先很容易判断出&lt;strong&gt;A&lt;/strong&gt;，其数值为$8$，&lt;br&gt;
+&lt;strong&gt;C&lt;/strong&gt;，其没有加&lt;code&gt;*&lt;/code&gt;，故代表的是&lt;code&gt;a[6]&lt;/code&gt;的地址。只有加了&lt;code&gt;*&lt;/code&gt;，即&lt;code&gt;*(p+6)&lt;/code&gt;才数值为$7$。&lt;/p&gt;
+&lt;p&gt;而&lt;strong&gt;B&lt;/strong&gt;、&lt;strong&gt;D&lt;/strong&gt;，关键要先把&lt;code&gt;[]&lt;/code&gt;内部的给运算出来，&lt;br&gt;
+&lt;strong&gt;D&lt;/strong&gt;中，&lt;code&gt;*(p+5)&lt;/code&gt;的值为$6$,而&lt;code&gt;a[6]&lt;/code&gt;的值为$7$，&lt;br&gt;
+所以&lt;strong&gt;D&lt;/strong&gt;的最终值为$7$，符合题意。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;第五十四题&#34;&gt;第五十四题&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote question cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;若有定义：&lt;code&gt;int a[3][4]&lt;/code&gt;，&lt;br&gt;
+能正确表示数组&lt;code&gt;a&lt;/code&gt;中元素地址的是（）。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;A.&lt;/strong&gt; &lt;code&gt;*(a[1]+4)&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;B.&lt;/strong&gt; &lt;code&gt;*(*(a+3)+1)&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;C.&lt;/strong&gt; &lt;code&gt;*(a[1]+2)*&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;*(*(a+1)+1)&lt;/code&gt;&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;个人做错了这道题！&lt;/p&gt;
+&lt;p&gt;为一道很混淆的操作题。&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;答案与分析&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;strong&gt;D.&lt;/strong&gt; &lt;code&gt;*(*(a+1)+1)&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 个人暂时也不知道原因，正在询问老师【…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;觉得&lt;strong&gt;C&lt;/strong&gt;好像也是对的……&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;没写入的题&#34;&gt;没写入的题&lt;/h2&gt;
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 以下题均为比较新的概念题，但个人没有写入，还是推荐去看一下记一下。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;第六题——常量是否能赋给指针&lt;/li&gt;
+&lt;li&gt;第七题——数组名代表&lt;strong&gt;数组首地址&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;第四十五题——&lt;code&gt;int *point = new int(4)&lt;/code&gt;，这段代码的执行顺序&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>心理学导论——名词解释……</title>
         <link>https://blog.supersassw.com/p/intro-psychology-ne/</link>
         <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
@@ -622,8 +1394,8 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;p&gt;申明部分，也就是定义。如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;int&lt;/code&gt;——代表的是这个数组的类型：即这个数组存的是一系列int类型的数。
-&lt;code&gt;arr&lt;/code&gt;——代表的是这个数组的变量名，之后用这个数组就是&lt;code&gt;arr[2]&lt;/code&gt;、&lt;code&gt;arr[i]&lt;/code&gt;之类的形式。
+&lt;p&gt;&lt;code&gt;int&lt;/code&gt;——代表的是这个数组的类型：即这个数组存的是一系列int类型的数。&lt;br&gt;
+&lt;code&gt;arr&lt;/code&gt;——代表的是这个数组的变量名，之后用这个数组就是&lt;code&gt;arr[2]&lt;/code&gt;、&lt;code&gt;arr[i]&lt;/code&gt;之类的形式。&lt;br&gt;
 &lt;code&gt;[100]&lt;/code&gt;——代表的是这个数组的大小，也就是可能会存多少项。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -1011,12 +1783,12 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;h2 id=&#34;五其他提示&#34;&gt;五、其他提示&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;数组的范围可以开大，但不能开小。
-意思就是尽管最多可能只有10个整数，你可以定义为&lt;code&gt;int a[100]&lt;/code&gt;，但不可以&lt;code&gt;int a[9]&lt;/code&gt;。
+&lt;p&gt;数组的范围可以开大，但不能开小。&lt;br&gt;
+意思就是尽管最多可能只有10个整数，你可以定义为&lt;code&gt;int a[100]&lt;/code&gt;，但不可以&lt;code&gt;int a[9]&lt;/code&gt;。&lt;br&gt;
 &lt;strong&gt;推荐&lt;/strong&gt;是比最多个数开稍微大一点，这样又可以偷懒想要开几个，又可以防止越界错误【本来只定义了15个，你访问了&lt;code&gt;a[20]&lt;/code&gt;】。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;因为编程里数组第一项是从&lt;code&gt;a[0]&lt;/code&gt;开始的，比较反人类x
+&lt;p&gt;因为编程里数组第一项是从&lt;code&gt;a[0]&lt;/code&gt;开始的，比较反人类x……&lt;br&gt;
 所以如果想按照数学习惯，完全可以从&lt;code&gt;a[1]&lt;/code&gt;开始存数。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;比如读入15个数，原来可能写成&lt;/p&gt;
@@ -1026,9 +1798,8 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;p&gt;你也可以写成符合我们习惯的&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 	&lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
-
-&lt;span class=&#34;err&#34;&gt;这样就是存在`&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;15&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;`里。&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这样就是存在&lt;code&gt;a[1]~a[15]&lt;/code&gt;里。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;p&gt;不过选择好一种自己喜欢的就这么写，不要一会从$0\sim14$一会又$1\sim15$，不然会很混乱。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -1039,65 +1810,6 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;以上。&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;（36）37-40&lt;/p&gt;
-&lt;h1 id=&#34;数组-1&#34;&gt;数组&lt;/h1&gt;
-&lt;ol start=&#34;9&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;字符串占用……（10）（46）（53）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;定义数组时不能用变量来定义。（35）（60）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;静态&lt;code&gt;static&lt;/code&gt;数组：所有元素自动赋初值为0。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;数组不是c++基本类型&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;连续存放&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;string&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;？（43）（45）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;新题&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;题有问题？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;题……&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;getline、get、……&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;char[]、string——sizeof、str.size()&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;?&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;个人错误&#34;&gt;个人错误&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;B&lt;/li&gt;
-&lt;li&gt;A&lt;/li&gt;
-&lt;li&gt;B&lt;/li&gt;
-&lt;li&gt;B&lt;/li&gt;
-&lt;li&gt;B&lt;/li&gt;
-&lt;li&gt;B&lt;/li&gt;
-&lt;li&gt;B?&lt;/li&gt;
-&lt;li&gt;C(D)&lt;/li&gt;
-&lt;li&gt;C(D)&lt;/li&gt;
-&lt;/ol&gt;
 </description>
         </item>
         <item>
@@ -1107,77 +1819,60 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
         
         <guid>https://blog.supersassw.com/p/cpp-summary/</guid>
         <description>&lt;img src="https://blog.supersassw.com/p/cpp-summary/58541644_p0.png" alt="Featured image of post 考点总结……" /&gt;&lt;h1 id=&#34;一注意的点&#34;&gt;一、注意的点&lt;/h1&gt;
-&lt;h2 id=&#34;1用作为累加累乘的变量的注意事项&#34;&gt;1、用作为“累加、累乘的变量”的注意事项&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如：
-&lt;code&gt;sum1 = sum1 + a;&lt;/code&gt;——作为累加求和。
-&lt;code&gt;sum2 = sum2 * a;&lt;/code&gt;——作为累乘求和。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;h2 id=&#34;1用作为累加累乘的变量的注意事项&#34;&gt;1、用作为“累加、累乘”的变量的注意事项&lt;/h2&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例子——累加、累乘的变量&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sum1 = sum1 + a;&lt;/code&gt;——作为累加求和。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sum2 = sum2 * a;&lt;/code&gt;——作为累乘求和。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;是否定义时&lt;strong&gt;赋初值？&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;int sum1 = 0;&lt;/code&gt;——累加变量赋初值为0。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;int sum2 = 1;&lt;/code&gt;——累乘变量赋初值为1。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int sum1 = 0;&lt;/code&gt;——累加变量&lt;strong&gt;赋初值为0&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;int sum2 = 1;&lt;/code&gt;——累乘变量&lt;strong&gt;赋初值为1&lt;/strong&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;在&lt;strong&gt;循环里反复使用&lt;/strong&gt;，要注意可能要将累加变量&lt;strong&gt;清零&lt;/strong&gt;，累乘变量&lt;strong&gt;赋一&lt;/strong&gt;。&lt;/p&gt;
-
-
-&lt;div class=&#34;snote guide cyan &#34;&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例题&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote message cyan &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;题目：&lt;br&gt;
 统计3组数据的和，其中每组数据会有n个数。&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;blockquote&gt;
 &lt;p&gt;部分代码：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//赋初值为0
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//循环3组数据
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;请输入第&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;组数据有多少个数：&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-  &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;请输入n个数：&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//读入并统计这组数据里n个数的和
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-  	&lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-  	&lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;请输入第&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;组数据有多少个数：&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;请输入n个数：&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//读入并统计这组数据里n个数的和
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 
-  &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;这组数据和为：&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;这组数据和为：&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 
-  &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//这里即要注意每读完一组数据要清零！否则会带着上次计算的结果算下一组
+    &lt;span class=&#34;n&#34;&gt;sum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//关键语句：这里即要注意每读完一组数据要清零！否则会带着上次计算的结果算下一组
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;输出：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;加了&lt;code&gt;sum = 0;&lt;/code&gt;这句清零语句：&lt;figure style=&#34;flex-grow: 134; flex-basis: 323px&#34;&gt;
-		&lt;a href=&#34;https://blog.supersassw.com/p/cpp-summary/1.png&#34; data-size=&#34;217x161&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/cpp-summary/1.png&#34;
-				srcset=&#34;https://blog.supersassw.com/p/cpp-summary/1_hu2c48dba8fb5dc6a5e02cb6ae45f6764d_7922_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/cpp-summary/1_hu2c48dba8fb5dc6a5e02cb6ae45f6764d_7922_1024x0_resize_box_2.png 1024w&#34;
-				width=&#34;217&#34;
-				height=&#34;161&#34;
-				loading=&#34;lazy&#34;
-				alt=&#34;1&#34;&gt;
-		&lt;/a&gt;
-		
-		&lt;figcaption&gt;1&lt;/figcaption&gt;
-		
-	&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;未加&lt;code&gt;sum = 0;&lt;/code&gt;这句清零语句：&lt;figure style=&#34;flex-grow: 140; flex-basis: 338px&#34;&gt;
-		&lt;a href=&#34;https://blog.supersassw.com/p/cpp-summary/2.png&#34; data-size=&#34;224x159&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/cpp-summary/2.png&#34;
-				srcset=&#34;https://blog.supersassw.com/p/cpp-summary/2_hu3ec0fae2db203a5ae6bc9ad5805d305b_5097_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/cpp-summary/2_hu3ec0fae2db203a5ae6bc9ad5805d305b_5097_1024x0_resize_box_2.png 1024w&#34;
-				width=&#34;224&#34;
-				height=&#34;159&#34;
-				loading=&#34;lazy&#34;
-				alt=&#34;2&#34;&gt;
-		&lt;/a&gt;
-		
-		&lt;figcaption&gt;2&lt;/figcaption&gt;
-		
-	&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;加了&lt;code&gt;sum = 0;&lt;/code&gt;这句清零语句：&lt;br&gt;
+&lt;img src=&#34;1.png&#34; alt=&#34;正确答案&#34;&gt;&lt;/li&gt;
+&lt;li&gt;未加&lt;code&gt;sum = 0;&lt;/code&gt;这句清零语句：&lt;br&gt;
+&lt;img src=&#34;2.png&#34; alt=&#34;错误答案&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;2有关函数的讲解和注意事项&#34;&gt;2、有关函数的讲解和注意事项&lt;/h2&gt;
@@ -1201,88 +1896,104 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;/ul&gt;
 
 
-&lt;div class=&#34;snote guide cyan &#34;&gt;
+
+
+&lt;div class=&#34;sc-tabs&#34;&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-1&#34; id=&#34;tabs-1-0&#34; checked=&#34;checked&#34; /&gt;
+	&lt;label for=&#34;tabs-1-0&#34;&gt;例题一&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote message cyan &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;题目：&lt;br&gt;
-一、要求写一个函数，用来返回两个整数的最大值。&lt;/p&gt;
+		&lt;p&gt;题目：要求写一个函数，用来返回两个整数的最大值。&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;则分析如下：&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;分析与实现&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;分析如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;我应该给这个函数两个&lt;code&gt;int&lt;/code&gt;类型的数据。&lt;/li&gt;
 &lt;li&gt;这个函数应该找到&lt;strong&gt;这两个数谁最大&lt;/strong&gt;。&lt;/li&gt;
 &lt;li&gt;这个函数应该返回给我这两个数的最大值，也是&lt;code&gt;int&lt;/code&gt;类型的数据。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
 &lt;p&gt;故声明部分为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;实现部分为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用部分为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-	&lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;两个数的最大值为：&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;两个数的最大值为：&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;max&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
-
-
-&lt;div class=&#34;snote guide cyan &#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-1&#34; id=&#34;tabs-1-1&#34;  /&gt;
+	&lt;label for=&#34;tabs-1-1&#34;&gt;例题二&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;snote message cyan &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;题目：&lt;br&gt;
-二、要求写一个函数，用来确认某个数是否在某个数组&lt;code&gt;a[10]&lt;/code&gt;里（为double类型数组）。&lt;/p&gt;
+		&lt;p&gt;题目：要求写一个函数，用来确认某个数是否在某个数组&lt;code&gt;a[10]&lt;/code&gt;里（为double类型数组）。&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;blockquote&gt;
-&lt;p&gt;则分析如下：&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;分析与实现&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;分析如下：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;我应该给这个函数一个我要找的数，这个数为&lt;code&gt;double&lt;/code&gt;类型；还要给我要找的数组，这个为数组的&lt;code&gt;double*&lt;/code&gt;指针类型。&lt;/li&gt;
 &lt;li&gt;这个函数判断这个数是否存在于&lt;code&gt;a&lt;/code&gt;这个数组。&lt;/li&gt;
 &lt;li&gt;这个函数应该返回给我这个数&lt;strong&gt;是否&lt;/strong&gt;存在于&lt;code&gt;a&lt;/code&gt;数组，是个&lt;code&gt;bool&lt;/code&gt;类型的数据。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;hr&gt;
 &lt;p&gt;故声明部分为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;if_inside&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;实现部分为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;if_inside&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//如果与数组中某个数相等，代表找到，返回true
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//遍历完数组都没找到，代表真的没有，返回false
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;9&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;arr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//如果与数组中某个数相等，代表找到，返回true
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//遍历完数组都没找到，代表真的没有，返回false
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;使用部分为：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;if_inside&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-	&lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;if_inside&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//判断n是否在a数组内
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;n这个数在a数组内&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;n这个数不在a数组内&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;if_inside&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;if_inside&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//判断n是否在a数组内
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;n这个数在a数组内&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;n这个数不在a数组内&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;&lt;/div&gt;
+
 &lt;h3 id=&#34;函数的注意事项&#34;&gt;函数的注意事项&lt;/h3&gt;
 
 
 &lt;div class=&#34;snote warning &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;&lt;ol&gt;
-&lt;li&gt;如果把函数实现写在&lt;code&gt;int main()&lt;/code&gt;之前，便不用在&lt;code&gt;main&lt;/code&gt;里&lt;strong&gt;声明函数&lt;/strong&gt;了。【见书P86 第二个黑色方框】&lt;/li&gt;
-&lt;li&gt;函数一旦&lt;code&gt;return&lt;/code&gt;后，便&lt;strong&gt;不会再执行之后的语句&lt;/strong&gt;。&lt;/li&gt;
-&lt;li&gt;不同函数（包括&lt;code&gt;main&lt;/code&gt;这个“主函数”）里面的变量&lt;strong&gt;不能互相调用&lt;/strong&gt;。
+&lt;li&gt;
+&lt;p&gt;如果把函数实现写在&lt;code&gt;int main()&lt;/code&gt;之前，便不用在&lt;code&gt;main&lt;/code&gt;里&lt;strong&gt;声明函数&lt;/strong&gt;了。【见书P86 第二个黑色方框】&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;函数一旦&lt;code&gt;return&lt;/code&gt;后，便&lt;strong&gt;不会再执行之后的语句&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;不同函数（包括&lt;code&gt;main&lt;/code&gt;这个“主函数”）里面的变量&lt;strong&gt;不能互相调用&lt;/strong&gt;。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;即假如&lt;code&gt;main()&lt;/code&gt;里有个&lt;code&gt;int a&lt;/code&gt;，则不能在子函数&lt;code&gt;fx()&lt;/code&gt;中用&lt;code&gt;a = 1&lt;/code&gt;这样。&lt;br&gt;
 如果&lt;code&gt;main()&lt;/code&gt;里有个&lt;code&gt;int a&lt;/code&gt;，子函数&lt;code&gt;fx()&lt;/code&gt;里也有个&lt;code&gt;int a&lt;/code&gt;：则&lt;code&gt;main&lt;/code&gt;里只能用&lt;code&gt;main&lt;/code&gt;里的&lt;code&gt;a&lt;/code&gt;，&lt;code&gt;fx&lt;/code&gt;里只能用&lt;code&gt;fx&lt;/code&gt;里的&lt;code&gt;a&lt;/code&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;这个其实就是局部变量的原因，函数里的变量为局部变量，只能在这个函数里用。&lt;/em&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/p&gt;
@@ -1296,9 +2007,9 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;p&gt;直接写在&lt;code&gt;int main()&lt;/code&gt;后面的第一句话就好。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
- &lt;span class=&#34;n&#34;&gt;srand&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;srand&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;time&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;NULL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
 
- &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
@@ -1309,12 +2020,16 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;li&gt;要取得$[a,b]$的随机整数，使用&lt;code&gt;( rand() % (b-a+1) ) + a&lt;/code&gt;;&lt;/li&gt;
 &lt;li&gt;要取得$(a,b]$的随机整数，使用&lt;code&gt;( rand() % (b-a) ) + a + 1&lt;/code&gt;;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如要随机生成1到100内的整数（含1和100）：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rand&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者直接写成&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例子——随机生成1到100内的整数（含1和100）&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rand&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者直接写成：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;rand&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 
 
 &lt;div class=&#34;snote info &#34;&gt;
@@ -1326,50 +2041,59 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2 id=&#34;2最大公约数gcd和最小公倍数lcm的计算&#34;&gt;2、最大公约数（GCD）和最小公倍数（LCM）的计算&lt;/h2&gt;
 &lt;div class=&#34;snote warning &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt; 这个比较重要，也很难背 &lt;/p&gt;
+		&lt;p&gt; 这个比较重要，也很难背。 &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;直接背代码。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//求a和b的最大公约数
+&lt;h3 id=&#34;老师给的版本&#34;&gt;老师给的版本&lt;/h3&gt;
+
+
+
+
+&lt;div class=&#34;sc-tabs&#34;&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-2&#34; id=&#34;tabs-2-0&#34; checked=&#34;checked&#34; /&gt;
+	&lt;label for=&#34;tabs-2-0&#34;&gt;最大公约数（GCD）&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//求a和b的最大公约数
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//保证a是两数中较小的数
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//保证a是两数中较小的数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 
-	&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//这个过程背住orz……
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-		&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//这个过程背住orz……
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;r&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 
-	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//最后的a值为求得的结果
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//最后的a值为求得的结果
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;c1&#34;&gt;//----------------------------------
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;LCM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//求a和b的最小公倍数
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;input type=&#34;radio&#34; class=&#34;sc-tabs--toggle&#34; name=&#34;tabs-2&#34; id=&#34;tabs-2-1&#34;  /&gt;
+	&lt;label for=&#34;tabs-2-1&#34;&gt;最小公倍数（LCM）&lt;/label&gt;
+	&lt;div class=&#34;sc-tabs--content&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;LCM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//求a和b的最小公倍数
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里用函数的形式来写，以后求解可可以直接用这个函数。如：&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这里用函数的形式来写，以后求解可可以直接用这个函数。如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;和&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;的最大公约数为：&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;endl&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;n&#34;&gt;cout&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;和&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;的最小公约数为：&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LCM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;不用函数的话，就把那里面的东西直接写到&lt;code&gt;main()&lt;/code&gt;里就行。&lt;/p&gt;
-
-
+&lt;h3 id=&#34;更好记的版本&#34;&gt;更好记的版本&lt;/h3&gt;
 &lt;div class=&#34;snote info &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;&lt;p&gt;还有很简短的版本，采用了递归的思想。&lt;/p&gt;
+		&lt;p&gt; 利用递归思想求最大公约数，可以极大简化代码。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
 &lt;p&gt;可以尝试理解下这个代码，能很好的&lt;strong&gt;锻炼递归思想&lt;/strong&gt;。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;GCD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
@@ -1382,27 +2106,28 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
     &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;^=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
     &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;【但原理就不要求掌握了，其中的&lt;code&gt;^=&lt;/code&gt;是位运算……&lt;/p&gt;
-&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;em&gt;【但原理就不要求掌握了，其中的&lt;code&gt;^=&lt;/code&gt;是位运算……&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;3判断某数是否为质数&#34;&gt;3、判断某数是否为质数&lt;/h2&gt;
 &lt;p&gt;直接背代码。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码里有几个要注意的点。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 代码里有几个要注意的点。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;if_Prime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-	&lt;span class=&#34;c1&#34;&gt;//！特别注意！：当num=1的时候很可能之后会判断失误，故需要“打补丁”：当num=1的时候直接返回false
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;c1&#34;&gt;//！特别注意！：当num=1的时候很可能之后会判断失误，故需要“打补丁”：当num=1的时候直接返回false
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
-	&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//刚开始假设是素数
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//！注意！：这里是(2~num-1)，而不是(2~num)，很容易在这里写错
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
-		&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//找到能被(2~num-1)之中的数除尽，证明不是素数，设置flag并退出循环
-&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-			&lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
-		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;true&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//刚开始假设是素数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//！注意！：这里是(2~num-1)，而不是(2~num)，很容易在这里写错
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;   &lt;span class=&#34;c1&#34;&gt;//找到能被(2~num-1)之中的数除尽，证明不是素数，设置flag并退出循环
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;false&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 
-	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//如果循环完都没有被除尽，证明是素数，会返回true；否则会返回flase
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;flag&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//如果循环完都没有被除尽，证明是素数，会返回true；否则会返回flase
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里用函数的形式来写，以后判断就可以直接用这个函数。如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;n&#34;&gt;cin&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
@@ -1416,12 +2141,18 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;li&gt;冒泡排序&lt;/li&gt;
 &lt;li&gt;选择排序&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;两种方法仅存在写法上的区别，建议自己选择一种自己背得到的记住，&lt;strong&gt;！有很大几率要考！&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;【模板见老师的PPT，如果没记的话可以问我。】&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;两种方法仅存在写法上的区别，建议自己选择一种自己背得到的记住。&lt;br&gt;
+而且写法的差别并不大，仅是&lt;code&gt;for&lt;/code&gt;循环范围的区别。&lt;/p&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 很可能会考到写法【个人感觉【…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;【模板见老师的PPT，如果没记的话可以问我……&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;5二分查找折半查找&#34;&gt;5、二分查找（折半查找）&lt;/h2&gt;
-&lt;p&gt;有可能要考，考的话会专门指出“请用二分查找来找出&amp;hellip;”。
-（不然的话就可以用“从头到尾遍历数组”来找。）&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;【模板见老师的PPT，如果没记的话可以问我。】&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;有可能要考，考的话会专门指出“请用二分查找来找出&amp;hellip;”。&lt;br&gt;
+不然的话就可以用“从头到尾遍历数组”来找。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;【模板见老师的PPT，如果没记的话可以问我……&lt;/em&gt;&lt;/p&gt;
 &lt;div class=&#34;snote warning &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; 使用二分查找，需要先让数组有序，如果是无序的数组先要排序。 &lt;/p&gt;
@@ -1436,55 +2167,40 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;p&gt;&lt;code&gt;#include&amp;lt;iostream&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;最基本&lt;/strong&gt;的库。&lt;br&gt;
 &lt;code&gt;cin&lt;/code&gt;、&lt;code&gt;cout&lt;/code&gt;等基本指令都需要这个库，写程序直接写上即可。&lt;br&gt;
-
-
-&lt;div class=&#34;snote info &#34;&gt;
-	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;&lt;p&gt;记忆方法：&lt;/p&gt;
-&lt;ul&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;记忆方法&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ul&gt;
 &lt;li&gt;io ————&amp;gt; input&amp;amp;output 输入输出&lt;/li&gt;
 &lt;li&gt;stream ————&amp;gt; stream n.流&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;即“输入输出流”。&lt;/p&gt;
-&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;即“输入输出流”。&lt;/div&gt;
+&lt;/details&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;#include&amp;lt;ctime&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;使用&lt;strong&gt;随机生成&lt;/strong&gt;时要用到的库。&lt;br&gt;
 即生成种子时用的&lt;code&gt;time()&lt;/code&gt;需要这个库。
-
-
-&lt;div class=&#34;snote info &#34;&gt;
-	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;&lt;p&gt;记忆：&lt;/p&gt;
-&lt;ul&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;记忆方法&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ul&gt;
 &lt;li&gt;c ————&amp;gt; 值c++&lt;/li&gt;
 &lt;li&gt;time ————&amp;gt; time n.时间&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;即用来管时间的库。（随机函数需要用时间来作为种子，这样才能保证随机生成不重复）&lt;/p&gt;
-&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;即用来管时间的库。（随机函数需要用时间来作为种子，这样才能保证随机生成不重复）&lt;/div&gt;
+&lt;/details&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;#include&amp;lt;iomanip&amp;gt;&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;控制&lt;strong&gt;输出格式&lt;/strong&gt;要用到的库。&lt;br&gt;
 &lt;code&gt;setw(...)&lt;/code&gt;、&lt;code&gt;fixed()&lt;/code&gt;、&lt;code&gt;precision(...)&lt;/code&gt;（基本为这三个）需要用到这个库。
-
-
-&lt;div class=&#34;snote info &#34;&gt;
-	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;&lt;p&gt;记忆：&lt;/p&gt;
-&lt;ul&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;记忆方法&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ul&gt;
 &lt;li&gt;io ————&amp;gt; input&amp;amp;output&lt;/li&gt;
 &lt;li&gt;manip ————&amp;gt; manipulator n.操控器 的前五个字母&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;即“输入输出控制器”。&lt;/p&gt;
-&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;即“输入输出控制器”。&lt;/div&gt;
+&lt;/details&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;#include&amp;lt;string&amp;gt;&lt;/code&gt;&lt;/p&gt;
@@ -1513,24 +2229,14 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;li&gt;出现原因：一般出现在累加变量&lt;strong&gt;未赋初值为0&lt;/strong&gt;，就在用&lt;code&gt;sum=sum+a&lt;/code&gt;。&lt;/li&gt;
 &lt;li&gt;解决方法：找到变量名为引号里的变量，在使用其前赋相应初值。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如图：&lt;/p&gt;
-&lt;p&gt;&lt;figure style=&#34;flex-grow: 155; flex-basis: 373px&#34;&gt;
-		&lt;a href=&#34;https://blog.supersassw.com/p/cpp-summary/err1_p.png&#34; data-size=&#34;742x477&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/cpp-summary/err1_p.png&#34;
-				srcset=&#34;https://blog.supersassw.com/p/cpp-summary/err1_p_hu6271747eecd2d56c215b22cec1ca844d_23585_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/cpp-summary/err1_p_hu6271747eecd2d56c215b22cec1ca844d_23585_1024x0_resize_box_2.png 1024w&#34;
-				width=&#34;742&#34;
-				height=&#34;477&#34;
-				loading=&#34;lazy&#34;
-				alt=&#34;错误1-例&#34;&gt;
-		&lt;/a&gt;
-		
-		&lt;figcaption&gt;错误1-例&lt;/figcaption&gt;
-		
-	&lt;/figure&gt;&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;错例&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;&lt;img src=&#34;err1_p.png&#34; alt=&#34;错误1-例&#34;&gt;&lt;/p&gt;
 &lt;p&gt;红色划线为对&lt;code&gt;val&lt;/code&gt;的使用处，橙色划线为&lt;code&gt;val&lt;/code&gt;的定义处。&lt;br&gt;
 很明显看到&lt;code&gt;val&lt;/code&gt;在使用前未被赋初值。&lt;br&gt;
 故在使用前赋个初值（这里为累加变量，所以赋初值为0），即：&lt;code&gt;val = 0&lt;/code&gt;。&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 &lt;h2 id=&#34;2数组越界类&#34;&gt;2、数组越界类&lt;/h2&gt;
 &lt;p&gt;弹窗显示如图：&lt;br&gt;
 &lt;figure style=&#34;flex-grow: 131; flex-basis: 316px&#34;&gt;
@@ -1550,32 +2256,22 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;li&gt;出现原因：出现在对数组元素的访问中，访问的下标超过数组最大个数。&lt;/li&gt;
 &lt;li&gt;解决方法：找到变量名为引号里的数组的声明部分，将其空间开大点。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;如图：&lt;/p&gt;
-&lt;p&gt;&lt;figure style=&#34;flex-grow: 205; flex-basis: 494px&#34;&gt;
-		&lt;a href=&#34;https://blog.supersassw.com/p/cpp-summary/err2_p.png&#34; data-size=&#34;826x401&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/cpp-summary/err2_p.png&#34;
-				srcset=&#34;https://blog.supersassw.com/p/cpp-summary/err2_p_hu902f0627d74d2ed7a8fb90bfa1f0ac52_19393_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/cpp-summary/err2_p_hu902f0627d74d2ed7a8fb90bfa1f0ac52_19393_1024x0_resize_box_2.png 1024w&#34;
-				width=&#34;826&#34;
-				height=&#34;401&#34;
-				loading=&#34;lazy&#34;
-				alt=&#34;错误2-例&#34;&gt;
-		&lt;/a&gt;
-		
-		&lt;figcaption&gt;错误2-例&lt;/figcaption&gt;
-		
-	&lt;/figure&gt;&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;错例&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;&lt;img src=&#34;err2_p.png&#34; alt=&#34;错误2-例&#34;&gt;&lt;/p&gt;
 &lt;p&gt;橙色划线定义个数组空间为$10$，即只能用&lt;code&gt;a[0]~a[9]&lt;/code&gt;。&lt;br&gt;
 但在红色划线里，却用了&lt;code&gt;a[10]&lt;/code&gt;，明显超出了最大范围，即越界了，所以会出现此错。&lt;br&gt;
-故在定义部分&lt;code&gt;int a[10]&lt;/code&gt;，把它空间开大点变成&lt;code&gt;int a[11]&lt;/code&gt;即可。&lt;br&gt;
+故在定义部分&lt;code&gt;int a[10]&lt;/code&gt;，把它空间开大点变成&lt;code&gt;int a[11]&lt;/code&gt;即可。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 &lt;div class=&#34;snote warning &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; 这也是数组中很常见的误区和错误需要注意！ &lt;/p&gt;
 	&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/div&gt;
 &lt;h2 id=&#34;3死循环类&#34;&gt;3、死循环类&lt;/h2&gt;
-&lt;p&gt;这类错误不会报错，但会感觉程序怪怪的……&lt;br&gt;
-比如：&lt;/p&gt;
+&lt;p&gt;这类错误不会报错，但会感觉程序怪怪的……&lt;/p&gt;
+&lt;p&gt;比如：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一直黑屏，没有任何反应。&lt;br&gt;
 （如果不确定是不是电脑卡了的原因，可在&lt;code&gt;int main()&lt;/code&gt;最开始加一句&lt;code&gt;cout&amp;lt;&amp;lt;&amp;quot;test&amp;quot;&lt;/code&gt;来判断：如果输出了&lt;code&gt;test&lt;/code&gt;，则证明不是程序卡了。）&lt;/li&gt;
@@ -1616,17 +2312,17 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;ul&gt;
 &lt;li&gt;出现原因：
 &lt;ol&gt;
-&lt;li&gt;循环变量没有改变
+&lt;li&gt;循环变量没有改变。
 &lt;blockquote&gt;
-&lt;p&gt;如忘了&lt;code&gt;i++&lt;/code&gt;、&lt;code&gt;i--&lt;/code&gt;、&lt;code&gt;i=i+2&lt;/code&gt;等&lt;/p&gt;
+&lt;p&gt;如忘了&lt;code&gt;i++&lt;/code&gt;、&lt;code&gt;i--&lt;/code&gt;、&lt;code&gt;i=i+2&lt;/code&gt;等。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;循环条件不可能中止
+&lt;li&gt;循环条件不可能中止。
 &lt;blockquote&gt;
-&lt;p&gt;如&lt;code&gt;for (i = 1; i &amp;gt;= 0; i++)&lt;/code&gt;，$i\geq 0$一直成立&lt;/p&gt;
+&lt;p&gt;如&lt;code&gt;for (i = 1; i &amp;gt;= 0; i++)&lt;/code&gt;，$i\geq 0$会一直成立。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;循环里不小心改变了循环变量
+&lt;li&gt;循环里不小心改变了循环变量。
 &lt;blockquote&gt;
 &lt;p&gt;如：&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
@@ -1847,7 +2543,23 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
         <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
         
         <guid>https://blog.supersassw.com/p/test-note/</guid>
-        <description>&lt;img src="https://blog.supersassw.com/p/test-note/Yande-713907.jpg" alt="Featured image of post NoteBlock测试……" /&gt;&lt;h1 id=&#34;note测试&#34;&gt;Note测试……&lt;/h1&gt;
+        <description>&lt;img src="https://blog.supersassw.com/p/test-note/Yande-713907.jpg" alt="Featured image of post NoteBlock测试……" /&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 发现note嵌套中还是会出现格式混乱的问题，待修复…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;错误例子&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;p&#34;&gt;{{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;info&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}}&lt;/span&gt;
+
+&lt;span class=&#34;mf&#34;&gt;1.&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;测试&lt;/span&gt;
+   &lt;span class=&#34;p&#34;&gt;{{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;snote&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;error&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;这里有问题……&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}}&lt;/span&gt;
+
+&lt;span class=&#34;p&#34;&gt;{{&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;note&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;note测试&#34;&gt;Note测试……&lt;/h1&gt;
 &lt;p&gt;对Hexo中&lt;a class=&#34;link&#34; href=&#34;https://volantis.js.org/v2/tag-plugins/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Volantis主题的note&lt;/a&gt;移植测试……&lt;/p&gt;
 &lt;blockquote&gt;

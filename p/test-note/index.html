@@ -334,7 +334,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：686</div>
+            <div class="char">文章字数：748</div>
             <div class="time">预计阅读时长： <time>2</time> 分钟</div>
         </div>
     </footer>
@@ -342,7 +342,23 @@ if (!doNotTrack) {
 </header>
 
     <section class="article-content">
-    <h1 id="note测试">Note测试……</h1>
+    <div class="snote error ">
+	<div class="snote-content">
+		<p> 发现note嵌套中还是会出现格式混乱的问题，待修复…… </p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>错误例子</summary>
+	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">note</span> <span class="nx">info</span> <span class="p">&gt;}}</span>
+
+<span class="mf">1.</span> <span class="nx">测试</span>
+   <span class="p">{{&lt;</span> <span class="nx">snote</span> <span class="kt">error</span> <span class="s">&#34;这里有问题……&#34;</span> <span class="p">&gt;}}</span>
+
+<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">note</span> <span class="p">&gt;}}</span>
+</code></pre></div></div>
+</details>
+<hr>
+<h1 id="note测试">Note测试……</h1>
 <p>对Hexo中<a class="link" href="https://volantis.js.org/v2/tag-plugins/"  target="_blank" rel="noopener"
     >Volantis主题的note</a>移植测试……</p>
 <blockquote>

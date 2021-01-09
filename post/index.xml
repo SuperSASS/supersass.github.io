@@ -8,6 +8,15 @@
     <language>zh-CN</language>
     <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>习题——指针……</title>
+      <link>https://blog.supersassw.com/p/prac-point/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/prac-point/</guid>
+      <description>指针课后习题 判断题 第一题 从内存单元中存取数据的方法有直接访问方式和间接访问方式。 知识点： 内存单元的数据存取方式 【书 P186】 答案与分析 正确 分</description>
+    </item>
+    
+    <item>
       <title>心理学导论——名词解释……</title>
       <link>https://blog.supersassw.com/p/intro-psychology-ne/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
@@ -58,7 +67,7 @@
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/cpp-summary/</guid>
-      <description>一、注意的点 1、用作为“累加、累乘的变量”的注意事项 如： sum1 = sum1 + a;——作为累加求和。 sum2 = sum2 * a;——作为累乘求和。 是否定义时赋初值？ int sum1 =</description>
+      <description>一、注意的点 1、用作为“累加、累乘”的变量的注意事项 例子——累加、累乘的变量 sum1 = sum1 + a;——作为累加求和。 sum2 = sum2 * a;——作为累乘求和。 是否</description>
     </item>
     
     <item>
@@ -76,7 +85,7 @@
       <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/test-note/</guid>
-      <description>Note测试…… 对Hexo中Volantis主题的note移植测试…… NoteBlock 是 Blockquote 的增强版，在左边显示图标，并且可以自定颜色。 长Note 适用于需要</description>
+      <description>发现note嵌套中还是会出现格式混乱的问题，待修复…… 错误例子 {{&amp;lt; note info &amp;gt;}} 1. 测试 {{&amp;lt; snote error &amp;#34;这里有问题……&amp;#34; &amp;gt;}} {{&amp;lt; /note &amp;gt;}} Note测试……</description>
     </item>
     
     <item>

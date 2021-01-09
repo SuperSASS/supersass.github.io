@@ -40,7 +40,7 @@
       <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/test-note/</guid>
-      <description>Note测试…… 对Hexo中Volantis主题的note移植测试…… NoteBlock 是 Blockquote 的增强版，在左边显示图标，并且可以自定颜色。 长Note 适用于需要</description>
+      <description>发现note嵌套中还是会出现格式混乱的问题，待修复…… 错误例子 {{&amp;lt; note info &amp;gt;}} 1. 测试 {{&amp;lt; snote error &amp;#34;这里有问题……&amp;#34; &amp;gt;}} {{&amp;lt; /note &amp;gt;}} Note测试……</description>
     </item>
     
     <item>

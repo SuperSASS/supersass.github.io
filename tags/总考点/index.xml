@@ -13,7 +13,7 @@
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/cpp-summary/</guid>
-      <description>一、注意的点 1、用作为“累加、累乘的变量”的注意事项 如： sum1 = sum1 + a;——作为累加求和。 sum2 = sum2 * a;——作为累乘求和。 是否定义时赋初值？ int sum1 =</description>
+      <description>一、注意的点 1、用作为“累加、累乘”的变量的注意事项 例子——累加、累乘的变量 sum1 = sum1 + a;——作为累加求和。 sum2 = sum2 * a;——作为累乘求和。 是否</description>
     </item>
     
   </channel>
