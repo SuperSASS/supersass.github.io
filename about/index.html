@@ -26,7 +26,7 @@
 var doNotTrack = false;
 if (!doNotTrack) {
 	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'G-3540JBNMZR', 'auto');
+	ga('create', 'UA-186192852-1', 'auto');
 	
 	ga('send', 'pageview');
 }
@@ -217,6 +217,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#关于我">关于我</a>
       <ul>
+        <li><a href="#新增功能">新增功能</a></li>
         <li><a href="#日后计划">日后计划</a></li>
         <li><a href="#目前问题">目前问题</a></li>
       </ul>
@@ -311,6 +312,7 @@ if (!doNotTrack) {
         <a href="/about/">关于</a>
     </h2>
 
+    
     <footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -334,8 +336,8 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1874</div>
-            <div class="time">预计阅读时长： <time>4</time> 分钟</div>
+            <div class="char">文章字数：2229</div>
+            <div class="time">预计阅读时长： <time>5</time> 分钟</div>
         </div>
     </footer>
 </div>
@@ -476,7 +478,7 @@ if (!doNotTrack) {
 		<p>新年快乐！【现在才补2333……</p>
 <p>本来是要复习的嗯【……<br>
 考完神经解剖学和微积分就暂时摸了会_(:з」∠)_……</p>
-<p>又来填坑了，实现了文章目录，添加了两个备案号……</p>
+<p>又来填坑了，实现了<strong>文章目录</strong>，添加了两个备案号……</p>
 <p>对了，备案是在生日那天12月30号下来的ww……</p>
 <p>【之后弄CDN又弄了很久，里面还有很多不知道的东西orz……</p>
 
@@ -502,6 +504,22 @@ if (!doNotTrack) {
 
 </div>
 <hr>
+<h2 id="新增功能">新增功能</h2>
+<ul>
+<li>随机页面背景……</li>
+<li>文章内容扩展……
+<ul>
+<li><code>note</code>……</li>
+<li><code>timeline</code>……</li>
+<li><code>tabs</code>……</li>
+<li>等等……</li>
+</ul>
+</li>
+<li>外链音乐播放器(APlayer)……</li>
+<li>文章目录(Table Of Contents)……</li>
+<li>文章封面配图图站ID(Pixiv/Yandere)链接……</li>
+<li>一言(Hitokoto)摘要……</li>
+</ul>
 <h2 id="日后计划">日后计划</h2>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 实现文章目录……</li>
@@ -529,12 +547,31 @@ if (!doNotTrack) {
 </ul>
 <div class="snote error ">
 	<div class="snote-content">
+		<p> 文章目录显示存在异常…… </p>
+	</div>
+</div>
+<ul>
+<li>标题中出现代码块<code>``</code>时，会样式错误……</li>
+</ul>
+<div class="snote error ">
+	<div class="snote-content">
 		<p> 自定义标签的嵌套存在问题…… </p>
 	</div>
 </div>
 <ul>
-<li>note……</li>
+<li>note中一些嵌套方式会产生渲染错误……</li>
 </ul>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 其他小bug…… </p>
+	</div>
+</div>
+<ol>
+<li>手机端中，APlayer的fixed状态，没有声量调节按钮……【不过这个个人修复不了目前orz……</li>
+<li>有序列表的<code>marker</code>样式有点怪（比无序列表近了一点）……</li>
+<li>一言中，有些本是作者（人的名字）的却返回为出处（番名），所以会加个「」显得很怪……【不过这个个人修复不了目前orz……</li>
+<li>长代码块中，对于制表符的样式很长，与VSCode环境显示差别很大……</li>
+</ol>
 <hr>
 <p>头像 Pixiv ID： <a class="link" href="https://www.pixiv.net/artworks/31871568"  target="_blank" rel="noopener"
     >31871568</a>……<br>
@@ -565,7 +602,7 @@ if (!doNotTrack) {
 
 
 
-        <span>采用 CC BY-NC-SA 4.0 许可协议……</span>
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
     </section>
     <section class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -720,6 +757,9 @@ if (!doNotTrack) {
     integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
 
 <script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
 
 <script>
     (function () {

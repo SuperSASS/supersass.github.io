@@ -6,7 +6,309 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>日常练习——2021/1/25……</title>
+        <link>https://blog.supersassw.com/p/prac-2020-1-25/</link>
+        <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/prac-2020-1-25/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/prac-2020-1-25/Yande-199983.png" alt="Featured image of post 日常练习——2021/1/25……" /&gt;&lt;h1 id=&#34;题目链接&#34;&gt;题目链接&lt;/h1&gt;
+&lt;p&gt;P4863 &lt;a class=&#34;link&#34; href=&#34;https://www.luogu.com.cn/problem/P4863&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;JerryC Loves Driving&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;题目分析&#34;&gt;题目分析&lt;/h1&gt;
+&lt;p&gt;对于一层求和，其实就是一层&lt;code&gt;for&lt;/code&gt;，那么两层求和就是两层&lt;code&gt;for&lt;/code&gt;，也就是二维的。&lt;br&gt;
+而对于求和O(n)的优化计算方法，最基本的就是&lt;strong&gt;转换为等差数列O(1)计算&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;我们将两层求和的每一项列表观察（看是否有等差数列），得出下表：&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 277; flex-basis: 666px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid.png&#34; data-size=&#34;883x318&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_hub2eadd258ab753ea9e43cfe8ff9df0dd_13616_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_hub2eadd258ab753ea9e43cfe8ff9df0dd_13616_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;883&#34;
+				height=&#34;318&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;求和表&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;求和表&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;图片来自于&lt;a class=&#34;link&#34; href=&#34;https://www.luogu.com.cn/blog/_post/276545&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「Insouciant21」的题解&lt;/a&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;观察发现，对于每一列，是类似呈等差数列的形式的，&lt;br&gt;
+对于第$i$列，是由$i$个$0 \sim n$的等差数列组成。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如第四列：为$4$个$0,1,2,\cdots,n$的等差数列组成。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此我们就可以O(1)计算出每一列的和，那么就只用&lt;strong&gt;按列循环依次求和&lt;/strong&gt;，O(n)的时间内求出结果。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;想到求解方法后，我们来确定求和计算范围。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以下以$A=2, B=7$来举例。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 277; flex-basis: 666px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_1.png&#34; data-size=&#34;883x318&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_1.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_1_hu3f9dbc4f0e4f512eede5c5658f0e05f1_14742_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_1_hu3f9dbc4f0e4f512eede5c5658f0e05f1_14742_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;883&#34;
+				height=&#34;318&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;求和表范围1&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;求和表范围1&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;对于题上给出的两个界：上界$A$和下届$B$，&lt;br&gt;
+按照题中所给公式，最初始的范围，则对应图中红色框选内容。&lt;br&gt;
+由于0部分不影响，所以也可以看成蓝色矩形部分。&lt;/p&gt;
+&lt;p&gt;但如果直接这样进行计算，会发现会有很多要考虑的地方，或说运用等差数列时有很多边界的处理。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如图中所给例子：&lt;br&gt;
+对于$2$这一列，则&lt;strong&gt;上方&lt;/strong&gt;的$1$并不完全属于$n$个等差数列中，要排除。
+对于$3$这一列，则&lt;strong&gt;下方&lt;/strong&gt;的$-2$并不完全属于$n$个等差数列中，要排除。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;于是我们可以想到对于求$f(A \sim B)$这一范围，可以&lt;strong&gt;转化为求$f(B)-f(A-1)$这两范围的差&lt;/strong&gt;。&lt;br&gt;
+如图所示：&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 277; flex-basis: 666px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_2.png&#34; data-size=&#34;883x318&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_2.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_2_hud772840a6d20fd893d609e67354e71b8_14418_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_2_hud772840a6d20fd893d609e67354e71b8_14418_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;883&#34;
+				height=&#34;318&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;求和表范围2&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;求和表范围2&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;则可以&lt;strong&gt;只用考虑下界&lt;/strong&gt;的不符合。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;这是一个很重要的方法&lt;/strong&gt;：&lt;br&gt;
+将两个不确定的界的函数($f(x \sim y)$)，转化为两个有一个确定的界的函数之差（$f(C \sim x)-f(C \sim y)$）。（如定积分中经常运用）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;解题方法&#34;&gt;解题方法&lt;/h1&gt;
+&lt;h2 id=&#34;on方法&#34;&gt;$O(n)$方法&lt;/h2&gt;
+&lt;p&gt;对于每一列$i$：&lt;br&gt;
+其和（的绝对值）为：$i$个$1,2,3,\cdots,n$的等差数列的和，加上剩余非等差数列的部分。&lt;/p&gt;
+&lt;p&gt;每一列均为$n - 0 + 1$即$n + 1$项。&lt;/p&gt;
+&lt;p&gt;等差数列部分：&lt;br&gt;
+首项——$a_1 = 0$；&lt;br&gt;
+末项——$a_n = (n + 1) / i - 1$；【原因是：首先项数有$n+1$项（包括0行），整除$i$，则得到等差数列的项数，那么末项$a_n = a_1 + (n-1)*d$，即为项数$-1$。
+项数——$n = (a_n - a_1) / 1 + 1$（公差为1），即为$a_n + 1$。&lt;/p&gt;
+&lt;p&gt;非等差数列部分：&lt;br&gt;
+每一项均为$a_n + 1$；&lt;br&gt;
+前面已经计算了$cnt * i$项，所以剩余部分的项数为$n + 1 - (cnt * i)$。&lt;/p&gt;
+&lt;h2 id=&#34;osqrtn方法&#34;&gt;$O(\sqrt{n})$方法&lt;/h2&gt;
+&lt;p&gt;首先根据上述的规律可以发现：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;每一个数重复次数是按列递增的。
+&lt;blockquote&gt;
+&lt;p&gt;第$1$列是$1,2,3,\cdots,n$，每个数出现$1$次；第$2$列是$1,1,2,2,3,3,\cdots,n,n$，每个数出现$2$次。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;奇数行和偶数行的符号是一样的。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;基于以上两点，我们发现：
+如果存在&lt;strong&gt;间隔的几列&lt;/strong&gt;（使符号相同，能合并处理），满足他们&lt;strong&gt;有的数字为一样&lt;/strong&gt;的（比如都只有$1,2,3$，只是出现次数不同）。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如求$f(33)$中&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例一：&lt;br&gt;
+第$9$列为$0,0,\cdots,0;-1,-1,\cdots,-1;-2,-2,\cdots,-2;-3,-3,-3,-3,-3,-3,-3$（$9$个$0$，$9$个$-1$，$9$个$-2$，$7$个$-3$）&lt;br&gt;
+第$11$列为$0,0,\cdots,0;-1,-1,\cdots,-1;-2,-2,\cdots,-2;-3$（$11$个$0$，$11$个$-1$，$11$个$-2$，$1$个$-3$）&lt;br&gt;
+&lt;em&gt;为下图中蓝色两列。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例二：
+第$12$列为$0,0,\cdots,0;1,1,\cdots,1;2,2,\cdots,2$（$12$个$0$，$12$个$1$，$10$个$2$）&lt;br&gt;
+第$14$列为$0,0,\cdots,0;1,1,\cdots,1;2,2,2,2,2,2$（$14$个$0$，$14$个$1$，$6$个$2$）&lt;br&gt;
+第$16$列为$0,0,\cdots,0;1,1,\cdots,1;2,2$（$16$个$0$，$16$个$1$，$2$个$2$）
+&lt;em&gt;为下图中橙色三列。&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 171; flex-basis: 410px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_3.png&#34; data-size=&#34;1259x736&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_3.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_3_hu236708c32f989ae37e2abf0c84bdf7b1_61050_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/prac-2020-1-25/pic/%281.24%29sum_grid_3_hu236708c32f989ae37e2abf0c84bdf7b1_61050_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1259&#34;
+				height=&#34;736&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;举例求和表&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;举例求和表&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么这几列的等差数列，是可以&lt;strong&gt;合并为一个更大的等差数列&lt;/strong&gt;一起求和的。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;上例一中：&lt;br&gt;
+第$9$列中的有$9$个$-1$、$9$个$-2$；&lt;br&gt;
+第$11$列中的有$11$个$-1$、$11$个$-2$；&lt;br&gt;
+于是这两列便可合并为$20$个$-1$，$20$个$-2$一起用高斯求和（等差数列求和）。
+但对于最后的一项数（如上例一中的$-3$），因为出现次数不一致，不能很好的直接合并，需要单独处理计算，&lt;br&gt;
+所以我们只能&lt;strong&gt;合并倒数第二项用高斯求和&lt;/strong&gt;，然后对剩下的&lt;strong&gt;最后一项单独处理&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样就可以在计算的过程中合并几列同时计算，达到减少操作降低复杂度的效果。&lt;br&gt;
+【&lt;em&gt;不过至于是否为O($\sqrt{n})$的复杂度我就没证了&lt;/em&gt;_(:з」∠)_……&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;那么重点就是：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;怎么分奇偶，找到哪几列出现数字相同。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;先算出&lt;strong&gt;这一列能出现的最大数&lt;/strong&gt;，然后再用$n$除以这个数，得到&lt;strong&gt;只能出现到这个数的最大列&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比如求$f(33)$，处理第$9$列时，&lt;br&gt;
+第$9$列能出现最大的数是$33/9$为$3$，但只能出现到$3$的最大列为$33/3$为第$11$列（可以配合上面给出的图来理解）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;怎么处理计算不能合并的最后一项。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;首先最后一项这个数我们知道是好多（为$n/i$），所以关键是&lt;strong&gt;求他有多少个&lt;/strong&gt;。&lt;br&gt;
+由第一点发现可知，对于下一个间隔列，前面的项出现次数均多了$2$次，&lt;br&gt;
+或者说最后一项出现次数依次减$2$。&lt;br&gt;
+所以其实对于&lt;strong&gt;最后一项的出现次数&lt;/strong&gt;，也是个等差数列。&lt;br&gt;
+找到等差数列的几个参数求和，得到有多少个。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首项：对应最后一列$i$，总项数为$n+1$个，前面项每个数均出现了$i$次，一共有$N$个数（计算方法就是等差数列求项数）。&lt;/li&gt;
+&lt;li&gt;末项：对应第一列，计算方法同首项。&lt;/li&gt;
+&lt;li&gt;项数：就是合并了几项。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比如求$f(33)$，处理第$12$列时，最大列到$16$列&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;首项——第$16$列中：前面的项（$0$和$1$）均出现了$16$次，所以这一列最后一项（$2$）出现次数为$2$次。&lt;/li&gt;
+&lt;li&gt;末项——第$12$列中：前面的项均出现了$12$次，所以这一列最后一项出现次数为$10$次。&lt;/li&gt;
+&lt;li&gt;项数——合并了$12$、$14$、$16$列，项数为$3$.
+则可求得最后一项$2$一共出现了$(2+10)*3/2=18$次。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;怎么处理计算合并后的等差数列。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;方法就同$O(n)$方法中求等差数列了，
+只是在最后一项（&lt;code&gt;an&lt;/code&gt;）和乘的次数（由乘&lt;code&gt;i&lt;/code&gt;变成了乘&lt;code&gt;cnt&lt;/code&gt;）变了一点。
+对于合并后的出现次数，也是个高斯求和。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比如求$f(33)$，处理第$9$列时，最大列到$11$列&lt;br&gt;
+第$9$列每一项出现次数为$9$次，&lt;br&gt;
+第$11$列每一项出现次数为$11$次，&lt;br&gt;
+所以一共出现$9+11 = 20$次，&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;个人代码&#34;&gt;个人代码&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;	int NAME_i = BEGIN;        \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;	NAME_i &amp;lt;= TO;              \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;	NAME_i++
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define SGN (nega ? -1 : 1)
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;solve&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+	&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;									 &lt;span class=&#34;c1&#34;&gt;//首项
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;an&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;					 &lt;span class=&#34;c1&#34;&gt;//末项
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;cntSeq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;an&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;						 &lt;span class=&#34;c1&#34;&gt;//项数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;an&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cntSeq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SGN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;	 &lt;span class=&#34;c1&#34;&gt;//先求等差数列的和
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cntSeq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;an&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SGN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//再计算剩下的部分
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;nega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;nega&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;								 &lt;span class=&#34;c1&#34;&gt;//变符号
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;solve_Odev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;odd&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;nega&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;odd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;odd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//注意赋值语句为maxColumn + 2，也就是合并处理完几列后，直接跳到处理完的列后面。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+		&lt;span class=&#34;c1&#34;&gt;//1. 怎么分奇偶，找到哪几列出现数字相同。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxNum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;			 &lt;span class=&#34;c1&#34;&gt;//当前列能出现的最大数（或最后一项）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;		 &lt;span class=&#34;c1&#34;&gt;//只能出现到这个数的最大列
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;odd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//本来处理奇数列，但算出来最大列为偶数情况
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+		&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;!&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;odd&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//本来处理偶数列，但算出来最大列为奇数情况
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+		&lt;span class=&#34;cm&#34;&gt;/*对应于上图中，当n = 33, i = 12时：
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		maxNum    = 2
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		maxColumn = 16	【对应为 合并12~16列。
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		*/&lt;/span&gt;
+
+		&lt;span class=&#34;c1&#34;&gt;//2. 怎么处理计算不能合并的最后一项。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;minCnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;	&lt;span class=&#34;c1&#34;&gt;//首项——这几列中，最后一项出现最少的次数（为最后一列，用maxColumn）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;maxCnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxNum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;			&lt;span class=&#34;c1&#34;&gt;//末项——这几列中，最后一项出现最多的次数（最当前列，用i）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;cntColumn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//项数——合并了几列
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;cm&#34;&gt;/* 注意的点：
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		1. 总项数为n+1个，因为0也算！
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		2. 不为maxNum - 1，因为0也算！【前面项的项数为((maxNum-1) - 0) / 1 + 1，即maxNum
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		*/&lt;/span&gt;
+		&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cntNum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;maxCnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;minCnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cntColumn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//求得关键——最后一项有多少个（高斯求和）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxNum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cntNum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SGN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+		&lt;span class=&#34;cm&#34;&gt;/* 对应于上图中，当n = 33, i = 12, maxColumn = 16时：
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		minCnt    = 2		【对应为 最后一列有2项
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		maxCnt    = 10		【对应为 第一列有10项
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		cntColumn = 3		【对应为 合并了3列
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		cntNum    = 18		【对应为 最后一项由18个
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		*/&lt;/span&gt;
+
+		&lt;span class=&#34;c1&#34;&gt;//3. 怎么处理计算合并后的等差数列。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt;  &lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;			 &lt;span class=&#34;c1&#34;&gt;//首项
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;an&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxNum&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//末项
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;			&lt;span class=&#34;n&#34;&gt;cntSeq&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;an&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//项数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;cm&#34;&gt;/* 以上跟O(n)方法的几乎一样。
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		区别在于当这一列完全为等差数列时（不存在不为等差数列的部分）：
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		O(n)方法计算等差数列和，会包括最后一项；
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		O(sqrt(n))方法计算等差数列和，不会包括最后一项。
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		*/&lt;/span&gt;
+		&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxColumn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cntColumn&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//合并后出现次数（高斯求和）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;		&lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;an&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cntSeq&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SGN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//（高斯求和）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;solve_block&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;solve_Odev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;solve_Odev&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;cm&#34;&gt;/*
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;LL slove_original(int A, int B)
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;//最原始的做法，但考虑的会更复杂所以未完成为错误的
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;//错误点为为考虑开始部分为非等差数列
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;{
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;	LL ans = 0;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;	bool nega = 1;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;	for (ALL(i, 1, B))
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;	{
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		int seqBgeinIndex = A + max(i - A, 0), cnt = (B - seqBgeinIndex + 1) / i, seqEndIndex = seqBgeinIndex + cnt * i - 1;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		LL a1 = max(A / i, 1), an = a1 + cnt - 1;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		ans += i * ((a1 + an) * cnt / 2) * SGN;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		ans += (B - seqEndIndex) * (an + 1) * SGN;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;		nega = !nega;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;	}
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;	return ans;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;}
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;*/&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+	&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+	&lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+	&lt;span class=&#34;c1&#34;&gt;//printf(&amp;#34;%lld\n&amp;#34;, solve(B) - solve(A - 1));
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;	&lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%lld&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;solve_block&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;solve_block&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item>
+        <item>
         <title>习题——数组……</title>
         <link>https://blog.supersassw.com/p/prac-array/</link>
         <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
@@ -1843,12 +2145,12 @@
 </description>
         </item>
         <item>
-        <title>扩展Shortcode测试……</title>
+        <title>移植Shortcode测试……</title>
         <link>https://blog.supersassw.com/p/test-shortcode-extend/</link>
         <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
         
         <guid>https://blog.supersassw.com/p/test-shortcode-extend/</guid>
-        <description>&lt;img src="https://blog.supersassw.com/p/test-shortcode-extend/Yande-312231.png" alt="Featured image of post 扩展Shortcode测试……" /&gt;&lt;h1 id=&#34;扩展shortcode&#34;&gt;扩展Shortcode&lt;/h1&gt;
+        <description>&lt;img src="https://blog.supersassw.com/p/test-shortcode-extend/Yande-312231.png" alt="Featured image of post 移植Shortcode测试……" /&gt;&lt;h1 id=&#34;扩展shortcode&#34;&gt;扩展Shortcode&lt;/h1&gt;
 &lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; 以下Shortcode均来自Hugo的&lt;a href=&#34;https://github.com/alex-shpak/hugo-book&#34;&gt;Hugo Book&lt;/a&gt;主题…… &lt;/p&gt;

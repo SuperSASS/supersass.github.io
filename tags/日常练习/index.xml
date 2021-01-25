@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日常练习 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/</link>
+    <description>Recent content in 日常练习 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>日常练习——2021/1/25……</title>
+      <link>https://blog.supersassw.com/p/prac-2020-1-25/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/prac-2020-1-25/</guid>
+      <description>题目链接 P4863 JerryC Loves Driving 题目分析 对于一层求和，其实就是一层for，那么两层求和就是两层for，也就是二维的。 而对于求和O(n)的优化计算方法，最基本</description>
+    </item>
+    
+  </channel>
+</rss>
