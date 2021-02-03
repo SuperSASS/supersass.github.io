@@ -6,7 +6,862 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 02 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Misc - 数据编码……</title>
+        <link>https://blog.supersassw.com/p/ctf-misc-2/</link>
+        <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/ctf-misc-2/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/ctf-misc-2/87075144_p0.jpg" alt="Featured image of post Misc - 数据编码……" /&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 以下内容仅为直播时初步笔记，还未整理完成…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;数据编码&#34;&gt;数据编码&lt;/h1&gt;
+&lt;h2 id=&#34;各种编码方式&#34;&gt;各种编码方式&lt;/h2&gt;
+&lt;h3 id=&#34;ascii&#34;&gt;ASCII&lt;/h3&gt;
+&lt;h3 id=&#34;base&#34;&gt;Base&lt;/h3&gt;
+&lt;h4 id=&#34;base64&#34;&gt;base64&lt;/h4&gt;
+&lt;p&gt;把$3$个$8$位字节转化为$4$个$6$位的字节，之后在$6$位的前面补两个$0$，重新形成$8$位（一字节）形式。&lt;/p&gt;
+&lt;p&gt;$6$位$2$进制&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.
+&lt;figure style=&#34;flex-grow: 177; flex-basis: 426px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/base64-%E4%BE%8B%E5%AD%90.png&#34; data-size=&#34;1920x1080&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/base64-%E4%BE%8B%E5%AD%90.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/base64-%E4%BE%8B%E5%AD%90_hu967bbca14cac403a364812706153783b_1042923_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-2/pic/base64-%E4%BE%8B%E5%AD%90_hu967bbca14cac403a364812706153783b_1042923_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1080&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;base64转换例子&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;base64转换例子&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;base36&#34;&gt;base36&lt;/h4&gt;
+&lt;p&gt;包含$0 \sim 9$的数字，加上所有$26$个字母（不区分大小写）。&lt;br&gt;
+不包含任何标点，&lt;/p&gt;
+&lt;h4 id=&#34;base58&#34;&gt;base58&lt;/h4&gt;
+&lt;p&gt;采用的字符集为$1234&lt;br&gt;
+去掉了（0、O、I、&lt;/p&gt;
+&lt;p&gt;$9+49 = 58$&lt;/p&gt;
+&lt;h4 id=&#34;base62&#34;&gt;base62&lt;/h4&gt;
+&lt;p&gt;区别于base64的地方为&lt;strong&gt;去掉了&lt;code&gt;+&lt;/code&gt;和&lt;code&gt;/&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;base85&#34;&gt;&lt;em&gt;base85&lt;/em&gt;&lt;/h4&gt;
+&lt;p&gt;不常用。&lt;/p&gt;
+&lt;p&gt;类似于Base64的二进制文本编码形式，&lt;br&gt;
+通过使用$5$个ASCII字符来表示四个字节的二进制数据。&lt;/p&gt;
+&lt;h4 id=&#34;base9192&#34;&gt;base91、92&lt;/h4&gt;
+&lt;p&gt;base91由91个字符（&lt;code&gt;0-9&lt;/code&gt;、&lt;code&gt;a-z&lt;/code&gt;、&lt;code&gt;A-Z&lt;/code&gt;、……）&lt;/p&gt;
+&lt;p&gt;base92比base91多一个？&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&amp;ldquo;CyberChef&amp;quot;中的&amp;quot;magic&amp;quot;模块自动识别。&lt;br&gt;
+或者用&amp;quot;From base&amp;hellip;&amp;ldquo;准确转换。&lt;/p&gt;
+&lt;h3 id=&#34;morse电码&#34;&gt;Morse电码&lt;/h3&gt;
+&lt;p&gt;简介略。&lt;/p&gt;
+&lt;h3 id=&#34;shellcode&#34;&gt;shellcode&lt;/h3&gt;
+&lt;p&gt;shellcode是一段用于利用软件漏洞而执行的代码，shellcode为$16$进制的机器码，因为经常让攻击者获得shell而得名。&lt;/p&gt;
+&lt;h3 id=&#34;urlencode&#34;&gt;urlencode&lt;/h3&gt;
+&lt;p&gt;url编码又称百分号编码，是统一资源定位（URL）编码方式。&lt;/p&gt;
+&lt;p&gt;URL地址（网址）中规定：数字、字母和特定字符（&lt;code&gt;/&lt;/code&gt;、&lt;code&gt;,&lt;/code&gt;、&lt;code&gt;:&lt;/code&gt;、&lt;code&gt;@&lt;/code&gt;等）可以直接使用，&lt;br&gt;
+其余必须通过&lt;code&gt;%xx&lt;/code&gt;来编码。
+其中的&lt;code&gt;xx&lt;/code&gt;代表ASCII的十六进制&lt;/p&gt;
+&lt;h3 id=&#34;unicode&#34;&gt;Unicode&lt;/h3&gt;
+&lt;p&gt;又称万国码。&lt;/p&gt;
+&lt;p&gt;形式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\u****&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&amp;amp;x****&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;aaencode&#34;&gt;aaencode&lt;/h3&gt;
+&lt;p&gt;用颜文字进行的编码。&lt;/p&gt;
+&lt;h3 id=&#34;jjencode&#34;&gt;jjencode&lt;/h3&gt;
+&lt;p&gt;用&lt;code&gt;$&lt;/code&gt;、&lt;code&gt;_&lt;/code&gt;、&lt;code&gt;[&lt;/code&gt;、&lt;code&gt;]&lt;/code&gt;进行的编码。&lt;/p&gt;
+&lt;h3 id=&#34;uuencode&#34;&gt;uuencode&lt;/h3&gt;
+&lt;p&gt;用于电子信息的传输。&lt;/p&gt;
+&lt;h3 id=&#34;其他&#34;&gt;其他&lt;/h3&gt;
+&lt;h4 id=&#34;jsfuck&#34;&gt;jsfuck&lt;/h4&gt;
+&lt;p&gt;用六个字符&lt;code&gt;[]()!+&lt;/code&gt;来重新编写&amp;quot;Javascript&amp;quot;代码，&lt;strong&gt;并可以直接执行&lt;/strong&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;brainfuck&#34;&gt;brainfuck&lt;/h4&gt;
+&lt;p&gt;另一种奇怪的编码方式……&lt;/p&gt;
+&lt;h3 id=&#34;ook&#34;&gt;ook&lt;/h3&gt;
+&lt;p&gt;splitbrain.org/service/ook&lt;/p&gt;
+&lt;p&gt;比赛中常见。&lt;/p&gt;
+&lt;h4 id=&#34;ook-1&#34;&gt;Ook!&lt;/h4&gt;
+&lt;p&gt;由&lt;code&gt;Ook.&lt;/code&gt;、&lt;code&gt;Ook!&lt;/code&gt;、&lt;code&gt;Ook?&lt;/code&gt;三个字符串组成。&lt;/p&gt;
+&lt;h4 id=&#34;short-ook&#34;&gt;Short Ook!&lt;/h4&gt;
+&lt;p&gt;只有&lt;code&gt;.&lt;/code&gt;、&lt;code&gt;!&lt;/code&gt;、&lt;code&gt;?&lt;/code&gt;三个字符组成。&lt;/p&gt;
+&lt;h3 id=&#34;敲击码&#34;&gt;敲击码&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 117; flex-basis: 281px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/%E6%95%B2%E5%87%BB%E7%A0%81.png&#34; data-size=&#34;468x399&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/%E6%95%B2%E5%87%BB%E7%A0%81.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/%E6%95%B2%E5%87%BB%E7%A0%81_huc050287f0a112e61803903cf6cca0166_40350_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-2/pic/%E6%95%B2%E5%87%BB%E7%A0%81_huc050287f0a112e61803903cf6cca0166_40350_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;468&#34;
+				height=&#34;399&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;敲击码&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;敲击码&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;二维码&#34;&gt;二维码&lt;/h3&gt;
+&lt;p&gt;QRCode&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;堆叠式&lt;/li&gt;
+&lt;li&gt;行排式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;info 矩阵式二维码&lt;/p&gt;
+&lt;p&gt;常说的二维码。&lt;/p&gt;
+&lt;p&gt;在一个矩阵空间&lt;/p&gt;
+&lt;h4 id=&#34;特点&#34;&gt;特点&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;储存大容量信息&lt;br&gt;
+传统的条形码只能处理$20$位左右的信息量，QR码可以处理条形码几十到几百倍的信息量。&lt;/li&gt;
+&lt;li&gt;支持所有类型的数据。（如：数字、英文字母、日文字母、汉字等）&lt;/li&gt;
+&lt;li&gt;在小空间内打印&lt;/li&gt;
+&lt;li&gt;？&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;基本结构&#34;&gt;基本结构&lt;/h4&gt;
+&lt;p&gt;QR(Qucik-Response) code是被广泛使用的&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 171; flex-basis: 411px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/QRcode-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.png&#34; data-size=&#34;1242x724&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/QRcode-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-2/pic/QRcode-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84_hu4fa5621e24e028fcab2f5e69b92442b0_172175_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-2/pic/QRcode-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84_hu4fa5621e24e028fcab2f5e69b92442b0_172175_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1242&#34;
+				height=&#34;724&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;基本结构&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;基本结构&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;考点&#34;&gt;考点&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;拿掉&lt;/li&gt;
+&lt;li&gt;修复二维码
+QRazyBox&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;稀奇古怪的编码&#34;&gt;稀奇古怪的编码&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;社会主义核心价值观编码&lt;br&gt;
+特点：由社会主义核心价值观十二个词构成。&lt;/li&gt;
+&lt;li&gt;与佛论禅&lt;br&gt;
+特点：开头为“佛曰：”。&lt;/li&gt;
+&lt;li&gt;与熊论道&lt;br&gt;
+特点：开头为“熊曰：”。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
+        <title>Misc - 图片隐写……</title>
+        <link>https://blog.supersassw.com/p/ctf-misc-1/</link>
+        <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/ctf-misc-1/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/ctf-misc-1/86016044_p0.png" alt="Featured image of post Misc - 图片隐写……" /&gt;&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 以下为涅普计划的课程笔记，建议搭配课程视频理解。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;图片隐写&#34;&gt;图片隐写&lt;/h1&gt;
+&lt;h2 id=&#34;0x01-课程视频&#34;&gt;0x01 课程视频&lt;/h2&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;课程视频&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;bilibili-player&#34;style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+	&lt;iframe loading=&#34;lazy&#34; src=&#34;https://player.bilibili.com/player.html?bvid=BV1VA411u7Tg&amp;high_quality=1&amp;page=2&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;Bilibili Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV1VA411u7Tg?p=2&#34;&gt;视频Bilibili链接&lt;/a&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;p&gt;将一些不可告人x的东西（如flag）以各种方式隐藏在图片中。&lt;/p&gt;
+&lt;p&gt;自已需要分析出隐写方法，并找出隐藏的信息。&lt;/p&gt;
+&lt;h2 id=&#34;0x02-准备工具&#34;&gt;0x02 准备工具&lt;/h2&gt;
+&lt;h3 id=&#34;十六进制编辑器&#34;&gt;十六进制编辑器&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;ldquo;010 Editor&amp;rdquo;&lt;br&gt;
+优点：有模板（需要安装）&lt;br&gt;
+&lt;em&gt;Tip: 复制16进制的快捷键为&lt;code&gt;Ctrl+Shift+C&lt;/code&gt;。&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;WinHex&amp;rdquo;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;em&gt;其实也称二进制编辑器，因为文件都是以bin二进制来存储的，不过为了阅读方便，将8位2进制串转化为2位16($2^4=16$)进制串。&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;虚拟机kail&#34;&gt;虚拟机——&amp;ldquo;Kail&amp;rdquo;&lt;/h3&gt;
+&lt;h4 id=&#34;相关命令&#34;&gt;相关命令&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;strings&lt;/code&gt;&lt;br&gt;
+打印文件中可打印的字符。&lt;br&gt;
+作用：可找出图片中&lt;strong&gt;隐写的字符串&lt;/strong&gt;。&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例子&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;在终端中输入&lt;code&gt;strings strings.jpg&lt;/code&gt;后&lt;br&gt;
+&lt;img src=&#34;pic/Kali-strings.png&#34; alt=&#34;Kali - strings&#34;&gt;&lt;br&gt;
+可以看见&amp;quot;Nepnep{welcome}&amp;ldquo;和&amp;quot;print(hell oworld)&amp;ldquo;这两条信息。&lt;/div&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;&lt;br&gt;
+用于&lt;strong&gt;查找内容包含指定的范本样式&lt;/strong&gt;的文件，如果发现某文件的内容符合所指定的范本样式，预设&lt;code&gt;grep&lt;/code&gt;指令会把含有范本样式的那一列显示出来。&lt;/p&gt;
+&lt;p&gt;输入&lt;code&gt;grep -a &amp;quot;flag&amp;quot; xxx.jpg&lt;/code&gt;&lt;br&gt;
+则会把文件中含&amp;quot;flag&amp;quot;字符串部分前后显示出来。&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例子&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;如图：&lt;br&gt;
+&lt;img src=&#34;pic/Kali-grep.png&#34; alt=&#34;Kali - grep&#34;&gt;&lt;br&gt;
+可以看见&amp;quot;BJD{haokanma_xjj}&amp;ldquo;这个flag。&lt;/div&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;file&lt;/code&gt;&lt;br&gt;
+用于&lt;strong&gt;辨识文件类型&lt;/strong&gt;。&lt;br&gt;
+可以显示文件的格式，属性等信息。&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例子&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;对&amp;quot;strings-file&amp;quot;这个无后缀名文件进行分析。&lt;br&gt;
+&lt;img src=&#34;pic/Kali-file.png&#34; alt=&#34;Kali - file&#34;&gt;&lt;br&gt;
+可以看见文件的基本信息，为JPEG文件。&lt;/p&gt;
+  &lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; Tip: JPEG和JPG是同一个格式。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;binwalk&lt;/code&gt;&lt;br&gt;
+用于搜索给定二进制镜像文件以获取嵌入的文件和代码的工具，即可以查看文件中含有的其他文件。&lt;br&gt;
+在CTF中&lt;code&gt;binwalk&lt;/code&gt;常用于&lt;strong&gt;分析隐藏文件&lt;/strong&gt;。&lt;br&gt;
+参数：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-e&lt;/code&gt; 分离出文件到新文件夹中（但可能不全）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例子&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;输入&lt;code&gt;binwalk xxx.png&lt;/code&gt;&lt;br&gt;
+&lt;img src=&#34;pic/Kali-binwalk.png&#34; alt=&#34;Kali - binwalk&#34;&gt;&lt;/p&gt;
+&lt;p&gt;输入&lt;code&gt;binwalk -e xxx.png&lt;/code&gt;
+得到新文件夹，里面有提取出的文件。&lt;br&gt;
+&lt;img src=&#34;pic/Kali-binwalk-e_1.png&#34; alt=&#34;Kali - binwalk -e&#34;&gt; &lt;img src=&#34;pic/Kali-binwalk-e_2.png&#34; alt=&#34;Kali - binwalk -e&#34;&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;foremost&lt;/code&gt;&lt;br&gt;
+&lt;strong&gt;注意&lt;/strong&gt;：需要使用&lt;code&gt;apt-get install foremost&lt;/code&gt;安装。&lt;br&gt;
+也可以提取文件（也不一定能提取所有文件）。&lt;br&gt;
+&lt;em&gt;比较于&lt;code&gt;binwalk&lt;/code&gt;，&lt;code&gt;binwalk&lt;/code&gt;更加强大，速度也快。但是有时候如果不能分离出来，就可以试试看&lt;code&gt;foremost&lt;/code&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;例子&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;输入&lt;code&gt;foremost xxx.png&lt;/code&gt;后，得到output文件夹，其中目录树如图。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;pic/Kali-foremost.png&#34; alt=&#34;Kali - foremost&#34;&gt;&lt;br&gt;
+其中png文件夹中为原图片，而jpg文件夹中则为分离处的新图片。&lt;br&gt;
+audit.txt则为所分离文件的信息。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;dd&lt;/code&gt;
+搭配&lt;code&gt;binwalk&lt;/code&gt;分析后，&lt;strong&gt;指定提取&lt;/strong&gt;文件。&lt;/p&gt;
+&lt;p&gt;命令为&lt;code&gt;dd if=xxx.png of=out.jpg bs=1 skip=***&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;参数解释：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;if=xxx.png&lt;/code&gt;为要分离的文件名。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;of=out.jpg&lt;/code&gt;为输出的文件名。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bs=1&lt;/code&gt;为每次读取几个块（一般为1）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;skip=***&lt;/code&gt;为从哪里开始读入（搭配&lt;code&gt;binwalk&lt;/code&gt;分析后确定）。&lt;br&gt;
+如上面输入&lt;code&gt;binwalk&lt;/code&gt;命令后，可得知内含的JPEG文件从&lt;code&gt;271007&lt;/code&gt;开始，则此处&lt;code&gt;skip=271007&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;0x03-知识点&#34;&gt;0x03 知识点&lt;/h2&gt;
+&lt;h3 id=&#34;十六进制文件头&#34;&gt;十六进制文件头&lt;/h3&gt;
+&lt;p&gt;每个文件格式有相应的文件头，可通过十六进制编辑器查看。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+&lt;code&gt;.jpg&lt;/code&gt;：开头——&lt;code&gt;FF D8&lt;/code&gt;，结尾——&lt;code&gt;FF D9&lt;/code&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;重点：超过文件头的部分不会被读取。&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;文件模板&#34;&gt;文件模板&lt;/h3&gt;
+&lt;p&gt;以十六进制查看方式打开后，若存在对应模板，&lt;br&gt;
+则会将整个十六进制划分成一个个部分，每部分会有各自的作用。&lt;/p&gt;
+&lt;p&gt;可根据模板的划分，快速确定某一部分十六进制代表什么意思，有什么作用，储存什么信息等。&lt;/p&gt;
+&lt;p&gt;如图：&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 184; flex-basis: 443px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF.png&#34; data-size=&#34;1920x1038&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF_hu44fa7a4b09e38036e26c26555aa0d739_166464_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF_hu44fa7a4b09e38036e26c26555aa0d739_166464_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1038&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;文件模板&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;文件模板&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可见通过PNG文件模板将十六进制分为了许多部分。&lt;/p&gt;
+&lt;p&gt;最常用的信息如告知图片长宽、属性。&lt;/p&gt;
+&lt;h3 id=&#34;文件属性&#34;&gt;文件属性&lt;/h3&gt;
+&lt;p&gt;就是文件的属性【？……&lt;br&gt;
+点击右键属性，可查看文件的一定属性信息。&lt;/p&gt;
+&lt;p&gt;如图：&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 64; flex-basis: 154px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png&#34; data-size=&#34;420x651&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7_huc42468176a7e4d4c659042e911af5517_28126_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7_huc42468176a7e4d4c659042e911af5517_28126_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;420&#34;
+				height=&#34;651&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;文件属性&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;文件属性&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&#34;0x04-图片隐写分类&#34;&gt;0x04 图片隐写分类&lt;/h2&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 176; flex-basis: 423px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB.png&#34; data-size=&#34;1421x805&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB_huc3e5ae86ffd9d6c34e0f45651723242c_674835_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB_huc3e5ae86ffd9d6c34e0f45651723242c_674835_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1421&#34;
+				height=&#34;805&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图片隐写分类&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;图片隐写分类&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1-属性隐写&#34;&gt;1. 属性隐写&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;【就单纯在文件属性（标题、作者等）中写东西，很少用……&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-16进制隐写&#34;&gt;2. 16进制隐写&lt;/h3&gt;
+&lt;p&gt;一般在文件的16进制格式中增添或修改，达到隐写字符串的目的。&lt;/p&gt;
+&lt;p&gt;常见形式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在文件尾后直接隐写内容。
+&lt;ul&gt;
+&lt;li&gt;原理：文件不会读取超过文件尾的部分。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 372; flex-basis: 893px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E6%96%87%E4%BB%B6%E5%B0%BE.png&#34; data-size=&#34;674x181&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E6%96%87%E4%BB%B6%E5%B0%BE.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E6%96%87%E4%BB%B6%E5%B0%BE_hu04db99b9c03b8b48ec53a80de8e9f09a_16618_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E6%96%87%E4%BB%B6%E5%B0%BE_hu04db99b9c03b8b48ec53a80de8e9f09a_16618_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;674&#34;
+				height=&#34;181&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;16进制隐写 - 文件尾&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;16进制隐写 - 文件尾&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+可以发现文件尾后还有&lt;code&gt;niconiconi&lt;/code&gt;这个字符串。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;在中间部分隐写内容。
+&lt;ul&gt;
+&lt;li&gt;原理：有些时候在中间处修改添加内容，是不会或略微影响文件正常读取的，从而达到隐写的效果。&lt;/li&gt;
+&lt;li&gt;判断方法：图片可能会有所怪异，如中间有条线。
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 149; flex-basis: 359px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E4%BE%8B%E9%A2%98.jpeg&#34; data-size=&#34;2600x1736&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E4%BE%8B%E9%A2%98.jpeg&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E4%BE%8B%E9%A2%98_hu7213fd93d5f48756bf5f780e62d8940c_420441_480x0_resize_q75_box.jpeg 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E4%BE%8B%E9%A2%98_hu7213fd93d5f48756bf5f780e62d8940c_420441_1024x0_resize_q75_box.jpeg 1024w&#34;
+				width=&#34;2600&#34;
+				height=&#34;1736&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;16进制隐写 - 例题&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;16进制隐写 - 例题&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+可以发现黑丝【？】那有明显的一条线。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对应方法：使用Linux命令中的&lt;code&gt;strings&lt;/code&gt;或&lt;code&gt;grep&lt;/code&gt;。&lt;br&gt;
+&lt;em&gt;使用例见上方&lt;a class=&#34;link&#34; href=&#34;#%e7%9b%b8%e5%85%b3%e5%91%bd%e4%bb%a4&#34; &gt;虚拟机——&amp;ldquo;Kail&amp;quot;的命令部分&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;不给出文件后缀名，不能直接判断出这个文件是什么格式。&lt;/p&gt;
+&lt;p&gt;可以通过16进制编辑器，&lt;strong&gt;查看对应的文件头&lt;/strong&gt;，从而找出是什么格式。&lt;/p&gt;
+&lt;h3 id=&#34;3-文件包含&#34;&gt;3. 文件包含&lt;/h3&gt;
+&lt;p&gt;隐写的内容可能为简单的字符串，也可能为&lt;strong&gt;若干个新的文件&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通过Linux命令&lt;code&gt;binwalk&lt;/code&gt;来分析或&lt;code&gt;binwalk -a&lt;/code&gt;尝试分离。&lt;/li&gt;
+&lt;li&gt;通过Linux命令&lt;code&gt;foremost&lt;/code&gt;来尝试分离。&lt;/li&gt;
+&lt;li&gt;通过Linux命令&lt;code&gt;dd&lt;/code&gt;来尝试分离。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;以上三种命令的使用例见上方&lt;a class=&#34;link&#34; href=&#34;#%e7%9b%b8%e5%85%b3%e5%91%bd%e4%bb%a4&#34; &gt;虚拟机——&amp;ldquo;Kail&amp;quot;的命令部分&lt;/a&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;直接以16进制编辑器&amp;quot;010 Editor&amp;rdquo;，将所隐藏的文件16进制部分写入到一个新的文件后并打开。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-文件头修改隐写&#34;&gt;4. 文件头修改隐写&lt;/h3&gt;
+&lt;p&gt;将文件头修改或删除，文件将不能读取。&lt;br&gt;
+&lt;em&gt;但破坏文件尾可能不会影响读取。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;需要通过16进制编辑器查看文件头尾部分，分析出该有的文件头。&lt;/p&gt;
+&lt;h3 id=&#34;5-gif&#34;&gt;5. gif&lt;/h3&gt;
+&lt;h4 id=&#34;特殊帧&#34;&gt;特殊帧&lt;/h4&gt;
+&lt;p&gt;隐藏在帧中的信息。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 117; flex-basis: 282px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/gif-%E7%89%B9%E6%AE%8A%E5%B8%A7.gif&#34; data-size=&#34;219x186&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/gif-%E7%89%B9%E6%AE%8A%E5%B8%A7.gif&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/gif-%E7%89%B9%E6%AE%8A%E5%B8%A7_hubc11521b1fa6218c45a5b162984b5e4d_1568845_480x0_resize_box.gif 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/gif-%E7%89%B9%E6%AE%8A%E5%B8%A7_hubc11521b1fa6218c45a5b162984b5e4d_1568845_1024x0_resize_box.gif 1024w&#34;
+				width=&#34;219&#34;
+				height=&#34;186&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;gif - 特殊帧&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;gif - 特殊帧&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+&lt;em&gt;【需要点击图片才能查看动图】&lt;/em&gt;&lt;br&gt;
+可以明显看见图中会闪过一些东西。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一般选择逐帧分析的方法。&lt;br&gt;
+&lt;em&gt;【当然可以选择用手速来截图查看【b站视频闪过图片的常用方法x……&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;逐帧分析工具：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;PhotoShop&lt;br&gt;
+会将每帧分为一层图层，即可查看。&lt;/li&gt;
+&lt;li&gt;Stegsolve.jar&lt;br&gt;
+打开图片后，点击&amp;quot;Analyse&amp;quot;中的&amp;quot;Frame Browser&amp;quot;也可以逐帧查看。&lt;/li&gt;
+&lt;li&gt;Ulead GIF&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;帧的时间间隔&#34;&gt;帧的时间间隔&lt;/h4&gt;
+&lt;p&gt;信息也可能隐藏在帧时间间隔中。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+很多帧都是$0.1$s，但某几帧是$0.2$s，就很有问题.jpg……&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;采用&amp;quot;Ulead GIF&amp;quot;来查看帧时间间隔。&lt;/p&gt;
+&lt;h3 id=&#34;6-pngbmp&#34;&gt;6. png(bmp)&lt;/h3&gt;
+&lt;h4 id=&#34;长高修改ihdr&#34;&gt;长高修改(IHDR)&lt;/h4&gt;
+&lt;p&gt;可能通过&lt;strong&gt;修改宽高&lt;/strong&gt;，隐藏了某些信息，&lt;br&gt;
+通过16进制编辑器来修改查看。&lt;/p&gt;
+&lt;p&gt;其中宽高信息则在模板中IHDR部分里可查看。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;一般是修改高&lt;/strong&gt;，因为修改宽会导致不能正常显示。&lt;br&gt;
+&lt;em&gt;并且修改得大一点更好，避免重复修改。&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 177; flex-basis: 426px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_1.png&#34; data-size=&#34;1920x1080&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_1.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_1_hu2f1e39eb229ed32311a7f8201f851bd5_1385593_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_1_hu2f1e39eb229ed32311a7f8201f851bd5_1385593_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1080&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;长高修改 - 修改高&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;长高修改 - 修改高&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 177; flex-basis: 426px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2.png&#34; data-size=&#34;1920x1080&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2_hu6c457ac6328d2d2808cdab535cad5daa_1104997_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2_hu6c457ac6328d2d2808cdab535cad5daa_1104997_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1080&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;长高修改 - 发现隐写信息&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;长高修改 - 发现隐写信息&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+将该图片的高增大后，则可发现隐藏信息。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;判断是否高被修改的方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;通过检验CRC32确定。
+当用&amp;quot;010 Editor&amp;quot;打开图片后，若输出窗口中会报错，显示CRC32有问题，证明这张图片的属性（如本类中的高）被篡改过。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 2017; flex-basis: 4842px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IHDR-CRC32%E9%94%99%E8%AF%AF.png&#34; data-size=&#34;1372x68&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IHDR-CRC32%E9%94%99%E8%AF%AF.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IHDR-CRC32%E9%94%99%E8%AF%AF_huf63c8c929bc9d31596748a75f94681fb_11462_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-IHDR-CRC32%E9%94%99%E8%AF%AF_huf63c8c929bc9d31596748a75f94681fb_11462_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1372&#34;
+				height=&#34;68&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;CRC32错误显示&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;CRC32错误显示&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;也可以手动计算校验和来比对。&lt;br&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;手动计算方法&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ol&gt;
+&lt;li&gt;先选中IHDR到crc之前的部分。&lt;br&gt;
+&lt;img src=&#34;pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_1.png&#34; alt=&#34;选中部分&#34;&gt;&lt;br&gt;
+对应模板中的&amp;quot;union CTYPE type&amp;quot;和&amp;quot;struct PNG_CHUNK_IHDR_ihdr&amp;quot;两个部分。&lt;br&gt;
+&lt;img src=&#34;pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_2.png&#34; alt=&#34;模板对应处&#34;&gt;&lt;/li&gt;
+&lt;li&gt;然后点击“工具”中的“校验和”，选择“CRC-32”。&lt;br&gt;
+&lt;img src=&#34;pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_3.png&#34; alt=&#34;计算校验和&#34;&gt;&lt;/li&gt;
+&lt;li&gt;得到计算结果后与crc部分比对即可。&lt;br&gt;
+&lt;img src=&#34;pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_4.png&#34; alt=&#34;计算出的校验和&#34;&gt; &lt;img src=&#34;pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_5.png&#34; alt=&#34;文件中的校验和&#34;&gt;&lt;br&gt;
+&lt;em&gt;注意文件中的检验和是1FCF9E8E，没有那个h。&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;脚本爆破来得到真实高度。&lt;br&gt;
+&lt;em&gt;就是暴力的意思，不断修改高度并比对校验和，如果一致则为正确高度。&lt;/em&gt;&lt;br&gt;
+爆破python代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;os&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;binascii&lt;/span&gt;
+&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;struct&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;misc&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;***.png&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;rb&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;read&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 请在这里填写要爆破的文件名&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;# 爆破高&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;crc32_bytes&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;misc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x1d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x20&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 文件IHDR块的crc32的bytes&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;crc32_hex_eval&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;eval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;0x&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crc32_bytes&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 将crc32的bytes串 -&amp;gt; hex串 -&amp;gt; 值 &lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;4096&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;data&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;misc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x0c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x0f&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;misc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x13&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;struct&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;pack&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;gt;i&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;misc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x18&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0x1c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 爆破IHDR数据&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;crc32&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;binascii&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;crc32&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0xffffffff&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 计算当前crc32&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crc32&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;crc32_hex_eval&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;height:&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;print&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;height_hex: &amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;hex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;数据块idat修改&#34;&gt;数据块IDAT修改&lt;/h4&gt;
+&lt;p&gt;本来IDAT数据块是写满当前块后再换下一个块，&lt;br&gt;
+但用&amp;quot;010 Editor&amp;quot;查看后发现有IDAT块有异常（不满足上述规律），故这个数据块可能藏有信息。&lt;/p&gt;
+&lt;p&gt;检测方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用&lt;code&gt;pngcheck.exe&lt;/code&gt;来查看IDAT数据块情况。
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+输入&lt;code&gt;pngcheck.exe -v ***.png&lt;/code&gt;后，&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 244; flex-basis: 586px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-pngcheck.png&#34; data-size=&#34;1368x560&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-pngcheck.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-pngcheck_hu4bf2919553c0fe92453278902e34f963_199435_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-pngcheck_hu4bf2919553c0fe92453278902e34f963_199435_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1368&#34;
+				height=&#34;560&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;pngcheck&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;pngcheck&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+发现最后部分有异常。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;将该数据块十六进制提取出来后，用脚本或其他方法得到信息。&lt;/p&gt;
+&lt;p&gt;得到信息方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&amp;ldquo;010 Editor&amp;rdquo; + &amp;ldquo;zlib.py&amp;rdquo;&lt;br&gt;
+用010查看后得到异常部分的16进制，复制后放入脚本运行可得到信息。&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 177; flex-basis: 426px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-zlib.png&#34; data-size=&#34;1920x1080&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-zlib.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-zlib_huf19167afd3b42c3af8380d89b98a6352_596727_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-zlib_huf19167afd3b42c3af8380d89b98a6352_596727_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1080&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;zlib得到信息&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;zlib得到信息&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;用&lt;code&gt;binwalk -e&lt;/code&gt;提取，直接得到信息。
+&lt;figure style=&#34;flex-grow: 264; flex-basis: 634px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-binwalk.png&#34; data-size=&#34;690x261&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-binwalk.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-binwalk_huc0dbc55f13899563010aae791b1e1846_38667_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-IDAT-binwalk_huc0dbc55f13899563010aae791b1e1846_38667_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;690&#34;
+				height=&#34;261&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;binwalk得到信息&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;binwalk得到信息&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;lsb隐写&#34;&gt;lsb隐写&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;为贝塔姐姐强调的部分。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;snote quote &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 接下来我们讲一个大头er~ &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;又称“最低有效位隐写”。&lt;/p&gt;
+&lt;p&gt;将隐写内容转换为2进制，整合修改到图片2进制形式的最低位，使得颜色被修改程度极小，&lt;strong&gt;肉眼无法分辨&lt;/strong&gt;。&lt;br&gt;
+但可以通过某些命令或脚本来分辨出。&lt;/p&gt;
+&lt;h5 id=&#34;不带密匙&#34;&gt;不带密匙&lt;/h5&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;通过&amp;quot;Stegsolve.jar&amp;quot;分析。&lt;br&gt;
+用&amp;quot;Analyse&amp;quot;的&amp;quot;Data Extract&amp;rdquo;，一个个选项测试得到文本串或者新的文件。&lt;/p&gt;
+&lt;p&gt;可参考&amp;quot;cat47&amp;quot;的文章&lt;a class=&#34;link&#34; href=&#34;https://cnblogs.com/cat47/p/11483478.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;stegsolve使用方法&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;zsteg&lt;/code&gt;（很好用）&lt;/strong&gt;&lt;br&gt;
+使用命令&lt;code&gt;zsteg xxx.png&lt;/code&gt;来查看各种方式下的文本串或者文件（如果这个命令中没有发现，则可以用&lt;code&gt;zsteg -a xxx.png&lt;/code&gt;），&lt;br&gt;
+然后用命令&lt;code&gt;zsteg -e ...(分析的通道) &amp;gt; ***.xxx&lt;/code&gt;得到文件&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+对某图片使用命令&lt;code&gt;zsteg lsb.png&lt;/code&gt;后，&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 261; flex-basis: 627px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-zsteg_1.png&#34; data-size=&#34;617x236&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-zsteg_1.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-zsteg_1_hu6547dd33a8fbf2d1fd94fdc63470684b_50780_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-zsteg_1_hu6547dd33a8fbf2d1fd94fdc63470684b_50780_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;617&#34;
+				height=&#34;236&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;zsteg - 分析&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;zsteg - 分析&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+发现&lt;code&gt;b1,rgb,lsb,xy&lt;/code&gt;这个方式存在一个PNG文件。&lt;br&gt;
+则使用命令&lt;code&gt;zsteg -e b1,rgb,lsb,xy &amp;gt; ans.png&lt;/code&gt;得到文件。&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 564; flex-basis: 1354px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-zsteg_2.png&#34; data-size=&#34;666x118&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-zsteg_2.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-zsteg_2_hudb22b476cca2663bfa85d81c03be66ea_46937_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-zsteg_2_hudb22b476cca2663bfa85d81c03be66ea_46937_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;666&#34;
+				height=&#34;118&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;zsteg - 提取&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;zsteg - 提取&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可参考&amp;quot;β-AS&amp;quot;小姐姐的文章&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/Amherstieae/article/details/107512398&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;隐写工具zsteg安装+使用教程&lt;/a&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h5 id=&#34;带密匙&#34;&gt;带密匙&lt;/h5&gt;
+&lt;p&gt;带密钥的可以用&amp;quot;cloacked-pixel&amp;quot;脚本。&lt;br&gt;
+&lt;strong&gt;该脚本为python2环境，并且需要numpy、matplotlib、Pillow、pycrypto库的支持。&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 由于为过气python2环境（且并无python3版本），所需配置较为复杂，所有注意事项已写在下方折叠栏中。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;cloacked-pixel脚本的各种注意事项&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;同时安装python2和python3方法：&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;请参考文章&lt;a href=&#34;https://blog.csdn.net/zuochang_liu/article/details/91361756&#34;&gt;如何设置python2，python3，并添加环境变量&lt;/a&gt;。&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;python2库本地安装方式：&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;感觉pip2现在好像不能在线安装库了【？……&lt;br&gt;
+所以只能在&lt;a href=&#34;https://pypi.org/&#34;&gt;pypi&lt;/a&gt;中将库下载到本地安装。&lt;/p&gt;
+&lt;p&gt;选择合适的版本，下载到本地。&lt;br&gt;
+下载完成后在cmd中，输入&lt;code&gt;pip2 install ...(本地路径)&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 路径快速输入方法：输入&lt;code&gt;pip2 install&lt;/code&gt;后，将文件直接拖入cmd窗口中即可。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;即可成功安装。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;参考自文章&lt;a href=&#34;https://www.cnblogs.com/teagnes/p/6032964.html&#34;&gt;Python2.7本地安装numpy包&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;上述库的下载地址：&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;以下库为个人挨个查询并对应版本后下载，均为Python2.7所能支持的最新版本，可直接下载后按上述安装方法安装。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/14/ef/9f2eeb4ff0c733ad9149f17266e388c308e171fdb8c2415dbb472e2bbc0f/numpy-1.16.6-cp27-cp27m-win_amd64.whl&#34;&gt;numpy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl&#34;&gt;six&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl&#34;&gt;cycle&lt;/a&gt;（需要先安装six）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/70/94/784178ca5dd892a98f113cdd923372024dc04b8d40abe77ca76b5fb90ca6/pytz-2021.1-py2.py3-none-any.whl&#34;&gt;pytz&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/4e/02/9c79d58f2e9f61d201f8390b5f51fdb0c19e777a241818b784f2a38ee013/kiwisolver-1.1.0-cp27-none-win_amd64.whl&#34;&gt;kiwisolver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl&#34;&gt;python-dateutil&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/da/d1/080d2bb13773803648281a49e3918f65b31b7beebf009887a529357fd44a/backports.functools_lru_cache-1.6.1-py2.py3-none-any.whl&#34;&gt;backports.functools-lru-cache&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl&#34;&gt;pyparsing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/60/f3/6bf72ceec1f3cd3ff5df1ab71d1655920f099c34484360bbed025ded521f/matplotlib-2.2.5-cp27-cp27m-win_amd64.whl&#34;&gt;matplotlib&lt;/a&gt;（需要先安装cycle、pytz、kiwisolver、python-dateutil、backports.functools-lru-cache、pyparsing）&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/5e/b6/8960697526a79bd1cb4520293078be3a10d725f23f20abbee298ebdeaabd/Pillow-6.2.2-cp27-cp27m-win_amd64.whl&#34;&gt;Pillow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/60/db/645aa9af249f059cc3a368b118de33889219e0362141e75d4eaf6f80f163/pycrypto-2.6.1.tar.gz&#34;&gt;pycrypto&lt;/a&gt;（&lt;strong&gt;安装方法有所不同&lt;/strong&gt;，请见&lt;a href=&#34;https://blog.csdn.net/qq_40657585/article/details/84309573&#34;&gt;python2.7 安装pycrypto库&lt;/a&gt;中“下载压缩包解压到本地”部分）&lt;br&gt;
+同时安装时还需要&amp;quot;vcvarsall.bat&amp;quot;，方法为两步：
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;下载&lt;a href=&#34;https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi&#34;&gt;&amp;ldquo;Microsoft Visual C++ Compiler for Python 2.7&amp;rdquo;&lt;/a&gt;并安装。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按照&lt;a href=&#34;https://blog.csdn.net/donger_soft/article/details/44838109&#34;&gt;完美解决“Unable to find vcvarsall.bat”错误&lt;/a&gt;中配置注册表。&lt;br&gt;
+【其中路径为&lt;code&gt;C:\Users\SuperSASSw\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0&lt;/code&gt;】&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;不确定是否还需要配置环境变量（个人为配置了的），如果仍有问题，请点击开始菜单中的&amp;quot;Microsoft Visual C++ Compiler Package for Python 2.7&amp;quot;这个文件夹中，自己对应平台的&amp;quot;Visual C++ 2008 xx-bit Command Prompt&amp;quot;这个快捷方式。&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;以下折叠部分为安装&amp;quot;&lt;a href=&#34;https://pypi.org/project/crypto/&#34;&gt;crypto&lt;/a&gt;&amp;ldquo;库所需库，但安装这个后发现不对（有个Random不存在orz……），&lt;br&gt;
+查询后发现为下面这个&amp;quot;pycrypto&amp;quot;库。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;crypto所需库&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/d0/f4/0081137fceff5779cd4205c1e96657e41cc2d2d56c940dc8eeb6111780f7/shellescape-3.8.1-py2.py3-none-any.whl&#34;&gt;shellescape&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/c5/5b/b961f4add16d941585f318051dd5410a01596d98132acab8cf8e9e18e20c/PyYAML-5.4.1-cp27-cp27m-win_amd64.whl&#34;&gt;PyYAML&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/19/c7/fa589626997dd07bd87d9269342ccb74b1720384a4d739a1872bd84fbe68/chardet-4.0.0-py2.py3-none-any.whl&#34;&gt;chardet&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/5e/a0/5f06e1e1d463903cf0c0eebeb751791119ed7a4b3737fdc9a77f1cdfb51f/certifi-2020.12.5-py2.py3-none-any.whl&#34;&gt;certifi&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/23/fc/8a49991f7905261f9ca9df5aa9b58363c3c821ce3e7f671895442b7100f2/urllib3-1.26.3-py2.py3-none-any.whl&#34;&gt;urllib3&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl&#34;&gt;idna&lt;/a&gt;&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href=&#34;https://files.pythonhosted.org/packages/29/c1/24814557f1d22c56d50280771a17307e6bf87b70727d975fd6b2ce6b014a/requests-2.25.1-py2.py3-none-any.whl&#34;&gt;requests&lt;/a&gt;（需要先安装chardet、certifi、urllib3、na）&lt;/del&gt;&lt;/li&gt;
+&lt;li&gt;&lt;del&gt;&lt;a href=&#34;%5Bpic/png-lsb-zsteg_2.png%5D(https://files.pythonhosted.org/packages/02/36/b8107b51adca73402ec1860d88f41d958e275e60eea6eeaa9c39ddb89a40/Naked-0.1.31-py2.py3-none-any.whl)&#34;&gt;Naked&lt;/a&gt;（需要先安装YAML、requests）&lt;/del&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;p&gt;命令：&lt;code&gt;python2 lsb.py extract ***.png *** KEY&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;***.png&lt;/code&gt;为源文件名。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;***&lt;/code&gt;为输出文件名。（由于不确定什么格式，可以先不加扩展名，用010查看后再加上对应扩展名）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;KEY&lt;/code&gt;为密匙。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+输入命令&lt;code&gt;python2 lsb.py extract lsb（123456）.png ans 123456&lt;/code&gt;&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 1101; flex-basis: 2642px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-key_1.png&#34; data-size=&#34;1013x92&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-key_1.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-key_1_hu845e01fd34376df822a8c18fc5b457ad_9202_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-key_1_hu845e01fd34376df822a8c18fc5b457ad_9202_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1013&#34;
+				height=&#34;92&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;带密匙的lsb - 使用脚本后结果&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;带密匙的lsb - 使用脚本后结果&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+打开ans后，发现直接为flag。&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 588; flex-basis: 1413px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-key_2.png&#34; data-size=&#34;318x54&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-key_2.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-key_2_hu4bbb68a20cbee7ea80242685f13964e5_2829_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/png-lsb-key_2_hu4bbb68a20cbee7ea80242685f13964e5_2829_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;318&#34;
+				height=&#34;54&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;带密匙的lsb - 打开ans文件&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;带密匙的lsb - 打开ans文件&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;bmp&#34;&gt;bmp&lt;/h4&gt;
+&lt;p&gt;用&amp;quot;wbStego4.3open&amp;quot;工具对bmp或pdf等格式文件进行加密解密。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;br&gt;
+打开工具，按照步骤来执行就可以得到文件了。&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 150; flex-basis: 360px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step2.png&#34; data-size=&#34;542x361&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step2.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step2_hu10c4f7b63adf91150f550a11af220433_11460_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step2_hu10c4f7b63adf91150f550a11af220433_11460_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;542&#34;
+				height=&#34;361&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;wbStego4.3open - 步骤2 选择方式&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;wbStego4.3open - 步骤2 选择方式&lt;/figcaption&gt;
+		
+	&lt;/figure&gt; &lt;figure style=&#34;flex-grow: 150; flex-basis: 360px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step3.png&#34; data-size=&#34;542x361&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step3.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step3_hu21b812eaf8809b8fd6682b12e8e31862_14823_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step3_hu21b812eaf8809b8fd6682b12e8e31862_14823_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;542&#34;
+				height=&#34;361&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;wbStego4.3open - 步骤3 选择文件及类型&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;wbStego4.3open - 步骤3 选择文件及类型&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 150; flex-basis: 360px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step4.png&#34; data-size=&#34;542x361&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step4.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step4_huf40d600781faba395c41bdb312c179be_10758_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step4_huf40d600781faba395c41bdb312c179be_10758_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;542&#34;
+				height=&#34;361&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;wbStego4.3open - 步骤4 输入密匙&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;wbStego4.3open - 步骤4 输入密匙&lt;/figcaption&gt;
+		
+	&lt;/figure&gt; &lt;figure style=&#34;flex-grow: 150; flex-basis: 360px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step5.png&#34; data-size=&#34;542x361&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step5.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step5_hu308531206d844f161ef7b9843473e32d_10162_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-step5_hu308531206d844f161ef7b9843473e32d_10162_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;542&#34;
+				height=&#34;361&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;wbStego4.3open - 步骤5 输入输出文件名&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;wbStego4.3open - 步骤5 输入输出文件名&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 302; flex-basis: 725px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-ans.png&#34; data-size=&#34;420x139&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-ans.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-ans_hu0f9574336343ed36f6b6c93eae174dc5_14044_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/ctf-misc-1/pic/bmp-wbStego-ans_hu0f9574336343ed36f6b6c93eae174dc5_14044_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;420&#34;
+				height=&#34;139&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;wbStego4.3open - 结果&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;wbStego4.3open - 结果&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;snote bug red&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; Tip: 这个软件不能直接关闭，需要用任务管理器结束orz…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;0x05-写在最后&#34;&gt;0x05 写在最后&lt;/h2&gt;
+&lt;p&gt;&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 以上大部分为个人总结，由于这里也刚入门，很多地方可能存在错误。如发现错误请及时指出，谢谢！…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 由于目前博客不支持附件上传下载，所以如果需要上述中的文件，可以联系我分享文件【联系方式在关于页面中有…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;snote up cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 如对以上内容存在疑惑不解的地方，也可以询问我。如果我了解的话会尽力解答；不了解的话可以一起努力弄明白hhh…… &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;剩余部分因为时间原因没有继续讲啦_(:з」∠)_……&lt;br&gt;
+看好久有时间自学一下【？……&lt;/p&gt;
+&lt;p&gt;再次感谢贝塔小姐姐的详细讲解！【第一节课真的很不容易的……&lt;/p&gt;
+&lt;p&gt;之前没有接触过CTF，不过了解后对其兴趣很高……&lt;br&gt;
+希望经过这次涅普计划的系统学习能有很大的收获吧√……&lt;/p&gt;
+&lt;p&gt;以上……&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>日常练习——2021/1/25……</title>
         <link>https://blog.supersassw.com/p/prac-2020-1-25/</link>
         <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
@@ -62,7 +917,7 @@
 &lt;p&gt;但如果直接这样进行计算，会发现会有很多要考虑的地方，或说运用等差数列时有很多边界的处理。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如图中所给例子：&lt;br&gt;
-对于$2$这一列，则&lt;strong&gt;上方&lt;/strong&gt;的$1$并不完全属于$n$个等差数列中，要排除。
+对于$2$这一列，则&lt;strong&gt;上方&lt;/strong&gt;的$1$并不完全属于$n$个等差数列中，要排除。&lt;br&gt;
 对于$3$这一列，则&lt;strong&gt;下方&lt;/strong&gt;的$-2$并不完全属于$n$个等差数列中，要排除。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;于是我们可以想到对于求$f(A \sim B)$这一范围，可以&lt;strong&gt;转化为求$f(B)-f(A-1)$这两范围的差&lt;/strong&gt;。&lt;br&gt;
@@ -91,7 +946,7 @@
 &lt;p&gt;每一列均为$n - 0 + 1$即$n + 1$项。&lt;/p&gt;
 &lt;p&gt;等差数列部分：&lt;br&gt;
 首项——$a_1 = 0$；&lt;br&gt;
-末项——$a_n = (n + 1) / i - 1$；【原因是：首先项数有$n+1$项（包括0行），整除$i$，则得到等差数列的项数，那么末项$a_n = a_1 + (n-1)*d$，即为项数$-1$。
+末项——$a_n = (n + 1) / i - 1$；【原因是：首先项数有$n+1$项（包括0行），整除$i$，则得到等差数列的项数，那么末项$a_n = a_1 + (n-1)*d$，即为项数$-1$。&lt;br&gt;
 项数——$n = (a_n - a_1) / 1 + 1$（公差为1），即为$a_n + 1$。&lt;/p&gt;
 &lt;p&gt;非等差数列部分：&lt;br&gt;
 每一项均为$a_n + 1$；&lt;br&gt;
@@ -106,7 +961,7 @@
 &lt;/li&gt;
 &lt;li&gt;奇数行和偶数行的符号是一样的。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;基于以上两点，我们发现：
+&lt;p&gt;基于以上两点，我们发现：&lt;br&gt;
 如果存在&lt;strong&gt;间隔的几列&lt;/strong&gt;（使符号相同，能合并处理），满足他们&lt;strong&gt;有的数字为一样&lt;/strong&gt;的（比如都只有$1,2,3$，只是出现次数不同）。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如求$f(33)$中&lt;/p&gt;
@@ -120,7 +975,7 @@
 &lt;p&gt;例二：
 第$12$列为$0,0,\cdots,0;1,1,\cdots,1;2,2,\cdots,2$（$12$个$0$，$12$个$1$，$10$个$2$）&lt;br&gt;
 第$14$列为$0,0,\cdots,0;1,1,\cdots,1;2,2,2,2,2,2$（$14$个$0$，$14$个$1$，$6$个$2$）&lt;br&gt;
-第$16$列为$0,0,\cdots,0;1,1,\cdots,1;2,2$（$16$个$0$，$16$个$1$，$2$个$2$）
+第$16$列为$0,0,\cdots,0;1,1,\cdots,1;2,2$（$16$个$0$，$16$个$1$，$2$个$2$）&lt;br&gt;
 &lt;em&gt;为下图中橙色三列。&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 171; flex-basis: 410px&#34;&gt;
@@ -141,10 +996,10 @@
 &lt;p&gt;上例一中：&lt;br&gt;
 第$9$列中的有$9$个$-1$、$9$个$-2$；&lt;br&gt;
 第$11$列中的有$11$个$-1$、$11$个$-2$；&lt;br&gt;
-于是这两列便可合并为$20$个$-1$，$20$个$-2$一起用高斯求和（等差数列求和）。
-但对于最后的一项数（如上例一中的$-3$），因为出现次数不一致，不能很好的直接合并，需要单独处理计算，&lt;br&gt;
-所以我们只能&lt;strong&gt;合并倒数第二项用高斯求和&lt;/strong&gt;，然后对剩下的&lt;strong&gt;最后一项单独处理&lt;/strong&gt;。&lt;/p&gt;
+于是这两列便可合并为$20$个$-1$，$20$个$-2$一起用高斯求和（等差数列求和）。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;但对于最后的一项数（如上例一中的$-3$），因为出现次数不一致，不能很好的直接合并，需要单独处理计算，&lt;br&gt;
+所以我们只能&lt;strong&gt;合并倒数第二项用高斯求和&lt;/strong&gt;，然后对剩下的&lt;strong&gt;最后一项单独处理&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;这样就可以在计算的过程中合并几列同时计算，达到减少操作降低复杂度的效果。&lt;br&gt;
 【&lt;em&gt;不过至于是否为O($\sqrt{n})$的复杂度我就没证了&lt;/em&gt;_(:з」∠)_……&lt;/p&gt;
 &lt;hr&gt;
@@ -187,9 +1042,9 @@
 &lt;li&gt;
 &lt;p&gt;怎么处理计算合并后的等差数列。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;方法就同$O(n)$方法中求等差数列了，
-只是在最后一项（&lt;code&gt;an&lt;/code&gt;）和乘的次数（由乘&lt;code&gt;i&lt;/code&gt;变成了乘&lt;code&gt;cnt&lt;/code&gt;）变了一点。
-对于合并后的出现次数，也是个高斯求和。&lt;/p&gt;
+&lt;p&gt;方法就同$O(n)$方法中求等差数列了，&lt;br&gt;
+只是在最后一项（&lt;code&gt;an&lt;/code&gt;）和乘的次数（由乘&lt;code&gt;i&lt;/code&gt;变成了乘&lt;code&gt;cnt&lt;/code&gt;）变了一点。&lt;/p&gt;
+&lt;p&gt;对于合并后的出现次数，也是个高斯求和。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;比如求$f(33)$，处理第$9$列时，最大列到$11$列&lt;br&gt;
 第$9$列每一项出现次数为$9$次，&lt;br&gt;
@@ -4171,7 +5026,12 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
 &lt;li&gt;&lt;code&gt;av = &amp;quot;...&amp;quot;&lt;/code&gt;：使用av号。&lt;br&gt;
 使用例：&lt;code&gt;{{&amp;lt; bilibli av=&amp;quot;10492&amp;quot; &amp;gt;}}&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;hq = *&lt;/code&gt;：画质。0为低画质，1为高画质。（默认值为1）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;p = *&lt;/code&gt;：视频选集。（默认值为1）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;p = *&lt;/code&gt;：视频选集。（默认值为1）
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 如果使用参数，则使用方式只能为&lt;code&gt;{{&amp;lt; bilibili bv=... p=1 hq=1 &amp;gt;}}&lt;/code&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

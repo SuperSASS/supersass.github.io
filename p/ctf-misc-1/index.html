@@ -1,0 +1,1306 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='涅普计划图片隐写部分的笔记……'><title>Misc - 图片隐写……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/ctf-misc-1/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Misc - 图片隐写……'>
+<meta property='og:description' content='涅普计划图片隐写部分的笔记……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/ctf-misc-1/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='涅普计划' /><meta property='article:tag' content='Misc' /><meta property='article:tag' content='图片隐写' /><meta property='article:published_time' content='2021-02-01T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-02-01T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/ctf-misc-1/86016044_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Misc - 图片隐写……">
+<meta name="twitter:description" content="涅普计划图片隐写部分的笔记……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/ctf-misc-1/86016044_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#图片隐写">图片隐写</a>
+      <ul>
+        <li><a href="#0x01-课程视频">0x01 课程视频</a></li>
+        <li><a href="#0x02-准备工具">0x02 准备工具</a>
+          <ul>
+            <li><a href="#十六进制编辑器">十六进制编辑器</a></li>
+            <li><a href="#虚拟机kail">虚拟机——&ldquo;Kail&rdquo;</a>
+              <ul>
+                <li><a href="#相关命令">相关命令</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#0x03-知识点">0x03 知识点</a>
+          <ul>
+            <li><a href="#十六进制文件头">十六进制文件头</a></li>
+            <li><a href="#文件模板">文件模板</a></li>
+            <li><a href="#文件属性">文件属性</a></li>
+          </ul>
+        </li>
+        <li><a href="#0x04-图片隐写分类">0x04 图片隐写分类</a>
+          <ul>
+            <li><a href="#1-属性隐写">1. 属性隐写</a></li>
+            <li><a href="#2-16进制隐写">2. 16进制隐写</a></li>
+            <li><a href="#3-文件包含">3. 文件包含</a></li>
+            <li><a href="#4-文件头修改隐写">4. 文件头修改隐写</a></li>
+            <li><a href="#5-gif">5. gif</a>
+              <ul>
+                <li><a href="#特殊帧">特殊帧</a></li>
+                <li><a href="#帧的时间间隔">帧的时间间隔</a></li>
+              </ul>
+            </li>
+            <li><a href="#6-pngbmp">6. png(bmp)</a>
+              <ul>
+                <li><a href="#长高修改ihdr">长高修改(IHDR)</a></li>
+                <li><a href="#数据块idat修改">数据块IDAT修改</a></li>
+                <li><a href="#lsb隐写">lsb隐写</a></li>
+                <li><a href="#bmp">bmp</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#0x05-写在最后">0x05 写在最后</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>上一个页面</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/ctf-misc-1/">
+                <img src="/p/ctf-misc-1/86016044_p0_hu66f5a9c42e7a0ea12354f65ca719fe6e_1732854_800x0_resize_box_2.png"
+                        srcset="/p/ctf-misc-1/86016044_p0_hu66f5a9c42e7a0ea12354f65ca719fe6e_1732854_800x0_resize_box_2.png 800w, /p/ctf-misc-1/86016044_p0_hu66f5a9c42e7a0ea12354f65ca719fe6e_1732854_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="564" 
+                        loading="lazy"
+                        alt="Featured image of post Misc - 图片隐写……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ctf/" >
+                CTF
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/ctf-misc-1/">Misc - 图片隐写……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            涅普计划图片隐写部分的笔记……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/02/01</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：5407</div>
+            <div class="time">预计阅读时长： <time>11</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <div class="snote info ">
+	<div class="snote-content">
+		<p> 以下为涅普计划的课程笔记，建议搭配课程视频理解。 </p>
+	</div>
+</div>
+<h1 id="图片隐写">图片隐写</h1>
+<h2 id="0x01-课程视频">0x01 课程视频</h2>
+<details class="sc-details" >
+	<summary>课程视频</summary>
+	<div class="sc-details--inner"><div class="bilibili-player"style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+	<iframe loading="lazy" src="https://player.bilibili.com/player.html?bvid=BV1VA411u7Tg&high_quality=1&page=2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Bilibili Video"></iframe>
+</div>
+<p><a href="https://www.bilibili.com/video/BV1VA411u7Tg?p=2">视频Bilibili链接</a></div>
+</details>
+<p>将一些不可告人x的东西（如flag）以各种方式隐藏在图片中。</p>
+<p>自已需要分析出隐写方法，并找出隐藏的信息。</p>
+<h2 id="0x02-准备工具">0x02 准备工具</h2>
+<h3 id="十六进制编辑器">十六进制编辑器</h3>
+<ol>
+<li>&ldquo;010 Editor&rdquo;<br>
+优点：有模板（需要安装）<br>
+<em>Tip: 复制16进制的快捷键为<code>Ctrl+Shift+C</code>。</em></li>
+<li>&ldquo;WinHex&rdquo;</li>
+</ol>
+<p><em>其实也称二进制编辑器，因为文件都是以bin二进制来存储的，不过为了阅读方便，将8位2进制串转化为2位16($2^4=16$)进制串。</em></p>
+<h3 id="虚拟机kail">虚拟机——&ldquo;Kail&rdquo;</h3>
+<h4 id="相关命令">相关命令</h4>
+<ul>
+<li>
+<p><code>strings</code><br>
+打印文件中可打印的字符。<br>
+作用：可找出图片中<strong>隐写的字符串</strong>。</p>
+<details class="sc-details" >
+	<summary>例子</summary>
+	<div class="sc-details--inner">在终端中输入<code>strings strings.jpg</code>后<br>
+<img src="pic/Kali-strings.png" alt="Kali - strings"><br>
+可以看见&quot;Nepnep{welcome}&ldquo;和&quot;print(hell oworld)&ldquo;这两条信息。</div>
+</details>
+</li>
+<li>
+<p><code>grep</code><br>
+用于<strong>查找内容包含指定的范本样式</strong>的文件，如果发现某文件的内容符合所指定的范本样式，预设<code>grep</code>指令会把含有范本样式的那一列显示出来。</p>
+<p>输入<code>grep -a &quot;flag&quot; xxx.jpg</code><br>
+则会把文件中含&quot;flag&quot;字符串部分前后显示出来。</p>
+<details class="sc-details" >
+	<summary>例子</summary>
+	<div class="sc-details--inner">如图：<br>
+<img src="pic/Kali-grep.png" alt="Kali - grep"><br>
+可以看见&quot;BJD{haokanma_xjj}&ldquo;这个flag。</div>
+</details>
+</li>
+<li>
+<p><code>file</code><br>
+用于<strong>辨识文件类型</strong>。<br>
+可以显示文件的格式，属性等信息。</p>
+<details class="sc-details" >
+	<summary>例子</summary>
+	<div class="sc-details--inner"><p>对&quot;strings-file&quot;这个无后缀名文件进行分析。<br>
+<img src="pic/Kali-file.png" alt="Kali - file"><br>
+可以看见文件的基本信息，为JPEG文件。</p>
+  <div class="snote info ">
+	<div class="snote-content">
+		<p> Tip: JPEG和JPG是同一个格式。 </p>
+	</div>
+</div>
+</div>
+</details>
+</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p><code>binwalk</code><br>
+用于搜索给定二进制镜像文件以获取嵌入的文件和代码的工具，即可以查看文件中含有的其他文件。<br>
+在CTF中<code>binwalk</code>常用于<strong>分析隐藏文件</strong>。<br>
+参数：</p>
+<ul>
+<li><code>-e</code> 分离出文件到新文件夹中（但可能不全）。</li>
+</ul>
+<details class="sc-details" >
+	<summary>例子</summary>
+	<div class="sc-details--inner"><p>输入<code>binwalk xxx.png</code><br>
+<img src="pic/Kali-binwalk.png" alt="Kali - binwalk"></p>
+<p>输入<code>binwalk -e xxx.png</code>
+得到新文件夹，里面有提取出的文件。<br>
+<img src="pic/Kali-binwalk-e_1.png" alt="Kali - binwalk -e"> <img src="pic/Kali-binwalk-e_2.png" alt="Kali - binwalk -e"></p>
+</div>
+</details>
+</li>
+<li>
+<p><code>foremost</code><br>
+<strong>注意</strong>：需要使用<code>apt-get install foremost</code>安装。<br>
+也可以提取文件（也不一定能提取所有文件）。<br>
+<em>比较于<code>binwalk</code>，<code>binwalk</code>更加强大，速度也快。但是有时候如果不能分离出来，就可以试试看<code>foremost</code>。</em></p>
+<details class="sc-details" >
+	<summary>例子</summary>
+	<div class="sc-details--inner"><p>输入<code>foremost xxx.png</code>后，得到output文件夹，其中目录树如图。</p>
+<p><img src="pic/Kali-foremost.png" alt="Kali - foremost"><br>
+其中png文件夹中为原图片，而jpg文件夹中则为分离处的新图片。<br>
+audit.txt则为所分离文件的信息。</p>
+</div>
+</details>
+</li>
+<li>
+<p><code>dd</code>
+搭配<code>binwalk</code>分析后，<strong>指定提取</strong>文件。</p>
+<p>命令为<code>dd if=xxx.png of=out.jpg bs=1 skip=***</code></p>
+<blockquote>
+<p>参数解释：</p>
+<ul>
+<li><code>if=xxx.png</code>为要分离的文件名。</li>
+<li><code>of=out.jpg</code>为输出的文件名。</li>
+<li><code>bs=1</code>为每次读取几个块（一般为1）。</li>
+<li><code>skip=***</code>为从哪里开始读入（搭配<code>binwalk</code>分析后确定）。<br>
+如上面输入<code>binwalk</code>命令后，可得知内含的JPEG文件从<code>271007</code>开始，则此处<code>skip=271007</code>。</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="0x03-知识点">0x03 知识点</h2>
+<h3 id="十六进制文件头">十六进制文件头</h3>
+<p>每个文件格式有相应的文件头，可通过十六进制编辑器查看。</p>
+<blockquote>
+<p>e.g.<br>
+<code>.jpg</code>：开头——<code>FF D8</code>，结尾——<code>FF D9</code>。</p>
+</blockquote>
+<p><strong>重点：超过文件头的部分不会被读取。</strong></p>
+<h3 id="文件模板">文件模板</h3>
+<p>以十六进制查看方式打开后，若存在对应模板，<br>
+则会将整个十六进制划分成一个个部分，每部分会有各自的作用。</p>
+<p>可根据模板的划分，快速确定某一部分十六进制代表什么意思，有什么作用，储存什么信息等。</p>
+<p>如图：<br>
+<figure style="flex-grow: 184; flex-basis: 443px">
+		<a href="/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF.png" data-size="1920x1038"><img src="/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF.png"
+				srcset="/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF_hu44fa7a4b09e38036e26c26555aa0d739_166464_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E6%A8%A1%E6%9D%BF_hu44fa7a4b09e38036e26c26555aa0d739_166464_1024x0_resize_box_2.png 1024w"
+				width="1920"
+				height="1038"
+				loading="lazy"
+				alt="文件模板">
+		</a>
+		
+		<figcaption>文件模板</figcaption>
+		
+	</figure></p>
+<p>可见通过PNG文件模板将十六进制分为了许多部分。</p>
+<p>最常用的信息如告知图片长宽、属性。</p>
+<h3 id="文件属性">文件属性</h3>
+<p>就是文件的属性【？……<br>
+点击右键属性，可查看文件的一定属性信息。</p>
+<p>如图：<br>
+<figure style="flex-grow: 64; flex-basis: 154px">
+		<a href="/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png" data-size="420x651"><img src="/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7.png"
+				srcset="/p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7_huc42468176a7e4d4c659042e911af5517_28126_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7_huc42468176a7e4d4c659042e911af5517_28126_1024x0_resize_box_2.png 1024w"
+				width="420"
+				height="651"
+				loading="lazy"
+				alt="文件属性">
+		</a>
+		
+		<figcaption>文件属性</figcaption>
+		
+	</figure></p>
+<h2 id="0x04-图片隐写分类">0x04 图片隐写分类</h2>
+<p><figure style="flex-grow: 176; flex-basis: 423px">
+		<a href="/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB.png" data-size="1421x805"><img src="/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB.png"
+				srcset="/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB_huc3e5ae86ffd9d6c34e0f45651723242c_674835_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB_huc3e5ae86ffd9d6c34e0f45651723242c_674835_1024x0_resize_box_2.png 1024w"
+				width="1421"
+				height="805"
+				loading="lazy"
+				alt="图片隐写分类">
+		</a>
+		
+		<figcaption>图片隐写分类</figcaption>
+		
+	</figure></p>
+<h3 id="1-属性隐写">1. 属性隐写</h3>
+<p><em>【就单纯在文件属性（标题、作者等）中写东西，很少用……</em></p>
+<h3 id="2-16进制隐写">2. 16进制隐写</h3>
+<p>一般在文件的16进制格式中增添或修改，达到隐写字符串的目的。</p>
+<p>常见形式：</p>
+<ol>
+<li>在文件尾后直接隐写内容。
+<ul>
+<li>原理：文件不会读取超过文件尾的部分。</li>
+</ul>
+<blockquote>
+<p>e.g.<br>
+<figure style="flex-grow: 372; flex-basis: 893px">
+		<a href="/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E6%96%87%E4%BB%B6%E5%B0%BE.png" data-size="674x181"><img src="/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E6%96%87%E4%BB%B6%E5%B0%BE.png"
+				srcset="/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E6%96%87%E4%BB%B6%E5%B0%BE_hu04db99b9c03b8b48ec53a80de8e9f09a_16618_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E6%96%87%E4%BB%B6%E5%B0%BE_hu04db99b9c03b8b48ec53a80de8e9f09a_16618_1024x0_resize_box_2.png 1024w"
+				width="674"
+				height="181"
+				loading="lazy"
+				alt="16进制隐写 - 文件尾">
+		</a>
+		
+		<figcaption>16进制隐写 - 文件尾</figcaption>
+		
+	</figure><br>
+可以发现文件尾后还有<code>niconiconi</code>这个字符串。</p>
+</blockquote>
+</li>
+<li>在中间部分隐写内容。
+<ul>
+<li>原理：有些时候在中间处修改添加内容，是不会或略微影响文件正常读取的，从而达到隐写的效果。</li>
+<li>判断方法：图片可能会有所怪异，如中间有条线。
+<blockquote>
+<p>e.g.<br>
+<figure style="flex-grow: 149; flex-basis: 359px">
+		<a href="/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E4%BE%8B%E9%A2%98.jpeg" data-size="2600x1736"><img src="/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E4%BE%8B%E9%A2%98.jpeg"
+				srcset="/p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E4%BE%8B%E9%A2%98_hu7213fd93d5f48756bf5f780e62d8940c_420441_480x0_resize_q75_box.jpeg 480w, /p/ctf-misc-1/pic/16%E8%BF%9B%E5%88%B6%E9%9A%90%E5%86%99-%E4%BE%8B%E9%A2%98_hu7213fd93d5f48756bf5f780e62d8940c_420441_1024x0_resize_q75_box.jpeg 1024w"
+				width="2600"
+				height="1736"
+				loading="lazy"
+				alt="16进制隐写 - 例题">
+		</a>
+		
+		<figcaption>16进制隐写 - 例题</figcaption>
+		
+	</figure><br>
+可以发现黑丝【？】那有明显的一条线。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<p>对应方法：使用Linux命令中的<code>strings</code>或<code>grep</code>。<br>
+<em>使用例见上方<a class="link" href="#%e7%9b%b8%e5%85%b3%e5%91%bd%e4%bb%a4" >虚拟机——&ldquo;Kail&quot;的命令部分</a></em></p>
+<hr>
+<p>不给出文件后缀名，不能直接判断出这个文件是什么格式。</p>
+<p>可以通过16进制编辑器，<strong>查看对应的文件头</strong>，从而找出是什么格式。</p>
+<h3 id="3-文件包含">3. 文件包含</h3>
+<p>隐写的内容可能为简单的字符串，也可能为<strong>若干个新的文件</strong>。</p>
+<p>解决方法：</p>
+<ul>
+<li>通过Linux命令<code>binwalk</code>来分析或<code>binwalk -a</code>尝试分离。</li>
+<li>通过Linux命令<code>foremost</code>来尝试分离。</li>
+<li>通过Linux命令<code>dd</code>来尝试分离。</li>
+</ul>
+<p><em>以上三种命令的使用例见上方<a class="link" href="#%e7%9b%b8%e5%85%b3%e5%91%bd%e4%bb%a4" >虚拟机——&ldquo;Kail&quot;的命令部分</a>。</em></p>
+<ul>
+<li>直接以16进制编辑器&quot;010 Editor&rdquo;，将所隐藏的文件16进制部分写入到一个新的文件后并打开。</li>
+</ul>
+<h3 id="4-文件头修改隐写">4. 文件头修改隐写</h3>
+<p>将文件头修改或删除，文件将不能读取。<br>
+<em>但破坏文件尾可能不会影响读取。</em></p>
+<p>需要通过16进制编辑器查看文件头尾部分，分析出该有的文件头。</p>
+<h3 id="5-gif">5. gif</h3>
+<h4 id="特殊帧">特殊帧</h4>
+<p>隐藏在帧中的信息。</p>
+<blockquote>
+<p>e.g.<br>
+<figure style="flex-grow: 117; flex-basis: 282px">
+		<a href="/p/ctf-misc-1/pic/gif-%E7%89%B9%E6%AE%8A%E5%B8%A7.gif" data-size="219x186"><img src="/p/ctf-misc-1/pic/gif-%E7%89%B9%E6%AE%8A%E5%B8%A7.gif"
+				srcset="/p/ctf-misc-1/pic/gif-%E7%89%B9%E6%AE%8A%E5%B8%A7_hubc11521b1fa6218c45a5b162984b5e4d_1568845_480x0_resize_box.gif 480w, /p/ctf-misc-1/pic/gif-%E7%89%B9%E6%AE%8A%E5%B8%A7_hubc11521b1fa6218c45a5b162984b5e4d_1568845_1024x0_resize_box.gif 1024w"
+				width="219"
+				height="186"
+				loading="lazy"
+				alt="gif - 特殊帧">
+		</a>
+		
+		<figcaption>gif - 特殊帧</figcaption>
+		
+	</figure><br>
+<em>【需要点击图片才能查看动图】</em><br>
+可以明显看见图中会闪过一些东西。</p>
+</blockquote>
+<p>一般选择逐帧分析的方法。<br>
+<em>【当然可以选择用手速来截图查看【b站视频闪过图片的常用方法x……</em></p>
+<hr>
+<p>逐帧分析工具：</p>
+<ol>
+<li>PhotoShop<br>
+会将每帧分为一层图层，即可查看。</li>
+<li>Stegsolve.jar<br>
+打开图片后，点击&quot;Analyse&quot;中的&quot;Frame Browser&quot;也可以逐帧查看。</li>
+<li>Ulead GIF</li>
+</ol>
+<h4 id="帧的时间间隔">帧的时间间隔</h4>
+<p>信息也可能隐藏在帧时间间隔中。</p>
+<blockquote>
+<p>e.g.<br>
+很多帧都是$0.1$s，但某几帧是$0.2$s，就很有问题.jpg……</p>
+</blockquote>
+<p>采用&quot;Ulead GIF&quot;来查看帧时间间隔。</p>
+<h3 id="6-pngbmp">6. png(bmp)</h3>
+<h4 id="长高修改ihdr">长高修改(IHDR)</h4>
+<p>可能通过<strong>修改宽高</strong>，隐藏了某些信息，<br>
+通过16进制编辑器来修改查看。</p>
+<p>其中宽高信息则在模板中IHDR部分里可查看。</p>
+<p><strong>一般是修改高</strong>，因为修改宽会导致不能正常显示。<br>
+<em>并且修改得大一点更好，避免重复修改。</em></p>
+<blockquote>
+<p>e.g.<br>
+<figure style="flex-grow: 177; flex-basis: 426px">
+		<a href="/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_1.png" data-size="1920x1080"><img src="/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_1.png"
+				srcset="/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_1_hu2f1e39eb229ed32311a7f8201f851bd5_1385593_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_1_hu2f1e39eb229ed32311a7f8201f851bd5_1385593_1024x0_resize_box_2.png 1024w"
+				width="1920"
+				height="1080"
+				loading="lazy"
+				alt="长高修改 - 修改高">
+		</a>
+		
+		<figcaption>长高修改 - 修改高</figcaption>
+		
+	</figure><br>
+<figure style="flex-grow: 177; flex-basis: 426px">
+		<a href="/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2.png" data-size="1920x1080"><img src="/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2.png"
+				srcset="/p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2_hu6c457ac6328d2d2808cdab535cad5daa_1104997_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2_hu6c457ac6328d2d2808cdab535cad5daa_1104997_1024x0_resize_box_2.png 1024w"
+				width="1920"
+				height="1080"
+				loading="lazy"
+				alt="长高修改 - 发现隐写信息">
+		</a>
+		
+		<figcaption>长高修改 - 发现隐写信息</figcaption>
+		
+	</figure><br>
+将该图片的高增大后，则可发现隐藏信息。</p>
+</blockquote>
+<hr>
+<p>判断是否高被修改的方法：</p>
+<ol>
+<li>
+<p>通过检验CRC32确定。
+当用&quot;010 Editor&quot;打开图片后，若输出窗口中会报错，显示CRC32有问题，证明这张图片的属性（如本类中的高）被篡改过。</p>
+<blockquote>
+<p>e.g.<br>
+<figure style="flex-grow: 2017; flex-basis: 4842px">
+		<a href="/p/ctf-misc-1/pic/png-IHDR-CRC32%E9%94%99%E8%AF%AF.png" data-size="1372x68"><img src="/p/ctf-misc-1/pic/png-IHDR-CRC32%E9%94%99%E8%AF%AF.png"
+				srcset="/p/ctf-misc-1/pic/png-IHDR-CRC32%E9%94%99%E8%AF%AF_huf63c8c929bc9d31596748a75f94681fb_11462_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-IHDR-CRC32%E9%94%99%E8%AF%AF_huf63c8c929bc9d31596748a75f94681fb_11462_1024x0_resize_box_2.png 1024w"
+				width="1372"
+				height="68"
+				loading="lazy"
+				alt="CRC32错误显示">
+		</a>
+		
+		<figcaption>CRC32错误显示</figcaption>
+		
+	</figure></p>
+</blockquote>
+<p>也可以手动计算校验和来比对。<br>
+<details class="sc-details" >
+	<summary>手动计算方法</summary>
+	<div class="sc-details--inner"><ol>
+<li>先选中IHDR到crc之前的部分。<br>
+<img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_1.png" alt="选中部分"><br>
+对应模板中的&quot;union CTYPE type&quot;和&quot;struct PNG_CHUNK_IHDR_ihdr&quot;两个部分。<br>
+<img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_2.png" alt="模板对应处"></li>
+<li>然后点击“工具”中的“校验和”，选择“CRC-32”。<br>
+<img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_3.png" alt="计算校验和"></li>
+<li>得到计算结果后与crc部分比对即可。<br>
+<img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_4.png" alt="计算出的校验和"> <img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_5.png" alt="文件中的校验和"><br>
+<em>注意文件中的检验和是1FCF9E8E，没有那个h。</em></li>
+</ol>
+</div>
+</details></p>
+</li>
+<li>
+<p>脚本爆破来得到真实高度。<br>
+<em>就是暴力的意思，不断修改高度并比对校验和，如果一致则为正确高度。</em><br>
+爆破python代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">binascii</span>
+<span class="kn">import</span> <span class="nn">struct</span>
+<span class="n">misc</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;***.png&#34;</span><span class="p">,</span><span class="s2">&#34;rb&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 请在这里填写要爆破的文件名</span>
+
+<span class="c1"># 爆破高</span>
+<span class="n">crc32_bytes</span> <span class="o">=</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x1d</span><span class="p">:</span><span class="mh">0x20</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 文件IHDR块的crc32的bytes</span>
+<span class="n">crc32_hex_eval</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;0x&#39;</span> <span class="o">+</span> <span class="n">crc32_bytes</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span> <span class="c1"># 将crc32的bytes串 -&gt; hex串 -&gt; 值 </span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4096</span><span class="p">):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x0c</span><span class="p">:</span><span class="mh">0x0f</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x10</span><span class="p">:</span><span class="mh">0x13</span> <span class="o">+</span><span class="mi">1</span> <span class="p">]</span> <span class="o">+</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&gt;i&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x18</span><span class="p">:</span><span class="mh">0x1c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 爆破IHDR数据</span>
+    <span class="n">crc32</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xffffffff</span> <span class="c1"># 计算当前crc32</span>
+    <span class="k">if</span> <span class="n">crc32</span> <span class="o">==</span> <span class="n">crc32_hex_eval</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;height:&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&#34;height_hex: &#34;</span> <span class="o">+</span> <span class="nb">hex</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</code></pre></div></li>
+</ol>
+<h4 id="数据块idat修改">数据块IDAT修改</h4>
+<p>本来IDAT数据块是写满当前块后再换下一个块，<br>
+但用&quot;010 Editor&quot;查看后发现有IDAT块有异常（不满足上述规律），故这个数据块可能藏有信息。</p>
+<p>检测方法：</p>
+<ol>
+<li>使用<code>pngcheck.exe</code>来查看IDAT数据块情况。
+<blockquote>
+<p>e.g.<br>
+输入<code>pngcheck.exe -v ***.png</code>后，<br>
+<figure style="flex-grow: 244; flex-basis: 586px">
+		<a href="/p/ctf-misc-1/pic/png-IDAT-pngcheck.png" data-size="1368x560"><img src="/p/ctf-misc-1/pic/png-IDAT-pngcheck.png"
+				srcset="/p/ctf-misc-1/pic/png-IDAT-pngcheck_hu4bf2919553c0fe92453278902e34f963_199435_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-IDAT-pngcheck_hu4bf2919553c0fe92453278902e34f963_199435_1024x0_resize_box_2.png 1024w"
+				width="1368"
+				height="560"
+				loading="lazy"
+				alt="pngcheck">
+		</a>
+		
+		<figcaption>pngcheck</figcaption>
+		
+	</figure><br>
+发现最后部分有异常。</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>将该数据块十六进制提取出来后，用脚本或其他方法得到信息。</p>
+<p>得到信息方法：</p>
+<ol>
+<li>&ldquo;010 Editor&rdquo; + &ldquo;zlib.py&rdquo;<br>
+用010查看后得到异常部分的16进制，复制后放入脚本运行可得到信息。<br>
+<figure style="flex-grow: 177; flex-basis: 426px">
+		<a href="/p/ctf-misc-1/pic/png-IDAT-zlib.png" data-size="1920x1080"><img src="/p/ctf-misc-1/pic/png-IDAT-zlib.png"
+				srcset="/p/ctf-misc-1/pic/png-IDAT-zlib_huf19167afd3b42c3af8380d89b98a6352_596727_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-IDAT-zlib_huf19167afd3b42c3af8380d89b98a6352_596727_1024x0_resize_box_2.png 1024w"
+				width="1920"
+				height="1080"
+				loading="lazy"
+				alt="zlib得到信息">
+		</a>
+		
+		<figcaption>zlib得到信息</figcaption>
+		
+	</figure></li>
+<li>用<code>binwalk -e</code>提取，直接得到信息。
+<figure style="flex-grow: 264; flex-basis: 634px">
+		<a href="/p/ctf-misc-1/pic/png-IDAT-binwalk.png" data-size="690x261"><img src="/p/ctf-misc-1/pic/png-IDAT-binwalk.png"
+				srcset="/p/ctf-misc-1/pic/png-IDAT-binwalk_huc0dbc55f13899563010aae791b1e1846_38667_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-IDAT-binwalk_huc0dbc55f13899563010aae791b1e1846_38667_1024x0_resize_box_2.png 1024w"
+				width="690"
+				height="261"
+				loading="lazy"
+				alt="binwalk得到信息">
+		</a>
+		
+		<figcaption>binwalk得到信息</figcaption>
+		
+	</figure></li>
+</ol>
+<h4 id="lsb隐写">lsb隐写</h4>
+<p><strong>为贝塔姐姐强调的部分。</strong></p>
+<div class="snote quote ">
+	<div class="snote-content">
+		<p> 接下来我们讲一个大头er~ </p>
+	</div>
+</div>
+<p>又称“最低有效位隐写”。</p>
+<p>将隐写内容转换为2进制，整合修改到图片2进制形式的最低位，使得颜色被修改程度极小，<strong>肉眼无法分辨</strong>。<br>
+但可以通过某些命令或脚本来分辨出。</p>
+<h5 id="不带密匙">不带密匙</h5>
+<ol>
+<li>
+<p>通过&quot;Stegsolve.jar&quot;分析。<br>
+用&quot;Analyse&quot;的&quot;Data Extract&rdquo;，一个个选项测试得到文本串或者新的文件。</p>
+<p>可参考&quot;cat47&quot;的文章<a class="link" href="https://cnblogs.com/cat47/p/11483478.html"  target="_blank" rel="noopener"
+    >stegsolve使用方法</a>。</p>
+</li>
+<li>
+<p><strong><code>zsteg</code>（很好用）</strong><br>
+使用命令<code>zsteg xxx.png</code>来查看各种方式下的文本串或者文件（如果这个命令中没有发现，则可以用<code>zsteg -a xxx.png</code>），<br>
+然后用命令<code>zsteg -e ...(分析的通道) &gt; ***.xxx</code>得到文件</p>
+<blockquote>
+<p>e.g.<br>
+对某图片使用命令<code>zsteg lsb.png</code>后，<br>
+<figure style="flex-grow: 261; flex-basis: 627px">
+		<a href="/p/ctf-misc-1/pic/png-lsb-zsteg_1.png" data-size="617x236"><img src="/p/ctf-misc-1/pic/png-lsb-zsteg_1.png"
+				srcset="/p/ctf-misc-1/pic/png-lsb-zsteg_1_hu6547dd33a8fbf2d1fd94fdc63470684b_50780_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-lsb-zsteg_1_hu6547dd33a8fbf2d1fd94fdc63470684b_50780_1024x0_resize_box_2.png 1024w"
+				width="617"
+				height="236"
+				loading="lazy"
+				alt="zsteg - 分析">
+		</a>
+		
+		<figcaption>zsteg - 分析</figcaption>
+		
+	</figure><br>
+发现<code>b1,rgb,lsb,xy</code>这个方式存在一个PNG文件。<br>
+则使用命令<code>zsteg -e b1,rgb,lsb,xy &gt; ans.png</code>得到文件。<br>
+<figure style="flex-grow: 564; flex-basis: 1354px">
+		<a href="/p/ctf-misc-1/pic/png-lsb-zsteg_2.png" data-size="666x118"><img src="/p/ctf-misc-1/pic/png-lsb-zsteg_2.png"
+				srcset="/p/ctf-misc-1/pic/png-lsb-zsteg_2_hudb22b476cca2663bfa85d81c03be66ea_46937_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-lsb-zsteg_2_hudb22b476cca2663bfa85d81c03be66ea_46937_1024x0_resize_box_2.png 1024w"
+				width="666"
+				height="118"
+				loading="lazy"
+				alt="zsteg - 提取">
+		</a>
+		
+		<figcaption>zsteg - 提取</figcaption>
+		
+	</figure></p>
+</blockquote>
+<p>可参考&quot;β-AS&quot;小姐姐的文章<a class="link" href="https://blog.csdn.net/Amherstieae/article/details/107512398"  target="_blank" rel="noopener"
+    >隐写工具zsteg安装+使用教程</a>。</p>
+</li>
+</ol>
+<hr>
+<h5 id="带密匙">带密匙</h5>
+<p>带密钥的可以用&quot;cloacked-pixel&quot;脚本。<br>
+<strong>该脚本为python2环境，并且需要numpy、matplotlib、Pillow、pycrypto库的支持。</strong></p>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 由于为过气python2环境（且并无python3版本），所需配置较为复杂，所有注意事项已写在下方折叠栏中。 </p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>cloacked-pixel脚本的各种注意事项</summary>
+	<div class="sc-details--inner"><details class="sc-details" >
+	<summary>同时安装python2和python3方法：</summary>
+	<div class="sc-details--inner">请参考文章<a href="https://blog.csdn.net/zuochang_liu/article/details/91361756">如何设置python2，python3，并添加环境变量</a>。</div>
+</details>
+<details class="sc-details" >
+	<summary>python2库本地安装方式：</summary>
+	<div class="sc-details--inner"><p>感觉pip2现在好像不能在线安装库了【？……<br>
+所以只能在<a href="https://pypi.org/">pypi</a>中将库下载到本地安装。</p>
+<p>选择合适的版本，下载到本地。<br>
+下载完成后在cmd中，输入<code>pip2 install ...(本地路径)</code>。</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 路径快速输入方法：输入<code>pip2 install</code>后，将文件直接拖入cmd窗口中即可。 </p>
+	</div>
+</div>
+<p>即可成功安装。</p>
+<p><em>参考自文章<a href="https://www.cnblogs.com/teagnes/p/6032964.html">Python2.7本地安装numpy包</a></em></p>
+</div>
+</details>
+<details class="sc-details" >
+	<summary>上述库的下载地址：</summary>
+	<div class="sc-details--inner"><p>以下库为个人挨个查询并对应版本后下载，均为Python2.7所能支持的最新版本，可直接下载后按上述安装方法安装。</p>
+<ul>
+<li><a href="https://files.pythonhosted.org/packages/14/ef/9f2eeb4ff0c733ad9149f17266e388c308e171fdb8c2415dbb472e2bbc0f/numpy-1.16.6-cp27-cp27m-win_amd64.whl">numpy</a></li>
+<li><a href="https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl">six</a></li>
+<li><a href="https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl">cycle</a>（需要先安装six）</li>
+<li><a href="https://files.pythonhosted.org/packages/70/94/784178ca5dd892a98f113cdd923372024dc04b8d40abe77ca76b5fb90ca6/pytz-2021.1-py2.py3-none-any.whl">pytz</a></li>
+<li><a href="https://files.pythonhosted.org/packages/4e/02/9c79d58f2e9f61d201f8390b5f51fdb0c19e777a241818b784f2a38ee013/kiwisolver-1.1.0-cp27-none-win_amd64.whl">kiwisolver</a></li>
+<li><a href="https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl">python-dateutil</a></li>
+<li><a href="https://files.pythonhosted.org/packages/da/d1/080d2bb13773803648281a49e3918f65b31b7beebf009887a529357fd44a/backports.functools_lru_cache-1.6.1-py2.py3-none-any.whl">backports.functools-lru-cache</a></li>
+<li><a href="https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl">pyparsing</a></li>
+<li><a href="https://files.pythonhosted.org/packages/60/f3/6bf72ceec1f3cd3ff5df1ab71d1655920f099c34484360bbed025ded521f/matplotlib-2.2.5-cp27-cp27m-win_amd64.whl">matplotlib</a>（需要先安装cycle、pytz、kiwisolver、python-dateutil、backports.functools-lru-cache、pyparsing）</li>
+<li><a href="https://files.pythonhosted.org/packages/5e/b6/8960697526a79bd1cb4520293078be3a10d725f23f20abbee298ebdeaabd/Pillow-6.2.2-cp27-cp27m-win_amd64.whl">Pillow</a></li>
+<li><a href="https://files.pythonhosted.org/packages/60/db/645aa9af249f059cc3a368b118de33889219e0362141e75d4eaf6f80f163/pycrypto-2.6.1.tar.gz">pycrypto</a>（<strong>安装方法有所不同</strong>，请见<a href="https://blog.csdn.net/qq_40657585/article/details/84309573">python2.7 安装pycrypto库</a>中“下载压缩包解压到本地”部分）<br>
+同时安装时还需要&quot;vcvarsall.bat&quot;，方法为两步：
+<ol>
+<li>
+<p>下载<a href="https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi">&ldquo;Microsoft Visual C++ Compiler for Python 2.7&rdquo;</a>并安装。</p>
+</li>
+<li>
+<p>按照<a href="https://blog.csdn.net/donger_soft/article/details/44838109">完美解决“Unable to find vcvarsall.bat”错误</a>中配置注册表。<br>
+【其中路径为<code>C:\Users\SuperSASSw\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0</code>】</p>
+<p><em>不确定是否还需要配置环境变量（个人为配置了的），如果仍有问题，请点击开始菜单中的&quot;Microsoft Visual C++ Compiler Package for Python 2.7&quot;这个文件夹中，自己对应平台的&quot;Visual C++ 2008 xx-bit Command Prompt&quot;这个快捷方式。</em></p>
+</li>
+</ol>
+</li>
+</ul>
+<div class="snote info ">
+	<div class="snote-content">
+		<p>以下折叠部分为安装&quot;<a href="https://pypi.org/project/crypto/">crypto</a>&ldquo;库所需库，但安装这个后发现不对（有个Random不存在orz……），<br>
+查询后发现为下面这个&quot;pycrypto&quot;库。</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>crypto所需库</summary>
+	<div class="sc-details--inner"><ul>
+<li><del><a href="https://files.pythonhosted.org/packages/d0/f4/0081137fceff5779cd4205c1e96657e41cc2d2d56c940dc8eeb6111780f7/shellescape-3.8.1-py2.py3-none-any.whl">shellescape</a></del></li>
+<li><del><a href="https://files.pythonhosted.org/packages/c5/5b/b961f4add16d941585f318051dd5410a01596d98132acab8cf8e9e18e20c/PyYAML-5.4.1-cp27-cp27m-win_amd64.whl">PyYAML</a></del></li>
+<li><del><a href="https://files.pythonhosted.org/packages/19/c7/fa589626997dd07bd87d9269342ccb74b1720384a4d739a1872bd84fbe68/chardet-4.0.0-py2.py3-none-any.whl">chardet</a></del></li>
+<li><del><a href="https://files.pythonhosted.org/packages/5e/a0/5f06e1e1d463903cf0c0eebeb751791119ed7a4b3737fdc9a77f1cdfb51f/certifi-2020.12.5-py2.py3-none-any.whl">certifi</a></del></li>
+<li><del><a href="https://files.pythonhosted.org/packages/23/fc/8a49991f7905261f9ca9df5aa9b58363c3c821ce3e7f671895442b7100f2/urllib3-1.26.3-py2.py3-none-any.whl">urllib3</a></del></li>
+<li><del><a href="https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl">idna</a></del></li>
+<li><del><a href="https://files.pythonhosted.org/packages/29/c1/24814557f1d22c56d50280771a17307e6bf87b70727d975fd6b2ce6b014a/requests-2.25.1-py2.py3-none-any.whl">requests</a>（需要先安装chardet、certifi、urllib3、na）</del></li>
+<li><del><a href="%5Bpic/png-lsb-zsteg_2.png%5D(https://files.pythonhosted.org/packages/02/36/b8107b51adca73402ec1860d88f41d958e275e60eea6eeaa9c39ddb89a40/Naked-0.1.31-py2.py3-none-any.whl)">Naked</a>（需要先安装YAML、requests）</del></li>
+</ul>
+</div>
+</details>
+</div>
+</details>
+</div>
+</details>
+<p>命令：<code>python2 lsb.py extract ***.png *** KEY</code></p>
+<ul>
+<li><code>***.png</code>为源文件名。</li>
+<li><code>***</code>为输出文件名。（由于不确定什么格式，可以先不加扩展名，用010查看后再加上对应扩展名）</li>
+<li><code>KEY</code>为密匙。</li>
+</ul>
+<blockquote>
+<p>e.g.<br>
+输入命令<code>python2 lsb.py extract lsb（123456）.png ans 123456</code><br>
+<figure style="flex-grow: 1101; flex-basis: 2642px">
+		<a href="/p/ctf-misc-1/pic/png-lsb-key_1.png" data-size="1013x92"><img src="/p/ctf-misc-1/pic/png-lsb-key_1.png"
+				srcset="/p/ctf-misc-1/pic/png-lsb-key_1_hu845e01fd34376df822a8c18fc5b457ad_9202_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-lsb-key_1_hu845e01fd34376df822a8c18fc5b457ad_9202_1024x0_resize_box_2.png 1024w"
+				width="1013"
+				height="92"
+				loading="lazy"
+				alt="带密匙的lsb - 使用脚本后结果">
+		</a>
+		
+		<figcaption>带密匙的lsb - 使用脚本后结果</figcaption>
+		
+	</figure><br>
+打开ans后，发现直接为flag。<br>
+<figure style="flex-grow: 588; flex-basis: 1413px">
+		<a href="/p/ctf-misc-1/pic/png-lsb-key_2.png" data-size="318x54"><img src="/p/ctf-misc-1/pic/png-lsb-key_2.png"
+				srcset="/p/ctf-misc-1/pic/png-lsb-key_2_hu4bbb68a20cbee7ea80242685f13964e5_2829_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/png-lsb-key_2_hu4bbb68a20cbee7ea80242685f13964e5_2829_1024x0_resize_box_2.png 1024w"
+				width="318"
+				height="54"
+				loading="lazy"
+				alt="带密匙的lsb - 打开ans文件">
+		</a>
+		
+		<figcaption>带密匙的lsb - 打开ans文件</figcaption>
+		
+	</figure></p>
+</blockquote>
+<h4 id="bmp">bmp</h4>
+<p>用&quot;wbStego4.3open&quot;工具对bmp或pdf等格式文件进行加密解密。</p>
+<blockquote>
+<p>e.g.<br>
+打开工具，按照步骤来执行就可以得到文件了。<br>
+<figure style="flex-grow: 150; flex-basis: 360px">
+		<a href="/p/ctf-misc-1/pic/bmp-wbStego-step2.png" data-size="542x361"><img src="/p/ctf-misc-1/pic/bmp-wbStego-step2.png"
+				srcset="/p/ctf-misc-1/pic/bmp-wbStego-step2_hu10c4f7b63adf91150f550a11af220433_11460_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/bmp-wbStego-step2_hu10c4f7b63adf91150f550a11af220433_11460_1024x0_resize_box_2.png 1024w"
+				width="542"
+				height="361"
+				loading="lazy"
+				alt="wbStego4.3open - 步骤2 选择方式">
+		</a>
+		
+		<figcaption>wbStego4.3open - 步骤2 选择方式</figcaption>
+		
+	</figure> <figure style="flex-grow: 150; flex-basis: 360px">
+		<a href="/p/ctf-misc-1/pic/bmp-wbStego-step3.png" data-size="542x361"><img src="/p/ctf-misc-1/pic/bmp-wbStego-step3.png"
+				srcset="/p/ctf-misc-1/pic/bmp-wbStego-step3_hu21b812eaf8809b8fd6682b12e8e31862_14823_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/bmp-wbStego-step3_hu21b812eaf8809b8fd6682b12e8e31862_14823_1024x0_resize_box_2.png 1024w"
+				width="542"
+				height="361"
+				loading="lazy"
+				alt="wbStego4.3open - 步骤3 选择文件及类型">
+		</a>
+		
+		<figcaption>wbStego4.3open - 步骤3 选择文件及类型</figcaption>
+		
+	</figure><br>
+<figure style="flex-grow: 150; flex-basis: 360px">
+		<a href="/p/ctf-misc-1/pic/bmp-wbStego-step4.png" data-size="542x361"><img src="/p/ctf-misc-1/pic/bmp-wbStego-step4.png"
+				srcset="/p/ctf-misc-1/pic/bmp-wbStego-step4_huf40d600781faba395c41bdb312c179be_10758_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/bmp-wbStego-step4_huf40d600781faba395c41bdb312c179be_10758_1024x0_resize_box_2.png 1024w"
+				width="542"
+				height="361"
+				loading="lazy"
+				alt="wbStego4.3open - 步骤4 输入密匙">
+		</a>
+		
+		<figcaption>wbStego4.3open - 步骤4 输入密匙</figcaption>
+		
+	</figure> <figure style="flex-grow: 150; flex-basis: 360px">
+		<a href="/p/ctf-misc-1/pic/bmp-wbStego-step5.png" data-size="542x361"><img src="/p/ctf-misc-1/pic/bmp-wbStego-step5.png"
+				srcset="/p/ctf-misc-1/pic/bmp-wbStego-step5_hu308531206d844f161ef7b9843473e32d_10162_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/bmp-wbStego-step5_hu308531206d844f161ef7b9843473e32d_10162_1024x0_resize_box_2.png 1024w"
+				width="542"
+				height="361"
+				loading="lazy"
+				alt="wbStego4.3open - 步骤5 输入输出文件名">
+		</a>
+		
+		<figcaption>wbStego4.3open - 步骤5 输入输出文件名</figcaption>
+		
+	</figure><br>
+<figure style="flex-grow: 302; flex-basis: 725px">
+		<a href="/p/ctf-misc-1/pic/bmp-wbStego-ans.png" data-size="420x139"><img src="/p/ctf-misc-1/pic/bmp-wbStego-ans.png"
+				srcset="/p/ctf-misc-1/pic/bmp-wbStego-ans_hu0f9574336343ed36f6b6c93eae174dc5_14044_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/bmp-wbStego-ans_hu0f9574336343ed36f6b6c93eae174dc5_14044_1024x0_resize_box_2.png 1024w"
+				width="420"
+				height="139"
+				loading="lazy"
+				alt="wbStego4.3open - 结果">
+		</a>
+		
+		<figcaption>wbStego4.3open - 结果</figcaption>
+		
+	</figure></p>
+</blockquote>
+<div class="snote bug red">
+	<div class="snote-content">
+		<p> Tip: 这个软件不能直接关闭，需要用任务管理器结束orz…… </p>
+	</div>
+</div>
+<hr>
+<h2 id="0x05-写在最后">0x05 写在最后</h2>
+<p><div class="snote warning ">
+	<div class="snote-content">
+		<p> 以上大部分为个人总结，由于这里也刚入门，很多地方可能存在错误。如发现错误请及时指出，谢谢！…… </p>
+	</div>
+</div>
+<div class="snote link green">
+	<div class="snote-content">
+		<p> 由于目前博客不支持附件上传下载，所以如果需要上述中的文件，可以联系我分享文件【联系方式在关于页面中有…… </p>
+	</div>
+</div>
+<div class="snote up cyan">
+	<div class="snote-content">
+		<p> 如对以上内容存在疑惑不解的地方，也可以询问我。如果我了解的话会尽力解答；不了解的话可以一起努力弄明白hhh…… </p>
+	</div>
+</div></p>
+<p>剩余部分因为时间原因没有继续讲啦_(:з」∠)_……<br>
+看好久有时间自学一下【？……</p>
+<p>再次感谢贝塔小姐姐的详细讲解！【第一节课真的很不容易的……</p>
+<p>之前没有接触过CTF，不过了解后对其兴趣很高……<br>
+希望经过这次涅普计划的系统学习能有很大的收获吧√……</p>
+<p>以上……</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ctf/">CTF</a>
+        
+            <a href="/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/">涅普计划</a>
+        
+            <a href="/tags/misc/">Misc</a>
+        
+            <a href="/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/">图片隐写</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/86016044" target="_blank" rel="noopener">86016044</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/ctf-misc-2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ctf-misc-2/87075144_p0.a03f9f78c16be1133b222511558e63f1_hu955303b5c4388e9f242f6715e6abbbd5_906682_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="CTF-Misc-2" 
+                        data-hash="md5-oD&#43;feMFr4RM7IiURVY5j8Q==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Misc - 数据编码……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

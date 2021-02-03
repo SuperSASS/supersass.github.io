@@ -1,0 +1,747 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='涅普计划数据编码部分的笔记……'><title>Misc - 数据编码……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/ctf-misc-2/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Misc - 数据编码……'>
+<meta property='og:description' content='涅普计划数据编码部分的笔记……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/ctf-misc-2/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='涅普计划' /><meta property='article:tag' content='Misc' /><meta property='article:tag' content='数据编码' /><meta property='article:published_time' content='2021-02-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-02-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/ctf-misc-2/87075144_p0.jpg' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Misc - 数据编码……">
+<meta name="twitter:description" content="涅普计划数据编码部分的笔记……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/ctf-misc-2/87075144_p0.jpg' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数据编码">数据编码</a>
+      <ul>
+        <li><a href="#各种编码方式">各种编码方式</a>
+          <ul>
+            <li><a href="#ascii">ASCII</a></li>
+            <li><a href="#base">Base</a>
+              <ul>
+                <li><a href="#base64">base64</a></li>
+                <li><a href="#base36">base36</a></li>
+                <li><a href="#base58">base58</a></li>
+                <li><a href="#base62">base62</a></li>
+                <li><a href="#base85"><em>base85</em></a></li>
+                <li><a href="#base9192">base91、92</a></li>
+              </ul>
+            </li>
+            <li><a href="#morse电码">Morse电码</a></li>
+            <li><a href="#shellcode">shellcode</a></li>
+            <li><a href="#urlencode">urlencode</a></li>
+            <li><a href="#unicode">Unicode</a></li>
+            <li><a href="#aaencode">aaencode</a></li>
+            <li><a href="#jjencode">jjencode</a></li>
+            <li><a href="#uuencode">uuencode</a></li>
+            <li><a href="#其他">其他</a>
+              <ul>
+                <li><a href="#jsfuck">jsfuck</a></li>
+                <li><a href="#brainfuck">brainfuck</a></li>
+              </ul>
+            </li>
+            <li><a href="#ook">ook</a>
+              <ul>
+                <li><a href="#ook-1">Ook!</a></li>
+                <li><a href="#short-ook">Short Ook!</a></li>
+              </ul>
+            </li>
+            <li><a href="#敲击码">敲击码</a></li>
+            <li><a href="#二维码">二维码</a>
+              <ul>
+                <li><a href="#特点">特点</a></li>
+                <li><a href="#基本结构">基本结构</a></li>
+                <li><a href="#考点">考点</a></li>
+              </ul>
+            </li>
+            <li><a href="#稀奇古怪的编码">稀奇古怪的编码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>上一个页面</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/ctf-misc-2/">
+                <img src="/p/ctf-misc-2/87075144_p0_hu955303b5c4388e9f242f6715e6abbbd5_906682_800x0_resize_q75_box.jpg"
+                        srcset="/p/ctf-misc-2/87075144_p0_hu955303b5c4388e9f242f6715e6abbbd5_906682_800x0_resize_q75_box.jpg 800w, /p/ctf-misc-2/87075144_p0_hu955303b5c4388e9f242f6715e6abbbd5_906682_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="784" 
+                        loading="lazy"
+                        alt="Featured image of post Misc - 数据编码……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ctf/" >
+                CTF
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/ctf-misc-2/">Misc - 数据编码……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            涅普计划数据编码部分的笔记……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/02/02</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：962</div>
+            <div class="time">预计阅读时长： <time>2</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <div class="snote error ">
+	<div class="snote-content">
+		<p> 以下内容仅为直播时初步笔记，还未整理完成…… </p>
+	</div>
+</div>
+<h1 id="数据编码">数据编码</h1>
+<h2 id="各种编码方式">各种编码方式</h2>
+<h3 id="ascii">ASCII</h3>
+<h3 id="base">Base</h3>
+<h4 id="base64">base64</h4>
+<p>把$3$个$8$位字节转化为$4$个$6$位的字节，之后在$6$位的前面补两个$0$，重新形成$8$位（一字节）形式。</p>
+<p>$6$位$2$进制</p>
+<blockquote>
+<p>e.g.
+<figure style="flex-grow: 177; flex-basis: 426px">
+		<a href="/p/ctf-misc-2/pic/base64-%E4%BE%8B%E5%AD%90.png" data-size="1920x1080"><img src="/p/ctf-misc-2/pic/base64-%E4%BE%8B%E5%AD%90.png"
+				srcset="/p/ctf-misc-2/pic/base64-%E4%BE%8B%E5%AD%90_hu967bbca14cac403a364812706153783b_1042923_480x0_resize_box_2.png 480w, /p/ctf-misc-2/pic/base64-%E4%BE%8B%E5%AD%90_hu967bbca14cac403a364812706153783b_1042923_1024x0_resize_box_2.png 1024w"
+				width="1920"
+				height="1080"
+				loading="lazy"
+				alt="base64转换例子">
+		</a>
+		
+		<figcaption>base64转换例子</figcaption>
+		
+	</figure></p>
+</blockquote>
+<h4 id="base36">base36</h4>
+<p>包含$0 \sim 9$的数字，加上所有$26$个字母（不区分大小写）。<br>
+不包含任何标点，</p>
+<h4 id="base58">base58</h4>
+<p>采用的字符集为$1234<br>
+去掉了（0、O、I、</p>
+<p>$9+49 = 58$</p>
+<h4 id="base62">base62</h4>
+<p>区别于base64的地方为<strong>去掉了<code>+</code>和<code>/</code></strong></p>
+<h4 id="base85"><em>base85</em></h4>
+<p>不常用。</p>
+<p>类似于Base64的二进制文本编码形式，<br>
+通过使用$5$个ASCII字符来表示四个字节的二进制数据。</p>
+<h4 id="base9192">base91、92</h4>
+<p>base91由91个字符（<code>0-9</code>、<code>a-z</code>、<code>A-Z</code>、……）</p>
+<p>base92比base91多一个？</p>
+<hr>
+<p>&ldquo;CyberChef&quot;中的&quot;magic&quot;模块自动识别。<br>
+或者用&quot;From base&hellip;&ldquo;准确转换。</p>
+<h3 id="morse电码">Morse电码</h3>
+<p>简介略。</p>
+<h3 id="shellcode">shellcode</h3>
+<p>shellcode是一段用于利用软件漏洞而执行的代码，shellcode为$16$进制的机器码，因为经常让攻击者获得shell而得名。</p>
+<h3 id="urlencode">urlencode</h3>
+<p>url编码又称百分号编码，是统一资源定位（URL）编码方式。</p>
+<p>URL地址（网址）中规定：数字、字母和特定字符（<code>/</code>、<code>,</code>、<code>:</code>、<code>@</code>等）可以直接使用，<br>
+其余必须通过<code>%xx</code>来编码。
+其中的<code>xx</code>代表ASCII的十六进制</p>
+<h3 id="unicode">Unicode</h3>
+<p>又称万国码。</p>
+<p>形式：</p>
+<ul>
+<li><code>\u****</code></li>
+<li><code>&amp;x****</code></li>
+</ul>
+<h3 id="aaencode">aaencode</h3>
+<p>用颜文字进行的编码。</p>
+<h3 id="jjencode">jjencode</h3>
+<p>用<code>$</code>、<code>_</code>、<code>[</code>、<code>]</code>进行的编码。</p>
+<h3 id="uuencode">uuencode</h3>
+<p>用于电子信息的传输。</p>
+<h3 id="其他">其他</h3>
+<h4 id="jsfuck">jsfuck</h4>
+<p>用六个字符<code>[]()!+</code>来重新编写&quot;Javascript&quot;代码，<strong>并可以直接执行</strong>。</p>
+<h4 id="brainfuck">brainfuck</h4>
+<p>另一种奇怪的编码方式……</p>
+<h3 id="ook">ook</h3>
+<p>splitbrain.org/service/ook</p>
+<p>比赛中常见。</p>
+<h4 id="ook-1">Ook!</h4>
+<p>由<code>Ook.</code>、<code>Ook!</code>、<code>Ook?</code>三个字符串组成。</p>
+<h4 id="short-ook">Short Ook!</h4>
+<p>只有<code>.</code>、<code>!</code>、<code>?</code>三个字符组成。</p>
+<h3 id="敲击码">敲击码</h3>
+<p><figure style="flex-grow: 117; flex-basis: 281px">
+		<a href="/p/ctf-misc-2/pic/%E6%95%B2%E5%87%BB%E7%A0%81.png" data-size="468x399"><img src="/p/ctf-misc-2/pic/%E6%95%B2%E5%87%BB%E7%A0%81.png"
+				srcset="/p/ctf-misc-2/pic/%E6%95%B2%E5%87%BB%E7%A0%81_huc050287f0a112e61803903cf6cca0166_40350_480x0_resize_box_2.png 480w, /p/ctf-misc-2/pic/%E6%95%B2%E5%87%BB%E7%A0%81_huc050287f0a112e61803903cf6cca0166_40350_1024x0_resize_box_2.png 1024w"
+				width="468"
+				height="399"
+				loading="lazy"
+				alt="敲击码">
+		</a>
+		
+		<figcaption>敲击码</figcaption>
+		
+	</figure></p>
+<h3 id="二维码">二维码</h3>
+<p>QRCode</p>
+<ul>
+<li>堆叠式</li>
+<li>行排式</li>
+</ul>
+<p>info 矩阵式二维码</p>
+<p>常说的二维码。</p>
+<p>在一个矩阵空间</p>
+<h4 id="特点">特点</h4>
+<ol>
+<li>储存大容量信息<br>
+传统的条形码只能处理$20$位左右的信息量，QR码可以处理条形码几十到几百倍的信息量。</li>
+<li>支持所有类型的数据。（如：数字、英文字母、日文字母、汉字等）</li>
+<li>在小空间内打印</li>
+<li>？</li>
+</ol>
+<h4 id="基本结构">基本结构</h4>
+<p>QR(Qucik-Response) code是被广泛使用的</p>
+<p><figure style="flex-grow: 171; flex-basis: 411px">
+		<a href="/p/ctf-misc-2/pic/QRcode-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.png" data-size="1242x724"><img src="/p/ctf-misc-2/pic/QRcode-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.png"
+				srcset="/p/ctf-misc-2/pic/QRcode-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84_hu4fa5621e24e028fcab2f5e69b92442b0_172175_480x0_resize_box_2.png 480w, /p/ctf-misc-2/pic/QRcode-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84_hu4fa5621e24e028fcab2f5e69b92442b0_172175_1024x0_resize_box_2.png 1024w"
+				width="1242"
+				height="724"
+				loading="lazy"
+				alt="基本结构">
+		</a>
+		
+		<figcaption>基本结构</figcaption>
+		
+	</figure></p>
+<h4 id="考点">考点</h4>
+<ol>
+<li>拿掉</li>
+<li>修复二维码
+QRazyBox</li>
+</ol>
+<h3 id="稀奇古怪的编码">稀奇古怪的编码</h3>
+<ul>
+<li>社会主义核心价值观编码<br>
+特点：由社会主义核心价值观十二个词构成。</li>
+<li>与佛论禅<br>
+特点：开头为“佛曰：”。</li>
+<li>与熊论道<br>
+特点：开头为“熊曰：”。</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ctf/">CTF</a>
+        
+            <a href="/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/">涅普计划</a>
+        
+            <a href="/tags/misc/">Misc</a>
+        
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/">数据编码</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/87075144" target="_blank" rel="noopener">87075144</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/ctf-misc-1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ctf-misc-1/86016044_p0.6e54643fba7f43b0ea80ec8160171b97_hu66f5a9c42e7a0ea12354f65ca719fe6e_1732854_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="CTF-Misc-1" 
+                        data-hash="md5-blRkP7p/Q7DqgOyBYBcblw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Misc - 图片隐写……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

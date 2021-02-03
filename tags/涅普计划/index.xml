@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>涅普计划 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/</link>
+    <description>Recent content in 涅普计划 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 02 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Misc - 数据编码……</title>
+      <link>https://blog.supersassw.com/p/ctf-misc-2/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/ctf-misc-2/</guid>
+      <description>以下内容仅为直播时初步笔记，还未整理完成…… 数据编码 各种编码方式 ASCII Base base64 把$3$个$8$位字节转化为$4$个$6$位的字节，之后在$6$位的前</description>
+    </item>
+    
+    <item>
+      <title>Misc - 图片隐写……</title>
+      <link>https://blog.supersassw.com/p/ctf-misc-1/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/ctf-misc-1/</guid>
+      <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 图片隐写 0x01 课程视频 课程视频 视频Bilibili链接 将一些不可告人x的东西（如flag）以各种</description>
+    </item>
+    
+  </channel>
+</rss>
