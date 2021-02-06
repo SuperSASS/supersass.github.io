@@ -13,7 +13,7 @@
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/ctf-misc-2/</guid>
-      <description>以下内容仅为直播时初步笔记，还未整理完成…… 数据编码 各种编码方式 ASCII Base base64 把$3$个$8$位字节转化为$4$个$6$位的字节，之后在$6$位的前</description>
+      <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 数据编码 0x01 课程视频 课程视频 视频Bilibili链接 0x02 常见进制 计算机领域中，常用进制有： 二进制</description>
     </item>
     
     <item>
