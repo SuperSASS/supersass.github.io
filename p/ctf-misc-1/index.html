@@ -216,51 +216,52 @@ if (!doNotTrack) {
                 <div class="sticky-toc" id="sticky-toc">
                     <nav id="TableOfContents">
   <ul>
-    <li><a href="#图片隐写">图片隐写</a>
+    <li><a href="#0x00-课程视频">0x00 课程视频</a></li>
+    <li><a href="#0x01-准备工具">0x01 准备工具</a>
       <ul>
-        <li><a href="#0x01-课程视频">0x01 课程视频</a></li>
-        <li><a href="#0x02-准备工具">0x02 准备工具</a>
+        <li><a href="#十六进制编辑器">十六进制编辑器</a></li>
+        <li><a href="#虚拟机kail">虚拟机——&ldquo;Kail&rdquo;</a>
           <ul>
-            <li><a href="#十六进制编辑器">十六进制编辑器</a></li>
-            <li><a href="#虚拟机kail">虚拟机——&ldquo;Kail&rdquo;</a>
-              <ul>
-                <li><a href="#相关命令">相关命令</a></li>
-              </ul>
-            </li>
+            <li><a href="#相关命令">相关命令</a></li>
           </ul>
         </li>
-        <li><a href="#0x03-知识点">0x03 知识点</a>
-          <ul>
-            <li><a href="#十六进制文件头">十六进制文件头</a></li>
-            <li><a href="#文件模板">文件模板</a></li>
-            <li><a href="#文件属性">文件属性</a></li>
-          </ul>
-        </li>
-        <li><a href="#0x04-图片隐写分类">0x04 图片隐写分类</a>
-          <ul>
-            <li><a href="#1-属性隐写">1. 属性隐写</a></li>
-            <li><a href="#2-16进制隐写">2. 16进制隐写</a></li>
-            <li><a href="#3-文件包含">3. 文件包含</a></li>
-            <li><a href="#4-文件头修改隐写">4. 文件头修改隐写</a></li>
-            <li><a href="#5-gif">5. gif</a>
-              <ul>
-                <li><a href="#特殊帧">特殊帧</a></li>
-                <li><a href="#帧的时间间隔">帧的时间间隔</a></li>
-              </ul>
-            </li>
-            <li><a href="#6-pngbmp">6. png(bmp)</a>
-              <ul>
-                <li><a href="#长高修改ihdr">长高修改(IHDR)</a></li>
-                <li><a href="#数据块idat修改">数据块IDAT修改</a></li>
-                <li><a href="#lsb隐写">lsb隐写</a></li>
-                <li><a href="#bmp">bmp</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#0x05-写在最后">0x05 写在最后</a></li>
       </ul>
     </li>
+    <li><a href="#0x02-知识点">0x02 知识点</a>
+      <ul>
+        <li><a href="#文件头文件尾">文件头文件尾</a></li>
+        <li><a href="#文件模板">文件模板</a></li>
+        <li><a href="#文件属性">文件属性</a></li>
+      </ul>
+    </li>
+    <li><a href="#0x03-图片隐写分类">0x03 图片隐写分类</a>
+      <ul>
+        <li><a href="#1-属性隐写">1. 属性隐写</a></li>
+        <li><a href="#2-16进制隐写">2. 16进制隐写</a></li>
+        <li><a href="#3-文件包含">3. 文件包含</a></li>
+        <li><a href="#4-文件头修改隐写">4. 文件头修改隐写</a></li>
+        <li><a href="#5-gif">5. gif</a>
+          <ul>
+            <li><a href="#特殊帧">特殊帧</a></li>
+            <li><a href="#帧的时间间隔">帧的时间间隔</a></li>
+          </ul>
+        </li>
+        <li><a href="#6-pngbmp">6. png(bmp)</a>
+          <ul>
+            <li><a href="#长高修改ihdr">长高修改(IHDR)</a></li>
+            <li><a href="#数据块idat修改">数据块IDAT修改</a></li>
+            <li><a href="#lsb隐写">lsb隐写</a>
+              <ul>
+                <li><a href="#不带密匙">不带密匙</a></li>
+                <li><a href="#带密匙">带密匙</a></li>
+              </ul>
+            </li>
+            <li><a href="#bmp">bmp</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#0x04-写在最后">0x04 写在最后</a></li>
   </ul>
 </nav>
                 </div>
@@ -366,7 +367,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：5407</div>
+            <div class="char">文章字数：5411</div>
             <div class="time">预计阅读时长： <time>11</time> 分钟</div>
         </div>
     </footer>
@@ -379,8 +380,10 @@ if (!doNotTrack) {
 		<p> 以下为涅普计划的课程笔记，建议搭配课程视频理解。 </p>
 	</div>
 </div>
-<h1 id="图片隐写">图片隐写</h1>
-<h2 id="0x01-课程视频">0x01 课程视频</h2>
+<p>图片隐写：<br>
+将一些不可告人x的东西（如flag）以各种方式隐藏在图片中。<br>
+自已需要分析出隐写方法，并找出隐藏的信息。</p>
+<h1 id="0x00-课程视频">0x00 课程视频</h1>
 <details class="sc-details" >
 	<summary>课程视频</summary>
 	<div class="sc-details--inner"><div class="bilibili-player"style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
@@ -388,10 +391,8 @@ if (!doNotTrack) {
 </div>
 <p><a href="https://www.bilibili.com/video/BV1VA411u7Tg?p=2">视频Bilibili链接</a></div>
 </details>
-<p>将一些不可告人x的东西（如flag）以各种方式隐藏在图片中。</p>
-<p>自已需要分析出隐写方法，并找出隐藏的信息。</p>
-<h2 id="0x02-准备工具">0x02 准备工具</h2>
-<h3 id="十六进制编辑器">十六进制编辑器</h3>
+<h1 id="0x01-准备工具">0x01 准备工具</h1>
+<h2 id="十六进制编辑器">十六进制编辑器</h2>
 <ol>
 <li>&ldquo;010 Editor&rdquo;<br>
 优点：有模板（需要安装）<br>
@@ -399,8 +400,8 @@ if (!doNotTrack) {
 <li>&ldquo;WinHex&rdquo;</li>
 </ol>
 <p><em>其实也称二进制编辑器，因为文件都是以bin二进制来存储的，不过为了阅读方便，将8位2进制串转化为2位16($2^4=16$)进制串。</em></p>
-<h3 id="虚拟机kail">虚拟机——&ldquo;Kail&rdquo;</h3>
-<h4 id="相关命令">相关命令</h4>
+<h2 id="虚拟机kail">虚拟机——&ldquo;Kail&rdquo;</h2>
+<h3 id="相关命令">相关命令</h3>
 <ul>
 <li>
 <p><code>strings</code><br>
@@ -493,15 +494,15 @@ audit.txt则为所分离文件的信息。</p>
 </blockquote>
 </li>
 </ul>
-<h2 id="0x03-知识点">0x03 知识点</h2>
-<h3 id="十六进制文件头">十六进制文件头</h3>
-<p>每个文件格式有相应的文件头，可通过十六进制编辑器查看。</p>
+<h1 id="0x02-知识点">0x02 知识点</h1>
+<h2 id="文件头文件尾">文件头文件尾</h2>
+<p>每个文件格式有相应的文件头和文件尾，可通过十六进制编辑器查看。</p>
 <blockquote>
 <p>e.g.<br>
 <code>.jpg</code>：开头——<code>FF D8</code>，结尾——<code>FF D9</code>。</p>
 </blockquote>
-<p><strong>重点：超过文件头的部分不会被读取。</strong></p>
-<h3 id="文件模板">文件模板</h3>
+<p><strong>重点：超过文件尾的部分不会被读取。</strong></p>
+<h2 id="文件模板">文件模板</h2>
 <p>以十六进制查看方式打开后，若存在对应模板，<br>
 则会将整个十六进制划分成一个个部分，每部分会有各自的作用。</p>
 <p>可根据模板的划分，快速确定某一部分十六进制代表什么意思，有什么作用，储存什么信息等。</p>
@@ -520,7 +521,7 @@ audit.txt则为所分离文件的信息。</p>
 	</figure></p>
 <p>可见通过PNG文件模板将十六进制分为了许多部分。</p>
 <p>最常用的信息如告知图片长宽、属性。</p>
-<h3 id="文件属性">文件属性</h3>
+<h2 id="文件属性">文件属性</h2>
 <p>就是文件的属性【？……<br>
 点击右键属性，可查看文件的一定属性信息。</p>
 <p>如图：<br>
@@ -536,7 +537,7 @@ audit.txt则为所分离文件的信息。</p>
 		<figcaption>文件属性</figcaption>
 		
 	</figure></p>
-<h2 id="0x04-图片隐写分类">0x04 图片隐写分类</h2>
+<h1 id="0x03-图片隐写分类">0x03 图片隐写分类</h1>
 <p><figure style="flex-grow: 176; flex-basis: 423px">
 		<a href="/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB.png" data-size="1421x805"><img src="/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB.png"
 				srcset="/p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB_huc3e5ae86ffd9d6c34e0f45651723242c_674835_480x0_resize_box_2.png 480w, /p/ctf-misc-1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB_huc3e5ae86ffd9d6c34e0f45651723242c_674835_1024x0_resize_box_2.png 1024w"
@@ -549,9 +550,9 @@ audit.txt则为所分离文件的信息。</p>
 		<figcaption>图片隐写分类</figcaption>
 		
 	</figure></p>
-<h3 id="1-属性隐写">1. 属性隐写</h3>
+<h2 id="1-属性隐写">1. 属性隐写</h2>
 <p><em>【就单纯在文件属性（标题、作者等）中写东西，很少用……</em></p>
-<h3 id="2-16进制隐写">2. 16进制隐写</h3>
+<h2 id="2-16进制隐写">2. 16进制隐写</h2>
 <p>一般在文件的16进制格式中增添或修改，达到隐写字符串的目的。</p>
 <p>常见形式：</p>
 <ol>
@@ -605,7 +606,7 @@ audit.txt则为所分离文件的信息。</p>
 <hr>
 <p>不给出文件后缀名，不能直接判断出这个文件是什么格式。</p>
 <p>可以通过16进制编辑器，<strong>查看对应的文件头</strong>，从而找出是什么格式。</p>
-<h3 id="3-文件包含">3. 文件包含</h3>
+<h2 id="3-文件包含">3. 文件包含</h2>
 <p>隐写的内容可能为简单的字符串，也可能为<strong>若干个新的文件</strong>。</p>
 <p>解决方法：</p>
 <ul>
@@ -617,12 +618,12 @@ audit.txt则为所分离文件的信息。</p>
 <ul>
 <li>直接以16进制编辑器&quot;010 Editor&rdquo;，将所隐藏的文件16进制部分写入到一个新的文件后并打开。</li>
 </ul>
-<h3 id="4-文件头修改隐写">4. 文件头修改隐写</h3>
+<h2 id="4-文件头修改隐写">4. 文件头修改隐写</h2>
 <p>将文件头修改或删除，文件将不能读取。<br>
 <em>但破坏文件尾可能不会影响读取。</em></p>
 <p>需要通过16进制编辑器查看文件头尾部分，分析出该有的文件头。</p>
-<h3 id="5-gif">5. gif</h3>
-<h4 id="特殊帧">特殊帧</h4>
+<h2 id="5-gif">5. gif</h2>
+<h3 id="特殊帧">特殊帧</h3>
 <p>隐藏在帧中的信息。</p>
 <blockquote>
 <p>e.g.<br>
@@ -652,15 +653,15 @@ audit.txt则为所分离文件的信息。</p>
 打开图片后，点击&quot;Analyse&quot;中的&quot;Frame Browser&quot;也可以逐帧查看。</li>
 <li>Ulead GIF</li>
 </ol>
-<h4 id="帧的时间间隔">帧的时间间隔</h4>
+<h3 id="帧的时间间隔">帧的时间间隔</h3>
 <p>信息也可能隐藏在帧时间间隔中。</p>
 <blockquote>
 <p>e.g.<br>
 很多帧都是$0.1$s，但某几帧是$0.2$s，就很有问题.jpg……</p>
 </blockquote>
 <p>采用&quot;Ulead GIF&quot;来查看帧时间间隔。</p>
-<h3 id="6-pngbmp">6. png(bmp)</h3>
-<h4 id="长高修改ihdr">长高修改(IHDR)</h4>
+<h2 id="6-pngbmp">6. png(bmp)</h2>
+<h3 id="长高修改ihdr">长高修改(IHDR)</h3>
 <p>可能通过<strong>修改宽高</strong>，隐藏了某些信息，<br>
 通过16进制编辑器来修改查看。</p>
 <p>其中宽高信息则在模板中IHDR部分里可查看。</p>
@@ -752,7 +753,7 @@ audit.txt则为所分离文件的信息。</p>
         <span class="k">print</span><span class="p">(</span><span class="s2">&#34;height_hex: &#34;</span> <span class="o">+</span> <span class="nb">hex</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 </code></pre></div></li>
 </ol>
-<h4 id="数据块idat修改">数据块IDAT修改</h4>
+<h3 id="数据块idat修改">数据块IDAT修改</h3>
 <p>本来IDAT数据块是写满当前块后再换下一个块，<br>
 但用&quot;010 Editor&quot;查看后发现有IDAT块有异常（不满足上述规律），故这个数据块可能藏有信息。</p>
 <p>检测方法：</p>
@@ -809,7 +810,7 @@ audit.txt则为所分离文件的信息。</p>
 		
 	</figure></li>
 </ol>
-<h4 id="lsb隐写">lsb隐写</h4>
+<h3 id="lsb隐写">lsb隐写</h3>
 <p><strong>为贝塔姐姐强调的部分。</strong></p>
 <div class="snote quote ">
 	<div class="snote-content">
@@ -819,7 +820,7 @@ audit.txt则为所分离文件的信息。</p>
 <p>又称“最低有效位隐写”。</p>
 <p>将隐写内容转换为2进制，整合修改到图片2进制形式的最低位，使得颜色被修改程度极小，<strong>肉眼无法分辨</strong>。<br>
 但可以通过某些命令或脚本来分辨出。</p>
-<h5 id="不带密匙">不带密匙</h5>
+<h4 id="不带密匙">不带密匙</h4>
 <ol>
 <li>
 <p>通过&quot;Stegsolve.jar&quot;分析。<br>
@@ -866,7 +867,7 @@ audit.txt则为所分离文件的信息。</p>
 </li>
 </ol>
 <hr>
-<h5 id="带密匙">带密匙</h5>
+<h4 id="带密匙">带密匙</h4>
 <p>带密钥的可以用&quot;cloacked-pixel&quot;脚本。<br>
 <strong>该脚本为python2环境，并且需要numpy、matplotlib、Pillow、pycrypto库的支持。</strong></p>
 <div class="snote warning ">
@@ -989,7 +990,7 @@ audit.txt则为所分离文件的信息。</p>
 		
 	</figure></p>
 </blockquote>
-<h4 id="bmp">bmp</h4>
+<h3 id="bmp">bmp</h3>
 <p>用&quot;wbStego4.3open&quot;工具对bmp或pdf等格式文件进行加密解密。</p>
 <blockquote>
 <p>e.g.<br>
@@ -1059,7 +1060,7 @@ audit.txt则为所分离文件的信息。</p>
 	</div>
 </div>
 <hr>
-<h2 id="0x05-写在最后">0x05 写在最后</h2>
+<h1 id="0x04-写在最后">0x04 写在最后</h1>
 <p><div class="snote warning ">
 	<div class="snote-content">
 		<p> 以上大部分为个人总结，由于这里也刚入门，很多地方可能存在错误。如发现错误请及时指出，谢谢！…… </p>
@@ -1153,6 +1154,28 @@ audit.txt则为所分离文件的信息。</p>
         <h2 class="section-title">相关文章</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/ctf-misc-3/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ctf-misc-3/57890506_p0.16158d4388045fa8a707422c777a29ba_hu20a1b54dc3f8ad2cd21d3e328c8fd47f_537572_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="CTF-Misc-3" 
+                        data-hash="md5-FhWNQ4gEX6inB0Isd3opug==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Misc - 流量分析……</h2>
+        </div>
+    </a>
+</article>
                 
                     
 <article class="has-image">
