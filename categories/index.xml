@@ -6,31 +6,31 @@
     <description>Recent content in Categories on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CTF</title>
       <link>https://blog.supersassw.com/categories/ctf/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/categories/ctf/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>日常练习</title>
-      <link>https://blog.supersassw.com/categories/daily-ractical/</link>
+      <title>ACM - 日常练习</title>
+      <link>https://blog.supersassw.com/categories/acm-prac/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/categories/daily-ractical/</guid>
+      <guid>https://blog.supersassw.com/categories/acm-prac/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>课程总结</title>
-      <link>https://blog.supersassw.com/categories/lessons-summary/</link>
+      <title>大学课程</title>
+      <link>https://blog.supersassw.com/categories/university/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/categories/lessons-summary/</guid>
+      <guid>https://blog.supersassw.com/categories/university/</guid>
       <description></description>
     </item>
     
@@ -44,20 +44,11 @@
     </item>
     
     <item>
-      <title>数据结构</title>
-      <link>https://blog.supersassw.com/categories/data-structure/</link>
+      <title>ACM - 学习笔记</title>
+      <link>https://blog.supersassw.com/categories/acm-note/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/categories/data-structure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>基础部分</title>
-      <link>https://blog.supersassw.com/categories/basic/</link>
-      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.supersassw.com/categories/basic/</guid>
+      <guid>https://blog.supersassw.com/categories/acm-note/</guid>
       <description></description>
     </item>
     

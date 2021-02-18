@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>指针 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E6%8C%87%E9%92%88/</link>
+    <description>Recent content in 指针 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%8C%87%E9%92%88/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>程序设计——指针习题……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-prac-point/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-cpp-prac-point/</guid>
+      <description>指针课后习题 判断题 第一题 从内存单元中存取数据的方法有直接访问方式和间接访问方式。 知识点： 内存单元的数据存取方式 【书 P186】 答案与分析 正确 分</description>
+    </item>
+    
+  </channel>
+</rss>

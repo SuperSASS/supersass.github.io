@@ -8,21 +8,21 @@
     <language>zh-CN</language>
     <lastBuildDate>Tue, 15 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E8%B4%AA%E5%BF%83/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>邻项比较排序……</title>
-      <link>https://blog.supersassw.com/p/neighbor-sort/</link>
+      <title>ACM学习笔记：邻项比较排序……</title>
+      <link>https://blog.supersassw.com/p/acm-note-neighbor_sort/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/neighbor-sort/</guid>
-      <description>以下为之前的笔记直接放过来的，部分样式会有错误（如KaTeX没有渲染等）…… 邻项比较排序 定义 本来的排序型贪心，我们需要任意两个项都满足决策条</description>
+      <guid>https://blog.supersassw.com/p/acm-note-neighbor_sort/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 邻项比较排序介绍 定义 本来的排序型贪心，我们需要任意两</description>
     </item>
     
     <item>
-      <title>贪心……</title>
-      <link>https://blog.supersassw.com/p/greedy/</link>
+      <title>ACM学习笔记：贪心……</title>
+      <link>https://blog.supersassw.com/p/acm-note-greedy/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/greedy/</guid>
-      <description>贪心 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通过局部最优解拓展得到全局最优解。 用处 寻找最优解（如：找最大(小)值） 贪心类别 一、排序</description>
+      <guid>https://blog.supersassw.com/p/acm-note-greedy/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。可能格式、内容、链接等混乱错误…… 贪心介绍 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通</description>
     </item>
     
   </channel>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>笔记 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 笔记 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crypto - 古典密码……</title>
+      <link>https://blog.supersassw.com/p/ctf-note-crypto_1/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/ctf-note-crypto_1/</guid>
+      <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 0x00 课程视频 课程视频 视频Bilibili链接 0x01 什么是密码学 【基本概念与作用应该都知道一点吧，这</description>
+    </item>
+    
+    <item>
+      <title>Misc - 流量分析……</title>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_3/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_3/</guid>
+      <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 流量分析： 利用流量分析工具，抓取网络请求中的各种流量数据包， 分析其中的信息，并得到自己所需要</description>
+    </item>
+    
+    <item>
+      <title>Misc - 数据编码……</title>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_2/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_2/</guid>
+      <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 0x00 课程视频 课程视频 视频Bilibili链接 0x01 常见进制与进制转换 常见进制 计算机领域中，常用进制</description>
+    </item>
+    
+    <item>
+      <title>Misc - 图片隐写……</title>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_1/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_1/</guid>
+      <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 图片隐写： 将一些不可告人x的东西（如flag）以各种方式隐藏在图片中。 自已需要分析出隐写方法</description>
+    </item>
+    
+    <item>
+      <title>程序设计——数组……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-note-array/</link>
+      <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-cpp-note-array/</guid>
+      <description>一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列$a_i$： 当$i=1$</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：并查集……</title>
+      <link>https://blog.supersassw.com/p/acm-note-union_find/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-union_find/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 其实并不是笔记</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：线段树……</title>
+      <link>https://blog.supersassw.com/p/acm-note-segment_tree/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-segment_tree/</guid>
+      <description>该笔记还处于基础部分，待日后继续深入整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 简介 是一</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：邻项比较排序……</title>
+      <link>https://blog.supersassw.com/p/acm-note-neighbor_sort/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-neighbor_sort/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 邻项比较排序介绍 定义 本来的排序型贪心，我们需要任意两</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：贪心……</title>
+      <link>https://blog.supersassw.com/p/acm-note-greedy/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-greedy/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。可能格式、内容、链接等混乱错误…… 贪心介绍 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：GCD、裴蜀定理、EXGCD……</title>
+      <link>https://blog.supersassw.com/p/acm-note-gcd_exgcd/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-gcd_exgcd/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… GCD 引例：最大公约数 没什么好说的，就最大公约数。 主要是</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：线性同余方程……</title>
+      <link>https://blog.supersassw.com/p/acm-note-linear_equation/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-linear_equation/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 0x00 前提知识 同余</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：STL……</title>
+      <link>https://blog.supersassw.com/p/acm-note-stl/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-stl/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… STL 详解 set—</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：排序……</title>
+      <link>https://blog.supersassw.com/p/acm-note-sort/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-sort/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 排序 不考虑算法 选择排序、冒泡排序、插入排序 $O(n^2)$ 计数排序</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,990 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='数论——乘法逆元、线性同余方程……'><title>ACM学习笔记：线性同余方程……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-note-linear_equation/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM学习笔记：线性同余方程……'>
+<meta property='og:description' content='数论——乘法逆元、线性同余方程……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-note-linear_equation/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='数论' /><meta property='article:tag' content='乘法逆元' /><meta property='article:tag' content='线性同余方程' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2020-12-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-02-18T18:32:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/acm-note-linear_equation/83179646_p0.jpg' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM学习笔记：线性同余方程……">
+<meta name="twitter:description" content="数论——乘法逆元、线性同余方程……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/acm-note-linear_equation/83179646_p0.jpg' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0x00-前提知识">0x00 前提知识</a>
+      <ul>
+        <li><a href="#同余">同余</a>
+          <ul>
+            <li><a href="#定义">定义</a></li>
+            <li><a href="#性质">性质</a></li>
+            <li><a href="#其他点">其他点</a></li>
+          </ul>
+        </li>
+        <li><a href="#整除">整除</a></li>
+        <li><a href="#学习顺序">学习顺序</a></li>
+      </ul>
+    </li>
+    <li><a href="#0x01-初步认识">0x01 初步认识</a>
+      <ul>
+        <li><a href="#定义-1">定义</a></li>
+        <li><a href="#有解条件">有解条件</a></li>
+        <li><a href="#解的性质">解的性质</a></li>
+      </ul>
+    </li>
+    <li><a href="#0x02-乘法逆元">0x02 乘法逆元</a>
+      <ul>
+        <li><a href="#定义-2">定义</a></li>
+        <li><a href="#性质-1">性质</a></li>
+        <li><a href="#作用">作用</a>
+          <ul>
+            <li><a href="#1-对除法取模">1. 对除法取模</a>
+              <ul>
+                <li><a href="#证明">证明</a></li>
+              </ul>
+            </li>
+            <li><a href="#2-线性同余方程的反函数">2. 线性同余方程的反函数</a>
+              <ul>
+                <li><a href="#证明-1">证明</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#求解方法">求解方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/acm-note-linear_equation/">
+                <img src="/p/acm-note-linear_equation/83179646_p0_hua9bd3bd10387d89cf6f6be61b75d18f9_1401560_800x0_resize_q75_box.jpg"
+                        srcset="/p/acm-note-linear_equation/83179646_p0_hua9bd3bd10387d89cf6f6be61b75d18f9_1401560_800x0_resize_q75_box.jpg 800w, /p/acm-note-linear_equation/83179646_p0_hua9bd3bd10387d89cf6f6be61b75d18f9_1401560_1600x0_resize_q75_box.jpg 1600w"
+                        width="800" 
+                        height="600" 
+                        loading="lazy"
+                        alt="Featured image of post ACM学习笔记：线性同余方程……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm-note/" >
+                ACM - 学习笔记
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-note-linear_equation/">ACM学习笔记：线性同余方程……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            数论——乘法逆元、线性同余方程……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/12/12</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：3617</div>
+            <div class="time">预计阅读时长： <time>8</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <p><div class="snote error ">
+	<div class="snote-content">
+		<p> 该笔记还未完成整理，待日后继续整理…… </p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… </p>
+	</div>
+</div></p>
+<h1 id="0x00-前提知识">0x00 前提知识</h1>
+<h2 id="同余">同余</h2>
+<p>$\equiv$：是数论中表示<strong>同余</strong>的符号。<br>
+用法：$a \equiv b \pmod n$</p>
+<h3 id="定义">定义</h3>
+<ul>
+<li>最基本的定义：两个数$a,b$对另一个数$n$的取余都相同。</li>
+<li>衍生定义：$(a-b) \bmod n = 0$</li>
+</ul>
+<p>记作：$a \equiv b \pmod n$，表示$a,b$对$n$同余。</p>
+<blockquote>
+<p>如：<br>
+$7 \bmod 3 = 1$<br>
+$10 \bmod 3 = 1$<br>
+则：$7 \equiv 10 \pmod 3$</p>
+</blockquote>
+<h3 id="性质">性质</h3>
+<p><em>以下部分为个人总结，名称不一定准确。</em></p>
+<ol>
+<li>自反性：$a \equiv a \pmod m$。</li>
+<li>对称性：若$a \equiv b \pmod m$，则$b \equiv a \pmod m$。</li>
+<li>传递性：若$a \equiv b \pmod m$，$b \equiv c \pmod m$，则$a \equiv c \pmod m$。</li>
+<li><strong>替换性</strong>：对于$M \equiv ab \cdot x \pmod m$，若$ab \equiv c \pmod m$，则$M \equiv c \cdot x\pmod m$。</li>
+<li><strong>加减可移项性</strong>：若$a \pm b \equiv c \pmod m$，则$a \equiv c \mp b \pmod m$</li>
+<li><strong>线性运算</strong>：如果$a \equiv b \pmod m$，$c \equiv d \pmod m$，那么有：
+<ol>
+<li>$a \pm c \equiv b \pm d \pmod m$。</li>
+<li>$ac \equiv bd \pmod m$。<br>
+推论：若$a \equiv b \pmod m$，则有$an \equiv bn \pmod m (n\in Z, n \ne 0)$。</li>
+</ol>
+</li>
+<li>模数的除法：若$ac \equiv bc \pmod m$，$\gcd(m,c)=d$，则$a \equiv b \pmod{m/d}$；<br>
+特别地，当$\gcd(m,c)=1$时，有$a \equiv b \pmod m$。</li>
+<li>模数的乘法：若$a \equiv b \pmod m$，则有$ak \equiv bk \pmod{mk}$，其中$k$为大于零的整数；<br>
+推论：若$a \equiv b \pmod m$，$d$为$a,b$及$m$三者的任一正公约数，则$a/d \equiv b/d \pmod{m/d}$。</li>
+<li>传递性2：若$a \equiv b \pmod m$，且$d \mid m$，则$a \equiv b \pmod d$。</li>
+</ol>
+<p><em>参考自“wcwcwch”的<a class="link" href="https://www.cnblogs.com/812-xiao-wen/p/10497924.html"  target="_blank" rel="noopener"
+    >「同余的性质」</a>。</em></p>
+<h3 id="其他点">其他点</h3>
+<p>需要注意的是：<br>
+负数也可以进行取模，因此也存在同余。</p>
+<blockquote>
+<p>如：<br>
+$-36 \bmod 15$，<br>
+用除法表示为$-36 \div 15 = -3 \cdots 9$（验算：$15*-3+9=-36$），<br>
+即$-36 \bmod 15 = 9$，</p>
+<p>所以$-36 \equiv 24 \pmod{15}$。</p>
+</blockquote>
+<blockquote>
+<p>由于这个符号很新颖和陌生，导致在学习的时候理解上产生了很大的障碍，<br>
+因此需要尽快适应这个符号的使用方法。</p>
+<p>首先需要知道的是：同余代表的<strong>是一种关系</strong>，而非运算。<br>
+因此才会采用类似于等号的符号来表示。<br>
+但这种等于，并不是像$2=2$这样直接就可以判断，<br>
+而是要经过稍微的运算，两边同时取模后等于，才叫同余。</p>
+<p>然后对于这个符号，有很多种不同的理解方式，<br>
+建议自己确定一个自己习惯的理解方式并一直用下去。<br>
+个人所采用的是：$a \equiv b \pmod m$，代表$a \bmod m = b \bmod m$。</p>
+</blockquote>
+<p>需要牢记一个转换式：
+$$a \equiv b \pmod m \implies a = mk + b (k∈Z)$$</p>
+<h2 id="整除">整除</h2>
+<p>$\mid$：是数论中的表示<strong>整除</strong>符号。<br>
+用法：$a \mid d$</p>
+<p>注意：<br>
+这里的整除就是整除，不是被整除。<br>
+如上例：是$a$整除$b$，或说$b$被$a$整除。</p>
+<blockquote>
+<p>如：<br>
+$2\mid14$<br>
+则是$2$整除$14$，$14$被$2$整除。</p>
+</blockquote>
+<p>整除也代表两者大除小余数为$0$，故同余还可以写为：<br>
+$m \mid (a-b)$<br>
+$\implies (a-b) \bmod n = 0$<br>
+$\implies a \equiv b \pmod n$</p>
+<h2 id="学习顺序">学习顺序</h2>
+<ol>
+<li>裴蜀定理</li>
+<li>扩展欧几里得</li>
+<li>初步认识线性同余方程</li>
+<li>认识乘法逆元并求解</li>
+<li>求解线性同余方程</li>
+</ol>
+<p>其中：</p>
+<ul>
+<li>1、2为<a class="link" href="1.%20GCD&amp;EXGCD.md" >$\gcd$内容</a>，</li>
+<li>3、4、5为本章（线性同余方程）内容。</li>
+</ul>
+<h1 id="0x01-初步认识">0x01 初步认识</h1>
+<h2 id="定义-1">定义</h2>
+<p>形如$f(x) \equiv 0 \pmod m$的方程称为同余方程，<br>
+其中$f(x)=a_nx^n+a_{n-1}x^{n_1}+\cdots+a_1x+a_0$。</p>
+<p>记：$f(x)$最高次数为$n$，则称为$n$次同余方程。<br>
+特别的：当$n=1$时，称为一次同余方程，又称线性同余方程。</p>
+<p>即：<br>
+<strong>形如$ax \equiv b \pmod m$的方程</strong>，<br>
+被称为<strong>线性同余方程</strong>(Congruence Equation)。</p>
+<blockquote>
+<p>如：<br>
+$12x \equiv 9 \pmod {15}$<br>
+解得：$x=\cdots,-3,2,7,12,17,\cdots,5n+2(n∈Z)$</p>
+<p>当$x=-3$时，$12*-3=36$，$-36 \bmod 15 = 9$，满足方程。<br>
+当$x=2$时，$12*2=24$，$24 \bmod 15 = 9$，满足方程。<br>
+当$x=7$时，$12*7=84$，$84 \bmod 15 = 9$，满足方程。</p>
+</blockquote>
+<blockquote>
+<p>同样，对于这个方程，<br>
+我们也需要对其快速建立自己的理解方法。</p>
+<p>个人理解方法是：<br>
+当$x$取某一值时，则$ax$对$m$取模的结果就是$b$。</p>
+</blockquote>
+<hr>
+<p>与普通的一元线性方程不同的是：<br>
+普通的一元线性方程肯定存在唯一解（如$2x+3=5$）；<br>
+而线性同余方程若<strong>有解</strong>，需要<strong>存在一定条件</strong>。</p>
+<h2 id="有解条件">有解条件</h2>
+<p>对于线性同余方程$ax \equiv b \pmod m$，其存在解的条件是：<br>
+$b$能够被$a$与$m$的最大公约数整除。</p>
+<p>表示为：
+$$\gcd(a,m) \mid b$$</p>
+<blockquote>
+<p>如上例中：<br>
+$12x \equiv 9 \pmod {15}$</p>
+<p>因为$\gcd(12,15)=3$，而$3$能整除$9$，<br>
+即$\gcd(12,15) \mid 9$，<br>
+所以有解。</p>
+</blockquote>
+<blockquote>
+<p>如：<br>
+$3x \equiv 5 \pmod 6$，</p>
+<p>因为$\gcd(3,6)=3$，而$3$不能整除$5$，<br>
+故该同余方程无解，<br>
+也就是说无论你$x$取何值，都不能满足$3x$对$6$取模后值为$5。</p>
+</blockquote>
+<hr>
+<p>注意到，若$x_0$是线性同余方程$ax \equiv b \pmod m$的一个解，<br>
+那么对于$x_n \equiv x_0 \pmod m$，$x_n$也是该线性同余方程的解。<br>
+或者说$mk+x_0(k∈Z)$均为解。</p>
+<blockquote>
+<p>如上例中：<br>
+$12x \equiv 9 \pmod {15}$</p>
+<p>$x_0=2$时为一解，<br>
+因此$15k+2(k∈Z)$均为解，即$2,17,32,\cdots$均为解。</p>
+<p>$x_0=7$时为一解，<br>
+因此$15k+7(k∈Z)$均为解，即$7,22,37,\cdots$均为解。</p>
+<p>$x_0=12$时为一解，<br>
+因此$15k+12(k∈Z)$均为解，即$12,27,42,\cdots$均为解。</p>
+</blockquote>
+<p>因此对于线性同余方程的<strong>解的个数</strong>，我们定义为：<br>
+在$0 \sim (m-1)$中解的个数。</p>
+<blockquote>
+<p>如上例中：<br>
+$12x \equiv 9 \pmod {15}$</p>
+<p>解的个数就为$3$个，分别为$2,7,12$。</p>
+</blockquote>
+<h2 id="解的性质">解的性质</h2>
+<p>对于线性同余方程$ax \equiv b \pmod m$，记$\gcd(a,m)=d$<br>
+若存在解，则会满足以下性质：</p>
+<ol>
+<li>对于$x_0$为该线性同余方程的任意一解，记，<br>
+则通解可以表示为$\frac{m}{d}k + x_0 (k∈Z)$。
+<blockquote>
+<p>如上例中：<br>
+$12x \equiv 9 \pmod {15}$<br>
+$d=\gcd(12,15)=3$</p>
+<p>得到一解$x_0=2$，<br>
+则通解可以表示为$5k+2(k∈Z)$。</p>
+</blockquote>
+</li>
+<li>解的个数恰为$d$个。
+<blockquote>
+<p>如上例中：<br>
+$12x \equiv 9 \pmod {15}$</p>
+<p>则在$0 \sim 14$范围中，解为$2,7,12$。<br>
+个数为$d=\gcd(12,15)=3$，即$3$个。</p>
+</blockquote>
+</li>
+<li><strong>唯一解定理</strong>：<br>
+当$d=1$时，该同余方程有且仅有唯一解。</li>
+</ol>
+<h1 id="0x02-乘法逆元">0x02 乘法逆元</h1>
+<h2 id="定义-2">定义</h2>
+<p>如果一个线性同余方程$ax \equiv 1 \pmod m$，存在解$x$，<br>
+则$x$称为$a \bmod m$的逆元，记作$a^{-1}$。</p>
+<blockquote>
+<p>如：<br>
+$5x \equiv 1 \pmod{14}$，</p>
+<p>当$x=3$时，$15 \bmod 14 = 1$，满足方程。<br>
+所以$3$为$5$关于$14$的逆元。</p>
+</blockquote>
+<h2 id="性质-1">性质</h2>
+<p>对于一个线性同余方程$ax \equiv 1 \pmod m$，<br>
+记$a$关于$m$的逆元$x$为$a^{-1}$。</p>
+<ol>
+<li><strong>存在充要条件</strong>：$a,m$互素，$\gcd(a,m)=1$。</li>
+<li><strong>唯一性</strong>：$a^{-1}$在$[0,m-1]$范围内唯一。
+<blockquote>
+<p>证明：</p>
+<p>我们先假设$a$有两个不相等逆元：$a'$ 和$a''$，<br>
+那么一定有：$a<em>a' \equiv a</em>a'' \equiv 1 \pmod m$</p>
+<p>不妨设$a'∈[0,m-1]$，$a'&lt;a''$且$a''-a'=k$，<br>
+那么由于$a\ne0$，所以$k$一定是$k \equiv 0 \pmod m$ ，即$k=cm(c∈Z,c\ne0)$（见<a class="link" href="#0x00-%e5%89%8d%e6%8f%90%e7%9f%a5%e8%af%86" >最上的转换式</a>）<br>
+所以$a''=a' + cm(c∈Z,c\ne0)$，<br>
+所以$a'&lsquo;∈<a class="link" href="c%e2%88%88Z,c%5cne0" >cm,(c+1)m-1</a>$，一定不在$[0,m-1]$范围内，<br>
+所以$a$在$[0,m-1]$范围内只能有一个逆元。</p>
+</blockquote>
+</li>
+<li>完全积性：$a^{-1} \cdot b^{-1} = (a \cdot b)^{-1}$</li>
+<li>$\gcd(a^{-1},m)=1$。</li>
+<li>${(a^{-1})}^{-1} \equiv a \pmod m$</li>
+</ol>
+<h2 id="作用">作用</h2>
+<h3 id="1-对除法取模">1. 对除法取模</h3>
+<p>首先对于取模运算，存在以下性质：<br>
+$(a + b) \bmod p = ((a\bmod p) + (b\bmod p)) \bmod p$ （对）<br>
+$(a - b) \bmod p = ((a\bmod p) - (b\bmod p)) \bmod p$ （对）<br>
+$(a \times b) \bmod p = ((a\bmod p) \times (b\bmod p)) \bmod p$ （对）</p>
+<p>$(a \div b) \bmod p = ((a\bmod p) \div (b\bmod p)) \bmod p$ <strong>（错）</strong></p>
+<blockquote>
+<p>如：<br>
+$(100/50)\bmod20 = 2$<br>
+$\nRightarrow((100\bmod20)/(50\bmod20))\bmod20=0$</p>
+</blockquote>
+<p>因此如果对于一些题目，如果运算要求求余，但该运算为除法，<br>
+我们就不能<strong>直接像加减乘运算一样拆开求余</strong>。</p>
+<p>但如果被除数，除数也超范围，那是不是只能用高精度了？<br>
+并不是这样，我们可以利<strong>用乘法逆元来拆开求余</strong>。</p>
+<hr>
+<p>乘法逆元又称为数论倒数。<br>
+既然这么称呼，那么乘法逆元就跟倒数有相似之处。</p>
+<p>对于普通的数学运算$a \div b$，<br>
+其也可以写成$a \times \frac{1}{b}$。</p>
+<p>因此对于求余运算$(a/b) \bmod m$，<br>
+其也可以写成$(a \cdot b^{-1}) \bmod m$，</p>
+<p>这时便可以拆开求余为$((a\bmod m) \cdot (b^{-1}\bmod m))\bmod m$。</p>
+<hr>
+<p><strong>即存在性质</strong>：
+$$a/b \bmod m = a \cdot b^{-1} \bmod m$$</p>
+<p>*参考自“Aloof__”的<a class="link" href="https://blog.csdn.net/weixin_43872728/article/details/99687168"  target="_blank" rel="noopener"
+    >「乘法逆元的作用（逆元的作用是什么）」</a>。*</p>
+<h4 id="证明">证明</h4>
+<p>根据逆元的定义，存在：
+$$b \cdot b^{-1} \equiv 1 \pmod m$$</p>
+<p>同余式两边同乘$a$，得到：
+$$ab \cdot b^{-1} \equiv a \pmod m$$</p>
+<p>同余式两边同除$b$，得到：
+$$a \cdot b^{-1} \equiv a/b \pmod m$$</p>
+<p>得证。</p>
+<h3 id="2-线性同余方程的反函数">2. 线性同余方程的反函数</h3>
+<p>对于线性同余方程$ax \equiv b \pmod m$，<br>
+表示为函数的形式即为$f(x) = ax \bmod m$。</p>
+<p>如果知道函数值$f(x)$，<br>
+那么反求解$x$的方法为：$x = f(x) \cdot a^{-1}$。</p>
+<p>需要满足$x&lt;m$，<br>
+否则为$x \equiv f(x) \cdot a^{-1} \pmod m$。</p>
+<blockquote>
+<p>如：<br>
+$2x \equiv f(x) \pmod{11}$。
+当$x = 13$时，$f(x) = 4。</p>
+<p>$2$对$11$的逆元是$6$，<br>
+$4 \times 6 = 24$。</p>
+<p>$24 \equiv x(13) \pmod{11}$，<br>
+而不是$24 = x(13)$。</p>
+</blockquote>
+<hr>
+<p>主要应用于CTF中仿射加密的解密。</p>
+<h4 id="证明-1">证明</h4>
+<p>很简单的证明。</p>
+<p>$$ax \equiv f(x) \pmod m$$
+$$ax \cdot a^{-1} \equiv f(x) \cdot a^{-1} \pmod m$$
+$$x \equiv f(x) \cdot a^{-1} \pmod m$$
+得证。</p>
+<h2 id="求解方法">求解方法</h2>
+<p>待补充！……</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/%E6%95%B0%E8%AE%BA/">数论</a>
+        
+            <a href="/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/">乘法逆元</a>
+        
+            <a href="/tags/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/">线性同余方程</a>
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2021/02/18 18:32
+        </span>
+    </section><section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/83179646" target="_blank" rel="noopener">83179646</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-gcd_exgcd/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-gcd_exgcd/73415224_p0.a7190ef993ac04cbeec0529fdbb8d39f_hu09ddeb20de934db6dbd54dd691a098a4_1500993_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-GCD_EXGCD" 
+                        data-hash="md5-pxkO&#43;ZOsBMvuwFKf27jTnw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：GCD、裴蜀定理、EXGCD……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-union_find/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-union_find/60855211_p0.a07a83fa1564e2ee235e40f1b19ffbb0_hu2f29f1f8fc777ac15405156777510011_1339015_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-union_find" 
+                        data-hash="md5-oHqD&#43;hVk4u4jXkDxsZ/7sA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：并查集……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-segment_tree/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-segment_tree/67957130_p0.c5cb31194a7e4ca539d9a4fb08d8c6ec_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-segment_tree" 
+                        data-hash="md5-xcsxGUp&#43;TKU52aT7CNjG7A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：线段树……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-neighbor_sort/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-neighbor_sort/71111285_p0.af7df8fc45491ad0333c518aac5d00c1_hud2648e021785c2a9f9434e425c67999f_2056049_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-neighbor_sort" 
+                        data-hash="md5-r334/EVJGtAzPFGKrF0AwQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：邻项比较排序……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-greedy/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-greedy/80942286_p0.f4ace0f01d19dcce681fdce51cc97d08_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-greedy" 
+                        data-hash="md5-9Kzg8B0Z3M5oH9zlHMl9CA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：贪心……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

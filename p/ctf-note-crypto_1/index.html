@@ -1,0 +1,1620 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='涅普计划——古典密码部分的笔记……'><title>Crypto - 古典密码……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/ctf-note-crypto_1/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Crypto - 古典密码……'>
+<meta property='og:description' content='涅普计划——古典密码部分的笔记……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/ctf-note-crypto_1/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='涅普计划' /><meta property='article:tag' content='Crypto' /><meta property='article:tag' content='古典密码' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2021-02-04T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-02-18T23:51:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/ctf-note-crypto_1/85100927_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Crypto - 古典密码……">
+<meta name="twitter:description" content="涅普计划——古典密码部分的笔记……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/ctf-note-crypto_1/85100927_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0x00-课程视频">0x00 课程视频</a></li>
+    <li><a href="#0x01-什么是密码学">0x01 什么是密码学</a></li>
+    <li><a href="#0x02-凯撒加密">0x02 凯撒加密</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#加密脚本">加密脚本</a></li>
+        <li><a href="#爆破脚本">爆破脚本</a></li>
+      </ul>
+    </li>
+    <li><a href="#0x03-关键词加密">0x03 关键词加密</a>
+      <ul>
+        <li><a href="#定义-1">定义</a></li>
+        <li><a href="#示例">示例</a>
+          <ul>
+            <li><a href="#生成密码表">生成密码表</a></li>
+            <li><a href="#加密">加密</a></li>
+            <li><a href="#解密">解密</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#0x04-仿射加密">0x04 仿射加密</a>
+      <ul>
+        <li><a href="#定义-2">定义</a></li>
+        <li><a href="#方法原理">方法原理</a></li>
+        <li><a href="#逆元求解">逆元求解</a></li>
+        <li><a href="#加密脚本-1">加密脚本</a></li>
+        <li><a href="#爆破脚本-1">爆破脚本</a></li>
+        <li><a href="#例题">例题</a>
+          <ul>
+            <li><a href="#加密过程">加密过程</a></li>
+            <li><a href="#解题过程">解题过程</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#0x05-单表替代密码分析">0x05 单表替代密码分析</a>
+      <ul>
+        <li><a href="#定义-3">定义</a></li>
+        <li><a href="#分析方法">分析方法</a>
+          <ul>
+            <li><a href="#词频分析">词频分析</a></li>
+            <li><a href="#双联分析">双联分析</a></li>
+            <li><a href="#模式匹配">模式匹配</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#0x06-维吉尼亚加密">0x06 维吉尼亚加密</a>
+      <ul>
+        <li><a href="#加密过程-1">加密过程</a></li>
+        <li><a href="#解密过程">解密过程</a></li>
+        <li><a href="#破解方法">破解方法</a>
+          <ul>
+            <li><a href="#1-分析长度">1. 分析长度</a></li>
+            <li><a href="#2-转化为单表加密问题">2. 转化为单表加密问题</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#0x07-替换和编码">0x07 替换和编码</a>
+      <ul>
+        <li><a href="#类型和编码">类型和编码</a></li>
+        <li><a href="#类型转换">类型转换</a>
+          <ul>
+            <li><a href="#整数进制转换">整数进制转换</a></li>
+            <li><a href="#字符串类型转换">字符串类型转换</a></li>
+            <li><a href="#整数和字节类型转换">整数和字节类型转换</a></li>
+          </ul>
+        </li>
+        <li><a href="#编码">编码</a>
+          <ul>
+            <li><a href="#base64编码">Base64编码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#0x08-写在最后">0x08 写在最后</a></li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/ctf-note-crypto_1/">
+                <img src="/p/ctf-note-crypto_1/85100927_p0_hu5c6c9f4da506a8b7dfcc39af1be1b7cf_10213578_800x0_resize_box_2.png"
+                        srcset="/p/ctf-note-crypto_1/85100927_p0_hu5c6c9f4da506a8b7dfcc39af1be1b7cf_10213578_800x0_resize_box_2.png 800w, /p/ctf-note-crypto_1/85100927_p0_hu5c6c9f4da506a8b7dfcc39af1be1b7cf_10213578_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="470" 
+                        loading="lazy"
+                        alt="Featured image of post Crypto - 古典密码……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/ctf/" >
+                CTF
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/ctf-note-crypto_1/">Crypto - 古典密码……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            涅普计划——古典密码部分的笔记……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/02/04</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：8533</div>
+            <div class="time">预计阅读时长： <time>18</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <div class="snote info ">
+	<div class="snote-content">
+		<p> 以下为涅普计划的课程笔记，建议搭配课程视频理解。 </p>
+	</div>
+</div>
+<h1 id="0x00-课程视频">0x00 课程视频</h1>
+<details class="sc-details" >
+	<summary>课程视频</summary>
+	<div class="sc-details--inner"><div class="bilibili-player"style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+	<iframe loading="lazy" src="https://player.bilibili.com/player.html?bvid=BV1VA411u7Tg&high_quality=1&page=5" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Bilibili Video"></iframe>
+</div>
+<p><a href="https://www.bilibili.com/video/BV1VA411u7Tg?p=5">视频Bilibili链接</a></div>
+</details>
+<h1 id="0x01-什么是密码学">0x01 什么是密码学</h1>
+<p>【基本概念与作用应该都知道一点吧，这里不做基础介绍了_(:з」∠)_……</p>
+<hr>
+<p>古典密码学主要关注<strong>信息的保密书写和传递</strong>，以及与其<strong>相应的破译方法</strong>。</p>
+<p>现代密码学不只关注信息保密问题，<br>
+还同时涉及<strong>信息完整性验证</strong>、信息发布的<strong>不可抵赖性</strong>、以及在分布式计算中产生的来源于内部和外部的攻击的<strong>所有信息安全问题</strong>。</p>
+<hr>
+<p>CTF中的古典密码学题目有时也会出现在杂项里面，<br>
+古典加密常常<strong>不给出加密算法</strong>，需要判断或者尝试一下。</p>
+<p>而CTF中的现代加密常常会<strong>给出加密算法</strong>，或者以一些形式<strong>提示</strong>某种常用的<strong>加密算法</strong>。<br>
+即通过公开的加密算法和题目给的条件来<strong>思考解密的算法并加以实现</strong>。</p>
+<hr>
+<p>密码学描述中，对传输者和窃取者有习惯名称。<br>
+<figure style="flex-grow: 231; flex-basis: 555px">
+		<a href="/p/ctf-note-crypto_1/pic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%AE%9A%E4%B9%89_1.png" data-size="1383x597"><img src="/p/ctf-note-crypto_1/pic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%AE%9A%E4%B9%89_1.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%AE%9A%E4%B9%89_1_hu7d742234fcf1a58dd5c5bff532008b00_352868_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%AE%9A%E4%B9%89_1_hu7d742234fcf1a58dd5c5bff532008b00_352868_1024x0_resize_box_2.png 1024w"
+				width="1383"
+				height="597"
+				loading="lazy"
+				alt="什么是密码学 - 名称约定">
+		</a>
+		
+		<figcaption>什么是密码学 - 名称约定</figcaption>
+		
+	</figure></p>
+<hr>
+<p>可以用数学中的函数形式来表达加密解密的过程。<br>
+<figure style="flex-grow: 269; flex-basis: 647px">
+		<a href="/p/ctf-note-crypto_1/pic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%AE%9A%E4%B9%89_2.png" data-size="1061x393"><img src="/p/ctf-note-crypto_1/pic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%AE%9A%E4%B9%89_2.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%AE%9A%E4%B9%89_2_hu6dd4f18ccad4ea447c3850bd88ea4a48_45083_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%86%E7%A0%81%E5%AD%A6-%E5%AE%9A%E4%B9%89_2_hu6dd4f18ccad4ea447c3850bd88ea4a48_45083_1024x0_resize_box_2.png 1024w"
+				width="1061"
+				height="393"
+				loading="lazy"
+				alt="什么是密码学 - 数学表示">
+		</a>
+		
+		<figcaption>什么是密码学 - 数学表示</figcaption>
+		
+	</figure></p>
+<ul>
+<li>$k$代表密钥，$m$代表明文，$c$代表密文。</li>
+<li>$E$代表加密函数，$D$代表解密函数。</li>
+<li>加密过程为：$c=E(k,m)$</li>
+<li>解密过程为：$m=D(k,c)$</li>
+</ul>
+<h1 id="0x02-凯撒加密">0x02 凯撒加密</h1>
+<h2 id="定义">定义</h2>
+<p>凯撒加密(Caesar Cipher)是一种最简单且最广为人知的加密技术，它<strong>属于替代加密</strong>，<br>
+明文中的所有字母都在字母表上向后（或向前）<strong>按照一个固定数目进行偏移</strong>后被替换成密文。</p>
+<p>按密匙进行移位后，可以得到一张一一对应的<strong>密码表</strong>，<br>
+基本的加密解密过程都可以通过查表来完成。</p>
+<p><figure style="flex-grow: 103; flex-basis: 247px">
+		<a href="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E5%AF%86%E7%A0%81%E8%A1%A8.png" data-size="363x352"><img src="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E5%AF%86%E7%A0%81%E8%A1%A8.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E5%AF%86%E7%A0%81%E8%A1%A8_hu829e707ea95e1a28925c2581187f1fe4_65367_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E5%AF%86%E7%A0%81%E8%A1%A8_hu829e707ea95e1a28925c2581187f1fe4_65367_1024x0_resize_box_2.png 1024w"
+				width="363"
+				height="352"
+				loading="lazy"
+				alt="凯撒加密 - 密码表">
+		</a>
+		
+		<figcaption>凯撒加密 - 密码表</figcaption>
+		
+	</figure></p>
+<p>外圈对应明文，内圈对应密文。<br>
+加密时：将明文字母一一替换成内圈字母，<br>
+解密时：将密文字母一一替换成外圈字母。</p>
+<hr>
+<ul>
+<li>类型：单表替代加密。</li>
+<li>加密对象：一般为字母。</li>
+<li>加密方式：字母按偏移量（密钥）移位。</li>
+<li>安全性：非常差。<br>
+密钥<strong>只有25种情况</strong>，很轻易就能<strong>枚举出来</strong>。</li>
+</ul>
+<h2 id="加密脚本">加密脚本</h2>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_uppercase</span>
+
+<span class="n">Plaintext</span> <span class="o">=</span> <span class="s2">&#34;game.granbluefantasy.jp&#34;</span> <span class="c1"># 在这里输入明文</span>
+<span class="n">Key</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># 在这里输入密钥</span>
+
+<span class="n">Plaintext</span> <span class="o">=</span> <span class="n">Plaintext</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="c1"># 为了加密过程简单，将字符串字母全转换为大写</span>
+
+<span class="k">def</span> <span class="nf">Encrypt</span><span class="p">(</span><span class="n">Plaintext</span><span class="p">,</span> <span class="n">Key</span><span class="p">):</span> <span class="c1"># 加密函数，操作为减少偏移量</span>
+    <span class="n">Ciphertext</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Plaintext</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ascii_uppercase</span><span class="p">:</span>
+            <span class="n">Ciphertext</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Ciphertext</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(((</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">)</span> <span class="o">-</span> <span class="n">Key</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">)</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">Ciphertext</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">Encrypt</span><span class="p">(</span><span class="n">Plaintext</span><span class="p">,</span> <span class="n">Key</span><span class="p">))</span> <span class="c1"># 直接输出加密结果</span>
+</code></pre></div><p>运行结果：<br>
+<figure style="flex-grow: 635; flex-basis: 1525px">
+		<a href="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E5%8A%A0%E5%AF%86%E7%A4%BA%E4%BE%8B.png" data-size="178x28"><img src="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E5%8A%A0%E5%AF%86%E7%A4%BA%E4%BE%8B.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E5%8A%A0%E5%AF%86%E7%A4%BA%E4%BE%8B_hu50c834566d122d9d8860c270bde1212c_1970_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E5%8A%A0%E5%AF%86%E7%A4%BA%E4%BE%8B_hu50c834566d122d9d8860c270bde1212c_1970_1024x0_resize_box_2.png 1024w"
+				width="178"
+				height="28"
+				loading="lazy"
+				alt="凯撒加密 - 加密示例">
+		</a>
+		
+		<figcaption>凯撒加密 - 加密示例</figcaption>
+		
+	</figure></p>
+<h2 id="爆破脚本">爆破脚本</h2>
+<p>由于密钥情况很少，可以直接爆破枚举出来，<br>
+观察找出有意义的字符串，则为明文。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_uppercase</span>
+
+<span class="n">Ciphertext</span> <span class="o">=</span> <span class="s2">&#34;DXJB.DOXKYIRBCXKQXPV.GM&#34;</span> <span class="c1"># 在这里输入密文</span>
+
+<span class="n">Ciphertext</span> <span class="o">=</span> <span class="n">Ciphertext</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">Decrypt</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">,</span> <span class="n">Key</span><span class="p">):</span> <span class="c1"># 解密函数，假定加密过程为减少偏移量</span>
+    <span class="n">Plaintext</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Ciphertext</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ascii_uppercase</span><span class="p">:</span>
+            <span class="n">Plaintext</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">Plaintext</span> <span class="o">+=</span> <span class="nb">chr</span><span class="p">(((</span><span class="nb">ord</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">)</span> <span class="o">+</span> <span class="n">Key</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">)</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&#34;A&#34;</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">Plaintext</span>
+
+
+<span class="k">for</span> <span class="n">Key</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">26</span><span class="p">):</span> <span class="c1"># 爆破密钥，范围为0~26</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Key = &#34;</span><span class="p">,</span> <span class="n">Key</span><span class="p">,</span> <span class="s2">&#34;---&gt;&#34;</span><span class="p">,</span> <span class="n">Decrypt</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">,</span> <span class="n">Key</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&#34;&#34;</span><span class="p">)</span>
+</code></pre></div><p>运行结果：<br>
+<figure style="flex-grow: 54; flex-basis: 131px">
+		<a href="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E8%A7%A3%E5%AF%86%E7%A4%BA%E4%BE%8B.png" data-size="244x446"><img src="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E8%A7%A3%E5%AF%86%E7%A4%BA%E4%BE%8B.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E8%A7%A3%E5%AF%86%E7%A4%BA%E4%BE%8B_huf26658dfac6e6e356734e8eca7a324fb_28773_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E5%87%AF%E6%92%92%E5%8A%A0%E5%AF%86-%E8%A7%A3%E5%AF%86%E7%A4%BA%E4%BE%8B_huf26658dfac6e6e356734e8eca7a324fb_28773_1024x0_resize_box_2.png 1024w"
+				width="244"
+				height="446"
+				loading="lazy"
+				alt="凯撒加密 - 解密示例">
+		</a>
+		
+		<figcaption>凯撒加密 - 解密示例</figcaption>
+		
+	</figure></p>
+<p>可以发现<code>Key = 3</code>时，<br>
+出现了一串有意义的字符串<code>GAME.GRANBLUEFANTASY.JP</code>。</p>
+
+
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><p>注意这里的密钥不一定正确，<br>
+因为加密过程可能为增加偏移量，也可能为减少。</p>
+<p>但密钥对我们来说并不重要，所以不用在意其正确性。</p>
+</p>
+	</div>
+</div>
+<h1 id="0x03-关键词加密">0x03 关键词加密</h1>
+<h2 id="定义-1">定义</h2>
+<p>关键词加密(Keyword Cipher)也是一种<strong>单表替代加密</strong>，与凯撒加密不同之处在于<strong>密钥可以更为复杂</strong>。</p>
+<p>加密时需要选择一个关键词，<br>
+如果这个关键词有重复的字母，去除除第一次出现之外的所有的相同的字母。</p>
+<blockquote>
+<p>e.g.</p>
+<p>如果选定的关键词为“success”，则使用“suce”。</p>
+</blockquote>
+<p>将该关键词写在字母表的下方，并用字母表的其他字母按标准的顺序填写余下的空间，<br>
+这样就构建了字母一一对应关系的<strong>密码表</strong>。</p>
+<p>加密时用下面一行中的字母对应替换上面一行的字母；<br>
+解密时用上面一行中的字母对应替换下面一行的字母。（也可能反过来）</p>
+<hr>
+<ul>
+<li>类型：单表替代加密。</li>
+<li>加密对象：一般为字母。</li>
+<li>加密方式：用关键词（密钥）生成密码表，然后按照密码表替换字母。</li>
+<li>安全性：一般。<br>
+密钥不能轻易枚举出来，<br>
+但<strong>通过密码分析可能破译出密码</strong>。</li>
+</ul>
+<h2 id="示例">示例</h2>
+<h3 id="生成密码表">生成密码表</h3>
+<p>假定关键词为<code>angstromcf</code>。</p>
+<p>则生成密码表如图：<br>
+<figure style="flex-grow: 1715; flex-basis: 4116px">
+		<a href="/p/ctf-note-crypto_1/pic/%E5%85%B3%E9%94%AE%E8%AF%8D%E5%8A%A0%E5%AF%86-%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E8%A1%A8.png" data-size="1012x59"><img src="/p/ctf-note-crypto_1/pic/%E5%85%B3%E9%94%AE%E8%AF%8D%E5%8A%A0%E5%AF%86-%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E8%A1%A8.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E5%85%B3%E9%94%AE%E8%AF%8D%E5%8A%A0%E5%AF%86-%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E8%A1%A8_hua320732d1f7dea177c0e689dfbf5bd0c_35722_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E5%85%B3%E9%94%AE%E8%AF%8D%E5%8A%A0%E5%AF%86-%E7%94%9F%E6%88%90%E5%AF%86%E7%A0%81%E8%A1%A8_hua320732d1f7dea177c0e689dfbf5bd0c_35722_1024x0_resize_box_2.png 1024w"
+				width="1012"
+				height="59"
+				loading="lazy"
+				alt="关键词加密 - 生成密码表">
+		</a>
+		
+		<figcaption>关键词加密 - 生成密码表</figcaption>
+		
+	</figure></p>
+<p>上面一行为标准的字母表。</p>
+<p>下面一行先将关键词<code>angstromcf</code>填上，<br>
+然后将剩余未出现的字母，按照顺序填入。</p>
+<h3 id="加密">加密</h3>
+<p>对于明文：<code>actf{yum_delicious_salad}</code>。</p>
+<p>定加密的替换方式为：<strong>上面一行替换下面一行</strong>，<br>
+即：将明文中的上面一行中的字母，对应替换成下面一行的字母。</p>
+<blockquote>
+<p>e.g.</p>
+<p>第一个<code>a</code>字母，替换成<code>a</code>，<br>
+第二个<code>c</code>字母，替换成<code>g</code>，<br>
+第三个<code>t</code>字母，替换成<code>q</code>。</p>
+</blockquote>
+<p>则得到密文：<code>agqr{yue_stdcgciup_padas}</code>。</p>
+<h3 id="解密">解密</h3>
+<p>对于密文：<code>agqr{yue_stdcgciup_padas}</code>。</p>
+<p>由于加密时为上面一行替换下面一行，<br>
+所以解密的替换方式为：<strong>下面一行替换上面一行</strong>，<br>
+即：将密文中的下面一行中的字母，对应替换成上面一行的字母。</p>
+<blockquote>
+<p>e.g.</p>
+<p>第一个<code>a</code>字母，替换成<code>a</code>，<br>
+第二个<code>g</code>字母，替换成<code>c</code>，<br>
+第三个<code>q</code>字母，替换成<code>t</code>。</p>
+</blockquote>
+<p>则得到明文：<code>actf{yum_delicious_salad}</code>。</p>
+<h1 id="0x04-仿射加密">0x04 仿射加密</h1>
+<div class="snote quote ">
+	<div class="snote-content">
+		<p> 「这个比前面的要稍微复杂一点。」 —— Am473ur </p>
+	</div>
+</div>
+<p>比较复杂的加密方法，因为涉及到一定的数学知识。</p>
+<h2 id="定义-2">定义</h2>
+<p>在仿射加密中，<strong>如果只对字母加密</strong>（<strong>注意这个前提</strong>），<br>
+则<strong>每个字母都对应一个数字</strong>（字母<code>a~z</code>分别对应数字<code>0~25</code>）。</p>
+<p>密钥为：$0\sim25$之间的数字对$(a,b)$。<br>
+<strong>其中$a$与$26$的最大公约数必须为$1$，$\gcd(𝑎, 26) = 1$</strong><br>
+即$a$与$26$互素。</p>
+<blockquote>
+<p>e.g.</p>
+<p>$a = 5$就可以，<br>
+因为只有$1$能整除$5$和$26$，$\gcd(5, 26) = 1$。</p>
+<p>$a = 2$就不可以，<br>
+因为$\gcd(2, 26) = 2$。</p>
+</blockquote>
+<p>记：$p$为明文字母对应的数字，$c$为密文字母对应的数字。</p>
+<ul>
+<li>加密算法为：
+$$c \equiv a \cdot p + b \pmod{26}$$
+
+
+<div class="snote warning ">
+	<div class="snote-content">
+		<p>需要注意是计算完$a \cdot p + b$再取模。<br>
+也就是代码为<code>(a*p+b)%26</code>，而不是<code>a*p+(b%26)</code>。</p>
+	</div>
+</div></li>
+<li>解密算法为：
+$$p \equiv a^{-1} \cdot (c-b) \pmod{26}$$
+其中$a^{-1}$代表$a$的逆元。</li>
+</ul>
+<p>特别的：当$a=1$时，这种加密方法就是凯撒加密，其中$b$就是偏移量。</p>
+<hr>
+<p>需注意这种方法的加密对象<strong>也可能包括数字等其他符号</strong>。</p>
+<blockquote>
+<p>其实前面的加密方法也可以包括其他字符。</p>
+<p>比如凯撒加密，只需要把<code>012</code>接在<code>xyz</code>后面参与加密即可。</p>
+<blockquote>
+<p>如加密方式为<code>+2</code>，<br>
+则明文<code>abc xyz 012 789</code>，加密为<code>cde z01 234 9ab</code>。</p>
+</blockquote>
+<p>不过前面的加密方式一般均为字母，<br>
+而仿射加密则有可能包含数字（如后面的例题）。</p>
+</blockquote>
+<p>只需要把其他字符也对应一个相应的编号即可。</p>
+<p>甚至可以就用ASCII码表，就可以加密所有ASCII表中的字符了。</p>
+<blockquote>
+<p>e.g.</p>
+<p>对于<code>a</code>这个字符，转化为数字<code>97</code>，<br>
+假设通过加密算法运算，得到结果为<code>33</code>，转化为字符<code>!</code>。<br>
+则将<code>a</code>加密为<code>!</code>。</p>
+<p>对于<code>7</code>这个字符，转化为数字<code>55</code>,<br>
+假设通过加密算法运算，得到结果为<code>83</code>，转化为字符<code>S</code>。<br>
+则将<code>7</code>加密为<code>S</code>。</p>
+<p>那么对于字符串<code>Nico2333...</code>，<br>
+其中所有的字符都可以加密，而不只是针对字母加密，<br>
+加密结果如<code>6$Ja8www(((</code>。</p>
+</blockquote>
+<p>然后对于要加密的字符表中，总字符个数为$m$个，<br>
+那么$a$和$b$的取值范围$0 \sim (m-1)$，满足$\gcd(a,m)=1$<br>
+同时模数为$m$。</p>
+<p>因此<strong>真正加密算法</strong>应该是：
+$$c \equiv a \cdot p + b \pmod m$$
+其中$m$代表字符个数，<br>
+$a∈(0,m-1), b∈(0,m-1)$，且需满足$\gcd(a,m)=1$。</p>
+<hr>
+<ul>
+<li>类型：单表替代加密。</li>
+<li>加密对象：字母、数字等均可。</li>
+<li>加密方式：将每个符号转换为数字$p$后，通过公式计算$c \equiv a \cdot p + b \pmod{26}$，再将$c$转换为对应符号。</li>
+<li>安全性：较差。<br>
+若加密对象只为字母，且为一层仿射加密，则情况数为$12\times26 - 1 = 311$种，也<strong>可以枚举得到</strong>。<br>
+若情况种数较多，仍<strong>可能通过密码分析破译出密码</strong>。</li>
+</ul>
+<h2 id="方法原理">方法原理</h2>
+<div class="snote info yellow">
+	<div class="snote-content">
+		<p> 以下部分设计较多的数论知识，如只用来做题可以不必详细了解原理。 </p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>仿射加密原理</summary>
+	<div class="sc-details--inner"><p>对于这些古典加密方法，<br>
+最重要的就是加密函数需要满足<strong>一一对应关系</strong>，即为<strong>双射函数</strong>，<br>
+这样才能<strong>保证加密后可以正确解密</strong>。
+【如果为一对多或多对一，那么加密后解密则会造成混乱，因为不存在反函数。</p>
+<p>首先将符号映射成一个唯一数字（编号），<br>
+经过加密算法运算后，<br>
+因为这个加密算法<strong>为线性方程</strong>$ax+b$，并且最终会<strong>对字符个数$m$取模</strong>，<br>
+这样可以保证运算后的<strong>结果仍在字符集编号范围中</strong>，可以转换为对应符号。</p>
+<p>但注意这样运算后，并不能确保为一一对应关系，</p>
+<blockquote>
+<p>e.g.</p>
+<p>字符集只有四个，即$m=4$，编号为$0,1,2,3$，<br>
+取$(a,b)=(2,1)$，<br>
+经过加密算法$c \equiv a \cdot p + b \pmod m$<br>
+对于$0$，运算后为$1$，<br>
+对于$1$，运算后为$3$，<br>
+对于$2$，运算后为$1$，<br>
+对于$3$，运算后为$3$。</p>
+<p>则并不为一一对应关系，通过密文无法得到明文。</p>
+</blockquote>
+<p>而要确保为一一对应，即使加密算法为双射函数，<br>
+则需要<strong>满足$\gcd(a,m)=1$，即$a,m$互质</strong>。</p>
+<p><em>对于以下证明，可能需要先了解有关同余和线性同余方程的相关知识，</em><br>
+<em>可以查看本博客的文章<a href="../acm-note-linear_equation#0x00-%E5%89%8D%E6%8F%90%E7%9F%A5%E8%AF%86">ACM学习笔记：线性同余方程……</a>中的“前提知识”和“初步认识”章节。</em></p>
+<blockquote>
+<p>证明：</p>
+<p>要证明当$\gcd(a,m)=1$时，函数$E(p)=(a \cdot p + b) \bmod m$为双射函数，<br>
+可以采用反证法。</p>
+<ol>
+<li>
+<p><strong>反证多对一不成立</strong>：</p>
+<p>假设存在$p_1,p_2 \in [0, m-1]$，且$p_1 &lt; p_2$，<br>
+满足$a \cdot p_1 + b \equiv C \pmod m$，$a \cdot p_2 + b \equiv C \pmod m$，<br>
+即：$a \cdot p_1 + b \equiv a \cdot p_2 + b \pmod m$。</p>
+<p>则有：
+$$a \cdot p_1 + b + m \cdot n = a \cdot p_2 + b (n \in N^+)$$
+$$a \cdot (p_2 - p_1) = m \cdot n (n \in N^+)$$
+$∵p_2 - p_1 \in N^+$
+$$p_2 - p_1 = a \mid (m \cdot n)$$
+由定义可知：<br>
+$∵\gcd(a, m) = 1$<br>
+即$m$不能被$a$整除，<br>
+所以只能是$n$为$a$的整数倍，才能使得$a \mid (m \cdot n)$。<br>
+$∴n / a &gt;= 1$<br>
+$∴p_2 - p_1 &gt;= m$<br>
+$∴p_1$和$p_2$不可能同在$[0,m-1]$范围内，与假设矛盾，故<strong>不成立</strong>。</p>
+</li>
+<li>
+<p><strong>反证一对多不成立</strong>：</p>
+<p>假设存在$C_1, C_2 \in [0, m-1]$，且$C_1 &lt; C2$，<br>
+满足$a \cdot p + b \equiv C_1 \pmod m$，$a \cdot p + b \equiv C_2 \pmod m$，<br>
+即：$C_1 \equiv C_2 \pmod m$。</p>
+<p>则有：<br>
+$$C_1 + m \cdot n = C_2 (n \in N^+)$$<br>
+$∴C_2 - C_1 &gt;= m$，<br>
+$∴C_1$和$C_2$不可能同在$[0,m-1]$范围内，与假设矛盾，故<strong>不成立</strong>。</p>
+</li>
+</ol>
+<p>由此可知，该函数只能为一一对应，即为双射函数。</p>
+</blockquote>
+<p><em>参考自&quot;hahastudio&quot;在V2EX上对 <a href="https://www.v2ex.com/t/222892">「数论，加密，仿射变换后唯一性问题」</a>问题的回答。</em></p>
+<hr>
+<p>满足了为双射函数，还有一个重要的点就是：<br>
+该函数的<strong>反函数容易求得</strong>。<br>
+否则也不能轻易地解密。</p>
+<p>而这个求余操作的反函数，需要用到一个叫“逆元”的东西。<br>
+加密算法为：$c = (a \cdot p + b) \bmod 26$，<br>
+则解密算法为：$p = (c - b) \cdot a^{-1}$</p>
+<p><em>对于逆元的了解，</em><br>
+<em>可以查看本博客的文章<a href="../acm-note-linear_equation#2-%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B%E7%9A%84%E5%8F%8D%E5%87%BD%E6%95%B0">ACM学习笔记：线性同余方程……</a>中的“2. 线性同余方程的反函数”章节。</em></p>
+<blockquote>
+<p>证明：</p>
+<p>【看了上面链接文章里的内容后，这里就应该很好理解了吧应该……</p>
+<p>$$c  \equiv a \cdot p + b \pmod{m}$$
+$$c - b \equiv a \cdot p \pmod{m}$$
+$$(c - b) \cdot a^{-1} \equiv a \cdot p \cdot a^{-1} \pmod{m}$$
+$$(c - b) \cdot a^{-1} \equiv p \pmod{m}$$</p>
+<p>因为$p &lt; m$，<br>
+所以$p = (c - b) \cdot a^{-1}$，得证。</p>
+</blockquote>
+</div>
+</details>
+<h2 id="逆元求解">逆元求解</h2>
+<p>对于逆元的求解，Python中有两个函数可以求解。</p>
+<ol>
+<li>
+<p>可以用Python的第三方库<code>gmpy2</code>的<code>invert</code>函数。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">gmpy2</span> <span class="kn">import</span> <span class="n">invert</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">invert</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span> <span class="c1"># 表示求5对模数26的逆元。ans = 21</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<span class="c1"># 21</span>
+</code></pre></div><p><em>gmpy2包的安装方法可查看&quot;osc_e45irv7l&quot;的<a class="link" href="https://my.oschina.net/u/4392508/blog/4473300"  target="_blank" rel="noopener"
+    >「python3安装gmpy2」</a>文章。</em></p>
+</li>
+<li>
+<p>可以用Python的第三方库<code>Crypto</code>的<code>inverse</code>函数。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">ans</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">26</span><span class="p">)</span> <span class="c1"># 表示求5对模数26的逆元。ans = 21</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ans</span><span class="p">)</span>
+<span class="c1"># 21</span>
+</code></pre></div><p><em>Python3中Crypto库安装可以输入命令<code>pip install pycryptodome</code></em></p>
+</li>
+</ol>
+<p>两者区别在于：<br>
+对于逆元的求解，两数必须互素。</p>
+<p>如果输入的两参数不互素，<br>
+<code>gmpy2</code>的<code>invert</code>函数会使程序报错，<br>
+而<code>Crypto</code>的<code>inverse</code>不会，其会返回一个很怪的结果【是先将两参数除掉一个最大公约数让其互素，再返回结果……</p>
+<h2 id="加密脚本-1">加密脚本</h2>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_lowercase</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">ascii_lowercase</span> <span class="c1"># 定义字符集</span>
+<span class="n">MOD</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="c1"># 确定模数m</span>
+
+<span class="k">def</span> <span class="nf">Encrypt</span><span class="p">(</span><span class="n">Plaintext</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span> <span class="c1"># 加密函数</span>
+    <span class="n">Ciphertext</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Plaintext</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ascii_lowercase</span><span class="p">:</span>
+            <span class="n">Ciphertext</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rawIndex</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># 先将字符转换为数字编号</span>
+            <span class="n">cipherIndex</span> <span class="o">=</span> <span class="p">(</span><span class="n">rawIndex</span> <span class="o">*</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="c1"># 加密函数计算</span>
+            <span class="n">Ciphertext</span> <span class="o">+=</span> <span class="n">table</span><span class="p">[</span><span class="n">cipherIndex</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">Ciphertext</span>
+</code></pre></div><h2 id="爆破脚本-1">爆破脚本</h2>
+<p>首先由于状态数少，所以可以枚举爆破。</p>
+<p>并且我们知道答案格式的开头为<code>flag</code>，<br>
+所以可以只查找爆破结果为<code>flag</code>开头的字符串输出，得到正确答案。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_lowercase</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">ascii_lowercase</span> <span class="c1"># 定义字符集</span>
+<span class="n">MOD</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="c1"># 确定模数m</span>
+
+<span class="k">def</span> <span class="nf">crack</span><span class="p">():</span> <span class="c1"># 爆破a、b函数</span>
+    <span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MOD</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">B</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MOD</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;f&#34;</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="c1"># 按当前a、b加密f字符后，与密文第一位相同</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;l&#34;</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="c1"># 按当前a、b加密l字符后，与密文第二位相同。【后两句if类推</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;g&#34;</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">[</span><span class="mi">3</span><span class="p">]):</span>
+                            <span class="c1"># flag均匹配，证明就为当前a、b</span>
+                            <span class="k">return</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Decrypt</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span> <span class="c1"># 解密函数</span>
+    <span class="n">Plaintext</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="n">inv</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">MOD</span><span class="p">)</span> <span class="c1"># 求得A对Mod的逆元</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Ciphertext</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span><span class="p">:</span>
+            <span class="n">Plaintext</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rawIndex</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># 先将字符转换为数字编号</span>
+            <span class="n">plainIndex</span> <span class="o">=</span> <span class="p">(</span><span class="n">rawIndex</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span> <span class="o">*</span> <span class="n">inv</span> <span class="o">%</span> <span class="n">MOD</span> <span class="c1"># 解密函数计算</span>
+            <span class="n">Plaintext</span> <span class="o">+=</span> <span class="n">table</span><span class="p">[</span><span class="n">plainIndex</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">Plaintext</span>
+</code></pre></div><p>如果为其他格式开头，相应修改即可。</p>
+<h2 id="例题">例题</h2>
+<p>对于字符串<code>vjsg{dckvzksr}</code>，<br>
+其采用了单层仿射加密，字符集为小写字母，<br>
+请解密出flag。</p>
+<p>已知最终flag为纯数字。</p>
+<h3 id="加密过程">加密过程</h3>
+<p>可以先尝试解题，<br>
+没有思路再根据加密过程得到思路。</p>
+<details class="sc-details" >
+	<summary>加密过程</summary>
+	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">digits</span><span class="p">,</span> <span class="n">ascii_lowercase</span>
+<span class="kn">from</span> <span class="nn">secret</span> <span class="kn">import</span> <span class="n">numbers</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">ascii_lowercase</span> <span class="c1"># 定义字符集</span>
+<span class="n">MOD</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="c1"># 确定模数m</span>
+
+<span class="k">assert</span> <span class="nb">min</span><span class="p">([</span><span class="n">i</span> <span class="ow">in</span> <span class="n">digits</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">])</span> <span class="c1"># 验证flag格式正确，不用管</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;numbers =&#34;</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+
+<span class="n">flag</span> <span class="o">=</span> <span class="s2">&#34;flag{&#34;</span><span class="o">+</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">ascii_lowercase</span><span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">i</span><span class="p">)]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">])</span><span class="o">+</span><span class="s2">&#34;}&#34;</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;flag =&#34;</span><span class="p">,</span> <span class="n">flag</span><span class="p">)</span>
+
+<span class="k">assert</span> <span class="n">numbers</span> <span class="o">==</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ascii_lowercase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span> <span class="c1"># 验证flag格式正确，不用管</span>
+
+<span class="k">def</span> <span class="nf">Encrypt</span><span class="p">(</span><span class="n">Plaintext</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span> <span class="c1"># 加密函数</span>
+    <span class="n">Ciphertext</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Plaintext</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ascii_lowercase</span><span class="p">:</span>
+            <span class="n">Ciphertext</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rawIndex</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># 先将字符转换为数字编号</span>
+            <span class="n">cipherIndex</span> <span class="o">=</span> <span class="p">(</span><span class="n">rawIndex</span> <span class="o">*</span> <span class="n">A</span> <span class="o">+</span> <span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="c1"># 加密函数计算</span>
+            <span class="n">Ciphertext</span> <span class="o">+=</span> <span class="n">table</span><span class="p">[</span><span class="n">cipherIndex</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">Ciphertext</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Ciphertext =&#34;</span><span class="p">,</span> <span class="n">Encrypt</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
+</code></pre></div><p>运行结果：<br>
+<img src="pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E5%8A%A0%E5%AF%86%E7%BB%93%E6%9E%9C.png" alt="仿射加密 - 例题 加密运行结果"></p>
+<p>其中的最终flag为<code>flag{18453407}</code>。</p>
+<hr>
+<p>由代码分析可知，<br>
+程序先从<code>secret</code>库中得到<code>flag</code>的数字部分。</p>
+<p>然后把数字按照位置转换为字母。</p>
+<blockquote>
+<p>e.g.</p>
+<p>将数字<code>0</code>转换为<code>a</code>。<br>
+将数字<code>1</code>转换为<code>b</code>。<br>
+将数字<code>2</code>转换为<code>c</code>。</p>
+</blockquote>
+<p>最后再用<code>secret</code>库中的<code>A</code>和<code>B</code>，<br>
+对<code>flag</code>进行仿射加密，得到密文。</p>
+</div>
+</details>
+<h3 id="解题过程">解题过程</h3>
+<p>知道加密方式为一层仿射加密，且字符集为小写字母。<br>
+flag的开头格式为<code>flag</code>。</p>
+<p>则可使用爆破脚本。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">ascii_lowercase</span>
+
+<span class="n">Ciphertext</span> <span class="o">=</span> <span class="s2">&#34;vjsg{dckvzksr}&#34;</span> <span class="c1"># 在这里输入密文</span>
+
+<span class="n">table</span> <span class="o">=</span> <span class="n">ascii_lowercase</span> <span class="c1"># 定义字符集</span>
+<span class="n">MOD</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)</span> <span class="c1"># 确定模数m</span>
+
+<span class="k">def</span> <span class="nf">crack</span><span class="p">():</span> <span class="c1"># 爆破a、b函数</span>
+    <span class="k">for</span> <span class="n">A</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MOD</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">B</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">MOD</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;f&#34;</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+            <span class="c1"># 按当前a、b加密f字符后，与密文第一位相同</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;l&#34;</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">[</span><span class="mi">1</span><span class="p">]):</span>
+                <span class="c1"># 按当前a、b加密l字符后，与密文第二位相同。【后两句if类推</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;a&#34;</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">[</span><span class="mi">2</span><span class="p">]):</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="o">*</span><span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&#34;g&#34;</span><span class="p">)</span><span class="o">+</span><span class="n">B</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span> <span class="o">==</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">[</span><span class="mi">3</span><span class="p">]):</span>
+                            <span class="c1"># flag均匹配，证明就为当前a、b</span>
+                            <span class="k">return</span> <span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Decrypt</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">):</span> <span class="c1"># 解密函数</span>
+    <span class="n">Plaintext</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span>
+    <span class="n">inv</span> <span class="o">=</span> <span class="n">inverse</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">MOD</span><span class="p">)</span> <span class="c1"># 求得A对Mod的逆元</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">Ciphertext</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">table</span><span class="p">:</span>
+            <span class="n">Plaintext</span> <span class="o">+=</span> <span class="n">i</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">rawIndex</span> <span class="o">=</span> <span class="n">table</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># 先将字符转换为数字编号</span>
+            <span class="n">plainIndex</span> <span class="o">=</span> <span class="p">(</span><span class="n">rawIndex</span> <span class="o">-</span> <span class="n">B</span><span class="p">)</span> <span class="o">*</span> <span class="n">inv</span> <span class="o">%</span> <span class="n">MOD</span> <span class="c1"># 解密函数计算</span>
+            <span class="n">Plaintext</span> <span class="o">+=</span> <span class="n">table</span><span class="p">[</span><span class="n">plainIndex</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">Plaintext</span>
+
+<span class="n">A</span><span class="p">,</span>  <span class="n">B</span> <span class="o">=</span> <span class="n">crack</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;A = {}, B = {}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
+
+<span class="n">flag</span> <span class="o">=</span> <span class="n">Decrypt</span><span class="p">(</span><span class="n">Ciphertext</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">ascii_lowercase</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">i</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]))</span>
+</code></pre></div><p>运行结果：<br>
+<figure style="flex-grow: 221; flex-basis: 530px">
+		<a href="/p/ctf-note-crypto_1/pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E7%88%86%E7%A0%B4%E7%BB%93%E6%9E%9C.png" data-size="126x57"><img src="/p/ctf-note-crypto_1/pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E7%88%86%E7%A0%B4%E7%BB%93%E6%9E%9C.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E7%88%86%E7%A0%B4%E7%BB%93%E6%9E%9C_huf070330662d7f62c55a01d3bf53b3352_2049_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E7%88%86%E7%A0%B4%E7%BB%93%E6%9E%9C_huf070330662d7f62c55a01d3bf53b3352_2049_1024x0_resize_box_2.png 1024w"
+				width="126"
+				height="57"
+				loading="lazy"
+				alt="仿射加密 - 例题 爆破运行结果">
+		</a>
+		
+		<figcaption>仿射加密 - 例题 爆破运行结果</figcaption>
+		
+	</figure></p>
+<p>得到最终flag为<code>flag{18453407}</code>。</p>
+<h1 id="0x05-单表替代密码分析">0x05 单表替代密码分析</h1>
+<h2 id="定义-3">定义</h2>
+<p>之前的三种加密算法，均为单表替代加密。<br>
+也就是<strong>一个字母与一个字母一一对应</strong>的关系。</p>
+<p>单表替代加密无论过程如何，<br>
+<strong>最终都形成了一张密码表</strong>，<br>
+加密解密都通过查表来进行。</p>
+<p>因此如果我们不知道具体采用什么加密方法，<br>
+就只需要<strong>知道哪个字母对应哪个字母</strong>，<br>
+<strong>分析出一张“密码表”</strong>，<br>
+就能对单表替代加密的密文进行解密了。</p>
+<p>这种分析过程就是单表替代密码分析。<br>
+采用分析，<strong>甚至可以不用知道密钥是什么</strong>，就可以直接得到明文。</p>
+<h2 id="分析方法">分析方法</h2>
+<p>如果暴力枚举分析得到密码表，<br>
+则情况数为$26\times25\times24\times\cdots\times2\times1 = 26! = 403291461126605635584000000$。<br>
+因此除非加密方法简单，否则几乎不可能通过枚举得到密码表。</p>
+<hr>
+<p>基本分析方法有三种：</p>
+<ul>
+<li>词频分析</li>
+<li>双联分析</li>
+<li>模式匹配</li>
+</ul>
+<p>将三种分析方法综合运用，找出可能性最大的结果。</p>
+<h3 id="词频分析">词频分析</h3>
+<p>下图为单个英文字母在文章中出现的频率：<br>
+<figure style="flex-grow: 190; flex-basis: 456px">
+		<a href="/p/ctf-note-crypto_1/pic/%E5%8D%95%E8%A1%A8%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90-%E8%AF%8D%E9%A2%91%E5%88%86%E6%9E%90-%E8%AF%8D%E9%A2%91%E8%A1%A8.png" data-size="931x490"><img src="/p/ctf-note-crypto_1/pic/%E5%8D%95%E8%A1%A8%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90-%E8%AF%8D%E9%A2%91%E5%88%86%E6%9E%90-%E8%AF%8D%E9%A2%91%E8%A1%A8.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E5%8D%95%E8%A1%A8%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90-%E8%AF%8D%E9%A2%91%E5%88%86%E6%9E%90-%E8%AF%8D%E9%A2%91%E8%A1%A8_hu17fbf2a1bfba1015b79207c14392ed6d_165491_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E5%8D%95%E8%A1%A8%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90-%E8%AF%8D%E9%A2%91%E5%88%86%E6%9E%90-%E8%AF%8D%E9%A2%91%E8%A1%A8_hu17fbf2a1bfba1015b79207c14392ed6d_165491_1024x0_resize_box_2.png 1024w"
+				width="931"
+				height="490"
+				loading="lazy"
+				alt="词频分析 - 词频表">
+		</a>
+		
+		<figcaption>词频分析 - 词频表</figcaption>
+		
+	</figure></p>
+<p>我们对于一串较长密文（如对文章加密），统计每个字母出现的频率。<br>
+如果发现某一字母与上表字母的<strong>频率接近</strong>，<br>
+则两字母应该是<strong>对应关系</strong>。</p>
+<blockquote>
+<p>e.g.</p>
+<p>分析后若得到密文中字母<code>X</code>的频率接近为$10.39%$，接近$10.47%$。<br>
+因此可以推测密文<code>X</code>对应明文<code>T</code>。</p>
+</blockquote>
+<h3 id="双联分析">双联分析</h3>
+<p>词频分析是针对单个字母进行分析，<br>
+同时英语单词中也有<strong>很多连续的两字母</strong>出现频率很高，<br>
+称作双联字母(bigrams)。</p>
+<p>因此可以用双联分析来辅助我们进行分析。</p>
+<p>下表为1000个单词中，各双联字母出现次数。
+<figure style="flex-grow: 795; flex-basis: 1909px">
+		<a href="/p/ctf-note-crypto_1/pic/%E5%8D%95%E8%A1%A8%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90-%E5%8F%8C%E8%81%94%E5%88%86%E6%9E%90-%E6%AC%A1%E6%95%B0%E8%A1%A8.png" data-size="1233x155"><img src="/p/ctf-note-crypto_1/pic/%E5%8D%95%E8%A1%A8%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90-%E5%8F%8C%E8%81%94%E5%88%86%E6%9E%90-%E6%AC%A1%E6%95%B0%E8%A1%A8.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E5%8D%95%E8%A1%A8%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90-%E5%8F%8C%E8%81%94%E5%88%86%E6%9E%90-%E6%AC%A1%E6%95%B0%E8%A1%A8_hu792eb5a77b112120aac25445281bd31f_58678_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E5%8D%95%E8%A1%A8%E6%9B%BF%E4%BB%A3%E5%AF%86%E7%A0%81%E5%88%86%E6%9E%90-%E5%8F%8C%E8%81%94%E5%88%86%E6%9E%90-%E6%AC%A1%E6%95%B0%E8%A1%A8_hu792eb5a77b112120aac25445281bd31f_58678_1024x0_resize_box_2.png 1024w"
+				width="1233"
+				height="155"
+				loading="lazy"
+				alt="双联分析 - 次数表">
+		</a>
+		
+		<figcaption>双联分析 - 次数表</figcaption>
+		
+	</figure></p>
+<h3 id="模式匹配">模式匹配</h3>
+<p>另外，如果有一个较大的单词库，<br>
+还可以通过单词的格式，进一步帮助我们缩小可能的范围。</p>
+<blockquote>
+<p>e.g.</p>
+<p>单词happy，为12334格式，<br>
+单词success，为1233411格式。</p>
+</blockquote>
+<p>那么被进行单表替换后，它的<strong>格式并不会发生改变</strong>。</p>
+<p>这种模式匹配的优点在于：<br>
+即使<strong>密文长度较短</strong>，也能尽可能找到接近真相的结果。</p>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 如果密文长度较短，则词频分析和双联分析很可能不正确。 </p>
+	</div>
+</div>
+<p>工具：<br>
+<a class="link" href="https://quipqiup.com"  target="_blank" rel="noopener"
+    >利用模式匹配尝试解密单表替代加密的网站</a>。</p>
+<h1 id="0x06-维吉尼亚加密">0x06 维吉尼亚加密</h1>
+<p>维吉尼亚密码是使用一系列凯撒密码组成密码字母表的加密算法，<strong>属于多表密码</strong>。</p>
+<p>为了生成密码，需要使用密码表。<br>
+这一密码表包括了26行字母表，每一行都由前一行向左偏移一位得到。</p>
+<p><figure style="flex-grow: 100; flex-basis: 240px">
+		<a href="/p/ctf-note-crypto_1/pic/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86-%E5%AF%86%E7%A0%81%E8%A1%A8.png" data-size="551x551"><img src="/p/ctf-note-crypto_1/pic/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86-%E5%AF%86%E7%A0%81%E8%A1%A8.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86-%E5%AF%86%E7%A0%81%E8%A1%A8_hu255caec8b87f027c48cae49e62340c1b_234272_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86-%E5%AF%86%E7%A0%81%E8%A1%A8_hu255caec8b87f027c48cae49e62340c1b_234272_1024x0_resize_box_2.png 1024w"
+				width="551"
+				height="551"
+				loading="lazy"
+				alt="维吉尼亚加密 - 密码表">
+		</a>
+		
+		<figcaption>维吉尼亚加密 - 密码表</figcaption>
+		
+	</figure></p>
+<p>具体使用哪一行字母表进行加密是基于密钥进行的，<br>
+<strong>在过程中会不断地变换</strong>。</p>
+<hr>
+<ul>
+<li>类型：多表替代加密。</li>
+<li>加密对象：一般为字母。</li>
+<li>加密方式：根据密钥依次查表替换，得到密文。</li>
+<li>安全性：较强。<br>
+多表加密中，对于两个相同的字符，并不一定都会加密为两个相同的字符。<br>
+如第一个<code>a</code>可能加密为<code>g</code>，但第二个<code>a</code>可能加密为<code>o</code>。<br>
+所以能避免直接的词频分析攻击。<br>
+<strong>必须要知道密钥</strong>才能得到明文。</li>
+</ul>
+<h2 id="加密过程-1">加密过程</h2>
+<p>首先有一串明文和一串密钥，<br>
+其中密钥长度要小于明文。</p>
+<blockquote>
+<p>e.g.</p>
+<p>明文为<code>SUPERSASSW</code>，<br>
+密钥为<code>NICO</code>。</p>
+</blockquote>
+<ol>
+<li>将密钥调整到跟明文一样的长度。<br>
+操作方法为不断重复密钥。
+<blockquote>
+<p>调整后密钥为<code>NICONICONI</code>。</p>
+</blockquote>
+</li>
+<li>通过等长的明文和密钥，<br>
+将明文作为列标，密钥作为行标（也可能反之），<br>
+依次查表，得到密文。
+<blockquote>
+<p>如第一位：<br>
+明文为<code>S</code>，密钥为<code>N</code>，<br>
+对应表的N行S列，则密文为<code>F</code>。</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>一位位查表完成后，<br>
+得到密文为：<code>FCRSEACGFE</code>。</p>
+<p>可以明显发现：<br>
+明文中四个同样的<code>S</code>，<br>
+被分别加密为不同的<code>F</code>、<code>A</code>、<code>G</code>、<code>F</code>。</p>
+<p>由于<strong>明文与密文并不为一一对应关系</strong>，<br>
+所以可以<strong>避免直接的词频分析攻击</strong>。</p>
+</blockquote>
+<h2 id="解密过程">解密过程</h2>
+<p>解密的过程就是加密过程反过来。</p>
+<blockquote>
+<p>e.g.</p>
+<p>密文<code>FCRSEACGFE</code>，密钥为<code>NICO</code>。</p>
+<p>调整密钥为与密文等长字符串为<code>NICONICONI</code>。</p>
+<p>根据密钥第一个字母<code>F</code>所对应的<code>N</code>行字母表，<br>
+发现密文第一个字母<code>F</code>位于<code>S</code>列，<br>
+因而明文第一个字母为<code>S</code>。</p>
+<p>密钥第二个字母<code>C</code>对应<code>I</code>行字母表，<br>
+而密文第二个字母<code>C</code>位于此行<code>U</code>列，<br>
+因而明文第二个字母为<code>U</code>。</p>
+<p>以此类推便可得到明文。</p>
+</blockquote>
+<h2 id="破解方法">破解方法</h2>
+<h3 id="1-分析长度">1. 分析长度</h3>
+<p>为了传输方便，一般来说<strong>密钥都很短小</strong>，<br>
+所以密钥会重复，以达到明文的长度。</p>
+<p>首先提出破解方法的&quot;Frederick Kasiski&quot;是基于这样一个简单的观察：<br>
+“<strong>密钥的重复部分</strong>与<strong>明文中的重复部分</strong>的连接，在<strong>密文中也产生一个重复部分</strong>”。</p>
+<p>如果一个字符串在明文中重复，并且被密钥相同的部分加密，那么在密文中也会出现重复的字符串。</p>
+<p><strong>密文中出现的重复字符串的前后长度，则是关键词长度的倍数。</strong><br>
+密文中出现足够多次，就可以根据这几个长度的倍数，来<strong>确定真实的长度</strong>。</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 直接看文字可能难以理解，结合下面的例子更好理解。 </p>
+	</div>
+</div>
+<blockquote>
+<p>e.g.</p>
+<p><figure style="flex-grow: 256; flex-basis: 614px">
+		<a href="/p/ctf-note-crypto_1/pic/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86-%E7%A0%B4%E8%A7%A3%E4%BE%8B%E5%AD%90.png" data-size="963x376"><img src="/p/ctf-note-crypto_1/pic/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86-%E7%A0%B4%E8%A7%A3%E4%BE%8B%E5%AD%90.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86-%E7%A0%B4%E8%A7%A3%E4%BE%8B%E5%AD%90_hubccdc0d74d2137d834c46a4927f6b8dd_178903_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E7%BB%B4%E5%90%89%E5%B0%BC%E4%BA%9A%E5%8A%A0%E5%AF%86-%E7%A0%B4%E8%A7%A3%E4%BE%8B%E5%AD%90_hubccdc0d74d2137d834c46a4927f6b8dd_178903_1024x0_resize_box_2.png 1024w"
+				width="963"
+				height="376"
+				loading="lazy"
+				alt="维吉尼亚加密 - 破解例子">
+		</a>
+		
+		<figcaption>维吉尼亚加密 - 破解例子</figcaption>
+		
+	</figure></p>
+<p>$(9,6)$的公约数只有$1$和$3$，<br>
+而$1$不可能为密钥长度（否则变为单表加密），<br>
+故<strong>密钥长度则为$3$</strong>。</p>
+</blockquote>
+<h3 id="2-转化为单表加密问题">2. 转化为单表加密问题</h3>
+<p>找到密钥的长度$n$后，<br>
+则多表加密的问题便可以<strong>转化为$n$个单表加密的问题</strong>。</p>
+<blockquote>
+<p>e.g.</p>
+<p>如上例。</p>
+<p>找到长度为$n=3$后，<br>
+则对于从左往右第$1$、$4$、$7$、$\cdots$位，运用的都是同一种单表加密方式。<br>
+同理：对于第$2$、$5$、$8$、$\cdots$位，和$3$、$6$、$9$、$\cdots$位，也是另一种单表加密。</p>
+<p>对每一种单表加密逐个分析，得到部分明文，<br>
+最终就能得到整个明文。</p>
+</blockquote>
+<h1 id="0x07-替换和编码">0x07 替换和编码</h1>
+<p>古典加密还包含很多种形式的简单替换和编码。<br>
+这些替换也常常出现Misc中，如：</p>
+<ul>
+<li>Morse电码</li>
+<li>敲击码</li>
+<li>福尔摩斯跳舞的小人<br>
+<figure style="flex-grow: 66; flex-basis: 158px">
+		<a href="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E8%B7%B3%E8%88%9E%E7%9A%84%E5%B0%8F%E4%BA%BA%E8%A1%A8.png" data-size="451x683"><img src="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E8%B7%B3%E8%88%9E%E7%9A%84%E5%B0%8F%E4%BA%BA%E8%A1%A8.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E8%B7%B3%E8%88%9E%E7%9A%84%E5%B0%8F%E4%BA%BA%E8%A1%A8_huf8d373ccbc16b3929d758984d311d0d0_64108_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E8%B7%B3%E8%88%9E%E7%9A%84%E5%B0%8F%E4%BA%BA%E8%A1%A8_huf8d373ccbc16b3929d758984d311d0d0_64108_1024x0_resize_box_2.png 1024w"
+				width="451"
+				height="683"
+				loading="lazy"
+				alt="替换和编码 - 福尔摩斯跳舞的小人 表">
+		</a>
+		
+		<figcaption>替换和编码 - 福尔摩斯跳舞的小人 表</figcaption>
+		
+	</figure></li>
+<li>培根密码<br>
+<figure style="flex-grow: 300; flex-basis: 720px">
+		<a href="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81.png" data-size="861x287"><img src="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81_huf87fca758d2e0554e15f073441928071_165463_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81_huf87fca758d2e0554e15f073441928071_165463_1024x0_resize_box_2.png 1024w"
+				width="861"
+				height="287"
+				loading="lazy"
+				alt="替换和编码 - 培根密码">
+		</a>
+		
+		<figcaption>替换和编码 - 培根密码</figcaption>
+		
+	</figure></li>
+</ul>
+<p><em>有关编码内容可以阅读Misc部分的<a class="link" href="../ctf-note-misc_2" >数据编码笔记</a>。</em></p>
+<h2 id="类型和编码">类型和编码</h2>
+<p><figure style="flex-grow: 183; flex-basis: 441px">
+		<a href="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%BC%96%E7%A0%81.png" data-size="938x510"><img src="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%BC%96%E7%A0%81.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%BC%96%E7%A0%81_hue18bd01a846d6a6bbdfbabb2302db716_176046_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E7%B1%BB%E5%9E%8B%E5%92%8C%E7%BC%96%E7%A0%81_hue18bd01a846d6a6bbdfbabb2302db716_176046_1024x0_resize_box_2.png 1024w"
+				width="938"
+				height="510"
+				loading="lazy"
+				alt="替换和编码 - 类型和编码">
+		</a>
+		
+		<figcaption>替换和编码 - 类型和编码</figcaption>
+		
+	</figure></p>
+<ul>
+<li><em>密码学中数字主要研究整数。</em></li>
+</ul>
+<h2 id="类型转换">类型转换</h2>
+<h3 id="整数进制转换">整数进制转换</h3>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="n">x</span> <span class="o">=</span> <span class="mi">123456</span> <span class="c1"># 十进制整数</span>
+
+<span class="n">x_hex</span> <span class="o">=</span> <span class="nb">hex</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># 十进制转十六进制</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;hex:&#34;</span><span class="p">,</span><span class="n">x_hex</span><span class="p">)</span>
+<span class="c1"># hex: 1e240</span>
+
+<span class="n">x_bin</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">2</span><span class="p">:]</span> <span class="c1"># 十进制转二进制</span>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;hex:&#34;</span><span class="p">,</span><span class="n">x_hex</span><span class="p">)</span>
+<span class="c1"># bin: 11110001001000000</span>
+
+<span class="c1"># x_hex与x_bin均为字符串类型</span>
+
+<span class="n">x_a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x_hex</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span> <span class="c1"># 十六进制转十进制</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x_a</span><span class="p">)</span>
+<span class="c1"># 123456</span>
+
+<span class="n">x_b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x_bin</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># 二进制转十进制</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x_b</span><span class="p">)</span>
+<span class="c1"># 123456</span>
+</code></pre></div><h3 id="字符串类型转换">字符串类型转换</h3>
+<p>字符串(str)类型和字节(bytes)类型相互转换。</p>
+<blockquote>
+<p>字符串类型是纯文本类型。</p>
+<p>而字节类型是二进制数据。<br>
+表示为<code>b'...'</code>，其中<code>...</code>为可读表示方法。</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="n">s</span> <span class="o">=</span> <span class="s2">&#34;flag{qwqqqOrzzz}&#34;</span> <span class="c1"># 字符串类型</span>
+
+<span class="n">s_bytes</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span> <span class="c1"># 字符串类型转字节类型</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s_bytes</span><span class="p">)</span>
+<span class="c1"># b&#39;flag{qwqqqOrzzz}&#39;</span>
+
+<span class="n">s_str</span> <span class="o">=</span> <span class="n">s_bytes</span><span class="o">.</span><span class="n">decode</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s_str</span><span class="p">)</span>
+<span class="c1"># flag{qwqqqOrzzz}</span>
+</code></pre></div><h3 id="整数和字节类型转换">整数和字节类型转换</h3>
+<p>这种类型转换在密码方向题目中很常见。<br>
+【但个人刚入门，暂时不知道转换为整数类型有什么用，等以后见识到了再补充_(:з」∠)_……</p>
+<p>整数类型可以直接参与数学计算，<br>
+字节类型会展示可读的字符。</p>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">Crypto.Util.number</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;flag{this_is_flag}&#39;</span> <span class="c1"># 字节类型</span>
+
+<span class="n">s_int</span> <span class="o">=</span> <span class="n">bytes_to_long</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># 字节类型转为整数</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s_int</span><span class="p">)</span>
+<span class="c1"># 8922333133093133239960474404255406756030333</span>
+
+<span class="n">s_bytes</span> <span class="o">=</span> <span class="n">long_to_bytes</span><span class="p">(</span><span class="n">s_int</span><span class="p">)</span> <span class="c1"># 整数转字节类型</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s_bytes</span><span class="p">)</span>
+<span class="c1"># b&#39;flag{this_is_flag}&#39;</span>
+</code></pre></div><h2 id="编码">编码</h2>
+<h3 id="base64编码">Base64编码</h3>
+<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">import</span> <span class="nn">base64</span>
+
+<span class="n">s</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;flag{this_is_flag}&#39;</span> <span class="c1"># 字节类型</span>
+
+<span class="n">s_encode</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64encode</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># 进行base64编码</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s_encode</span><span class="p">)</span>
+<span class="c1"># b&#39;ZmxhZ3t0aGlzX2lzX2ZsYWd9&#39;</span>
+
+<span class="n">s_decode</span> <span class="o">=</span> <span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">s_encode</span><span class="p">)</span> <span class="c1"># 进行base64解码</span>
+<span class="k">print</span><span class="p">(</span><span class="n">s_decode</span><span class="p">)</span>
+<span class="c1"># b&#39;flag{this_is_flag}&#39;</span>
+</code></pre></div><h1 id="0x08-写在最后">0x08 写在最后</h1>
+<p><div class="snote warning ">
+	<div class="snote-content">
+		<p> 以上大部分为个人总结，由于这里也刚入门，很多地方可能存在错误。如发现错误请及时指出，谢谢！…… </p>
+	</div>
+</div>
+<div class="snote link green">
+	<div class="snote-content">
+		<p> 由于目前博客不支持附件上传下载，所以如果需要上述中的文件，可以联系我分享文件【联系方式在关于页面中有…… </p>
+	</div>
+</div>
+<div class="snote up cyan">
+	<div class="snote-content">
+		<p> 如对以上内容存在疑惑不解的地方，也可以询问我。如果我了解的话会尽力解答；不了解的话可以一起努力弄明白hhh…… </p>
+	</div>
+</div></p>
+<p>这部分涉及到数论的知识，故可能会感觉有点难……<br>
+个人刚好为了学ACM数论知识点，补了ACM方面的笔记，算是一举两得2333……</p>
+<p><strong>感谢Am473ur师傅的辛勤付出！……</strong></p>
+<p>以上……</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/ctf/">CTF</a>
+        
+            <a href="/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/">涅普计划</a>
+        
+            <a href="/tags/crypto/">Crypto</a>
+        
+            <a href="/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/">古典密码</a>
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2021/02/18 23:51
+        </span>
+    </section><section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/85100927" target="_blank" rel="noopener">85100927</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/ctf-note-misc_3/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ctf-note-misc_3/57890506_p0.16158d4388045fa8a707422c777a29ba_hu20a1b54dc3f8ad2cd21d3e328c8fd47f_537572_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="CTF-note-Misc_3" 
+                        data-hash="md5-FhWNQ4gEX6inB0Isd3opug==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Misc - 流量分析……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/ctf-note-misc_2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ctf-note-misc_2/87075144_p0.a03f9f78c16be1133b222511558e63f1_hu955303b5c4388e9f242f6715e6abbbd5_906682_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="CTF-note-Misc_2" 
+                        data-hash="md5-oD&#43;feMFr4RM7IiURVY5j8Q==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Misc - 数据编码……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/ctf-note-misc_1/">
+        
+        
+            <div class="article-image">
+                <img src="/p/ctf-note-misc_1/86016044_p0.6e54643fba7f43b0ea80ec8160171b97_hu66f5a9c42e7a0ea12354f65ca719fe6e_1732854_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="CTF-note-Misc_1" 
+                        data-hash="md5-blRkP7p/Q7DqgOyBYBcblw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Misc - 图片隐写……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -6,14 +6,23 @@
     <description>Recent content in 数组 on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 26 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 09 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>数组……</title>
-      <link>https://blog.supersassw.com/p/cpp-array/</link>
+      <title>程序设计——数组习题……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-prac-array/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-cpp-prac-array/</guid>
+      <description>数组课后练习题 判断题 第一、二、十八题（重要） 第一题 在对全部数组元素赋初值时，不可以不指定一维数组的长度。 知识点： 一位数组赋初值 【书 P121】</description>
+    </item>
+    
+    <item>
+      <title>程序设计——数组……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-note-array/</link>
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/cpp-array/</guid>
-      <description>数组 一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列$a_i$： 当$i=</description>
+      <guid>https://blog.supersassw.com/p/univ-cpp-note-array/</guid>
+      <description>一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列$a_i$： 当$i=1$</description>
     </item>
     
   </channel>

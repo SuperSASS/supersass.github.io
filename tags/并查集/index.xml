@@ -8,12 +8,12 @@
     <language>zh-CN</language>
     <lastBuildDate>Sun, 20 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>并查集……</title>
-      <link>https://blog.supersassw.com/p/union-find/</link>
+      <title>ACM学习笔记：并查集……</title>
+      <link>https://blog.supersassw.com/p/acm-note-union_find/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/union-find/</guid>
-      <description>测试 啥都没有…… 源码 /* 并查集算法 用father数组记录每个节点的父节点，数据结构类似于树 关键操作：合并、查询 详细介绍: https://zhuanlan.zhihu.com/p/93647900 */ //P3958 奶酪: https://www.luogu.com.cn/problem/P3958 #include &amp;lt;bits/stdc++.h&amp;gt;#define N 1005</description>
+      <guid>https://blog.supersassw.com/p/acm-note-union_find/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 其实并不是笔记</description>
     </item>
     
   </channel>

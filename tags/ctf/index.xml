@@ -6,31 +6,40 @@
     <description>Recent content in CTF on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crypto - 古典密码……</title>
+      <link>https://blog.supersassw.com/p/ctf-note-crypto_1/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/ctf-note-crypto_1/</guid>
+      <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 0x00 课程视频 课程视频 视频Bilibili链接 0x01 什么是密码学 【基本概念与作用应该都知道一点吧，这</description>
+    </item>
+    
     <item>
       <title>Misc - 流量分析……</title>
-      <link>https://blog.supersassw.com/p/ctf-misc-3/</link>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_3/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/ctf-misc-3/</guid>
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_3/</guid>
       <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 流量分析： 利用流量分析工具，抓取网络请求中的各种流量数据包， 分析其中的信息，并得到自己所需要</description>
     </item>
     
     <item>
       <title>Misc - 数据编码……</title>
-      <link>https://blog.supersassw.com/p/ctf-misc-2/</link>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_2/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/ctf-misc-2/</guid>
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_2/</guid>
       <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 0x00 课程视频 课程视频 视频Bilibili链接 0x01 常见进制与进制转换 常见进制 计算机领域中，常用进制</description>
     </item>
     
     <item>
       <title>Misc - 图片隐写……</title>
-      <link>https://blog.supersassw.com/p/ctf-misc-1/</link>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_1/</link>
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/ctf-misc-1/</guid>
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_1/</guid>
       <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 图片隐写： 将一些不可告人x的东西（如flag）以各种方式隐藏在图片中。 自已需要分析出隐写方法</description>
     </item>
     

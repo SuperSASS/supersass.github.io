@@ -6,68 +6,77 @@
     <description>Recent content in Posts on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crypto - 古典密码……</title>
+      <link>https://blog.supersassw.com/p/ctf-note-crypto_1/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/ctf-note-crypto_1/</guid>
+      <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 0x00 课程视频 课程视频 视频Bilibili链接 0x01 什么是密码学 【基本概念与作用应该都知道一点吧，这</description>
+    </item>
+    
     <item>
       <title>Misc - 流量分析……</title>
-      <link>https://blog.supersassw.com/p/ctf-misc-3/</link>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_3/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/ctf-misc-3/</guid>
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_3/</guid>
       <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 流量分析： 利用流量分析工具，抓取网络请求中的各种流量数据包， 分析其中的信息，并得到自己所需要</description>
     </item>
     
     <item>
       <title>Misc - 数据编码……</title>
-      <link>https://blog.supersassw.com/p/ctf-misc-2/</link>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_2/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/ctf-misc-2/</guid>
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_2/</guid>
       <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 0x00 课程视频 课程视频 视频Bilibili链接 0x01 常见进制与进制转换 常见进制 计算机领域中，常用进制</description>
     </item>
     
     <item>
       <title>Misc - 图片隐写……</title>
-      <link>https://blog.supersassw.com/p/ctf-misc-1/</link>
+      <link>https://blog.supersassw.com/p/ctf-note-misc_1/</link>
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/ctf-misc-1/</guid>
+      <guid>https://blog.supersassw.com/p/ctf-note-misc_1/</guid>
       <description>以下为涅普计划的课程笔记，建议搭配课程视频理解。 图片隐写： 将一些不可告人x的东西（如flag）以各种方式隐藏在图片中。 自已需要分析出隐写方法</description>
     </item>
     
     <item>
-      <title>日常练习——2021/1/25……</title>
-      <link>https://blog.supersassw.com/p/prac-2020-1-25/</link>
+      <title>ACM练习——P4863 JerryC Loves Driving……</title>
+      <link>https://blog.supersassw.com/p/acm-prac-2020_1_25/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/prac-2020-1-25/</guid>
+      <guid>https://blog.supersassw.com/p/acm-prac-2020_1_25/</guid>
       <description>题目链接 P4863 JerryC Loves Driving 题目分析 对于一层求和，其实就是一层for，那么两层求和就是两层for，也就是二维的。 而对于求和O(n)的优化计算方法，最基本</description>
     </item>
     
     <item>
-      <title>习题——数组……</title>
-      <link>https://blog.supersassw.com/p/prac-array/</link>
+      <title>程序设计——数组习题……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-prac-array/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/prac-array/</guid>
+      <guid>https://blog.supersassw.com/p/univ-cpp-prac-array/</guid>
       <description>数组课后练习题 判断题 第一、二、十八题（重要） 第一题 在对全部数组元素赋初值时，不可以不指定一维数组的长度。 知识点： 一位数组赋初值 【书 P121】</description>
     </item>
     
     <item>
-      <title>习题——指针……</title>
-      <link>https://blog.supersassw.com/p/prac-point/</link>
+      <title>心理学导论——名词解释……</title>
+      <link>https://blog.supersassw.com/p/univ-intro_psychol-ne/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/prac-point/</guid>
-      <description>指针课后习题 判断题 第一题 从内存单元中存取数据的方法有直接访问方式和间接访问方式。 知识点： 内存单元的数据存取方式 【书 P186】 答案与分析 正确 分</description>
+      <guid>https://blog.supersassw.com/p/univ-intro_psychol-ne/</guid>
+      <description>以下为个人对教材中每章课后练习所出现的名字解释题进行的总结。 教材为：心理学导论（第三版）——人民教育出版社 （黄希庭 郑涌 著） 由于老师跳过了第二</description>
     </item>
     
     <item>
-      <title>心理学导论——名词解释……</title>
-      <link>https://blog.supersassw.com/p/intro-psychology-ne/</link>
+      <title>程序设计——指针习题……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-prac-point/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/intro-psychology-ne/</guid>
-      <description>以下为个人对教材中每章课后练习所出现的名字解释题进行的总结。 教材为：心理学导论（第三版）——人民教育出版社 （黄希庭 郑涌 著） 由于老师跳过了第二</description>
+      <guid>https://blog.supersassw.com/p/univ-cpp-prac-point/</guid>
+      <description>指针课后习题 判断题 第一题 从内存单元中存取数据的方法有直接访问方式和间接访问方式。 知识点： 内存单元的数据存取方式 【书 P186】 答案与分析 正确 分</description>
     </item>
     
     <item>
@@ -89,30 +98,30 @@
     </item>
     
     <item>
-      <title>考前公式速记……</title>
-      <link>https://blog.supersassw.com/p/am-formula/</link>
+      <title>高等数学——常用公式……</title>
+      <link>https://blog.supersassw.com/p/univ-am-formula/</link>
       <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/am-formula/</guid>
-      <description>定积分 $\int_0^{\frac{\pi}{2}} f(\sin x)\mathrm{d}x = \int_0^{\frac{\pi}{2}} f(\cos x) \mathrm{d}x$ $\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x) \mathrm{d}x$ e.g. $\int_0^\pi \frac{x\sin x}{1+cos^2x} \mathrm{d}x = \frac{\pi}{2}\int_0^\pi \frac{\sin x}{2-sin^2x} \mathrm{d}x$ Walls公式： $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{3}{4}\cdot\frac{1}{2}\cdot\frac{\pi}{2}\quad (\text{n is even}) \\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{4}{5}\cdot\frac{2}{3}\quad (\text{n is odd, n&amp;gt;1})\end{cases}$ LaTex显示好像有误，待修复</description>
+      <guid>https://blog.supersassw.com/p/univ-am-formula/</guid>
+      <description>LaTex显示好像有误，待修复 定积分 $\int_0^{\frac{\pi}{2}} f(\sin x)\mathrm{d}x = \int_0^{\frac{\pi}{2}} f(\cos x) \mathrm{d}x$ $\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x) \mathrm{d}x$ e.g. $\int_0^\pi \frac{x\sin x}{1+cos^2x} \mathrm{d}x = \frac{\pi}{2}\int_0^\pi \frac{\sin x}{2-sin^2x} \mathrm{d}x$ Walls公式： $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{3}{4}\cdot\frac{1}{2}\cdot\frac{\pi}{2}\quad (\text{n is even}) \\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{4}{5}\cdot\frac{2}{3}\quad (\text{n is odd, n&amp;gt;1})\end{cases}$</description>
     </item>
     
     <item>
-      <title>数组……</title>
-      <link>https://blog.supersassw.com/p/cpp-array/</link>
+      <title>程序设计——数组……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-note-array/</link>
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/cpp-array/</guid>
-      <description>数组 一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列$a_i$： 当$i=</description>
+      <guid>https://blog.supersassw.com/p/univ-cpp-note-array/</guid>
+      <description>一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列$a_i$： 当$i=1$</description>
     </item>
     
     <item>
-      <title>考点总结……</title>
-      <link>https://blog.supersassw.com/p/cpp-summary/</link>
+      <title>程序设计——考点总结……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-summary/</link>
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/cpp-summary/</guid>
-      <description>一、注意的点 1、用作为“累加、累乘”的变量的注意事项 例子——累加、累乘的变量 sum1 = sum1 + a;——作为累加求和。 sum2 = sum2 * a;——作为累乘求和。 是否</description>
+      <guid>https://blog.supersassw.com/p/univ-cpp-summary/</guid>
+      <description>以下大部分总结于半期考试之前…… 一、注意的点 1、用作为“累加、累乘”的变量的注意事项 例子——累加、累乘的变量 sum1 = sum1 + a;——作为累加求和。 sum2</description>
     </item>
     
     <item>
@@ -134,21 +143,21 @@
     </item>
     
     <item>
-      <title>并查集……</title>
-      <link>https://blog.supersassw.com/p/union-find/</link>
+      <title>ACM学习笔记：并查集……</title>
+      <link>https://blog.supersassw.com/p/acm-note-union_find/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/union-find/</guid>
-      <description>测试 啥都没有…… 源码 /* 并查集算法 用father数组记录每个节点的父节点，数据结构类似于树 关键操作：合并、查询 详细介绍: https://zhuanlan.zhihu.com/p/93647900 */ //P3958 奶酪: https://www.luogu.com.cn/problem/P3958 #include &amp;lt;bits/stdc++.h&amp;gt;#define N 1005</description>
+      <guid>https://blog.supersassw.com/p/acm-note-union_find/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 其实并不是笔记</description>
     </item>
     
     <item>
-      <title>线段树……</title>
-      <link>https://blog.supersassw.com/p/segment-tree/</link>
+      <title>ACM学习笔记：线段树……</title>
+      <link>https://blog.supersassw.com/p/acm-note-segment_tree/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/segment-tree/</guid>
-      <description>简介 是一种用来维护 区间信息 的数据结构。 可以实现的操作： 单点、区间修改 区间查询（区间求和、最大值、最小值） 等等 描述 线段树会将一个非点区间（即长</description>
+      <guid>https://blog.supersassw.com/p/acm-note-segment_tree/</guid>
+      <description>该笔记还处于基础部分，待日后继续深入整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 简介 是一</description>
     </item>
     
     <item>
@@ -179,39 +188,57 @@
     </item>
     
     <item>
-      <title>邻项比较排序……</title>
-      <link>https://blog.supersassw.com/p/neighbor-sort/</link>
+      <title>ACM学习笔记：邻项比较排序……</title>
+      <link>https://blog.supersassw.com/p/acm-note-neighbor_sort/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/neighbor-sort/</guid>
-      <description>以下为之前的笔记直接放过来的，部分样式会有错误（如KaTeX没有渲染等）…… 邻项比较排序 定义 本来的排序型贪心，我们需要任意两个项都满足决策条</description>
+      <guid>https://blog.supersassw.com/p/acm-note-neighbor_sort/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 邻项比较排序介绍 定义 本来的排序型贪心，我们需要任意两</description>
     </item>
     
     <item>
-      <title>贪心……</title>
-      <link>https://blog.supersassw.com/p/greedy/</link>
+      <title>ACM学习笔记：贪心……</title>
+      <link>https://blog.supersassw.com/p/acm-note-greedy/</link>
       <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/greedy/</guid>
-      <description>贪心 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通过局部最优解拓展得到全局最优解。 用处 寻找最优解（如：找最大(小)值） 贪心类别 一、排序</description>
+      <guid>https://blog.supersassw.com/p/acm-note-greedy/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。可能格式、内容、链接等混乱错误…… 贪心介绍 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通</description>
     </item>
     
     <item>
-      <title>STL……</title>
-      <link>https://blog.supersassw.com/p/stl/</link>
+      <title>ACM学习笔记：GCD、裴蜀定理、EXGCD……</title>
+      <link>https://blog.supersassw.com/p/acm-note-gcd_exgcd/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-gcd_exgcd/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… GCD 引例：最大公约数 没什么好说的，就最大公约数。 主要是</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：线性同余方程……</title>
+      <link>https://blog.supersassw.com/p/acm-note-linear_equation/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-linear_equation/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 0x00 前提知识 同余</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记：STL……</title>
+      <link>https://blog.supersassw.com/p/acm-note-stl/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/stl/</guid>
-      <description>STL 详解 set——集合 set&amp;lt;int&amp;gt; STL_set set为关联容器。为一种体现集合性质的容器。 其中不允许有重复元素。 并且set中的元素是排好序的（升序）。 用法： set&amp;lt;int&amp;gt; STL_set; /</description>
+      <guid>https://blog.supersassw.com/p/acm-note-stl/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… STL 详解 set—</description>
     </item>
     
     <item>
-      <title>排序……</title>
-      <link>https://blog.supersassw.com/p/sort/</link>
+      <title>ACM学习笔记：排序……</title>
+      <link>https://blog.supersassw.com/p/acm-note-sort/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/sort/</guid>
-      <description>以下部分本地链接无法加载，需要修正…… 排序 不考虑算法 选择排序、冒泡排序、插入排序 $O(n^2)$ 计数排序、基数排序、桶排序 $O(n+w)$ 计数排序 希尔排序、锦标赛排序 快</description>
+      <guid>https://blog.supersassw.com/p/acm-note-sort/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 排序 不考虑算法 选择排序、冒泡排序、插入排序 $O(n^2)$ 计数排序</description>
     </item>
     
   </channel>

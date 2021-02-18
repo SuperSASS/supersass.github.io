@@ -6,13 +6,49 @@
     <description>Recent content in Tags on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crypto</title>
+      <link>https://blog.supersassw.com/tags/crypto/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/crypto/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>CTF</title>
       <link>https://blog.supersassw.com/tags/ctf/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>古典密码</title>
+      <link>https://blog.supersassw.com/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>涅普计划</title>
+      <link>https://blog.supersassw.com/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>笔记</title>
+      <link>https://blog.supersassw.com/tags/%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E7%AC%94%E8%AE%B0/</guid>
       <description></description>
     </item>
     
@@ -35,15 +71,6 @@
     </item>
     
     <item>
-      <title>涅普计划</title>
-      <link>https://blog.supersassw.com/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.supersassw.com/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>数据编码</title>
       <link>https://blog.supersassw.com/tags/%E6%95%B0%E6%8D%AE%E7%BC%96%E7%A0%81/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
@@ -58,6 +85,15 @@
       <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/tags/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ACM</title>
+      <link>https://blog.supersassw.com/tags/acm/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/acm/</guid>
       <description></description>
     </item>
     
@@ -89,6 +125,24 @@
     </item>
     
     <item>
+      <title>大学课程</title>
+      <link>https://blog.supersassw.com/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数组</title>
+      <link>https://blog.supersassw.com/tags/%E6%95%B0%E7%BB%84/</link>
+      <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%95%B0%E7%BB%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>程序设计</title>
       <link>https://blog.supersassw.com/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/</link>
       <pubDate>Sat, 09 Jan 2021 00:00:00 +0000</pubDate>
@@ -112,6 +166,15 @@
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/tags/%E5%BF%83%E7%90%86%E5%AD%A6%E5%AF%BC%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>指针</title>
+      <link>https://blog.supersassw.com/tags/%E6%8C%87%E9%92%88/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%8C%87%E9%92%88/</guid>
       <description></description>
     </item>
     
@@ -161,20 +224,11 @@
     </item>
     
     <item>
-      <title>总考点</title>
-      <link>https://blog.supersassw.com/tags/%E6%80%BB%E8%80%83%E7%82%B9/</link>
+      <title>考点总结</title>
+      <link>https://blog.supersassw.com/tags/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93/</link>
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/tags/%E6%80%BB%E8%80%83%E7%82%B9/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>数组</title>
-      <link>https://blog.supersassw.com/tags/%E6%95%B0%E7%BB%84/</link>
-      <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.supersassw.com/tags/%E6%95%B0%E7%BB%84/</guid>
+      <guid>https://blog.supersassw.com/tags/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93/</guid>
       <description></description>
     </item>
     
@@ -206,6 +260,15 @@
     </item>
     
     <item>
+      <title>数据结构</title>
+      <link>https://blog.supersassw.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>线段树</title>
       <link>https://blog.supersassw.com/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</link>
       <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
@@ -224,11 +287,11 @@
     </item>
     
     <item>
-      <title>基础部分</title>
-      <link>https://blog.supersassw.com/tags/%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86/</link>
+      <title>基础算法</title>
+      <link>https://blog.supersassw.com/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/tags/%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86/</guid>
+      <guid>https://blog.supersassw.com/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     
@@ -251,6 +314,60 @@
     </item>
     
     <item>
+      <title>EXGCD</title>
+      <link>https://blog.supersassw.com/tags/exgcd/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/exgcd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GCD</title>
+      <link>https://blog.supersassw.com/tags/gcd/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/gcd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>乘法逆元</title>
+      <link>https://blog.supersassw.com/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>数论</title>
+      <link>https://blog.supersassw.com/tags/%E6%95%B0%E8%AE%BA/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%95%B0%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>线性同余方程</title>
+      <link>https://blog.supersassw.com/tags/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>裴蜀定理</title>
+      <link>https://blog.supersassw.com/tags/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>STL</title>
       <link>https://blog.supersassw.com/tags/stl/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
@@ -260,11 +377,11 @@
     </item>
     
     <item>
-      <title>排序</title>
-      <link>https://blog.supersassw.com/tags/%E6%8E%92%E5%BA%8F/</link>
+      <title>排序算法</title>
+      <link>https://blog.supersassw.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/tags/%E6%8E%92%E5%BA%8F/</guid>
+      <guid>https://blog.supersassw.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>
     

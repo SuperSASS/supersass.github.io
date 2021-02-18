@@ -1,0 +1,935 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='数论——GCD、裴蜀定理、EXGCD……'><title>ACM学习笔记：GCD、裴蜀定理、EXGCD……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-note-gcd_exgcd/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM学习笔记：GCD、裴蜀定理、EXGCD……'>
+<meta property='og:description' content='数论——GCD、裴蜀定理、EXGCD……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-note-gcd_exgcd/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='数论' /><meta property='article:tag' content='GCD' /><meta property='article:tag' content='裴蜀定理' /><meta property='article:tag' content='EXGCD' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2020-12-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-02-18T00:40:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/acm-note-gcd_exgcd/73415224_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM学习笔记：GCD、裴蜀定理、EXGCD……">
+<meta name="twitter:description" content="数论——GCD、裴蜀定理、EXGCD……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/acm-note-gcd_exgcd/73415224_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#gcd">GCD</a>
+      <ul>
+        <li><a href="#引例最大公约数">引例：最大公约数</a></li>
+        <li><a href="#欧几里得算法">欧几里得算法</a>
+          <ul>
+            <li><a href="#实现代码">实现代码</a></li>
+          </ul>
+        </li>
+        <li><a href="#多个数的最大公约数">多个数的最大公约数</a></li>
+      </ul>
+    </li>
+    <li><a href="#裴蜀定理贝祖定理">裴蜀定理（贝祖定理）</a>
+      <ul>
+        <li><a href="#定义">定义</a></li>
+        <li><a href="#推论">推论</a></li>
+        <li><a href="#基本应用例题">基本应用（例题）</a>
+          <ul>
+            <li><a href="#部分代码">部分代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#扩展欧几里得定理">扩展欧几里得定理</a>
+      <ul>
+        <li><a href="#方法详解">方法详解</a></li>
+        <li><a href="#实现代码-1">实现代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/acm-note-gcd_exgcd/">
+                <img src="/p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_800x0_resize_box_2.png"
+                        srcset="/p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_800x0_resize_box_2.png 800w, /p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="525" 
+                        loading="lazy"
+                        alt="Featured image of post ACM学习笔记：GCD、裴蜀定理、EXGCD……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm-note/" >
+                ACM - 学习笔记
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-note-gcd_exgcd/">ACM学习笔记：GCD、裴蜀定理、EXGCD……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            数论——GCD、裴蜀定理、EXGCD……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/12/12</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：3322</div>
+            <div class="time">预计阅读时长： <time>7</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <div class="snote warning ">
+	<div class="snote-content">
+		<p> 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… </p>
+	</div>
+</div>
+<h1 id="gcd">GCD</h1>
+<h2 id="引例最大公约数">引例：最大公约数</h2>
+<p>没什么好说的，就最大公约数。<br>
+主要是他的求解方法：<strong>欧几里得算法</strong>(Euclidean algorithm)（即：辗转相除法）。</p>
+<h2 id="欧几里得算法">欧几里得算法</h2>
+<p>也不多讲，证明也懒得_(:з」∠)_……<br>
+主要是他的扩展：**扩展欧几里得定理**(Extended Euclidean algorithm, EXGCD)【没有在套娃xddd……</p>
+<p>主要依靠式子：$\gcd(a,b)=\gcd(b,a\mod b)$<br>
+当 $b=0$ 时，此时算出来的 $a$ 即为最终 $\gcd(a,b)$ 的结果。</p>
+<p>时间复杂度为$O(\log n)$。</p>
+<h3 id="实现代码">实现代码</h3>
+<ul>
+<li>递归实现：</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="c1">//if (a &lt; b)
+</span><span class="c1"></span>	<span class="c1">//	return gcd(b, a);
+</span><span class="c1"></span>	<span class="cm">/* 删除原因：
+</span><span class="cm">	虽然用辗转相除法需要满足a &gt; b。
+</span><span class="cm">	但如果a &lt; b，则b % a = a，
+</span><span class="cm">	gcd(b, b % a)实际上就相当于交换了a,b。故不用单独判断。
+</span><span class="cm">	*/</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+	<span class="k">return</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">);</span>
+	<span class="cm">/* 一行代码：
+</span><span class="cm">	return b ? gcd(b,b%a)
+</span><span class="cm">	*/</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>迭代实现：</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">gcd_iteration</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">%=</span> <span class="n">b</span><span class="p">);</span>	<span class="c1">//b^=a^=b^=a为交换两变量操作，最后以b的值为循环条件。
+</span><span class="c1"></span>    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><h2 id="多个数的最大公约数">多个数的最大公约数</h2>
+<p>求 $a_1,a_2,\cdots,a_n$ 个数的最大公约数，<br>
+直接为 $\gcd(a_1,a_2,\cdots,a_n)$。</p>
+<p>先算$\gcd(a_1,a_2)$，所得结果$d_1$，再$\gcd(d,a_3)$，反复进行。</p>
+<p><em>此处以上为基础部分。</em></p>
+<hr>
+<h1 id="裴蜀定理贝祖定理">裴蜀定理（贝祖定理）</h1>
+<p>在学EXGCD之前，要先来认识一下这个定理。</p>
+<blockquote>
+<p>裴蜀定理，又称贝祖定理(Bézout&rsquo;s lemma)。是一个关于<strong>最大公约数</strong>的定理。</p>
+<p>引自：<a class="link" href="https://oi-wiki.org/math/bezouts/"  target="_blank" rel="noopener"
+    >OI-Wiki</a></p>
+</blockquote>
+<h2 id="定义">定义</h2>
+<blockquote>
+<p>若 $a,b$ 是不全为零的整数，记：$\gcd(a,b)=d$，<br>
+则对于任意的整数 $x,y$ ， $ax+by$ 都一定是 $d$ 的整数倍。</p>
+<ul>
+<li>特别的：一定存在整数 $x,y$ ，使 $ax+by=d$ 成立。</li>
+</ul>
+</blockquote>
+<ul>
+<li>
+<p><strong>为充要条件</strong>，即：<br>
+若 $ax+by=c$ 有解，<br>
+则 $\gcd(a,b)\mid c$ 。（其中 $\mid$ 为整除符号，代表$c$能被$\gcd(a,b)$整除）<br>
+（或者说 $c$ 是 $\gcd(a,b)$的整数倍）</p>
+<ul>
+<li>特别的：如果 $ax+by=1$ ，则 $a,b$ 互质（$\gcd(a,b)=1$）。</li>
+</ul>
+<p><em>这个即为二元一次不定方程存在解的条件。</em></p>
+</li>
+</ul>
+<p>简洁一点则为：</p>
+<blockquote>
+<p>若 $a,b$ 是不全为零的整数，<br>
+则存在整数 $x,y$ , 使得 $ax+by=\gcd(a,b)$ 。</p>
+</blockquote>
+<p>这个定理只是个概念，让你知道有这样的解存在，但并没有实际告诉你该怎么解。</p>
+<h2 id="推论">推论</h2>
+<ol>
+<li>有关<strong>互质</strong>：
+<blockquote>
+<p>$a,b$ 互质（$\gcd(a,b)=1$）的充要条件为：<br>
+存在整数 $x,y$ ，使得$ab+by=1$</p>
+</blockquote>
+</li>
+<li><strong>推广到$n$个数</strong>的情况：
+<blockquote>
+<p>设存在$n$个整数 $a_1,a_2,\cdots,a_n$ ， $d= \gcd(a_1,a_2,\cdots,a_n)$ ，<br>
+则存在整数 $x_1,x_2,\cdots,x_n$ ， $x_1a_1+x_2a_2+\cdots+x_na_n=d$ 有解。</p>
+<ul>
+<li>特别的：<br>
+如果 $a_1,a_2,\cdots,a_n$ 互质，（<strong>不是两两互质，而是存在两个数互质</strong>，即：$\gcd(a_1,a_2,\cdots,a_n)=1$）<br>
+则存在整数 $x_1,x_2,\cdots,x_n$ ，使得 $x_1a_1+x_2a_2+\cdots+x_na_n=1$ 。</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<p><em>参考自：“静听风吟。”的<a class="link" href="https://www.cnblogs.com/aininot260/p/9477754.html"  target="_blank" rel="noopener"
+    >「数学：裴蜀定理」</a>。</em></p>
+<h2 id="基本应用例题">基本应用（例题）</h2>
+<blockquote>
+<p>例题：Codeforces Round #290 (Div. 2) D. Fox And Jumping<br>
+给出$n$张卡片，分别有$l_i$和$c_i$。在一条无限长的纸带上，你可以选择花$c_i$的钱来购买卡片$i$，从此以后可以向左或向右跳$l_i$个单位。
+问你至少花多少元钱才能够跳到纸带上全部位置。若不行，输出$-1$。</p>
+</blockquote>
+<p>分析该问题：<br>
+如果每个格子都想要被跳到，则必须选出一些数，使得<strong>数次加减</strong>后绝对值为$1$。【我们定加减后值就为$1$。因为如果为$-1$，可以通过反向跳跃（取相反数）使得值为$1$。】<br>
+这样通过每次移动$1$格，便能满足跳到每个格子上，否则一定不能满足。</p>
+<p>由上述<strong>裴蜀定理</strong>的“推论2”可知：<br>
+如果要满足 $x_1<em>a_1+x_2</em>a_2+\cdots+x_n*a_n=1$ ，<br>
+则必须满足 $\gcd(a_1,a_2,\cdots,a_n)=1$ 。</p>
+<p>但又由于有代价的存在，【分析了这么多，那么代价呢x……<br>
+所以可以用$dp$思想：</p>
+<blockquote>
+<p>用个<code>dp</code>表存跳某步的代价最小值。</p>
+<p>那么每读入一个，则对所存的状态进行遍历，<br>
+求取其与某状态的$\gcd$，算出来<strong>是多少</strong>，则这两个数可以通过数次加减后<strong>走多少格</strong>。</p>
+<p>不断更新，最后如果<code>dp[1]</code>存在，则输出，否则输出<code>-1</code>。</p>
+</blockquote>
+<p>又因为数据范围太大，故用<code>map</code>来代替基本的数组来存。<br>
+【OI-Wiki上说可以用<code>unordered_map</code>。但由于这里要遍历，故我觉得还是要用<code>map</code>。<code>unordered_map</code>由于其内部是用哈希表实现的，遍历时可能访问不全。</p>
+<h3 id="部分代码">部分代码</h3>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">;</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">dp</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">?</span> <span class="n">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">:</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	<span class="c1">//如果存在要去最小
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="nl">j</span> <span class="p">:</span> <span class="n">dp</span><span class="p">)</span>	<span class="c1">//遍历当前dp表
+</span><span class="c1"></span>    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">to</span> <span class="o">=</span> <span class="n">__gcd</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">j</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>	<span class="c1">//计算能去的点（gcd）
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">cost</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">j</span><span class="p">.</span><span class="n">second</span><span class="p">;</span>	<span class="c1">//计算代价
+</span><span class="c1"></span>        <span class="n">dp</span><span class="p">[</span><span class="n">to</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">to</span><span class="p">]</span> <span class="o">?</span> <span class="n">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">to</span><span class="p">],</span> <span class="n">cost</span><span class="p">)</span> <span class="o">:</span> <span class="n">cost</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><p><em>参考自：“Kanoon”的<a class="link" href="https://www.cnblogs.com/Kanoon/p/12621109.html"  target="_blank" rel="noopener"
+    >Codeforces Round #290 (Div. 2) D. Fox And Jumping（数论，裴蜀定理，gcd）</a></em></p>
+<h1 id="扩展欧几里得定理">扩展欧几里得定理</h1>
+<blockquote>
+<p>扩展欧几里得定理（Extended Euclidean algorithm, EXGCD），常用于求 $ax+by= \gcd(a,b)$ 的一组可行解。</p>
+<p>引自——<a class="link" href="https://oi-wiki.org/math/gcd/#_7"  target="_blank" rel="noopener"
+    >OI-Wiki</a></p>
+</blockquote>
+<h2 id="方法详解">方法详解</h2>
+<p>求 $ax+by= \gcd(a,b)$ 的一组可行解：</p>
+<p>设:$a&gt;b$，则有以下两种情况</p>
+<ol>
+<li>
+<p>当$b=0$时，$\gcd(a,b) = a$，所以存在一组解$\left{\begin{array}{ll}x  = 1\y =0\end{array}\right.$</p>
+</li>
+<li>
+<p>当$a=0$时，$\gcd(a,b)=\gcd(b,0)$，一样的结果。</p>
+</li>
+<li>
+<p>当$ab\neq0$时：</p>
+<blockquote>
+<p>设：<br>
+$\left{\begin{array}{ll} ax_1+by_1=\gcd(a,b) \ bx_2+(a \mod b)y_2=\gcd(b,a \mod b) \end{array}\right.$</p>
+<p>由欧几里得算法可知： $\gcd(a,b) = \gcd(b,a \mod b)$<br>
+故： $ax_1+by_1 = bx_2+(a \mod b)y_2$</p>
+<p>又因为： $a \mod b = a-(\lfloor \frac{a}{b} \rfloor \times b)$<br>
+所以：<br>
+$ax_1+by_1$<br>
+$= bx_2+[a-(\lfloor \frac{a}{b} \rfloor \times b)]y_2$<br>
+$= ay_2+bx_2 - \lfloor \frac{a}{b} \rfloor \times by_2$<br>
+$= ay_2+b(x_2 - \lfloor \frac{a}{b} \rfloor \times y_2)$</p>
+<p>因为上下两式中： $a=a,b=b$<br>
+所以：$\left{\begin{array}{ll} x_1=y_2 \ y_1=x_2-\lfloor \frac{a}{b} \rfloor \times y_2 \end{array}\right.$</p>
+</blockquote>
+<p>便可得到<strong>递归式</strong>：$\textup{exgcd}(x,y)=\textup{exgcd}(y,x-\lfloor \frac{a}{b} \rfloor \times y)$（此时的$a,b$是属于$\textup{exgcd}(x,y)$状态的$a,b$）<br>
+<strong>终止条件</strong>： $b=0$时，$\left{\begin{array}{ll}x  = 1\y =0\end{array}\right.$</p>
+<blockquote>
+<p>虽然$\gcd(a,b)$和$\textup{exgcd}(a,b)$都有递归式，<br>
+但$\textup{exgcd}$不同于求$\gcd$：</p>
+<ul>
+<li>求解$\gcd$是<strong>知道</strong>最开始的<strong>初状态</strong>，一直<strong>递归求得末状态</strong>。</li>
+<li>求解$\textup{exgcd}$只是<strong>知道末状态</strong>，要根据末状态再<strong>倒推回去求解初状态（一组解）</strong>。<br>
+则需要不断递归到末状态，再由末状态反推到初状态。故可配合$\gcd$求得$\textup{ecgcd}$</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h2 id="实现代码-1">实现代码</h2>
+<ul>
+<li>递归实现：</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//函数返回值为gcd，过程中计算x,y。
+</span><span class="c1"></span><span class="kt">int</span> <span class="nf">Exgcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//代表通过gcd求得末状态，
+</span><span class="c1"></span>    <span class="p">{</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//由上分析知：终状态为x = 1, y = 0。
+</span><span class="c1"></span>        <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">gcd</span> <span class="o">=</span> <span class="n">Exgcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span> <span class="c1">//直接递归gcd求
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="n">x</span><span class="p">;</span>                       <span class="c1">//这里之后开始反推回去
+</span><span class="c1"></span>    <span class="n">x</span> <span class="o">=</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">t</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">y</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">gcd</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><ul>
+<li>
+<p>迭代实现：</p>
+<p>有关$\textup{exgcd}$的迭代方式，可以采用<strong>矩阵乘法</strong>的思路理解。</p>
+<blockquote>
+<p>这是我们找到的递归式：<br>
+$$\textup{exgcd}(x,y)=\textup{exgcd}(y,x-\lfloor \frac{a}{b} \rfloor \times y)$$<br>
+或写为：$\left{\begin{array}{ll} x=y' \ y=x'- \lfloor \frac{a}{b} \rfloor \times y' \end{array}\right.$（此时的$a,b$是属于$\textup{exgcd}(x,y)$状态下的$a,b$）</p>
+<p>变成矩阵形式：
+$$\begin{pmatrix} x \ y \end{pmatrix}=\begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \end{pmatrix}\begin{pmatrix} x' \ y' \end{pmatrix}$$
+其中$d_1$表示第一次迭代（初状态）的$\lfloor\frac{a}{b}\rfloor$。</p>
+<p>然后就可以一直乘下去展开，直到最终状态：
+$$\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \end{pmatrix} \begin{pmatrix} 0&amp;1 \ 1&amp;-d_2 \end{pmatrix} \cdots \begin{pmatrix} 0&amp;1 \ 1&amp;-d_n \end{pmatrix} \begin{pmatrix} 1 \ 0 \end{pmatrix}$$
+因此就可以顺着迭代：计算出<strong>中间$n$个二阶矩阵$\begin{pmatrix} 0&amp;1 \ 1&amp;-d_i \end{pmatrix}$的乘积</strong>。最后到最终状态乘$\begin{pmatrix} 1 \ 0 \end{pmatrix}$，也就是直接取<strong>最终算出的二阶矩阵$\begin{pmatrix} x_1&amp;x_2 \ y_1&amp;y_2 \end{pmatrix}$的$x_1,x_2$</strong></p>
+<hr>
+<p>我们还可以调整一下，设定一个初矩阵，然后直接乘每次的$\begin{pmatrix} 0&amp;1 \ 1&amp;-d_i \end{pmatrix}$，就不用额外处理初状态，直接顺着迭代着走就可以了。<br>
+否则需要额外处理初状态，要令初矩阵为$\begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \end{pmatrix}$，然后还要迭代次$\gcd(a,b)$才能进入循环。<br>
+易知这个初状态就是单位矩阵$\begin{pmatrix} 1&amp;0 \ 0&amp;1 \end{pmatrix}$。</p>
+</blockquote>
+</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">Exgcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>           <span class="c1">//初矩阵：1 0
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>     <span class="c1">//       0 1
+</span><span class="c1"></span>    <span class="cm">/* 不定义这个初矩阵的话就要写为：
+</span><span class="cm">    x = 0, y = 1;           //初矩阵：0  1
+</span><span class="cm">    int x1 = 1, y1 = -a/b;  //       1 -d1
+</span><span class="cm">    tie(a, b) = make_tuple(b, a - (a/b) * b);   //然后还要迭代一下
+</span><span class="cm">    */</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">d</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">;</span>
+        <span class="n">tie</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="p">)</span> <span class="o">=</span> <span class="n">make_tuple</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="n">d</span> <span class="o">*</span> <span class="n">x1</span><span class="p">);</span>    <span class="c1">//矩阵乘法
+</span><span class="c1"></span>        <span class="n">tie</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span> <span class="o">=</span> <span class="n">make_tuple</span><span class="p">(</span><span class="n">y1</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">d</span> <span class="o">*</span> <span class="n">y1</span><span class="p">);</span>
+        <span class="n">tie</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="o">=</span> <span class="n">make_tuple</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">-</span> <span class="n">d</span> <span class="o">*</span> <span class="n">b</span><span class="p">);</span>       <span class="c1">//迭代gcd()
+</span><span class="c1"></span>    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/%E6%95%B0%E8%AE%BA/">数论</a>
+        
+            <a href="/tags/gcd/">GCD</a>
+        
+            <a href="/tags/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86/">裴蜀定理</a>
+        
+            <a href="/tags/exgcd/">EXGCD</a>
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2021/02/18 00:40
+        </span>
+    </section><section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/73415224" target="_blank" rel="noopener">73415224</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-linear_equation/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-linear_equation/83179646_p0.00e191950c2a6f9cfd53107ba1c927b6_hua9bd3bd10387d89cf6f6be61b75d18f9_1401560_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-linear_equation" 
+                        data-hash="md5-AOGRlQwqb5z9UxB7ockntg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：线性同余方程……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-union_find/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-union_find/60855211_p0.a07a83fa1564e2ee235e40f1b19ffbb0_hu2f29f1f8fc777ac15405156777510011_1339015_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-union_find" 
+                        data-hash="md5-oHqD&#43;hVk4u4jXkDxsZ/7sA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：并查集……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-segment_tree/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-segment_tree/67957130_p0.c5cb31194a7e4ca539d9a4fb08d8c6ec_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-segment_tree" 
+                        data-hash="md5-xcsxGUp&#43;TKU52aT7CNjG7A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：线段树……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-neighbor_sort/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-neighbor_sort/71111285_p0.af7df8fc45491ad0333c518aac5d00c1_hud2648e021785c2a9f9434e425c67999f_2056049_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-neighbor_sort" 
+                        data-hash="md5-r334/EVJGtAzPFGKrF0AwQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：邻项比较排序……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-greedy/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-greedy/80942286_p0.f4ace0f01d19dcce681fdce51cc97d08_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-greedy" 
+                        data-hash="md5-9Kzg8B0Z3M5oH9zlHMl9CA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：贪心……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

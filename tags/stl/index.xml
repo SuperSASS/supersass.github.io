@@ -8,12 +8,12 @@
     <language>zh-CN</language>
     <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/stl/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>STL……</title>
-      <link>https://blog.supersassw.com/p/stl/</link>
+      <title>ACM学习笔记：STL……</title>
+      <link>https://blog.supersassw.com/p/acm-note-stl/</link>
       <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/stl/</guid>
-      <description>STL 详解 set——集合 set&amp;lt;int&amp;gt; STL_set set为关联容器。为一种体现集合性质的容器。 其中不允许有重复元素。 并且set中的元素是排好序的（升序）。 用法： set&amp;lt;int&amp;gt; STL_set; /</description>
+      <guid>https://blog.supersassw.com/p/acm-note-stl/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… STL 详解 set—</description>
     </item>
     
   </channel>

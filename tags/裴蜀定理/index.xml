@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>裴蜀定理 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86/</link>
+    <description>Recent content in 裴蜀定理 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM学习笔记：GCD、裴蜀定理、EXGCD……</title>
+      <link>https://blog.supersassw.com/p/acm-note-gcd_exgcd/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-gcd_exgcd/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… GCD 引例：最大公约数 没什么好说的，就最大公约数。 主要是</description>
+    </item>
+    
+  </channel>
+</rss>

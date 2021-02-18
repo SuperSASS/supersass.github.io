@@ -1,0 +1,1377 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='程序设计课程中数组课后习题选讲……'><title>程序设计——数组习题……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/univ-cpp-prac-array/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='程序设计——数组习题……'>
+<meta property='og:description' content='程序设计课程中数组课后习题选讲……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/univ-cpp-prac-array/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='大学课程' /><meta property='article:tag' content='程序设计' /><meta property='article:tag' content='数组' /><meta property='article:tag' content='习题' /><meta property='article:published_time' content='2021-01-09T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-01-09T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/univ-cpp-prac-array/Yande-314214.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="程序设计——数组习题……">
+<meta name="twitter:description" content="程序设计课程中数组课后习题选讲……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/univ-cpp-prac-array/Yande-314214.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数组课后练习题">数组课后练习题</a>
+      <ul>
+        <li><a href="#判断题">判断题</a>
+          <ul>
+            <li><a href="#第一二十八题重要">第一、二、十八题（重要）</a></li>
+            <li><a href="#第十题">第十题</a></li>
+            <li><a href="#第十一十三题">第十一、十三题</a></li>
+            <li><a href="#第十七题">第十七题</a></li>
+            <li><a href="#第二十题重要">第二十题（重要）</a></li>
+            <li><a href="#由第二十题衍生的练习题">由第二十题衍生的练习题</a></li>
+          </ul>
+        </li>
+        <li><a href="#选择题">选择题</a>
+          <ul>
+            <li><a href="#第三十三十一题">第三十、三十一题</a></li>
+            <li><a href="#第三十五题">第三十五题</a></li>
+            <li><a href="#第三十六题">第三十六题</a></li>
+            <li><a href="#第五十二题">第五十二题</a></li>
+            <li><a href="#第五十九题">第五十九题</a></li>
+          </ul>
+        </li>
+        <li><a href="#未写入的题">未写入的题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/univ-cpp-prac-array/">
+                <img src="/p/univ-cpp-prac-array/Yande-314214_hua49f15ef087bdbbd47ec4ec6c539acdb_2635208_800x0_resize_box_2.png"
+                        srcset="/p/univ-cpp-prac-array/Yande-314214_hua49f15ef087bdbbd47ec4ec6c539acdb_2635208_800x0_resize_box_2.png 800w, /p/univ-cpp-prac-array/Yande-314214_hua49f15ef087bdbbd47ec4ec6c539acdb_2635208_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="464" 
+                        loading="lazy"
+                        alt="Featured image of post 程序设计——数组习题……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/university/" >
+                大学课程
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/univ-cpp-prac-array/">程序设计——数组习题……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            程序设计课程中数组课后习题选讲……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/01/09</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：3240</div>
+            <div class="time">预计阅读时长： <time>7</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="数组课后练习题">数组课后练习题</h1>
+<h2 id="判断题">判断题</h2>
+<h3 id="第一二十八题重要">第一、二、十八题（重要）</h3>
+
+
+
+
+<div class="sc-tabs"><input type="radio" class="sc-tabs--toggle" name="tabs-1x2x18" id="tabs-1x2x18-0" checked="checked" />
+	<label for="tabs-1x2x18-0">第一题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan">
+	<div class="snote-content">
+		<p> 在对全部数组元素赋初值时，不可以不指定一维数组的长度。 </p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>一位数组赋初值 <em>【书 P121】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p>个人做错了这道题！</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> 错误 </p>
+	</div>
+</div>
+<p><em>也就是说可以不指定数组长度……</em></p>
+<h2 id="分析">分析</h2>
+<p>如果<strong>提供了全部初始值数组</strong>，也可以不指定长度，编译提供会自动帮你指定。</p>
+<p>如：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">};</span>   <span class="c1">//编译系统会帮你指定为a[6]
+</span></code></pre></div></div>
+</details>
+</div><input type="radio" class="sc-tabs--toggle" name="tabs-1x2x18" id="tabs-1x2x18-1"  />
+	<label for="tabs-1x2x18-1">第二题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan">
+	<div class="snote-content">
+		<p> 在对全部二维数组元素赋初值时，可以不指定二维数组的行数。 </p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>二位数组赋初值 <em>【书 P125】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p>个人做错了这道题！</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote success ">
+	<div class="snote-content">
+		<p> 正确 </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p>同一维数组，
+如果<strong>提供了全部初始值数组</strong>，也可以不指定<strong>第一维长度</strong>，编译提供会自动帮你计算出长度并指定。</p>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p>但注意！<br>
+不能省略<strong>第二维的长度</strong>。</p>
+	</div>
+</div>
+<div class="sc-columns"><div class="sc-columns--inner"><div class="snote success ">
+	<div class="snote-content">
+		<p><p>正确例子：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">a</span><span class="p">[][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>   <span class="c1">//编译系统会帮你指定为a[3][3]
+</span></code></pre></div></p>
+	</div>
+</div>
+</div><div class="sc-columns--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p><p>错误例子：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">};</span>   <span class="c1">//编译系统无法确定长度
+</span></code></pre></div></p>
+	</div>
+</div>
+</div></div>
+</div>
+</details>
+</div><input type="radio" class="sc-tabs--toggle" name="tabs-1x2x18" id="tabs-1x2x18-2"  />
+	<label for="tabs-1x2x18-2">练习——第十八题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan">
+	<div class="snote-content">
+		<p> 在给全部数组元素赋初值时，可以不指定二维数组中的常量表达式，例如<code>int a[][] = {1,2,3,4,5,6}</code>。 </p>
+	</div>
+</div>
+<div class="snote up red">
+	<div class="snote-content">
+		<p> 作为之前二维数组的练习题。 </p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p>个人做错了这道题！</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> 错误 </p>
+	</div>
+</div>
+</div>
+</details>
+</div></div>
+
+<hr>
+<h3 id="第十题">第十题</h3>
+<div class="snote question cyan">
+	<div class="snote-content">
+		<p> 定义一个一维字符数组有$50$个元素，用该一维字符数组表示一个字符串数组最多允许有$50$个字符 </p>
+	</div>
+</div>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>字符数组的容量 <em>【书 P128】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> 错误 </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p>字符数组<code>char []</code>，容量比定义的长度要<strong>少一个</strong>。</p>
+<p>因为字符数组还要存一个末尾的<code>/0</code>，<br>
+所以题上定义了$50$个元素（<code>char a[50]</code>），但实际上只能存$49$个字符。</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>同理：如果一个字符串长度是$n$，<br>
+则它占用的空间是$n+1$个。</p>
+<p><em>例子见<a href="https://blog.supersassw.com/p/cpp-summary/#%E4%BA%94%E5%85%B6%E4%BB%96%E6%9D%82%E7%B1%BB">考前总结中最后的第7点</a>。</em></p>
+</p>
+	</div>
+</div>
+</div>
+</details>
+<hr>
+<h3 id="第十一十三题">第十一、十三题</h3>
+
+
+
+
+<div class="sc-tabs"><input type="radio" class="sc-tabs--toggle" name="tabs-11x13" id="tabs-11x13-0" checked="checked" />
+	<label for="tabs-11x13-0">第十一题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan">
+	<div class="snote-content">
+		<p> C++中各种数据类型的变量在定义后会被自动初始化为0。 </p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>一维数组的初始值 <em>【书 P121】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> 错误 </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p>一般方式定义的数据类型，如<code>int a</code>，<code>double b[10]</code>，都是不会被赋初值的。</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 这也就是为什么我们不赋初值就使用它会报错的原因，因为里面有以前的脏数据 </p>
+	</div>
+</div>
+<p>但如果加上<code>static</code>这个修饰词，定义为<strong>静态变量</strong>，就会被赋初值为0了。</p>
+<p>如：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">static</span> <span class="kt">int</span> <span class="n">a</span><span class="p">;</span>   <span class="c1">//a = 0
+</span><span class="c1"></span><span class="k">static</span> <span class="kt">int</span> <span class="n">b</span><span class="p">[</span><span class="mi">5</span><span class="p">];</span>    <span class="c1">//b1~b5 = 0
+</span></code></pre></div></div>
+</details>
+</div><input type="radio" class="sc-tabs--toggle" name="tabs-11x13" id="tabs-11x13-1"  />
+	<label for="tabs-11x13-1">第十三题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan">
+	<div class="snote-content">
+		<p> 静态（<code>static</code>）数组被定义时，数组的所有元素自动获取初始值0。 </p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>静态一维数组 <em>【书 P121】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote success ">
+	<div class="snote-content">
+		<p> 正确 </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p>同十一题，静态数组，里面所有元素自动赋初值为0。</p>
+</div>
+</details>
+</div></div>
+
+<hr>
+<h3 id="第十七题">第十七题</h3>
+<div class="snote question cyan">
+	<div class="snote-content">
+		<p> 在C++中数组是具有一定顺序关系的若干相同类型变量的集合体。 </p>
+	</div>
+</div>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>数组的概念 <em>【书 P120】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote success ">
+	<div class="snote-content">
+		<p> 正确 </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p><strong>纯概念题，记住！</strong></p>
+</div>
+</details>
+<hr>
+<h3 id="第二十题重要">第二十题（重要）</h3>
+
+
+<div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>程序段：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">char</span> <span class="n">s1</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="s">&#34;program&#34;</span><span class="p">;</span>
+</code></pre></div><p>是合法的使用。</p>
+</p>
+	</div>
+</div>
+
+
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><p>个人做错了这道题！</p>
+<p><strong>为一道很容易错的操作题。</strong></p>
+</p>
+	</div>
+</div>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>一维字符数组的定义 <em>【书 P127】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> 错误 </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p><strong>请仔细阅读书上P127中「1.一维字符数组的定义」！</strong></p>
+<p>里面有很多没有讲到的点，但很容易错。</p>
+</div>
+</details>
+<h3 id="由第二十题衍生的练习题">由第二十题衍生的练习题</h3>
+<div class="snote up red">
+	<div class="snote-content">
+		<p> 作为第二十题相关的练习题。 </p>
+	</div>
+</div>
+<p>这些都是根据书上P127中「1.一维字符数组的定义」里面的内容所出题。</p>
+<p>故没有写分析，请仔细阅读书上事例来自行分析。</p>
+
+
+
+
+<div class="sc-tabs"><input type="radio" class="sc-tabs--toggle" name="tabs-21x22x54" id="tabs-21x22x54-0" checked="checked" />
+	<label for="tabs-21x22x54-0">第二十一题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>程序段：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">char</span> <span class="n">s1</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;g&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;m&#39;</span><span class="p">};</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">s1</span><span class="p">;</span>
+</code></pre></div><p>是合法的使用。</p>
+</p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><p>个人做错了这道题！</p>
+<p><strong>与二十二题很容易混淆！</strong></p>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案</summary>
+	<div class="sc-details--inner"><div class="snote success ">
+	<div class="snote-content">
+		<p> 正确 </p>
+	</div>
+</div>
+</div>
+</details>
+</div><input type="radio" class="sc-tabs--toggle" name="tabs-21x22x54" id="tabs-21x22x54-1"  />
+	<label for="tabs-21x22x54-1">第二十二题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>程序段：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">char</span> <span class="n">sa</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;g&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;m&#39;</span><span class="p">};</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">sa</span><span class="p">;</span>
+</code></pre></div><p>是合法的使用。</p>
+</p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><p>个人做错了这道题！</p>
+<p><strong>与二十一题很容易混淆！</strong></p>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> 错误 </p>
+	</div>
+</div>
+<p>仔细看看与二十一题的区别在什么地方，<br>
+很小的区别就造成了答案的不一样。</p>
+</div>
+</details>
+</div><input type="radio" class="sc-tabs--toggle" name="tabs-21x22x54" id="tabs-21x22x54-2"  />
+	<label for="tabs-21x22x54-2">第五十四题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>有如下的字符串数组定义语句：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">char</span> <span class="n">str1</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;g&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;m&#39;</span><span class="p">};</span>
+<span class="kt">char</span> <span class="n">str2</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="sc">&#39;p&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;o&#39;</span><span class="p">,</span> <span class="sc">&#39;g&#39;</span><span class="p">,</span> <span class="sc">&#39;r&#39;</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="sc">&#39;m&#39;</span><span class="p">,</span> <span class="sc">&#39;\0&#39;</span><span class="p">};</span>
+<span class="kt">char</span> <span class="n">str3</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&#34;program&#34;</span><span class="p">;</span>
+</code></pre></div><p>下列说法正确的是（）。</p>
+<hr>
+<p><strong>A</strong>、<code>str1</code>中的数据<strong>可以</strong>作为一个整体（字符串）参加运算。<br>
+<strong>B</strong>、<code>str2</code>和<code>str3</code>中的数据<strong>只能</strong>作为一个整体（字符串）参加运算。<br>
+<strong>C</strong>、<code>str2</code>和<code>str3</code>中的数据<strong>既可以</strong>以元素为单位参加运算，<strong>也可以</strong>作为一个整体（字符串）参加运算。<br>
+<strong>D</strong>、<code>str1</code>、<code>str2</code>和<code>str3</code>中的数据<strong>既可以</strong>以元素为单位参加运算，<strong>也可以</strong>作为一个整体（字符串）参加运算。</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>所谓作为一个整体，即是如以下操作：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">str1</span> <span class="o">=</span> <span class="s">&#34;abcd&#34;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str1</span><span class="p">;</span>
+</code></pre></div><p>而以元素参加运算，即是如以下操作：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">str1</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;a&#34;</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">str1</span><span class="p">[</span><span class="mi">3</span><span class="p">];</span>
+</code></pre></div><p>如果只能以元素操作，则不能<code>cout &lt;&lt; str1</code>这样作为整体操作。</p>
+</p>
+	</div>
+</div>
+</p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p>个人做错了这道题！</p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>二维数组的使用方法 <em>【书 P125】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案</summary>
+	<div class="sc-details--inner"><div class="snote success ">
+	<div class="snote-content">
+		<p> <strong>C</strong>、<code>str2</code>和<code>str3</code>中的数据<strong>既可以</strong>以元素为单位参加运算，<strong>也可以</strong>作为一个整体（字符串）参加运算。 </p>
+	</div>
+</div>
+</div>
+</details>
+</div></div>
+
+<h2 id="选择题">选择题</h2>
+<h3 id="第三十三十一题">第三十、三十一题</h3>
+
+
+
+
+<div class="sc-tabs"><input type="radio" class="sc-tabs--toggle" name="tabs-30x31" id="tabs-30x31-0" checked="checked" />
+	<label for="tabs-30x31-0">第三十题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>在下面的一维数组定义中，（）有语法错误。</p>
+<hr>
+<p><strong>A.</strong> <code>int a[] = {1,2,3};</code><br>
+<strong>B.</strong> <code>int a[];</code><br>
+<strong>C.</strong> <code>int a[] = {0};</code><br>
+<strong>D.</strong> <code>int a[5];</code></p>
+</p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>一维数组的初始化 <em>【书 P121】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><p>个人做错了这道题！</p>
+<p>为一道很容易错的操作题。</p>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> <strong>B.</strong> <code>int a[];</code> </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<ul>
+<li><strong>A</strong>、对于确定初始值的数组，可以不指定长度，是正确的。（见上面<a href="#%E7%AC%AC%E4%B8%80%E4%BA%8C%E5%8D%81%E5%85%AB%E9%A2%98">第一题</a>）</li>
+<li><strong>B</strong>、这种定义方式是不存在的，要么赋初值，要么指定长度。</li>
+<li><strong>C</strong>、很容易错选的选项，这种方式其实就代表定义个长度为1的数组，然后<code>a[0]=0</code>。是正确的。</li>
+<li><strong>D</strong>、基本的定义方式，是正确的。</li>
+</ul>
+<p>注意还有一种定义类型<code>int a[...] = {0}</code>，代表定义个<code>...</code>长度的数组，其中<strong>全部赋初值为0</strong>。</p>
+</div>
+</details>
+</div><input type="radio" class="sc-tabs--toggle" name="tabs-30x31" id="tabs-30x31-1"  />
+	<label for="tabs-30x31-1">第三十一题</label>
+	<div class="sc-tabs--content"><div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>在下面的二维数组定义中，（）有语法错误。</p>
+<hr>
+<p><strong>A.</strong> <code>int x[10][10];</code><br>
+<strong>B.</strong> <code>int x[][10] = {{1,3} ,5 ,7};</code><br>
+<strong>C.</strong> <code>int x[][];</code><br>
+<strong>D.</strong> <code>int x[10][10] = {0};</code></p>
+</p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>二维数组的初始化 <em>【书 P125】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> <strong>C.</strong> <code>int x[][];</code> </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<ul>
+<li>
+<p><strong>A</strong>、基本的二维数组定义方式，没赋初值，是正确的。</p>
+</li>
+<li>
+<p><strong>B</strong>、这里有赋初值，所以可以不用指定行数，是正确的。</p>
+<blockquote>
+<p>最终数组状态为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</code></pre></div></blockquote>
+</li>
+<li>
+<p><strong>C</strong>、错因跟上一样。</p>
+</li>
+<li>
+<p><strong>D</strong>、这里就是第三十题说得，定义一个确定长度的二维数组，然后全部赋初值为0，是正确的。</p>
+</li>
+</ul>
+</div>
+</details>
+</div></div>
+
+<h3 id="第三十五题">第三十五题</h3>
+
+
+<div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>定义一个一维数组，正确的语句是（）。</p>
+<hr>
+<p><strong>A.</strong> <code>int a(10);</code><br>
+<strong>B.</strong> <code>int n = 10; int a[n]</code><br>
+<strong>C.</strong> <code>int n; cin&gt;&gt;n; int a[n]</code><br>
+<strong>D.</strong> <code>const int n = 10; int a[n]</code></p>
+</p>
+	</div>
+</div>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>一维数组的定义 <em>【书 P120】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote done ">
+	<div class="snote-content">
+		<p> <strong>D.</strong> <code>const int n = 10; int a[n]</code> </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p>首先<strong>A</strong>选项，不知道他在干嘛，直接排除。</p>
+<p>对于<strong>B</strong>、<strong>C</strong>、<strong>D</strong>选项，涉及到一维数组的定义这个知识点。</p>
+<p><strong>B</strong>和<strong>C</strong>中的<code>n</code>均是变量，故错误。<br>
+<strong>D</strong>中的<code>n</code>为常量（<code>const</code>），故正确。</p>
+<h3 id="书上原话">书上原话</h3>
+<div class="snote quote ">
+	<div class="snote-content">
+		<p> 在定义数组时，数组的大小必须是常量，而不能是变量或者变量表达式。 </p>
+	</div>
+</div>
+</div>
+</details>
+<hr>
+<h3 id="第三十六题">第三十六题</h3>
+
+
+<div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>以下哪种说法错误？（）。</p>
+<hr>
+<p><strong>A.</strong> 数组中的元素在某些方面彼此相关。<br>
+<strong>B.</strong> 数组中的所有元素具有相同的下标。<br>
+<strong>C.</strong> 数组中的所有元素具有相同的数据类型。<br>
+<strong>D.</strong> 数组中的所有元素具有相同的名字。</p>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> <strong>B.</strong> 数组中的所有元素具有相同的下标。 </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p><strong>纯概念题，记住！</strong></p>
+<p><strong>B</strong>是错的很容易看出来，<br>
+主要是<strong>A</strong>、<strong>C</strong>、<strong>D</strong>是对的要记住。</p>
+</div>
+</details>
+<hr>
+<h3 id="第五十二题">第五十二题</h3>
+
+
+<div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>若有定义语句<code>int a[3][6]</code>，<br>
+按在内存中的存放顺序，<code>a</code>数组的第$10$个元素是（）。</p>
+<hr>
+<p><em>我出成了填空题！……</em><br>
+<em>请想出正确答案！……</em></p>
+</p>
+	</div>
+</div>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>二维数组的使用方法 <em>【书 P125】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote success ">
+	<div class="snote-content">
+		<p> <code>a[1][3]</code> </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p>二维数组的存放方式，也是按着顺序存放的。<br>
+并且先是按行顺序存放，一行存完了再换下一列。</p>
+<p>也就是按照<code>a[0][0]</code>,<code>a[0][1]</code>,<code>a[0][2]</code>&hellip;<code>a[0][5]</code>,<code>a[1][0]</code>,<code>a[1][1]</code>,&hellip;,<code>a[2][5]</code>的顺序存放，</p>
+<p>所以第$10$个，就是$10 = 2 * 3 + 4$，也就是第$2$行第$4$列，为<code>a[1][3]</code>。</p>
+</div>
+</details>
+<hr>
+<h3 id="第五十九题">第五十九题</h3>
+
+
+<div class="snote question cyan ">
+	<div class="snote-content">
+		<p><p>以下关于二维数组的说法中，错误的是（）。</p>
+<hr>
+<p><strong>A.</strong> 若在定义二维数组的同时<strong>给其赋初值</strong>，则二维数组的<strong>列数可以省略</strong>。<br>
+<strong>B.</strong> 二维数组的每一行相当于一个一维数组，因此二维数组可以看成是<strong>由一维数组构成的数组</strong>。<br>
+<strong>C.</strong> 给二位数组赋值时，可以将所有元素<strong>写在一个<code>{}</code>内</strong>。<br>
+<strong>D.</strong> 引用二维数组时，必须包含数组名、行下标和列下标。</p>
+</p>
+	</div>
+</div>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>知识点：</p>
+<ul>
+<li>二维数组的各种概念 <em>【书 P125】</em></li>
+</ul>
+</p>
+	</div>
+</div>
+<details class="sc-details" >
+	<summary>答案与分析</summary>
+	<div class="sc-details--inner"><div class="snote error ">
+	<div class="snote-content">
+		<p> <strong>A.</strong> 若在定义二维数组的同时<strong>给其赋初值</strong>，则二维数组的<strong>列数可以省略</strong>。 </p>
+	</div>
+</div>
+<h2 id="分析">分析</h2>
+<p><strong>纯概念题，记住！</strong></p>
+</div>
+</details>
+<h2 id="未写入的题">未写入的题</h2>
+<ul>
+<li>第十二题——数组<code>[]</code>里能放的东西，只有常量和常量表达式</li>
+<li>第十四题——数组不是C++基本数据类型</li>
+<li>第十六题——数组再内存中是连续存在的（包括二维数组）</li>
+<li>第十九题 <strong>（个人做错）</strong> ——字符串处理函数（<code>strcpy</code>、<code>strcmp</code>等）的头文件（<code>&lt;string.h</code>或<code>cstring</code>或<code>&lt;iostream&gt;</code>），是不含<code>string</code>类的（头文件为<code>&lt;string&gt;</code>）。</li>
+<li>第三十四题：
+<blockquote>
+<p>字符数组（<code>char []</code>）只能用字符串函数来处理（<code>strcpy</code>、<code>strcmp</code>）<br>
+字符串（<code>string</code>）只能用运算符号（<code>+</code>、<code>==</code>）来处理。<br>
+两者有各自对应的运算方式。</p>
+</blockquote>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">大学课程</a>
+        
+            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">程序设计</a>
+        
+            <a href="/tags/%E6%95%B0%E7%BB%84/">数组</a>
+        
+            <a href="/tags/%E4%B9%A0%E9%A2%98/">习题</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-y" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 4l5 9l5 -9" />
+  <line x1="12" y1="13" x2="12" y2="20" />
+</svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Yandere ID：<a href="https://yande.re/post/show/314214" target="_blank" rel="noopener">314214</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-cpp-prac-point/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-cpp-prac-point/Yande-308381.580ee22e91d55cadf865ddb7db219894_hubfc4b78b5f13c939fbd8620a241a68e1_9631758_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-CPP-prac-point" 
+                        data-hash="md5-WA7iLpHVXK34Zd232yGYlA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">程序设计——指针习题……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-cpp-note-array/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-cpp-note-array/72693520_p0.16db3353f069a108dc29e4b395fdd063_hu5438825b9b6d1014226d20d231e650c2_940838_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-CPP-note-array" 
+                        data-hash="md5-FtszU/BpoQjcKeSzlf3QYw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">程序设计——数组……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-cpp-summary/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-cpp-summary/58541644_p0.1e235997ae27140b549bbc119d661b06_hu0c218c74dadec57d38928125b7e7f710_1153603_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-CPP-summary" 
+                        data-hash="md5-HiNZl64nFAtUm7wRnWYbBg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">程序设计——考点总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-intro_psychol-ne/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-intro_psychol-ne/67450790_p0.269736b9e0af3be25460f469fa2c06f4_hu64a059195139e470f4d36bc000798f35_624654_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Intro_Psychol-NE" 
+                        data-hash="md5-Jpc2ueCvO&#43;JUYPRp&#43;iwG9A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">心理学导论——名词解释……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-am-formula/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-am-formula/76524292_p0.2096f1f14908039545fe8f7a9b310d5f_hu496f4562aacbed9d40936841282eb41a_2147862_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-AM-formula" 
+                        data-hash="md5-IJbx8UkIA5VF/o96mzENXw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">高等数学——常用公式……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

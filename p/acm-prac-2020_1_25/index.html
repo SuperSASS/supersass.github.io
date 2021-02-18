@@ -1,0 +1,843 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='hitokoto'><title>ACM练习——P4863 JerryC Loves Driving……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-prac-2020_1_25/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM练习——P4863 JerryC Loves Driving……'>
+<meta property='og:description' content='hitokoto'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-prac-2020_1_25/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='日常练习' /><meta property='article:tag' content='暴力' /><meta property='article:published_time' content='2021-01-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-01-25T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/acm-prac-2020_1_25/Yande-199983.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM练习——P4863 JerryC Loves Driving……">
+<meta name="twitter:description" content="hitokoto"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/acm-prac-2020_1_25/Yande-199983.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#题目链接">题目链接</a></li>
+    <li><a href="#题目分析">题目分析</a></li>
+    <li><a href="#解题方法">解题方法</a>
+      <ul>
+        <li><a href="#on方法">$O(n)$方法</a></li>
+        <li><a href="#osqrtn方法">$O(\sqrt{n})$方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#个人代码">个人代码</a></li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/acm-prac-2020_1_25/">
+                <img src="/p/acm-prac-2020_1_25/Yande-199983_hu24344327ed1750f50cc0e0aab802591d_7554577_800x0_resize_box_2.png"
+                        srcset="/p/acm-prac-2020_1_25/Yande-199983_hu24344327ed1750f50cc0e0aab802591d_7554577_800x0_resize_box_2.png 800w, /p/acm-prac-2020_1_25/Yande-199983_hu24344327ed1750f50cc0e0aab802591d_7554577_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post ACM练习——P4863 JerryC Loves Driving……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm-prac/" >
+                ACM - 日常练习
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-prac-2020_1_25/">ACM练习——P4863 JerryC Loves Driving……</a>
+    </h2>
+
+    
+    
+        <h3 class="article-subtitle article-subtitleHitokoto">
+            一言加载中_(:з」∠)_……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/01/25</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：3748</div>
+            <div class="time">预计阅读时长： <time>8</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="题目链接">题目链接</h1>
+<p>P4863 <a class="link" href="https://www.luogu.com.cn/problem/P4863"  target="_blank" rel="noopener"
+    >JerryC Loves Driving</a></p>
+<h1 id="题目分析">题目分析</h1>
+<p>对于一层求和，其实就是一层<code>for</code>，那么两层求和就是两层<code>for</code>，也就是二维的。<br>
+而对于求和O(n)的优化计算方法，最基本的就是<strong>转换为等差数列O(1)计算</strong>。</p>
+<p>我们将两层求和的每一项列表观察（看是否有等差数列），得出下表：<br>
+<figure style="flex-grow: 277; flex-basis: 666px">
+		<a href="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid.png" data-size="883x318"><img src="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid.png"
+				srcset="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_hub2eadd258ab753ea9e43cfe8ff9df0dd_13616_480x0_resize_box_2.png 480w, /p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_hub2eadd258ab753ea9e43cfe8ff9df0dd_13616_1024x0_resize_box_2.png 1024w"
+				width="883"
+				height="318"
+				loading="lazy"
+				alt="求和表">
+		</a>
+		
+		<figcaption>求和表</figcaption>
+		
+	</figure></p>
+<p><em>图片来自于<a class="link" href="https://www.luogu.com.cn/blog/_post/276545"  target="_blank" rel="noopener"
+    >「Insouciant21」的题解</a>。</em></p>
+<p>观察发现，对于每一列，是类似呈等差数列的形式的，<br>
+对于第$i$列，是由$i$个$0 \sim n$的等差数列组成。</p>
+<blockquote>
+<p>如第四列：为$4$个$0,1,2,\cdots,n$的等差数列组成。</p>
+</blockquote>
+<p>因此我们就可以O(1)计算出每一列的和，那么就只用<strong>按列循环依次求和</strong>，O(n)的时间内求出结果。</p>
+<hr>
+<p>想到求解方法后，我们来确定求和计算范围。</p>
+<blockquote>
+<p>以下以$A=2, B=7$来举例。</p>
+</blockquote>
+<p><figure style="flex-grow: 277; flex-basis: 666px">
+		<a href="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_1.png" data-size="883x318"><img src="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_1.png"
+				srcset="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_1_hu3f9dbc4f0e4f512eede5c5658f0e05f1_14742_480x0_resize_box_2.png 480w, /p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_1_hu3f9dbc4f0e4f512eede5c5658f0e05f1_14742_1024x0_resize_box_2.png 1024w"
+				width="883"
+				height="318"
+				loading="lazy"
+				alt="求和表范围1">
+		</a>
+		
+		<figcaption>求和表范围1</figcaption>
+		
+	</figure></p>
+<p>对于题上给出的两个界：上界$A$和下届$B$，<br>
+按照题中所给公式，最初始的范围，则对应图中红色框选内容。<br>
+由于0部分不影响，所以也可以看成蓝色矩形部分。</p>
+<p>但如果直接这样进行计算，会发现会有很多要考虑的地方，或说运用等差数列时有很多边界的处理。</p>
+<blockquote>
+<p>如图中所给例子：<br>
+对于$2$这一列，则<strong>上方</strong>的$1$并不完全属于$n$个等差数列中，要排除。<br>
+对于$3$这一列，则<strong>下方</strong>的$-2$并不完全属于$n$个等差数列中，要排除。</p>
+</blockquote>
+<p>于是我们可以想到对于求$f(A \sim B)$这一范围，可以<strong>转化为求$f(B)-f(A-1)$这两范围的差</strong>。<br>
+如图所示：<br>
+<figure style="flex-grow: 277; flex-basis: 666px">
+		<a href="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_2.png" data-size="883x318"><img src="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_2.png"
+				srcset="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_2_hud772840a6d20fd893d609e67354e71b8_14418_480x0_resize_box_2.png 480w, /p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_2_hud772840a6d20fd893d609e67354e71b8_14418_1024x0_resize_box_2.png 1024w"
+				width="883"
+				height="318"
+				loading="lazy"
+				alt="求和表范围2">
+		</a>
+		
+		<figcaption>求和表范围2</figcaption>
+		
+	</figure></p>
+<p>则可以<strong>只用考虑下界</strong>的不符合。</p>
+<blockquote>
+<p><strong>这是一个很重要的方法</strong>：<br>
+将两个不确定的界的函数($f(x \sim y)$)，转化为两个有一个确定的界的函数之差（$f(C \sim x)-f(C \sim y)$）。（如定积分中经常运用）</p>
+</blockquote>
+<h1 id="解题方法">解题方法</h1>
+<h2 id="on方法">$O(n)$方法</h2>
+<p>对于每一列$i$：<br>
+其和（的绝对值）为：$i$个$1,2,3,\cdots,n$的等差数列的和，加上剩余非等差数列的部分。</p>
+<p>每一列均为$n - 0 + 1$即$n + 1$项。</p>
+<p>等差数列部分：<br>
+首项——$a_1 = 0$；<br>
+末项——$a_n = (n + 1) / i - 1$；【原因是：首先项数有$n+1$项（包括0行），整除$i$，则得到等差数列的项数，那么末项$a_n = a_1 + (n-1)*d$，即为项数$-1$。<br>
+项数——$n = (a_n - a_1) / 1 + 1$（公差为1），即为$a_n + 1$。</p>
+<p>非等差数列部分：<br>
+每一项均为$a_n + 1$；<br>
+前面已经计算了$cnt * i$项，所以剩余部分的项数为$n + 1 - (cnt * i)$。</p>
+<h2 id="osqrtn方法">$O(\sqrt{n})$方法</h2>
+<p>首先根据上述的规律可以发现：</p>
+<ol>
+<li>每一个数重复次数是按列递增的。
+<blockquote>
+<p>第$1$列是$1,2,3,\cdots,n$，每个数出现$1$次；第$2$列是$1,1,2,2,3,3,\cdots,n,n$，每个数出现$2$次。</p>
+</blockquote>
+</li>
+<li>奇数行和偶数行的符号是一样的。</li>
+</ol>
+<p>基于以上两点，我们发现：<br>
+如果存在<strong>间隔的几列</strong>（使符号相同，能合并处理），满足他们<strong>有的数字为一样</strong>的（比如都只有$1,2,3$，只是出现次数不同）。</p>
+<blockquote>
+<p>如求$f(33)$中</p>
+<blockquote>
+<p>例一：<br>
+第$9$列为$0,0,\cdots,0;-1,-1,\cdots,-1;-2,-2,\cdots,-2;-3,-3,-3,-3,-3,-3,-3$（$9$个$0$，$9$个$-1$，$9$个$-2$，$7$个$-3$）<br>
+第$11$列为$0,0,\cdots,0;-1,-1,\cdots,-1;-2,-2,\cdots,-2;-3$（$11$个$0$，$11$个$-1$，$11$个$-2$，$1$个$-3$）<br>
+<em>为下图中蓝色两列。</em></p>
+</blockquote>
+<blockquote>
+<p>例二：
+第$12$列为$0,0,\cdots,0;1,1,\cdots,1;2,2,\cdots,2$（$12$个$0$，$12$个$1$，$10$个$2$）<br>
+第$14$列为$0,0,\cdots,0;1,1,\cdots,1;2,2,2,2,2,2$（$14$个$0$，$14$个$1$，$6$个$2$）<br>
+第$16$列为$0,0,\cdots,0;1,1,\cdots,1;2,2$（$16$个$0$，$16$个$1$，$2$个$2$）<br>
+<em>为下图中橙色三列。</em></p>
+</blockquote>
+<p><figure style="flex-grow: 171; flex-basis: 410px">
+		<a href="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_3.png" data-size="1259x736"><img src="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_3.png"
+				srcset="/p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_3_hu236708c32f989ae37e2abf0c84bdf7b1_61050_480x0_resize_box_2.png 480w, /p/acm-prac-2020_1_25/pic/%281.24%29sum_grid_3_hu236708c32f989ae37e2abf0c84bdf7b1_61050_1024x0_resize_box_2.png 1024w"
+				width="1259"
+				height="736"
+				loading="lazy"
+				alt="举例求和表">
+		</a>
+		
+		<figcaption>举例求和表</figcaption>
+		
+	</figure></p>
+</blockquote>
+<p>那么这几列的等差数列，是可以<strong>合并为一个更大的等差数列</strong>一起求和的。</p>
+<blockquote>
+<p>上例一中：<br>
+第$9$列中的有$9$个$-1$、$9$个$-2$；<br>
+第$11$列中的有$11$个$-1$、$11$个$-2$；<br>
+于是这两列便可合并为$20$个$-1$，$20$个$-2$一起用高斯求和（等差数列求和）。</p>
+</blockquote>
+<p>但对于最后的一项数（如上例一中的$-3$），因为出现次数不一致，不能很好的直接合并，需要单独处理计算，<br>
+所以我们只能<strong>合并倒数第二项用高斯求和</strong>，然后对剩下的<strong>最后一项单独处理</strong>。</p>
+<p>这样就可以在计算的过程中合并几列同时计算，达到减少操作降低复杂度的效果。<br>
+【<em>不过至于是否为O($\sqrt{n})$的复杂度我就没证了</em>_(:з」∠)_……</p>
+<hr>
+<p>那么重点就是：</p>
+<ol>
+<li>
+<p>怎么分奇偶，找到哪几列出现数字相同。</p>
+<blockquote>
+<p>先算出<strong>这一列能出现的最大数</strong>，然后再用$n$除以这个数，得到<strong>只能出现到这个数的最大列</strong>。</p>
+<blockquote>
+<p>比如求$f(33)$，处理第$9$列时，<br>
+第$9$列能出现最大的数是$33/9$为$3$，但只能出现到$3$的最大列为$33/3$为第$11$列（可以配合上面给出的图来理解）。</p>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>怎么处理计算不能合并的最后一项。</p>
+<blockquote>
+<p>首先最后一项这个数我们知道是好多（为$n/i$），所以关键是<strong>求他有多少个</strong>。<br>
+由第一点发现可知，对于下一个间隔列，前面的项出现次数均多了$2$次，<br>
+或者说最后一项出现次数依次减$2$。<br>
+所以其实对于<strong>最后一项的出现次数</strong>，也是个等差数列。<br>
+找到等差数列的几个参数求和，得到有多少个。</p>
+<ol>
+<li>首项：对应最后一列$i$，总项数为$n+1$个，前面项每个数均出现了$i$次，一共有$N$个数（计算方法就是等差数列求项数）。</li>
+<li>末项：对应第一列，计算方法同首项。</li>
+<li>项数：就是合并了几项。</li>
+</ol>
+<blockquote>
+<p>比如求$f(33)$，处理第$12$列时，最大列到$16$列</p>
+<ol>
+<li>首项——第$16$列中：前面的项（$0$和$1$）均出现了$16$次，所以这一列最后一项（$2$）出现次数为$2$次。</li>
+<li>末项——第$12$列中：前面的项均出现了$12$次，所以这一列最后一项出现次数为$10$次。</li>
+<li>项数——合并了$12$、$14$、$16$列，项数为$3$.
+则可求得最后一项$2$一共出现了$(2+10)*3/2=18$次。</li>
+</ol>
+</blockquote>
+</blockquote>
+</li>
+<li>
+<p>怎么处理计算合并后的等差数列。</p>
+<blockquote>
+<p>方法就同$O(n)$方法中求等差数列了，<br>
+只是在最后一项（<code>an</code>）和乘的次数（由乘<code>i</code>变成了乘<code>cnt</code>）变了一点。</p>
+<p>对于合并后的出现次数，也是个高斯求和。</p>
+<blockquote>
+<p>比如求$f(33)$，处理第$9$列时，最大列到$11$列<br>
+第$9$列每一项出现次数为$9$次，<br>
+第$11$列每一项出现次数为$11$次，<br>
+所以一共出现$9+11 = 20$次，</p>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<h1 id="个人代码">个人代码</h1>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp">#define ALL(NAME_i, BEGIN, TO) \
+</span><span class="cp">	int NAME_i = BEGIN;        \
+</span><span class="cp">	NAME_i &lt;= TO;              \
+</span><span class="cp">	NAME_i++
+</span><span class="cp">#define SGN (nega ? -1 : 1)
+</span><span class="cp"></span><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="n">LL</span> <span class="nf">solve</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="kt">bool</span> <span class="n">nega</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+	<span class="p">{</span>
+		<span class="n">LL</span>  <span class="n">a1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>									 <span class="c1">//首项
+</span><span class="c1"></span>			<span class="n">an</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>					 <span class="c1">//末项
+</span><span class="c1"></span>			<span class="n">cntSeq</span> <span class="o">=</span> <span class="n">an</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>						 <span class="c1">//项数
+</span><span class="c1"></span>		<span class="n">ans</span> <span class="o">+=</span> <span class="n">i</span> <span class="o">*</span> <span class="p">((</span><span class="n">a1</span> <span class="o">+</span> <span class="n">an</span><span class="p">)</span> <span class="o">*</span> <span class="n">cntSeq</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">SGN</span><span class="p">;</span>	 <span class="c1">//先求等差数列的和
+</span><span class="c1"></span>		<span class="n">ans</span> <span class="o">+=</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">-</span> <span class="p">(</span><span class="n">cntSeq</span> <span class="o">*</span> <span class="n">i</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">an</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">SGN</span><span class="p">;</span> <span class="c1">//再计算剩下的部分
+</span><span class="c1"></span>		<span class="n">nega</span> <span class="o">=</span> <span class="o">!</span><span class="n">nega</span><span class="p">;</span>								 <span class="c1">//变符号
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">LL</span> <span class="nf">solve_Odev</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">odd</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="kt">int</span> <span class="n">maxColumn</span><span class="p">;</span>
+	<span class="kt">bool</span> <span class="n">nega</span> <span class="o">=</span> <span class="n">odd</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">odd</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">maxColumn</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">//注意赋值语句为maxColumn + 2，也就是合并处理完几列后，直接跳到处理完的列后面。
+</span><span class="c1"></span>	<span class="p">{</span>
+		<span class="c1">//1. 怎么分奇偶，找到哪几列出现数字相同。
+</span><span class="c1"></span>		<span class="n">LL</span> <span class="n">maxNum</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="n">i</span><span class="p">;</span>			 <span class="c1">//当前列能出现的最大数（或最后一项）
+</span><span class="c1"></span>		<span class="n">maxColumn</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="n">maxNum</span><span class="p">;</span>		 <span class="c1">//只能出现到这个数的最大列
+</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">odd</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="p">(</span><span class="n">maxColumn</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">//本来处理奇数列，但算出来最大列为偶数情况
+</span><span class="c1"></span>			<span class="n">maxColumn</span><span class="o">--</span><span class="p">;</span>
+		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">odd</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">maxColumn</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">))</span> <span class="c1">//本来处理偶数列，但算出来最大列为奇数情况
+</span><span class="c1"></span>			<span class="n">maxColumn</span><span class="o">--</span><span class="p">;</span>
+		<span class="cm">/*对应于上图中，当n = 33, i = 12时：
+</span><span class="cm">		maxNum    = 2
+</span><span class="cm">		maxColumn = 16	【对应为 合并12~16列。
+</span><span class="cm">		*/</span>
+
+		<span class="c1">//2. 怎么处理计算不能合并的最后一项。
+</span><span class="c1"></span>		<span class="kt">int</span> <span class="n">minCnt</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">maxColumn</span> <span class="o">*</span> <span class="n">maxNum</span><span class="p">,</span>	<span class="c1">//首项——这几列中，最后一项出现最少的次数（为最后一列，用maxColumn）
+</span><span class="c1"></span>			<span class="n">maxCnt</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span> <span class="o">*</span> <span class="n">maxNum</span><span class="p">,</span>			<span class="c1">//末项——这几列中，最后一项出现最多的次数（最当前列，用i）
+</span><span class="c1"></span>			<span class="n">cntColumn</span> <span class="o">=</span> <span class="p">((</span><span class="n">maxColumn</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//项数——合并了几列
+</span><span class="c1"></span>		<span class="cm">/* 注意的点：
+</span><span class="cm">		1. 总项数为n+1个，因为0也算！
+</span><span class="cm">		2. 不为maxNum - 1，因为0也算！【前面项的项数为((maxNum-1) - 0) / 1 + 1，即maxNum
+</span><span class="cm">		*/</span>
+		<span class="kt">int</span> <span class="n">cntNum</span> <span class="o">=</span> <span class="p">((</span><span class="n">maxCnt</span> <span class="o">+</span> <span class="n">minCnt</span><span class="p">)</span> <span class="o">*</span> <span class="n">cntColumn</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//求得关键——最后一项有多少个（高斯求和）
+</span><span class="c1"></span>		<span class="n">ans</span> <span class="o">+=</span> <span class="n">maxNum</span> <span class="o">*</span> <span class="n">cntNum</span> <span class="o">*</span> <span class="n">SGN</span><span class="p">;</span>
+		<span class="cm">/* 对应于上图中，当n = 33, i = 12, maxColumn = 16时：
+</span><span class="cm">		minCnt    = 2		【对应为 最后一列有2项
+</span><span class="cm">		maxCnt    = 10		【对应为 第一列有10项
+</span><span class="cm">		cntColumn = 3		【对应为 合并了3列
+</span><span class="cm">		cntNum    = 18		【对应为 最后一项由18个
+</span><span class="cm">		*/</span>
+
+		<span class="c1">//3. 怎么处理计算合并后的等差数列。
+</span><span class="c1"></span>		<span class="n">LL</span>  <span class="n">a1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>			 <span class="c1">//首项
+</span><span class="c1"></span>			<span class="n">an</span> <span class="o">=</span> <span class="n">maxNum</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="c1">//末项
+</span><span class="c1"></span>			<span class="n">cntSeq</span> <span class="o">=</span> <span class="n">an</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//项数
+</span><span class="c1"></span>		<span class="cm">/* 以上跟O(n)方法的几乎一样。
+</span><span class="cm">		区别在于当这一列完全为等差数列时（不存在不为等差数列的部分）：
+</span><span class="cm">		O(n)方法计算等差数列和，会包括最后一项；
+</span><span class="cm">		O(sqrt(n))方法计算等差数列和，不会包括最后一项。
+</span><span class="cm">		*/</span>
+		<span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="n">maxColumn</span><span class="p">)</span> <span class="o">*</span> <span class="n">cntColumn</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//合并后出现次数（高斯求和）
+</span><span class="c1"></span>		<span class="n">ans</span> <span class="o">+=</span> <span class="n">cnt</span> <span class="o">*</span> <span class="p">(((</span><span class="n">a1</span> <span class="o">+</span> <span class="n">an</span><span class="p">)</span> <span class="o">*</span> <span class="n">cntSeq</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">SGN</span><span class="p">;</span> <span class="c1">//（高斯求和）
+</span><span class="c1"></span>	<span class="p">}</span>
+	<span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="n">LL</span> <span class="nf">solve_block</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+	<span class="n">ans</span> <span class="o">+=</span> <span class="n">solve_Odev</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">solve_Odev</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*
+</span><span class="cm">LL slove_original(int A, int B)
+</span><span class="cm">//最原始的做法，但考虑的会更复杂所以未完成为错误的
+</span><span class="cm">//错误点为为考虑开始部分为非等差数列
+</span><span class="cm">{
+</span><span class="cm">	LL ans = 0;
+</span><span class="cm">	bool nega = 1;
+</span><span class="cm">	for (ALL(i, 1, B))
+</span><span class="cm">	{
+</span><span class="cm">		int seqBgeinIndex = A + max(i - A, 0), cnt = (B - seqBgeinIndex + 1) / i, seqEndIndex = seqBgeinIndex + cnt * i - 1;
+</span><span class="cm">		LL a1 = max(A / i, 1), an = a1 + cnt - 1;
+</span><span class="cm">		ans += i * ((a1 + an) * cnt / 2) * SGN;
+</span><span class="cm">		ans += (B - seqEndIndex) * (an + 1) * SGN;
+</span><span class="cm">		nega = !nega;
+</span><span class="cm">	}
+</span><span class="cm">	return ans;
+</span><span class="cm">}
+</span><span class="cm">*/</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">;</span>
+	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">A</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">B</span><span class="p">);</span>
+	<span class="c1">//printf(&#34;%lld\n&#34;, solve(B) - solve(A - 1));
+</span><span class="c1"></span>	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="n">solve_block</span><span class="p">(</span><span class="n">B</span><span class="p">)</span> <span class="o">-</span> <span class="n">solve_block</span><span class="p">(</span><span class="n">A</span> <span class="o">-</span> <span class="mi">1</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/">日常练习</a>
+        
+            <a href="/tags/%E6%9A%B4%E5%8A%9B/">暴力</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-y" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 4l5 9l5 -9" />
+  <line x1="12" y1="13" x2="12" y2="20" />
+</svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Yandere ID：<a href="https://yande.re/post/show/199983" target="_blank" rel="noopener">199983</a>
+            </span>
+        </section><section class="article-hitokotoID">
+        <svg t="1611583544109" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="684" width="200" height="200"><path d="M128 472.896h341.344v341.344H128zM128 472.896L272.096 192h110.08l-144.128 280.896z" p-id="685"></path><path d="M544 472.896h341.344v341.344H544zM544 472.896L688.096 192h110.08l-144.128 280.896z" p-id="686"></path></svg>
+        <span class="article-hitokotoID--text">
+            文章一言摘要Hitokoto ID：<a id="hitokotoID-href" target="_blank">加载中……</a>
+        </span>
+    </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
