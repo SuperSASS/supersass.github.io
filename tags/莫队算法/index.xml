@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>莫队算法 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E8%8E%AB%E9%98%9F%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 莫队算法 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E8%8E%AB%E9%98%9F%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM学习笔记：莫队算法……</title>
+      <link>https://blog.supersassw.com/p/acm-note-mo_algo/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-mo_algo/</guid>
+      <description>简介 属于离线算法中的一种。 用来解决离线区间询问问题， 将其加以扩展后，还可以解决树上路径询问问题和支持修改操作。 使用条件 须满足以下条件： 对于区</description>
+    </item>
+    
+  </channel>
+</rss>

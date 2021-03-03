@@ -646,7 +646,7 @@ if (!doNotTrack) {
 <p>可以尝试理解下这个代码，能很好的<strong>锻炼递归思想</strong>。</p>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">{</span>
-	<span class="k">return</span> <span class="n">b</span> <span class="o">?</span> <span class="n">GCD</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">;</span>	<span class="c1">//意思是如果b不为0，则a=b,b=b%a辗转相除；否则就返回a
+	<span class="k">return</span> <span class="n">b</span> <span class="o">?</span> <span class="n">GCD</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">;</span>	<span class="c1">//意思是如果b不为0，则a=b,b=a%b辗转相除；否则就返回a
 </span><span class="c1"></span><span class="p">}</span>
 </code></pre></div><hr>
 <p>或者采用这个递推的思想，极其好记！</p>

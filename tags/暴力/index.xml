@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%9A%B4%E5%8A%9B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ACM练习——P4863 JerryC Loves Driving……</title>
-      <link>https://blog.supersassw.com/p/acm-prac-2020_1_25/</link>
+      <link>https://blog.supersassw.com/p/acm-prac-2021_01_25/</link>
       <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/p/acm-prac-2020_1_25/</guid>
+      <guid>https://blog.supersassw.com/p/acm-prac-2021_01_25/</guid>
       <description>题目链接 P4863 JerryC Loves Driving 题目分析 对于一层求和，其实就是一层for，那么两层求和就是两层for，也就是二维的。 而对于求和O(n)的优化计算方法，最基本</description>
     </item>
     
