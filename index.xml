@@ -6,7 +6,224 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ACM学习笔记：离散化……</title>
+        <link>https://blog.supersassw.com/p/acm-note-discrete/</link>
+        <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/acm-note-discrete/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/acm-note-discrete/Yande-312234.png" alt="Featured image of post ACM学习笔记：离散化……" /&gt;&lt;h1 id=&#34;离散化介绍&#34;&gt;离散化介绍&lt;/h1&gt;
+&lt;p&gt;离散化，就是将一组离散的数据，映射成集中的数据。&lt;em&gt;【所以个人觉得应该叫集中化【？……&lt;/em&gt;&lt;br&gt;
+其思想跟&lt;strong&gt;哈希&lt;/strong&gt;(Hash)类似。&lt;/p&gt;
+
+
+&lt;div class=&#34;snote quote cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;当有些数据因为&lt;strong&gt;本身很大&lt;/strong&gt;或者&lt;strong&gt;类型不支持&lt;/strong&gt;，自身&lt;strong&gt;无法作为数组的下标&lt;/strong&gt;来方便地处理，&lt;br&gt;
+而影响最终结果的只有元素之间的相对大小关系时，&lt;br&gt;
+我们可以将原来的数据&lt;strong&gt;按照从大到小编号来处理问题&lt;/strong&gt;，即离散化。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;引自：&lt;a class=&#34;link&#34; href=&#34;https://oi-wiki.org/misc/discrete/#_1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;OI-Wiki「离散化」&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;常用来离散化类型的是：大整数、浮点数、字符串。&lt;/p&gt;
+&lt;h1 id=&#34;情况举例&#34;&gt;情况举例&lt;/h1&gt;
+&lt;h2 id=&#34;本身很大情况&#34;&gt;本身很大情况&lt;/h2&gt;
+&lt;p&gt;最常见的题比如：
+&lt;div class=&#34;snote question cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 判断在$N$个数中，某数$a_i$是否存在。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;很简单的思路就是：&lt;br&gt;
+用个布尔数组&lt;code&gt;bool exist[]&lt;/code&gt;来记录某数是否存在。&lt;/p&gt;
+&lt;p&gt;但如果数据范围是$1 \le N \le 10^5, 0 \le a_i \le 10^9$，&lt;br&gt;
+也就是：数的个数$N$远小于数的范围$a_i$时，&lt;br&gt;
+很明显，如果&lt;strong&gt;直接用$a_i$作下标来记录，会导致数组开不下&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;而对于这道题，$a_i$的&lt;strong&gt;值是多少，并没有太大意义&lt;/strong&gt;，我们只用关心它出现没有。&lt;br&gt;
+因此我们可以把这些分散的$a_i$&lt;strong&gt;按大小顺序重新编号&lt;/strong&gt;。&lt;/p&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;举例&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;5个数，其分别为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;9463&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;233333333&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;78&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时如果直接以下标来存储，数组就要开为&lt;code&gt;bool exist[233333333 + 5];&lt;/code&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;将其重新编号（映射）为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;此时数组就可以开为&lt;code&gt;bool exist[5 + 5];&lt;/code&gt;。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;类型不支持情况&#34;&gt;类型不支持情况&lt;/h2&gt;
+&lt;p&gt;将题改为：
+&lt;div class=&#34;snote question cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; $N$个字符串，判断某字符串$s_i$是否存在。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;这个时候甚至直接不能作为&lt;code&gt;bool exist[]&lt;/code&gt;数组下标了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;可以将其&lt;strong&gt;映射为能作为下标的数字&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;要查找某字符串，用该映射函数将所寻字符串映射为数字&lt;code&gt;ID&lt;/code&gt;，&lt;br&gt;
+然后直接看&lt;code&gt;exist[ID]&lt;/code&gt;是否为$true$即可。&lt;/p&gt;
+&lt;h1 id=&#34;实现方法&#34;&gt;实现方法&lt;/h1&gt;
+&lt;h2 id=&#34;思路&#34;&gt;思路&lt;/h2&gt;
+&lt;p&gt;上面介绍说到：离散化后的数据只与相互间大小关系有关。&lt;br&gt;
+所以对于原数据要&lt;strong&gt;先放在另一个容器中排序&lt;/strong&gt;，得到他们之间的大小关系。&lt;/p&gt;
+&lt;p&gt;然后该容器中需要&lt;strong&gt;去除重复元素&lt;/strong&gt;，来最大程度节省空间。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比如原数据为$100$个$8$和$1$个$9$。&lt;/p&gt;
+&lt;p&gt;如果不去重，离散化后$8$会映射为$1$，而$9$会映射为$101$，&lt;br&gt;
+去重过后，$8$会映射为$1$，$9$则会映射为$2$了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这样过后便得到了原数据与新数据的一一映射关系表。&lt;br&gt;
+这个时候再将原数据&lt;strong&gt;按表全部替换&lt;/strong&gt;，完成离散化。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;所以离散化一共有三个重要操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对原数据放到另一个容器，并按大小关系排序。&lt;/li&gt;
+&lt;li&gt;去除排好序后容器的重复元素，得到一一映射关系。&lt;/li&gt;
+&lt;li&gt;按照一一映射关系，将原数据替换为新数据。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;举例&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;原数据为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;98&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;783&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;23333&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;57&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;912&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;98&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;排序后为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;57&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;98&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;98&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;783&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;912&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;23333&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;去重后为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;57&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;98&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;783&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;912&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;23333&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;则得到一一映射关系表：&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;原数据&lt;/th&gt;
+&lt;th&gt;新数据&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;57&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;98&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;783&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;912&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;23333&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;替换后，即离散化为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;h2 id=&#34;具体实现&#34;&gt;具体实现&lt;/h2&gt;
+&lt;h3 id=&#34;一大整数离散化&#34;&gt;一、大整数离散化&lt;/h3&gt;
+&lt;p&gt;去重操作使用到的是&lt;code&gt;unique&lt;/code&gt;函数，&lt;br&gt;
+映射关系表对应，则用&lt;code&gt;lower_bound&lt;/code&gt;这个查找函数。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;有关这两个函数的详细信息，可以百度查阅相关资料。&lt;/em&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;raw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//原数据
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;               &lt;span class=&#34;c1&#34;&gt;//原数据个数
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//临时容器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;disc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//离散化后数据
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;discrete&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;memcpy&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;raw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;sizeof&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//1. 原数据放入另一容器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;             &lt;span class=&#34;c1&#34;&gt;//1. 排序
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;disc_len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;unique&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//2. 去重，并得到去重后的有效长度（运用的是数组地址相减代表长度）。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;                                             &lt;span class=&#34;c1&#34;&gt;//3. 按照一一映射关系，得到离散化序列
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;disc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;lower_bound&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;disc_len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;raw&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cont&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//利用lower_bound找到原数据在cont数组中的地址，减去cont头地址后得到离散结果（即cont中下标）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;运行结果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;没有重复数据：&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 115; flex-basis: 277px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_1.png&#34; data-size=&#34;126x109&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_1.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_1_huff86f803e2dd9dab6be85b98d4f31147_2329_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_1_huff86f803e2dd9dab6be85b98d4f31147_2329_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;126&#34;
+				height=&#34;109&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;大整数离散化 - 示例1&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;大整数离散化 - 示例1&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;有重复数据：&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 213; flex-basis: 513px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_2.png&#34; data-size=&#34;231x108&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_2.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_2_hu40e7c6b2ff8ea1a1b900c016e0791db7_2856_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_2_hu40e7c6b2ff8ea1a1b900c016e0791db7_2856_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;231&#34;
+				height=&#34;108&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;大整数离散化 - 示例2&#34;&gt;
+		&lt;/a&gt;
+		
+		&lt;figcaption&gt;大整数离散化 - 示例2&lt;/figcaption&gt;
+		
+	&lt;/figure&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;二字符串离散化&#34;&gt;二、字符串离散化&lt;/h3&gt;
+&lt;p&gt;&lt;em&gt;【由于暂时没做到相关的题就没做总结2333……&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;这里就跟字符串哈希的操作是一样的了，&lt;br&gt;
+可以查看OI-Wiki上的&lt;a class=&#34;link&#34; href=&#34;https://oi-wiki.org/string/hash/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「字符串哈希」&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=&#34;其他事项&#34;&gt;其他事项&lt;/h1&gt;
+&lt;h2 id=&#34;不去重情况&#34;&gt;不去重情况&lt;/h2&gt;
+&lt;p&gt;有时候根据题目要求，&lt;strong&gt;相同元素可能会有作用&lt;/strong&gt;。
+如下面的问题：
+&lt;div class=&#34;snote question cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 对于数组$a[i]$，问两区间$(l_1,r_1),(l_2,r_2)$间有多少个相同元素。 &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;如要使用较快的：“&lt;code&gt;bitset&lt;/code&gt;+取并集”的操作，&lt;br&gt;
+这里离散化的时候就不要去重，&lt;br&gt;
+并采用以下技巧：
+
+
+&lt;div class=&#34;snote guide blue &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;用个$cnt[i]$数组，记录$a_i$在&lt;code&gt;bitset&lt;/code&gt;数组$bit[]$出现的次数，&lt;br&gt;
+当出现$a_n$时，则使$bit[a_n+cnt[a_n]]++$。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;这样，出现了几个$a_n$，就会在$bit[]$中存几个，&lt;br&gt;
+取交集的时候就能直接得到个数了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不去重的原因，是使得相邻两元素离散后的值有差距，&lt;br&gt;
+其差距就是该数出现的次数&lt;a class=&#34;link&#34; href=&#34;#%e6%9c%ac%e8%ba%ab%e5%be%88%e5%a4%a7%e6%83%85%e5%86%b5&#34; &gt;【见上方「本身很大情况」中举的例子】&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;而去重后，两值间则不会有差距，&lt;br&gt;
+无法通过这种方法来存储所有出现的$a_n$。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>ACM学习笔记：莫队算法……</title>
         <link>https://blog.supersassw.com/p/acm-note-mo_algo/</link>
         <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>

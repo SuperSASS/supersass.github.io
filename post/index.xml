@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM学习笔记：离散化……</title>
+      <link>https://blog.supersassw.com/p/acm-note-discrete/</link>
+      <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-discrete/</guid>
+      <description>离散化介绍 离散化，就是将一组离散的数据，映射成集中的数据。【所以个人觉得应该叫集中化【？…… 其思想跟哈希(Hash)类似。 当有些数据因为本身</description>
+    </item>
+    
     <item>
       <title>ACM学习笔记：莫队算法……</title>
       <link>https://blog.supersassw.com/p/acm-note-mo_algo/</link>

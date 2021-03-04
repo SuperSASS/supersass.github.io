@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='杂项——离散化……'><title>ACM学习笔记：离散化……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-note-discrete/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM学习笔记：离散化……'>
+<meta property='og:description' content='杂项——离散化……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-note-discrete/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='杂项' /><meta property='article:tag' content='离散化' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2021-03-04T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-03-05T00:04:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/acm-note-discrete/Yande-312234.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM学习笔记：离散化……">
+<meta name="twitter:description" content="杂项——离散化……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/acm-note-discrete/Yande-312234.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#离散化介绍">离散化介绍</a></li>
+    <li><a href="#情况举例">情况举例</a>
+      <ul>
+        <li><a href="#本身很大情况">本身很大情况</a></li>
+        <li><a href="#类型不支持情况">类型不支持情况</a></li>
+      </ul>
+    </li>
+    <li><a href="#实现方法">实现方法</a>
+      <ul>
+        <li><a href="#思路">思路</a></li>
+        <li><a href="#具体实现">具体实现</a>
+          <ul>
+            <li><a href="#一大整数离散化">一、大整数离散化</a></li>
+            <li><a href="#二字符串离散化">二、字符串离散化</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#其他事项">其他事项</a>
+      <ul>
+        <li><a href="#不去重情况">不去重情况</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/acm-note-discrete/">
+                <img src="/p/acm-note-discrete/Yande-312234_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_800x0_resize_box_2.png"
+                        srcset="/p/acm-note-discrete/Yande-312234_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_800x0_resize_box_2.png 800w, /p/acm-note-discrete/Yande-312234_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="500" 
+                        loading="lazy"
+                        alt="Featured image of post ACM学习笔记：离散化……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm-note/" >
+                ACM - 学习笔记
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-note-discrete/">ACM学习笔记：离散化……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            杂项——离散化……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/03/04</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：1768</div>
+            <div class="time">预计阅读时长： <time>4</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="离散化介绍">离散化介绍</h1>
+<p>离散化，就是将一组离散的数据，映射成集中的数据。<em>【所以个人觉得应该叫集中化【？……</em><br>
+其思想跟<strong>哈希</strong>(Hash)类似。</p>
+
+
+<div class="snote quote cyan ">
+	<div class="snote-content">
+		<p>当有些数据因为<strong>本身很大</strong>或者<strong>类型不支持</strong>，自身<strong>无法作为数组的下标</strong>来方便地处理，<br>
+而影响最终结果的只有元素之间的相对大小关系时，<br>
+我们可以将原来的数据<strong>按照从大到小编号来处理问题</strong>，即离散化。</p>
+	</div>
+</div>
+<p><em>引自：<a class="link" href="https://oi-wiki.org/misc/discrete/#_1"  target="_blank" rel="noopener"
+    >OI-Wiki「离散化」</a></em></p>
+<p>常用来离散化类型的是：大整数、浮点数、字符串。</p>
+<h1 id="情况举例">情况举例</h1>
+<h2 id="本身很大情况">本身很大情况</h2>
+<p>最常见的题比如：
+<div class="snote question cyan">
+	<div class="snote-content">
+		<p> 判断在$N$个数中，某数$a_i$是否存在。 </p>
+	</div>
+</div></p>
+<p>很简单的思路就是：<br>
+用个布尔数组<code>bool exist[]</code>来记录某数是否存在。</p>
+<p>但如果数据范围是$1 \le N \le 10^5, 0 \le a_i \le 10^9$，<br>
+也就是：数的个数$N$远小于数的范围$a_i$时，<br>
+很明显，如果<strong>直接用$a_i$作下标来记录，会导致数组开不下</strong>。</p>
+<hr>
+<p>而对于这道题，$a_i$的<strong>值是多少，并没有太大意义</strong>，我们只用关心它出现没有。<br>
+因此我们可以把这些分散的$a_i$<strong>按大小顺序重新编号</strong>。</p>
+<details class="sc-details" >
+	<summary>举例</summary>
+	<div class="sc-details--inner"><p>5个数，其分别为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">9463</span> <span class="mi">1</span> <span class="mi">233333333</span> <span class="mi">78</span> <span class="mi">5</span>
+</code></pre></div><p>此时如果直接以下标来存储，数组就要开为<code>bool exist[233333333 + 5];</code>。</p>
+<hr>
+<p>将其重新编号（映射）为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">4</span> <span class="mi">1</span> <span class="mi">5</span> <span class="mi">3</span> <span class="mi">2</span>
+</code></pre></div><p>此时数组就可以开为<code>bool exist[5 + 5];</code>。</p>
+</div>
+</details>
+<h2 id="类型不支持情况">类型不支持情况</h2>
+<p>将题改为：
+<div class="snote question cyan">
+	<div class="snote-content">
+		<p> $N$个字符串，判断某字符串$s_i$是否存在。 </p>
+	</div>
+</div></p>
+<p>这个时候甚至直接不能作为<code>bool exist[]</code>数组下标了。</p>
+<hr>
+<p>可以将其<strong>映射为能作为下标的数字</strong>。</p>
+<p>要查找某字符串，用该映射函数将所寻字符串映射为数字<code>ID</code>，<br>
+然后直接看<code>exist[ID]</code>是否为$true$即可。</p>
+<h1 id="实现方法">实现方法</h1>
+<h2 id="思路">思路</h2>
+<p>上面介绍说到：离散化后的数据只与相互间大小关系有关。<br>
+所以对于原数据要<strong>先放在另一个容器中排序</strong>，得到他们之间的大小关系。</p>
+<p>然后该容器中需要<strong>去除重复元素</strong>，来最大程度节省空间。</p>
+<blockquote>
+<p>比如原数据为$100$个$8$和$1$个$9$。</p>
+<p>如果不去重，离散化后$8$会映射为$1$，而$9$会映射为$101$，<br>
+去重过后，$8$会映射为$1$，$9$则会映射为$2$了。</p>
+</blockquote>
+<p>这样过后便得到了原数据与新数据的一一映射关系表。<br>
+这个时候再将原数据<strong>按表全部替换</strong>，完成离散化。</p>
+<hr>
+<p>所以离散化一共有三个重要操作：</p>
+<ol>
+<li>对原数据放到另一个容器，并按大小关系排序。</li>
+<li>去除排好序后容器的重复元素，得到一一映射关系。</li>
+<li>按照一一映射关系，将原数据替换为新数据。</li>
+</ol>
+<details class="sc-details" >
+	<summary>举例</summary>
+	<div class="sc-details--inner"><p>原数据为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">98</span> <span class="mi">783</span> <span class="mi">1</span> <span class="mi">23333</span> <span class="mi">1</span> <span class="mi">57</span> <span class="mi">912</span> <span class="mi">5</span> <span class="mi">1</span> <span class="mi">98</span>
+</code></pre></div><p>排序后为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">5</span> <span class="mi">57</span> <span class="mi">98</span> <span class="mi">98</span> <span class="mi">783</span> <span class="mi">912</span> <span class="mi">23333</span>
+</code></pre></div><p>去重后为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">5</span> <span class="mi">57</span> <span class="mi">98</span> <span class="mi">783</span> <span class="mi">912</span> <span class="mi">23333</span>
+</code></pre></div><p>则得到一一映射关系表：</p>
+<table>
+<thead>
+<tr>
+<th>原数据</th>
+<th>新数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2</td>
+</tr>
+<tr>
+<td>57</td>
+<td>3</td>
+</tr>
+<tr>
+<td>98</td>
+<td>4</td>
+</tr>
+<tr>
+<td>783</td>
+<td>5</td>
+</tr>
+<tr>
+<td>912</td>
+<td>6</td>
+</tr>
+<tr>
+<td>23333</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>替换后，即离散化为：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">4</span> <span class="mi">5</span> <span class="mi">1</span> <span class="mi">7</span> <span class="mi">1</span> <span class="mi">3</span> <span class="mi">6</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">4</span>
+</code></pre></div></div>
+</details>
+<h2 id="具体实现">具体实现</h2>
+<h3 id="一大整数离散化">一、大整数离散化</h3>
+<p>去重操作使用到的是<code>unique</code>函数，<br>
+映射关系表对应，则用<code>lower_bound</code>这个查找函数。</p>
+<p><em>有关这两个函数的详细信息，可以百度查阅相关资料。</em></p>
+<hr>
+<p>代码：</p>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">raw</span><span class="p">[</span><span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span>  <span class="c1">//原数据
+</span><span class="c1"></span>    <span class="n">n</span><span class="p">,</span>               <span class="c1">//原数据个数
+</span><span class="c1"></span>    <span class="n">cont</span><span class="p">[</span><span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="c1">//临时容器
+</span><span class="c1"></span>    <span class="n">disc</span><span class="p">[</span><span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span> <span class="c1">//离散化后数据
+</span><span class="c1"></span>
+<span class="kt">void</span> <span class="nf">discrete</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">memcpy</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">raw</span><span class="p">,</span> <span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">int</span><span class="p">));</span> <span class="c1">//1. 原数据放入另一容器
+</span><span class="c1"></span>    <span class="n">sort</span><span class="p">(</span><span class="n">cont</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cont</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>             <span class="c1">//1. 排序
+</span><span class="c1"></span>
+    <span class="kt">int</span> <span class="n">disc_len</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">cont</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cont</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="n">cont</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//2. 去重，并得到去重后的有效长度（运用的是数组地址相减代表长度）。
+</span><span class="c1"></span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>                                             <span class="c1">//3. 按照一一映射关系，得到离散化序列
+</span><span class="c1"></span>        <span class="n">disc</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">lower_bound</span><span class="p">(</span><span class="n">cont</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cont</span> <span class="o">+</span> <span class="n">disc_len</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">raw</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">-</span> <span class="n">cont</span><span class="p">;</span> <span class="c1">//利用lower_bound找到原数据在cont数组中的地址，减去cont头地址后得到离散结果（即cont中下标）
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></div><hr>
+<p>运行结果：</p>
+<ul>
+<li>没有重复数据：<br>
+<figure style="flex-grow: 115; flex-basis: 277px">
+		<a href="/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_1.png" data-size="126x109"><img src="/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_1.png"
+				srcset="/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_1_huff86f803e2dd9dab6be85b98d4f31147_2329_480x0_resize_box_2.png 480w, /p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_1_huff86f803e2dd9dab6be85b98d4f31147_2329_1024x0_resize_box_2.png 1024w"
+				width="126"
+				height="109"
+				loading="lazy"
+				alt="大整数离散化 - 示例1">
+		</a>
+		
+		<figcaption>大整数离散化 - 示例1</figcaption>
+		
+	</figure></li>
+<li>有重复数据：<br>
+<figure style="flex-grow: 213; flex-basis: 513px">
+		<a href="/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_2.png" data-size="231x108"><img src="/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_2.png"
+				srcset="/p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_2_hu40e7c6b2ff8ea1a1b900c016e0791db7_2856_480x0_resize_box_2.png 480w, /p/acm-note-discrete/pic/%E5%A4%A7%E6%95%B4%E6%95%B0%E7%A6%BB%E6%95%A3%E5%8C%96-%E4%B8%BE%E4%BE%8B_2_hu40e7c6b2ff8ea1a1b900c016e0791db7_2856_1024x0_resize_box_2.png 1024w"
+				width="231"
+				height="108"
+				loading="lazy"
+				alt="大整数离散化 - 示例2">
+		</a>
+		
+		<figcaption>大整数离散化 - 示例2</figcaption>
+		
+	</figure></li>
+</ul>
+<h3 id="二字符串离散化">二、字符串离散化</h3>
+<p><em>【由于暂时没做到相关的题就没做总结2333……</em></p>
+<p>这里就跟字符串哈希的操作是一样的了，<br>
+可以查看OI-Wiki上的<a class="link" href="https://oi-wiki.org/string/hash/"  target="_blank" rel="noopener"
+    >「字符串哈希」</a>。</p>
+<h1 id="其他事项">其他事项</h1>
+<h2 id="不去重情况">不去重情况</h2>
+<p>有时候根据题目要求，<strong>相同元素可能会有作用</strong>。
+如下面的问题：
+<div class="snote question cyan">
+	<div class="snote-content">
+		<p> 对于数组$a[i]$，问两区间$(l_1,r_1),(l_2,r_2)$间有多少个相同元素。 </p>
+	</div>
+</div></p>
+<p>如要使用较快的：“<code>bitset</code>+取并集”的操作，<br>
+这里离散化的时候就不要去重，<br>
+并采用以下技巧：
+
+
+<div class="snote guide blue ">
+	<div class="snote-content">
+		<p>用个$cnt[i]$数组，记录$a_i$在<code>bitset</code>数组$bit[]$出现的次数，<br>
+当出现$a_n$时，则使$bit[a_n+cnt[a_n]]++$。</p>
+	</div>
+</div></p>
+<p>这样，出现了几个$a_n$，就会在$bit[]$中存几个，<br>
+取交集的时候就能直接得到个数了。</p>
+<blockquote>
+<p>不去重的原因，是使得相邻两元素离散后的值有差距，<br>
+其差距就是该数出现的次数<a class="link" href="#%e6%9c%ac%e8%ba%ab%e5%be%88%e5%a4%a7%e6%83%85%e5%86%b5" >【见上方「本身很大情况」中举的例子】</a></p>
+<p>而去重后，两值间则不会有差距，<br>
+无法通过这种方法来存储所有出现的$a_n$。</p>
+</blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/%E6%9D%82%E9%A1%B9/">杂项</a>
+        
+            <a href="/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/">离散化</a>
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2021/03/05 00:04
+        </span>
+    </section><section class="article-backgroundID">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-y" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 4l5 9l5 -9" />
+  <line x1="12" y1="13" x2="12" y2="20" />
+</svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Yandere ID：<a href="https://yande.re/post/show/312234" target="_blank" rel="noopener">312234</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-mo_algo/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-mo_algo/85829025_p0.f17837c7ce3bece16e32cf1f826bcbfd_hud48d475653a68121c5c5dd4c9c15f623_2139511_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-mo_algo" 
+                        data-hash="md5-8Xg3x8477OFuMs8fgmvL/Q==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：莫队算法……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-union_find/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-union_find/60855211_p0.a07a83fa1564e2ee235e40f1b19ffbb0_hu2f29f1f8fc777ac15405156777510011_1339015_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-union_find" 
+                        data-hash="md5-oHqD&#43;hVk4u4jXkDxsZ/7sA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：并查集……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-segment_tree/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-segment_tree/67957130_p0.c5cb31194a7e4ca539d9a4fb08d8c6ec_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-segment_tree" 
+                        data-hash="md5-xcsxGUp&#43;TKU52aT7CNjG7A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：线段树……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-neighbor_sort/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-neighbor_sort/71111285_p0.af7df8fc45491ad0333c518aac5d00c1_hud2648e021785c2a9f9434e425c67999f_2056049_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-neighbor_sort" 
+                        data-hash="md5-r334/EVJGtAzPFGKrF0AwQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：邻项比较排序……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-greedy/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-greedy/80942286_p0.f4ace0f01d19dcce681fdce51cc97d08_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="ACM-note-greedy" 
+                        data-hash="md5-9Kzg8B0Z3M5oH9zlHMl9CA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记：贪心……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
