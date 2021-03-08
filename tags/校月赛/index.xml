@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>校月赛 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E6%A0%A1%E6%9C%88%E8%B5%9B/</link>
+    <description>Recent content in 校月赛 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 31 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%A0%A1%E6%9C%88%E8%B5%9B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM比赛总结——2020年 校十月月赛（决赛）</title>
+      <link>https://blog.supersassw.com/p/acm-writeup-2020_10_31/</link>
+      <pubDate>Sat, 31 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-writeup-2020_10_31/</guid>
+      <description>该总结还暂未完成，待日后继续总结…… 比赛链接 SWJTU Online Judge 题解文件 点击下载：月赛决赛.7z 总结范围 A C D E G H J K 注：前面带*号的题因题目简单，为简</description>
+    </item>
+    
+    <item>
+      <title>ACM比赛总结——2020年 校十月月赛（初赛）</title>
+      <link>https://blog.supersassw.com/p/acm-writeup-2020_10_24/</link>
+      <pubDate>Sat, 24 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-writeup-2020_10_24/</guid>
+      <description>比赛链接 SWJTU Online Judge 题解文件 点击下载：月赛题解（预赛）.zip 总结范围 *A *C D E *G H J K 注：前面带*号的题因题目简单，为简略总结。 D、E因简单而未总</description>
+    </item>
+    
+  </channel>
+</rss>

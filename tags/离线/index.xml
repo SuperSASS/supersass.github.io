@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>离线 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E7%A6%BB%E7%BA%BF/</link>
+    <description>Recent content in 离线 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E7%A6%BB%E7%BA%BF/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM学习笔记——离线……</title>
+      <link>https://blog.supersassw.com/p/acm-note-offline/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-offline/</guid>
+      <description>离线和在线区别 指的是对于若干个询问操作的不同处理方式。 在线 得到一次询问，便回答一次。 离线 得到所有询问后，再统一回答。 强制在线 离线算法一般都会</description>
+    </item>
+    
+  </channel>
+</rss>

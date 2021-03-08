@@ -1,0 +1,1288 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='2020.11.13 —— Codeforces #682 (Div. 2)……'><title>ACM比赛总结——Codeforces #682 (Div. 2)……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-writeup-2020_11_13/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM比赛总结——Codeforces #682 (Div. 2)……'>
+<meta property='og:description' content='2020.11.13 —— Codeforces #682 (Div. 2)……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-writeup-2020_11_13/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='Codeforces' /><meta property='article:tag' content='比赛总结' /><meta property='article:published_time' content='2020-11-13T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-14T22:59:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/acm-writeup-2020_11_13/64344151_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM比赛总结——Codeforces #682 (Div. 2)……">
+<meta name="twitter:description" content="2020.11.13 —— Codeforces #682 (Div. 2)……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/acm-writeup-2020_11_13/64344151_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#比赛链接">比赛链接</a></li>
+    <li><a href="#总结范围">总结范围</a></li>
+    <li><a href="#a-specific-tastes-of-andre">A. Specific Tastes of Andre</a>
+      <ul>
+        <li><a href="#题面大意">题面大意</a>
+          <ul>
+            <li><a href="#题目描述">题目描述</a></li>
+            <li><a href="#读入格式">读入格式</a></li>
+            <li><a href="#输出格式">输出格式</a></li>
+          </ul>
+        </li>
+        <li><a href="#分析">分析</a></li>
+        <li><a href="#代码">代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#b-valerii-against-everyone">B. Valerii Against Everyone</a>
+      <ul>
+        <li><a href="#题面大意-1">题面大意</a>
+          <ul>
+            <li><a href="#题目描述-1">题目描述</a></li>
+            <li><a href="#读入格式-1">读入格式</a></li>
+            <li><a href="#输出格式-1">输出格式</a></li>
+          </ul>
+        </li>
+        <li><a href="#分析-1">分析</a></li>
+        <li><a href="#代码-1">代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#c-engineer-artem">C. Engineer Artem</a>
+      <ul>
+        <li><a href="#题面大意-2">题面大意</a>
+          <ul>
+            <li><a href="#题目描述-2">题目描述</a></li>
+            <li><a href="#读入格式-2">读入格式</a></li>
+            <li><a href="#输出格式-2">输出格式</a></li>
+          </ul>
+        </li>
+        <li><a href="#个人分析">个人分析</a></li>
+        <li><a href="#个人代码">个人代码</a></li>
+        <li><a href="#题解分析">题解分析</a></li>
+        <li><a href="#题解代码">题解代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#d-powerful-ksenia">D. Powerful Ksenia</a>
+      <ul>
+        <li><a href="#题面大意-3">题面大意</a>
+          <ul>
+            <li><a href="#题目描述-3">题目描述</a></li>
+            <li><a href="#读入格式-3">读入格式</a></li>
+            <li><a href="#输出格式-3">输出格式</a></li>
+          </ul>
+        </li>
+        <li><a href="#题解分析-1">题解分析</a></li>
+        <li><a href="#题解代码-1">题解代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#e-yurii-can-do-everything">E. Yurii Can Do Everything</a>
+      <ul>
+        <li><a href="#题面大意-4">题面大意</a>
+          <ul>
+            <li><a href="#题目描述-4">题目描述</a></li>
+            <li><a href="#读入格式-4">读入格式</a></li>
+            <li><a href="#输出格式-4">输出格式</a></li>
+            <li><a href="#数据范围">数据范围</a></li>
+          </ul>
+        </li>
+        <li><a href="#题解分析-2">题解分析</a>
+          <ul>
+            <li><a href="#题解代码-2">题解代码</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/acm-writeup-2020_11_13/">
+                <img src="/p/acm-writeup-2020_11_13/64344151_p0_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_800x0_resize_box_2.png"
+                        srcset="/p/acm-writeup-2020_11_13/64344151_p0_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_800x0_resize_box_2.png 800w, /p/acm-writeup-2020_11_13/64344151_p0_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="565" 
+                        loading="lazy"
+                        alt="Featured image of post ACM比赛总结——Codeforces #682 (Div. 2)……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm_writeup/" >
+                ACM - 比赛总结
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-writeup-2020_11_13/">ACM比赛总结——Codeforces #682 (Div. 2)……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            2020.11.13 —— Codeforces #682 (Div. 2)……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/11/13</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：5507</div>
+            <div class="time">预计阅读时长： <time>11</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="比赛链接">比赛链接</h1>
+<ul>
+<li><a class="link" href="https://codeforces.com/contest/1438"  target="_blank" rel="noopener"
+    >Codeforces Round #682 (Div. 2)</a></li>
+</ul>
+<h1 id="总结范围">总结范围</h1>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> A</li>
+<li><input checked="" disabled="" type="checkbox"> B</li>
+<li><input checked="" disabled="" type="checkbox"> C</li>
+<li><input checked="" disabled="" type="checkbox"> D</li>
+<li><input checked="" disabled="" type="checkbox"> E</li>
+<li><input disabled="" type="checkbox"> F</li>
+</ul>
+<h1 id="a-specific-tastes-of-andre">A. Specific Tastes of Andre</h1>
+<div class="snote done ">
+	<div class="snote-content">
+		<p> 比赛状态：AC </p>
+	</div>
+</div>
+<ul>
+<li><a class="link" href="https://codeforces.com/contest/1438/problem/A"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题面大意">题面大意</h2>
+<h3 id="题目描述">题目描述</h3>
+<p>定义一个“好数组”：该数组的元素和能被其长度整除。</p>
+<blockquote>
+<p>例子：</p>
+<p>$[2,3,1]$是“好数组”——其元素和$6$能被长度$3$整除。<br>
+$[1,1,2,3]$不是“好数组”——其元素和$7$不能被长度$4$整除。</p>
+</blockquote>
+<h3 id="读入格式">读入格式</h3>
+<p>$T$组数据，每组读入一个长度$n$。</p>
+<h3 id="输出格式">输出格式</h3>
+<p>输出任意一个长度为$n$的“好数组”。</p>
+<h2 id="分析">分析</h2>
+<p>多试试就能知道$[1,1,1,&hellip;]$，<br>
+即<strong>全1数组</strong>为好数组。</p>
+<p>直接输出即可。</p>
+<h2 id="代码">代码</h2>
+<details class="sc-details" >
+	<summary>代码</summary>
+	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp">#define MAX 100
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">T</span><span class="p">,</span><span class="n">n</span><span class="p">;</span>
+	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</details>
+<h1 id="b-valerii-against-everyone">B. Valerii Against Everyone</h1>
+<div class="snote done ">
+	<div class="snote-content">
+		<p> 比赛状态：AC </p>
+	</div>
+</div>
+<ul>
+<li><a class="link" href="https://codeforces.com/contest/1438/problem/B"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题面大意-1">题面大意</h2>
+<h3 id="题目描述-1">题目描述</h3>
+<p>原数组$b_{i}$，令数组$a$，其中$a_{i}=2^{b_{i}}$。<br>
+问：是否存在$l_{1},r_{1},l_{2},r_{2}$<br>
+满足：</p>
+<ul>
+<li>$1 \le l_{1} \le r_{1} \le l_{2} \le r_{2} \le n$</li>
+<li>$a_{l_{1}}+a_{l_{1}+1}+a_{l_{1}+2}+&hellip;+a_{r_{1}-1}+a_{r_{1}} = a_{l_{2}}+a_{l_{2}+1}+a_{l_{2}+2}+&hellip;+a_{r_{2}-1}+a_{r_{2}}$</li>
+</ul>
+<p>即左侧某区间之和等于右侧某区间之和。</p>
+<blockquote>
+<p>例子：</p>
+<p>$b_{i}=[4,3,0,1,2,0]$<br>
+则$a$数组：$a_{i}=[16,8,1,2,4,1]$</p>
+<p>当 $l_{1}=1, r_{1}=1, l_{2}=2, r_{2}=6$ 时：<br>
+$(16)=(8+1+2+4+1)$ 故满足题意，为YES。</p>
+</blockquote>
+<h3 id="读入格式-1">读入格式</h3>
+<p>$T$组数据。</p>
+<p>第一行一个$n$，代表数组长度；<br>
+第二行分别为$b_{i}$。</p>
+<h3 id="输出格式-1">输出格式</h3>
+<p>如果存在，则输出“YES”，否则输出“NO”。</p>
+<h2 id="分析-1">分析</h2>
+<p>因为为$2^i$的这种数，有个特性就是有两个相同的数，才能得到序列的另一个其他的数。</p>
+<blockquote>
+<p>$1,2,4,8,16,32,&hellip;$<br>
+上面任意两个数相加都不可能得到该序列中的数【在倍增思想中可提现，如ST表。<br>
+任意几个数相加也不可能等于其他几个数相加之和。</p>
+</blockquote>
+<p>【严格证明我也不会_(:з」∠)_……<br>
+个人把这个性质称为互斥性。</p>
+<p>因此考虑：</p>
+<ul>
+<li>$b_{i}$数组如果没有两个相同元素出现<br>
+则会因为互斥性的影响，不可能满足条件，则为“NO”</li>
+<li>$b_{i}$数组存在至少两个相同元素，假设为$b_{i},b_{j}$<br>
+则至少满足条件$l_{1}=r_{1}=i, l_{2}=r_{2}=j$，使得$a_{l_{1}}=b_{l_{2}}$</li>
+</ul>
+<p>综上分析：只需要考虑数组中是否<strong>存在至少两个相同元素</strong>即可。</p>
+<hr>
+<p>因此实现方法便是：<br>
+先<strong>排序</strong>，然后从$2$到$n$遍历，如果<code>b[i]==b[i-1]</code>，满足题意输出“YES”，否则输出“NO”。</p>
+<h2 id="代码-1">代码</h2>
+<details class="sc-details" >
+	<summary>代码</summary>
+	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp">#define N_MAX 200000
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">num</span><span class="p">[</span><span class="n">N_MAX</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>
+	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="kt">int</span> <span class="n">flag</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+		<span class="n">sort</span><span class="p">(</span><span class="n">num</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+			<span class="p">{</span>
+				<span class="n">flag</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">printf</span><span class="p">(</span><span class="s">&#34;YES</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+				<span class="k">break</span><span class="p">;</span>
+			<span class="p">}</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">flag</span><span class="p">)</span>
+			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;NO</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</details>
+<h1 id="c-engineer-artem">C. Engineer Artem</h1>
+<div class="snote done ">
+	<div class="snote-content">
+		<p> 比赛状态：AC </p>
+	</div>
+</div>
+<ul>
+<li><a class="link" href="https://codeforces.com/contest/1438/problem/C"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题面大意-2">题面大意</h2>
+<h3 id="题目描述-2">题目描述</h3>
+<p>一个矩阵，其每个单元能够通过加一或者不变的操作，<br>
+即$b_{i,j}=a_{i,j}$或者$b_{i,j}=a_{i,j}+1$，使得任意相邻两个元素不相等。</p>
+<blockquote>
+<p>例子：</p>
+<p>$\begin{matrix} 1 &amp; 1 \\ 3 &amp; 3 \end{matrix}$</p>
+<p>可经过变换得到：<br>
+$\begin{matrix} 1 &amp; 2 \\ 3 &amp; 4 \end{matrix}$</p>
+</blockquote>
+<h3 id="读入格式-2">读入格式</h3>
+<p>$T$组数据。</p>
+<p>第一行为行和列$n,m$，<br>
+接下来$n$行$m$列读入这个矩阵。</p>
+<h3 id="输出格式-2">输出格式</h3>
+<p>输出经过变换后的这个矩阵。</p>
+<h2 id="个人分析">个人分析</h2>
+<p>因为题上说明了答案必存在。<br>
+先想着<code>bfs</code>遍历每个单元，如果与周围单元值相同，就让那个单元格$+1$。<br>
+这里改变了那个单元格后，可能引起那个单元格又不满足条件，所以又要bfs回去。</p>
+<p>类似于贪心的想法，每次确定当前单元格的周围符合条件。<br>
+但贪心就要考虑反悔：有可能这里变为不$+1$反而符合条件。<br>
+所以用个$vis[i][j]$表示是否被$+1$便于反悔。</p>
+<h2 id="个人代码">个人代码</h2>
+<details class="sc-details" >
+	<summary>个人代码</summary>
+	<div class="sc-details--inner"><div class="snote link green">
+	<div class="snote-content">
+		<p> <a href="https://paste.ubuntu.com/p/CbKfTKYvYn/">Pastebin链接</a> </p>
+	</div>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp">#define N_MAX 105
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">val</span><span class="p">[</span><span class="n">N_MAX</span> <span class="o">+</span> <span class="mi">5</span><span class="p">][</span><span class="n">N_MAX</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="n">vis</span><span class="p">[</span><span class="n">N_MAX</span> <span class="o">+</span> <span class="mi">5</span><span class="p">][</span><span class="n">N_MAX</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">;</span>
+<span class="kt">void</span> <span class="nf">bfs</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>						<span class="c1">//越界限定
+</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>	<span class="c1">//未被赋值限定
+</span><span class="c1"></span>			<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+			<span class="p">{</span>
+				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>	<span class="c1">//没被访问(+1)
+</span><span class="c1"></span>					<span class="n">val</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">++</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bfs</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+				<span class="k">else</span>	<span class="c1">//被访问了，该-1
+</span><span class="c1"></span>					<span class="n">val</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">--</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bfs</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+			<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+			<span class="p">{</span>
+				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+					<span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">++</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+				<span class="k">else</span>
+					<span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span><span class="o">--</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+			<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">!=</span> <span class="n">n</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">==</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+			<span class="p">{</span>
+				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+					<span class="n">val</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">++</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bfs</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+				<span class="k">else</span>
+					<span class="n">val</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">--</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bfs</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+			<span class="p">}</span>
+	<span class="k">if</span> <span class="p">(</span><span class="n">j</span> <span class="o">!=</span> <span class="n">m</span><span class="p">)</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+			<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+			<span class="p">{</span>
+				<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+					<span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">++</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+				<span class="k">else</span>
+					<span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">--</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+			<span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">T</span><span class="p">;</span>
+	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">memset</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">val</span><span class="p">));</span>
+		<span class="n">memset</span><span class="p">(</span><span class="n">vis</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">vis</span><span class="p">));</span>
+		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+				<span class="k">if</span> <span class="p">(</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">||</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">||</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">||</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+				<span class="p">{</span>
+					<span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">++</span><span class="p">,</span> <span class="n">vis</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+					<span class="n">bfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+				<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</details>
+<h2 id="题解分析">题解分析</h2>
+<p>根据矩阵元素的奇偶性决定是否$+1$。</p>
+<p>因为如果使矩阵满足如下结构，<br>
+则必定保证相邻两个元素奇偶性不同，两元素数也必然不同。
+$$\begin{matrix} odd &amp; even &amp; odd &amp; &hellip; \\ even &amp; odd &amp; even &amp; &hellip; \\ odd &amp; even &amp; odd &amp; &hellip; \\ &hellip; &amp; &hellip; &amp; &hellip; &amp; &hellip;  \end{matrix}$$</p>
+<h2 id="题解代码">题解代码</h2>
+<details class="sc-details" >
+	<summary>题解代码</summary>
+	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">t</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">x</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">t</span><span class="p">;</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">t</span><span class="o">--</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+		<span class="p">{</span>
+			<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span>
+			<span class="p">{</span>
+				<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">x</span><span class="p">;</span>
+				<span class="k">if</span> <span class="p">((</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span>	<span class="c1">//根据i,j（即元素位置）确定该是奇还是偶
+</span><span class="c1"></span>					<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span><span class="p">;</span>
+				<span class="k">else</span>
+					<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+				<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">j</span> <span class="o">==</span> <span class="n">m</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">?</span> <span class="sc">&#39;\n&#39;</span> <span class="o">:</span> <span class="sc">&#39; &#39;</span><span class="p">);</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</details>
+<h1 id="d-powerful-ksenia">D. Powerful Ksenia</h1>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 比赛状态：未完成（没有时间看题） </p>
+	</div>
+</div>
+<ul>
+<li><a class="link" href="https://codeforces.com/contest/1438/problem/D"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题面大意-3">题面大意</h2>
+<h3 id="题目描述-3">题目描述</h3>
+<p>给定$n$个数，每次操作能选择其中三个数$x,y,z$皆变为它们的亦或$x \oplus y \oplus z$，问能否进行不超过$n$次操作使这$n$个数均相等。</p>
+<h3 id="读入格式-3">读入格式</h3>
+<p>第一行读入一个$n$，接下来一行读入$n$个数。</p>
+<h3 id="输出格式-3">输出格式</h3>
+<p>输出是否能满足条件：</p>
+<ul>
+<li>如果能，输出一行<code>YES</code>，并在下一行输出所需的操作数<code>m</code>，在下一行输出<code>m</code>个所分别选择的三个数<code>x,y,z</code>。</li>
+<li>如果不能，直接输出一行<code>NO</code>。</li>
+</ul>
+<h2 id="题解分析-1">题解分析</h2>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 参考自<a href="https://zhuanlan.zhihu.com/p/293954703">“哈哈哈哈哈哈”在知乎上的题解</a>。 </p>
+	</div>
+</div>
+<p>首先了解位运算中“三者异或”的基本性质：</p>
+<ol>
+<li>$x \oplus x \oplus y = 0 \oplus y = y$<br>
+即<strong>两个相同的数</strong>与另一个不同数三者异或，答案为不同的数。加上本题的要求，则三者均会变成相同的数$y$。</li>
+<li>对三($n$)者异或，转成二进制后，<strong>某一位的$1$的个数的奇偶性不变</strong>，如表格所示：
+<table>
+<thead>
+<tr>
+<th>(x,y,z)</th>
+<th>1的个数奇偶性</th>
+<th>结果</th>
+<th>1个数的奇偶性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(0,0,0)</td>
+<td><strong>偶</strong>（0个）</td>
+<td>0</td>
+<td><strong>偶</strong>（0个）</td>
+</tr>
+<tr>
+<td>(0,0,1)</td>
+<td><strong>奇</strong>（1个）</td>
+<td>1</td>
+<td><strong>奇</strong>（1个）</td>
+</tr>
+<tr>
+<td>(0,1,0)</td>
+<td><strong>奇</strong>（1个）</td>
+<td>1</td>
+<td><strong>奇</strong>（1个）</td>
+</tr>
+<tr>
+<td>(0,1,1)</td>
+<td><strong>偶</strong>（2个）</td>
+<td>0</td>
+<td><strong>偶</strong>（0个）</td>
+</tr>
+<tr>
+<td>(1,0,0)</td>
+<td><strong>奇</strong>（1个）</td>
+<td>1</td>
+<td><strong>奇</strong>（1个）</td>
+</tr>
+<tr>
+<td>(1,0,1)</td>
+<td><strong>偶</strong>（2个）</td>
+<td>0</td>
+<td><strong>偶</strong>（0个）</td>
+</tr>
+<tr>
+<td>(1,1,0)</td>
+<td><strong>偶</strong>（2个）</td>
+<td>0</td>
+<td><strong>偶</strong>（0个）</td>
+</tr>
+<tr>
+<td>(1,1,1)</td>
+<td><strong>奇</strong>（3个）</td>
+<td>1</td>
+<td><strong>奇</strong>（1个）</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<hr>
+<p>基于<strong>第一性质</strong>：如果我们能把数列分为$n$个$2$个相同的数$(x,x)$，最终加上任意一个数$y$，我们便能将该数列变为符合题意的均为$y$数列。<br>
+每经过一次操作后，我们都能得到三个相同的数；而下一次操作如果我们再用上一次操作中的任意一个数，上一次操作便能得到<strong>两个相同的数</strong>。</p>
+<ul>
+<li>经过简化：若我们按照$(1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),&hellip;$这样的顺序操作下去，最终便能得到$(x_1,x_1,x_2,x_2,x_3,x_3,&hellip;,x_{n-1},x_{n-1},x_n,x_n,x_n)$这样一个数列。再按照**第一性质**得到结果。<br>
+而要能使用这一种操作，则须满足数列个数为$2*n+1$个，即为**奇数个**。</li>
+</ul>
+<p>即：<strong>若数列个数为奇数个，则必定可以通过上述操作满足题意。</strong></p>
+<hr>
+<p>那分析<strong>数列个数为偶数个</strong>的情况：</p>
+<p>对于最终态分析：<br>
+如果我们能满足题意，即变成<strong>个数为偶数个的相同元素$x$的数列</strong>：<br>
+对$x$的每一个<strong>二进制数位</strong>($5_{(10)}$&mdash;&gt;$101_{(2)}$)分析，其每一位$1$的个数必定全是$0$或者为偶数个$1$，即**所有数位$1$的个数均为偶数个**。</p>
+<p>又因为<strong>第二性质</strong>——<strong>异或后某一数位的$1$的个数的奇偶性不变</strong><br>
+对最初态数列的<strong>任意一数位</strong>假设：</p>
+<blockquote>
+<p>如：</p>
+<p>第三位： 0 1 0 1 1 0<br>
+第二位： 0 1 1 0 1 1<br>
+第一位： 1 1 0 0 0 0</p>
+<p>（原数列:1 7 2 4 6 2）</p>
+</blockquote>
+<p>令：该数列长度为$2n$。</p>
+<ol>
+<li>
+<p>$1$的个数为偶数个：
+我们<strong>任选</strong>一个数$x_i$，将这个数放在最后分析，先操作剩下的$2n-1$个数。<br>
+可知这$2n-1$个数为奇数。<br>
+而对于选中的$x_i$，又有两种情况：</p>
+<ol>
+<li>该位为$0$：<br>
+则剩下的$2n-1$个数，该为$1$的个数仍为偶数个，但数却有奇数个。<br>
+要达到最后所有数相同的情况（即该位全是$1$或全是$0$），只能最终全部为$0$。<br>
+因此$x_i$的该位与剩下的$2n-1$个数操作后的该位结果相同。<br>
+又因为为<strong>任意一数位</strong>，故<strong>最终$x_i$这个数必须与剩下的$2n-1$个数操作后的数值相同</strong>。</li>
+<li>该位为$1$：<br>
+则剩下的$2n-1$个数，该为$1$的个数变为奇数个，而数也有奇数个。<br>
+同理，则最终全部为$1$，也<strong>相同</strong>。</li>
+</ol>
+<p>又因为$x_i$也为任选。<br>
+即<strong>任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，只有$x_i=m$时</strong>，才能满足题意。</p>
+</li>
+<li>
+<p>$1$的个数为奇数个——不成立：<br>
+由第二性质可直接得出矛盾——最初态该数位的$1$的个数(奇数个)与最终态(偶数个)的奇偶性不一致。<br>
+但同理分析，可以得出<strong>任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，必定$x_i \neq m$</strong></p>
+</li>
+</ol>
+<hr>
+<p>综上：只有<strong>任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，只有$x_i=m$时</strong>，才能满足题意。</p>
+<ul>
+<li>
+<p>经过简化：若我们仍然按照$(1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),&hellip;$这样的顺序操作下去，<br>
+最终得到$(x_1,x_1,x_2,x_2,x_3,x_3,&hellip;,x_{n-1},x_{n-1},x_n,x_n,x_n,y)$这样一个数列。</p>
+<p>按照<strong>奇数个数</strong>的操作对前$2n-1$个操作，得到相同值$m$。<br>
+若$m=y$，则一定满足题意，否则一定不满足。</p>
+</li>
+</ul>
+<p>即：<br>
+若数列个数为偶数个，将前$2n-1$个变为相同数$m$，只有最后一个数$x_{2n}=m$，才能满足题意。</p>
+<h2 id="题解代码-1">题解代码</h2>
+<details class="sc-details" >
+	<summary>题解代码</summary>
+	<div class="sc-details--inner"><div class="snote link green">
+	<div class="snote-content">
+		<p> <a href="https://paste.ubuntu.com/p/C8WRsStq5b/">Pastebin链接</a> </p>
+	</div>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span> <span class="mf">1e5</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+
+<span class="kt">void</span> <span class="nf">op</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span>	<span class="c1">//异或操作
+</span><span class="c1"></span><span class="p">{</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">^</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">^</span><span class="n">a</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">out</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="kt">int</span> <span class="n">j</span><span class="p">,</span><span class="kt">int</span> <span class="n">k</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">i</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="o">&lt;&lt;</span><span class="n">j</span><span class="o">&lt;&lt;</span><span class="sc">&#39; &#39;</span><span class="o">&lt;&lt;</span><span class="n">k</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+    <span class="kt">int</span> <span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">?</span> <span class="nl">n</span> <span class="p">:</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 如果是偶数，操作前n-1个数
+</span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="n">op</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">);</span> <span class="c1">// 产生k对相同数
+</span><span class="c1"></span>    <span class="n">op</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="n">op</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="c1">// 选定第一个为最终答案
+</span><span class="c1"></span>
+    <span class="k">if</span><span class="p">(</span><span class="n">n</span><span class="o">%</span><span class="mi">2</span><span class="o">==</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">!=</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+	<span class="p">{</span>
+		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;NO&#34;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+	<span class="p">{</span>
+		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&#34;YES</span><span class="se">\n</span><span class="s">&#34;</span><span class="o">&lt;&lt;</span><span class="n">m</span><span class="o">-</span><span class="mi">2</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="n">out</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="p">);</span>
+		<span class="n">out</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+		<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">m</span><span class="p">;</span><span class="n">i</span> <span class="o">+=</span> <span class="mi">2</span><span class="p">)</span> <span class="n">out</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="snote info ">
+	<div class="snote-content">
+		<p> 来自于<a href="https://zhuanlan.zhihu.com/p/293954703">“哈哈哈哈哈哈”在知乎上的题解</a>。 </p>
+	</div>
+</div>
+</div>
+</details>
+<h1 id="e-yurii-can-do-everything">E. Yurii Can Do Everything</h1>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 比赛状态：未完成（没有时间看题） </p>
+	</div>
+</div>
+<ul>
+<li><a class="link" href="https://codeforces.com/contest/1438/problem/E"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题面大意-4">题面大意</h2>
+<h3 id="题目描述-4">题目描述</h3>
+<p>给定一个数组<code>a[n]</code>，要求输出满足以下条件的子数组<code>a[l..r]</code>的个数：</p>
+<ol>
+<li>$l+1\leq r-1$，即子数组长度至少为$3$。</li>
+<li>$(a_l \oplus a_r) = (a_{l+1}+a_{l+2}+&hellip;+a_{r-2}+a_{r-1})$，即两端点异或的值等于中间所有数之和。</li>
+</ol>
+<h3 id="读入格式-4">读入格式</h3>
+<p>第一行为数组长度$n$，接下来一行为长度为$n$的数组$a_i$的读入。</p>
+<h3 id="输出格式-4">输出格式</h3>
+<p>输出满足条件子数组个数。</p>
+<h3 id="数据范围">数据范围</h3>
+<ul>
+<li>$3\leq n \leq 2*10^5$</li>
+<li>$1\leq a_i \leq 2^{30}$</li>
+</ul>
+<h2 id="题解分析-2">题解分析</h2>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 参考自<a href="https://zhuanlan.zhihu.com/p/293954703">“哈哈哈哈哈哈”在知乎上的题解</a>。 </p>
+	</div>
+</div>
+<p>异或的基本性质的补充：</p>
+<ol>
+<li>
+<p>任意两数异或，其<strong>结果不可能超过他们最大的二进制数位</strong><br>
+根据异或计算结果：</p>
+<blockquote>
+<p>$0 \oplus 0 = 0$</p>
+</blockquote>
+<p>最高位往后均为$0$，异或后结果也为0，因此结果的数位不可能超过最高位。</p>
+<p>如：$(3)_{10} \oplus (6)_{10} = (11)_2\oplus (110)_2 = (5)_{10}/(101)_2$，位数不可能超过最高位即$3$。<br>
+最大情况为：$(3)_{10}\oplus (4)_{10} = (11)_2\oplus (100)_2 = (7)_{10}/(111)_2$</p>
+<p>但异或后的数值不能保证与两原数大小的直接关系，但由于数位可以保证，令两数分别为$x,y$，其二进制位数分别为$m,n$。<br>
+故<strong>可确定$x\oplus y&lt;2^{max(m,n)}$。</strong></p>
+<blockquote>
+<p>假设最大为$x=(31)_{10}$，$(x)_2=(11111)_2$，<br>
+则$m=5$，$2^m=(32)_{10}=(100000)_2$</p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>这题如果暴力搜索的话，$O(n^2)$TLE。<br>
+但由于以上的性质存在，可以跨级别性剪枝。</p>
+<p>根据以上性质我们可以粗略感觉到一个剪枝条件：</p>
+<blockquote>
+<p>当$\sum_{i=l+1}^{r-1}a_i\geq 2^{max(m,n)}$时，则证明该区间不满足条件。</p>
+</blockquote>
+<p>但如果搭配暴力搜索，假如选定$l$遍历$r$，$max(m,n)$选择的值可能因为$r$的改变而改变，使得无法通过这个条件来中止后续搜索。</p>
+<p>因此我们可以更暴力一点【？】，选定$l$后，我们就<strong>假定$max(m,n)$选择的值为$m$</strong>，即$l$的位数始终最大。然后向右遍历$r$。<br>
+这样当我们找到不满足条件的情况后，<strong>后续的搜索便可以中止</strong>。</p>
+<p>可能会问，如果这样选择的区间最大值却是$n$，是否会出现问题？<br>
+但如果最大值选的$n$，则一定满足情况$\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n$，这个区间也符合条件，不会影响的抬走下一个x……</p>
+<p>但这样的话，可能有区间就是以$n$，即右端点$r$为最大位数，但$2^m\leq \sum_{i=l+1}^{r-1}a_i\leq 2^n$。<br>
+因此我**们再从右向左，选定$r$，令$max(m,n)$选择的是$n$，向左遍历$l$便可解决这种问题**。</p>
+<p>这样肯定能<strong>保证不漏</strong>，但很明显<strong>会重复计算</strong>。<br>
+即若有区间满足$\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n$或$\sum_{i=l+1}^{r-1}a_i\leq 2^n \leq 2^m$，则从左向右和从右向左均满足，会被计算两次。</p>
+<p>故<strong>用“Hash+&lt;STL&gt;set”可以去重计数</strong>。</p>
+<hr>
+<p>但为什么这样剪枝能跨级别性剪枝呢！？……</p>
+<p>因为如果要遍历较长的$l\sim r$，则数列应构造为$1,2,4,8,&hellip;,2^n$【从右向左$r=n$时，就能让$l$取到最左即$l=1$而中间求和仍少于$2^n$。</p>
+<p>这样反而限定了遍历范围为$log_2a_i$，则总复杂度为$O(2nloga_i)$。</p>
+<h3 id="题解代码-2">题解代码</h3>
+<details class="sc-details" >
+	<summary>题解代码</summary>
+	<div class="sc-details--inner"><div class="snote link green">
+	<div class="snote-content">
+		<p> <a href="https://paste.ubuntu.com/">Pastebin链接</a> </p>
+	</div>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span><span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">ll</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">maxn</span> <span class="o">=</span> <span class="mf">2e5</span><span class="o">+</span><span class="mi">5</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">ll</span> <span class="n">a</span><span class="p">[</span><span class="n">maxn</span><span class="p">];</span>
+<span class="n">set</span><span class="o">&lt;</span><span class="n">ll</span><span class="o">&gt;</span> <span class="n">st</span><span class="p">;</span>
+
+<span class="n">ll</span> <span class="nf">get_max</span><span class="p">(</span><span class="n">ll</span> <span class="n">x</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">for</span><span class="p">(</span><span class="n">ll</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1LL</span><span class="o">&lt;&lt;</span><span class="mi">31</span><span class="p">;</span><span class="n">i</span><span class="p">;</span><span class="n">i</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">){</span>
+	<span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&amp;</span> <span class="n">x</span><span class="p">)</span><span class="k">return</span> <span class="n">i</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">l</span> <span class="o">&lt;</span> <span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span><span class="o">++</span><span class="n">l</span><span class="p">){</span>
+	<span class="n">ll</span> <span class="n">s</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">maxs</span> <span class="o">=</span> <span class="n">get_max</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">]);</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">l</span><span class="o">+</span><span class="mi">2</span><span class="p">;</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span><span class="o">++</span><span class="n">r</span><span class="p">){</span>
+	    <span class="k">if</span><span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">^</span><span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span><span class="n">st</span><span class="p">.</span><span class="n">insert</span><span class="p">((</span><span class="n">ll</span><span class="p">)</span><span class="n">l</span><span class="o">*</span><span class="n">maxn</span><span class="o">+</span><span class="n">r</span><span class="p">);</span>
+	    <span class="k">if</span><span class="p">((</span><span class="n">s</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">maxs</span><span class="p">)</span><span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span><span class="n">r</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">;</span><span class="o">--</span><span class="n">r</span><span class="p">){</span>
+	<span class="n">ll</span> <span class="n">s</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">maxs</span> <span class="o">=</span> <span class="n">get_max</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">]);</span>
+	<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">r</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span><span class="n">l</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span><span class="o">--</span><span class="n">l</span><span class="p">){</span>
+	    <span class="k">if</span><span class="p">((</span><span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">]</span><span class="o">^</span><span class="n">a</span><span class="p">[</span><span class="n">r</span><span class="p">])</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span><span class="n">st</span><span class="p">.</span><span class="n">insert</span><span class="p">((</span><span class="n">ll</span><span class="p">)</span><span class="n">l</span><span class="o">*</span><span class="n">maxn</span><span class="o">+</span><span class="n">r</span><span class="p">);</span>
+	    <span class="k">if</span><span class="p">((</span><span class="n">s</span><span class="o">+=</span><span class="n">a</span><span class="p">[</span><span class="n">l</span><span class="p">])</span> <span class="o">&gt;</span> <span class="n">maxs</span><span class="p">)</span><span class="k">break</span><span class="p">;</span>
+	<span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">st</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><div class="snote info ">
+	<div class="snote-content">
+		<p> 来自于<a href="https://zhuanlan.zhihu.com/p/293954703">“哈哈哈哈哈哈”在知乎上的题解</a>。 </p>
+	</div>
+</div>
+</div>
+</details>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/codeforces/">Codeforces</a>
+        
+            <a href="/tags/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/">比赛总结</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2020/12/14 22:59
+        </span>
+    </section><section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/64344151" target="_blank" rel="noopener">64344151</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-writeup-2020_10_31/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-writeup-2020_10_31/87698192_p0.bb84022293b0f828caae07318f56421b_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-writeup-2020_10_31" 
+                        data-hash="md5-u4QCIpOw&#43;CjKrgcxj1ZCGw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM比赛总结——2020年 校十月月赛（决赛）</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-writeup-2020_10_24/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-writeup-2020_10_24/85632010_p0.e54e77f0b0c902e78ff199ef0a6a2145_hu1a4360dbf172a18f1159639719209d07_2635798_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-writeup-2020_10_24" 
+                        data-hash="md5-5U538LDJAueP8ZnvCmohRQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM比赛总结——2020年 校十月月赛（初赛）</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ACM - 学习笔记 on Super SASS……</title>
+    <link>https://blog.supersassw.com/categories/acm_note/</link>
+    <description>Recent content in ACM - 学习笔记 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/acm_note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM学习笔记——离散化……</title>
+      <link>https://blog.supersassw.com/p/acm-note-discrete/</link>
+      <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-discrete/</guid>
+      <description>离散化介绍 离散化，就是将一组离散的数据，映射成集中的数据。【所以个人觉得应该叫集中化【？…… 其思想跟哈希(Hash)类似。 当有些数据因为本身</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——离线……</title>
+      <link>https://blog.supersassw.com/p/acm-note-offline/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-offline/</guid>
+      <description>离线和在线区别 指的是对于若干个询问操作的不同处理方式。 在线 得到一次询问，便回答一次。 离线 得到所有询问后，再统一回答。 强制在线 离线算法一般都会</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——莫队算法……</title>
+      <link>https://blog.supersassw.com/p/acm-note-mo_algo/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-mo_algo/</guid>
+      <description>简介 属于离线算法中的一种。 用来解决离线区间询问问题， 将其加以扩展后，还可以解决树上路径询问问题和支持修改操作。 使用条件 须满足以下条件： 对于区</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——并查集……</title>
+      <link>https://blog.supersassw.com/p/acm-note-union_find/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-union_find/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 其实并不是笔记</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——线段树……</title>
+      <link>https://blog.supersassw.com/p/acm-note-segment_tree/</link>
+      <pubDate>Sun, 20 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-segment_tree/</guid>
+      <description>该笔记还处于基础部分，待日后继续深入整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 简介 是一</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——邻项比较排序……</title>
+      <link>https://blog.supersassw.com/p/acm-note-neighbor_sort/</link>
+      <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-neighbor_sort/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 邻项比较排序介绍 定义 本来的排序型贪心，我们需要任意两</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——贪心……</title>
+      <link>https://blog.supersassw.com/p/acm-note-greedy/</link>
+      <pubDate>Mon, 14 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-greedy/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。可能格式、内容、链接等混乱错误…… 贪心介绍 定义 贪心，指的是决策时都采取当前最优解的算法。 可以通</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——GCD、裴蜀定理、EXGCD……</title>
+      <link>https://blog.supersassw.com/p/acm-note-gcd_exgcd/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-gcd_exgcd/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… GCD 引例：最大公约数 没什么好说的，就最大公约数。 主要是</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——线性同余方程……</title>
+      <link>https://blog.supersassw.com/p/acm-note-linear_equation/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-linear_equation/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 0x00 前提知识 同余</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——STL……</title>
+      <link>https://blog.supersassw.com/p/acm-note-stl/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-stl/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… STL 详解 set—</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——排序……</title>
+      <link>https://blog.supersassw.com/p/acm-note-sort/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-sort/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 排序 不考虑算法</description>
+    </item>
+    
+  </channel>
+</rss>

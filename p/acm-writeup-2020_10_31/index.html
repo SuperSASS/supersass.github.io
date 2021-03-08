@@ -1,0 +1,753 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='2020.10.31 ——2020年 校十月月赛（决赛）'><title>ACM比赛总结——2020年 校十月月赛（决赛）</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-writeup-2020_10_31/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM比赛总结——2020年 校十月月赛（决赛）'>
+<meta property='og:description' content='2020.10.31 ——2020年 校十月月赛（决赛）'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-writeup-2020_10_31/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='校月赛' /><meta property='article:tag' content='比赛总结' /><meta property='article:published_time' content='2020-10-31T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-14T22:59:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/acm-writeup-2020_10_31/87698192_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM比赛总结——2020年 校十月月赛（决赛）">
+<meta name="twitter:description" content="2020.10.31 ——2020年 校十月月赛（决赛）"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/acm-writeup-2020_10_31/87698192_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#比赛链接">比赛链接</a></li>
+    <li><a href="#题解文件">题解文件</a></li>
+    <li><a href="#总结范围">总结范围</a></li>
+    <li><a href="#a---排队">A - 排队</a>
+      <ul>
+        <li><a href="#题面搬运">题面搬运</a></li>
+        <li><a href="#标准思路">标准思路</a></li>
+        <li><a href="#标程代码">标程代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/acm-writeup-2020_10_31/">
+                <img src="/p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_800x0_resize_box_2.png"
+                        srcset="/p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_800x0_resize_box_2.png 800w, /p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="450" 
+                        loading="lazy"
+                        alt="Featured image of post ACM比赛总结——2020年 校十月月赛（决赛）" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm_writeup/" >
+                ACM - 比赛总结
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-writeup-2020_10_31/">ACM比赛总结——2020年 校十月月赛（决赛）</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            2020.10.31 ——2020年 校十月月赛（决赛）
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/10/31</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：1330</div>
+            <div class="time">预计阅读时长： <time>3</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <div class="snote error ">
+	<div class="snote-content">
+		<p> 该总结还暂未完成，待日后继续总结…… </p>
+	</div>
+</div>
+<h1 id="比赛链接">比赛链接</h1>
+<ul>
+<li><a class="link" href="https://oj.swjtu.edu.cn/contest/23/"  target="_blank" rel="noopener"
+    >SWJTU Online Judge</a></li>
+</ul>
+<h1 id="题解文件">题解文件</h1>
+<div class="snote link green">
+	<div class="snote-content">
+		<p> 点击下载：<a href="./%E6%9C%88%E8%B5%9B%E5%86%B3%E8%B5%9B.7z">月赛决赛.7z</a> </p>
+	</div>
+</div>
+<h1 id="总结范围">总结范围</h1>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> A</li>
+<li><input disabled="" type="checkbox"> C</li>
+<li><input disabled="" type="checkbox"> D</li>
+<li><input disabled="" type="checkbox"> E</li>
+<li><input disabled="" type="checkbox"> G</li>
+<li><input disabled="" type="checkbox"> H</li>
+<li><input disabled="" type="checkbox"> J</li>
+<li><input disabled="" type="checkbox"> K</li>
+</ul>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 注：前面带*号的题因题目简单，为简略总结。 </p>
+	</div>
+</div>
+
+
+<div class="snote info yellow ">
+	<div class="snote-content">
+		<p><ul>
+<li>其余题目均因时间原因暂未总结。</li>
+</ul>
+</p>
+	</div>
+</div>
+<h1 id="a---排队">A - 排队</h1>
+<div class="snote error ">
+	<div class="snote-content">
+		<p> 比赛情况：WA </p>
+	</div>
+</div>
+<h2 id="题面搬运">题面搬运</h2>
+<ul>
+<li><a class="link" href="https://oj.swjtu.edu.cn/contest/23/problem/A"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<details class="sc-details" >
+	<summary>题面搬运</summary>
+	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
+<p>世界任务：是芭芭拉还是⑨⑨拉</p>
+<p>班尼特又误伤了自己，现在$n$个班尼特正找芭芭拉治疗。</p>
+<p>对于每个班尼特，芭芭拉需要给他补血$h_i$，然后获得一个价值$v_i$的圣遗物。</p>
+<p>治疗每一个班尼特都会获得一个收益，治疗第$i$个班尼特的收益$w_i$等于前面治疗的所有班尼特的$v$之和减去$h_i$。</p>
+<p>芭芭拉想让治疗每个班尼特收益的最小值最大。<br>
+也就是说，请重新给班尼特排队，要求是最大化$\min_{i=1}^n{-h_i+\sum_{j=1}^i v_j}$
+，并输出这个值。</p>
+<p>芭芭拉并不擅长数学，因此请身为骑士团荣誉骑士的你帮帮她吧。</p>
+<p>任务奖励：10个原石，角色芭芭拉，以及月赛增加一个AC</p>
+<h2 id="数据范围">数据范围</h2>
+<p>$1 \le n \le 10^5$<br>
+$1 \le h_i,v_i \le 10^4$</p>
+<h2 id="输入格式">输入格式</h2>
+<p>第一行有一个整数$n$。</p>
+<p>接下来有$n$行，每行有两个数字$h$,$v$，代表这个班尼特的补血量和圣遗物。</p>
+<h2 id="输出格式">输出格式</h2>
+<p>一行，只有一个整数，代表所有最小值中的最大值。</p>
+<h2 id="样例数据">样例数据</h2>
+<h3 id="第一组">第一组</h3>
+<div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">3</span>
+<span class="mi">100</span> <span class="mi">200</span>
+<span class="mi">300</span> <span class="mi">500</span>
+<span class="mi">400</span> <span class="mi">700</span>
+</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">300</span>
+</code></pre></div></div></div>
+<p><strong>解释：</strong></p>
+<p>若顺序为($100,200)(300,500)(400,700)$，则收益为$100,400,1000$，最小收益为$100$。<br>
+若顺序为$(300,500)(100,200)(400,700)$，则收益为$200,600,1000$，最小收益为$200$。<br>
+若顺序为$(400,700)(100,200)(300,500)$，则收益为$300,600,1100$，最小收益为$300$。</p>
+<p>还有其它顺序，但最小收益不会超过$300$，因此答案为$300$。</p>
+</div>
+</details>
+<h2 id="标准思路">标准思路</h2>
+<ul>
+<li>算法点：<strong>贪心</strong>——<strong>邻项交换排序</strong><br>
+它把决定相邻两个元素先后的决策推广到整个序列，从而获得最优解。</li>
+</ul>
+<p>这个题本身就是通过给数据排序，不同的排序方法会有不同的收益最小值，然后要比较所有排序方法，选让这个收益最值最大那种方法……<br>
+所以排序的话我们就每次选两个人比较，标记为$i$和$j$……</p>
+<p>然后这两个人又有两种情况，要不就是$i$站在$j$前面，要不就是$j$站在$i$前面……<br>
+这两种情况分别会有个当前两个人的收益最小值，如果目前这种方法（$i$站在$j$前面）的这个最值小于后者方法（$j$站在$i$前面），那肯定我就选后者，让收益最大化，就让他们交换顺序……<br>
+就相当于把比较时候的最值看成短板，每次比较一次选最高的那个，就会把短板提上去一点，这样最后得到的就是最高的短板……</p>
+<p>用公式来说的话就是$\text{if} \quad (\min(Wi_1,Wj_1) &lt; \min(Wi_2,Wj_2)) \quad \text{swap}((h,v)_i,(h,v)_j)$……<br>
+最终分析得知就是<code>if (vi-hi &lt; vj-hj) swap(i,j);</code>……</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 有关“邻项交换排序”的详细介绍可以查看我的笔记<a href="http://localhost:1313/p/acm-note-neighbor_sort/">「ACM学习笔记——邻项比较排序……」</a>。 </p>
+	</div>
+</div>
+<h2 id="标程代码">标程代码</h2>
+<details class="sc-details" >
+	<summary>标程代码</summary>
+	<div class="sc-details--inner"><div class="snote link green">
+	<div class="snote-content">
+		<p> <a href="https://paste.ubuntu.com/p/tWYv3Kk3ch/">Pastebin链接</a> </p>
+	</div>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//理解了就很简单，就不给标程加注释了……
+</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100010</span><span class="p">;</span>
+
+<span class="k">struct</span> <span class="nc">Data</span>
+<span class="p">{</span>
+	<span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
+	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Data</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">-</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">v</span> <span class="o">-</span> <span class="n">t</span><span class="p">.</span><span class="n">h</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+<span class="n">Data</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">);</span>
+	<span class="n">sort</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+	<span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+	<span class="p">{</span>
+		<span class="n">tmp</span> <span class="o">+=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">;</span>
+		<span class="n">res</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">);</span>
+	<span class="p">}</span>
+	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
+	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</details>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/%E6%A0%A1%E6%9C%88%E8%B5%9B/">校月赛</a>
+        
+            <a href="/tags/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/">比赛总结</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2020/12/14 22:59
+        </span>
+    </section><section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/87698192" target="_blank" rel="noopener">87698192</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-writeup-2020_10_24/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-writeup-2020_10_24/85632010_p0.e54e77f0b0c902e78ff199ef0a6a2145_hu1a4360dbf172a18f1159639719209d07_2635798_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-writeup-2020_10_24" 
+                        data-hash="md5-5U538LDJAueP8ZnvCmohRQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM比赛总结——2020年 校十月月赛（初赛）</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-writeup-2020_11_13/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-writeup-2020_11_13/64344151_p0.e902b7d7815ccda1bfdee53f5d115fbc_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-writeup-2020_11_13" 
+                        data-hash="md5-6QK314FczaG/3uU/XRFfvA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM比赛总结——Codeforces #682 (Div. 2)……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

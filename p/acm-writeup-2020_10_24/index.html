@@ -1,0 +1,1228 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='2020.10.24 ——2020年 校十月月赛（初赛）'><title>ACM比赛总结——2020年 校十月月赛（初赛）</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-writeup-2020_10_24/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM比赛总结——2020年 校十月月赛（初赛）'>
+<meta property='og:description' content='2020.10.24 ——2020年 校十月月赛（初赛）'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-writeup-2020_10_24/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='校月赛' /><meta property='article:tag' content='比赛总结' /><meta property='article:published_time' content='2020-10-24T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-12-15T08:42:12&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/acm-writeup-2020_10_24/85632010_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM比赛总结——2020年 校十月月赛（初赛）">
+<meta name="twitter:description" content="2020.10.24 ——2020年 校十月月赛（初赛）"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/acm-writeup-2020_10_24/85632010_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#比赛链接">比赛链接</a></li>
+    <li><a href="#题解文件">题解文件</a></li>
+    <li><a href="#总结范围">总结范围</a></li>
+    <li><a href="#a---落单水禽">*A - 落单水禽</a>
+      <ul>
+        <li><a href="#个人方法">个人方法</a></li>
+        <li><a href="#标准思路">标准思路</a></li>
+      </ul>
+    </li>
+    <li><a href="#c---新概念丢手绢">*C - 新概念丢手绢</a></li>
+    <li><a href="#g---生活委员">*G - 生活委员</a></li>
+    <li><a href="#h---胖生的数学题">H - 胖生的数学题</a>
+      <ul>
+        <li><a href="#题面搬运">题面搬运</a></li>
+        <li><a href="#标准思路-1">标准思路</a></li>
+        <li><a href="#标程代码">标程代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#k">K</a>
+      <ul>
+        <li><a href="#题面搬运-1">题面搬运</a></li>
+        <li><a href="#个人方法-1">个人方法</a></li>
+        <li><a href="#标准思路-2">标准思路</a></li>
+        <li><a href="#标程代码-1">标程代码</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/acm-writeup-2020_10_24/">
+                <img src="/p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_800x0_resize_box_2.png"
+                        srcset="/p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_800x0_resize_box_2.png 800w, /p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="400" 
+                        loading="lazy"
+                        alt="Featured image of post ACM比赛总结——2020年 校十月月赛（初赛）" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm_writeup/" >
+                ACM - 比赛总结
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-writeup-2020_10_24/">ACM比赛总结——2020年 校十月月赛（初赛）</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            2020.10.24 ——2020年 校十月月赛（初赛）
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/10/24</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：5276</div>
+            <div class="time">预计阅读时长： <time>11</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="比赛链接">比赛链接</h1>
+<ul>
+<li><a class="link" href="https://oj.swjtu.edu.cn/contest/22/"  target="_blank" rel="noopener"
+    >SWJTU Online Judge</a></li>
+</ul>
+<h1 id="题解文件">题解文件</h1>
+<div class="snote link green">
+	<div class="snote-content">
+		<p> 点击下载：<a href="./%E6%9C%88%E8%B5%9B%E9%A2%98%E8%A7%A3%EF%BC%88%E9%A2%84%E8%B5%9B%EF%BC%89.zip">月赛题解（预赛）.zip</a> </p>
+	</div>
+</div>
+<h1 id="总结范围">总结范围</h1>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> *A</li>
+<li><input checked="" disabled="" type="checkbox"> *C</li>
+<li><input disabled="" type="checkbox"> D</li>
+<li><input disabled="" type="checkbox"> E</li>
+<li><input checked="" disabled="" type="checkbox"> *G</li>
+<li><input checked="" disabled="" type="checkbox"> H</li>
+<li><input disabled="" type="checkbox"> J</li>
+<li><input checked="" disabled="" type="checkbox"> K</li>
+</ul>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 注：前面带*号的题因题目简单，为简略总结。 </p>
+	</div>
+</div>
+
+
+<div class="snote info yellow ">
+	<div class="snote-content">
+		<p><ul>
+<li>D、E因简单而未总结。</li>
+<li>J因时间原因暂未总结。</li>
+</ul>
+</p>
+	</div>
+</div>
+<h1 id="a---落单水禽">*A - 落单水禽</h1>
+<ul>
+<li><a class="link" href="https://oj.swjtu.edu.cn/contest/22/problem/A"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<div class="snote error ">
+	<div class="snote-content">
+		<p> 比赛情况：WA </p>
+	</div>
+</div>
+<h2 id="个人方法">个人方法</h2>
+<p>利用<code>map</code>映射，找到只出现一次的。</p>
+<p><strong>WA原因</strong>：<br>
+字符串操作问题。</p>
+
+
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><p>使用<code>resize</code>和<code>scanf</code>读入的时候，<br>
+需注意<strong>重新读入时不会删去之前的字符串</strong>！</p>
+<blockquote>
+<p>如第一次读入了个<code>2333331919</code>，之后又用这个字符串读了个<code>114514</code>，<br>
+则新的字符串是<code>1145151919</code>。</p>
+</blockquote>
+</p>
+	</div>
+</div>
+<h2 id="标准思路">标准思路</h2>
+<p>采用<strong>位运算</strong>。</p>
+<p>$2n+1$个数中，其中只有$1$个数只出现了<strong>奇数次</strong>，<br>
+则对所有数进行异或，则可找出出现奇数次的数。</p>
+<h1 id="c---新概念丢手绢">*C - 新概念丢手绢</h1>
+<ul>
+<li><a class="link" href="https://oj.swjtu.edu.cn/contest/22/problem/C"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<div class="snote error ">
+	<div class="snote-content">
+		<p> 比赛情况：未完成（看过题目不知道方法） </p>
+	</div>
+</div>
+<p>不难的题，没去认真思考。</p>
+<p>思考后会发现：按$1,2, \cdots ,n$这样排列，就是最高分，即输出$n$。</p>
+<h1 id="g---生活委员">*G - 生活委员</h1>
+<ul>
+<li><a class="link" href="https://oj.swjtu.edu.cn/contest/22/problem/G"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<div class="snote done ">
+	<div class="snote-content">
+		<p> 比赛情况：AC </p>
+	</div>
+</div>
+<ul>
+<li><strong>知识点：</strong>$\gcd(Fib(a), Fib(b)) = Fib(\gcd(a, b))$</li>
+</ul>
+<h1 id="h---胖生的数学题">H - 胖生的数学题</h1>
+<div class="snote error ">
+	<div class="snote-content">
+		<p> 比赛情况：未完成（看过题目不知道方法） </p>
+	</div>
+</div>
+<ul>
+<li><a class="link" href="https://oj.swjtu.edu.cn/contest/22/problem/H"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题面搬运">题面搬运</h2>
+<details class="sc-details" >
+	<summary>题面搬运</summary>
+	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
+<ul>
+<li>连乘符号：$\prod_{i=a}^bn=n_a*n_{a+1}*\cdots*n_{b-1}*n_b$</li>
+</ul>
+<p>最近，小胖生学习了一个新的东西：GCD，他发现GCD真是一个神奇的东西，今天，老师给他布置了一道关于GCD的题，他很快就算出来了，因此，为了寻找优越感，他想考考你，看你会不会。</p>
+<p>题目如下：</p>
+<p>输入一行包含六个正整数$a,b,c,d,x,y$,求$\prod_{i=a}^{b}\prod_{j=c}^{d}\gcd(x^{i},y^{j}) \mod 998244353$。</p>
+<p>注：这里$\gcd(a,b)$表示a和b的最大公约数。</p>
+<ul>
+<li>题目理解补充：<br>
+这里两个连乘符号代表的是分别乘$\gcd(x^{a\sim b},y^{c\sim d})$。
+<blockquote>
+<p>如：<br>
+$a=1,b=2$；$c=3,d=4$<br>
+则为：$\gcd(x^1,y^3)<em>\gcd(x^1,y^4)</em>\gcd(x^2,y^3)*\gcd(x^2,y^4)$</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="数据范围">数据范围</h2>
+<p>$0 \le a,b,c,d \le 3e6$<br>
+$a \le b$<br>
+$c \le d$</p>
+<p>$0&lt;x,y \le 1e9$</p>
+<h2 id="输入格式">输入格式</h2>
+<p>一行，包含六个正整数。</p>
+<h2 id="输出格式">输出格式</h2>
+<p>一行，计算得到的结果。</p>
+<h2 id="样例数据">样例数据</h2>
+<h3 id="第一组">第一组</h3>
+<div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">8</span> <span class="mi">4</span>
+</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">2048</span>
+</code></pre></div></div></div>
+<h3 id="第二组">第二组</h3>
+<div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">120</span> <span class="mi">180</span>
+</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">235140177</span>
+</code></pre></div></div></div>
+<p><strong>解释：</strong></p>
+<p>$\gcd(120^1,180^3)=120$<br>
+$\gcd(120^1,180^4)=120$<br>
+$\gcd(120^2,180^3)=14400$<br>
+$\gcd(120^2,180^3)=14400$</p>
+<p>$\prod_{i=1}^{2}\prod_{j=3}^{4}\gcd(x^{i},y^{j})=2985984000000$<br>
+$2985984000000 \mod 998244353=235140177$</p>
+</div>
+</details>
+<h2 id="标准思路-1">标准思路</h2>
+<p>暴力的话两个<code>for</code>，$O(n^2)$，而$a,b \le 3e6$，会超时。</p>
+<div class="snote quote ">
+	<div class="snote-content">
+		<p> 看到求gcd，就应该尝试对给出的数分解质因数。 </p>
+	</div>
+</div>
+<p><em>引自：标准题解</em></p>
+<p>回到求$\gcd$的本质：</p>
+<blockquote>
+<p>$\gcd$，为求两个数的最大公约数（因数）。<br>
+故可将两个数分别<strong>分解质因数</strong>，然后寻找两数所有共同的质因数，则结果为两数共同质因数的乘积。</p>
+<blockquote>
+<p>如：<br>
+$\gcd(120,180)$：<br>
+$120=\underline{2} \times \underline{2} \times 2 \times \underline{3} \times \underline{5}$<br>
+$180=\underline{2} \times \underline{2} \times \underline{3} \times \underline{5} \times 5$</p>
+<p>则$\gcd(120,180)=2\times2\times3\times5=60$。</p>
+</blockquote>
+</blockquote>
+<p>由于这里为多项$\gcd$的连乘，又由上述可知本身$\gcd$的运算就为乘积运算，<br>
+故总的运算就可以写为<strong>各个项共同质因数</strong>的总乘积。</p>
+<p>我们又可以从本质中发现，我们所取的每项质因数的次数，都是<strong>两数中出现次数较少的次数</strong>，以下统称为<strong>最小次数</strong>。</p>
+<blockquote>
+<p>如上例中对$2$这个质因数所取次数：<br>
+$120$有$3$个$2$，<br>
+$180$有$2$个$2$。<br>
+则$\gcd(120,180)$有关$2$这一项则取$2$个。（$\gcd(120,180)=2\times2\times\cdots$）</p>
+</blockquote>
+<p>而有关<strong>幂操作</strong>，就相当于对于每项<strong>质因数的次数进行幂操作</strong>。</p>
+<blockquote>
+<p>例：<br>
+$180^3=2^{2^{\underline{3}}}\times3^{2^{\underline{3}}}\times5^{1^{\underline{3}}}$</p>
+</blockquote>
+<p><strong>综上：</strong><br>
+对于原题两个数的某范围中的幂，分别求$\gcd$，<br>
+可以转换为两数共同质因数，其每一项在其范围中的幂，取两者<strong>最小次数</strong>为该次运算的结果。<br>
+所有最小次数<strong>之和</strong>即为这一项的幂次，幂出来就是这一项质因数所求得的最小公约数。<br>
+然后所有项的最小公约数<strong>之积</strong>就是最终结果。</p>
+<hr>
+<p><strong>然后对于怎么取最小次数的问题：</strong></p>
+<p>假设当前共同质因数为<code>base</code>。</p>
+<ul>
+<li>
+<p>对于第一个数的<code>base</code>个数确定：<br>
+先确定一个$i∈[a,b]$，则当前第一个数的<code>base</code>个数为$x*i$。</p>
+<p>然后计算出来一个界点<code>min</code>。（由于这里幂是整数，所以我们暂对<code>min</code>向下取整）</p>
+</li>
+<li>
+<p>对于第二个数的<code>base</code>个数分析：<br>
+$y * c \sim y * d$中任意一个$y*k\quad (k∈[c,d])$</p>
+<ul>
+<li>当$k \le$<code>min</code>时，$x * i \ge y * k$，则这个时候$\gcd$取$y * k$</li>
+<li>当$k&gt;$<code>min</code>时，$x * i &lt; y * k$，则这个时候$\gcd$取$x * i$</li>
+</ul>
+</li>
+</ul>
+<p><em>【也可以用向上取整，但会更难想。</em></p>
+<p>min计算方法：</p>
+<ul>
+<li>$min = ⌊x * i / y⌋$。（程序里直接写<code>min = x*i/y</code>）</li>
+</ul>
+<p>sum计算方法：</p>
+<ul>
+<li>当$k∈[c,min]$，$sum+=y * k$（条件：$min &gt;= c$）。<br>
+则这部分区间的总和为：$sum+=y * sum(k)$（可算得$sum(k)=(c + min) * (min-c+1)/2）$。</li>
+<li>当$k∈(min,d]$，$sum+=x * i$（条件：$min &lt; d$）。<br>
+则这部分区间的总和为：$sum+=x * i * len(k)$（可算得$len(k) = d - min$）。<br>
+【但因为$min=d$时，$len(k) = 0$，所以条件也可写为$min \le d$】</li>
+</ul>
+<hr>
+<p>所以我们可以先将两个原数分别<strong>分解质因数</strong>。<br>
+然后对每个共同的质因数项<strong>讨论其幂次</strong>。</p>
+<p>对于任一项质因数，选一个原数<code>for</code>遍历其幂次，<br>
+则对另一个原数，便可直接用上述的<code>min</code>确定<strong>选择最小次数</strong>的其区间临界点，直接可求得其<strong>不同幂次的每次的结果</strong>。</p>
+<p>故可将两个<code>for</code>的$O(n^2)$时间复杂度降下一层来为$O(n)$。</p>
+<hr>
+<p><strong>需要注意的点：</strong><br>
+选好最小次数后求和时，如果要对幂次取模，<br>
+按照欧拉/费马小定理，模数应该取$\varphi (998244353)$（为欧拉函数）。</p>
+<p><em><a class="link" href="https://oi-wiki.org/math/fermat/"  target="_blank" rel="noopener"
+    >欧拉函数讲解</a>。</em></p>
+<h2 id="标程代码">标程代码</h2>
+<details class="sc-details" >
+	<summary>标程代码（附个人注释）</summary>
+	<div class="sc-details--inner"><div class="snote link green">
+	<div class="snote-content">
+		<p> <a href="https://paste.ubuntu.com/p/XjtK2TVMKK/">Pastebin链接</a> </p>
+	</div>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span><span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="k">const</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">MOD</span> <span class="o">=</span> <span class="mi">998244353</span><span class="p">;</span>
+
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">q_pow</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">base</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">idx</span><span class="p">)</span>  <span class="c1">//带取模的快速幂
+</span><span class="c1"></span><span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">base</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">base</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">base</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="n">idx</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+
+<span class="kt">long</span> <span class="kt">long</span> <span class="nf">calc</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">y</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">base</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//求算出来最终的幂
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="kt">long</span> <span class="kt">long</span> <span class="n">min</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span> <span class="c1">//使得y*k &gt; x*i的最小值
+</span><span class="c1"></span>        <span class="cm">/*有关min用法：
+</span><span class="cm">        【相应的分析放到了“题目分析”里】
+</span><span class="cm">        */</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">d</span><span class="p">)</span> <span class="c1">//这里的处理方式是，如果bound &gt; d，则不存在k∈(mid,d]的区间，直接令min=d，使得后面加这个区间时len(k)=0---&gt;sum+=0。
+</span><span class="c1"></span>            <span class="n">min</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">min</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">)</span> <span class="c1">//同理，如果min &lt; c，则不存在k∈[c,min]的区间，直接令min=c-1，使得后面加这个区间时sum(k)=0---&gt;sum+=0。
+</span><span class="c1"></span>            <span class="n">min</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="n">min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">min</span> <span class="o">-</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">%</span> <span class="p">(</span><span class="n">MOD</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//对应k∈[c,min]情况
+</span><span class="c1"></span>        <span class="n">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="n">min</span><span class="p">))</span> <span class="o">%</span> <span class="p">(</span><span class="n">MOD</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>                   <span class="c1">//对应k∈(min,d]情况
+</span><span class="c1"></span>        <span class="cm">/* % (MOD - 1)的原因：
+</span><span class="cm">        这里是数论里的欧拉函数应用
+</span><span class="cm">        */</span>
+    <span class="p">}</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">res</span> <span class="o">=</span> <span class="n">q_pow</span><span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">base</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld %lld %lld %lld %lld %lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">factor_nums</span><span class="p">;</span>
+
+    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">//分解x的质因数
+</span><span class="c1"></span>    <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="o">++</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+            <span class="n">x</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="o">++</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+
+    <span class="kt">long</span> <span class="kt">long</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">//对y按顺序分解质因数
+</span><span class="c1"></span>    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">long</span> <span class="kt">long</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="k">do</span>
+            <span class="p">{</span>
+                <span class="o">++</span><span class="n">count</span><span class="p">;</span>
+                <span class="n">y</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+                <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">calc</span><span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">count</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">factor_nums</span><span class="p">[</span><span class="n">y</span><span class="p">])</span> <span class="c1">//y剩下的
+</span><span class="c1"></span>        <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">calc</span><span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</details>
+<h1 id="k">K</h1>
+<div class="snote error ">
+	<div class="snote-content">
+		<p> 比赛情况：WA </p>
+	</div>
+</div>
+<ul>
+<li><a class="link" href="https://oj.swjtu.edu.cn/contest/22/problem/K"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题面搬运-1">题面搬运</h2>
+<details class="sc-details" >
+	<summary>题面搬运</summary>
+	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
+<p>有$L$个方块排成一排，从左到右标记为$1,\cdots,L$</p>
+<p>$L$个方块上站了$n$个人，从左到右标记为$1,\cdots,n$。第$i$个人站在第$a_i$个方块上</p>
+<p>你可以做以下操作任意次：</p>
+<p>选择一个人，令他向左或向右移动。这个人会一直移动直到前方没有空的格子。也就是说，当前方没有格子或前方的格子上有人时他才会停止移动。</p>
+<p>举个例子，假设$n=3,L=10$，$n$个人一开始在$(2,3,7)$。现在我们让第$2$个人向右走，他会走到$6$停止，如果我们让第$3$个人往右走，他会走到最右侧$10$停止。</p>
+<p>你的任务是使第$i$个人到达$b_i$位置，判定是否可行并找到最少操作次数。</p>
+<h2 id="数据范围">数据范围</h2>
+<p>$1 \le N \le 10^5$<br>
+$N \le L \le 10^9$</p>
+<p>$1 \le A_1 \lt A_2 \lt \cdots \lt A_N \le L$<br>
+$1 \le B_1 \lt B_2 \lt \cdots \lt B_N \le L$</p>
+<ul>
+<li>所有输入均为整数。</li>
+</ul>
+<h2 id="输入格式">输入格式</h2>
+<blockquote>
+<p>$N \quad L$<br>
+$A_1 \quad A_2 \quad\cdots \quad A_N$<br>
+$B_1 \quad B_2 \quad\cdots \quad B_N$</p>
+</blockquote>
+<h2 id="输出格式">输出格式</h2>
+<p>如果目标不可达，输出-1，否则输出最小指令数。</p>
+<h2 id="样例数据">样例数据</h2>
+<h3 id="第一组">第一组</h3>
+<div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">4</span> <span class="mi">11</span>
+<span class="mi">3</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">10</span>
+<span class="mi">1</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">11</span>
+</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">3</span>
+</code></pre></div></div></div>
+<h3 id="第二组">第二组</h3>
+<div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">3</span>
+<span class="mi">1</span>
+<span class="mi">2</span>
+</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="o">-</span><span class="mi">1</span>
+</code></pre></div></div></div>
+</div>
+</details>
+<h2 id="个人方法-1">个人方法</h2>
+<p>就是想的纯模拟，交上去后WA……</p>
+<p>之后对拍发现几处修改和WA点，现在不知道改正后是否正确_(:з」∠)_反正先贴上来……<br>
+【WA点已经写在代码里了……</p>
+<details class="sc-details" >
+	<summary>个人代码</summary>
+	<div class="sc-details--inner"><div class="snote line green">
+	<div class="snote-content">
+		<p> <a href="https://paste.ubuntu.com/p/n3yPwD53vz/">Pastebin链接</a> </p>
+	</div>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp">#define Length 100005
+</span><span class="cp">#define to_Left toLoc - 1
+</span><span class="cp">#define to_Right toLoc + 1
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">start</span><span class="p">[</span><span class="n">Length</span><span class="p">],</span> <span class="n">to</span><span class="p">[</span><span class="n">Length</span><span class="p">],</span> <span class="n">current</span><span class="p">[</span><span class="n">Length</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">},</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span> <span class="nf">check</span><span class="p">(</span><span class="kt">int</span> <span class="n">topPrime</span><span class="p">,</span> <span class="kt">int</span> <span class="n">top</span><span class="p">,</span> <span class="kt">int</span> <span class="n">toLoc</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">==</span> <span class="n">toLoc</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="cm">/* FIX&amp;WA
+</span><span class="cm">    FIX.1. 经过已经到达了要去的点，应该直接返回0。
+</span><span class="cm">    WA.2. 第一次改没加to[top]==toLoc，可能在之后的使用中要去的点不是本要去的点，但却在之前current=1
+</span><span class="cm">    */</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//左移
+</span><span class="c1"></span>    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//最左边的节点
+</span><span class="c1"></span>        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//去左墙
+</span><span class="c1"></span>            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//如果恰好是要去的地方，把current=1
+</span><span class="c1"></span>                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+                <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="c1">//不是最左边的
+</span><span class="c1"></span>        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">topPrime</span> <span class="o">==</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//反复横跳了
+</span><span class="c1"></span>                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">checkToLeft</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">to_Left</span><span class="p">);</span> <span class="c1">//左边那个，能否去要去点的左边
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">checkToLeft</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
+                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
+</span><span class="c1"></span>                <span class="k">return</span> <span class="n">checkToLeft</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">&gt;</span> <span class="n">start</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//右移
+</span><span class="c1"></span>    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="c1">//最右边的节点
+</span><span class="c1"></span>        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">l</span><span class="p">)</span> <span class="c1">//去右墙
+</span><span class="c1"></span>            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
+                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
+</span><span class="c1"></span>                <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span> <span class="c1">//不是最右边的
+</span><span class="c1"></span>        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">topPrime</span> <span class="o">==</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//反复横跳了
+</span><span class="c1"></span>                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="kt">int</span> <span class="n">checkToLeft</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">to_Right</span><span class="p">);</span> <span class="c1">//右边那个，能否去要去点的右边
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">checkToLeft</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
+                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
+</span><span class="c1"></span>                <span class="k">return</span> <span class="n">checkToLeft</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span> <span class="c1">//不移动
+</span><span class="c1"></span>    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
+        <span class="cm">/* WA
+</span><span class="cm">        WA.3. 有可能这步要让他在原地不动，但不是他最终要去的地方，故这个判断很重要！
+</span><span class="cm">        */</span>
+            <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="cm">/* WA
+</span><span class="cm">            WA.1. 不移动的时候要改current=1
+</span><span class="cm">            */</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="kt">signed</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+<span class="cp">#ifdef SuperSASS
+</span><span class="cp"></span>    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;data.in&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+<span class="cp">#endif
+</span><span class="cp"></span>    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">to</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//从左到右check。
+</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">current</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//如果在某次操作中已经到达最终位置，便不再计算
+</span><span class="c1"></span>        <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;-1&#34;</span><span class="p">);</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span>
+                <span class="n">sum</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</details>
+<h2 id="标准思路-2">标准思路</h2>
+<div class="snote info ">
+	<div class="snote-content">
+		<p> 区间上节点移动问题，可以转换为<strong>区间合并问题</strong>。 </p>
+	</div>
+</div>
+<blockquote>
+<p>比如：<br>
+$L=6$，点为$2,5$，转换为区间长为$1,2,1$。<br>
+如要把$2$向左移，即区间长变为$3(1+2),0,1$。</p>
+</blockquote>
+
+
+<div class="snote quote ">
+	<div class="snote-content">
+		<p>考虑两个人之间的空位，记为$x_1,x_2,x_3,&hellip;,x_n$。<br>
+$x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为第$i$个人和第$i-1$个人之间的空位。<br>
+让第i个人往左相当于$x_i += x_{i-1}, x_{i-1} = 0$，往右相当于$x_{i-1} += x_i, x_i = 0$。</p>
+	</div>
+</div>
+<p><em>引自：标准题解</em></p>
+<p>初状态和终状态，因为数的个数一样，所以总区间长度和肯定一样。</p>
+<p>那么要使最初状态转换为最终状态，则从左向右遍历，一定能使终状态某区间，变为由初状态中<strong>若干个区间合并</strong>。<br>
+又由于碰到相邻的停下，使得只能相邻区间合并。<br>
+故若若干个区间合并后，长度<strong>超过却不能等于</strong>，则这个区间一定不能达成，证明不能移动得到，输出<code>-1</code>。</p>
+<p>故从左到右遍历，碰到<strong>存在长度的终状态</strong>区间，就开始寻找从<strong>初状态未被合并过</strong>的区间找若干个<strong>存在长度的区间</strong>尝试合并。<br>
+若成功合并，则移动次数就是<strong>左侧合并了多少个区间</strong>加上<strong>右边合并了多少个区间</strong>。<br>
+公式为：$ans += max(i-l,0) + max(r-i,0)$。</p>
+<ul>
+<li>这里用个$max(\cdots,0)$，是因为存在减为负数的情况。【可以参见标程代码中的例子】</li>
+</ul>
+<h2 id="标程代码-1">标程代码</h2>
+<details class="sc-details" >
+	<summary>标程代码（附个人注释）</summary>
+	<div class="sc-details--inner"><div class="snote link green">
+	<div class="snote-content">
+		<p> <a href="https://paste.ubuntu.com/p/3fCzwnQzDj/">Pastebin链接</a> </p>
+	</div>
+</div>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+
+<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100005</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">9</span><span class="p">];</span>
+
+<span class="n">LL</span> <span class="n">ans</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">Get_ans</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="o">++</span><span class="n">n</span><span class="p">;</span>
+    <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>         <span class="c1">//技巧1：最右侧加个墙壁，方便计算最右侧区间长度。
+</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="c1">//把始末状态转换为区间长度，其中a[i]=i-1~i的距离
+</span><span class="c1"></span>        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//从左向右，一直找到终状态存在长度（需要合并操作）的区间。
+</span><span class="c1"></span>            <span class="k">continue</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(;</span> <span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="o">++</span><span class="n">j</span><span class="p">);</span> <span class="c1">//从初状态中未合并过的区间开始向右找，找到存在长度（可以合并）的区间。
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span> <span class="c1">//l记录左边开始进行合并的位置。
+</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">sum</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="c1">//尝试进行b[i]=a[l]+a[l+1]+...+a[r-1]+a[r]这个操作
+</span><span class="c1"></span>            <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">^</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//如果无法把b[i]这个区间由若干个a[i]区间拼合而成，则不满足，输出-1
+</span><span class="c1"></span>        <span class="p">{</span>
+            <span class="n">ans</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">ans</span> <span class="o">+=</span> <span class="n">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">l</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">max</span><span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//ans加上：完成这个区间合并操作所要操作的节点个数（左侧和右侧）。【要合并1——3区间，只需要移动2个节点，即3-1=2……
+</span><span class="c1"></span>
+        <span class="cm">/* 变量解释：
+</span><span class="cm">        i为当前要合并的区间
+</span><span class="cm">        l为操作到最左边的区间
+</span><span class="cm">        j为操作到最右边的区间(由于for的原因，这里j比实际的r多了1)
+</span><span class="cm">          【这里非常巧妙的是：正因为j比实际的r多1，导致下次查找的时候j会跳过之前已找过的区间，不会重复合并。
+</span><span class="cm">        */</span>
+        <span class="cm">/* 是否需要max：
+</span><span class="cm">        是需要的。存在减为负数的情况。
+</span><span class="cm">        如：
+</span><span class="cm">        &gt; 1 2 3 4 5
+</span><span class="cm">        &gt; 6 7 8 9 10
+</span><span class="cm">        a（开始状态）数组为: 0、0、0、0、0、5
+</span><span class="cm">        b（结束状态）数组为: 5、0、0、0、0、0
+</span><span class="cm">        那么i=1、l=6、j=7
+</span><span class="cm">        */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+    <span class="n">Get_ans</span><span class="p">();</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+</details>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/%E6%A0%A1%E6%9C%88%E8%B5%9B/">校月赛</a>
+        
+            <a href="/tags/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/">比赛总结</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span class="article-time--modified">
+            最后更新于 2020/12/15 08:42
+        </span>
+    </section><section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/85632010" target="_blank" rel="noopener">85632010</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-writeup-2020_10_31/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-writeup-2020_10_31/87698192_p0.bb84022293b0f828caae07318f56421b_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-writeup-2020_10_31" 
+                        data-hash="md5-u4QCIpOw&#43;CjKrgcxj1ZCGw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM比赛总结——2020年 校十月月赛（决赛）</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-writeup-2020_11_13/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-writeup-2020_11_13/64344151_p0.e902b7d7815ccda1bfdee53f5d115fbc_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-writeup-2020_11_13" 
+                        data-hash="md5-6QK314FczaG/3uU/XRFfvA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM比赛总结——Codeforces #682 (Div. 2)……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

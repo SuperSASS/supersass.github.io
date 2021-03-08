@@ -9,19 +9,19 @@
     <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ACM - 学习笔记</title>
-      <link>https://blog.supersassw.com/categories/acm-note/</link>
+      <link>https://blog.supersassw.com/categories/acm_note/</link>
       <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/categories/acm-note/</guid>
+      <guid>https://blog.supersassw.com/categories/acm_note/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ACM - 日常练习</title>
-      <link>https://blog.supersassw.com/categories/acm-prac/</link>
+      <link>https://blog.supersassw.com/categories/acm_practice/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.supersassw.com/categories/acm-prac/</guid>
+      <guid>https://blog.supersassw.com/categories/acm_practice/</guid>
       <description></description>
     </item>
     
@@ -49,6 +49,15 @@
       <pubDate>Thu, 07 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/categories/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ACM - 比赛总结</title>
+      <link>https://blog.supersassw.com/categories/acm_writeup/</link>
+      <pubDate>Fri, 13 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/categories/acm_writeup/</guid>
       <description></description>
     </item>
     
