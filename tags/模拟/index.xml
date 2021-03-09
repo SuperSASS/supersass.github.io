@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>模拟 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E6%A8%A1%E6%8B%9F/</link>
+    <description>Recent content in 模拟 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 09 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E6%A8%A1%E6%8B%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM练习——P2191 小Z的情书……</title>
+      <link>https://blog.supersassw.com/p/acm-prac-2020_11_09/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-prac-2020_11_09/</guid>
+      <description>题目链接 P2191 小Z的情书 题目分析 一般的模拟题…… 模拟方阵顺时针转置…… 公式：(x,y)&amp;mdash;&amp;gt;(y,N-x+1)…… 推出这个就行…</description>
+    </item>
+    
+    <item>
+      <title>ACM练习——P1766 液体滴落……</title>
+      <link>https://blog.supersassw.com/p/acm-prac-2020_11_08/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-prac-2020_11_08/</guid>
+      <description>题目链接 P1766 液体滴落 题目分析 一道模拟题…… 数据范围虽然很大，但仍可暴力O(n^2)得出…… 每次遍历线段，如果Ⅰ满足滴落条件，则Ⅱ判断是否为当前</description>
+    </item>
+    
+  </channel>
+</rss>

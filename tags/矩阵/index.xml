@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>矩阵 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E7%9F%A9%E9%98%B5/</link>
+    <description>Recent content in 矩阵 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E7%9F%A9%E9%98%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM学习笔记——矩阵……</title>
+      <link>https://blog.supersassw.com/p/acm-note-matrix/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-matrix/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 应用 矩阵加速递推 OI-Wiki —— 矩阵快速幂优化递推。 状态矩阵构造方法 根据题目状态转移方程分析， 选状态为行、选决策</description>
+    </item>
+    
+  </channel>
+</rss>

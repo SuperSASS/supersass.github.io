@@ -220,8 +220,8 @@ if (!doNotTrack) {
     <li><a href="#题目分析">题目分析</a></li>
     <li><a href="#解题方法">解题方法</a>
       <ul>
-        <li><a href="#on方法">$O(n)$方法</a></li>
-        <li><a href="#osqrtn方法">$O(\sqrt{n})$方法</a></li>
+        <li><a href="#on方法">O(n)方法</a></li>
+        <li><a href="#on方法-1">O(√n)方法</a></li>
       </ul>
     </li>
     <li><a href="#个人代码">个人代码</a></li>
@@ -331,7 +331,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：3762</div>
+            <div class="char">文章字数：3751</div>
             <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
@@ -340,8 +340,11 @@ if (!doNotTrack) {
 
     <section class="article-content">
     <h1 id="题目链接">题目链接</h1>
-<p>P4863 <a class="link" href="https://www.luogu.com.cn/problem/P4863"  target="_blank" rel="noopener"
-    >JerryC Loves Driving</a></p>
+<div class="snote link cyan">
+	<div class="snote-content">
+		<p> P4863 <a href="https://www.luogu.com.cn/problem/P4863">JerryC Loves Driving</a> </p>
+	</div>
+</div>
 <h1 id="题目分析">题目分析</h1>
 <p>对于一层求和，其实就是一层<code>for</code>，那么两层求和就是两层<code>for</code>，也就是二维的。<br>
 而对于求和O(n)的优化计算方法，最基本的就是<strong>转换为等差数列O(1)计算</strong>。</p>
@@ -412,7 +415,7 @@ if (!doNotTrack) {
 将两个不确定的界的函数($f(x \sim y)$)，转化为两个有一个确定的界的函数之差（$f(C \sim x)-f(C \sim y)$）。（如定积分中经常运用）</p>
 </blockquote>
 <h1 id="解题方法">解题方法</h1>
-<h2 id="on方法">$O(n)$方法</h2>
+<h2 id="on方法">O(n)方法</h2>
 <p>对于每一列$i$：<br>
 其和（的绝对值）为：$i$个$1,2,3,\cdots,n$的等差数列的和，加上剩余非等差数列的部分。</p>
 <p>每一列均为$n - 0 + 1$即$n + 1$项。</p>
@@ -423,7 +426,7 @@ if (!doNotTrack) {
 <p>非等差数列部分：<br>
 每一项均为$a_n + 1$；<br>
 前面已经计算了$cnt * i$项，所以剩余部分的项数为$n + 1 - (cnt * i)$。</p>
-<h2 id="osqrtn方法">$O(\sqrt{n})$方法</h2>
+<h2 id="on方法-1">O(√n)方法</h2>
 <p>首先根据上述的规律可以发现：</p>
 <ol>
 <li>每一个数重复次数是按列递增的。
@@ -529,7 +532,7 @@ if (!doNotTrack) {
 <h1 id="个人代码">个人代码</h1>
 <div class="snote link green">
 	<div class="snote-content">
-		<p> <a href="https://paste.ubuntu.com/p/kNFsv3t7VR/">Pastebin链接</a>。 </p>
+		<p> <a href="https://paste.ubuntu.com/p/kNFsv3t7VR/">Pastebin链接</a> </p>
 	</div>
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//P4863 [JerryC Loves Driving](https://www.luogu.com.cn/problem/P4863)
@@ -737,6 +740,72 @@ if (!doNotTrack) {
 
         <div class="article-details">
             <h2 class="article-title">ACM练习——P1494 小Z的袜子……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-prac-2020_11_10/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-prac-2020_11_10/pixiv61483143.bb6873637641e2f612a05a16c806394a_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-prac-2020_11_10" 
+                        data-hash="md5-u2hzY3ZB4vYSoFoWyAY5Sg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM练习——P4838 P哥破解密码……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-prac-2020_11_09/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-prac-2020_11_09/66020781_p0.de40274def3ec5e4e170dd4c2bd7ab36_hu83615bf817a735cca528325790529168_964835_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-prac-2020_11_09" 
+                        data-hash="md5-3kAnTe8&#43;xeThcN1MK9erNg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM练习——P2191 小Z的情书……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-prac-2020_11_08/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-prac-2020_11_08/76654594_p0.386dfc5ca056702e7e36ca7f4f046f04_hu5438825b9b6d1014226d20d231e650c2_2658383_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-prac-2020_11_08" 
+                        data-hash="md5-OG38XKBWcC5&#43;Nsp/TwRvBA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM练习——P1766 液体滴落……</h2>
         </div>
     </a>
 </article>

@@ -44,6 +44,15 @@
     </item>
     
     <item>
+      <title>学习笔记</title>
+      <link>https://blog.supersassw.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>日常练习</title>
       <link>https://blog.supersassw.com/tags/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/</link>
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
@@ -377,6 +386,24 @@
     </item>
     
     <item>
+      <title>矩阵</title>
+      <link>https://blog.supersassw.com/tags/%E7%9F%A9%E9%98%B5/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E7%9F%A9%E9%98%B5/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>线性代数</title>
+      <link>https://blog.supersassw.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>线性同余方程</title>
       <link>https://blog.supersassw.com/tags/%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
@@ -422,11 +449,56 @@
     </item>
     
     <item>
+      <title>图论</title>
+      <link>https://blog.supersassw.com/tags/%E5%9B%BE%E8%AE%BA/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E5%9B%BE%E8%AE%BA/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>排序算法</title>
       <link>https://blog.supersassw.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>最短路</title>
+      <link>https://blog.supersassw.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>动态规划</title>
+      <link>https://blog.supersassw.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>矩阵快速幂</title>
+      <link>https://blog.supersassw.com/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>模拟</title>
+      <link>https://blog.supersassw.com/tags/%E6%A8%A1%E6%8B%9F/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%A8%A1%E6%8B%9F/</guid>
       <description></description>
     </item>
     

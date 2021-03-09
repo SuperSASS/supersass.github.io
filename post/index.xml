@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/acm-note-offline/</guid>
-      <description>离线和在线区别 指的是对于若干个询问操作的不同处理方式。 在线 得到一次询问，便回答一次。 离线 得到所有询问后，再统一回答。 强制在线 离线算法一般都会</description>
+      <description>该笔记还未完成整理，待日后继续整理…… 离线和在线区别 指的是对于若干个询问操作的不同处理方式。 在线 得到一次询问，便回答一次。 离线 得到所有询问后</description>
     </item>
     
     <item>
@@ -251,6 +251,15 @@
     </item>
     
     <item>
+      <title>ACM学习笔记——矩阵……</title>
+      <link>https://blog.supersassw.com/p/acm-note-matrix/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-matrix/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 应用 矩阵加速递推 OI-Wiki —— 矩阵快速幂优化递推。 状态矩阵构造方法 根据题目状态转移方程分析， 选状态为行、选决策</description>
+    </item>
+    
+    <item>
       <title>ACM学习笔记——线性同余方程……</title>
       <link>https://blog.supersassw.com/p/acm-note-linear_equation/</link>
       <pubDate>Sat, 12 Dec 2020 00:00:00 +0000</pubDate>
@@ -284,6 +293,42 @@
       
       <guid>https://blog.supersassw.com/p/acm-note-sort/</guid>
       <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 排序 不考虑算法</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——最短路……</title>
+      <link>https://blog.supersassw.com/p/acm-note-shortest_path/</link>
+      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-shortest_path/</guid>
+      <description>该笔记还未完成整理，待日后继续整理…… 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 最短路问题 就是</description>
+    </item>
+    
+    <item>
+      <title>ACM练习——P4838 P哥破解密码……</title>
+      <link>https://blog.supersassw.com/p/acm-prac-2020_11_10/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-prac-2020_11_10/</guid>
+      <description>题目链接 P4838 P哥破解密码 题目分析 考点：矩阵动规…… 典例：斐波拉契数列…… 方法：矩阵快速幂…… 标准动规思想，每个次序有三个决策，分别为选$1$个</description>
+    </item>
+    
+    <item>
+      <title>ACM练习——P2191 小Z的情书……</title>
+      <link>https://blog.supersassw.com/p/acm-prac-2020_11_09/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-prac-2020_11_09/</guid>
+      <description>题目链接 P2191 小Z的情书 题目分析 一般的模拟题…… 模拟方阵顺时针转置…… 公式：(x,y)&amp;mdash;&amp;gt;(y,N-x+1)…… 推出这个就行…</description>
+    </item>
+    
+    <item>
+      <title>ACM练习——P1766 液体滴落……</title>
+      <link>https://blog.supersassw.com/p/acm-prac-2020_11_08/</link>
+      <pubDate>Sun, 08 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-prac-2020_11_08/</guid>
+      <description>题目链接 P1766 液体滴落 题目分析 一道模拟题…… 数据范围虽然很大，但仍可暴力O(n^2)得出…… 每次遍历线段，如果Ⅰ满足滴落条件，则Ⅱ判断是否为当前</description>
     </item>
     
     <item>

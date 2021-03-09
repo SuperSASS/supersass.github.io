@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='图论——最短路……'><title>ACM学习笔记——最短路……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-note-shortest_path/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM学习笔记——最短路……'>
+<meta property='og:description' content='图论——最短路……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-note-shortest_path/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='图论' /><meta property='article:tag' content='最短路' /><meta property='article:tag' content='学习笔记' /><meta property='article:published_time' content='2020-11-12T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2020-11-12T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/acm-note-shortest_path/Yande-298884.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM学习笔记——最短路……">
+<meta name="twitter:description" content="图论——最短路……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/acm-note-shortest_path/Yande-298884.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#最短路问题">最短路问题</a></li>
+    <li><a href="#算法">算法</a>
+      <ul>
+        <li><a href="#floyd-算法">Floyd 算法</a></li>
+        <li><a href="#bellman-ford-算法">Bellman-Ford 算法</a>
+          <ul>
+            <li><a href="#符号定义">符号定义</a></li>
+            <li><a href="#操作">操作</a></li>
+            <li><a href="#分析">分析</a></li>
+            <li><a href="#伪代码">伪代码</a></li>
+            <li><a href="#时间复杂度">时间复杂度</a></li>
+            <li><a href="#额外应用">额外应用</a></li>
+            <li><a href="#优化">优化</a></li>
+          </ul>
+        </li>
+        <li><a href="#spfa-算法">SPFA 算法</a>
+          <ul>
+            <li><a href="#额外符号定义">额外符号定义</a></li>
+            <li><a href="#分析-1">分析</a></li>
+            <li><a href="#伪代码-1">伪代码</a></li>
+            <li><a href="#时间复杂度-1">时间复杂度</a></li>
+            <li><a href="#应用判断负环">应用——判断负环</a></li>
+            <li><a href="#注意事项">注意事项</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#算法对比">算法对比</a>
+      <ul>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#例题">例题</a></li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/acm-note-shortest_path/">
+                <img src="/p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_800x0_resize_box_2.png"
+                        srcset="/p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_800x0_resize_box_2.png 800w, /p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="1028" 
+                        loading="lazy"
+                        alt="Featured image of post ACM学习笔记——最短路……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm_note/" >
+                ACM - 学习笔记
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-note-shortest_path/">ACM学习笔记——最短路……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            图论——最短路……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2020/11/12</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：1829</div>
+            <div class="time">预计阅读时长： <time>4</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <p><div class="snote error ">
+	<div class="snote-content">
+		<p> 该笔记还未完成整理，待日后继续整理…… </p>
+	</div>
+</div>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p> 该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… </p>
+	</div>
+</div></p>
+<h1 id="最短路问题">最短路问题</h1>
+<p>就是求图中一源点到其他点的最短路径。（也可能为所有点到其他点的最短路径）</p>
+<h1 id="算法">算法</h1>
+<h2 id="floyd-算法">Floyd 算法</h2>
+<p>待补充……</p>
+<h2 id="bellman-ford-算法">Bellman-Ford 算法</h2>
+<p>一种基于松弛（relax）操作的最短路算法。</p>
+<p><em>一般不会写，了解就行，要用主要还是用SPFA。</em></p>
+<p><strong>以下都基于有最短路情况讨论（即没有负环）。</strong></p>
+<h3 id="符号定义">符号定义</h3>
+<ul>
+<li>$N$——节点个数</li>
+<li>$M$——边个数</li>
+<li>$S$——源点</li>
+<li>$dist[v]$——源点$S$到点$v$的<strong>当前</strong>距离</li>
+<li>$ralax(u,v)$——以$u$为<strong>中继点</strong>，判断经过此中继点到点$v$的距离是否更短，如是则覆盖$dist[v]$</li>
+</ul>
+<h3 id="操作">操作</h3>
+<ol>
+<li>先对dist赋初值，对于$S=0$，对于其他点为$dist=∞$。</li>
+<li>每次遍历所有的边，并对其进行$relax$操作。</li>
+<li>直到没有松弛操作成功，证明已经找到全局最短路，退出循环。</li>
+</ol>
+<p>动态演示：<a class="link" href="https://www.bilibili.com/video/av83268252"  target="_blank" rel="noopener"
+    >图解贝尔曼-福特算法</a></p>
+<h3 id="分析">分析</h3>
+<p>由于一次松弛操作会使最短路的边数至少$+1$（考虑极端情况为链）<br>
+而最短路的边数最多为$n-1$。（即源点与每个点都链接）</p>
+<p>所以最多执行$n-1$次松弛操作，即最多循环$n-1$次。</p>
+<h3 id="伪代码">伪代码</h3>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-&gt;</span> <span class="n">N</span><span class="p">)</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">INF</span><span class="p">,</span> <span class="n">dist</span><span class="p">[</span><span class="n">S</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>	<span class="c1">//初始化dist
+</span><span class="c1"></span>
+<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-&gt;</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>		<span class="c1">//最多执行N-1次全局松弛
+</span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="n">ALL</span> <span class="n">edge</span><span class="p">)</span> <span class="n">relax</span><span class="p">(</span><span class="n">edge</span><span class="p">.</span><span class="n">s</span><span class="p">,</span> <span class="n">edge</span><span class="p">.</span><span class="n">e</span><span class="p">);</span>	<span class="c1">//遍历每条边
+</span><span class="c1"></span>
+<span class="n">relax</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
+<span class="p">{</span>
+	<span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="n">edge_len</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="时间复杂度">时间复杂度</h3>
+<p>$O(NM)$（不理解可以看上方动态演示）</p>
+<h3 id="额外应用">额外应用</h3>
+<ul>
+<li>判断是否存在负环
+<blockquote>
+<p>跑Bellman-Ford算法，如果在$n-1$次之内求得最短路算法结束，则不存在负环，反之一定存在。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="优化">优化</h3>
+<ul>
+<li>当某次全局松弛时，并没有松弛操作成功（没有松弛），证明已经找到所有最短路，可以<code>break</code>。</li>
+<li>用队列优化，即SPFA算法。</li>
+</ul>
+<h2 id="spfa-算法">SPFA 算法</h2>
+<p>实际上为采用队列的Bellman-Ford算法，但一般要用就用这个。<br>
+而且判断负环方式稍有不同。【故单独写出来祭奠一下x……</p>
+<h3 id="额外符号定义">额外符号定义</h3>
+<ul>
+<li>$que[]$——存被松驰过的点的队列</li>
+<li>$in_queue[u]$——<code>u</code>点是否在松弛队列里</li>
+</ul>
+<h3 id="分析-1">分析</h3>
+<p>很多时候我们并不需要那么多<strong>无用的松弛操作</strong>。<br>
+很显然，<strong>只有上一次被松弛的结点，所连接的边，才有可能引起下一次的松弛操作</strong>。</p>
+<p>那么我们用队列来维护“哪些结点可能会引起松弛操作”，就能只访问必要的边了。<br>
+即使用队列，将松弛的点<code>push</code>进来，基于此点松弛完后再<code>pop</code>出去。</p>
+<p>形式上与BFS非常相似。<br>
+不同点为：</p>
+<ul>
+<li>BFS中一个点出队了后<strong>不会再重新进入序列</strong>。（因为搜索会把当前最优解搜索出来）</li>
+<li>SPFA一个点可能在出队后<strong>再次进入队列</strong>。（因为当前relax的可能会被别的relax再找到较短路。也就是说一个点修改过其他点后，过了一段时间可能会由其他点获得更短路劲，于是又可以用来修改其他点，这样反复循环。即是为接近最优解而非直接到达）</li>
+</ul>
+<h3 id="伪代码-1">伪代码</h3>
+<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">que</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+<span class="n">in_queue</span><span class="p">[</span><span class="n">S</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
+<span class="p">{</span>
+	<span class="n">u</span> <span class="o">=</span> <span class="n">q</span><span class="p">.</span><span class="n">pop</span><span class="p">();</span>
+	<span class="n">in_queue</span><span class="p">[</span><span class="n">u</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+	<span class="k">for</span> <span class="p">(</span><span class="n">ALL</span> <span class="n">edge</span><span class="p">(</span><span class="n">u</span><span class="o">---&gt;</span><span class="n">v</span><span class="p">))</span>	<span class="c1">//遍历u的所有边
+</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">in_queue</span><span class="p">[</span><span class="n">v</span><span class="p">])</span>
+		<span class="p">{</span>
+			<span class="n">relax</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">);</span>
+			<span class="n">q</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
+			<span class="n">in_queue</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+		<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div><h3 id="时间复杂度-1">时间复杂度</h3>
+<p>期望：$O(KE)$（$K$为常数，平均值为$2$；$E$为边数）<br>
+最坏：$O(NM)$</p>
+<p>仅为Bellman-Ford的优化，极端情况退化成Bellman-Ford。</p>
+<h3 id="应用判断负环">应用——判断负环</h3>
+<ol>
+<li>BFS1：松弛次数大于n-1。<br>
+<a class="link" href="./Template/BFS1.cpp" >部分代码</a></li>
+<li>BFS2：入队次数大于n-1。<br>
+<a class="link" href="./Template/BFS2.cpp" >部分代码</a>
+<blockquote>
+<p>以上两者代码极其相近(就调整了个顺序),区别在于按入队次数判断虽然慢（cnt增加的慢）,但更稳（可能存在重边导致了多次松弛）。</p>
+</blockquote>
+</li>
+<li>BFS3：起点到一个点的经过边数大于n-1。<br>
+<a class="link" href="./Template/BFS3.cpp" >部分代码</a>
+<blockquote>
+<p>这个方法较好【？……</p>
+</blockquote>
+</li>
+<li>DFS：遇到在栈内的节点。<br>
+<a class="link" href="./Template/DFS.cpp" >部分代码</a>
+<blockquote>
+<p>DFS版对于随机数据来说具有较为优秀的表现，但是会被构造数据卡成指数级别的复杂度。【来自洛谷@vectorwyx】</p>
+</blockquote>
+</li>
+</ol>
+<p>有关两大类方法的疑问见：<a class="link" href="https://www.luogu.com.cn/discuss/show/266727"  target="_blank" rel="noopener"
+    >关于DFS版本的SPFA判负环</a></p>
+<h3 id="注意事项">注意事项</h3>
+<p>SPFA很可能被针对卡常数，导致TLE……<br>
+故如果没有负环存在，请用Dijkstra……</p>
+<h1 id="算法对比">算法对比</h1>
+<table>
+<thead>
+<tr>
+<th>Floyd</th>
+<th>Bellman-Ford</th>
+<th>Dijkstra</th>
+<th>Johnson</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>每对结点之间的最短路</td>
+<td>单源最短路</td>
+<td>单源最短路</td>
+<td>每对结点之间的最短路</td>
+</tr>
+<tr>
+<td>没有负环的图</td>
+<td>任意图（可以判定负环是否存在）</td>
+<td>非负权图</td>
+<td>没有负环的图</td>
+</tr>
+<tr>
+<td>$O(N^3)$</td>
+<td>$O(NM)$</td>
+<td>$O(M\log M)$</td>
+<td>$O(NM\log M)$</td>
+</tr>
+</tbody>
+</table>
+<p>Dijkstra和Floyed是<strong>不断的试点</strong>。Dijkstra试<strong>最优点</strong>，Floyed试<strong>所有点</strong>。</p>
+<p>Bellman-Ford和SPFA是<strong>不断的试边</strong>。Bellman-Ford是<strong>盲目的试所有边</strong>，SPFA只<strong>试那些有利用价值的点的边</strong>。</p>
+<h2 id="总结">总结</h2>
+<p>如果是非负权图，求单源最短路<strong>请用Dijkstra</strong>，否则很容易卡常导致TLE……
+除非要判定负环，或报告最短路不存在，才用SPFA……</p>
+<h1 id="例题">例题</h1>
+<ul>
+<li>P3125 <a class="link" href="https://www.luogu.com.cn/problem/P3125"  target="_blank" rel="noopener"
+    >Bessie&rsquo;s Birthday Buffet S</a>
+<blockquote>
+<p>考点：图上动规、最短路<br>
+<a class="link" href="../../Daily/11.12_P3125.cpp" >本地代码+题目分析+SPFA讲解+WA记录+参考题解</a></p>
+</blockquote>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>
+        
+            <a href="/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/">最短路</a>
+        
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-y" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 4l5 9l5 -9" />
+  <line x1="12" y1="13" x2="12" y2="20" />
+</svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Yandere ID：<a href="https://yande.re/post/show/298884" target="_blank" rel="noopener">298884</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-offline/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-offline/75470755_p0.295fb3b722cb6243a128a81c27c54e4f_hub4303ba1cffa5ba06cb6a01bf1816187_2872336_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-offline" 
+                        data-hash="md5-KV&#43;ztyLLYkOhKKgcJ8VOTw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——离线……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-discrete/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-discrete" 
+                        data-hash="md5-4gqXHE8LX0aiO2MFhBl3tg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——离散化……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-mo_algo/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-mo_algo/85829025_p0.f17837c7ce3bece16e32cf1f826bcbfd_hud48d475653a68121c5c5dd4c9c15f623_2139511_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-mo_algo" 
+                        data-hash="md5-8Xg3x8477OFuMs8fgmvL/Q==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——莫队算法……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-union_find/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-union_find/60855211_p0.a07a83fa1564e2ee235e40f1b19ffbb0_hu2f29f1f8fc777ac15405156777510011_1339015_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-union_find" 
+                        data-hash="md5-oHqD&#43;hVk4u4jXkDxsZ/7sA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——并查集……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-segment_tree/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-segment_tree/67957130_p0.c5cb31194a7e4ca539d9a4fb08d8c6ec_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-segment_tree" 
+                        data-hash="md5-xcsxGUp&#43;TKU52aT7CNjG7A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——线段树……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
