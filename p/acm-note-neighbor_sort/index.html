@@ -222,10 +222,10 @@ if (!doNotTrack) {
         <li><a href="#题目解决方法">题目解决方法</a>
           <ul>
             <li><a href="#引例">引例</a></li>
-            <li><a href="#1找出每种状态的ans选邻项代入">1、找出每种状态的<code>ans</code>，选邻项代入</a></li>
-            <li><a href="#2假设相邻位置写出两种状态的ans">2、假设相邻位置，写出两种状态的<code>ans</code></a></li>
+            <li><a href="#1找出每种状态的ans选邻项代入">1、找出每种状态的ans，选邻项代入</a></li>
+            <li><a href="#2假设相邻位置写出两种状态的ans">2、假设相邻位置，写出两种状态的ans</a></li>
             <li><a href="#3根据题意写出排序条件并化简得到最终决策方案">3、根据题意写出排序条件并化简，得到最终决策方案</a></li>
-            <li><a href="#4自定义结构体重载运算符使用sort遍历寻答案">4、自定义结构体，重载<code>&lt;</code>运算符，使用<code>sort</code>，遍历寻答案</a></li>
+            <li><a href="#4自定义结构体重载运算符使用sort遍历寻答案">4、自定义结构体，重载&lt;运算符，使用sort，遍历寻答案</a></li>
           </ul>
         </li>
         <li><a href="#标程代码">标程代码</a></li>
@@ -368,7 +368,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：10187</div>
+            <div class="char">文章字数：10185</div>
             <div class="time">预计阅读时长： <time>21</time> 分钟</div>
         </div>
     </footer>
@@ -410,7 +410,7 @@ SWJTU OJ——10.31 A <a class="link" href="https://oj.swjtu.edu.cn/contest/23/p
     >排队</a></p>
 </blockquote>
 <p>题目与国王游戏类似，用邻项交换排序的思想来找<strong>决策条件</strong>。</p>
-<h3 id="1找出每种状态的ans选邻项代入">1、找出每种状态的<code>ans</code>，选邻项代入</h3>
+<h3 id="1找出每种状态的ans选邻项代入">1、找出每种状态的ans，选邻项代入</h3>
 <blockquote>
 <p>题目描述：<br>
 也就是说，请重新给班尼特排队，要求是最大化$\min_{i=1}^n{-h_i+\sum_{j=1}^i v_j}$。</p>
@@ -420,11 +420,12 @@ SWJTU OJ——10.31 A <a class="link" href="https://oj.swjtu.edu.cn/contest/23/p
 <ul>
 <li>为什么我们这样排序，能使<code>ans</code>$=\min_{i=1}^nw_i$取得最小？
 <blockquote>
-<p>就相当于把比较时候的最小值看成短板，每次比较一次选最高的那个，就会把短板提上去一点，这样最后得到的就是最高的短板，也就是最大的$\min$……</p>
+<p>就相当于把比较时候的最小值看成短板，每次比较一次选最高的那个，就会把短板提上去一点。<br>
+这样最后得到的就是最高的短板，也就是最大的$\min$……</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="2假设相邻位置写出两种状态的ans">2、假设相邻位置，写出两种状态的<code>ans</code></h3>
+<h3 id="2假设相邻位置写出两种状态的ans">2、假设相邻位置，写出两种状态的ans</h3>
 <p>我们首先要把每个位置的<strong>收益表达式</strong>写出来：</p>
 <blockquote>
 <p>题目描述：治疗第$i$个班尼特的收益$w_i$等于前面治疗的所有班尼特的$v$之和减去$h_i$。
@@ -441,11 +442,7 @@ $$</p>
 <blockquote>
 <p>$$
 \begin{matrix}
-h &amp; v \<br>
-\vdots &amp; \vdots(sum) \<br>
-h_i &amp; v_i \<br>
-h_j &amp; v_j \<br>
-\vdots &amp; \vdots \<br>
+h &amp; v \\  \vdots &amp; \vdots(sum) \\ h_i &amp; v_i \\ h_j &amp; v_j \\ \vdots &amp; \vdots
 \end{matrix}
 $$</p>
 </blockquote>
@@ -456,15 +453,11 @@ $$</p>
 <li>
 <p>如果交换：$j$在$i$前</p>
 <blockquote>
-<p>$
+<p>$$
 \begin{matrix}
-h &amp; v \<br>
-\vdots &amp; \vdots(sum) \<br>
-h_j &amp; v_j \<br>
-h_i &amp; v_i \<br>
-\vdots &amp; \vdots \<br>
+h &amp; v \\ \vdots &amp; \vdots(sum) \\ h_j &amp; v_j \\ h_i &amp; v_i \\ \vdots &amp; \vdots
 \end{matrix}
-$</p>
+$$</p>
 </blockquote>
 <p>对$i$的收益：$w_{i2}=sum+v_j+v_i-h_i$，<br>
 对$j$的收益：$w_{j2}=sum+v_j-h_j$<br>
@@ -497,7 +490,7 @@ $</p>
 </ol>
 </blockquote>
 <p>则本题中：<br>
-展开为$\text{if} \quad ((w_{i1}&lt;w_{i2} &amp; w_{i1}&lt;w_{j2}) | (w_{j1}&lt;w_{i2} &amp; w_{j1}&lt;w_{j2})) \quad \text{swap}$。</p>
+展开为$\text{if} \quad ((w_{i1}&lt;w_{i2} \quad and \quad w_{i1}&lt;w_{j2}) \quad or \quad (w_{j1}&lt;w_{i2} \quad and \quad w_{j1}&lt;w_{j2})) \quad \text{swap}$。</p>
 <ul>
 <li>发现$w_{i1}&lt;w_{i2}$恒成立：
 <blockquote>
@@ -514,8 +507,8 @@ $\implies v_i&gt;0$</p>
 </ul>
 <p>故原式可简化为：<br>
 $\text{if} \quad (w_{i1}&lt;w_{j2}) \quad \text{swap}$<br>
-$\implies \text{if} \quad (v_i-h_i &lt; v_j-h_j) \quad \text{swap}$<br>
-这便是化简后的**决策条件**。</p>
+$\implies \text{if} \quad (v_i-h_i &lt; v_j-h_j) \quad \text{swap}$</p>
+<p>这便是化简后的<strong>决策条件</strong>。</p>
 <hr>
 
 
@@ -538,7 +531,7 @@ $\implies \text{if} \quad (v_i-h_i &lt; v_j-h_j) \quad \text{swap}$<br>
 </p>
 	</div>
 </div>
-<h3 id="4自定义结构体重载运算符使用sort遍历寻答案">4、自定义结构体，重载<code>&lt;</code>运算符，使用<code>sort</code>，遍历寻答案</h3>
+<h3 id="4自定义结构体重载运算符使用sort遍历寻答案">4、自定义结构体，重载&lt;运算符，使用sort，遍历寻答案</h3>
 <p>这一步就不多说了，重载的时候按自己分析到的最终最简决策重载就行。</p>
 
 
@@ -692,15 +685,11 @@ $i$在$j$前时，则$w_j$一定大于$w_i$，所以$\max(w_i,w_j)=w_j$，可以
 <li>
 <p>原本状态：$i$在$j$前</p>
 <blockquote>
-<p>$
+<p>$$
 \begin{matrix}
-a &amp; b &amp; c \<br>
-\vdots(sum) &amp; \vdots &amp; \vdots(pre_w) \<br>
-a_i &amp; b_i &amp; w_{i1} \<br>
-a_j &amp; b_j &amp; w_{j1} \<br>
-\vdots &amp; \vdots &amp; \vdots \<br>
+a &amp; b &amp; c \\ \vdots(sum) &amp; \vdots &amp; \vdots(pre_w) \\ a_i &amp; b_i &amp; w_{i1} \\ a_j &amp; b_j &amp; w_{j1} \\ \vdots &amp; \vdots &amp; \vdots
 \end{matrix}
-$</p>
+$$</p>
 </blockquote>
 <p>$w_{i1}=\max(pre_w,sum+a_i)+b_i$<br>
 $w_{j1}=\max(w_{i1},sum+a_i+a_j)+b_j$<br>
@@ -709,15 +698,11 @@ $w_{j1}=\max(w_{i1},sum+a_i+a_j)+b_j$<br>
 <li>
 <p>如果交换：$j$在$i$前</p>
 <blockquote>
-<p>$
+<p>$$
 \begin{matrix}
-a &amp; b &amp; c \<br>
-\vdots(sum) &amp; \vdots &amp; \vdots(pre_w) \<br>
-a_j &amp; b_j &amp; w_{j2} \<br>
-a_i &amp; b_i &amp; w_{i2} \<br>
-\vdots &amp; \vdots &amp; \vdots \<br>
+a &amp; b &amp; c \\ \vdots(sum) &amp; \vdots &amp; \vdots(pre_w) \\ a_j &amp; b_j &amp; w_{j2} \\ a_i &amp; b_i &amp; w_{i2} \\ \vdots &amp; \vdots &amp; \vdots
 \end{matrix}
-$</p>
+$$</p>
 </blockquote>
 <p>$w_{i2}=\max(w_{j2},sum+a_j+a_i)+b_i$<br>
 $w_{j2}=\max(pre_w,sum+a_j)+b_j$<br>

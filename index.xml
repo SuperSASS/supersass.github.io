@@ -6,7 +6,636 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ACM比赛总结——Codeforces #706 (Div. 2)……</title>
+        <link>https://blog.supersassw.com/p/acm-writeup-2021_3_10/</link>
+        <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/acm-writeup-2021_3_10/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/acm-writeup-2021_3_10/Yande-275846.png" alt="Featured image of post ACM比赛总结——Codeforces #706 (Div. 2)……" /&gt;&lt;h1 id=&#34;比赛链接&#34;&gt;比赛链接&lt;/h1&gt;
+&lt;div class=&#34;snote link cyan&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;a href=&#34;https://codeforces.com/contest/1496&#34;&gt;Codeforces Round #706 (Div. 2)&lt;/a&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;总结范围&#34;&gt;总结范围&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; A&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; B&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; C&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; D&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; E&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; F&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;a-split-it&#34;&gt;A. Split it!&lt;/h1&gt;
+&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 比赛状态：AC &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1496/problem/A&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;题目链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;题目大意&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
+&lt;p&gt;给定一个字符串$s$和一个数$k$，&lt;br&gt;
+判断字符串是否存在$k+1$个&lt;strong&gt;非空子串&lt;/strong&gt;，满足：
+$$s=a_1+a_2+\cdots+a_k+a_{k+1}+R(a_k)+R(a_{k-1})+\cdots+R(a_1)$$&lt;/p&gt;
+&lt;p&gt;其中$R(a_i)$代表倒置字符串$a_i$，&lt;br&gt;
+如$R(nico)=ocin$。&lt;/p&gt;
+&lt;h3 id=&#34;读入格式&#34;&gt;读入格式&lt;/h3&gt;
+&lt;p&gt;$T$组数据。&lt;/p&gt;
+&lt;p&gt;每组第一行为字符串长度$n$和$k$，&lt;br&gt;
+第二行为长度为$n$的字符串$s$。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式&#34;&gt;输出格式&lt;/h3&gt;
+&lt;p&gt;如满足，输出一行&lt;code&gt;YES&lt;/code&gt;，&lt;br&gt;
+如不满足，输出一行&lt;code&gt;NO&lt;/code&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;数据范围&#34;&gt;数据范围&lt;/h3&gt;
+&lt;p&gt;$1\le t\le 100$&lt;/p&gt;
+&lt;p&gt;$1 \le n \le 100$&lt;br&gt;
+$0 \le k \le \lfloor \frac{n}{2} \rfloor$&lt;/p&gt;
+&lt;h2 id=&#34;分析&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;先假设所有子串$a_i$的长度均为$1$，&lt;br&gt;
+则$R(a_i)=a_i$。&lt;/p&gt;
+&lt;p&gt;条件就变成了$s=a_1+a_2+\cdots+a_k+a_{k+1}+a_k+\cdots+a_2+a_1$，&lt;br&gt;
+也就是$s$要为&lt;b&gt;回文字符串&lt;/b&gt;。&lt;/p&gt;
+&lt;p&gt;对于$a_{k+1}$，由于条件中只有一个，&lt;br&gt;
+故&lt;b&gt;这个子串可以为任意字符串&lt;/b&gt;，&lt;br&gt;
+所以只需要字符串$s$&lt;b&gt;两边有回文字符&lt;/b&gt;即可。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如：&lt;code&gt;abc iowfen cba&lt;/code&gt;（为了区分$a_{k+1}$和其两边，用空格隔开）&lt;br&gt;
+其中&lt;code&gt;abc&lt;/code&gt;便为回文字符，有三个。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;对于$a_1\sim a_k$中的一子串$a_i$，如长度为$n$，&lt;br&gt;
+则其可以拆成$n$个长度为$1$的子串，也使得条件满足。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如上例中&lt;code&gt;abciowfencba&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;可以为$a_1=abc$、$a_2=iowfen$，&lt;br&gt;
+满足$s=a_1+a_2+R(a_1)$，&lt;/p&gt;
+&lt;p&gt;也可以拆成$a_1=a$、$a_2=b$、$a_3=c$、$a_4=iowfen$，&lt;br&gt;
+满足$s=a_1+a_2+a_3+a_4+R(a_3)+R(a_2)+R(a_1)$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;即如果两边有$cnt$个回文字符，&lt;br&gt;
+则可以通过组合，变为$1\sim l$个满足条件的$a_i$。&lt;/p&gt;
+&lt;p&gt;综上：&lt;br&gt;
+即从字符串$s$&lt;strong&gt;两边开始找有多少个回文字符&lt;/strong&gt;，记为$cnt$个，&lt;br&gt;
+如果$k\le cnt$，则满足条件输出&lt;code&gt;YES&lt;/code&gt;，否则输出&lt;code&gt;NO&lt;/code&gt;。&lt;/p&gt;
+&lt;hr&gt;
+
+
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;需要注意的是：&lt;/p&gt;
+&lt;p&gt;$a_{k+1}$必须存在（非空），&lt;br&gt;
+所以判断范围为&lt;code&gt;(n - 1) / 2 - 1&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;也就是对于奇数长度字符串&lt;code&gt;abcba&lt;/code&gt;，判断范围为$0\sim1$（字符串下标从$0$开始），&lt;br&gt;
+对于偶数长度字符串&lt;code&gt;abccba&lt;/code&gt;，判断范围也为$0\sim1$。&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;代码&#34;&gt;代码&lt;/h2&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/Bm2fV9pg3Q/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    int NAME_i = BEGIN;        \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i &amp;lt;= TO;              \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i++
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL_invert(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    int NAME_i = BEGIN;               \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i &amp;gt;= TO;                     \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i--
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;cp&#34;&gt;#define MAX_N 100
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;kt&#34;&gt;char&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d%d%s&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//注意判断范围
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;str&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;])&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//如果头尾字符相等，则为回文字符，cnt++
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                &lt;span class=&#34;n&#34;&gt;cnt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//如果判断到某处两侧不等，则该处到中间部分均为a_{k+1}，提前退出循环
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                &lt;span class=&#34;k&#34;&gt;break&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;YES&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;NO&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;h1 id=&#34;b-max-and-mex&#34;&gt;B. Max and Mex&lt;/h1&gt;
+&lt;div class=&#34;snote done &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 比赛状态：AC &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1496/problem/B&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;题目链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;题目大意-1&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-1&#34;&gt;问题描述&lt;/h3&gt;
+&lt;p&gt;对于一个集合$S$，其包含$n$个&lt;strong&gt;不同元素&lt;/strong&gt;$a_i$。&lt;/p&gt;
+&lt;p&gt;定义一次操作，为向该集合$S$中添加元素$\lceil\frac{a+b}{2}\rceil$，&lt;br&gt;
+其中$a=mex(S)$、$b=max(S)$。&lt;/p&gt;
+&lt;p&gt;对于函数$mex(S)$，其意义为：$S$集合中&lt;strong&gt;最小的不存在的非负数&lt;/strong&gt;。&lt;br&gt;
+对于函数$max(S)$，其意义为：$S$集合中&lt;strong&gt;最大的元素&lt;/strong&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;/p&gt;
+&lt;p&gt;$mex(\{1,4,0,2\})=3$&lt;br&gt;
+$mex(\{3,5,6,7\})=0$&lt;/p&gt;
+&lt;p&gt;$max(\{2,5,1\})=5$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果该操作添加的元素$\lceil\frac{a+b}{2}\rceil$已存在于集合$S$中，&lt;br&gt;
+则会重复添加。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;/p&gt;
+&lt;p&gt;$S=\{1,3,4,6\}$&lt;/p&gt;
+&lt;p&gt;如该操作要添加的元素为$4$，&lt;br&gt;
+则新集合$S&#39;=\{1,3,4,4,6\}$。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;现在要求对某集合$S$进行$k$次操作，&lt;br&gt;
+问：$k$次操作后，集合&lt;strong&gt;有多少个不同元素&lt;/strong&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;读入格式-1&#34;&gt;读入格式&lt;/h3&gt;
+&lt;p&gt;$T$组数据。&lt;/p&gt;
+&lt;p&gt;每组第一行为集合初始元素个数$n$和操作次数$k$，&lt;br&gt;
+第二行为集合$S$的$n$个元素$a_i$。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式-1&#34;&gt;输出格式&lt;/h3&gt;
+&lt;p&gt;输出$k$次操作后集合$S$的不同元素个数。&lt;/p&gt;
+&lt;h3 id=&#34;数据范围-1&#34;&gt;数据范围&lt;/h3&gt;
+&lt;p&gt;$1\le t\le 100$&lt;/p&gt;
+&lt;p&gt;$1 \le n \le 10^5$&lt;br&gt;
+$0 \le k \le 10^9$&lt;br&gt;
+$0 \le a_i \le 10^9$&lt;/p&gt;
+&lt;p&gt;保证$n$总和不超过$10^5$。&lt;/p&gt;
+&lt;h2 id=&#34;分析-1&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;易知道：&lt;br&gt;
+$a=mex(S)$结果为集合中不存在的元素，&lt;br&gt;
+$b=max(S)$结果为集合中存在的元素。&lt;br&gt;
+所以一定满足$a \ne b$。&lt;/p&gt;
+&lt;p&gt;记：添加的元素$\lceil\frac{a+b}{2}\rceil$为$x$，&lt;br&gt;
+当$a &amp;lt; b$时，则$a &amp;lt; x \le b$（且仅当$a=b-1$时，$x=b$）&lt;/p&gt;
+&lt;p&gt;因此向$S$添加$x$过后，是不会更改$mex(S)$和$max(S)$的值的，&lt;br&gt;
+所以经过一次操作后，下一次操作添加的元素仍为$x$。&lt;/p&gt;
+&lt;p&gt;也就是说：&lt;br&gt;
+&lt;strong&gt;$a &amp;lt; b$时&lt;/strong&gt;，&lt;br&gt;
+&lt;strong&gt;若$x \not∈ S$&lt;/strong&gt;，则$k$此操作后只会添加$1$个元素，&lt;strong&gt;答案为$n+1$&lt;/strong&gt;。（并且注意$k\ne0$）&lt;br&gt;
+&lt;strong&gt;若$x ∈ S$或者$k=0$&lt;/strong&gt;，$k$此操作均不会向$S$添加新的不同元素，&lt;strong&gt;答案为$n$&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;但仍存在$a&amp;gt;b$的情况。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;/p&gt;
+&lt;p&gt;$S=\{0,1,2,3\}$&lt;/p&gt;
+&lt;p&gt;则$a=mex(S)=4$，&lt;br&gt;
+$b=max(S)=3$。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;且仅能是这种元素从$0$到$n-1$均存在的集合。&lt;br&gt;
+如中间任意存在一处空缺，则会导致$mex(S)&amp;lt;max(S)$。&lt;/p&gt;
+&lt;p&gt;那么这个时候$x=a$，则会向$S$中添加新元素$a$，&lt;br&gt;
+一次操作过后，新的$a,b$则会变化：&lt;br&gt;
+$a&#39;=a$、$b&#39;=a$，&lt;br&gt;
+则又会添加新的元素。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;e.g.&lt;/p&gt;
+&lt;p&gt;上例中：添加了$x=4$后，&lt;br&gt;
+$S&#39;=\{0,1,2,3,4\}$。&lt;/p&gt;
+&lt;p&gt;则新的$a&#39;=5$、$b&#39;=4$，&lt;br&gt;
+$x&#39;=5$。&lt;/p&gt;
+&lt;p&gt;$S&#39;&#39;=\{0,1,2,3,4,5\}$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;所以对于这种情况($a&amp;gt;b$)，最终$S$中不同元素为$n+k$个。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;综上：
+$$
+ans=
+\begin{cases}
+n+1 &amp;amp; (a&amp;lt;b &amp;amp; and &amp;amp; (k\ne0 &amp;amp; and &amp;amp; x\not∈S)) \\ n &amp;amp; (a&amp;lt;b &amp;amp; and &amp;amp; (k=0 &amp;amp; or &amp;amp; x∈S)) \\ n+k &amp;amp; (a&amp;gt;b)
+\end{cases}
+$$&lt;/p&gt;
+&lt;h2 id=&#34;代码-1&#34;&gt;代码&lt;/h2&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/rhKm5tjY2m/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    int NAME_i = BEGIN;        \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i &amp;lt;= TO;              \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i++
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL_invert(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    int NAME_i = BEGIN;               \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i &amp;gt;= TO;                     \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i--
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;cp&#34;&gt;#define MAX_N 100000
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+&lt;span class=&#34;n&#34;&gt;set&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;mex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;calc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//计算x
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;clear&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;insert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//用set集合来方便查找
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;                 &lt;span class=&#34;c1&#34;&gt;//先对数据排序，方便求mex(S)和max(S)
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mex&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;find&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calc&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;end&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;())&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;h1 id=&#34;c-diamond-miner&#34;&gt;C. Diamond Miner&lt;/h1&gt;
+&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 比赛状态：未完成（看过题目未在时间内做出） &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1496/problem/C&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;题目链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;题目大意-2&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-2&#34;&gt;问题描述&lt;/h3&gt;
+&lt;p&gt;平面直角坐标系$xOy$中，&lt;br&gt;
+有$n$个矿工，均在$y$轴上，&lt;br&gt;
+有$n$处矿物，均在$x$轴上。&lt;/p&gt;
+&lt;p&gt;其中一位矿工只能挖一处矿物，一处矿物只能被一个矿工挖，&lt;br&gt;
+即$x$和$y$轴上的点&lt;strong&gt;要一一配对&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;若每个矿工采矿代价是两点间距离$\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$，&lt;br&gt;
+问：&lt;strong&gt;如何安排，使得总代价最小&lt;/strong&gt;，并输出最小代价。&lt;/p&gt;
+&lt;h3 id=&#34;读入格式-2&#34;&gt;读入格式&lt;/h3&gt;
+&lt;p&gt;$T$组数据。&lt;/p&gt;
+&lt;p&gt;每组第一行为矿工和矿物个数$n$，&lt;br&gt;
+接下来$2n$行为矿工或矿物的坐标$x,y$（注意&lt;strong&gt;是无序的&lt;/strong&gt;，不一定先全为矿工）。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式-2&#34;&gt;输出格式&lt;/h3&gt;
+&lt;p&gt;输出每组数据的最小总代价，精确到$15$位小数。&lt;/p&gt;
+&lt;h3 id=&#34;数据范围-2&#34;&gt;数据范围&lt;/h3&gt;
+&lt;p&gt;$1\le t\le 10$&lt;/p&gt;
+&lt;p&gt;$1 \le n \le 10^5$&lt;br&gt;
+$-10^8 \le x_i \le 10^8$&lt;br&gt;
+$-10^8 \le y_u \le 10^8$&lt;/p&gt;
+&lt;p&gt;保证$n$总和不超过$10^5$。&lt;/p&gt;
+&lt;h2 id=&#34;分析-2&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;采用贪心思想中的&lt;strong&gt;排序型贪心&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;对于任意两个矿工，其纵坐标分别为$y_a,y_b$，&lt;br&gt;
+假设现在他们分别匹配到横坐标为$x_a,x_b$的两处矿。&lt;/p&gt;
+&lt;p&gt;那么现在的代价为$\sqrt{x_a^2+y_a^2}+\sqrt{x_b^2+y_b^2}$。&lt;/p&gt;
+&lt;p&gt;如果两个矿工匹配的矿对换，&lt;br&gt;
+则代价变为$\sqrt{x_b^2+y_a^2}+\sqrt{x_a^2+y_b^2}$。&lt;/p&gt;
+&lt;p&gt;那么对换的条件就是：
+$$\sqrt{x_a^2+y_a^2}+\sqrt{x_b^2+y_b^2} &amp;gt; \sqrt{x_b^2+y_a^2}+\sqrt{x_a^2+y_b^2}$$&lt;/p&gt;
+&lt;p&gt;开始化简：&lt;/p&gt;
+&lt;p&gt;$$2\sqrt{x_a^2+y_a^2}\sqrt{x_b^2+y_b^2} &amp;gt; 2\sqrt{x_a^2+y_b^2}\sqrt{x_b^2+y_a^2}$$
+$$(x_a^2+y_a^2)(x_b^2+y_b^2) &amp;gt; (x_a^2+y_b^2)(x_b^2+y_a^2)$$
+$$x_a^2y_b^2+x_b^2y_a^2 &amp;gt; x_a^2y_a^2+x_b^2y_b^2$$&lt;/p&gt;
+&lt;p&gt;移项消去，可得两条件：
+$$
+\begin{cases}
+|x_a|&amp;gt;|x_b| \\ |y_a|&amp;lt;|y_b|
+\end{cases}
+$$&lt;/p&gt;
+&lt;p&gt;于是这样排序后最终效果，&lt;br&gt;
+就是$|y_i|$越大的，匹配的$|x_i|$也就越大。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;也就是说，&lt;br&gt;
+我们可以直接&lt;strong&gt;对$x$和$y$数组进行排序&lt;/strong&gt;，&lt;br&gt;
+条件分别为$|x_i|$大小和$|y_i|$大小。&lt;/p&gt;
+&lt;p&gt;这样排序后，也就是&lt;strong&gt;越大$|y_i|$对应越大的$|x_i|$&lt;/strong&gt;，&lt;br&gt;
+没要求输出方案，直接遍历计算结果即可。&lt;/p&gt;
+&lt;h2 id=&#34;代码-2&#34;&gt;代码&lt;/h2&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/42ZMkh8SCb/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    int NAME_i = BEGIN;        \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i &amp;lt;= TO;              \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i++
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL_invert(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    int NAME_i = BEGIN;               \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i &amp;gt;= TO;                     \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i--
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;cp&#34;&gt;#define MAX_N 100000
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;posType&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+    &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+
+    &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;posType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+    &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;inMap&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mapX&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mapY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mapX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mapY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;miner&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mine&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+
+&lt;span class=&#34;kr&#34;&gt;inline&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;dist&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sqrt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//这里我将两个cmp合并为一个来写的，觉得不放行可以分开写。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;while&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;miner_cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mine_cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;miner&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;miner_cnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+            &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+                &lt;span class=&#34;n&#34;&gt;mine&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mine_cnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;posType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_X&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+
+        &lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;miner&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;miner&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;miner_cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mine&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mine&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mine_cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;cmp&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+        &lt;span class=&#34;kt&#34;&gt;double&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;dist&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;miner&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mine&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]);&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%.15lf&lt;/span&gt;&lt;span class=&#34;se&#34;&gt;\n&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ans&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//注意小数位数为15位。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+&lt;h1 id=&#34;d-lets-go-hiking&#34;&gt;D. Let&amp;rsquo;s Go Hiking&lt;/h1&gt;
+&lt;div class=&#34;snote warning &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; 比赛状态：未完成（时间不足） &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1496/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;题目链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;题目大意-3&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-3&#34;&gt;问题描述&lt;/h3&gt;
+&lt;p&gt;Qingshan和Daniel玩游戏。&lt;/p&gt;
+&lt;p&gt;存在任意$n$个数字$p_i$。&lt;br&gt;
+Qingshan为先手，其先选择这串数字的一个下标$x(1\le x \le n)$，&lt;br&gt;
+Daniel为后手，其再选择一个下标$y(1\le y\le n)$，并且$y \ne x$。&lt;/p&gt;
+&lt;p&gt;游戏操作为回合制，两人具体操作为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Qingshan的回合中，其需要选择一个新的$x&#39;(1\le x&#39; \le n)$，其要满足三个条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在$x$附近。($|x&#39;-x|=1$)&lt;/li&gt;
+&lt;li&gt;不与$y$相同。($x&#39; \ne y$)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;要比原来的数小（下山）。&lt;/strong&gt;($p_{x&#39;}&amp;lt;p_x$)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当成功选择出$x&#39;$，会把$x&#39;$赋给当前的$x$($x=x&#39;$)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Daniel的回合中，其需要选择一个新的$y&#39;(1\le y&#39; \le n)$，其要满足三个条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在$y$附近。($|y&#39;-y|=1$)&lt;/li&gt;
+&lt;li&gt;不与$x$相同。($y&#39; \ne x$)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;要比原来的数大（上山）。&lt;/strong&gt;($p_{y&#39;}&amp;gt;p_y$)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当成功选择出$y&#39;$，会把$y&#39;$赋给当前的$y$($y=y&#39;$)。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;当某人没法找到新的$x$或$y$（无路可走）时，判这名玩家输。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;你的任务是：&lt;br&gt;
+判断这组数字$p$中，有多少个$p_i$，使得其作为Qingshan初始选择的$x$时，Qingshan必赢。&lt;/p&gt;
+&lt;h3 id=&#34;读入格式-3&#34;&gt;读入格式&lt;/h3&gt;
+&lt;p&gt;第一行为数字个数$n$，&lt;br&gt;
+第二行为$n$个数字$p_i$。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式-3&#34;&gt;输出格式&lt;/h3&gt;
+&lt;p&gt;输出有多少种初始的$x$，使得Qingshan必赢。&lt;/p&gt;
+&lt;h3 id=&#34;数据范围-3&#34;&gt;数据范围&lt;/h3&gt;
+&lt;p&gt;$2 \le n \le 10^5$&lt;br&gt;
+$1 \le p_i \le n$&lt;/p&gt;
+&lt;p&gt;保证$n$总和不超过$10^5$。&lt;/p&gt;
+&lt;h3 id=&#34;样例数据&#34;&gt;样例数据&lt;/h3&gt;
+&lt;h4 id=&#34;第一组&#34;&gt;第一组&lt;/h4&gt;
+&lt;div class=&#34;sc-columns&#34;&gt;&lt;div class=&#34;sc-columns--inner&#34;&gt;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;sc-columns--inner&#34;&gt;&lt;h2 id=&#34;输出&#34;&gt;输出&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;解释：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Qingshan只能选择$x=3$。&lt;br&gt;
+选择此处后，无论Danie选择哪里，之后的行动都总会使Danie被堵死。&lt;/p&gt;
+&lt;p&gt;而Qingshan选择其他地方时，Danie总有办法将Qingshan堵死。&lt;/p&gt;
+&lt;p&gt;故答案为$1$。&lt;/p&gt;
+&lt;h4 id=&#34;第二组&#34;&gt;第二组&lt;/h4&gt;
+&lt;div class=&#34;sc-columns&#34;&gt;&lt;div class=&#34;sc-columns--inner&#34;&gt;&lt;h2 id=&#34;输入&#34;&gt;输入&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;
+&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;4&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;7&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&#34;sc-columns--inner&#34;&gt;&lt;h2 id=&#34;输出&#34;&gt;输出&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;解释：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Qingshan无论怎么选择$x$，都总被Danie或边界堵死。&lt;/p&gt;
+&lt;p&gt;如$x=4$时，则$y=1$便能使Qingshan一定输掉游戏：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当Qingshan选择$x&#39;=3$，Danie选择$y&#39;=2$，这之后Qingshan被Danie堵死，输掉游戏。&lt;/li&gt;
+&lt;li&gt;当Qingshan选择$x&#39;=5$，Danie选择$y&#39;=2$，&lt;br&gt;
+行动到最后$x=7$，$y=4$，这个时候时Qingshan的回合，但Qingshan被边界堵死，输掉游戏。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如$x=3$时，则$y=4$便能使Qingshan一定输掉游戏：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Qingshan只能选择$x&#39;=2$，这个时候Danie选择$y&#39;=5$从右侧下山。&lt;br&gt;
+那么到最后，Qingshan会被边界堵死，输掉游戏。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;故答案为$0$。&lt;/p&gt;
+&lt;h2 id=&#34;分析-3&#34;&gt;分析&lt;/h2&gt;
+&lt;p&gt;这串数字可以分成一段段坡路（上坡路和下坡路可以相互转换）和平路。&lt;/p&gt;
+&lt;p&gt;首先两人都只能走上坡或者下坡，故只分析坡路。&lt;/p&gt;
+&lt;p&gt;对于Qingshan，如果其$x$选择一段不是最长的坡路，从顶往下走，&lt;br&gt;
+那么Danie只用选择最长的那条坡路，从底往上走，&lt;br&gt;
+这样就能把Qingshan耗死，使得最终Qingshan被边界堵死。&lt;/p&gt;
+&lt;p&gt;所以Qingshan&lt;strong&gt;只能选择最长的坡路开始走&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;对于最长的坡路，记其数量为$c$条，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;当$c=1$时：&lt;/p&gt;
+&lt;p&gt;则无论Qingshan怎么选择起点（当然不能是最低点），&lt;br&gt;
+Danie都能&lt;strong&gt;选择在他旁边低处&lt;/strong&gt;，使得刚开始就被堵死，&lt;strong&gt;Qingshan输掉游戏&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当$c\ge3$时：&lt;/p&gt;
+&lt;p&gt;则无论Qingshan选择哪条路，从顶往下走，&lt;br&gt;
+Danie都能&lt;strong&gt;选择另外一条与他不会碰见的路&lt;/strong&gt;，最终把Qingshan耗死，&lt;strong&gt;Qingshan输掉游戏&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;当$c=2$时：&lt;/p&gt;
+&lt;p&gt;由$c\ge3$的情况可知，如果两条路毫不相关（&lt;strong&gt;中间被隔开&lt;/strong&gt;），&lt;br&gt;
+Danie也&lt;strong&gt;总能选择一条与他不会碰见的路&lt;/strong&gt;把Qingshan耗死，&lt;strong&gt;Qingshan输掉游戏&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;那么对于不被隔开的两条路，只有&lt;strong&gt;形如&amp;quot;V&amp;quot;和&amp;quot;Λ&amp;quot;的两种情况&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;对于&amp;quot;V&amp;quot;型：&lt;/p&gt;
+&lt;p&gt;Qingshan无论是选择左边还是右边的顶点向下走，&lt;br&gt;
+Danie只用选择中间的&lt;strong&gt;最低点，朝着Qingshan下来的反方向走&lt;/strong&gt;，就能把Qingshan耗死，&lt;strong&gt;Qingshan输掉游戏&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于&amp;quot;Λ&amp;quot;型：&lt;br&gt;
+&lt;em&gt;也就是样例1中的情况。&lt;/em&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;如果路的长度$len$为奇数：&lt;/p&gt;
+&lt;p&gt;那么Qingshan&lt;strong&gt;能且仅能选择顶点&lt;/strong&gt;，&lt;br&gt;
+再根据Danie选择的$y$的方向，朝着他走，就能使Danie被堵死，&lt;strong&gt;Qingshan赢得游戏，并且只有一种方案&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;如果路的长度$len$为偶数：&lt;/p&gt;
+&lt;p&gt;那么Qingshan选择顶点后：
+如果不选Danie上山的方向，就会被耗死；&lt;br&gt;
+如果选Danie上山的方向，就会被堵死。&lt;br&gt;
+最终都是&lt;strong&gt;Qingshan输掉游戏&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;综上：&lt;/p&gt;
+&lt;p&gt;只有满足以下四个条件，Qingshan才能赢得游戏，且&lt;strong&gt;答案仅能为$1$&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;$c=2$。&lt;/li&gt;
+&lt;li&gt;两条路无间隔。&lt;/li&gt;
+&lt;li&gt;两条路为&amp;quot;Λ&amp;quot;型。&lt;/li&gt;
+&lt;li&gt;$len$为偶数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;可以将每条坡路的信息存下来：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;记录每条坡路从左到右看，是上坡还是下坡，记为$state$。&lt;/li&gt;
+&lt;li&gt;记录每条坡路的长度$len$。&lt;/li&gt;
+&lt;li&gt;记录每条坡路的编号（是第几条路）$index$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于$2$号条件，可以判断$index$之差的绝对值是否为$1￥$。如果为$1$证明无间隔。&lt;br&gt;
+对于$3$号条件，可以判断$road[1]$的$state$是否为上坡，$road[2]$的$state$是否为下坡。&lt;/p&gt;
+&lt;h2 id=&#34;代码-3&#34;&gt;代码&lt;/h2&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/tkZ5mz24jh/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    int NAME_i = BEGIN;        \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i &amp;lt;= TO;              \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i++
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define ALL_invert(NAME_i, BEGIN, TO) \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    int NAME_i = BEGIN;               \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i &amp;gt;= TO;                     \
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;    NAME_i--
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+&lt;span class=&#34;cp&#34;&gt;#define MAX_N 100000
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;cp&#34;&gt;#define NOW_ROAD road[road_cnt]
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define NEW_ROAD get_state(_num, num), 2, road_cnt
+&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;roadType&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;roadType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;roadType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{}&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;roadType&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;index&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;index&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//重载&amp;lt;为按len降序排序。注意：len相等时，要以index小的在前，防止破坏上坡下坡的顺序。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;MAX_N&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;];&lt;/span&gt;
+
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;get_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//state==1为上坡; state==0为平路; state==-1为下坡
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+&lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;_num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road_cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d%d%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;roadType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;NEW_ROAD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;_num&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;scanf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;%d&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;get_state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;!=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;NOW_ROAD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;                                       &lt;span class=&#34;c1&#34;&gt;//与当前路状态不同，增加新路
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;            &lt;span class=&#34;n&#34;&gt;road_cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;NOW_ROAD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;road_cnt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;roadType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;NEW_ROAD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//当NOW_ROAD的state为0时，证明当前路为平路。所以road_cnt不++，覆盖掉这段平路。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;                                                                              &lt;span class=&#34;c1&#34;&gt;//与当前路状态相同，当前路长度++
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;            &lt;span class=&#34;n&#34;&gt;NOW_ROAD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;NOW_ROAD&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//如果最后一条路是平路，road_cnt--
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;road_cnt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;--&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;sort&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;road&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road_cnt&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//用排序，方便找最大的len。但注意不能破坏相同len的路的顺序。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+    &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;                      &lt;span class=&#34;c1&#34;&gt;//这里如果c&amp;gt;3，统一看成c=3的情况。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;c&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;abs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;index&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;road&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;state&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;%&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//四个括号分别对应四个条件
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;printf&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;0&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;/details&gt;
+</description>
+        </item>
+        <item>
         <title>ACM学习笔记——离散化……</title>
         <link>https://blog.supersassw.com/p/acm-note-discrete/</link>
         <pubDate>Thu, 04 Mar 2021 00:00:00 +0000</pubDate>
@@ -8270,7 +8899,7 @@ SWJTU OJ——10.31 A &lt;a class=&#34;link&#34; href=&#34;https://oj.swjtu.edu.
     &gt;排队&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;题目与国王游戏类似，用邻项交换排序的思想来找&lt;strong&gt;决策条件&lt;/strong&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;1找出每种状态的ans选邻项代入&#34;&gt;1、找出每种状态的&lt;code&gt;ans&lt;/code&gt;，选邻项代入&lt;/h3&gt;
+&lt;h3 id=&#34;1找出每种状态的ans选邻项代入&#34;&gt;1、找出每种状态的ans，选邻项代入&lt;/h3&gt;
 &lt;blockquote&gt;
 &lt;p&gt;题目描述：&lt;br&gt;
 也就是说，请重新给班尼特排队，要求是最大化$\min_{i=1}^n{-h_i+\sum_{j=1}^i v_j}$。&lt;/p&gt;
@@ -8280,11 +8909,12 @@ SWJTU OJ——10.31 A &lt;a class=&#34;link&#34; href=&#34;https://oj.swjtu.edu.
 &lt;ul&gt;
 &lt;li&gt;为什么我们这样排序，能使&lt;code&gt;ans&lt;/code&gt;$=\min_{i=1}^nw_i$取得最小？
 &lt;blockquote&gt;
-&lt;p&gt;就相当于把比较时候的最小值看成短板，每次比较一次选最高的那个，就会把短板提上去一点，这样最后得到的就是最高的短板，也就是最大的$\min$……&lt;/p&gt;
+&lt;p&gt;就相当于把比较时候的最小值看成短板，每次比较一次选最高的那个，就会把短板提上去一点。&lt;br&gt;
+这样最后得到的就是最高的短板，也就是最大的$\min$……&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;2假设相邻位置写出两种状态的ans&#34;&gt;2、假设相邻位置，写出两种状态的&lt;code&gt;ans&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;2假设相邻位置写出两种状态的ans&#34;&gt;2、假设相邻位置，写出两种状态的ans&lt;/h3&gt;
 &lt;p&gt;我们首先要把每个位置的&lt;strong&gt;收益表达式&lt;/strong&gt;写出来：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;题目描述：治疗第$i$个班尼特的收益$w_i$等于前面治疗的所有班尼特的$v$之和减去$h_i$。
@@ -8301,11 +8931,7 @@ $$&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;$$
 \begin{matrix}
-h &amp;amp; v \&lt;br&gt;
-\vdots &amp;amp; \vdots(sum) \&lt;br&gt;
-h_i &amp;amp; v_i \&lt;br&gt;
-h_j &amp;amp; v_j \&lt;br&gt;
-\vdots &amp;amp; \vdots \&lt;br&gt;
+h &amp;amp; v \\  \vdots &amp;amp; \vdots(sum) \\ h_i &amp;amp; v_i \\ h_j &amp;amp; v_j \\ \vdots &amp;amp; \vdots
 \end{matrix}
 $$&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -8316,15 +8942,11 @@ $$&lt;/p&gt;
 &lt;li&gt;
 &lt;p&gt;如果交换：$j$在$i$前&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;$
+&lt;p&gt;$$
 \begin{matrix}
-h &amp;amp; v \&lt;br&gt;
-\vdots &amp;amp; \vdots(sum) \&lt;br&gt;
-h_j &amp;amp; v_j \&lt;br&gt;
-h_i &amp;amp; v_i \&lt;br&gt;
-\vdots &amp;amp; \vdots \&lt;br&gt;
+h &amp;amp; v \\ \vdots &amp;amp; \vdots(sum) \\ h_j &amp;amp; v_j \\ h_i &amp;amp; v_i \\ \vdots &amp;amp; \vdots
 \end{matrix}
-$&lt;/p&gt;
+$$&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;对$i$的收益：$w_{i2}=sum+v_j+v_i-h_i$，&lt;br&gt;
 对$j$的收益：$w_{j2}=sum+v_j-h_j$&lt;br&gt;
@@ -8357,7 +8979,7 @@ $&lt;/p&gt;
 &lt;/ol&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;则本题中：&lt;br&gt;
-展开为$\text{if} \quad ((w_{i1}&amp;lt;w_{i2} &amp;amp; w_{i1}&amp;lt;w_{j2}) | (w_{j1}&amp;lt;w_{i2} &amp;amp; w_{j1}&amp;lt;w_{j2})) \quad \text{swap}$。&lt;/p&gt;
+展开为$\text{if} \quad ((w_{i1}&amp;lt;w_{i2} \quad and \quad w_{i1}&amp;lt;w_{j2}) \quad or \quad (w_{j1}&amp;lt;w_{i2} \quad and \quad w_{j1}&amp;lt;w_{j2})) \quad \text{swap}$。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;发现$w_{i1}&amp;lt;w_{i2}$恒成立：
 &lt;blockquote&gt;
@@ -8374,8 +8996,8 @@ $\implies v_i&amp;gt;0$&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;故原式可简化为：&lt;br&gt;
 $\text{if} \quad (w_{i1}&amp;lt;w_{j2}) \quad \text{swap}$&lt;br&gt;
-$\implies \text{if} \quad (v_i-h_i &amp;lt; v_j-h_j) \quad \text{swap}$&lt;br&gt;
-这便是化简后的**决策条件**。&lt;/p&gt;
+$\implies \text{if} \quad (v_i-h_i &amp;lt; v_j-h_j) \quad \text{swap}$&lt;/p&gt;
+&lt;p&gt;这便是化简后的&lt;strong&gt;决策条件&lt;/strong&gt;。&lt;/p&gt;
 &lt;hr&gt;
 
 
@@ -8398,7 +9020,7 @@ $\implies \text{if} \quad (v_i-h_i &amp;lt; v_j-h_j) \quad \text{swap}$&lt;br&gt
 &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;h3 id=&#34;4自定义结构体重载运算符使用sort遍历寻答案&#34;&gt;4、自定义结构体，重载&lt;code&gt;&amp;lt;&lt;/code&gt;运算符，使用&lt;code&gt;sort&lt;/code&gt;，遍历寻答案&lt;/h3&gt;
+&lt;h3 id=&#34;4自定义结构体重载运算符使用sort遍历寻答案&#34;&gt;4、自定义结构体，重载&amp;lt;运算符，使用sort，遍历寻答案&lt;/h3&gt;
 &lt;p&gt;这一步就不多说了，重载的时候按自己分析到的最终最简决策重载就行。&lt;/p&gt;
 
 
@@ -8552,15 +9174,11 @@ $i$在$j$前时，则$w_j$一定大于$w_i$，所以$\max(w_i,w_j)=w_j$，可以
 &lt;li&gt;
 &lt;p&gt;原本状态：$i$在$j$前&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;$
+&lt;p&gt;$$
 \begin{matrix}
-a &amp;amp; b &amp;amp; c \&lt;br&gt;
-\vdots(sum) &amp;amp; \vdots &amp;amp; \vdots(pre_w) \&lt;br&gt;
-a_i &amp;amp; b_i &amp;amp; w_{i1} \&lt;br&gt;
-a_j &amp;amp; b_j &amp;amp; w_{j1} \&lt;br&gt;
-\vdots &amp;amp; \vdots &amp;amp; \vdots \&lt;br&gt;
+a &amp;amp; b &amp;amp; c \\ \vdots(sum) &amp;amp; \vdots &amp;amp; \vdots(pre_w) \\ a_i &amp;amp; b_i &amp;amp; w_{i1} \\ a_j &amp;amp; b_j &amp;amp; w_{j1} \\ \vdots &amp;amp; \vdots &amp;amp; \vdots
 \end{matrix}
-$&lt;/p&gt;
+$$&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;$w_{i1}=\max(pre_w,sum+a_i)+b_i$&lt;br&gt;
 $w_{j1}=\max(w_{i1},sum+a_i+a_j)+b_j$&lt;br&gt;
@@ -8569,15 +9187,11 @@ $w_{j1}=\max(w_{i1},sum+a_i+a_j)+b_j$&lt;br&gt;
 &lt;li&gt;
 &lt;p&gt;如果交换：$j$在$i$前&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;$
+&lt;p&gt;$$
 \begin{matrix}
-a &amp;amp; b &amp;amp; c \&lt;br&gt;
-\vdots(sum) &amp;amp; \vdots &amp;amp; \vdots(pre_w) \&lt;br&gt;
-a_j &amp;amp; b_j &amp;amp; w_{j2} \&lt;br&gt;
-a_i &amp;amp; b_i &amp;amp; w_{i2} \&lt;br&gt;
-\vdots &amp;amp; \vdots &amp;amp; \vdots \&lt;br&gt;
+a &amp;amp; b &amp;amp; c \\ \vdots(sum) &amp;amp; \vdots &amp;amp; \vdots(pre_w) \\ a_j &amp;amp; b_j &amp;amp; w_{j2} \\ a_i &amp;amp; b_i &amp;amp; w_{i2} \\ \vdots &amp;amp; \vdots &amp;amp; \vdots
 \end{matrix}
-$&lt;/p&gt;
+$$&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;$w_{i2}=\max(w_{j2},sum+a_j+a_i)+b_i$&lt;br&gt;
 $w_{j2}=\max(pre_w,sum+a_j)+b_j$&lt;br&gt;
@@ -9211,7 +9825,7 @@ $\implies \min(a_j,b_i) &amp;gt; \min(a_i,b_j)$&lt;/p&gt;
 &lt;li&gt;按照该决策方案排序，算出排序后状态的&lt;code&gt;ans&lt;/code&gt;值，即为结果。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;邻项交换排序&#34;&gt;邻项交换排序&lt;/h3&gt;
-&lt;p&gt;这一部分请查看&lt;a class=&#34;link&#34; href=&#34;../ACM-note-neighbor_sort/&#34; &gt;邻项交换排序&lt;/a&gt;笔记。&lt;/p&gt;
+&lt;p&gt;这一部分请查看&lt;a class=&#34;link&#34; href=&#34;../acm-note-neighbor_sort/&#34; &gt;邻项交换排序&lt;/a&gt;笔记。&lt;/p&gt;
 &lt;h2 id=&#34;二反悔型贪心&#34;&gt;二、反悔型贪心&lt;/h2&gt;
 &lt;p&gt;依然是上面的引例：&lt;/p&gt;
 &lt;p&gt;【我管不了那么多了我现在就要开冲.jpg……&lt;/p&gt;
@@ -9978,8 +10592,8 @@ $$x \equiv f(x) \cdot a^{-1} \pmod m$$
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1438/problem/A&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;题目链接&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;题面大意&#34;&gt;题面大意&lt;/h2&gt;
-&lt;h3 id=&#34;题目描述&#34;&gt;题目描述&lt;/h3&gt;
+&lt;h2 id=&#34;题目大意&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述&#34;&gt;问题描述&lt;/h3&gt;
 &lt;p&gt;定义一个“好数组”：该数组的元素和能被其长度整除。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;例子：&lt;/p&gt;
@@ -10024,8 +10638,8 @@ $[1,1,2,3]$不是“好数组”——其元素和$7$不能被长度$4$整除。
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1438/problem/B&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;题目链接&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;题面大意-1&#34;&gt;题面大意&lt;/h2&gt;
-&lt;h3 id=&#34;题目描述-1&#34;&gt;题目描述&lt;/h3&gt;
+&lt;h2 id=&#34;题目大意-1&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-1&#34;&gt;问题描述&lt;/h3&gt;
 &lt;p&gt;原数组$b_{i}$，令数组$a$，其中$a_{i}=2^{b_{i}}$。&lt;br&gt;
 问：是否存在$l_{1},r_{1},l_{2},r_{2}$&lt;br&gt;
 满足：&lt;/p&gt;
@@ -10106,8 +10720,8 @@ $(16)=(8+1+2+4+1)$ 故满足题意，为YES。&lt;/p&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1438/problem/C&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;题目链接&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;题面大意-2&#34;&gt;题面大意&lt;/h2&gt;
-&lt;h3 id=&#34;题目描述-2&#34;&gt;题目描述&lt;/h3&gt;
+&lt;h2 id=&#34;题目大意-2&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-2&#34;&gt;问题描述&lt;/h3&gt;
 &lt;p&gt;一个矩阵，其每个单元能够通过加一或者不变的操作，&lt;br&gt;
 即$b_{i,j}=a_{i,j}$或者$b_{i,j}=a_{i,j}+1$，使得任意相邻两个元素不相等。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -10130,14 +10744,14 @@ $\begin{matrix} 1 &amp;amp; 2 \\ 3 &amp;amp; 4 \end{matrix}$&lt;/p&gt;
 但贪心就要考虑反悔：有可能这里变为不$+1$反而符合条件。&lt;br&gt;
 所以用个$vis[i][j]$表示是否被$+1$便于反悔。&lt;/p&gt;
 &lt;h2 id=&#34;个人代码&#34;&gt;个人代码&lt;/h2&gt;
-&lt;details class=&#34;sc-details&#34; &gt;
-	&lt;summary&gt;个人代码&lt;/summary&gt;
-	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote link green&#34;&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/CbKfTKYvYn/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;个人代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define N_MAX 105
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;val&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N_MAX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N_MAX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;vis&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N_MAX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;][&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;N_MAX&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
@@ -10253,8 +10867,8 @@ $$\begin{matrix} odd &amp;amp; even &amp;amp; odd &amp;amp; &amp;hellip; \\ even
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1438/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;题目链接&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;题面大意-3&#34;&gt;题面大意&lt;/h2&gt;
-&lt;h3 id=&#34;题目描述-3&#34;&gt;题目描述&lt;/h3&gt;
+&lt;h2 id=&#34;题目大意-3&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-3&#34;&gt;问题描述&lt;/h3&gt;
 &lt;p&gt;给定$n$个数，每次操作能选择其中三个数$x,y,z$皆变为它们的亦或$x \oplus y \oplus z$，问能否进行不超过$n$次操作使这$n$个数均相等。&lt;/p&gt;
 &lt;h3 id=&#34;读入格式-3&#34;&gt;读入格式&lt;/h3&gt;
 &lt;p&gt;第一行读入一个$n$，接下来一行读入$n$个数。&lt;/p&gt;
@@ -10398,14 +11012,14 @@ $$\begin{matrix} odd &amp;amp; even &amp;amp; odd &amp;amp; &amp;hellip; \\ even
 &lt;p&gt;即：&lt;br&gt;
 若数列个数为偶数个，将前$2n-1$个变为相同数$m$，只有最后一个数$x_{2n}=m$，才能满足题意。&lt;/p&gt;
 &lt;h2 id=&#34;题解代码-1&#34;&gt;题解代码&lt;/h2&gt;
-&lt;details class=&#34;sc-details&#34; &gt;
-	&lt;summary&gt;题解代码&lt;/summary&gt;
-	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote link green&#34;&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/C8WRsStq5b/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt;&lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;题解代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt;&lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1e5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 
@@ -10462,8 +11076,8 @@ $$\begin{matrix} odd &amp;amp; even &amp;amp; odd &amp;amp; &amp;hellip; \\ even
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1438/problem/E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;题目链接&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;题面大意-4&#34;&gt;题面大意&lt;/h2&gt;
-&lt;h3 id=&#34;题目描述-4&#34;&gt;题目描述&lt;/h3&gt;
+&lt;h2 id=&#34;题目大意-4&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-4&#34;&gt;问题描述&lt;/h3&gt;
 &lt;p&gt;给定一个数组&lt;code&gt;a[n]&lt;/code&gt;，要求输出满足以下条件的子数组&lt;code&gt;a[l..r]&lt;/code&gt;的个数：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;$l+1\leq r-1$，即子数组长度至少为$3$。&lt;/li&gt;
@@ -10525,14 +11139,14 @@ $$\begin{matrix} odd &amp;amp; even &amp;amp; odd &amp;amp; &amp;hellip; \\ even
 &lt;p&gt;因为如果要遍历较长的$l\sim r$，则数列应构造为$1,2,4,8,&amp;hellip;,2^n$【从右向左$r=n$时，就能让$l$取到最左即$l=1$而中间求和仍少于$2^n$。&lt;/p&gt;
 &lt;p&gt;这样反而限定了遍历范围为$log_2a_i$，则总复杂度为$O(2nloga_i)$。&lt;/p&gt;
 &lt;h3 id=&#34;题解代码-2&#34;&gt;题解代码&lt;/h3&gt;
-&lt;details class=&#34;sc-details&#34; &gt;
-	&lt;summary&gt;题解代码&lt;/summary&gt;
-	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote link green&#34;&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/wwWJ2K4dRC/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt;&lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;题解代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt;&lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ll&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;maxn&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;2e5&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
@@ -11296,14 +11910,14 @@ $1 \le h_i,v_i \le 10^4$&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;标程代码&#34;&gt;标程代码&lt;/h2&gt;
-&lt;details class=&#34;sc-details&#34; &gt;
-	&lt;summary&gt;标程代码&lt;/summary&gt;
-	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote link green&#34;&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/tWYv3Kk3ch/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//理解了就很简单，就不给标程加注释了……
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;标程代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//理解了就很简单，就不给标程加注释了……
 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;algorithm&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;cstring&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
@@ -11586,14 +12200,14 @@ $y * c \sim y * d$中任意一个$y*k\quad (k∈[c,d])$&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;&lt;a class=&#34;link&#34; href=&#34;https://oi-wiki.org/math/fermat/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;欧拉函数讲解&lt;/a&gt;。&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;标程代码&#34;&gt;标程代码&lt;/h2&gt;
-&lt;details class=&#34;sc-details&#34; &gt;
-	&lt;summary&gt;标程代码（附个人注释）&lt;/summary&gt;
-	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote link green&#34;&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/XjtK2TVMKK/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;标程代码（附个人注释）&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;cstdio&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;unordered_map&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;
 &lt;span class=&#34;k&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MOD&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;998244353&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
@@ -11737,14 +12351,14 @@ $B_1 \quad B_2 \quad\cdots \quad B_N$&lt;/p&gt;
 &lt;p&gt;就是想的纯模拟，交上去后WA……&lt;/p&gt;
 &lt;p&gt;之后对拍发现几处修改和WA点，现在不知道改正后是否正确_(:з」∠)_反正先贴上来……&lt;br&gt;
 【WA点已经写在代码里了……&lt;/p&gt;
-&lt;details class=&#34;sc-details&#34; &gt;
-	&lt;summary&gt;个人代码&lt;/summary&gt;
-	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote line green&#34;&gt;
+&lt;div class=&#34;snote line green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/n3yPwD53vz/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;个人代码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define Length 100005
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define to_Left toLoc - 1
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;#define to_Right toLoc + 1
@@ -11886,14 +12500,14 @@ $x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为�
 &lt;li&gt;这里用个$max(\cdots,0)$，是因为存在减为负数的情况。【可以参见标程代码中的例子】&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;标程代码-1&#34;&gt;标程代码&lt;/h2&gt;
-&lt;details class=&#34;sc-details&#34; &gt;
-	&lt;summary&gt;标程代码（附个人注释）&lt;/summary&gt;
-	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote link green&#34;&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt; &lt;a href=&#34;https://paste.ubuntu.com/p/3fCzwnQzDj/&#34;&gt;Pastebin链接&lt;/a&gt; &lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;标程代码（附个人注释）&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span class=&#34;cp&#34;&gt;#include&lt;/span&gt; &lt;span class=&#34;cpf&#34;&gt;&amp;lt;bits/stdc++.h&amp;gt;&lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;
 &lt;/span&gt;&lt;span class=&#34;cp&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;using&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;namespace&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;std&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
 
 &lt;span class=&#34;k&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
