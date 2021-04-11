@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /tags
+
+Sitemap: https://blog.supersassw.com/sitemap.xml
