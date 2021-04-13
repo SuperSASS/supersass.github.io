@@ -6,7 +6,16 @@
     <description>Recent content in ACM on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 10 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/acm/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/acm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM练习 - P2034 选择数字……</title>
+      <link>https://blog.supersassw.com/p/acm-prac-2021_04_13/</link>
+      <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-prac-2021_04_13/</guid>
+      <description>题目链接 P2034 选择数字 题目分析 贪心想法及其问题 要使得“不能有超过$k$个连续的数被选中”， 可以转化为： 在$k+1$个连续的数中，选择一个数舍去，</description>
+    </item>
+    
     <item>
       <title>ACM比赛总结——Codeforces #706 (Div. 2)……</title>
       <link>https://blog.supersassw.com/p/acm-writeup-2021_3_10/</link>
