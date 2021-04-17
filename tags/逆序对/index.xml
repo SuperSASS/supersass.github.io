@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>逆序对 on Super SASS……</title>
+    <link>https://blog.supersassw.com/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/</link>
+    <description>Recent content in 逆序对 on Super SASS……</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 17 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM学习笔记 - 总模板……</title>
+      <link>https://blog.supersassw.com/p/acm-prac-2021_04_13/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-prac-2021_04_13/</guid>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 线性筛素数 用途：对一定范围$n$内的数，构造素数表。</description>
+    </item>
+    
+  </channel>
+</rss>

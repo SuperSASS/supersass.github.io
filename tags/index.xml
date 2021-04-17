@@ -422,6 +422,132 @@
     </item>
     
     <item>
+      <title>Dijkstra</title>
+      <link>https://blog.supersassw.com/tags/dijkstra/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/dijkstra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>KMP</title>
+      <link>https://blog.supersassw.com/tags/kmp/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/kmp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kruskal</title>
+      <link>https://blog.supersassw.com/tags/kruskal/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/kruskal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manacher</title>
+      <link>https://blog.supersassw.com/tags/manacher/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/manacher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ST表</title>
+      <link>https://blog.supersassw.com/tags/st%E8%A1%A8/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/st%E8%A1%A8/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trie</title>
+      <link>https://blog.supersassw.com/tags/trie/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/trie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>字典树</title>
+      <link>https://blog.supersassw.com/tags/%E5%AD%97%E5%85%B8%E6%A0%91/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E5%AD%97%E5%85%B8%E6%A0%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>快速幂</title>
+      <link>https://blog.supersassw.com/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>拓扑排序</title>
+      <link>https://blog.supersassw.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>最小生成树</title>
+      <link>https://blog.supersassw.com/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>最短路</title>
+      <link>https://blog.supersassw.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>模板</title>
+      <link>https://blog.supersassw.com/tags/%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E6%A8%A1%E6%9D%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>线性筛素数</title>
+      <link>https://blog.supersassw.com/tags/%E7%BA%BF%E6%80%A7%E7%AD%9B%E7%B4%A0%E6%95%B0/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E7%BA%BF%E6%80%A7%E7%AD%9B%E7%B4%A0%E6%95%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>逆序对</title>
+      <link>https://blog.supersassw.com/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/</link>
+      <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/tags/%E9%80%86%E5%BA%8F%E5%AF%B9/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>基础算法</title>
       <link>https://blog.supersassw.com/tags/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 15 Dec 2020 00:00:00 +0000</pubDate>
@@ -526,15 +652,6 @@
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>最短路</title>
-      <link>https://blog.supersassw.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</link>
-      <pubDate>Thu, 12 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.supersassw.com/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/</guid>
       <description></description>
     </item>
     

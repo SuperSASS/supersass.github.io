@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='万华散尽……'><title>Tag: KMP - Super SASS……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/tags/kmp/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='Tag: KMP - Super SASS……'>
+<meta property='og:description' content='万华散尽……'>
+<meta property='og:url' content='https://blog.supersassw.com/tags/kmp/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2021-04-13T00:00:00&#43;00:00 '/>
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Tag: KMP - Super SASS……">
+<meta name="twitter:description" content="万华散尽……"><link rel="alternate" type="application/rss&#43;xml" href="https://blog.supersassw.com/tags/kmp/index.xml">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended ">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <h3 class="section-title">
+        
+            Tags
+        
+    </h3>
+
+    <div class="section-card">
+        <div class="section-details">
+            <h3 class="section-count">1 page</h3>
+            <h1 class="section-term">KMP</h1>
+            
+        </div>
+    </div>
+
+    
+    
+    
+    
+    
+    <section class="article-list--compact">
+        
+            <article>
+    <a href="/p/acm-prac-2021_04_13/">
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记 - 总模板……</h2>
+            <footer class="article-time">
+                <time datetime='2020-12-17T00:00:00Z'>2020/12/17</time>
+            </footer>
+        </div>
+            <div class="article-image">
+                <img src="/p/acm-prac-2021_04_13/56669571_p0_hu2d9efed420e5413c9e9ff3384c8a765c_856728_120x120_fill_box_smart1_2.png" 
+                        width="120"
+                        height="120" 
+                        loading="lazy">
+                
+            </div>
+        
+    </a>
+</article>
+        
+    </section>
+<footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+
+            </main>
+    
+    
+    <aside class="sidebar right-sidebar sticky">
+        
+            <form action="/search" class="search-form widget" >
+    <p>
+        <label>搜索</label>
+        <input name="keyword" required placeholder="输入关键词..." />
+    
+        <button title="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+        </button>
+    </p>
+</form>
+        
+            <section class="widget archives">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-infinity" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M9.828 9.172a4 4 0 1 0 0 5.656 a10 10 0 0 0 2.172 -2.828a10 10 0 0 1 2.172 -2.828 a4 4 0 1 1 0 5.656a10 10 0 0 1 -2.172 -2.828a10 10 0 0 0 -2.172 -2.828" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">归档</h2>
+
+    
+    
+    
+    
+    
+    <div class="widget-archive--list">
+        <div class="archives-year">
+                <a href="/archives#2021">
+                    
+                        <span class="year">2021</span>
+                        <span class="count">20</span>
+                    
+                </a> 
+            </div>
+        <div class="archives-year">
+                <a href="/archives#2020">
+                    
+                        <span class="year">2020</span>
+                        <span class="count">24</span>
+                    
+                </a> 
+            </div>
+        
+    </div>
+</section>
+        
+            <section class="widget tagCloud">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-tag" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4" />
+  <circle cx="9" cy="9" r="2" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">标签云</h2>
+
+    <div class="tagCloud-tags">
+        
+            <a href="/tags/acm/" class="font_size_24">
+                ACM
+            </a>
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/" class="font_size_15">
+                笔记
+            </a>
+        
+            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/" class="font_size_9">
+                大学课程
+            </a>
+        
+            <a href="/tags/%E6%B5%8B%E8%AF%95/" class="font_size_7">
+                测试
+            </a>
+        
+            <a href="/tags/%E6%97%A5%E5%B8%B8%E7%BB%83%E4%B9%A0/" class="font_size_6">
+                日常练习
+            </a>
+        
+            <a href="/tags/ctf/" class="font_size_4">
+                CTF
+            </a>
+        
+            <a href="/tags/%E6%AF%94%E8%B5%9B%E6%80%BB%E7%BB%93/" class="font_size_4">
+                比赛总结
+            </a>
+        
+            <a href="/tags/%E6%B6%85%E6%99%AE%E8%AE%A1%E5%88%92/" class="font_size_4">
+                涅普计划
+            </a>
+        
+            <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="font_size_4">
+                程序设计
+            </a>
+        
+            <a href="/tags/misc/" class="font_size_3">
+                Misc
+            </a>
+        
+    </div>
+</section>
+        
+            <section class="widget links">
+    <div class="widget-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+    </div>
+    <h2 class="widget-title section-title">链接</h2>
+    
+
+    <div class="widget-links">
+        
+        <div class="widget-links--text">
+            
+                
+            
+                
+            
+                
+            
+                
+                <ul>
+                    <li>
+                        <a href="https://oi-wiki.org/" target="_blank" rel="noopener"> OI-Wiki…… </a>
+                    </li>
+                </ul>
+                
+            
+                
+                <ul>
+                    <li>
+                        <a href="https://blog.jimmycai.com/" target="_blank" rel="noopener"> JimmyCai的主页…… </a>
+                    </li>
+                </ul>
+                
+            
+        </div>
+        
+        <div class="widget-links--icon">
+            
+                
+                <a href="https://steamcommunity.com/id/mrniconiconi/" target="_blank" rel="noopener">
+                    <svg t="1608731941209" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5986" width="200" height="200"><path d="M704 192c-104.128 0-188.96 83.328-191.744 186.816l-117.44 167.872A143.744 143.744 0 0 0 368 544c-30.336 0-58.432 9.536-81.696 25.6L128 507.04v172.064l99.36 39.296A144.128 144.128 0 0 0 368 832a144 144 0 0 0 141.376-118.08l184.736-138.432c3.296 0.192 6.56 0.512 9.888 0.512 105.888 0 192-86.112 192-192s-86.112-192-192-192z m0 64c70.592 0 128 57.408 128 128s-57.408 128-128 128-128-57.408-128-128 57.408-128 128-128z m0 32a96 96 0 0 0 0 192 96 96 0 0 0 0-192z m-336 288c61.76 0 112 50.24 112 112S429.76 800 368 800a112 112 0 0 1-102.08-66.368l72.64 28.736c9.664 3.84 19.584 5.696 29.376 5.696a80 80 0 0 0 29.504-154.432l-72.864-28.896A111.424 111.424 0 0 1 368 576z" p-id="5987"></path></svg>
+                </a>
+                
+            
+                
+                <a href="https://music.163.com/#/user/home?id=96428149" target="_blank" rel="noopener">
+                    <svg t="1608732117092" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8931" width="200" height="200"><path d="M604.71296 63.911253c-53.548373 19.667627-95.06816 77.038933-95.06816 132.222293 0 16.390827 3.822933 43.165013 8.741547 59.55584 4.911787 16.390827 7.645867 30.59712 6.557013 31.143253-0.546133 1.092267-18.03264 9.28768-38.792533 18.57536-72.669867 33.3312-124.576427 101.07904-134.956373 176.479573-18.029227 126.76096 60.101973 230.57408 173.202773 230.57408 72.666453 0 134.95296-43.165013 160.631467-110.36672 16.940373-45.89568 11.47904-104.905387-20.21376-204.89216-8.192-25.678507 54.64064 9.28768 95.617707 54.091093 50.26816 54.637227 68.297387 135.502507 46.987947 214.17984-19.124907 69.389653-77.03552 136.598187-146.428587 168.28416-184.674987 84.691627-385.737387-11.472213-440.920747-210.899627-20.763307-74.8544-13.66016-145.33632 22.401707-222.921387 27.86304-60.101973 86.326613-120.203947 146.97472-150.254933 48.626347-24.040107 58.463573-32.23552 62.83264-52.452693 3.826347-18.57536-8.741547-45.89568-25.678507-55.18336-36.061867-19.67104-118.019413 21.30944-192.8704 96.160427-68.84352 68.84352-101.625173 128.39936-119.657813 216.91392-38.792533 187.948373 57.91744 387.92192 227.84 470.429013 61.740373 30.59712 112.551253 42.06592 182.490453 42.06592 154.077867 0 289.57696-78.67392 355.689813-206.527147 32.781653-62.83264 40.977067-100.532907 37.700267-175.93344-2.73408-72.123733-10.92608-102.720853-40.98048-152.439467-49.718613-82.50368-134.406827-142.05952-216.364373-152.9856l-27.316907-3.280213-9.84064-32.781653c-13.653333-45.349547-12.56448-60.101973 4.37248-73.212587 18.029227-14.206293 37.700267-14.752427 62.286507-1.092267 46.441813 26.22464 54.64064 28.409173 73.216 22.398293 19.124907-6.007467 36.05504-30.047573 36.05504-51.357013 0-19.67104-26.76736-48.080213-63.924907-66.112853C696.507733 55.169707 639.68256 50.797227 604.71296 63.911253zM574.65856 460.032c19.12832 71.031467 20.76672 91.245227 9.291093 113.646933-18.57536 34.966187-72.666453 46.987947-99.44064 21.85216-22.401707-20.759893-29.50144-39.8848-29.50144-78.677333 0-40.434347 10.92608-67.20512 36.604587-90.699093 18.578773-17.483093 57.91744-38.2464 62.28992-33.327787C555.54048 395.014827 564.82816 425.065813 574.65856 460.032z" p-id="8932"></path></svg>
+                </a>
+                
+            
+                
+                <a href="https://space.bilibili.com/1562243" target="_blank" rel="noopener">
+                    <svg t="1608731797909" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4149" width="200" height="200"><path d="M306.005333 117.632L444.330667 256h135.296l138.368-138.325333a42.666667 42.666667 0 0 1 60.373333 60.373333L700.330667 256H789.333333A149.333333 149.333333 0 0 1 938.666667 405.333333v341.333334a149.333333 149.333333 0 0 1-149.333334 149.333333h-554.666666A149.333333 149.333333 0 0 1 85.333333 746.666667v-341.333334A149.333333 149.333333 0 0 1 234.666667 256h88.96L245.632 177.962667a42.666667 42.666667 0 0 1 60.373333-60.373334zM789.333333 341.333333h-554.666666a64 64 0 0 0-63.701334 57.856L170.666667 405.333333v341.333334a64 64 0 0 0 57.856 63.701333L234.666667 810.666667h554.666666a64 64 0 0 0 63.701334-57.856L853.333333 746.666667v-341.333334A64 64 0 0 0 789.333333 341.333333zM341.333333 469.333333a42.666667 42.666667 0 0 1 42.666667 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666666-42.666667z m341.333334 0a42.666667 42.666667 0 0 1 42.666666 42.666667v85.333333a42.666667 42.666667 0 0 1-85.333333 0v-85.333333a42.666667 42.666667 0 0 1 42.666667-42.666667z" p-id="4150"></path></svg>
+                </a>
+                
+            
+                
+            
+                
+            
+        </div>
+    </div>
+</section>
+        
+    </aside>
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
