@@ -390,6 +390,8 @@ if (!doNotTrack) {
 
     
     
+        <div id="APlayer"></div>
+    
 
     <div class="article-details">
     
@@ -433,7 +435,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：24801</div>
+            <div class="char">文章字数：24840</div>
             <div class="time">预计阅读时长： <time>50</time> 分钟</div>
         </div>
     </footer>
@@ -453,13 +455,18 @@ if (!doNotTrack) {
 </div>
 <div class="snote info ">
 	<div class="snote-content">
-		<p>由于本博客评论系统暂未完善，如使用不便可以通过QQ联系我。（在“<a class="link" href="http://localhost:1313/about/"  target="_blank" rel="noopener"
+		<p>由于本博客评论系统暂未完善，如需要评论但使用不便可以通过QQ联系我。（在“<a class="link" href="https://blog.supersassw.com/about"  target="_blank" rel="noopener"
     >关于</a>”页面中有写）</p>
 	</div>
 </div>
 <div class="snote warning ">
 	<div class="snote-content">
 		<p>由于本人能力有限，本文所述内容可能具有偏差和片面性，同时含有一定作者主观想法，请食用时务必加上自我判断与思考。</p>
+	</div>
+</div>
+<div class="snote idea green">
+	<div class="snote-content">
+		<p>日后个人可能还会在询问其他同学相关经验和意见后，对这篇指南进行完善。</p>
 	</div>
 </div>
 <div class="snote idea green">
@@ -3002,6 +3009,60 @@ C++中的万能头文件<code>bits/stdc++.h</code>，在C里面不存在！</p>
 </article>
 
     
+    
+        
+
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script>
+	var aPlayer = new APlayer({
+		container: document.getElementById('APlayer'),	
+		theme: '#E34E4F',	
+		
+				
+				
+		
+				
+				
+		
+				
+				
+		
+				
+				
+		
+		volume: 0.1,	
+		listFolded: true,
+		audio: [
+			{
+				name: 'hot milk',
+				artist: 'Ujico*',
+				url: 'http:\/\/music.163.com\/song\/media\/outer\/url?id=438803052.mp3',
+				cover: 'http:\/\/p2.music.126.net\/zzXSh5GKO-GprpRYvwesGA==\/18545462626642001.jpg'
+			},
+		
+			{
+				name: '冥き水底 ～テンペスト：深部～',
+				artist: '祖堅正慶',
+				url: 'http:\/\/music.163.com\/song\/media\/outer\/url?id=1391211268.mp3',
+				cover: 'http:\/\/p1.music.126.net\/5ib-No5oUXX9lXqh6UagmA==\/109951164367790434.jpg'
+			},
+		
+			{
+				name: '流れ星 (instrumental)',
+				artist: 'ma.co',
+				url: 'http:\/\/music.163.com\/song\/media\/outer\/url?id=1454189296.mp3',
+				cover: 'http:\/\/p2.music.126.net\/qv4yR7MKsZSLGqQ8GZ0DUQ==\/109951165050626776.jpg'
+			},
+		
+			{
+				name: 'ラグトレイン',
+				artist: '稲葉曇 \/ 歌愛ユキ',
+				url: 'http:\/\/music.163.com\/song\/media\/outer\/url?id=1492827692.mp3',
+				cover: 'http:\/\/p1.music.126.net\/uL2YOTvlnkBzhdV6Tj4ejw==\/109951165438848735.jpg'
+			},
+		]
+	});
+</script>
     
 
     <aside class="related-contents--wrapper">
