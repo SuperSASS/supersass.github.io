@@ -2502,7 +2502,12 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
         <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
         
         <guid>https://blog.supersassw.com/p/acm-note-game_theory/</guid>
-        <description>&lt;h1 id=&#34;博弈论&#34;&gt;博弈论&lt;/h1&gt;
+        <description>&lt;img src="https://blog.supersassw.com/p/acm-note-game_theory/71973806_p1.png" alt="Featured image of post ACM学习笔记——博弈论……" /&gt;&lt;div class=&#34;snote error &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;该笔记还未完成整理，待日后继续整理……&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;博弈论&#34;&gt;博弈论&lt;/h1&gt;
 &lt;h2 id=&#34;博弈论简介&#34;&gt;博弈论简介&lt;/h2&gt;
 &lt;p&gt;在OI中，博弈论一般就是&lt;strong&gt;两位玩家&lt;/strong&gt;玩游戏，游戏&lt;strong&gt;有一定规则&lt;/strong&gt;，双方均在这规则之下&lt;strong&gt;进行回合制游戏&lt;/strong&gt;，并且&lt;strong&gt;最终一定会分出胜负&lt;/strong&gt;。&lt;br&gt;
 同时这两位玩家都是超高校级的游戏玩家x，&lt;strong&gt;一定会按照当前最优策略进行游戏&lt;/strong&gt;（就是想方设法让自己赢）。&lt;/p&gt;
@@ -12172,11 +12177,11 @@ $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\fra
         </item>
         <item>
         <title>ACM学习笔记 - 总模板……</title>
-        <link>https://blog.supersassw.com/p/acm-prac-2021_04_13/</link>
+        <link>https://blog.supersassw.com/p/acm-template/</link>
         <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
         
-        <guid>https://blog.supersassw.com/p/acm-prac-2021_04_13/</guid>
-        <description>&lt;img src="https://blog.supersassw.com/p/acm-prac-2021_04_13/56669571_p0.png" alt="Featured image of post ACM学习笔记 - 总模板……" /&gt;&lt;div class=&#34;snote warning &#34;&gt;
+        <guid>https://blog.supersassw.com/p/acm-template/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/acm-template/56669571_p0.png" alt="Featured image of post ACM学习笔记 - 总模板……" /&gt;&lt;div class=&#34;snote warning &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误……&lt;/p&gt;
 	&lt;/div&gt;
