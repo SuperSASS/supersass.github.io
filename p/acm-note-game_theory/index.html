@@ -1,0 +1,948 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='数论——博弈论……'><title>ACM学习笔记——博弈论……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/acm-note-game_theory/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='ACM学习笔记——博弈论……'>
+<meta property='og:description' content='数论——博弈论……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/acm-note-game_theory/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='ACM' /><meta property='article:tag' content='数论' /><meta property='article:tag' content='博弈论' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2021-07-17T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-07-17T00:00:00&#43;00:00'/>
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="ACM学习笔记——博弈论……">
+<meta name="twitter:description" content="数论——博弈论……">
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#博弈论">博弈论</a>
+      <ul>
+        <li><a href="#博弈论简介">博弈论简介</a></li>
+        <li><a href="#公平组合游戏">公平组合游戏</a>
+          <ul>
+            <li><a href="#必胜必败状态">必胜必败状态</a>
+              <ul>
+                <li><a href="#定义">定义</a></li>
+                <li><a href="#性质">性质</a></li>
+              </ul>
+            </li>
+            <li><a href="#性质-1">性质</a></li>
+          </ul>
+        </li>
+        <li><a href="#博弈状态图">博弈状态图</a>
+          <ul>
+            <li><a href="#引例挪动皇后游戏">引例——挪动皇后游戏</a></li>
+            <li><a href="#作用">作用</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#博弈问题种类">博弈问题种类</a></li>
+    <li><a href="#参考资料">参考资料</a></li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="main-article">
+    <header class="article-header">
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/acm_note/" >
+                ACM - 学习笔记
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/acm-note-game_theory/">ACM学习笔记——博弈论……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            数论——博弈论……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/07/17</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：3674</div>
+            <div class="time">预计阅读时长： <time>8</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="博弈论">博弈论</h1>
+<h2 id="博弈论简介">博弈论简介</h2>
+<p>在OI中，博弈论一般就是<strong>两位玩家</strong>玩游戏，游戏<strong>有一定规则</strong>，双方均在这规则之下<strong>进行回合制游戏</strong>，并且<strong>最终一定会分出胜负</strong>。<br>
+同时这两位玩家都是超高校级的游戏玩家x，<strong>一定会按照当前最优策略进行游戏</strong>（就是想方设法让自己赢）。</p>
+<p>而你任务则为试着分析出这两位最终的输赢情况。</p>
+<h2 id="公平组合游戏">公平组合游戏</h2>
+<p>OI中所玩的博弈论游戏，几乎都是“<strong>公平组合游戏</strong>”(Impartial Combinatorial Games, ICG)。<br>
+也就是说：几乎所有博弈论问题都可以建模为基本的ICG来分析处理。</p>
+<p>满足以下条件的游戏是ICG：</p>
+<ul>
+<li>竞争性：只有两名玩家，且两名玩家交替行动。</li>
+<li>公平性：在游戏进程的任意游戏状态，可以执行的行动<strong>只取决于当前局面</strong>，而与轮到哪名玩家、以前的任何操作等其他因素无关。<br>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p>象棋等常见棋类不属于ICG则正是因为这个原因。<br>
+因为每个人只能移动自己势力的棋子，而不是所有棋子。<br>
+使得自己不能移动对方的棋子而执行某一行动，从而使能执行的行动取决于轮到哪名玩家。</p>
+	</div>
+</div>
+也就是说，两人都有能力让当前游戏状态行动到可到达的所有状态。</li>
+<li>不可回溯性：游戏中的<strong>同一个游戏状态不可能再次抵达</strong>。<br>
+也就是说，ICG为线性游戏，不可能回到之前经历过的某一游戏状态。</li>
+<li>有穷性：游戏以玩家无法行动为结束，并一定会在<strong>有限步后以非平局结束</strong>。</li>
+</ul>
+<h3 id="必胜必败状态">必胜必败状态</h3>
+<p>首先对于公平组合游戏，我们需要了解两个奇妙的状态，他们是：</p>
+<div class="sc-columns"><div class="sc-columns--inner"><p><strong>必胜状态</strong></p>
+<p><figure style="flex-grow: 66; flex-basis: 159px">
+		<a href="/p/acm-note-game_theory/pic/N-position.jpeg" data-size="511x768"><img src="/p/acm-note-game_theory/pic/N-position.jpeg"
+				srcset="/p/acm-note-game_theory/pic/N-position_huf667539beab37cd43a071bfbf4dde2c5_87153_480x0_resize_q75_box.jpeg 480w, /p/acm-note-game_theory/pic/N-position_huf667539beab37cd43a071bfbf4dde2c5_87153_1024x0_resize_q75_box.jpeg 1024w"
+				width="511"
+				height="768"
+				loading="lazy"
+				alt="必胜状态">
+		</a><figcaption>必胜状态</figcaption></figure></p>
+</div><div class="sc-columns--inner"><p><strong>必败状态</strong></p>
+<p><figure style="flex-grow: 66; flex-basis: 159px">
+		<a href="/p/acm-note-game_theory/pic/P-position.jpeg" data-size="511x768"><img src="/p/acm-note-game_theory/pic/P-position.jpeg"
+				srcset="/p/acm-note-game_theory/pic/P-position_hu24aac6c94176f86d51b565d99f5fe285_131308_480x0_resize_q75_box.jpeg 480w, /p/acm-note-game_theory/pic/P-position_hu24aac6c94176f86d51b565d99f5fe285_131308_1024x0_resize_q75_box.jpeg 1024w"
+				width="511"
+				height="768"
+				loading="lazy"
+				alt="必胜状态">
+		</a><figcaption>必胜状态</figcaption></figure></p>
+</div></div>
+<h4 id="定义">定义</h4>
+<ul>
+<li>必胜状态：处于该状态的玩家，至少能有一种行动，让接下来的状态变为必败状态留给另一位玩家，使其面临必败。<br>
+<em>一般称必胜状态为N-Position，简称为N状态。部分也称为非奇异状态、非平衡状态。</em></li>
+<li>必败状态：无论怎么行动，只能使接下来的状态变为必胜状态留给另一位玩家，使其必胜。（或者说不可能走到必败状态，使另一位玩家陷入必败从而扭转局势）<br>
+<em>一般称必败状态为P-Position，简称为P状态，部分也称为奇异状态、平衡状态。</em></li>
+</ul>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p>以下为了区分必胜必败状态与场上游戏状态（局面），特将“游戏状态”统称为“局面”。</p>
+	</div>
+</div>
+<h4 id="性质">性质</h4>
+<p>由定义，我们可以找到必胜必败状态的基本性质，或者说判别必胜必败状态的基本方式：</p>
+<ul>
+<li>必胜状态：<strong>可以走到</strong>某一个<strong>必败状态</strong>。</li>
+<li>必败状态：<strong>只能走到必胜状态</strong>，或说走不到任何一个必败状态。</li>
+</ul>
+<h3 id="性质-1">性质</h3>
+<p>对于ICG，存在性质：<br>
+<div class="snote info green">
+	<div class="snote-content">
+		<p>性质1：游戏中每一种局面，对处于该局面的玩家来说，<strong>只有可能是必胜或必败状态</strong>，并且无法逆转局势（也就是不存在不确定状态）。</p>
+	</div>
+</div></p>
+<p>那么由此可以得到推论：<br>
+<div class="snote info green">
+	<div class="snote-content">
+		<p>推论1-1：游戏的开始局面也处于必胜状态或必败状态，因此<strong>对于先手玩家</strong>来说，其<strong>胜负是一开始就被决定好了</strong>的。</p>
+	</div>
+</div><br>
+<div class="snote info green">
+	<div class="snote-content">
+		<p>推论1-2：整个游戏的流程是按照：“A处于必胜状态→B处于必败状态→A处于必胜状态→……→A最终获胜”（或者反之）来进行的。</p>
+	</div>
+</div></p>
+
+
+<div class="snote warning ">
+	<div class="snote-content">
+		<p><p>关于终止局面的误区：</p>
+<ul>
+<li>终止局面：无法行动/没有子状态的游戏状态。</li>
+</ul>
+<p>不一定最终局面是必败状态，只是因为一般都规定：终止局面为必败状态——当某一方无法行动宣布败北。<br>
+但也完全可以规定终止局面为必胜状态——当某一方无法行动宣布胜利。</p>
+<p>要根据题目游戏规则，确定终止局面是必败状态还是必胜状态。</p>
+</p>
+	</div>
+</div>
+
+
+<details class="sc-details" >
+	<summary>如果只听了结论感觉有点疑惑，可以点开这个看看x……</summary>
+	<div class="sc-details--inner"><p>其实个人对于这里纠结理解了很久，<br>
+主要疑惑就在于：</p>
+<ul>
+<li>为什么一定只存在必胜或必败状态，而不存在一个中间或不确定状态，此时玩家的行动不会决定结果？</li>
+<li>这给目为什么一开始就决定好了玩家的胜负，不能靠自己的操作改变命运？</li>
+<li>为什么会有必败状态，处于此状态的玩家为什么不能一转攻势？</li>
+</ul>
+<p>等等等等之类的问题……</p>
+<p>其实这种疑问主要来自于我们日常玩的游戏都不是ICG，<br>
+并且我们也不是智械文明，很难保证每次都能找到并选择最优策略。</p>
+<hr>
+<p>首先，对于最难绕过来的第一个问题，其实可以这样想：</p>
+<div class="snote idea cyan ">
+	<div class="snote-content">
+		<p><p>首先如果某状态<strong>不是</strong>“不确定状态”，又因为游戏最终只有某方胜或败的结果，<br>
+那么该状态肯定就是必胜或必败状态，<br>
+也就是只可能存在：必胜、必败、不确定三种状态。<br>
+这点是可以肯定的吧！……</p>
+<p>那么排列组合，对于某一状态，其子状态（之后可以到达的状态）只有7种情况：</p>
+<ol>
+<li>全是不确定状态</li>
+<li>全是必胜状态</li>
+<li>全是必败状态</li>
+<li>既有不确定状态、也有必胜状态</li>
+<li>既有不确定状态、也有必败状态</li>
+<li>既有必胜状态、也有必败状态</li>
+<li>不确定状态、必胜状态、必败状态都有</li>
+</ol>
+<p>根据两玩家都总会选择最优策略的思想，以及必胜必败状态的定义可以知道：</p>
+<ul>
+<li>对于<strong>情况②</strong>，则该状态一定为<strong>必败状态</strong>（玩家在这里怎么行动，都会让对方必胜）</li>
+<li>对于<strong>情况③、⑤、⑥、⑦</strong>，则该状态一定是<strong>必胜状态</strong>（玩家在这里只要走向必败状态，就能让对方陷入必败）</li>
+</ul>
+<hr>
+<p>所以<strong>只有子状态情况为①和④的状态，才能将该状态称为“不确定状态”</strong>。<br>
+下面来分析这两种“不确定状态”中玩家的选择：</p>
+<p>由于玩家都要确保自己尽量能赢，所以自己的回合，除非万不得已只能选择必胜状态行动，将胜利拱手让给对方（即自己陷入了必败状态），否则自己肯定打死不走必胜状态。</p>
+<p>因此对于情况④，处于这种“不确定状态”，当前玩家肯定会选择走“不确定状态”。
+对于情况①，没什么说的，只能走“不确定状态”。</p>
+<p>这两情况发现什么没？<br>
+就：<strong>若处于“不确定状态”，玩家只会选择继续走“不确定状态”！</strong></p>
+<p>那么场面就会变得奇怪了起来：<br>
+明明ICG的定义就说好最终会分出胜负，但却一直处于“不确定状态”。<br>
+因此直接<strong>異議あり</strong>！断言不可能存在“不确定状态”。</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>可能有人最后这里还有点小疑惑：<br>
+如果就让双方就这样一直在“不确定状态”下反复横跳，直到最终有人只能走那个“必胜状态”输掉游戏怎么样？</p>
+<p>请牢记：如果只能走必胜状态，那么该状态就是必败状态了。<br>
+【感觉有点哲学是吧23333……</p>
+</p>
+	</div>
+</div>
+</p>
+	</div>
+</div>
+<p>那么如果第一个问题明白了，其他问题也就好解决了。</p>
+<p>因为不存在不确定状态，命运就像链条一样被决定好了，不然怎么叫必胜和必败呢？</p>
+</div>
+</details>
+<hr>
+<div class="snote warning ">
+	<div class="snote-content">
+		<p>注意：对于必胜状态和必败状态，我们统一是<strong>针对于先手</strong>来分析的。</p>
+	</div>
+</div>
+<p>由此自然而然我们可以想到一种解决博弈问题的思路：</p>
+
+
+<div class="snote idea cyan ">
+	<div class="snote-content">
+		<p>由题目要求得到<strong>终止局面是必胜状态还是必败状态</strong>，<br>
+再<strong>由终止局面反推</strong>，得到某一局面是必胜状态还是必败状态。</p>
+	</div>
+</div>
+<p>这种思路也就是搜索解法。</p>
+<p>但需要注意的是有可能不能直接分析出终止局面是（先手）必败状态还是必胜状态，<br>
+需要先倒推到终止局面的前驱局面，分析这一局面是什么状态，才能得到终止局面是什么状态。<br>
+或者不用分析终止局面是什么状态，直接由终止局面的前驱局面来倒推分析。<br>
+<em>如下例中的“皇后问题”。</em></p>
+<h2 id="博弈状态图">博弈状态图</h2>
+<p>我们将每一个<strong>局面</strong>视为一个节点**，再从每个局面**向它的后继局面连边**，这样就能得到一个博弈状态图。<br>
+结合上面提到的倒推解题思路，我们可以**从终止局面节点搜索，得到各种局面的状态**。</p>
+<p>可将处于必败状态的节点成为P节点，必胜状态的节点成为N节点。</p>
+<h3 id="引例挪动皇后游戏">引例——挪动皇后游戏</h3>
+<p>游戏规则：<br>
+将一个皇后放在棋盘（任意$n*n$大小）上某一格子内，皇后<strong>只能向左、下、正左下</strong>（即同时向左和向下走相同格数）走任意格且<strong>至少移动1格</strong>，最先到达最左下角的玩家胜利。</p>
+<hr>
+<p>我们就这个引例来分析其博弈状态图。</p>
+<p>先可将局面抽象为皇后在棋盘上的坐标，如$(2,3)$、$(5,5)$。<br>
+则对于任意局面$(n,m)$，其后继局面为：</p>
+<ul>
+<li>$(n-k,m) (k∈N^+)$</li>
+<li>$(n,m-k) (k∈N^+)$</li>
+<li>$(n-k,m-k) (k∈N^+)$</li>
+</ul>
+<p>我们可以用棋盘本身来代表状态图。<br>
+而对于处于坐标$(n,m)$格子上的皇后，其可移动局面即为横向向左，竖向向下、斜向向左下直线的所有格子。<br>
+<figure style="flex-grow: 100; flex-basis: 240px">
+		<a href="/p/acm-note-game_theory/pic/move_position.png" data-size="600x600"><img src="/p/acm-note-game_theory/pic/move_position.png"
+				srcset="/p/acm-note-game_theory/pic/move_position_hu04a851dd37bc45bece89b4ccf06575e3_12680_480x0_resize_box_2.png 480w, /p/acm-note-game_theory/pic/move_position_hu04a851dd37bc45bece89b4ccf06575e3_12680_1024x0_resize_box_2.png 1024w"
+				width="600"
+				height="600"
+				loading="lazy"
+				alt="当前皇后可移动局面（后继局面）">
+		</a><figcaption>当前皇后可移动局面（后继局面）</figcaption></figure></p>
+<hr>
+<p>那么对于这个问题来说，其终止局面为$(0,0)$。<br>
+而从$(0,0)$反推，其右方、上方、右上方的节点均对于（先手）必胜状态。</p>
+<p>则由$(0,0)$局面易得出处于N状态（必胜状态）的局面，如下图绿色区域表示：<br>
+<figure style="flex-grow: 100; flex-basis: 240px">
+		<a href="/p/acm-note-game_theory/pic/1_N-position.png" data-size="600x600"><img src="/p/acm-note-game_theory/pic/1_N-position.png"
+				srcset="/p/acm-note-game_theory/pic/1_N-position_hu13839d2dee79d43eb6b0e5f9e8890ccc_8073_480x0_resize_box_2.png 480w, /p/acm-note-game_theory/pic/1_N-position_hu13839d2dee79d43eb6b0e5f9e8890ccc_8073_1024x0_resize_box_2.png 1024w"
+				width="600"
+				height="600"
+				loading="lazy"
+				alt="第一次倒推 - N节点">
+		</a><figcaption>第一次倒推 - N节点</figcaption></figure></p>
+<p>接下来根据必胜必败状态的性质，可以发现有且仅有$(1,2)$、$(2,1)$这两点，无论怎么移动都只能到达必胜状态（如蓝箭头所示）。<br>
+因此这两点即为P节点。<br>
+<figure style="flex-grow: 100; flex-basis: 240px">
+		<a href="/p/acm-note-game_theory/pic/2_P-position.png" data-size="600x600"><img src="/p/acm-note-game_theory/pic/2_P-position.png"
+				srcset="/p/acm-note-game_theory/pic/2_P-position_hu609fc622af040368eae76c4d278ad133_8888_480x0_resize_box_2.png 480w, /p/acm-note-game_theory/pic/2_P-position_hu609fc622af040368eae76c4d278ad133_8888_1024x0_resize_box_2.png 1024w"
+				width="600"
+				height="600"
+				loading="lazy"
+				alt="第二次倒推 - P节点">
+		</a><figcaption>第二次倒推 - P节点</figcaption></figure></p>
+<p>接下来我们又可以从找到的P节点倒推，得到新的N节点（其右、上、右上的节点，如蓝箭头所示）。<br>
+<em>（为了区别将第一次倒推出的N节点颜色加深了。）</em><br>
+<figure style="flex-grow: 100; flex-basis: 240px">
+		<a href="/p/acm-note-game_theory/pic/3_N-position.png" data-size="600x600"><img src="/p/acm-note-game_theory/pic/3_N-position.png"
+				srcset="/p/acm-note-game_theory/pic/3_N-position_hu16171fd9c12ad34b0b6119c6038d2ca2_10267_480x0_resize_box_2.png 480w, /p/acm-note-game_theory/pic/3_N-position_hu16171fd9c12ad34b0b6119c6038d2ca2_10267_1024x0_resize_box_2.png 1024w"
+				width="600"
+				height="600"
+				loading="lazy"
+				alt="第三次倒推 - N节点">
+		</a><figcaption>第三次倒推 - N节点</figcaption></figure></p>
+<hr>
+<p>最终这么分析下去，会得到如下博弈状态图。</p>
+<p><figure style="flex-grow: 340; flex-basis: 816px">
+		<a href="/p/acm-note-game_theory/pic/queengame_analysis_1.png" data-size="1170x344"><img src="/p/acm-note-game_theory/pic/queengame_analysis_1.png"
+				srcset="/p/acm-note-game_theory/pic/queengame_analysis_1_hu53574c0bbb7ab2208671027fd0b4315f_53120_480x0_resize_box_2.png 480w, /p/acm-note-game_theory/pic/queengame_analysis_1_hu53574c0bbb7ab2208671027fd0b4315f_53120_1024x0_resize_box_2.png 1024w"
+				width="1170"
+				height="344"
+				loading="lazy"
+				alt="挪动皇后游戏 - 推导过程">
+		</a><figcaption>挪动皇后游戏 - 推导过程</figcaption></figure></p>
+<p><figure style="flex-grow: 100; flex-basis: 240px">
+		<a href="/p/acm-note-game_theory/pic/queengame_analysis_2.png" data-size="940x940"><img src="/p/acm-note-game_theory/pic/queengame_analysis_2.png"
+				srcset="/p/acm-note-game_theory/pic/queengame_analysis_2_hua55ca54e2f42563c4d69356d992dbb38_189006_480x0_resize_box_2.png 480w, /p/acm-note-game_theory/pic/queengame_analysis_2_hua55ca54e2f42563c4d69356d992dbb38_189006_1024x0_resize_box_2.png 1024w"
+				width="940"
+				height="940"
+				loading="lazy"
+				alt="挪动皇后游戏 - 博弈状态图">
+		</a><figcaption>挪动皇后游戏 - 博弈状态图</figcaption></figure></p>
+<p>其中蓝色节点为必胜节点，白色部分为必败节点。</p>
+<div class="snote link green">
+	<div class="snote-content">
+		<p>图片来自于Matrix67的笔记<a class="link" href="http://www.matrix67.com/blog/archives/6784"  target="_blank" rel="noopener"
+    >“捡石子游戏、Wythoff数表和一切的Fibonacci数列”</a>。</p>
+	</div>
+</div>
+<p>可能有同学就会发现，在这里的P节点有点规律的样子，大致好像连成了一条直线。<br>
+其实这个发现是正确的，这个游戏也叫做“威佐夫博弈”（Wythoff Game），将在后面的部分具体讲解。</p>
+<h3 id="作用">作用</h3>
+<p>对于任何ICG，其都可以<strong>转化为一种“有向图游戏”</strong>。</p>
+
+
+<div class="snote info ">
+	<div class="snote-content">
+		<p><p>有向图游戏：</p>
+<p>给定一个<strong>有向无环图</strong>，图中有一个<strong>唯一的起点</strong>（初始局面），在起点上有一枚棋子。<br>
+两名玩家需要<strong>交替</strong>地将该棋子<strong>沿着有向边进行移动</strong>，每次<strong>必须移动一步</strong>。<br>
+<strong>无法移动者</strong>（来到终止局面）将被判负（<em>也有可能判赢</em>）。</p>
+</p>
+	</div>
+</div>
+<p>具体转换方法为：</p>
+<ul>
+<li>将每一种局面看成有向无环图的节点。</li>
+<li>对于每一种局面，和能合法到达的下一种局面，将这两节点建立有向边。</li>
+</ul>
+<p>这样，我们就能将各种博弈问题转化为统一的一种模型，方便我们思考与解决。</p>
+<h1 id="博弈问题种类">博弈问题种类</h1>
+<h1 id="参考资料">参考资料</h1>
+<ul>
+<li><a class="link" href="https://blog.csdn.net/weixin_45697774/article/details/113874771"  target="_blank" rel="noopener"
+    >《博弈论全家桶》（ACM / OI）（超全的博弈论 / 组合游戏大合集）</a></li>
+<li><a class="link" href="http://www.matrix67.com/blog/archives/6784"  target="_blank" rel="noopener"
+    >捡石子游戏、 Wythoff 数表和一切的 Fibonacci 数列</a></li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/acm/">ACM</a>
+        
+            <a href="/tags/%E6%95%B0%E8%AE%BA/">数论</a>
+        
+            <a href="/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/">博弈论</a>
+        
+            <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    </footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-gcd_exgcd/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-gcd_exgcd/73415224_p0.a7190ef993ac04cbeec0529fdbb8d39f_hu09ddeb20de934db6dbd54dd691a098a4_1500993_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-gcd_exgcd" 
+                        data-hash="md5-pxkO&#43;ZOsBMvuwFKf27jTnw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——GCD、裴蜀定理、EXGCD……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-matrix/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-matrix/64382354_p0.bf122a6b61c7b412c4ce5a9da4a4ea34_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-matrix" 
+                        data-hash="md5-vxIqa2HHtBLEzlqdpKTqNA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——矩阵……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-linear_equation/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-linear_equation/83179646_p0.00e191950c2a6f9cfd53107ba1c927b6_hua9bd3bd10387d89cf6f6be61b75d18f9_1401560_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-linear_equation" 
+                        data-hash="md5-AOGRlQwqb5z9UxB7ockntg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——线性同余方程……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-discrete/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-discrete" 
+                        data-hash="md5-4gqXHE8LX0aiO2MFhBl3tg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——离散化……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/acm-note-mo_algo/">
+        
+        
+            <div class="article-image">
+                <img src="/p/acm-note-mo_algo/85829025_p0.f17837c7ce3bece16e32cf1f826bcbfd_hud48d475653a68121c5c5dd4c9c15f623_2139511_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="acm-note-mo_algo" 
+                        data-hash="md5-8Xg3x8477OFuMs8fgmvL/Q==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——莫队算法……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

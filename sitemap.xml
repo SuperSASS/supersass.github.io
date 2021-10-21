@@ -3,8 +3,73 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.supersassw.com/categories/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/post/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/tags/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/tags/%E5%A4%A7%E5%AD%A6%E6%8C%87%E5%8D%97/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/categories/university/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/p/univ-exchange_major/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/tags/%E8%BD%AC%E4%B8%93%E4%B8%9A/</loc>
+    <lastmod>2021-10-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.supersassw.com/tags/acm/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/categories/acm_note/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/p/acm-note-game_theory/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/tags/%E5%8D%9A%E5%BC%88%E8%AE%BA/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/tags/%E6%95%B0%E8%AE%BA/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/tags/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-07-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -14,26 +79,6 @@
   
   <url>
     <loc>https://blog.supersassw.com/p/acm-prac-2021_04_13/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.supersassw.com/categories/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.supersassw.com/post/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.supersassw.com/</loc>
-    <lastmod>2021-04-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.supersassw.com/tags/</loc>
     <lastmod>2021-04-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -54,11 +99,6 @@
   
   <url>
     <loc>https://blog.supersassw.com/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/</loc>
-    <lastmod>2021-04-11T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.supersassw.com/categories/university/</loc>
     <lastmod>2021-04-11T00:00:00+00:00</lastmod>
   </url>
   
@@ -123,11 +163,6 @@
   </url>
   
   <url>
-    <loc>https://blog.supersassw.com/categories/acm_note/</loc>
-    <lastmod>2021-03-05T00:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.supersassw.com/p/acm-note-discrete/</loc>
     <lastmod>2021-03-05T00:04:00+00:00</lastmod>
   </url>
@@ -139,11 +174,6 @@
   
   <url>
     <loc>https://blog.supersassw.com/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/</loc>
-    <lastmod>2021-03-05T00:04:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.supersassw.com/tags/%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-03-05T00:04:00+00:00</lastmod>
   </url>
   
@@ -558,11 +588,6 @@
   </url>
   
   <url>
-    <loc>https://blog.supersassw.com/tags/%E6%95%B0%E8%AE%BA/</loc>
-    <lastmod>2021-02-18T18:32:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.supersassw.com/tags/%E7%9F%A9%E9%98%B5/</loc>
     <lastmod>2021-02-18T18:32:00+00:00</lastmod>
   </url>
@@ -655,6 +680,10 @@
   <url>
     <loc>https://blog.supersassw.com/p/acm-writeup-2020_10_24/</loc>
     <lastmod>2020-12-15T08:42:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.supersassw.com/p/</loc>
   </url>
   
   <url>

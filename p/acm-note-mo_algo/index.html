@@ -365,7 +365,7 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 自然而然就能想到这种解题方法：</p>
 <div class="snote idea cyan">
 	<div class="snote-content">
-		<p> 根据上一个询问，<strong>一步步扩展</strong>到当前询问。 </p>
+		<p>根据上一个询问，<strong>一步步扩展</strong>到当前询问。</p>
 	</div>
 </div>
 <p>这就是莫队算法中最基本的解题思路，<br>
@@ -392,7 +392,7 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 <p>首先自然而然想到的排序算法就是：<br>
 <div class="snote idea cyan">
 	<div class="snote-content">
-		<p> 直接按照询问的<code>l</code>和<code>r</code>为主次关键字进行排序。 </p>
+		<p>直接按照询问的<code>l</code>和<code>r</code>为主次关键字进行排序。</p>
 	</div>
 </div></p>
 <p>结构体的<code>&lt;</code>定义为：</p>
@@ -507,7 +507,7 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 <div class="snote info ">
 	<div class="snote-content">
 		<p><code>sort</code>出错原因是因为<strong>其要满足严格弱序</strong>，<br>
-有关严格弱序的介绍可以看这里写的<a href="../acm-note-neighbor_sort/#%E5%85%88%E5%89%8D%E7%9F%A5%E8%AF%86%E4%B8%A5%E6%A0%BC%E5%BC%B1%E5%BA%8F">「ACM学习笔记：邻项比较排序……」</a>文章中有提及。</p>
+有关严格弱序的介绍可以看这里写的<a class="link" href="../acm-note-neighbor_sort/#%E5%85%88%E5%89%8D%E7%9F%A5%E8%AF%86%E4%B8%A5%E6%A0%BC%E5%BC%B1%E5%BA%8F" >「ACM学习笔记：邻项比较排序……」</a>文章中有提及。</p>
 	</div>
 </div>
 </p>
@@ -515,7 +515,8 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 </div>
 <div class="snote info ">
 	<div class="snote-content">
-		<p> 理解不了压行写法的话，也可以看OI-Wiki上的<a href="https://oi-wiki.org/misc/mo-algo/#_7">不压行写法</a>。 </p>
+		<p>理解不了压行写法的话，也可以看OI-Wiki上的<a class="link" href="https://oi-wiki.org/misc/mo-algo/#_7"  target="_blank" rel="noopener"
+    >不压行写法</a>。</p>
 	</div>
 </div>
 <h3 id="3-曼哈顿最小生成树排序">3*. 曼哈顿最小生成树排序</h3>
@@ -539,7 +540,8 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 <p>当$n,m$较大时：</p>
 <div class="snote link green">
 	<div class="snote-content">
-		<p> <a href="https://paste.ubuntu.com/p/qp8bj58dmV/">输入数据（$n=50000,m=50000$）链接。</a> </p>
+		<p><a class="link" href="https://paste.ubuntu.com/p/qp8bj58dmV/"  target="_blank" rel="noopener"
+    >输入数据（$n=50000,m=50000$）链接。</a></p>
 	</div>
 </div>
 <p><figure style="flex-grow: 262; flex-basis: 630px">
@@ -549,11 +551,7 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 				height="72"
 				loading="lazy"
 				alt="三种排序操作次数对比 - n,m较大">
-		</a>
-		
-		<figcaption>三种排序操作次数对比 - n,m较大</figcaption>
-		
-	</figure></p>
+		</a><figcaption>三种排序操作次数对比 - n,m较大</figcaption></figure></p>
 <ul>
 <li>&ldquo;Raw&rdquo;：未排序直接操作。</li>
 <li>&ldquo;Direct&rdquo;：直接排序。</li>
@@ -566,7 +564,8 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 <p>当$n,m$较小时，很有可能反而大于直接排序。</p>
 <div class="snote link green">
 	<div class="snote-content">
-		<p> <a href="https://paste.ubuntu.com/p/t6bggQXpz8/">输入数据（$n=10,m=15$）链接。</a> </p>
+		<p><a class="link" href="https://paste.ubuntu.com/p/t6bggQXpz8/"  target="_blank" rel="noopener"
+    >输入数据（$n=10,m=15$）链接。</a></p>
 	</div>
 </div>
 <p><figure style="flex-grow: 206; flex-basis: 496px">
@@ -576,11 +575,7 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 				height="73"
 				loading="lazy"
 				alt="三种排序操作次数对比 - n,m较小">
-		</a>
-		
-		<figcaption>三种排序操作次数对比 - n,m较小</figcaption>
-		
-	</figure></p>
+		</a><figcaption>三种排序操作次数对比 - n,m较小</figcaption></figure></p>
 <p>可以发现反而直接排序操作次数更少。</p>
 <p>但由于当$n,m$较大时，这种情况几乎不存在，<br>
 所以可以不用考虑。</p>
@@ -615,7 +610,8 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 <li><code>l--, r++, r--, l++</code></li>
 </ul>
 <p>【<code>l--</code>和<code>--l</code>一样，只要<code>l</code>的加减与<code>r</code>的加减顺序对了就行。</p>
-<p><em>有关证明，可见OI-Wiki上的<a href="https://oi-wiki.org/misc/mo-algo/#_6">「关于四个循环位置的讨论」</a>。</em></p>
+<p><em>有关证明，可见OI-Wiki上的<a class="link" href="https://oi-wiki.org/misc/mo-algo/#_6"  target="_blank" rel="noopener"
+    >「关于四个循环位置的讨论」</a>。</em></p>
 </p>
 	</div>
 </div>
@@ -771,6 +767,18 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 </article>
                 
                     
+<article class="">
+    <a href="/p/acm-note-game_theory/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">ACM学习笔记——博弈论……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
 <article class="has-image">
     <a href="/p/acm-note-offline/">
         
@@ -832,28 +840,6 @@ $[l-1,r]$、$[l+1,r]$、$[l,r-1]$、$[l,r+1]$这四个区间</p>
 
         <div class="article-details">
             <h2 class="article-title">ACM学习笔记——线段树……</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/acm-note-neighbor_sort/">
-        
-        
-            <div class="article-image">
-                <img src="/p/acm-note-neighbor_sort/71111285_p0.af7df8fc45491ad0333c518aac5d00c1_hud2648e021785c2a9f9434e425c67999f_2056049_250x150_fill_box_smart1_2.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy" 
-                        data-key="acm-note-neighbor_sort" 
-                        data-hash="md5-r334/EVJGtAzPFGKrF0AwQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">ACM学习笔记——邻项比较排序……</h2>
         </div>
     </a>
 </article>

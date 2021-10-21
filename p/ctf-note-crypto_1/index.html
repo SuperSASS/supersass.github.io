@@ -399,7 +399,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：8533</div>
+            <div class="char">文章字数：8546</div>
             <div class="time">预计阅读时长： <time>18</time> 分钟</div>
         </div>
     </footer>
@@ -409,16 +409,19 @@ if (!doNotTrack) {
     <section class="article-content">
     <div class="snote info ">
 	<div class="snote-content">
-		<p> 以下为涅普计划的课程笔记，建议搭配课程视频理解。 </p>
+		<p>以下为涅普计划的课程笔记，建议搭配课程视频理解。</p>
 	</div>
 </div>
 <h1 id="0x00-课程视频">0x00 课程视频</h1>
+
+
 <details class="sc-details" >
 	<summary>课程视频</summary>
 	<div class="sc-details--inner"><div class="bilibili-player"style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 	<iframe loading="lazy" src="https://player.bilibili.com/player.html?bvid=BV1VA411u7Tg&high_quality=1&page=5" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Bilibili Video"></iframe>
 </div>
-<p><a href="https://www.bilibili.com/video/BV1VA411u7Tg?p=5">视频Bilibili链接</a></div>
+<p><a class="link" href="https://www.bilibili.com/video/BV1VA411u7Tg?p=5"  target="_blank" rel="noopener"
+    >视频Bilibili链接</a></div>
 </details>
 <h1 id="0x01-什么是密码学">0x01 什么是密码学</h1>
 <p>【基本概念与作用应该都知道一点吧，这里不做基础介绍了_(:з」∠)_……</p>
@@ -440,11 +443,7 @@ if (!doNotTrack) {
 				height="597"
 				loading="lazy"
 				alt="什么是密码学 - 名称约定">
-		</a>
-		
-		<figcaption>什么是密码学 - 名称约定</figcaption>
-		
-	</figure></p>
+		</a><figcaption>什么是密码学 - 名称约定</figcaption></figure></p>
 <hr>
 <p>可以用数学中的函数形式来表达加密解密的过程。<br>
 <figure style="flex-grow: 269; flex-basis: 647px">
@@ -454,11 +453,7 @@ if (!doNotTrack) {
 				height="393"
 				loading="lazy"
 				alt="什么是密码学 - 数学表示">
-		</a>
-		
-		<figcaption>什么是密码学 - 数学表示</figcaption>
-		
-	</figure></p>
+		</a><figcaption>什么是密码学 - 数学表示</figcaption></figure></p>
 <ul>
 <li>$k$代表密钥，$m$代表明文，$c$代表密文。</li>
 <li>$E$代表加密函数，$D$代表解密函数。</li>
@@ -478,11 +473,7 @@ if (!doNotTrack) {
 				height="352"
 				loading="lazy"
 				alt="凯撒加密 - 密码表">
-		</a>
-		
-		<figcaption>凯撒加密 - 密码表</figcaption>
-		
-	</figure></p>
+		</a><figcaption>凯撒加密 - 密码表</figcaption></figure></p>
 <p>外圈对应明文，内圈对应密文。<br>
 加密时：将明文字母一一替换成内圈字母，<br>
 解密时：将密文字母一一替换成外圈字母。</p>
@@ -520,11 +511,7 @@ if (!doNotTrack) {
 				height="28"
 				loading="lazy"
 				alt="凯撒加密 - 加密示例">
-		</a>
-		
-		<figcaption>凯撒加密 - 加密示例</figcaption>
-		
-	</figure></p>
+		</a><figcaption>凯撒加密 - 加密示例</figcaption></figure></p>
 <h2 id="爆破脚本">爆破脚本</h2>
 <p>由于密钥情况很少，可以直接爆破枚举出来，<br>
 观察找出有意义的字符串，则为明文。</p>
@@ -554,11 +541,7 @@ if (!doNotTrack) {
 				height="446"
 				loading="lazy"
 				alt="凯撒加密 - 解密示例">
-		</a>
-		
-		<figcaption>凯撒加密 - 解密示例</figcaption>
-		
-	</figure></p>
+		</a><figcaption>凯撒加密 - 解密示例</figcaption></figure></p>
 <p>可以发现<code>Key = 3</code>时，<br>
 出现了一串有意义的字符串<code>GAME.GRANBLUEFANTASY.JP</code>。</p>
 
@@ -604,11 +587,7 @@ if (!doNotTrack) {
 				height="59"
 				loading="lazy"
 				alt="关键词加密 - 生成密码表">
-		</a>
-		
-		<figcaption>关键词加密 - 生成密码表</figcaption>
-		
-	</figure></p>
+		</a><figcaption>关键词加密 - 生成密码表</figcaption></figure></p>
 <p>上面一行为标准的字母表。</p>
 <p>下面一行先将关键词<code>angstromcf</code>填上，<br>
 然后将剩余未出现的字母，按照顺序填入。</p>
@@ -638,7 +617,7 @@ if (!doNotTrack) {
 <h1 id="0x04-仿射加密">0x04 仿射加密</h1>
 <div class="snote quote ">
 	<div class="snote-content">
-		<p> 「这个比前面的要稍微复杂一点。」 —— Am473ur </p>
+		<p>「这个比前面的要稍微复杂一点。」 —— Am473ur</p>
 	</div>
 </div>
 <p>比较复杂的加密方法，因为涉及到一定的数学知识。</p>
@@ -717,9 +696,11 @@ $a∈(0,m-1), b∈(0,m-1)$，且需满足$\gcd(a,m)=1$。</p>
 <h2 id="方法原理">方法原理</h2>
 <div class="snote info yellow">
 	<div class="snote-content">
-		<p> 以下部分设计较多的数论知识，如只用来做题可以不必详细了解原理。 </p>
+		<p>以下部分设计较多的数论知识，如只用来做题可以不必详细了解原理。</p>
 	</div>
 </div>
+
+
 <details class="sc-details" >
 	<summary>仿射加密原理</summary>
 	<div class="sc-details--inner"><p>对于这些古典加密方法，<br>
@@ -745,7 +726,7 @@ $a∈(0,m-1), b∈(0,m-1)$，且需满足$\gcd(a,m)=1$。</p>
 <p>而要确保为一一对应，即使加密算法为双射函数，<br>
 则需要<strong>满足$\gcd(a,m)=1$，即$a,m$互质</strong>。</p>
 <p><em>对于以下证明，可能需要先了解有关同余和线性同余方程的相关知识，</em><br>
-<em>可以查看本博客的文章<a href="../acm-note-linear_equation#0x00-%E5%89%8D%E6%8F%90%E7%9F%A5%E8%AF%86">ACM学习笔记：线性同余方程……</a>中的“前提知识”和“初步认识”章节。</em></p>
+<em>可以查看本博客的文章<a class="link" href="../acm-note-linear_equation#0x00-%e5%89%8d%e6%8f%90%e7%9f%a5%e8%af%86" >ACM学习笔记：线性同余方程……</a>中的“前提知识”和“初步认识”章节。</em></p>
 <blockquote>
 <p>证明：</p>
 <p>要证明当$\gcd(a,m)=1$时，函数$E(p)=(a \cdot p + b) \bmod m$为双射函数，<br>
@@ -782,7 +763,8 @@ $∴C_1$和$C_2$不可能同在$[0,m-1]$范围内，与假设矛盾，故<strong
 </ol>
 <p>由此可知，该函数只能为一一对应，即为双射函数。</p>
 </blockquote>
-<p><em>参考自&quot;hahastudio&quot;在V2EX上对 <a href="https://www.v2ex.com/t/222892">「数论，加密，仿射变换后唯一性问题」</a>问题的回答。</em></p>
+<p><em>参考自&quot;hahastudio&quot;在V2EX上对 <a class="link" href="https://www.v2ex.com/t/222892"  target="_blank" rel="noopener"
+    >「数论，加密，仿射变换后唯一性问题」</a>问题的回答。</em></p>
 <hr>
 <p>满足了为双射函数，还有一个重要的点就是：<br>
 该函数的<strong>反函数容易求得</strong>。<br>
@@ -791,7 +773,7 @@ $∴C_1$和$C_2$不可能同在$[0,m-1]$范围内，与假设矛盾，故<strong
 加密算法为：$c = (a \cdot p + b) \bmod 26$，<br>
 则解密算法为：$p = (c - b) \cdot a^{-1}$</p>
 <p><em>对于逆元的了解，</em><br>
-<em>可以查看本博客的文章<a href="../acm-note-linear_equation#2-%E7%BA%BF%E6%80%A7%E5%90%8C%E4%BD%99%E6%96%B9%E7%A8%8B%E7%9A%84%E5%8F%8D%E5%87%BD%E6%95%B0">ACM学习笔记：线性同余方程……</a>中的“2. 线性同余方程的反函数”章节。</em></p>
+<em>可以查看本博客的文章<a class="link" href="../acm-note-linear_equation#2-%e7%ba%bf%e6%80%a7%e5%90%8c%e4%bd%99%e6%96%b9%e7%a8%8b%e7%9a%84%e5%8f%8d%e5%87%bd%e6%95%b0" >ACM学习笔记：线性同余方程……</a>中的“2. 线性同余方程的反函数”章节。</em></p>
 <blockquote>
 <p>证明：</p>
 <p>【看了上面链接文章里的内容后，这里就应该很好理解了吧应该……</p>
@@ -887,6 +869,8 @@ $$(c - b) \cdot a^{-1} \equiv p \pmod{m}$$</p>
 <h3 id="加密过程">加密过程</h3>
 <p>可以先尝试解题，<br>
 没有思路再根据加密过程得到思路。</p>
+
+
 <details class="sc-details" >
 	<summary>加密过程</summary>
 	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="kn">from</span> <span class="nn">string</span> <span class="kn">import</span> <span class="n">digits</span><span class="p">,</span> <span class="n">ascii_lowercase</span>
@@ -916,7 +900,14 @@ $$(c - b) \cdot a^{-1} \equiv p \pmod{m}$$</p>
 
 <span class="k">print</span><span class="p">(</span><span class="s2">&#34;Ciphertext =&#34;</span><span class="p">,</span> <span class="n">Encrypt</span><span class="p">(</span><span class="n">flag</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
 </code></pre></div><p>运行结果：<br>
-<img src="pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E5%8A%A0%E5%AF%86%E7%BB%93%E6%9E%9C.png" alt="仿射加密 - 例题 加密运行结果"></p>
+<figure style="flex-grow: 383; flex-basis: 920px">
+		<a href="/p/ctf-note-crypto_1/pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E5%8A%A0%E5%AF%86%E7%BB%93%E6%9E%9C.png" data-size="207x54"><img src="/p/ctf-note-crypto_1/pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E5%8A%A0%E5%AF%86%E7%BB%93%E6%9E%9C.png"
+				srcset="/p/ctf-note-crypto_1/pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E5%8A%A0%E5%AF%86%E7%BB%93%E6%9E%9C_hu2c8e9c4cd00326b1ba56317062884a98_3113_480x0_resize_box_2.png 480w, /p/ctf-note-crypto_1/pic/%E4%BB%BF%E5%B0%84%E5%8A%A0%E5%AF%86-%E4%BE%8B%E9%A2%98-%E5%8A%A0%E5%AF%86%E7%BB%93%E6%9E%9C_hu2c8e9c4cd00326b1ba56317062884a98_3113_1024x0_resize_box_2.png 1024w"
+				width="207"
+				height="54"
+				loading="lazy"
+				alt="仿射加密 - 例题 加密运行结果">
+		</a><figcaption>仿射加密 - 例题 加密运行结果</figcaption></figure></p>
 <p>其中的最终flag为<code>flag{18453407}</code>。</p>
 <hr>
 <p>由代码分析可知，<br>
@@ -983,11 +974,7 @@ flag的开头格式为<code>flag</code>。</p>
 				height="57"
 				loading="lazy"
 				alt="仿射加密 - 例题 爆破运行结果">
-		</a>
-		
-		<figcaption>仿射加密 - 例题 爆破运行结果</figcaption>
-		
-	</figure></p>
+		</a><figcaption>仿射加密 - 例题 爆破运行结果</figcaption></figure></p>
 <p>得到最终flag为<code>flag{18453407}</code>。</p>
 <h1 id="0x05-单表替代密码分析">0x05 单表替代密码分析</h1>
 <h2 id="定义-3">定义</h2>
@@ -1023,11 +1010,7 @@ flag的开头格式为<code>flag</code>。</p>
 				height="490"
 				loading="lazy"
 				alt="词频分析 - 词频表">
-		</a>
-		
-		<figcaption>词频分析 - 词频表</figcaption>
-		
-	</figure></p>
+		</a><figcaption>词频分析 - 词频表</figcaption></figure></p>
 <p>我们对于一串较长密文（如对文章加密），统计每个字母出现的频率。<br>
 如果发现某一字母与上表字母的<strong>频率接近</strong>，<br>
 则两字母应该是<strong>对应关系</strong>。</p>
@@ -1049,11 +1032,7 @@ flag的开头格式为<code>flag</code>。</p>
 				height="155"
 				loading="lazy"
 				alt="双联分析 - 次数表">
-		</a>
-		
-		<figcaption>双联分析 - 次数表</figcaption>
-		
-	</figure></p>
+		</a><figcaption>双联分析 - 次数表</figcaption></figure></p>
 <h3 id="模式匹配">模式匹配</h3>
 <p>另外，如果有一个较大的单词库，<br>
 还可以通过单词的格式，进一步帮助我们缩小可能的范围。</p>
@@ -1067,7 +1046,7 @@ flag的开头格式为<code>flag</code>。</p>
 即使<strong>密文长度较短</strong>，也能尽可能找到接近真相的结果。</p>
 <div class="snote warning ">
 	<div class="snote-content">
-		<p> 如果密文长度较短，则词频分析和双联分析很可能不正确。 </p>
+		<p>如果密文长度较短，则词频分析和双联分析很可能不正确。</p>
 	</div>
 </div>
 <p>工具：<br>
@@ -1084,11 +1063,7 @@ flag的开头格式为<code>flag</code>。</p>
 				height="551"
 				loading="lazy"
 				alt="维吉尼亚加密 - 密码表">
-		</a>
-		
-		<figcaption>维吉尼亚加密 - 密码表</figcaption>
-		
-	</figure></p>
+		</a><figcaption>维吉尼亚加密 - 密码表</figcaption></figure></p>
 <p>具体使用哪一行字母表进行加密是基于密钥进行的，<br>
 <strong>在过程中会不断地变换</strong>。</p>
 <hr>
@@ -1161,7 +1136,7 @@ flag的开头格式为<code>flag</code>。</p>
 密文中出现足够多次，就可以根据这几个长度的倍数，来<strong>确定真实的长度</strong>。</p>
 <div class="snote info ">
 	<div class="snote-content">
-		<p> 直接看文字可能难以理解，结合下面的例子更好理解。 </p>
+		<p>直接看文字可能难以理解，结合下面的例子更好理解。</p>
 	</div>
 </div>
 <blockquote>
@@ -1173,11 +1148,7 @@ flag的开头格式为<code>flag</code>。</p>
 				height="376"
 				loading="lazy"
 				alt="维吉尼亚加密 - 破解例子">
-		</a>
-		
-		<figcaption>维吉尼亚加密 - 破解例子</figcaption>
-		
-	</figure></p>
+		</a><figcaption>维吉尼亚加密 - 破解例子</figcaption></figure></p>
 <p>$(9,6)$的公约数只有$1$和$3$，<br>
 而$1$不可能为密钥长度（否则变为单表加密），<br>
 故<strong>密钥长度则为$3$</strong>。</p>
@@ -1208,11 +1179,7 @@ flag的开头格式为<code>flag</code>。</p>
 				height="683"
 				loading="lazy"
 				alt="替换和编码 - 福尔摩斯跳舞的小人 表">
-		</a>
-		
-		<figcaption>替换和编码 - 福尔摩斯跳舞的小人 表</figcaption>
-		
-	</figure></li>
+		</a><figcaption>替换和编码 - 福尔摩斯跳舞的小人 表</figcaption></figure></li>
 <li>培根密码<br>
 <figure style="flex-grow: 300; flex-basis: 720px">
 		<a href="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81.png" data-size="861x287"><img src="/p/ctf-note-crypto_1/pic/%E6%9B%BF%E6%8D%A2%E5%92%8C%E7%BC%96%E7%A0%81-%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81.png"
@@ -1221,11 +1188,7 @@ flag的开头格式为<code>flag</code>。</p>
 				height="287"
 				loading="lazy"
 				alt="替换和编码 - 培根密码">
-		</a>
-		
-		<figcaption>替换和编码 - 培根密码</figcaption>
-		
-	</figure></li>
+		</a><figcaption>替换和编码 - 培根密码</figcaption></figure></li>
 </ul>
 <p><em>有关编码内容可以阅读Misc部分的<a class="link" href="../ctf-note-misc_2" >数据编码笔记</a>。</em></p>
 <h2 id="类型和编码">类型和编码</h2>
@@ -1236,11 +1199,7 @@ flag的开头格式为<code>flag</code>。</p>
 				height="510"
 				loading="lazy"
 				alt="替换和编码 - 类型和编码">
-		</a>
-		
-		<figcaption>替换和编码 - 类型和编码</figcaption>
-		
-	</figure></p>
+		</a><figcaption>替换和编码 - 类型和编码</figcaption></figure></p>
 <ul>
 <li><em>密码学中数字主要研究整数。</em></li>
 </ul>
@@ -1313,17 +1272,17 @@ flag的开头格式为<code>flag</code>。</p>
 </code></pre></div><h1 id="0x08-写在最后">0x08 写在最后</h1>
 <p><div class="snote warning ">
 	<div class="snote-content">
-		<p> 以上大部分为个人总结，由于这里也刚入门，很多地方可能存在错误。如发现错误请及时指出，谢谢！…… </p>
+		<p>以上大部分为个人总结，由于这里也刚入门，很多地方可能存在错误。如发现错误请及时指出，谢谢！……</p>
 	</div>
 </div>
 <div class="snote link green">
 	<div class="snote-content">
-		<p> 由于目前博客不支持附件上传下载，所以如果需要上述中的文件，可以联系我分享文件【联系方式在关于页面中有…… </p>
+		<p>由于目前博客不支持附件上传下载，所以如果需要上述中的文件，可以联系我分享文件【联系方式在关于页面中有……</p>
 	</div>
 </div>
 <div class="snote up cyan">
 	<div class="snote-content">
-		<p> 如对以上内容存在疑惑不解的地方，也可以询问我。如果我了解的话会尽力解答；不了解的话可以一起努力弄明白hhh…… </p>
+		<p>如对以上内容存在疑惑不解的地方，也可以询问我。如果我了解的话会尽力解答；不了解的话可以一起努力弄明白hhh……</p>
 	</div>
 </div></p>
 <p>这部分涉及到数论的知识，故可能会感觉有点难……<br>

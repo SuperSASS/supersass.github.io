@@ -327,7 +327,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：696</div>
+            <div class="char">文章字数：737</div>
             <div class="time">预计阅读时长： <time>2</time> 分钟</div>
         </div>
     </footer>
@@ -338,11 +338,8 @@ if (!doNotTrack) {
     <h1 id="timeline">Timeline……</h1>
 <p>时间线标签的移植测试……</p>
 <h2 id="测试">测试</h2>
-<div class="timeline">
-	
-		<p class="p h2">总历程……</p>
-	
-	
+
+<div class="timeline"><p class="p h2">总历程……</p>
 
 
 
@@ -350,15 +347,13 @@ if (!doNotTrack) {
 	<div class="meta">
 		<p>2020-12-24 19:00<div class="title">提出构想……</div></p>
 	</div>
-	<div class="body">
-		<p>这个时间线好好看啊，我也要实现！……</p>
+	<div class="body"><p>这个时间线好好看啊，我也要实现！……</p>
 <div class="snote info ">
 	<div class="snote-content">
-		<p> 这里面还能套娃哦x…… </p>
+		<p>这里面还能套娃哦x……</p>
 	</div>
 </div>
-
-	</div>
+</div>
 </div>
 
 
@@ -367,15 +362,13 @@ if (!doNotTrack) {
 	<div class="meta">
 		<p>2020-12-25<a target="_blank" rel="noopener" href="https://www.bilibili.com">这里想要测试下所以这里的标题要非常非常非常的长这样才能测试是否全平台适配……</a></p>
 	</div>
-	<div class="body">
-		<p>到了明天【？……</p>
+	<div class="body"><p>到了明天【？……</p>
 <ul>
 <li><input checked="" disabled="" type="checkbox"> 感觉实现了……</li>
 </ul>
 <p>这里面用Markdown写！……<br>
 然后这里也要非常非常非常非常非常非非常非常非常非常非常非常常非常非常非常非常非常非常的长……</p>
-
-	</div>
+</div>
 </div>
 
 
@@ -384,8 +377,7 @@ if (!doNotTrack) {
 	<div class="meta">
 		<p>2020-12-25 233:33:33</p>
 	</div>
-	<div class="body">
-		<p><em>time其实内容随意（没有检测直接原样输出），填个不是时间的也可以……</em></p>
+	<div class="body"><p><em>time其实内容随意（没有检测直接原样输出），填个不是时间的也可以……</em></p>
 <p>最后一个测试了！……</p>
 <ul>
 <li>来个公式：
@@ -401,26 +393,45 @@ if (!doNotTrack) {
 </code></pre></div></blockquote>
 </li>
 </ul>
-
-	</div>
+</div>
 </div>
 
 
 
 <div class="timenode">
 	<div class="meta">
-		<p>2020-12-24 20:28<div class="title">正式实现并适配……</div></p>
+		<p>2020-12-25 20:28<div class="title">正式实现并适配……</div></p>
 	</div>
-	<div class="body">
-		<p>实现了！……</p>
+	<div class="body"><p>实现了！……</p>
 <p>也不知道会不会出问题，反正能跑就行.jpg……</p>
 <p>改后的样式配上这个主题感觉还是很好看的√……</p>
 <p>不过markdown里看着好乱啊也没办法的'_&gt;'……</p>
 <p>好累orz……</p>
-
-	</div>
+</div>
 </div>
 
+</div>
+<hr>
+
+<div class="timeline">
+
+
+
+<div class="timenode">
+	<div class="meta">
+		<p>……<div class="title">Test 1……</div></p>
+	</div>
+	<div class="body">无标题的时间线测试……</div>
+</div>
+
+
+
+<div class="timenode">
+	<div class="meta">
+		<p>……<div class="title">Test 2……</div></p>
+	</div>
+	<div class="body">无标题的时间线测试……</div>
+</div>
 
 </div>
 <h2 id="实现方法">实现方法</h2>
@@ -441,7 +452,7 @@ if (!doNotTrack) {
 <span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span> <span class="p">&gt;}</span> <span class="p">}</span>
 </code></pre></div><blockquote>
 <p>外层：<br>
-<code>name</code>（可选项）：为这条时间线的标题……</p>
+<code>theme</code>（可选项）：为这条时间线的标题……</p>
 <blockquote>
 <p>内层：<br>
 <code>time</code>（必填项）：节点时间……<br>
@@ -456,7 +467,8 @@ if (!doNotTrack) {
 <div class="snote info ">
 	<div class="snote-content">
 		<p>想法还是来自于：<br>
-小康博客 —— <a href="https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84link%E6%A0%87%E7%AD%BE%E4%B8%8E%E6%97%B6%E9%97%B4%E7%BA%BF%E6%A0%87%E7%AD%BE">Hexo博客之butterfly主题优雅魔改系列（持续更新）</a></p>
+小康博客 —— <a class="link" href="https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84link%E6%A0%87%E7%AD%BE%E4%B8%8E%E6%97%B6%E9%97%B4%E7%BA%BF%E6%A0%87%E7%AD%BE"  target="_blank" rel="noopener"
+    >Hexo博客之butterfly主题优雅魔改系列（持续更新）</a></p>
 	</div>
 </div>
 <p>个人在其基础上修改了CSS以适配此主题……<br>

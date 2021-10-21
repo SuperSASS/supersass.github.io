@@ -318,7 +318,7 @@ if (!doNotTrack) {
     <header class="article-category">
         
             <a href="/categories/university/" >
-                大学课程
+                大学相关
             </a>
         
     </header>
@@ -354,7 +354,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：4535</div>
+            <div class="char">文章字数：4553</div>
             <div class="time">预计阅读时长： <time>10</time> 分钟</div>
         </div>
     </footer>
@@ -364,11 +364,13 @@ if (!doNotTrack) {
     <section class="article-content">
     <div class="snote info ">
 	<div class="snote-content">
-		<p> 以下大部分总结于半期考试之前…… </p>
+		<p>以下大部分总结于半期考试之前……</p>
 	</div>
 </div>
 <h1 id="一注意的点">一、注意的点</h1>
 <h2 id="1用作为累加累乘的变量的注意事项">1、用作为“累加、累乘”的变量的注意事项</h2>
+
+
 <details class="sc-details" >
 	<summary>例子——累加、累乘的变量</summary>
 	<div class="sc-details--inner"><ul>
@@ -387,6 +389,8 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>在<strong>循环里反复使用</strong>，要注意可能要将累加变量<strong>清零</strong>，累乘变量<strong>赋一</strong>。</p>
+
+
 <details class="sc-details" >
 	<summary>例题</summary>
 	<div class="sc-details--inner"><div class="snote message cyan ">
@@ -416,9 +420,23 @@ if (!doNotTrack) {
 </code></pre></div><p>输出：</p>
 <ul>
 <li>加了<code>sum = 0;</code>这句清零语句：<br>
-<img src="1.png" alt="正确答案"></li>
+<figure style="flex-grow: 134; flex-basis: 323px">
+		<a href="/p/univ-cpp-summary/1.png" data-size="217x161"><img src="/p/univ-cpp-summary/1.png"
+				srcset="/p/univ-cpp-summary/1_hu2c48dba8fb5dc6a5e02cb6ae45f6764d_7922_480x0_resize_box_2.png 480w, /p/univ-cpp-summary/1_hu2c48dba8fb5dc6a5e02cb6ae45f6764d_7922_1024x0_resize_box_2.png 1024w"
+				width="217"
+				height="161"
+				loading="lazy"
+				alt="正确答案">
+		</a><figcaption>正确答案</figcaption></figure></li>
 <li>未加<code>sum = 0;</code>这句清零语句：<br>
-<img src="2.png" alt="错误答案"></li>
+<figure style="flex-grow: 140; flex-basis: 338px">
+		<a href="/p/univ-cpp-summary/2.png" data-size="224x159"><img src="/p/univ-cpp-summary/2.png"
+				srcset="/p/univ-cpp-summary/2_hu3ec0fae2db203a5ae6bc9ad5805d305b_5097_480x0_resize_box_2.png 480w, /p/univ-cpp-summary/2_hu3ec0fae2db203a5ae6bc9ad5805d305b_5097_1024x0_resize_box_2.png 1024w"
+				width="224"
+				height="159"
+				loading="lazy"
+				alt="错误答案">
+		</a><figcaption>错误答案</figcaption></figure></li>
 </ul>
 </div>
 </details>
@@ -569,6 +587,8 @@ if (!doNotTrack) {
 <li>要取得$[a,b]$的随机整数，使用<code>( rand() % (b-a+1) ) + a</code>;</li>
 <li>要取得$(a,b]$的随机整数，使用<code>( rand() % (b-a) ) + a + 1</code>;</li>
 </ul>
+
+
 <details class="sc-details" >
 	<summary>例子——随机生成1到100内的整数（含1和100）</summary>
 	<div class="sc-details--inner"><p>代码：</p>
@@ -593,7 +613,7 @@ if (!doNotTrack) {
 <h2 id="2最大公约数gcd和最小公倍数lcm的计算">2、最大公约数（GCD）和最小公倍数（LCM）的计算</h2>
 <div class="snote warning ">
 	<div class="snote-content">
-		<p> 这个比较重要，也很难背。 </p>
+		<p>这个比较重要，也很难背。</p>
 	</div>
 </div>
 <p>直接背代码。</p>
@@ -640,7 +660,7 @@ if (!doNotTrack) {
 <h3 id="更好记的版本">更好记的版本</h3>
 <div class="snote info ">
 	<div class="snote-content">
-		<p> 利用递归思想求最大公约数，可以极大简化代码。 </p>
+		<p>利用递归思想求最大公约数，可以极大简化代码。</p>
 	</div>
 </div>
 <p>可以尝试理解下这个代码，能很好的<strong>锻炼递归思想</strong>。</p>
@@ -660,7 +680,7 @@ if (!doNotTrack) {
 <p>直接背代码。</p>
 <div class="snote warning ">
 	<div class="snote-content">
-		<p> 代码里有几个要注意的点。 </p>
+		<p>代码里有几个要注意的点。</p>
 	</div>
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">bool</span> <span class="nf">if_Prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
@@ -694,7 +714,7 @@ if (!doNotTrack) {
 而且写法的差别并不大，仅是<code>for</code>循环范围的区别。</p>
 <div class="snote warning ">
 	<div class="snote-content">
-		<p> 很可能会考到写法【个人感觉【…… </p>
+		<p>很可能会考到写法【个人感觉【……</p>
 	</div>
 </div>
 <p><em>【模板见老师的PPT，如果没记的话可以问我……</em></p>
@@ -704,7 +724,7 @@ if (!doNotTrack) {
 <p><em>【模板见老师的PPT，如果没记的话可以问我……</em></p>
 <div class="snote warning ">
 	<div class="snote-content">
-		<p> 使用二分查找，需要先让数组有序，如果是无序的数组先要排序。 </p>
+		<p>使用二分查找，需要先让数组有序，如果是无序的数组先要排序。</p>
 	</div>
 </div>
 <h1 id="三常用头文件及函数">三、常用头文件及函数</h1>
@@ -716,6 +736,8 @@ if (!doNotTrack) {
 <p><code>#include&lt;iostream&gt;</code></p>
 <p><strong>最基本</strong>的库。<br>
 <code>cin</code>、<code>cout</code>等基本指令都需要这个库，写程序直接写上即可。<br>
+
+
 <details class="sc-details" >
 	<summary>记忆方法</summary>
 	<div class="sc-details--inner"><ul>
@@ -729,6 +751,8 @@ if (!doNotTrack) {
 <p><code>#include&lt;ctime&gt;</code></p>
 <p>使用<strong>随机生成</strong>时要用到的库。<br>
 即生成种子时用的<code>time()</code>需要这个库。
+
+
 <details class="sc-details" >
 	<summary>记忆方法</summary>
 	<div class="sc-details--inner"><ul>
@@ -742,6 +766,8 @@ if (!doNotTrack) {
 <p><code>#include&lt;iomanip&gt;</code></p>
 <p>控制<strong>输出格式</strong>要用到的库。<br>
 <code>setw(...)</code>、<code>fixed()</code>、<code>precision(...)</code>（基本为这三个）需要用到这个库。
+
+
 <details class="sc-details" >
 	<summary>记忆方法</summary>
 	<div class="sc-details--inner"><ul>
@@ -768,19 +794,24 @@ if (!doNotTrack) {
 				height="654"
 				loading="lazy"
 				alt="错误类型1">
-		</a>
-		
-		<figcaption>错误类型1</figcaption>
-		
-	</figure></p>
+		</a><figcaption>错误类型1</figcaption></figure></p>
 <ul>
 <li>中文意思：“val”（橙色圈出）这个变量没被初始化（赋初值）就在使用。</li>
 <li>出现原因：一般出现在累加变量<strong>未赋初值为0</strong>，就在用<code>sum=sum+a</code>。</li>
 <li>解决方法：找到变量名为引号里的变量，在使用其前赋相应初值。</li>
 </ul>
+
+
 <details class="sc-details" >
 	<summary>错例</summary>
-	<div class="sc-details--inner"><p><img src="err1_p.png" alt="错误1-例"></p>
+	<div class="sc-details--inner"><p><figure style="flex-grow: 155; flex-basis: 373px">
+		<a href="/p/univ-cpp-summary/err1_p.png" data-size="742x477"><img src="/p/univ-cpp-summary/err1_p.png"
+				srcset="/p/univ-cpp-summary/err1_p_hu6271747eecd2d56c215b22cec1ca844d_23585_480x0_resize_box_2.png 480w, /p/univ-cpp-summary/err1_p_hu6271747eecd2d56c215b22cec1ca844d_23585_1024x0_resize_box_2.png 1024w"
+				width="742"
+				height="477"
+				loading="lazy"
+				alt="错误1-例">
+		</a><figcaption>错误1-例</figcaption></figure></p>
 <p>红色划线为对<code>val</code>的使用处，橙色划线为<code>val</code>的定义处。<br>
 很明显看到<code>val</code>在使用前未被赋初值。<br>
 故在使用前赋个初值（这里为累加变量，所以赋初值为0），即：<code>val = 0</code>。</p>
@@ -795,19 +826,24 @@ if (!doNotTrack) {
 				height="654"
 				loading="lazy"
 				alt="错误类型2">
-		</a>
-		
-		<figcaption>错误类型2</figcaption>
-		
-	</figure></p>
+		</a><figcaption>错误类型2</figcaption></figure></p>
 <ul>
 <li>中文意思：变量“a”周围的栈被破坏。【理解不到没关系看下面_(:з」∠)_……</li>
 <li>出现原因：出现在对数组元素的访问中，访问的下标超过数组最大个数。</li>
 <li>解决方法：找到变量名为引号里的数组的声明部分，将其空间开大点。</li>
 </ul>
+
+
 <details class="sc-details" >
 	<summary>错例</summary>
-	<div class="sc-details--inner"><p><img src="err2_p.png" alt="错误2-例"></p>
+	<div class="sc-details--inner"><p><figure style="flex-grow: 205; flex-basis: 494px">
+		<a href="/p/univ-cpp-summary/err2_p.png" data-size="826x401"><img src="/p/univ-cpp-summary/err2_p.png"
+				srcset="/p/univ-cpp-summary/err2_p_hu902f0627d74d2ed7a8fb90bfa1f0ac52_19393_480x0_resize_box_2.png 480w, /p/univ-cpp-summary/err2_p_hu902f0627d74d2ed7a8fb90bfa1f0ac52_19393_1024x0_resize_box_2.png 1024w"
+				width="826"
+				height="401"
+				loading="lazy"
+				alt="错误2-例">
+		</a><figcaption>错误2-例</figcaption></figure></p>
 <p>橙色划线定义个数组空间为$10$，即只能用<code>a[0]~a[9]</code>。<br>
 但在红色划线里，却用了<code>a[10]</code>，明显超出了最大范围，即越界了，所以会出现此错。<br>
 故在定义部分<code>int a[10]</code>，把它空间开大点变成<code>int a[11]</code>即可。</p>
@@ -815,7 +851,7 @@ if (!doNotTrack) {
 </details>
 <div class="snote warning ">
 	<div class="snote-content">
-		<p> 这也是数组中很常见的误区和错误需要注意！ </p>
+		<p>这也是数组中很常见的误区和错误需要注意！</p>
 	</div>
 </div>
 <h2 id="3死循环类">3、死循环类</h2>
@@ -837,11 +873,7 @@ if (!doNotTrack) {
 				height="516"
 				loading="lazy"
 				alt="错误3-例">
-		</a>
-		
-		<figcaption>错误3-例</figcaption>
-		
-	</figure></p>
+		</a><figcaption>错误3-例</figcaption></figure></p>
 <p>本意是只读入五个数，输出这五个数的和。</p>
 <p>运行时：</p>
 <p><figure style="flex-grow: 186; flex-basis: 447px">
@@ -851,11 +883,7 @@ if (!doNotTrack) {
 				height="1050"
 				loading="lazy"
 				alt="错误3-运行界面">
-		</a>
-		
-		<figcaption>错误3-运行界面</figcaption>
-		
-	</figure>
+		</a><figcaption>错误3-运行界面</figcaption></figure>
 发现一直在读入。</p>
 </blockquote>
 <ul>

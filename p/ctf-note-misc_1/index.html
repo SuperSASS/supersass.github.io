@@ -367,7 +367,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：5416</div>
+            <div class="char">文章字数：5467</div>
             <div class="time">预计阅读时长： <time>11</time> 分钟</div>
         </div>
     </footer>
@@ -377,19 +377,22 @@ if (!doNotTrack) {
     <section class="article-content">
     <div class="snote info ">
 	<div class="snote-content">
-		<p> 以下为涅普计划的课程笔记，建议搭配课程视频理解。 </p>
+		<p>以下为涅普计划的课程笔记，建议搭配课程视频理解。</p>
 	</div>
 </div>
 <p>图片隐写：<br>
 将一些不可告人x的东西（如flag）以各种方式隐藏在图片中。<br>
 自已需要分析出隐写方法，并找出隐藏的信息。</p>
 <h1 id="0x00-课程视频">0x00 课程视频</h1>
+
+
 <details class="sc-details" >
 	<summary>课程视频</summary>
 	<div class="sc-details--inner"><div class="bilibili-player"style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
 	<iframe loading="lazy" src="https://player.bilibili.com/player.html?bvid=BV1VA411u7Tg&high_quality=1&page=2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="Bilibili Video"></iframe>
 </div>
-<p><a href="https://www.bilibili.com/video/BV1VA411u7Tg?p=2">视频Bilibili链接</a></div>
+<p><a class="link" href="https://www.bilibili.com/video/BV1VA411u7Tg?p=2"  target="_blank" rel="noopener"
+    >视频Bilibili链接</a></div>
 </details>
 <h1 id="0x01-准备工具">0x01 准备工具</h1>
 <h2 id="十六进制编辑器">十六进制编辑器</h2>
@@ -407,10 +410,19 @@ if (!doNotTrack) {
 <p><code>strings</code><br>
 打印文件中可打印的字符。<br>
 作用：可找出图片中<strong>隐写的字符串</strong>。</p>
+
+
 <details class="sc-details" >
 	<summary>例子</summary>
 	<div class="sc-details--inner">在终端中输入<code>strings strings.jpg</code>后<br>
-<img src="pic/Kali-strings.png" alt="Kali - strings"><br>
+<figure style="flex-grow: 126; flex-basis: 304px">
+		<a href="/p/ctf-note-misc_1/pic/Kali-strings.png" data-size="646x509"><img src="/p/ctf-note-misc_1/pic/Kali-strings.png"
+				srcset="/p/ctf-note-misc_1/pic/Kali-strings_huae0083dfcbdaefeda152869a93816597_49875_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/Kali-strings_huae0083dfcbdaefeda152869a93816597_49875_1024x0_resize_box_2.png 1024w"
+				width="646"
+				height="509"
+				loading="lazy"
+				alt="Kali - strings">
+		</a><figcaption>Kali - strings</figcaption></figure><br>
 可以看见&quot;Nepnep{welcome}&ldquo;和&quot;print(hell oworld)&ldquo;这两条信息。</div>
 </details>
 </li>
@@ -419,10 +431,19 @@ if (!doNotTrack) {
 用于<strong>查找内容包含指定的范本样式</strong>的文件，如果发现某文件的内容符合所指定的范本样式，预设<code>grep</code>指令会把含有范本样式的那一列显示出来。</p>
 <p>输入<code>grep -a &quot;flag&quot; xxx.jpg</code><br>
 则会把文件中含&quot;flag&quot;字符串部分前后显示出来。</p>
+
+
 <details class="sc-details" >
 	<summary>例子</summary>
 	<div class="sc-details--inner">如图：<br>
-<img src="pic/Kali-grep.png" alt="Kali - grep"><br>
+<figure style="flex-grow: 363; flex-basis: 871px">
+		<a href="/p/ctf-note-misc_1/pic/Kali-grep.png" data-size="614x169"><img src="/p/ctf-note-misc_1/pic/Kali-grep.png"
+				srcset="/p/ctf-note-misc_1/pic/Kali-grep_hu6eba85d1ecac8795643de2f6f5d36777_38291_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/Kali-grep_hu6eba85d1ecac8795643de2f6f5d36777_38291_1024x0_resize_box_2.png 1024w"
+				width="614"
+				height="169"
+				loading="lazy"
+				alt="Kali - grep">
+		</a><figcaption>Kali - grep</figcaption></figure><br>
 可以看见&quot;BJD{haokanma_xjj}&ldquo;这个flag。</div>
 </details>
 </li>
@@ -430,14 +451,23 @@ if (!doNotTrack) {
 <p><code>file</code><br>
 用于<strong>辨识文件类型</strong>。<br>
 可以显示文件的格式，属性等信息。</p>
+
+
 <details class="sc-details" >
 	<summary>例子</summary>
 	<div class="sc-details--inner"><p>对&quot;strings-file&quot;这个无后缀名文件进行分析。<br>
-<img src="pic/Kali-file.png" alt="Kali - file"><br>
+<figure style="flex-grow: 587; flex-basis: 1410px">
+		<a href="/p/ctf-note-misc_1/pic/Kali-file.png" data-size="629x107"><img src="/p/ctf-note-misc_1/pic/Kali-file.png"
+				srcset="/p/ctf-note-misc_1/pic/Kali-file_hu2b8c84871a3f68aa9773c81481b1d22b_28812_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/Kali-file_hu2b8c84871a3f68aa9773c81481b1d22b_28812_1024x0_resize_box_2.png 1024w"
+				width="629"
+				height="107"
+				loading="lazy"
+				alt="Kali - file">
+		</a><figcaption>Kali - file</figcaption></figure><br>
 可以看见文件的基本信息，为JPEG文件。</p>
   <div class="snote info ">
 	<div class="snote-content">
-		<p> Tip: JPEG和JPG是同一个格式。 </p>
+		<p>Tip: JPEG和JPG是同一个格式。</p>
 	</div>
 </div>
 </div>
@@ -454,13 +484,36 @@ if (!doNotTrack) {
 <ul>
 <li><code>-e</code> 分离出文件到新文件夹中（但可能不全）。</li>
 </ul>
+
+
 <details class="sc-details" >
 	<summary>例子</summary>
 	<div class="sc-details--inner"><p>输入<code>binwalk xxx.png</code><br>
-<img src="pic/Kali-binwalk.png" alt="Kali - binwalk"></p>
+<figure style="flex-grow: 292; flex-basis: 701px">
+		<a href="/p/ctf-note-misc_1/pic/Kali-binwalk.png" data-size="614x210"><img src="/p/ctf-note-misc_1/pic/Kali-binwalk.png"
+				srcset="/p/ctf-note-misc_1/pic/Kali-binwalk_hu197bc149c76fadbf6f995e83de9262ec_38619_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/Kali-binwalk_hu197bc149c76fadbf6f995e83de9262ec_38619_1024x0_resize_box_2.png 1024w"
+				width="614"
+				height="210"
+				loading="lazy"
+				alt="Kali - binwalk">
+		</a><figcaption>Kali - binwalk</figcaption></figure></p>
 <p>输入<code>binwalk -e xxx.png</code>
 得到新文件夹，里面有提取出的文件。<br>
-<img src="pic/Kali-binwalk-e_1.png" alt="Kali - binwalk -e"> <img src="pic/Kali-binwalk-e_2.png" alt="Kali - binwalk -e"></p>
+<figure style="flex-grow: 236; flex-basis: 567px">
+		<a href="/p/ctf-note-misc_1/pic/Kali-binwalk-e_1.png" data-size="293x124"><img src="/p/ctf-note-misc_1/pic/Kali-binwalk-e_1.png"
+				srcset="/p/ctf-note-misc_1/pic/Kali-binwalk-e_1_hub6894a35e4d026f27de6ee4ed1991626_10051_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/Kali-binwalk-e_1_hub6894a35e4d026f27de6ee4ed1991626_10051_1024x0_resize_box_2.png 1024w"
+				width="293"
+				height="124"
+				loading="lazy"
+				alt="Kali - binwalk -e">
+		</a><figcaption>Kali - binwalk -e</figcaption></figure> <figure style="flex-grow: 482; flex-basis: 1158px">
+		<a href="/p/ctf-note-misc_1/pic/Kali-binwalk-e_2.png" data-size="676x140"><img src="/p/ctf-note-misc_1/pic/Kali-binwalk-e_2.png"
+				srcset="/p/ctf-note-misc_1/pic/Kali-binwalk-e_2_huabb27c239f30a42b73326fc56d1c66f3_15268_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/Kali-binwalk-e_2_huabb27c239f30a42b73326fc56d1c66f3_15268_1024x0_resize_box_2.png 1024w"
+				width="676"
+				height="140"
+				loading="lazy"
+				alt="Kali - binwalk -e">
+		</a><figcaption>Kali - binwalk -e</figcaption></figure></p>
 </div>
 </details>
 </li>
@@ -469,10 +522,19 @@ if (!doNotTrack) {
 <strong>注意</strong>：需要使用<code>apt-get install foremost</code>安装。<br>
 也可以提取文件（也不一定能提取所有文件）。<br>
 <em>比较于<code>binwalk</code>，<code>binwalk</code>更加强大，速度也快。但是有时候如果不能分离出来，就可以试试看<code>foremost</code>。</em></p>
+
+
 <details class="sc-details" >
 	<summary>例子</summary>
 	<div class="sc-details--inner"><p>输入<code>foremost xxx.png</code>后，得到output文件夹，其中目录树如图。</p>
-<p><img src="pic/Kali-foremost.png" alt="Kali - foremost"><br>
+<p><figure style="flex-grow: 351; flex-basis: 842px">
+		<a href="/p/ctf-note-misc_1/pic/Kali-foremost.png" data-size="604x172"><img src="/p/ctf-note-misc_1/pic/Kali-foremost.png"
+				srcset="/p/ctf-note-misc_1/pic/Kali-foremost_hu1ae2ebb9c6b19702c82fe1168a1a91a7_19767_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/Kali-foremost_hu1ae2ebb9c6b19702c82fe1168a1a91a7_19767_1024x0_resize_box_2.png 1024w"
+				width="604"
+				height="172"
+				loading="lazy"
+				alt="Kali - foremost">
+		</a><figcaption>Kali - foremost</figcaption></figure><br>
 其中png文件夹中为原图片，而jpg文件夹中则为分离处的新图片。<br>
 audit.txt则为所分离文件的信息。</p>
 </div>
@@ -514,11 +576,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="1038"
 				loading="lazy"
 				alt="文件模板">
-		</a>
-		
-		<figcaption>文件模板</figcaption>
-		
-	</figure></p>
+		</a><figcaption>文件模板</figcaption></figure></p>
 <p>可见通过PNG文件模板将十六进制分为了许多部分。</p>
 <p>最常用的信息如告知图片长宽、属性。</p>
 <h2 id="文件属性">文件属性</h2>
@@ -532,11 +590,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="651"
 				loading="lazy"
 				alt="文件属性">
-		</a>
-		
-		<figcaption>文件属性</figcaption>
-		
-	</figure></p>
+		</a><figcaption>文件属性</figcaption></figure></p>
 <h1 id="0x03-图片隐写分类">0x03 图片隐写分类</h1>
 <p><figure style="flex-grow: 176; flex-basis: 423px">
 		<a href="/p/ctf-note-misc_1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB.png" data-size="1421x805"><img src="/p/ctf-note-misc_1/pic/%E5%9B%BE%E7%89%87%E9%9A%90%E5%86%99%E5%88%86%E7%B1%BB.png"
@@ -545,11 +599,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="805"
 				loading="lazy"
 				alt="图片隐写分类">
-		</a>
-		
-		<figcaption>图片隐写分类</figcaption>
-		
-	</figure></p>
+		</a><figcaption>图片隐写分类</figcaption></figure></p>
 <h2 id="1-属性隐写">1. 属性隐写</h2>
 <p><em>【就单纯在文件属性（标题、作者等）中写东西，很少用……</em></p>
 <h2 id="2-16进制隐写">2. 16进制隐写</h2>
@@ -569,11 +619,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="181"
 				loading="lazy"
 				alt="16进制隐写 - 文件尾">
-		</a>
-		
-		<figcaption>16进制隐写 - 文件尾</figcaption>
-		
-	</figure><br>
+		</a><figcaption>16进制隐写 - 文件尾</figcaption></figure><br>
 可以发现文件尾后还有<code>niconiconi</code>这个字符串。</p>
 </blockquote>
 </li>
@@ -590,11 +636,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="1736"
 				loading="lazy"
 				alt="16进制隐写 - 例题">
-		</a>
-		
-		<figcaption>16进制隐写 - 例题</figcaption>
-		
-	</figure><br>
+		</a><figcaption>16进制隐写 - 例题</figcaption></figure><br>
 可以发现黑丝【？】那有明显的一条线。</p>
 </blockquote>
 </li>
@@ -634,11 +676,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="186"
 				loading="lazy"
 				alt="gif - 特殊帧">
-		</a>
-		
-		<figcaption>gif - 特殊帧</figcaption>
-		
-	</figure><br>
+		</a><figcaption>gif - 特殊帧</figcaption></figure><br>
 <em>【需要点击图片才能查看动图】</em><br>
 可以明显看见图中会闪过一些东西。</p>
 </blockquote>
@@ -676,11 +714,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="1080"
 				loading="lazy"
 				alt="长高修改 - 修改高">
-		</a>
-		
-		<figcaption>长高修改 - 修改高</figcaption>
-		
-	</figure><br>
+		</a><figcaption>长高修改 - 修改高</figcaption></figure><br>
 <figure style="flex-grow: 177; flex-basis: 426px">
 		<a href="/p/ctf-note-misc_1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2.png" data-size="1920x1080"><img src="/p/ctf-note-misc_1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2.png"
 				srcset="/p/ctf-note-misc_1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2_hu6c457ac6328d2d2808cdab535cad5daa_1104997_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/png-%E4%BF%AE%E6%94%B9%E9%AB%98_2_hu6c457ac6328d2d2808cdab535cad5daa_1104997_1024x0_resize_box_2.png 1024w"
@@ -688,11 +722,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="1080"
 				loading="lazy"
 				alt="长高修改 - 发现隐写信息">
-		</a>
-		
-		<figcaption>长高修改 - 发现隐写信息</figcaption>
-		
-	</figure><br>
+		</a><figcaption>长高修改 - 发现隐写信息</figcaption></figure><br>
 将该图片的高增大后，则可发现隐藏信息。</p>
 </blockquote>
 <hr>
@@ -710,24 +740,57 @@ audit.txt则为所分离文件的信息。</p>
 				height="68"
 				loading="lazy"
 				alt="CRC32错误显示">
-		</a>
-		
-		<figcaption>CRC32错误显示</figcaption>
-		
-	</figure></p>
+		</a><figcaption>CRC32错误显示</figcaption></figure></p>
 </blockquote>
 <p>也可以手动计算校验和来比对。<br>
+
+
 <details class="sc-details" >
 	<summary>手动计算方法</summary>
 	<div class="sc-details--inner"><ol>
 <li>先选中IHDR到crc之前的部分。<br>
-<img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_1.png" alt="选中部分"><br>
+<figure style="flex-grow: 1037; flex-basis: 2490px">
+		<a href="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_1.png" data-size="550x53"><img src="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_1.png"
+				srcset="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_1_hu3f8e6acb00d8a6350082f5b99d7103a6_9304_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_1_hu3f8e6acb00d8a6350082f5b99d7103a6_9304_1024x0_resize_box_2.png 1024w"
+				width="550"
+				height="53"
+				loading="lazy"
+				alt="选中部分">
+		</a><figcaption>选中部分</figcaption></figure><br>
 对应模板中的&quot;union CTYPE type&quot;和&quot;struct PNG_CHUNK_IHDR_ihdr&quot;两个部分。<br>
-<img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_2.png" alt="模板对应处"></li>
+<figure style="flex-grow: 636; flex-basis: 1527px">
+		<a href="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_2.png" data-size="280x44"><img src="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_2.png"
+				srcset="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_2_hua70ba14e45e4332deedf3c4e9ba335af_2811_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_2_hua70ba14e45e4332deedf3c4e9ba335af_2811_1024x0_resize_box_2.png 1024w"
+				width="280"
+				height="44"
+				loading="lazy"
+				alt="模板对应处">
+		</a><figcaption>模板对应处</figcaption></figure></li>
 <li>然后点击“工具”中的“校验和”，选择“CRC-32”。<br>
-<img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_3.png" alt="计算校验和"></li>
+<figure style="flex-grow: 82; flex-basis: 196px">
+		<a href="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_3.png" data-size="421x513"><img src="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_3.png"
+				srcset="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_3_hu4aad5e4f39d70d007deab072931cb26b_19487_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_3_hu4aad5e4f39d70d007deab072931cb26b_19487_1024x0_resize_box_2.png 1024w"
+				width="421"
+				height="513"
+				loading="lazy"
+				alt="计算校验和">
+		</a><figcaption>计算校验和</figcaption></figure></li>
 <li>得到计算结果后与crc部分比对即可。<br>
-<img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_4.png" alt="计算出的校验和"> <img src="pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_5.png" alt="文件中的校验和"><br>
+<figure style="flex-grow: 190; flex-basis: 458px">
+		<a href="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_4.png" data-size="147x77"><img src="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_4.png"
+				srcset="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_4_hua65e2b876563730dc487758f69b7e015_3563_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_4_hua65e2b876563730dc487758f69b7e015_3563_1024x0_resize_box_2.png 1024w"
+				width="147"
+				height="77"
+				loading="lazy"
+				alt="计算出的校验和">
+		</a><figcaption>计算出的校验和</figcaption></figure> <figure style="flex-grow: 1283; flex-basis: 3080px">
+		<a href="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_5.png" data-size="308x24"><img src="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_5.png"
+				srcset="/p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_5_hu7774a78d78c6a8e715f27c8fc724a2ba_1198_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/png-IHDR-%E6%89%8B%E5%8A%A8CRC32%E8%AE%A1%E7%AE%97_5_hu7774a78d78c6a8e715f27c8fc724a2ba_1198_1024x0_resize_box_2.png 1024w"
+				width="308"
+				height="24"
+				loading="lazy"
+				alt="文件中的校验和">
+		</a><figcaption>文件中的校验和</figcaption></figure><br>
 <em>注意文件中的检验和是1FCF9E8E，没有那个h。</em></li>
 </ol>
 </div>
@@ -769,11 +832,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="560"
 				loading="lazy"
 				alt="pngcheck">
-		</a>
-		
-		<figcaption>pngcheck</figcaption>
-		
-	</figure><br>
+		</a><figcaption>pngcheck</figcaption></figure><br>
 发现最后部分有异常。</p>
 </blockquote>
 </li>
@@ -791,11 +850,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="1080"
 				loading="lazy"
 				alt="zlib得到信息">
-		</a>
-		
-		<figcaption>zlib得到信息</figcaption>
-		
-	</figure></li>
+		</a><figcaption>zlib得到信息</figcaption></figure></li>
 <li>用<code>binwalk -e</code>提取，直接得到信息。
 <figure style="flex-grow: 264; flex-basis: 634px">
 		<a href="/p/ctf-note-misc_1/pic/png-IDAT-binwalk.png" data-size="690x261"><img src="/p/ctf-note-misc_1/pic/png-IDAT-binwalk.png"
@@ -804,17 +859,13 @@ audit.txt则为所分离文件的信息。</p>
 				height="261"
 				loading="lazy"
 				alt="binwalk得到信息">
-		</a>
-		
-		<figcaption>binwalk得到信息</figcaption>
-		
-	</figure></li>
+		</a><figcaption>binwalk得到信息</figcaption></figure></li>
 </ol>
 <h3 id="lsb隐写">lsb隐写</h3>
 <p><strong>为贝塔姐姐强调的部分。</strong></p>
 <div class="snote quote ">
 	<div class="snote-content">
-		<p> 「接下来我们讲一个大头er~」 —— 贝塔 </p>
+		<p>「接下来我们讲一个大头er~」 —— 贝塔</p>
 	</div>
 </div>
 <p>又称“最低有效位隐写”。</p>
@@ -842,11 +893,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="236"
 				loading="lazy"
 				alt="zsteg - 分析">
-		</a>
-		
-		<figcaption>zsteg - 分析</figcaption>
-		
-	</figure><br>
+		</a><figcaption>zsteg - 分析</figcaption></figure><br>
 发现<code>b1,rgb,lsb,xy</code>这个方式存在一个PNG文件。<br>
 则使用命令<code>zsteg -e b1,rgb,lsb,xy &gt; ans.png</code>得到文件。<br>
 <figure style="flex-grow: 564; flex-basis: 1354px">
@@ -856,11 +903,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="118"
 				loading="lazy"
 				alt="zsteg - 提取">
-		</a>
-		
-		<figcaption>zsteg - 提取</figcaption>
-		
-	</figure></p>
+		</a><figcaption>zsteg - 提取</figcaption></figure></p>
 </blockquote>
 <p>可参考&quot;β-AS&quot;姐姐的文章<a class="link" href="https://blog.csdn.net/Amherstieae/article/details/107512398"  target="_blank" rel="noopener"
     >隐写工具zsteg安装+使用教程</a>。</p>
@@ -872,56 +915,75 @@ audit.txt则为所分离文件的信息。</p>
 <strong>该脚本为python2环境，并且需要numpy、matplotlib、Pillow、pycrypto库的支持。</strong></p>
 <div class="snote warning ">
 	<div class="snote-content">
-		<p> 由于为过气python2环境（且并无python3版本），所需配置较为复杂，所有注意事项已写在下方折叠栏中。 </p>
+		<p>由于为过气python2环境（且并无python3版本），所需配置较为复杂，所有注意事项已写在下方折叠栏中。</p>
 	</div>
 </div>
+
+
 <details class="sc-details" >
 	<summary>cloacked-pixel脚本的各种注意事项</summary>
 	<div class="sc-details--inner"><details class="sc-details" >
 	<summary>同时安装python2和python3方法：</summary>
-	<div class="sc-details--inner">请参考文章<a href="https://blog.csdn.net/zuochang_liu/article/details/91361756">如何设置python2，python3，并添加环境变量</a>。</div>
+	<div class="sc-details--inner">请参考文章<a class="link" href="https://blog.csdn.net/zuochang_liu/article/details/91361756"  target="_blank" rel="noopener"
+    >如何设置python2，python3，并添加环境变量</a>。</div>
 </details>
 <details class="sc-details" >
 	<summary>python2库本地安装方式：</summary>
 	<div class="sc-details--inner"><p>感觉pip2现在好像不能在线安装库了【？……<br>
-所以只能在<a href="https://pypi.org/">pypi</a>中将库下载到本地安装。</p>
+所以只能在<a class="link" href="https://pypi.org/"  target="_blank" rel="noopener"
+    >pypi</a>中将库下载到本地安装。</p>
 <p>选择合适的版本，下载到本地。<br>
 下载完成后在cmd中，输入<code>pip2 install ...(本地路径)</code>。</p>
 <div class="snote info ">
 	<div class="snote-content">
-		<p> 路径快速输入方法：输入<code>pip2 install</code>后，将文件直接拖入cmd窗口中即可。 </p>
+		<p>路径快速输入方法：输入<code>pip2 install</code>后，将文件直接拖入cmd窗口中即可。</p>
 	</div>
 </div>
 <p>即可成功安装。</p>
-<p><em>参考自文章<a href="https://www.cnblogs.com/teagnes/p/6032964.html">Python2.7本地安装numpy包</a></em></p>
+<p><em>参考自文章<a class="link" href="https://www.cnblogs.com/teagnes/p/6032964.html"  target="_blank" rel="noopener"
+    >Python2.7本地安装numpy包</a></em></p>
 </div>
 </details>
 <details class="sc-details" >
 	<summary>上述库的下载地址：</summary>
 	<div class="sc-details--inner"><div class="snote info ">
 	<div class="snote-content">
-		<p> 以下库为个人挨个查询并对应版本后下载，均为Python2.7所能支持的最新版本，可直接下载后按上述安装方法安装。 </p>
+		<p>以下库为个人挨个查询并对应版本后下载，均为Python2.7所能支持的最新版本，可直接下载后按上述安装方法安装。</p>
 	</div>
 </div>
 <ul>
-<li><a href="https://files.pythonhosted.org/packages/14/ef/9f2eeb4ff0c733ad9149f17266e388c308e171fdb8c2415dbb472e2bbc0f/numpy-1.16.6-cp27-cp27m-win_amd64.whl">numpy</a></li>
-<li><a href="https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl">six</a></li>
-<li><a href="https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl">cycle</a>（需要先安装six）</li>
-<li><a href="https://files.pythonhosted.org/packages/70/94/784178ca5dd892a98f113cdd923372024dc04b8d40abe77ca76b5fb90ca6/pytz-2021.1-py2.py3-none-any.whl">pytz</a></li>
-<li><a href="https://files.pythonhosted.org/packages/4e/02/9c79d58f2e9f61d201f8390b5f51fdb0c19e777a241818b784f2a38ee013/kiwisolver-1.1.0-cp27-none-win_amd64.whl">kiwisolver</a></li>
-<li><a href="https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl">python-dateutil</a></li>
-<li><a href="https://files.pythonhosted.org/packages/da/d1/080d2bb13773803648281a49e3918f65b31b7beebf009887a529357fd44a/backports.functools_lru_cache-1.6.1-py2.py3-none-any.whl">backports.functools-lru-cache</a></li>
-<li><a href="https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl">pyparsing</a></li>
-<li><a href="https://files.pythonhosted.org/packages/60/f3/6bf72ceec1f3cd3ff5df1ab71d1655920f099c34484360bbed025ded521f/matplotlib-2.2.5-cp27-cp27m-win_amd64.whl">matplotlib</a>（需要先安装cycle、pytz、kiwisolver、python-dateutil、backports.functools-lru-cache、pyparsing）</li>
-<li><a href="https://files.pythonhosted.org/packages/5e/b6/8960697526a79bd1cb4520293078be3a10d725f23f20abbee298ebdeaabd/Pillow-6.2.2-cp27-cp27m-win_amd64.whl">Pillow</a></li>
-<li><a href="https://files.pythonhosted.org/packages/60/db/645aa9af249f059cc3a368b118de33889219e0362141e75d4eaf6f80f163/pycrypto-2.6.1.tar.gz">pycrypto</a>（<strong>安装方法有所不同</strong>，请见<a href="https://blog.csdn.net/qq_40657585/article/details/84309573">python2.7 安装pycrypto库</a>中“下载压缩包解压到本地”部分）<br>
+<li><a class="link" href="https://files.pythonhosted.org/packages/14/ef/9f2eeb4ff0c733ad9149f17266e388c308e171fdb8c2415dbb472e2bbc0f/numpy-1.16.6-cp27-cp27m-win_amd64.whl"  target="_blank" rel="noopener"
+    >numpy</a></li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >six</a></li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/f7/d2/e07d3ebb2bd7af696440ce7e754c59dd546ffe1bbe732c8ab68b9c834e61/cycler-0.10.0-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >cycle</a>（需要先安装six）</li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/70/94/784178ca5dd892a98f113cdd923372024dc04b8d40abe77ca76b5fb90ca6/pytz-2021.1-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >pytz</a></li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/4e/02/9c79d58f2e9f61d201f8390b5f51fdb0c19e777a241818b784f2a38ee013/kiwisolver-1.1.0-cp27-none-win_amd64.whl"  target="_blank" rel="noopener"
+    >kiwisolver</a></li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >python-dateutil</a></li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/da/d1/080d2bb13773803648281a49e3918f65b31b7beebf009887a529357fd44a/backports.functools_lru_cache-1.6.1-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >backports.functools-lru-cache</a></li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/8a/bb/488841f56197b13700afd5658fc279a2025a39e22449b7cf29864669b15d/pyparsing-2.4.7-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >pyparsing</a></li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/60/f3/6bf72ceec1f3cd3ff5df1ab71d1655920f099c34484360bbed025ded521f/matplotlib-2.2.5-cp27-cp27m-win_amd64.whl"  target="_blank" rel="noopener"
+    >matplotlib</a>（需要先安装cycle、pytz、kiwisolver、python-dateutil、backports.functools-lru-cache、pyparsing）</li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/5e/b6/8960697526a79bd1cb4520293078be3a10d725f23f20abbee298ebdeaabd/Pillow-6.2.2-cp27-cp27m-win_amd64.whl"  target="_blank" rel="noopener"
+    >Pillow</a></li>
+<li><a class="link" href="https://files.pythonhosted.org/packages/60/db/645aa9af249f059cc3a368b118de33889219e0362141e75d4eaf6f80f163/pycrypto-2.6.1.tar.gz"  target="_blank" rel="noopener"
+    >pycrypto</a>（<strong>安装方法有所不同</strong>，请见<a class="link" href="https://blog.csdn.net/qq_40657585/article/details/84309573"  target="_blank" rel="noopener"
+    >python2.7 安装pycrypto库</a>中“下载压缩包解压到本地”部分）<br>
 同时安装时还需要&quot;vcvarsall.bat&quot;，方法为两步：
 <ol>
 <li>
-<p>下载<a href="https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi">&ldquo;Microsoft Visual C++ Compiler for Python 2.7&rdquo;</a>并安装。</p>
+<p>下载<a class="link" href="https://download.microsoft.com/download/7/9/6/796EF2E4-801B-4FC4-AB28-B59FBF6D907B/VCForPython27.msi"  target="_blank" rel="noopener"
+    >&ldquo;Microsoft Visual C++ Compiler for Python 2.7&rdquo;</a>并安装。</p>
 </li>
 <li>
-<p>按照<a href="https://blog.csdn.net/donger_soft/article/details/44838109">完美解决“Unable to find vcvarsall.bat”错误</a>中配置注册表。<br>
+<p>按照<a class="link" href="https://blog.csdn.net/donger_soft/article/details/44838109"  target="_blank" rel="noopener"
+    >完美解决“Unable to find vcvarsall.bat”错误</a>中配置注册表。<br>
 【其中路径为<code>C:\Users\SuperSASSw\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0</code>】</p>
 <p><em>不确定是否还需要配置环境变量（个人为配置了的），如果仍有问题，请点击开始菜单中的&quot;Microsoft Visual C++ Compiler Package for Python 2.7&quot;这个文件夹中，自己对应平台的&quot;Visual C++ 2008 xx-bit Command Prompt&quot;这个快捷方式。</em></p>
 </li>
@@ -930,21 +992,29 @@ audit.txt则为所分离文件的信息。</p>
 </ul>
 <div class="snote yellow ">
 	<div class="snote-content">
-		<p>以下折叠部分为安装<a href="https://pypi.org/project/crypto/">crypto</a>库所需库，但安装这个后发现不对（有个Random不存在orz……），<br>
+		<p>以下折叠部分为安装<a class="link" href="https://pypi.org/project/crypto/"  target="_blank" rel="noopener"
+    >crypto</a>库所需库，但安装这个后发现不对（有个Random不存在orz……），<br>
 查询后发现为上面那个&quot;pycrypto&quot;库。</p>
 	</div>
 </div>
 <details class="sc-details" >
 	<summary>crypto所需库</summary>
 	<div class="sc-details--inner"><ul>
-<li><del><a href="https://files.pythonhosted.org/packages/d0/f4/0081137fceff5779cd4205c1e96657e41cc2d2d56c940dc8eeb6111780f7/shellescape-3.8.1-py2.py3-none-any.whl">shellescape</a></del></li>
-<li><del><a href="https://files.pythonhosted.org/packages/c5/5b/b961f4add16d941585f318051dd5410a01596d98132acab8cf8e9e18e20c/PyYAML-5.4.1-cp27-cp27m-win_amd64.whl">PyYAML</a></del></li>
-<li><del><a href="https://files.pythonhosted.org/packages/19/c7/fa589626997dd07bd87d9269342ccb74b1720384a4d739a1872bd84fbe68/chardet-4.0.0-py2.py3-none-any.whl">chardet</a></del></li>
-<li><del><a href="https://files.pythonhosted.org/packages/5e/a0/5f06e1e1d463903cf0c0eebeb751791119ed7a4b3737fdc9a77f1cdfb51f/certifi-2020.12.5-py2.py3-none-any.whl">certifi</a></del></li>
-<li><del><a href="https://files.pythonhosted.org/packages/23/fc/8a49991f7905261f9ca9df5aa9b58363c3c821ce3e7f671895442b7100f2/urllib3-1.26.3-py2.py3-none-any.whl">urllib3</a></del></li>
-<li><del><a href="https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl">idna</a></del></li>
-<li><del><a href="https://files.pythonhosted.org/packages/29/c1/24814557f1d22c56d50280771a17307e6bf87b70727d975fd6b2ce6b014a/requests-2.25.1-py2.py3-none-any.whl">requests</a>（需要先安装chardet、certifi、urllib3、na）</del></li>
-<li><del><a href="%5Bpic/png-lsb-zsteg_2.png%5D(https://files.pythonhosted.org/packages/02/36/b8107b51adca73402ec1860d88f41d958e275e60eea6eeaa9c39ddb89a40/Naked-0.1.31-py2.py3-none-any.whl)">Naked</a>（需要先安装YAML、requests）</del></li>
+<li><del><a class="link" href="https://files.pythonhosted.org/packages/d0/f4/0081137fceff5779cd4205c1e96657e41cc2d2d56c940dc8eeb6111780f7/shellescape-3.8.1-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >shellescape</a></del></li>
+<li><del><a class="link" href="https://files.pythonhosted.org/packages/c5/5b/b961f4add16d941585f318051dd5410a01596d98132acab8cf8e9e18e20c/PyYAML-5.4.1-cp27-cp27m-win_amd64.whl"  target="_blank" rel="noopener"
+    >PyYAML</a></del></li>
+<li><del><a class="link" href="https://files.pythonhosted.org/packages/19/c7/fa589626997dd07bd87d9269342ccb74b1720384a4d739a1872bd84fbe68/chardet-4.0.0-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >chardet</a></del></li>
+<li><del><a class="link" href="https://files.pythonhosted.org/packages/5e/a0/5f06e1e1d463903cf0c0eebeb751791119ed7a4b3737fdc9a77f1cdfb51f/certifi-2020.12.5-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >certifi</a></del></li>
+<li><del><a class="link" href="https://files.pythonhosted.org/packages/23/fc/8a49991f7905261f9ca9df5aa9b58363c3c821ce3e7f671895442b7100f2/urllib3-1.26.3-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >urllib3</a></del></li>
+<li><del><a class="link" href="https://files.pythonhosted.org/packages/a2/38/928ddce2273eaa564f6f50de919327bf3a00f091b5baba8dfa9460f3a8a8/idna-2.10-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >idna</a></del></li>
+<li><del><a class="link" href="https://files.pythonhosted.org/packages/29/c1/24814557f1d22c56d50280771a17307e6bf87b70727d975fd6b2ce6b014a/requests-2.25.1-py2.py3-none-any.whl"  target="_blank" rel="noopener"
+    >requests</a>（需要先安装chardet、certifi、urllib3、na）</del></li>
+<li><del><a class="link" href="[pic/png-lsb-zsteg_2.png]%28https://files.pythonhosted.org/packages/02/36/b8107b51adca73402ec1860d88f41d958e275e60eea6eeaa9c39ddb89a40/Naked-0.1.31-py2.py3-none-any.whl%29" >Naked</a>（需要先安装YAML、requests）</del></li>
 </ul>
 </div>
 </details>
@@ -971,11 +1041,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="92"
 				loading="lazy"
 				alt="带密匙的lsb - 使用脚本后结果">
-		</a>
-		
-		<figcaption>带密匙的lsb - 使用脚本后结果</figcaption>
-		
-	</figure><br>
+		</a><figcaption>带密匙的lsb - 使用脚本后结果</figcaption></figure><br>
 打开ans后，发现直接为flag。<br>
 <figure style="flex-grow: 588; flex-basis: 1413px">
 		<a href="/p/ctf-note-misc_1/pic/png-lsb-key_2.png" data-size="318x54"><img src="/p/ctf-note-misc_1/pic/png-lsb-key_2.png"
@@ -984,11 +1050,7 @@ audit.txt则为所分离文件的信息。</p>
 				height="54"
 				loading="lazy"
 				alt="带密匙的lsb - 打开ans文件">
-		</a>
-		
-		<figcaption>带密匙的lsb - 打开ans文件</figcaption>
-		
-	</figure></p>
+		</a><figcaption>带密匙的lsb - 打开ans文件</figcaption></figure></p>
 </blockquote>
 <h3 id="bmp">bmp</h3>
 <p>用&quot;wbStego4.3open&quot;工具对bmp或pdf等格式文件进行加密解密。</p>
@@ -1002,22 +1064,14 @@ audit.txt则为所分离文件的信息。</p>
 				height="361"
 				loading="lazy"
 				alt="wbStego4.3open - 步骤2 选择方式">
-		</a>
-		
-		<figcaption>wbStego4.3open - 步骤2 选择方式</figcaption>
-		
-	</figure> <figure style="flex-grow: 150; flex-basis: 360px">
+		</a><figcaption>wbStego4.3open - 步骤2 选择方式</figcaption></figure> <figure style="flex-grow: 150; flex-basis: 360px">
 		<a href="/p/ctf-note-misc_1/pic/bmp-wbStego-step3.png" data-size="542x361"><img src="/p/ctf-note-misc_1/pic/bmp-wbStego-step3.png"
 				srcset="/p/ctf-note-misc_1/pic/bmp-wbStego-step3_hu21b812eaf8809b8fd6682b12e8e31862_14823_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/bmp-wbStego-step3_hu21b812eaf8809b8fd6682b12e8e31862_14823_1024x0_resize_box_2.png 1024w"
 				width="542"
 				height="361"
 				loading="lazy"
 				alt="wbStego4.3open - 步骤3 选择文件及类型">
-		</a>
-		
-		<figcaption>wbStego4.3open - 步骤3 选择文件及类型</figcaption>
-		
-	</figure><br>
+		</a><figcaption>wbStego4.3open - 步骤3 选择文件及类型</figcaption></figure><br>
 <figure style="flex-grow: 150; flex-basis: 360px">
 		<a href="/p/ctf-note-misc_1/pic/bmp-wbStego-step4.png" data-size="542x361"><img src="/p/ctf-note-misc_1/pic/bmp-wbStego-step4.png"
 				srcset="/p/ctf-note-misc_1/pic/bmp-wbStego-step4_huf40d600781faba395c41bdb312c179be_10758_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/bmp-wbStego-step4_huf40d600781faba395c41bdb312c179be_10758_1024x0_resize_box_2.png 1024w"
@@ -1025,22 +1079,14 @@ audit.txt则为所分离文件的信息。</p>
 				height="361"
 				loading="lazy"
 				alt="wbStego4.3open - 步骤4 输入密匙">
-		</a>
-		
-		<figcaption>wbStego4.3open - 步骤4 输入密匙</figcaption>
-		
-	</figure> <figure style="flex-grow: 150; flex-basis: 360px">
+		</a><figcaption>wbStego4.3open - 步骤4 输入密匙</figcaption></figure> <figure style="flex-grow: 150; flex-basis: 360px">
 		<a href="/p/ctf-note-misc_1/pic/bmp-wbStego-step5.png" data-size="542x361"><img src="/p/ctf-note-misc_1/pic/bmp-wbStego-step5.png"
 				srcset="/p/ctf-note-misc_1/pic/bmp-wbStego-step5_hu308531206d844f161ef7b9843473e32d_10162_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/bmp-wbStego-step5_hu308531206d844f161ef7b9843473e32d_10162_1024x0_resize_box_2.png 1024w"
 				width="542"
 				height="361"
 				loading="lazy"
 				alt="wbStego4.3open - 步骤5 输入输出文件名">
-		</a>
-		
-		<figcaption>wbStego4.3open - 步骤5 输入输出文件名</figcaption>
-		
-	</figure><br>
+		</a><figcaption>wbStego4.3open - 步骤5 输入输出文件名</figcaption></figure><br>
 <figure style="flex-grow: 302; flex-basis: 725px">
 		<a href="/p/ctf-note-misc_1/pic/bmp-wbStego-ans.png" data-size="420x139"><img src="/p/ctf-note-misc_1/pic/bmp-wbStego-ans.png"
 				srcset="/p/ctf-note-misc_1/pic/bmp-wbStego-ans_hu0f9574336343ed36f6b6c93eae174dc5_14044_480x0_resize_box_2.png 480w, /p/ctf-note-misc_1/pic/bmp-wbStego-ans_hu0f9574336343ed36f6b6c93eae174dc5_14044_1024x0_resize_box_2.png 1024w"
@@ -1048,32 +1094,28 @@ audit.txt则为所分离文件的信息。</p>
 				height="139"
 				loading="lazy"
 				alt="wbStego4.3open - 结果">
-		</a>
-		
-		<figcaption>wbStego4.3open - 结果</figcaption>
-		
-	</figure></p>
+		</a><figcaption>wbStego4.3open - 结果</figcaption></figure></p>
 </blockquote>
 <div class="snote bug red">
 	<div class="snote-content">
-		<p> Tip: 这个软件不能直接关闭，需要用任务管理器结束orz…… </p>
+		<p>Tip: 这个软件不能直接关闭，需要用任务管理器结束orz……</p>
 	</div>
 </div>
 <hr>
 <h1 id="0x04-写在最后">0x04 写在最后</h1>
 <p><div class="snote warning ">
 	<div class="snote-content">
-		<p> 以上大部分为个人总结，由于这里也刚入门，很多地方可能存在错误。如发现错误请及时指出，谢谢！…… </p>
+		<p>以上大部分为个人总结，由于这里也刚入门，很多地方可能存在错误。如发现错误请及时指出，谢谢！……</p>
 	</div>
 </div>
 <div class="snote link green">
 	<div class="snote-content">
-		<p> 由于目前博客不支持附件上传下载，所以如果需要上述中的文件，可以联系我分享文件【联系方式在关于页面中有…… </p>
+		<p>由于目前博客不支持附件上传下载，所以如果需要上述中的文件，可以联系我分享文件【联系方式在关于页面中有……</p>
 	</div>
 </div>
 <div class="snote up cyan">
 	<div class="snote-content">
-		<p> 如对以上内容存在疑惑不解的地方，也可以询问我。如果我了解的话会尽力解答；不了解的话可以一起努力弄明白hhh…… </p>
+		<p>如对以上内容存在疑惑不解的地方，也可以询问我。如果我了解的话会尽力解答；不了解的话可以一起努力弄明白hhh……</p>
 	</div>
 </div></p>
 <p>剩余部分因为时间原因没有继续讲啦_(:з」∠)_……<br>

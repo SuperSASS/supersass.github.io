@@ -337,7 +337,8 @@ if (!doNotTrack) {
     <h1 id="题目链接">题目链接</h1>
 <div class="snote link cyan">
 	<div class="snote-content">
-		<p> P4838 <a href="https://www.luogu.com.cn/problem/P4838">P哥破解密码</a> </p>
+		<p>P4838 <a class="link" href="https://www.luogu.com.cn/problem/P4838"  target="_blank" rel="noopener"
+    >P哥破解密码</a></p>
 	</div>
 </div>
 <h1 id="题目分析">题目分析</h1>
@@ -363,7 +364,8 @@ $f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
 <h1 id="个人代码">个人代码</h1>
 <div class="snote link green">
 	<div class="snote-content">
-		<p> <a href="https://paste.ubuntu.com/p/jNPN9YYgTw/">Pastebin链接</a> </p>
+		<p><a class="link" href="https://paste.ubuntu.com/p/jNPN9YYgTw/"  target="_blank" rel="noopener"
+    >Pastebin链接</a></p>
 	</div>
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//P4838 [P哥破解密码](https://www.luogu.com.cn/problem/P4838)
@@ -424,7 +426,9 @@ $f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
 		<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="p">(</span><span class="n">ans</span><span class="p">.</span><span class="n">mat</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">ans</span><span class="p">.</span><span class="n">mat</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">ans</span><span class="p">.</span><span class="n">mat</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">);</span>
 	<span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div><details class="sc-details" >
+</code></pre></div>
+
+<details class="sc-details" >
 	<summary>附：初始代码——基础动规方法</summary>
 	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">dp</span>
 <span class="p">{</span>

@@ -343,9 +343,11 @@ if (!doNotTrack) {
     <section class="article-content">
     <div class="snote error ">
 	<div class="snote-content">
-		<p> 发现note嵌套中还是会出现格式混乱的问题，待修复…… </p>
+		<p>发现note嵌套中还是会出现格式混乱的问题，待修复……</p>
 	</div>
 </div>
+
+
 <details class="sc-details" >
 	<summary>错误例子</summary>
 	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">note</span> <span class="nx">info</span> <span class="p">&gt;}}</span>
@@ -373,7 +375,8 @@ if (!doNotTrack) {
 		<p><p>很长很长的note！……<br>
 还可以换行！……</p>
 <p>因为内容是Markdown格式……<br>
-<a href="http://game.granbluefantasy.jp/">里面干什么都可以_(:з」∠)_……</a></p>
+<a class="link" href="http://game.granbluefantasy.jp/"  target="_blank" rel="noopener"
+    >里面干什么都可以_(:з」∠)_……</a></p>
 <p>这句话是一句很长的话我用来测试他能否在不同移动端上也能正常显示我希望他真的能正常显示不然我又要去改scss了呜呜呜x但是现在这个长度还不够我还要再加长点嗯现在应该够了让我们看看效果吧！……</p>
 <div class="snote warning ">
 	<div class="snote-content">
@@ -406,7 +409,7 @@ if (!doNotTrack) {
 <blockquote>
 <div class="snote success ">
 	<div class="snote-content">
-		<p> 成功（success）…… </p>
+		<p>成功（success）……</p>
 	</div>
 </div>
 <p>使用方法：</p>
@@ -418,7 +421,7 @@ if (!doNotTrack) {
 <blockquote>
 <div class="snote link blue">
 	<div class="snote-content">
-		<p> 背景是SuperSASS蓝（blue）的链接图示（link）…… </p>
+		<p>背景是SuperSASS蓝（blue）的链接图示（link）……</p>
 	</div>
 </div>
 <p>使用方法：</p>
@@ -428,19 +431,19 @@ if (!doNotTrack) {
 </ul>
 <div class="snote info ">
 	<div class="snote-content">
-		<p> 图标问题已修复…… </p>
+		<p>图标问题已修复……</p>
 	</div>
 </div>
 <blockquote>
 <p>测试：
 <div class="snote up ">
 	<div class="snote-content">
-		<p> Test——up…… </p>
+		<p>Test——up……</p>
 	</div>
 </div>
 <div class="snote paperclip yellow">
 	<div class="snote-content">
-		<p> Test——paperclip in yellow…… </p>
+		<p>Test——paperclip in yellow……</p>
 	</div>
 </div></p>
 </blockquote>
@@ -460,7 +463,8 @@ if (!doNotTrack) {
 <div class="snote info ">
 	<div class="snote-content">
 		<p>想法来自于：<br>
-小康博客 —— <a href="https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84note%E6%A0%87%E7%AD%BE">Hexo博客之butterfly主题优雅魔改系列（持续更新）</a></p>
+小康博客 —— <a class="link" href="https://www.antmoe.com/posts/a811d614/index.html#volantis%E4%B8%BB%E9%A2%98%E7%9A%84note%E6%A0%87%E7%AD%BE"  target="_blank" rel="noopener"
+    >Hexo博客之butterfly主题优雅魔改系列（持续更新）</a></p>
 	</div>
 </div>
 <p>使用了其CSS后，用基于Hugo的Shortcode实现，并更改部分CSS使得匹配该主题……<br>

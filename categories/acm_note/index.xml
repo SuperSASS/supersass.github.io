@@ -6,7 +6,16 @@
     <description>Recent content in ACM - 学习笔记 on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 04 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/acm_note/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/categories/acm_note/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ACM学习笔记——博弈论……</title>
+      <link>https://blog.supersassw.com/p/acm-note-game_theory/</link>
+      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-game_theory/</guid>
+      <description>博弈论 博弈论简介 在OI中，博弈论一般就是两位玩家玩游戏，游戏有一定规则，双方均在这规则之下进行回合制游戏，并且最终一定会分出胜负。 同时这两位</description>
+    </item>
+    
     <item>
       <title>ACM学习笔记——离散化……</title>
       <link>https://blog.supersassw.com/p/acm-note-discrete/</link>

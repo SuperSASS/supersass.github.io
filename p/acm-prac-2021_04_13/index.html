@@ -297,20 +297,21 @@ if (!doNotTrack) {
     
     <header class="article-category">
         
-            <a href="/categories/acm_note/" >
-                ACM - 学习笔记
+            <a href="/categories/acm_practice/" >
+                ACM - 日常练习
             </a>
         
     </header>
     
 
     <h2 class="article-title">
-        <a href="/p/acm-prac-2021_04_13/">ACM学习笔记 - 总模板……</a>
+        <a href="/p/acm-prac-2021_04_13/">ACM练习 - P2034 选择数字……</a>
     </h2>
 
     
-    <h3 class="article-subtitle">
-            总结出来的个人向的一些模板……
+    
+        <h3 class="article-subtitle article-subtitleHitokoto">
+            一言加载中_(:з」∠)_……
         </h3><footer class="article-time">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
   <path stroke="none" d="M0 0h24v24H0z"/>
@@ -320,7 +321,7 @@ if (!doNotTrack) {
 
 
 
-        <time class="article-time--published">2020/12/17</time>
+        <time class="article-time--published">2021/04/13</time>
     </footer>
     <footer class="article-readingTime">
         <div class="article-readingTime--icon">
@@ -334,8 +335,8 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：5783</div>
-            <div class="time">预计阅读时长： <time>12</time> 分钟</div>
+            <div class="char">文章字数：1762</div>
+            <div class="time">预计阅读时长： <time>4</time> 分钟</div>
         </div>
     </footer>
 </div>
@@ -345,7 +346,8 @@ if (!doNotTrack) {
     <h1 id="题目链接">题目链接</h1>
 <div class="snote link cyan">
 	<div class="snote-content">
-		<p> P2034 <a href="https://www.luogu.com.cn/problem/P2034">选择数字</a> </p>
+		<p>P2034 <a class="link" href="https://www.luogu.com.cn/problem/P2034"  target="_blank" rel="noopener"
+    >选择数字</a></p>
 	</div>
 </div>
 <h1 id="题目分析">题目分析</h1>
@@ -359,7 +361,7 @@ if (!doNotTrack) {
 <p>刚开始很容易想到一种<strong>贪心的思路</strong>。
 <div class="snote idea cyan">
 	<div class="snote-content">
-		<p> 每次选择最小的数舍去。 </p>
+		<p>每次选择最小的数舍去。</p>
 	</div>
 </div></p>
 <p>但证明其正确性（是否会反悔）时，<br>
@@ -400,16 +402,20 @@ $$dp[i]=\max(dp[i-1],\max(\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i] (j∈[i-k,i-1])))$
 <p>在之前分析过程中，我们就能隐约感觉到：<br>
 这个<strong>找前$k$项中的最优情况</strong>，<br>
 跟之前做过的滑动窗口这道题有点像！</p>
+
+
 <details class="sc-details" >
 	<summary>题目链接x个人笔记</summary>
 	<div class="sc-details--inner"><div class="snote link cyan">
 	<div class="snote-content">
-		<p> 题目链接 - P1886 <a href="https://www.luogu.com.cn/problem/P1886">滑动窗口</a> </p>
+		<p>题目链接 - P1886 <a class="link" href="https://www.luogu.com.cn/problem/P1886"  target="_blank" rel="noopener"
+    >滑动窗口</a></p>
 	</div>
 </div>
 <div class="snote link cyan">
 	<div class="snote-content">
-		<p> <a href="https://blog.csdn.net/qq_31029725/article/details/78301056">个人极早期笔记</a>【语言和格式可能极其混乱_(:з」∠)_【虽然现在也是x…… </p>
+		<p><a class="link" href="https://blog.csdn.net/qq_31029725/article/details/78301056"  target="_blank" rel="noopener"
+    >个人极早期笔记</a>【语言和格式可能极其混乱_(:з」∠)_【虽然现在也是x……</p>
 	</div>
 </div>
 </div>
@@ -456,7 +462,8 @@ $$dp[i]=max(dp[i-1],top+inc+a[i])$$
 <h1 id="个人代码">个人代码</h1>
 <div class="snote link green">
 	<div class="snote-content">
-		<p> <a href="https://paste.ubuntu.com/p/XdTbTBDDTG/">Pastebin链接</a> </p>
+		<p><a class="link" href="https://paste.ubuntu.com/p/XdTbTBDDTG/"  target="_blank" rel="noopener"
+    >Pastebin链接</a></p>
 	</div>
 </div>
 <div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//P2034 [选择数字](https://www.luogu.com.cn/problem/P2034)

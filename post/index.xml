@@ -6,7 +6,25 @@
     <description>Recent content in Posts on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 13 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>西南交通大学转专业指南……</title>
+      <link>https://blog.supersassw.com/p/univ-exchange_major/</link>
+      <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-exchange_major/</guid>
+      <description>本指南完成于2021年，时效性请根据阅读时间来判断。 指南篇幅过长，电脑端可点击左侧的“显示文章目录”显示目录。但由于博客主题原因，手机版暂时</description>
+    </item>
+    
+    <item>
+      <title>ACM学习笔记——博弈论……</title>
+      <link>https://blog.supersassw.com/p/acm-note-game_theory/</link>
+      <pubDate>Sat, 17 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/acm-note-game_theory/</guid>
+      <description>博弈论 博弈论简介 在OI中，博弈论一般就是两位玩家玩游戏，游戏有一定规则，双方均在这规则之下进行回合制游戏，并且最终一定会分出胜负。 同时这两位</description>
+    </item>
+    
     <item>
       <title>ACM练习 - P2034 选择数字……</title>
       <link>https://blog.supersassw.com/p/acm-prac-2021_04_13/</link>
@@ -401,6 +419,15 @@
       
       <guid>https://blog.supersassw.com/p/acm-writeup-2020_10_24/</guid>
       <description>比赛链接 SWJTU Online Judge 题解文件 点击下载：月赛题解（预赛）.zip 总结范围 *A *C D E *G H J K 注：前面带*号的题因题目简单，为简略总结。 D、E因简单而未总</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://blog.supersassw.com/p/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/</guid>
+      <description></description>
     </item>
     
   </channel>
