@@ -1,0 +1,797 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='有关数字电子技术的常见考点总结……'><title>数字电子技术 - 考点总结……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/univ-digital_electronic-summary/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='数字电子技术 - 考点总结……'>
+<meta property='og:description' content='有关数字电子技术的常见考点总结……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/univ-digital_electronic-summary/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='大学课程' /><meta property='article:tag' content='数字电子技术' /><meta property='article:tag' content='考点总结' /><meta property='article:published_time' content='2021-11-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-11-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/88331974_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="数字电子技术 - 考点总结……">
+<meta name="twitter:description" content="有关数字电子技术的常见考点总结……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/88331974_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#第一章-数字逻辑概论">第一章 数字逻辑概论</a>
+      <ul>
+        <li><a href="#第一节-数字信号与数字电路">第一节 数字信号与数字电路</a></li>
+        <li><a href="#第二节-数制">第二节 数制</a></li>
+        <li><a href="#第三节-二进制的算术运算">第三节 二进制的算术运算</a></li>
+        <li><a href="#第四节-二进制代码">第四节 二进制代码</a></li>
+        <li><a href="#第五节-二值逻辑变量与基本逻辑运算">第五节 二值逻辑变量与基本逻辑运算</a></li>
+      </ul>
+    </li>
+    <li><a href="#第二章-逻辑代数与硬件描述语言基础">第二章 逻辑代数与硬件描述语言基础</a>
+      <ul>
+        <li><a href="#第一节-逻辑代数的基本定律和规则">第一节 逻辑代数的基本定律和规则</a></li>
+        <li><a href="#第二节-逻辑函数表达式的形式">第二节 逻辑函数表达式的形式</a></li>
+        <li><a href="#第五节-硬件描述语言-verilog-hdl-基础">第五节 硬件描述语言 Verilog HDL 基础</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/univ-digital_electronic-summary/">
+                
+                    <img src="88331974_p0.png" loading="lazy" alt="Featured image of post 数字电子技术 - 考点总结……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/university/" >
+                大学相关
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/univ-digital_electronic-summary/">数字电子技术 - 考点总结……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            有关数字电子技术的常见考点总结……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/11/23</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：1142</div>
+            <div class="time">预计阅读时长： <time>3</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="第一章-数字逻辑概论">第一章 数字逻辑概论</h1>
+<h2 id="第一节-数字信号与数字电路">第一节 数字信号与数字电路</h2>
+<ul>
+<li>比特率：每秒传输数据的位数。</li>
+<li>占空比：脉冲作用时间（高电平）$t_w$占整个周期$T$的百分比。
+$$q(%)=\frac{t_w}{T}\times 100%$$</li>
+<li>上升时间$t_r$和下降时间$t_f$：从脉冲幅值$10%$上升到$90%$（或者反之）所经历的时间。<br>
+<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_22-53-49.png" alt="图 1"  /></li>
+</ul>
+<h2 id="第二节-数制">第二节 数制</h2>
+<ul>
+<li>十转二
+<ul>
+<li>整数：除二倒取余</li>
+<li>小数：乘二顺取整</li>
+</ul>
+</li>
+<li>二转十：直接乘基数<br>
+$(N)<em>D=b</em>{m}\times2^{m}+b_{m-1}\times2^{m-1}+\cdots+b_1\times2^1+b_0\times2^0+b_{-1}\times2^{-1}+\cdots+\cdots+b_{-n}\times2^{-n}$</li>
+<li>二转八、十六：按照3位（八进制）/4位（十六进制）分开看，每个划分单独转成相应进制（包括小数也如此转）</li>
+<li>八、十六转二：每一位转成对应的3位（八进制）/4位（十六进制）</li>
+</ul>
+<h2 id="第三节-二进制的算术运算">第三节 二进制的算术运算</h2>
+<ul>
+<li>有符号数的三种码
+<ul>
+<li>原码：最高位表示符号，其余位表示二进制下的数值。</li>
+<li>反码：
+<ul>
+<li>正数：与原码相同</li>
+<li>负数：符号位不变，其余位取反</li>
+</ul>
+</li>
+<li>补码：
+<ul>
+<li>正数：与原码相同</li>
+<li>负数：符号位不变，其余位取反后加一。（反码加一）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>三种码表示范围（n位时）
+<ul>
+<li>原码：$-(2^{n-1}-1)\sim+(2^{n-1}-1)$，表示$2^n-1$个数。</li>
+<li>反码：$-(2^{n-1}-1)\sim+(2^{n-1}-1)$，表示$2^n-1$个数。</li>
+<li>补码：$-2^{n-1}\sim+(2^{n-1}-1)$，可以<strong>表示$2^n$个数</strong>。</li>
+</ul>
+</li>
+<li>补码的运算：<br>
+两数之和/差的补码，等于两数的补码之和/差。<br>
+符号位也同样参与运算，运算结果的符号位是由运算得出。</li>
+<li>溢出的判断：<br>
+当进位位与数的符号位（$b_{n-1}$位）相反时，则产生了溢出。</li>
+</ul>
+<h2 id="第四节-二进制代码">第四节 二进制代码</h2>
+<ul>
+<li>
+<p>二-十进制码 - BCD码</p>
+<ul>
+<li>8421BCD</li>
+<li>2421BCD</li>
+<li>5421BCD</li>
+<li>余3码</li>
+<li>余3循环码</li>
+</ul>
+<p><img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-23_09-20-23.png" alt="BCD码"  /></p>
+</li>
+<li>
+<p>格雷码</p>
+<ul>
+<li>二进制码转格雷码：最高位相同，其余位依次相加得到下一位二进制码。<br>
+<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-23_09-19-52.png" alt="二进制码转格雷码"  /></li>
+<li>格雷码转二进制码：最高位相同，产生的新二进制码与下一位格雷码相加，得到下一位二进制码。<br>
+<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-23_09-19-43.png" alt="格雷码转二进制码"  /></li>
+</ul>
+</li>
+</ul>
+<h2 id="第五节-二值逻辑变量与基本逻辑运算">第五节 二值逻辑变量与基本逻辑运算</h2>
+<ul>
+<li>有关逻辑门的<strong>矩形符号</strong>
+<ul>
+<li>与：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-09.png" alt="图 1"  /></li>
+<li>或：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-24.png" alt="图 2"  /></li>
+<li>非：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-35.png" alt="图 3"  /><br>
+<strong>很特殊</strong>，中间为$1$。（不过看一个输入端口可以看出）</li>
+<li>与非、或非：即在与、或的输出端口加上圆圈即可。</li>
+<li>异或：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-33-54.png" alt="图 4"  /><br>
+中间为$=1$</li>
+<li>同或：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-34-21.png" alt="图 5"  /><br>
+中间为$=$，而不是异或加非。</li>
+</ul>
+</li>
+</ul>
+<h1 id="第二章-逻辑代数与硬件描述语言基础">第二章 逻辑代数与硬件描述语言基础</h1>
+<h2 id="第一节-逻辑代数的基本定律和规则">第一节 逻辑代数的基本定律和规则</h2>
+<ul>
+<li>对偶规则
+<blockquote>
+<p>对函数$L$，将其与或、01互换后的式子称为对偶式，记作$L'$。<br>
+满足性质：函数$L$的对偶式$L'$有相同的值。或者说某等式成立，则其对偶等式也成立。<br>
+e.g. $A+\overline{A}B=A+B\Rightarrow A(\overline{A}+B)=AB$</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第二节-逻辑函数表达式的形式">第二节 逻辑函数表达式的形式</h2>
+<ul>
+<li>符号表达形式
+<ul>
+<li>最小项表达式，可以记为$\sum m(&hellip;)$</li>
+<li>最大项表达式，可以记为$\Pi m(&hellip;)$</li>
+</ul>
+</li>
+<li>最小项是从$\overline{ABC}$开始，$m_0=\overline{ABC}$；<br>
+最大项是从$A+B+C$开始，$m_0=A+B+C$。</li>
+<li>对于最大项表达式，其与最小项互补。
+<blockquote>
+<p>e.g. $L(A,B,C)=\sum m(3,5,6) \rightarrow \Pi m(0,1,2,4,7)$</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="第五节-硬件描述语言-verilog-hdl-基础">第五节 硬件描述语言 Verilog HDL 基础</h2>
+<ul>
+<li>数据的默认值
+<ul>
+<li>对于<code>wire</code> - 默认值为高阻态<code>z</code>。</li>
+<li>对于<code>reg</code> - 默认值为未知态<code>x</code>。</li>
+</ul>
+</li>
+<li>位拼接运算符<code>{}</code><br>
+e.g. <code>A=1'b1</code>、<code>B=2'b10</code>、<code>C=2'b00</code>
+<ul>
+<li><code>{B,C}</code>=<code>4'b1000</code></li>
+<li><code>{A,B[1],C[0]}</code>=<code>3'b110</code></li>
+<li><code>{A,3b'101,B}</code>=<code>6b1101_10</code></li>
+<li><code>{2{A},2{C,2{B}}}</code>=<code>14b11_001010_001010</code></li>
+</ul>
+</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">大学课程</a>
+        
+            <a href="/tags/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">数字电子技术</a>
+        
+            <a href="/tags/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93/">考点总结</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/88331974" target="_blank" rel="noopener">88331974</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-digital_electronic-ep4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-digital_electronic-ep4/74542521_p0.4e73708a10191e973742b77a1ab44e06_hu41b7815279cac48aae43ea80d2335b45_1737627_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Digital_Electronic-Ep4" 
+                        data-hash="md5-TnNwihAZHpc3Qrd6GrROBg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数字电子技术——第四章……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-cpp-summary/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-cpp-summary/58541644_p0.1e235997ae27140b549bbc119d661b06_hu0c218c74dadec57d38928125b7e7f710_1153603_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-CPP-summary" 
+                        data-hash="md5-HiNZl64nFAtUm7wRnWYbBg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">程序设计——考点总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-psycho_phy-prac-4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-psycho_phy-prac-4/pixiv61483143.d2be93400bdf313d058b9f10ab70ae7a_hu12c1b5a9a5e516caec4f044d40d3022b_1819672_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Psycho_Phy-prac-4" 
+                        data-hash="md5-0r6TQAvfMT0Fi58Qq3Cueg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">生理心理学 - 第四章作业……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-activity-summary_2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-activity-summary_2/Yande-303578.18d7631c4f321b29333bd4aba5e5107c_hu4ac8284d9d64ce4dd805253e9d934d3e_1697426_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-activity-summary_2" 
+                        data-hash="md5-GNdjHE8yGykzO9SrpeUQfA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">近代史活动 - 制作阶段安排……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-activity-summary/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-activity-summary/Yande-364526.bdaf98854fd9bfb11b0dfc269b8e100c_hu060b1d1a848b90f2358cba9689228f00_3707348_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-activity-summary" 
+                        data-hash="md5-va&#43;YhU/Zv7EbDfwmm44QDA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">近代史活动会议总结……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

@@ -8,6 +8,15 @@
     <language>zh-CN</language>
     <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>数字电子技术 - 考点总结……</title>
+      <link>https://blog.supersassw.com/p/univ-digital_electronic-summary/</link>
+      <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-digital_electronic-summary/</guid>
+      <description>第一章 数字逻辑概论 第一节 数字信号与数字电路 比特率：每秒传输数据的位数。 占空比：脉冲作用时间（高电平）$t_w$占整个周期$T$的百分比。 $$q(%)=\frac{t_w}{T}\times 100%$$</description>
+    </item>
+    
+    <item>
       <title>数字电子技术——第四章……</title>
       <link>https://blog.supersassw.com/p/univ-digital_electronic-ep4/</link>
       <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>

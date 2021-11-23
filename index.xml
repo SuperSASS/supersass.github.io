@@ -7,6 +7,152 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
         <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>数字电子技术 - 考点总结……</title>
+        <link>https://blog.supersassw.com/p/univ-digital_electronic-summary/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/univ-digital_electronic-summary/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/88331974_p0.png" alt="Featured image of post 数字电子技术 - 考点总结……" /&gt;&lt;h1 id=&#34;第一章-数字逻辑概论&#34;&gt;第一章 数字逻辑概论&lt;/h1&gt;
+&lt;h2 id=&#34;第一节-数字信号与数字电路&#34;&gt;第一节 数字信号与数字电路&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;比特率：每秒传输数据的位数。&lt;/li&gt;
+&lt;li&gt;占空比：脉冲作用时间（高电平）$t_w$占整个周期$T$的百分比。
+$$q(%)=\frac{t_w}{T}\times 100%$$&lt;/li&gt;
+&lt;li&gt;上升时间$t_r$和下降时间$t_f$：从脉冲幅值$10%$上升到$90%$（或者反之）所经历的时间。&lt;br&gt;
+&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_22-53-49.png&#34; alt=&#34;图 1&#34;  /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第二节-数制&#34;&gt;第二节 数制&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;十转二
+&lt;ul&gt;
+&lt;li&gt;整数：除二倒取余&lt;/li&gt;
+&lt;li&gt;小数：乘二顺取整&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;二转十：直接乘基数&lt;br&gt;
+$(N)&lt;em&gt;D=b&lt;/em&gt;{m}\times2^{m}+b_{m-1}\times2^{m-1}+\cdots+b_1\times2^1+b_0\times2^0+b_{-1}\times2^{-1}+\cdots+\cdots+b_{-n}\times2^{-n}$&lt;/li&gt;
+&lt;li&gt;二转八、十六：按照3位（八进制）/4位（十六进制）分开看，每个划分单独转成相应进制（包括小数也如此转）&lt;/li&gt;
+&lt;li&gt;八、十六转二：每一位转成对应的3位（八进制）/4位（十六进制）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第三节-二进制的算术运算&#34;&gt;第三节 二进制的算术运算&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;有符号数的三种码
+&lt;ul&gt;
+&lt;li&gt;原码：最高位表示符号，其余位表示二进制下的数值。&lt;/li&gt;
+&lt;li&gt;反码：
+&lt;ul&gt;
+&lt;li&gt;正数：与原码相同&lt;/li&gt;
+&lt;li&gt;负数：符号位不变，其余位取反&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;补码：
+&lt;ul&gt;
+&lt;li&gt;正数：与原码相同&lt;/li&gt;
+&lt;li&gt;负数：符号位不变，其余位取反后加一。（反码加一）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;三种码表示范围（n位时）
+&lt;ul&gt;
+&lt;li&gt;原码：$-(2^{n-1}-1)\sim+(2^{n-1}-1)$，表示$2^n-1$个数。&lt;/li&gt;
+&lt;li&gt;反码：$-(2^{n-1}-1)\sim+(2^{n-1}-1)$，表示$2^n-1$个数。&lt;/li&gt;
+&lt;li&gt;补码：$-2^{n-1}\sim+(2^{n-1}-1)$，可以&lt;strong&gt;表示$2^n$个数&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;补码的运算：&lt;br&gt;
+两数之和/差的补码，等于两数的补码之和/差。&lt;br&gt;
+符号位也同样参与运算，运算结果的符号位是由运算得出。&lt;/li&gt;
+&lt;li&gt;溢出的判断：&lt;br&gt;
+当进位位与数的符号位（$b_{n-1}$位）相反时，则产生了溢出。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第四节-二进制代码&#34;&gt;第四节 二进制代码&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;二-十进制码 - BCD码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;8421BCD&lt;/li&gt;
+&lt;li&gt;2421BCD&lt;/li&gt;
+&lt;li&gt;5421BCD&lt;/li&gt;
+&lt;li&gt;余3码&lt;/li&gt;
+&lt;li&gt;余3循环码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-23_09-20-23.png&#34; alt=&#34;BCD码&#34;  /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;格雷码&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;二进制码转格雷码：最高位相同，其余位依次相加得到下一位二进制码。&lt;br&gt;
+&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-23_09-19-52.png&#34; alt=&#34;二进制码转格雷码&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;格雷码转二进制码：最高位相同，产生的新二进制码与下一位格雷码相加，得到下一位二进制码。&lt;br&gt;
+&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-23_09-19-43.png&#34; alt=&#34;格雷码转二进制码&#34;  /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第五节-二值逻辑变量与基本逻辑运算&#34;&gt;第五节 二值逻辑变量与基本逻辑运算&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;有关逻辑门的&lt;strong&gt;矩形符号&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;与：&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-09.png&#34; alt=&#34;图 1&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;或：&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-24.png&#34; alt=&#34;图 2&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;非：&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-35.png&#34; alt=&#34;图 3&#34;  /&gt;&lt;br&gt;
+&lt;strong&gt;很特殊&lt;/strong&gt;，中间为$1$。（不过看一个输入端口可以看出）&lt;/li&gt;
+&lt;li&gt;与非、或非：即在与、或的输出端口加上圆圈即可。&lt;/li&gt;
+&lt;li&gt;异或：&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-33-54.png&#34; alt=&#34;图 4&#34;  /&gt;&lt;br&gt;
+中间为$=1$&lt;/li&gt;
+&lt;li&gt;同或：&lt;img src=&#34;images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-34-21.png&#34; alt=&#34;图 5&#34;  /&gt;&lt;br&gt;
+中间为$=$，而不是异或加非。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;第二章-逻辑代数与硬件描述语言基础&#34;&gt;第二章 逻辑代数与硬件描述语言基础&lt;/h1&gt;
+&lt;h2 id=&#34;第一节-逻辑代数的基本定律和规则&#34;&gt;第一节 逻辑代数的基本定律和规则&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;对偶规则
+&lt;blockquote&gt;
+&lt;p&gt;对函数$L$，将其与或、01互换后的式子称为对偶式，记作$L&#39;$。&lt;br&gt;
+满足性质：函数$L$的对偶式$L&#39;$有相同的值。或者说某等式成立，则其对偶等式也成立。&lt;br&gt;
+e.g. $A+\overline{A}B=A+B\Rightarrow A(\overline{A}+B)=AB$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第二节-逻辑函数表达式的形式&#34;&gt;第二节 逻辑函数表达式的形式&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;符号表达形式
+&lt;ul&gt;
+&lt;li&gt;最小项表达式，可以记为$\sum m(&amp;hellip;)$&lt;/li&gt;
+&lt;li&gt;最大项表达式，可以记为$\Pi m(&amp;hellip;)$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;最小项是从$\overline{ABC}$开始，$m_0=\overline{ABC}$；&lt;br&gt;
+最大项是从$A+B+C$开始，$m_0=A+B+C$。&lt;/li&gt;
+&lt;li&gt;对于最大项表达式，其与最小项互补。
+&lt;blockquote&gt;
+&lt;p&gt;e.g. $L(A,B,C)=\sum m(3,5,6) \rightarrow \Pi m(0,1,2,4,7)$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;第五节-硬件描述语言-verilog-hdl-基础&#34;&gt;第五节 硬件描述语言 Verilog HDL 基础&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;数据的默认值
+&lt;ul&gt;
+&lt;li&gt;对于&lt;code&gt;wire&lt;/code&gt; - 默认值为高阻态&lt;code&gt;z&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;对于&lt;code&gt;reg&lt;/code&gt; - 默认值为未知态&lt;code&gt;x&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;位拼接运算符&lt;code&gt;{}&lt;/code&gt;&lt;br&gt;
+e.g. &lt;code&gt;A=1&#39;b1&lt;/code&gt;、&lt;code&gt;B=2&#39;b10&lt;/code&gt;、&lt;code&gt;C=2&#39;b00&lt;/code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;{B,C}&lt;/code&gt;=&lt;code&gt;4&#39;b1000&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{A,B[1],C[0]}&lt;/code&gt;=&lt;code&gt;3&#39;b110&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{A,3b&#39;101,B}&lt;/code&gt;=&lt;code&gt;6b1101_10&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;{2{A},2{C,2{B}}}&lt;/code&gt;=&lt;code&gt;14b11_001010_001010&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>数字电子技术——第四章……</title>
         <link>https://blog.supersassw.com/p/univ-digital_electronic-ep4/</link>
         <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
