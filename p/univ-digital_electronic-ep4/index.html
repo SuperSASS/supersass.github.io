@@ -1,0 +1,1625 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Ep.4 - 组合逻辑电路……'><title>数字电子技术——第四章……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/univ-digital_electronic-ep4/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='数字电子技术——第四章……'>
+<meta property='og:description' content='Ep.4 - 组合逻辑电路……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/univ-digital_electronic-ep4/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='大学课程' /><meta property='article:tag' content='数字电子技术' /><meta property='article:tag' content='组合逻辑电路' /><meta property='article:published_time' content='2021-11-23T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-11-23T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/univ-digital_electronic-ep4/74542521_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="数字电子技术——第四章……">
+<meta name="twitter:description" content="Ep.4 - 组合逻辑电路……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/univ-digital_electronic-ep4/74542521_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ep4-组合逻辑电路">Ep.4 组合逻辑电路</a>
+      <ul>
+        <li><a href="#第二节-组合逻辑电路的设计">第二节 组合逻辑电路的设计</a>
+          <ul>
+            <li><a href="#一-设计">一、 设计</a></li>
+            <li><a href="#二-优化">二、 优化</a>
+              <ul>
+                <li><a href="#1-单输出电路">1. 单输出电路</a></li>
+                <li><a href="#2-多输出电路">2. 多输出电路</a></li>
+                <li><a href="#3-多级逻辑电路">3. 多级逻辑电路</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#第三节-组合逻辑电路的竞争-冒险">第三节 组合逻辑电路的竞争-冒险</a>
+          <ul>
+            <li><a href="#一-产生的竞争冒险的原因">一、 产生的竞争冒险的原因</a></li>
+            <li><a href="#二-消除竞争冒险的方法">二、 消除竞争冒险的方法</a></li>
+          </ul>
+        </li>
+        <li><a href="#第四节-若干典型的组合逻辑电路">第四节 若干典型的组合逻辑电路</a>
+          <ul>
+            <li><a href="#一-编码器encoder">一、 编码器(Encoder)</a>
+              <ul>
+                <li><a href="#1-普通编码器---4线-2线普通二进制编码器">1. 普通编码器 - 4线-2线普通二进制编码器</a></li>
+                <li><a href="#2-优先编码器---4线-2线优先二进制编码器">2. 优先编码器 - 4线-2线优先二进制编码器</a></li>
+                <li><a href="#3-8线-3线优先二进制编码器">3. 8线-3线优先二进制编码器</a></li>
+              </ul>
+            </li>
+            <li><a href="#二-译码器数据分配器decoder">二、 译码器/数据分配器(Decoder)</a>
+              <ul>
+                <li><a href="#1-定义与分类">1. 定义与分类</a></li>
+                <li><a href="#2-二进制译码器">2. 二进制译码器</a></li>
+                <li><a href="#3-二-十进制译码器">3. 二-十进制译码器</a></li>
+                <li><a href="#4-显示译码器">4. 显示译码器</a></li>
+                <li><a href="#5-数据分配器">5. 数据分配器</a></li>
+              </ul>
+            </li>
+            <li><a href="#三数据选择器">三、数据选择器</a>
+              <ul>
+                <li><a href="#1-最基础的数据选择器---2选1数据选择器">1. 最基础的数据选择器 - 2选1数据选择器</a></li>
+                <li><a href="#2-典型集成电路---8选1数据选择器74hc151">2. 典型集成电路 - 8选1数据选择器（74HC151）</a></li>
+              </ul>
+            </li>
+            <li><a href="#四数值比较器">四、数值比较器</a>
+              <ul>
+                <li><a href="#1-1位数值比较器">1. 1位数值比较器</a></li>
+                <li><a href="#2-2位数值比较器">2. 2位数值比较器</a></li>
+                <li><a href="#3-集成数值比较器---4位数值比较器74hc85">3. 集成数值比较器 - 4位数值比较器(74HC85)</a></li>
+              </ul>
+            </li>
+            <li><a href="#五算术运算电路">五、算术运算电路</a>
+              <ul>
+                <li><a href="#1-半加器和全加器">1. 半加器和全加器</a></li>
+                <li><a href="#2-多位加法器">2. 多位加法器</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#第五节-组合可编程逻辑器件">第五节 组合可编程逻辑器件</a>
+          <ul>
+            <li><a href="#一pld的结构表示方法及分类">一、PLD的结构、表示方法及分类</a>
+              <ul>
+                <li><a href="#1-pld的基本结构">1. PLD的基本结构</a></li>
+                <li><a href="#2-pld的逻辑符号表示方式">2. PLD的逻辑符号表示方式</a></li>
+                <li><a href="#3-编程连接技术">3. 编程连接技术</a></li>
+                <li><a href="#4-分类">4. 分类</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#第六节-用verilog描述组合逻辑电路">第六节 用Verilog描述组合逻辑电路</a>
+          <ul>
+            <li><a href="#1-组合逻辑电路的行为级建模">1. 组合逻辑电路的行为级建模</a></li>
+            <li><a href="#2-分模块分层次的电路设计">2. 分模块、分层次的电路设计</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/univ-digital_electronic-ep4/">
+                <img src="/p/univ-digital_electronic-ep4/74542521_p0_hu41b7815279cac48aae43ea80d2335b45_1737627_800x0_resize_box_2.png"
+                        srcset="/p/univ-digital_electronic-ep4/74542521_p0_hu41b7815279cac48aae43ea80d2335b45_1737627_800x0_resize_box_2.png 800w, /p/univ-digital_electronic-ep4/74542521_p0_hu41b7815279cac48aae43ea80d2335b45_1737627_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="566" 
+                        loading="lazy"
+                        alt="Featured image of post 数字电子技术——第四章……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/university/" >
+                大学相关
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/univ-digital_electronic-ep4/">数字电子技术——第四章……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            Ep.4 - 组合逻辑电路……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/11/23</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：8533</div>
+            <div class="time">预计阅读时长： <time>18</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="ep4-组合逻辑电路">Ep.4 组合逻辑电路</h1>
+<h2 id="第二节-组合逻辑电路的设计">第二节 组合逻辑电路的设计</h2>
+<h3 id="一-设计">一、 设计</h3>
+<ul>
+<li>对于不可能出现的情况，应将其作为无关项。</li>
+<li>对于较多情况，可以用多位二进制的组合来表示。<br>
+e.g. 血型A、B、AB、O，可以用两位来表示。而不是用4bit分别表示。</li>
+</ul>
+<h3 id="二-优化">二、 优化</h3>
+<h4 id="1-单输出电路">1. 单输出电路</h4>
+<p>通过对逻辑表达式进行变换，以减少芯片资源的种类。</p>
+<p>比如将$L=AB+CD$转换为$L=\overline{\overline{AB}\cdot\overline{CD}}$，<br>
+将两个与门一个或门转换为三个与非门。</p>
+<h4 id="2-多输出电路">2. 多输出电路</h4>
+<p>利用多项表达式中公共部分，减少逻辑门数目。</p>
+<p>比如2个输出，其表达式都含有一项$AB$，<br>
+则$AB$这一项可以共同连接到两个输出，而不是两个输出分别整一个$AB$。</p>
+<h4 id="3-多级逻辑电路">3. 多级逻辑电路</h4>
+<p>提取公因子后，可以将扇入数（输入端口数）减少。</p>
+<p>比如$L=ABCD+AB\overline{C}E+ABD\overline{F}$，转换为$L=AB(CD+\overline{C}E+D\overline{F})$，<br>
+可以将扇入数从$4$降到$3$。</p>
+<h2 id="第三节-组合逻辑电路的竞争-冒险">第三节 组合逻辑电路的竞争-冒险</h2>
+<p>现实情况下，任何逻辑电路从输入到输出总是会有延迟。
+所以会产生竞争-冒险现象。
+导致在稳态电路下本应输出某种结果，实际上却并不是该结果，</p>
+<h3 id="一-产生的竞争冒险的原因">一、 产生的竞争冒险的原因</h3>
+<blockquote>
+<p>例子：</p>
+<p>但$L=AB$，其中$B=\overline{A}$时，
+若不考虑延迟，则$L=0$。</p>
+<p><figure style="flex-grow: 328; flex-basis: 788px">
+		<a href="/p/univ-digital_electronic-ep4/images/04-11-02_10-19-08.png" data-size="1327x404"><img src="/p/univ-digital_electronic-ep4/images/04-11-02_10-19-08.png"
+				srcset="/p/univ-digital_electronic-ep4/images/04-11-02_10-19-08_hub6f9f5c9281f0b02486c110267386ba7_151506_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/04-11-02_10-19-08_hub6f9f5c9281f0b02486c110267386ba7_151506_1024x0_resize_box_2.png 1024w"
+				width="1327"
+				height="404"
+				loading="lazy"
+				alt="图 1">
+		</a><figcaption>图 1</figcaption></figure></p>
+<p>但因为经过一个逻辑元件会产生一定的延时，所以非门的输入会晚一些，<br>
+导致$L$的处理在短时间内会产生错误。</p>
+</blockquote>
+<ul>
+<li>竞争：当一个逻辑门的两个输入端的信号同时向相反方向变化，而变化的时间有差异的现象。</li>
+<li>冒险：由竞争而可能产生输出干扰脉冲的现象。</li>
+</ul>
+<p>由竞争不一定有冒险。</p>
+<p><figure style="flex-grow: 94; flex-basis: 226px">
+		<a href="/p/univ-digital_electronic-ep4/images/04-11-02_10-24-23.png" data-size="744x790"><img src="/p/univ-digital_electronic-ep4/images/04-11-02_10-24-23.png"
+				srcset="/p/univ-digital_electronic-ep4/images/04-11-02_10-24-23_hu5eab25cb67cc64ddc511f96ddfe33033_369866_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/04-11-02_10-24-23_hu5eab25cb67cc64ddc511f96ddfe33033_369866_1024x0_resize_box_2.png 1024w"
+				width="744"
+				height="790"
+				loading="lazy"
+				alt="图 2">
+		</a><figcaption>图 2</figcaption></figure></p>
+<hr>
+<p><strong>⭐总结：</strong></p>
+<ul>
+<li>表达式<strong>最终是一个$L=M+\overline{M}$</strong><br>
+（只是要求两变量高低电平反向即可，不一定是同一变量）</li>
+<li>对于与门：其中一个先从$0$到$1$<br>
+<img src="images/Combinational%20Logic%20Circuit--11-10_13-39-44.png" alt="图 1"  /></li>
+<li>对于或门：其中一个先从$1$到$0$<br>
+<img src="images/Combinational%20Logic%20Circuit--11-10_14-49-19.png" alt="图 3"  /></li>
+</ul>
+<h3 id="二-消除竞争冒险的方法">二、 消除竞争冒险的方法</h3>
+<ol>
+<li>消除<strong>互补变量相乘</strong>$A \overline{A}$ - 直接可以消去<br>
+比如$L=(A+B)(\overline{A}+C)$，展开后直接消除$A\overline{A}$。</li>
+<li>消除<strong>互补变量相加</strong>$A + \overline{A}$ - 增加乘积项<br>
+对于$L=X_AM+X_B \overline{M} \rightarrow L=X_AM+X_B \overline{M} + X_AX_B$<br>
+此时当$X_A=X_B=1$时，$L+M+\overline{M}+1$，使得恒为$1$，消去互补项相加。</li>
+<li>*输出端并连电容器<br>
+<em>为物理技术，不在本课讨论范围。</em></li>
+</ol>
+<h2 id="第四节-若干典型的组合逻辑电路">第四节 若干典型的组合逻辑电路</h2>
+<h3 id="一-编码器encoder">一、 编码器(Encoder)</h3>
+<blockquote>
+<p>赋予二进制代码<strong>特定含义</strong>的过程成为编码。<br>
+<em>或者反过来说，将一串有特定含义的代码，转化为二进制代码。</em></p>
+<p>如8421BCD，用1000表示8；
+如ASCII，用各种二进制表示字符。</p>
+</blockquote>
+<p>必须确保一种特定含义与一个编码<strong>一一对应</strong>。</p>
+<ul>
+<li>输入：特定含义的信号</li>
+<li>输出：其二进制代码</li>
+</ul>
+<p>输入输出关系：$N$位输入→$\log N$位输出。</p>
+<p>因为有特定含义，所以只能一位对应一种含义，<br>
+也就是说，只能<strong>同时存在一个有效信号</strong>。<br>
+有多少种“特定含义”，输入端就有多少位。</p>
+<blockquote>
+<p>比如有八个人，则<code>00000001</code>代表第一个人，<code>00010000</code>代表第五个人，<code>10000000</code>代表第八个人，<br>
+而对于<code>00100010</code>，是没有意义的。</p>
+</blockquote>
+<p>而如果不规定只能以一位有效对应某一特定含义的话，则在编码时会发生混乱，不满足一一对应的关系。<br>
+可以见下面“有两个以上的输出信号时会出现异常”。</p>
+<hr>
+<p>分类：</p>
+<ul>
+<li>普通编码器：任何时候<strong>只允许一个</strong>有效输入信号，否则输出发生混乱。</li>
+<li>优先编码器：允许同时输入两个以上的有效输入信号。<br>
+当同时输入几个有效信号时，<strong>只对优先级最高的进行编码</strong>。<br>
+<em>并不是指多个有效输入信号代表一个特定含义，还是一位有效信号代表特定含义。</em></li>
+</ul>
+<h4 id="1-普通编码器---4线-2线普通二进制编码器">1. 普通编码器 - 4线-2线普通二进制编码器</h4>
+<p>真值表：
+<figure style="flex-grow: 339; flex-basis: 813px">
+		<a href="/p/univ-digital_electronic-ep4/images/04-11-02_10-47-20.png" data-size="1353x399"><img src="/p/univ-digital_electronic-ep4/images/04-11-02_10-47-20.png"
+				srcset="/p/univ-digital_electronic-ep4/images/04-11-02_10-47-20_hu1bdf923fc4b20238469638ea4bb4a4f1_85802_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/04-11-02_10-47-20_hu1bdf923fc4b20238469638ea4bb4a4f1_85802_1024x0_resize_box_2.png 1024w"
+				width="1353"
+				height="399"
+				loading="lazy"
+				alt="图 1">
+		</a><figcaption>图 1</figcaption></figure></p>
+<p>可由表得逻辑式：
+$$
+Y_1=\bar{I_0}I_1\bar{I_2}\bar{I_3}+\bar{I_0}\bar{I_1}\bar{I_2}I_3 \<br>
+Y_0=\bar{I_0}\bar{I_1}I_2\bar{I_3}+\bar{I_0}\bar{I_1}\bar{I_2}I_3
+$$</p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="c1">//Behavior
+</span><span class="c1"></span><span class="k">module</span> <span class="n">encoder4to2</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">I</span><span class="p">);</span>
+  <span class="k">input</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">I</span><span class="p">;</span>
+  <span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">Y</span><span class="p">;</span>
+
+  <span class="k">always</span> <span class="p">@(</span><span class="n">I</span><span class="p">)</span>
+  <span class="k">begin</span>
+    <span class="k">case</span> <span class="p">(</span><span class="n">I</span><span class="p">)</span>
+      <span class="mh">4</span><span class="mb">&#39;b0001</span><span class="o">:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b00</span><span class="p">;</span>
+      <span class="mh">4</span><span class="mb">&#39;b0010</span><span class="o">:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b01</span><span class="p">;</span>
+      <span class="mh">4</span><span class="mb">&#39;b0100</span><span class="o">:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b10</span><span class="p">;</span>
+      <span class="mh">4</span><span class="mb">&#39;b1000</span><span class="o">:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b11</span><span class="p">;</span>
+      <span class="k">default</span><span class="o">:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b00</span><span class="p">;</span>
+    <span class="k">endcase</span>
+  <span class="k">end</span>
+</code></pre></div><hr>
+<p>异常分析：</p>
+<p>当$I_3=1$时，$Y_1Y_0=11$，<br>
+而当$I_1=I_2=1$时，$Y_1Y_0=11$，<br>
+故当有两个以上的输出信号时会出现异常。</p>
+<p><em>也解释了为什么只能以一位有效信号代表某个特定含义。</em></p>
+<h4 id="2-优先编码器---4线-2线优先二进制编码器">2. 优先编码器 - 4线-2线优先二进制编码器</h4>
+<p>根据事情的轻重缓急，实现规定好输入端口的优先级，
+当有多个输入信号输入时，只处理优先级高的。</p>
+<p>真值表：
+<figure style="flex-grow: 396; flex-basis: 950px">
+		<a href="/p/univ-digital_electronic-ep4/images/04-11-02_11-03-27.png" data-size="1339x338"><img src="/p/univ-digital_electronic-ep4/images/04-11-02_11-03-27.png"
+				srcset="/p/univ-digital_electronic-ep4/images/04-11-02_11-03-27_hu74b23b28e78e5de962fab294348af98b_75407_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/04-11-02_11-03-27_hu74b23b28e78e5de962fab294348af98b_75407_1024x0_resize_box_2.png 1024w"
+				width="1339"
+				height="338"
+				loading="lazy"
+				alt="图 2">
+		</a><figcaption>图 2</figcaption></figure></p>
+<p>异常分析：</p>
+<ul>
+<li>当所有输入信号为0时，输出为0</li>
+<li>当$I_1=1$时，输出也为0</li>
+</ul>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="c1">//Behavior
+</span><span class="c1"></span><span class="k">module</span> <span class="n">encoder4to2</span><span class="p">(</span><span class="n">Y</span><span class="p">,</span> <span class="n">I</span><span class="p">);</span>
+  <span class="k">input</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">I</span><span class="p">;</span>
+  <span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">1</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">Y</span><span class="p">;</span>
+
+  <span class="k">always</span> <span class="p">@(</span><span class="n">I</span><span class="p">)</span>
+  <span class="k">begin</span>
+    <span class="k">casex</span> <span class="p">(</span><span class="n">I</span><span class="p">)</span>
+      <span class="mh">4</span><span class="mb">&#39;b0001</span><span class="o">:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b00</span><span class="p">;</span>
+      <span class="mh">4</span><span class="mb">&#39;b001</span><span class="nl">x:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b01</span><span class="p">;</span>
+      <span class="mh">4</span><span class="mb">&#39;b01</span><span class="nl">xx:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b10</span><span class="p">;</span>
+      <span class="mh">4</span><span class="mb">&#39;b1</span><span class="nl">xxx:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b11</span><span class="p">;</span>
+      <span class="k">default</span><span class="o">:</span> <span class="n">Y</span><span class="o">=</span><span class="mh">2</span><span class="mb">&#39;b00</span><span class="p">;</span>
+    <span class="k">endcase</span>
+  <span class="k">end</span>
+</code></pre></div><hr>
+<p>可以看出上述两种编码均存在问题（输入与输出不是一一对应），<br>
+故一般用下面的集成电路优先编码器。</p>
+<p>常用集成电路优先编码器种类：</p>
+<ul>
+<li>74X147 - 10线-4线优先编码器<br>
+输入：低电平有效<br>
+输出：8421BCD码</li>
+<li>74X148 - 8线-3线优先编码器<br>
+输入：低电平有效<br>
+输出：二进制代码</li>
+<li>CD4532 - 8线-3线优先编码器<br>
+输入：高电平有效<br>
+输出：二进制代码</li>
+</ul>
+<h4 id="3-8线-3线优先二进制编码器">3. 8线-3线优先二进制编码器</h4>
+<p>即为上述的CD4532。</p>
+<p><img src="images/Combinational%20Logic%20Circuit--11-21_18-46-20.png" alt="CD4532示意图"  /></p>
+<ul>
+<li>EI - 使能控制信号，当为$0$时不工作</li>
+<li>EO - 异常输出信号，当为$1$时说明输入全为0</li>
+<li>GS - 正常输出信号，当为$1$时说明正常工作（输出不全为0）</li>
+</ul>
+<p><img src="images/Combinational%20Logic%20Circuit--11-21_18-51-06.png" alt="特殊端口功效图"  /></p>
+<h3 id="二-译码器数据分配器decoder">二、 译码器/数据分配器(Decoder)</h3>
+<h4 id="1-定义与分类">1. 定义与分类</h4>
+<blockquote>
+<p>将二进制码翻译成代表某一特定含义的信号（即电路的某种状态）。</p>
+</blockquote>
+<p>即为上述编码的逆过程。</p>
+<p>分类：</p>
+<ul>
+<li>唯一地址译码器 - 将一系列代码转化为与之一一对应的特定有效信号
+<ul>
+<li>二进制译码器</li>
+<li>二-十进制译码器</li>
+<li>显示译码器</li>
+</ul>
+</li>
+<li>代码转换器 - 将一种代码转换为另一种代码</li>
+</ul>
+<h4 id="2-二进制译码器">2. 二进制译码器</h4>
+<p>这种才是真正上面编码器的译码器。</p>
+<ul>
+<li>输入：二进制代码</li>
+<li>输出：其特定含义的信号</li>
+</ul>
+<p>输入输出关系：$M$位输入→$2^M$位输出。</p>
+<p>因此也需要保证一种编码，只对应一种“一个有效信号”情况的输出。</p>
+<p>而正因为这种特性，相当于每一种输出代表一个最小项，<br>
+故也称“最小项译码器”。</p>
+<h5 id="-2线-4线译码器74hc139">① 2线-4线译码器(74HC139)</h5>
+<p><img src="images/Combinational%20Logic%20Circuit--11-21_18-55-55.png" alt="符号示意图"  /><br>
+⭐注：端口变量符号上有横线，或者端口接线处有圆圈，代表为<strong>低电平有效</strong>。<br>
+特别是在<strong>逻辑表达式中</strong>，低电平有效的符号（如上图的$\overline{E}$）不能当作“非”而消去，而要<strong>一直保留</strong>。</p>
+<p><figure style="flex-grow: 122; flex-basis: 295px">
+		<a href="/p/univ-digital_electronic-ep4/images/04-11-02_11-29-43.png" data-size="503x409"><img src="/p/univ-digital_electronic-ep4/images/04-11-02_11-29-43.png"
+				srcset="/p/univ-digital_electronic-ep4/images/04-11-02_11-29-43_hu77d8bbd92321a63417e7ba62d5a13f5c_66490_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/04-11-02_11-29-43_hu77d8bbd92321a63417e7ba62d5a13f5c_66490_1024x0_resize_box_2.png 1024w"
+				width="503"
+				height="409"
+				loading="lazy"
+				alt="逻辑图">
+		</a><figcaption>逻辑图</figcaption></figure></p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="c1">//Dataflow
+</span><span class="c1"></span><span class="k">module</span> <span class="n">decoder_df</span><span class="p">(</span><span class="n">A1</span><span class="p">,</span><span class="n">A0</span><span class="p">,</span><span class="n">E</span><span class="p">,</span><span class="n">Y</span><span class="p">);</span>
+  <span class="k">input</span> <span class="n">A1</span><span class="p">,</span><span class="n">A0</span><span class="p">,</span><span class="n">E</span><span class="p">;</span>
+  <span class="k">output</span> <span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="n">Y</span><span class="p">;</span>
+
+  <span class="k">assign</span> <span class="n">Y</span><span class="p">[</span><span class="mh">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="o">~</span><span class="n">A1</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">A0</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">E</span><span class="p">);</span>
+  <span class="k">assign</span> <span class="n">Y</span><span class="p">[</span><span class="mh">1</span><span class="p">]</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="o">~</span><span class="n">A1</span> <span class="o">&amp;</span> <span class="n">A0</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">E</span><span class="p">);</span>
+  <span class="k">assign</span> <span class="n">Y</span><span class="p">[</span><span class="mh">2</span><span class="p">]</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="n">A1</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">A0</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">E</span><span class="p">);</span>
+  <span class="k">assign</span> <span class="n">Y</span><span class="p">[</span><span class="mh">3</span><span class="p">]</span> <span class="o">=</span> <span class="o">~</span><span class="p">(</span><span class="n">A1</span> <span class="o">&amp;</span> <span class="n">A0</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">E</span><span class="p">);</span>
+<span class="k">endmodule</span>
+</code></pre></div><h5 id="-3线-8线译码器74hc138">② 3线-8线译码器(74HC138)</h5>
+<p><figure style="flex-grow: 163; flex-basis: 391px">
+		<a href="/p/univ-digital_electronic-ep4/images/04-11-02_11-46-10.png" data-size="1251x767"><img src="/p/univ-digital_electronic-ep4/images/04-11-02_11-46-10.png"
+				srcset="/p/univ-digital_electronic-ep4/images/04-11-02_11-46-10_hu81981b0c4c5579a2ad9c8396ba4956af_222381_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/04-11-02_11-46-10_hu81981b0c4c5579a2ad9c8396ba4956af_222381_1024x0_resize_box_2.png 1024w"
+				width="1251"
+				height="767"
+				loading="lazy"
+				alt="逻辑图与符号示意图">
+		</a><figcaption>逻辑图与符号示意图</figcaption></figure></p>
+<p>输出均为低电平有效。<br>
+数据输入为高电平有效。</p>
+<p>控制信号：</p>
+<ul>
+<li>$E_1$ - 低电平有效</li>
+<li>$E_2$ - 低电平有效</li>
+<li>$E_3$ - 高电平有效</li>
+</ul>
+<p>如果<strong>只用这一片74HC138</strong>，则三个控制端口$E_1$、$E_2$、$E_3$，就当成<strong>简单的控制开关</strong>。<br>
+即<strong>只有满足：$E_1$、$E_2$端口为低电平输入、$E_3$端口为高电平输入</strong>（均为有效输入），才能使得该电路正常工作。<br>
+否则只要有一个不为有效输入，则会使得输出全为$1$（全为无效输出，注意输出也为低电平有效）。</p>
+<blockquote>
+<p>而当需要用两片74HC138，构成一个“4线-16线译码器”的时候，这三个控制端口才有特定用途。<br>
+对于其中一个译码器$A$：</p>
+<ul>
+<li>$E_3$ - 用于接收输入信号其额外的第$4$位。<br>
+其需要连接到另一片译码器$B$的$E_2$端口，用来代表选择哪个译码器工作。</li>
+</ul>
+<p>对于另一片译码器$B$：</p>
+<ul>
+<li>$E_2$ - 用于与第一片译码器$A$的$E_3$端口构成选择器。<br>
+当第$4$位为$0$选择$B$工作，为$1$选择$A$工作。</li>
+</ul>
+<p>构成示意图见下：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-21_19-10-54.png" alt="2片74HC138构成4-16线译码器"  /></p>
+<p>具体分析可见：<br>
+<a class="link" href="https://www.zhihu.com/question/412229206/answer/1828350505"  target="_blank" rel="noopener"
+    >三八译码器74HC138的 使能端 的工作原理是什么?为什么设计三个使能端？ - 周辰峰的回答 - 知乎</a></p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="c1">//Behavior
+</span><span class="c1"></span><span class="k">module</span> <span class="n">ecoder3to8_bh</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">En</span><span class="p">,</span><span class="n">Y</span><span class="p">);</span>
+  <span class="k">input</span> <span class="p">[</span><span class="mh">2</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="n">A</span><span class="p">,</span> <span class="n">En</span><span class="p">;</span>
+  <span class="k">output</span> <span class="kt">reg</span> <span class="p">[</span><span class="mh">7</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span><span class="n">Y</span><span class="p">;</span>
+  <span class="k">integer</span> <span class="n">k</span><span class="p">;</span>
+
+  <span class="k">always</span> <span class="p">@(</span><span class="o">*</span><span class="p">)</span>
+  <span class="k">begin</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="mh">8</span><span class="mb">&#39;b1111</span><span class="n">_1111</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mh">7</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+      <span class="k">if</span> <span class="p">((</span><span class="n">En</span> <span class="o">==</span> <span class="mh">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">A</span> <span class="o">==</span> <span class="n">k</span><span class="p">))</span>
+        <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="mh">0</span><span class="p">;</span>
+      <span class="k">else</span>
+        <span class="n">Y</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">=</span><span class="mh">1</span><span class="p">;</span>
+  <span class="k">end</span>
+<span class="k">endmodule</span>
+</code></pre></div><hr>
+<p>得到每个输出端口唯一的输入情况：<br>
+<figure style="flex-grow: 44; flex-basis: 105px">
+		<a href="/p/univ-digital_electronic-ep4/images/04-11-02_11-53-12.png" data-size="258x585"><img src="/p/univ-digital_electronic-ep4/images/04-11-02_11-53-12.png"
+				srcset="/p/univ-digital_electronic-ep4/images/04-11-02_11-53-12_hud881157078803352513b6283b492c784_61426_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/04-11-02_11-53-12_hud881157078803352513b6283b492c784_61426_1024x0_resize_box_2.png 1024w"
+				width="258"
+				height="585"
+				loading="lazy"
+				alt="图 5">
+		</a><figcaption>图 5</figcaption></figure></p>
+<p>可以看出：每一项可以代表一个<strong>最小项（的非）</strong>，故也称为<strong>最小项译码器</strong>。
+能很方便实现三变量逻辑函数。</p>
+<p>用74HC138实现三变量逻辑运算：</p>
+<ol>
+<li>先将表达式转换为<strong>最小项之和</strong>的形式。</li>
+<li>再还原律+摩尔根，变为<strong>最小项的非的与</strong>形式。</li>
+<li>用<strong>与非门连接</strong>在一起。</li>
+</ol>
+<blockquote>
+<p>拓展 - 用74HC138实现$L=\overline{A}\ \overline{C}+AB$</p>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_10-00-20.png" alt="图 2"  /></p>
+</blockquote>
+<h4 id="3-二-十进制译码器">3. 二-十进制译码器</h4>
+<p><em>其实根上述的二进制译码器差不多，不过为BCD8421译为十进制数。</em></p>
+<p>有$4$个输入端口，代表$4$位8421BCD码，<br>
+有$10$个输出端口，分别代表十进制$0~9$。</p>
+<p><img src="images/Combinational%20Logic%20Circuit--11-21_19-20-57.png" alt="二-十进制译码器"  /></p>
+<h4 id="4-显示译码器">4. 显示译码器</h4>
+<p>将输入的4位BCD码（一般为8421BCD）代表的十进制数，翻译成“七段码”送给数码管，<br>
+以便数码管能够显示各个BCD码所对应的十进制数字。</p>
+<blockquote>
+<p>与前面两种译码器的区别：</p>
+<ul>
+<li>前面两种：一种输入信号，只会有一个输出端口输出有效电平。</li>
+<li>显示译码器：一种输入信后，可能会有多个输出端口输出有效电平。</li>
+</ul>
+</blockquote>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_10-10-03.png" alt="显示器分段布局图"  /></p>
+<ul>
+<li>共阴极电路：所有阴极接地，输出信号为高电平有效</li>
+<li>共阳极电路：所有阳极接地，输出信号为低电平有效</li>
+</ul>
+<hr>
+<p>常用的为：集成七段显示译码器(74HC4511)</p>
+<p>真值表（功能表）：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_10-12-45.png" alt="74HC4511功能表 1"  /><br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_10-17-34.png" alt="74HC4511功能表 2"  /></p>
+<ul>
+<li>灯测试$\overline{LT}$优先级最高 - 正常为1。但只要为0，灯全亮。</li>
+<li>灭灯$\overline{BL}$优先级第二 - 正常为1。但只要为$BL=0(LT=0)$，灯全灭。</li>
+<li>锁存$LE$ - 正常为0。但只要$LE=1(LT=1, BL=1)$，则输出信号锁定。</li>
+</ul>
+<blockquote>
+<p>需要注意这三个控制位<strong>与二进制译码器</strong>（74HC138等）的<strong>三个使能位不同</strong>：</p>
+<p>这三个有具体作用，所以正常工作要置为无效（如低电平有效则置高电平）；<br>
+而二进制译码器的是控制是否工作，所以正常工作要置为有效（如低电平有效则置低电平）。</p>
+</blockquote>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="c1">//Behavior
+</span><span class="c1"></span><span class="k">module</span> <span class="n">seg7_decoder</span><span class="p">(</span>
+  <span class="k">input</span> <span class="n">LE</span><span class="p">,</span> <span class="n">BL</span><span class="p">,</span> <span class="n">LT</span><span class="p">,</span> <span class="n">D3</span><span class="p">,</span> <span class="n">D2</span><span class="p">,</span> <span class="n">D1</span><span class="p">,</span> <span class="n">D0</span><span class="p">,</span>
+  <span class="k">output</span> <span class="kt">reg</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span>
+<span class="p">);</span>
+
+  <span class="k">always</span> <span class="p">@(</span><span class="o">*</span><span class="p">)</span>
+  <span class="k">begin</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">LT</span> <span class="o">==</span> <span class="mh">0</span><span class="p">)</span> <span class="c1">//灯测试
+</span><span class="c1"></span>      <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">}</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1111111</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">BL</span> <span class="o">==</span> <span class="mh">0</span><span class="p">)</span> <span class="c1">//灭灯
+</span><span class="c1"></span>      <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">}</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b0000000</span><span class="p">;</span>
+    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">LE</span> <span class="o">==</span> <span class="mh">1</span><span class="p">)</span> <span class="c1">//锁存
+</span><span class="c1"></span>      <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">}</span> <span class="o">=</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">};</span>
+    <span class="k">else</span> <span class="c1">//开始判断
+</span><span class="c1"></span>      <span class="k">case</span> <span class="p">({</span><span class="n">D3</span><span class="p">,</span> <span class="n">D2</span><span class="p">,</span> <span class="n">D1</span><span class="p">,</span> <span class="n">D0</span><span class="p">})</span>
+        <span class="mh">4</span><span class="mi">&#39;d0</span><span class="o">:</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">}</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b1111110</span><span class="p">;</span>
+        <span class="mh">4</span><span class="mi">&#39;d1</span><span class="o">:</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">}</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b0110000</span><span class="p">;</span>
+          <span class="p">...</span><span class="c1">//以下类推
+</span><span class="c1"></span>        <span class="k">default</span><span class="o">:</span> <span class="p">{</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">}</span> <span class="o">=</span> <span class="mh">7</span><span class="mb">&#39;b0000000</span><span class="p">;</span>
+      <span class="k">endcase</span>
+  <span class="k">end</span>
+<span class="k">endmodule</span>
+</code></pre></div><blockquote>
+<p>拓展 - 由1个显示译码器、1个译码器和4个七段显示器显示$4$位数字</p>
+<p>本来一个显示译码器只能显示$1$位，<br>
+但搭配74HC139，在极短的时间内依次输出4个不同的电位，同时变动显示译码器要输出的数字，<br>
+即在很短的时间内依次在4个七段显示器上显示每一位，<br>
+再利用人的视觉残留，可以看到稳定的$4$位数字。</p>
+<p>此时接在译码器的输入信号则称为“位选择信号”。</p>
+</blockquote>
+<h4 id="5-数据分配器">5. 数据分配器</h4>
+<p>将公共数据线（一个公共输入端口）上的数据，<br>
+按照需要，发送到不同的通道（某个特定的输出端口）上去。</p>
+<p>相当于“一个输入”对应“多个输出”的单刀多掷开关。</p>
+<blockquote>
+<p>原理：</p>
+<p>对于74HC138，当$E_2=0, E_3=1$时，<br>
+将$E_1$作为公共输入端口，<br>
+可以通过不同的$A_0, A_1, A_2$，可以将$E_1$输出到不同的$Y$端口。</p>
+<p>如$A_0=0, A_1=1, A_2=0$，<br>
+则$Y_2=E_1$，从$Y_2$端口原样输出。</p>
+</blockquote>
+<p>可以分别将$E_1, E_2, E_3$作为输入端口，并其余两个调整为有效信号即可。<br>
+但注意：</p>
+<ul>
+<li>$E_1, E_2$ - 输出跟输入一样。（均为低电平有效）</li>
+<li>$E_3$ - 输出是输入取非。</li>
+</ul>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_10-45-12.png" alt="功能表"  /></p>
+<hr>
+<p>具体的分配电路实现方式：<br>
+利用二进制译码器(74HC139、74HC138)，搭配$n$个三态门来实现。</p>
+<blockquote>
+<p>例 - 实现一个数据分配器，分配到$4$个通道。<br>
+需求非控制的输出通道为高阻态。</p>
+<p><img src="images/Combinational%20Logic%20Circuit--11-21_19-31-45.png" alt="电路图"  /><br>
+其中黑色部分即为74HC139，蓝色部分为4个三态门。</p>
+</blockquote>
+<h3 id="三数据选择器">三、数据选择器</h3>
+<p>与数据分配器互补：<br>
+相当于“多个输入”对应“一个输出”的单刀多掷开关。</p>
+<p>在选择信号的作用下，将多个通道的数据选择其中一个，传输到公共的输出数据通道中。</p>
+<h4 id="1-最基础的数据选择器---2选1数据选择器">1. 最基础的数据选择器 - 2选1数据选择器</h4>
+<h5 id="-基本介绍">① 基本介绍</h5>
+<p>电路图：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_10-58-49.png" alt="电路图"  /></p>
+<p>逻辑符号：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_10-58-22.png" alt="逻辑符号"  /></p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="c1">//Dataflow
+</span><span class="c1"></span><span class="k">module</span> <span class="n">mux2x1_df</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">SEL</span><span class="p">,</span> <span class="n">L</span><span class="p">);</span>
+  <span class="k">input</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">SEL</span><span class="p">;</span>
+  <span class="k">output</span> <span class="n">L</span><span class="p">;</span>
+
+  <span class="k">assign</span> <span class="n">L</span> <span class="o">=</span> <span class="n">SEL</span> <span class="o">?</span> <span class="n">A</span> <span class="o">:</span> <span class="n">B</span><span class="p">;</span>
+<span class="k">endmodule</span>
+
+<span class="c1">//Behavior
+</span><span class="c1"></span><span class="k">module</span> <span class="n">mux2x1_bh</span><span class="p">(</span><span class="n">D1</span><span class="p">,</span> <span class="n">D0</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">L</span><span class="p">);</span>
+  <span class="k">input</span> <span class="n">D1</span><span class="p">,</span> <span class="n">D0</span><span class="p">,</span> <span class="n">S</span><span class="p">;</span>
+  <span class="k">output</span> <span class="kt">reg</span> <span class="n">Y</span><span class="p">;</span>
+
+  <span class="k">always</span> <span class="p">@(</span><span class="o">*</span><span class="p">)</span>
+  <span class="c1">//一句话，不用加begin
+</span><span class="c1"></span>    <span class="n">L</span> <span class="o">=</span> <span class="n">SEL</span> <span class="o">?</span> <span class="nl">D1:</span> <span class="n">D0</span><span class="p">;</span>
+<span class="k">endmodule</span>
+</code></pre></div><h5 id="-构成n选1数据选择器">② 构成n选1数据选择器</h5>
+<p>由该数据选择器可以组合成n选1数据选择器。</p>
+<blockquote>
+<p>如4选1数据选择器：<br>
+可由$3$个2选1选择器构成。<br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_11-00-11.png" alt="电路图"  /></p>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_10-59-59.png" alt="逻辑符号"  /></p>
+<p>表达式：$Y=D_0\overline{S_1}\ \overline{S_0} + D_1\overline{S_1}S_0 + D_2S_1\overline{S_0} + D_3S_1S_0$<br>
+改为选择信号的最小项$Y=D_0m_0+D_1m_1+D_2m_2+D_3m_3$</p>
+</blockquote>
+<p>即组合成$n$选$1$数据选择器：<br>
+则有$n$个数据输入端口；<br>
+有$\lceil\log_2n\rceil$个控制输入端口，<br>
+其中同一级的$2$选$1$，用一个控制端口共同控制。</p>
+<blockquote>
+<p>原因：</p>
+<p>当前一级的控制端取的$0$的话，这一级的下方选择器便没有用了，<br>
+而如果前一级取$1$的话，这一级的上方便没有用了。<br>
+所以这一级的控制端，能唯一确定某个通路。</p>
+</blockquote>
+<h5 id="-运算功能">③ 运算功能</h5>
+<p>上例看出：也可以将表达式改为<strong>最小项表达</strong>，<br>
+故也<strong>可以进行数据运算</strong>。</p>
+<p>通过数据输入端口$D_m\sim D_0$的不同确定取值，<br>
+可组合成关于<strong>控制输入端口</strong>$S_n\sim S_0$的不同最小项组合。</p>
+<p>但如果变量数多于“控制端口”数，<br>
+则需要把多余的变量被迫安排到“输入端口”。</p>
+<p>此时根据“控制端口”的变量的不同取值，<br>
+得到输出$L$与剩余（位于“输入端口”的）变量关系式，<br>
+然后根据关系式，确定该“控制端口”的状态（如$(D_1,D_0)=10$）下，“输入端口”的变量该如何连接至该状态的端口（如连接至$10$端口）。</p>
+<p>即枚举位于控制端口的变量，然后对于每种状态得到一个剩余变量的表达式，<br>
+再将剩余变量按照该表达式连接至对应状态端口。</p>
+<blockquote>
+<p>例 - 利用2选1数据选择器，实现$L=AB+A\overline{C}+BC$。</p>
+<p>本来2选1只支持$1$个控制输入端，但这里有$3$个变量，<br>
+因此需要指定另外$2$个变量为“输入端”。</p>
+<p>定$A$为控制端，则真值表：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_11-13-21.png" alt="真值表"  /></p>
+<p>也就是说，枚举控制端口的$A$：</p>
+<ul>
+<li>$A=0 \rightarrow L=BC$</li>
+<li>$A=1 \rightarrow L=B+\overline{C}$</li>
+</ul>
+<p>则将BC连入$0$这个状态（第一种输入），<br>
+将$B+\overline{C}$连入$1$这个状态（第二种输入）。</p>
+<p>实现电路如图：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_11-13-57.png" alt="电路图"  /></p>
+</blockquote>
+<p>总结：</p>
+<p>都是优先<strong>把变量接入控制输入端口$S$</strong>。</p>
+<ul>
+<li>变量数 = <strong>控制</strong>输入端口数<br>
+则直接把函数转化为最小项表达式，然后根据保留情况，直接确定输出端口$D$为确定的值。<br>
+这个时候$D$是常量。</li>
+<li>变量数 &lt; <strong>控制</strong>输入端口数
+把没被用到的选择端口置任意值，然后对有可能输出的端口进行控制（置1）即可。（其余则置0）</li>
+<li>变量数 &gt; <strong>控制</strong>输入端口数
+<ul>
+<li>如果支持其他逻辑元件（如与门等）：<br>
+将部分变量当输入信号，根据不同的控制信号，得出每个情况的表达式，然后再设计该种情况的电路。<br>
+这个时候$D$是变量。</li>
+<li>如果不支持其他逻辑元件（只能用选择器）：<br>
+则需要用该选择器，组合成$n$选$1$选择器，使得$n&gt;=\textrm{变量数}$。</li>
+</ul>
+</li>
+</ul>
+<h5 id="-构成查找器lut">④ *构成查找器LUT</h5>
+<p>数据选择器构成查找表LUT(Look-Up-Table)：<br>
+<em>约等于一个8选1数据选择器</em><br>
+输出给定逻辑函数，<br>
+其中输入端口为选择器的控制端口，而数据端口为常量。</p>
+<p><img src="images/Combinational%20Logic%20Circuit--11-21_19-49-16.png" alt="图 7"  /><br>
+一定注意$D$端为设计好了的<strong>常量</strong>。</p>
+<h4 id="2-典型集成电路---8选1数据选择器74hc151">2. 典型集成电路 - 8选1数据选择器（74HC151）</h4>
+<p><img src="images/Combinational%20Logic%20Circuit--11-21_19-51-54.png" alt="逻辑符号"  /></p>
+<ul>
+<li>$E$ - 低电平有效。为$1$时不工作（$Y$输出0、$\overline{Y}$输出1）。</li>
+<li>$Y$ - 输出由$S$所选择的信号</li>
+<li>$\overline{Y}$ - 输出所选择信号的非</li>
+</ul>
+<blockquote>
+<p>扩展：</p>
+<ol>
+<li>多位的8选1（$N$bit，均按照相同的$S$选择）：<br>
+简单的几个8选1直接并联。</li>
+<li>16选1：<br>
+将两个8选1并联，<br>
+并将使能端$\overline{E}$利用起来，作为第二个8选1是否启用的控制信号（即选择$8\sim15$）。</li>
+</ol>
+</blockquote>
+<h3 id="四数值比较器">四、数值比较器</h3>
+<p>对<strong>两个数字</strong>进行比较，以判断其大小的逻辑电路。</p>
+<h4 id="1-1位数值比较器">1. 1位数值比较器</h4>
+<p>最基本的1位数值比较器：</p>
+<ul>
+<li>2个输入：$A$、$B$</li>
+<li>3个输出：$F_{A&gt;B}$、$F_{A=B}$、$F_{A&lt;B}$</li>
+</ul>
+<p>可由1位数值比较器构成n位数值比较器。<br>
+当高位不相等时，则直接输出高位的比较信息，<br>
+否则进行下一位的比较。</p>
+<h4 id="2-2位数值比较器">2. 2位数值比较器</h4>
+<p>按照上面的分析，直接构成。</p>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_11-35-12.png" alt="真值表"  /></p>
+<p><figure style="flex-grow: 183; flex-basis: 440px">
+		<a href="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_20-01-56.jpg" data-size="643x350"><img src="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_20-01-56.jpg"
+				srcset="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_20-01-56_hu8f247dc7b2ed912aa7dfae59c851bfd4_227266_480x0_resize_q75_box.jpg 480w, /p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_20-01-56_hu8f247dc7b2ed912aa7dfae59c851bfd4_227266_1024x0_resize_q75_box.jpg 1024w"
+				width="643"
+				height="350"
+				loading="lazy"
+				alt="逻辑图">
+		</a><figcaption>逻辑图</figcaption></figure></p>
+<h4 id="3-集成数值比较器---4位数值比较器74hc85">3. 集成数值比较器 - 4位数值比较器(74HC85)</h4>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_11-39-58.png" alt="74HC85示意图"  /></p>
+<p>从高位$A_3$、$B_3$开始判断，<br>
+如果相等则往低位判断。</p>
+<p>如果四位全相等，直接输出地位比较结果。</p>
+<blockquote>
+<p>拓展 - 组成$4n$位数值比较器：</p>
+<ol>
+<li>
+<p>串联扩展方式<br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_11-42-46.png" alt="图 15"  /></p>
+<p>但注意：可能存在延时情况。<br>
+最坏情况：每次都比较到最后一位才得出结果。</p>
+</li>
+<li>
+<p>并联拓展方式<br>
+多用一片4位比较器，用来综合考虑其他4个4位的比较结果。<br>
+相当于把4位整合成1位比较。</p>
+<p>注意被整合的4位的比较器，其低位输出要为相等$I_A=I_B$。
+<img src="images/Combinational%20Logic%20Circuit--11-09_11-44-59.png" alt="图 16"  /></p>
+</li>
+</ol>
+</blockquote>
+<h3 id="五算术运算电路">五、算术运算电路</h3>
+<h4 id="1-半加器和全加器">1. 半加器和全加器</h4>
+<ul>
+<li>半加：不考虑低位的进位</li>
+<li>全加：考虑低位的进位</li>
+</ul>
+<h5 id="-1位半加器half-adder">① 1位半加器(Half Adder)</h5>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_11-46-35.png" alt="图 17"  /></p>
+<ul>
+<li>$S$ - 本位的运算结果<br>
+逻辑表达式：$S=A \oplus B$</li>
+<li>$C$ - 是否产生进位<br>
+逻辑表达式：$C=AB$</li>
+</ul>
+<h5 id="-1位全加器full-adder">② 1位全加器(Full Adder)</h5>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_11-46-45.png" alt="图 18"  /></p>
+<ul>
+<li>
+<p>$C_i$ - 低位的进位信息</p>
+</li>
+<li>
+<p>$S$ - 本位的运算结果<br>
+逻辑表达式：$S=A\oplus B\oplus C_i$</p>
+</li>
+<li>
+<p>$C_o$ - 是否产生进位<br>
+逻辑表达式：$C_o=AB+(A\oplus B)C_i$</p>
+</li>
+</ul>
+<hr>
+<p>可以由两个半加器组成成一个全加器：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-09_11-50-22.png" alt="图 19"  /><br>
+即本位半加后再与进位半加。</p>
+<blockquote>
+<p>应用 -奇偶校验器：</p>
+<p>对于全加器，其$S$端输出，即为$3$个输入端是否为奇数个$1$（如果是输出$1$）。<br>
+$\because S=A\oplus B\oplus C_i$，利用的实际上为异或$\oplus$的性质。</p>
+</blockquote>
+<h4 id="2-多位加法器">2. 多位加法器</h4>
+<p><em>略。</em></p>
+<h2 id="第五节-组合可编程逻辑器件">第五节 组合可编程逻辑器件</h2>
+<blockquote>
+<p>一种可以由用户定义和设置逻辑功能的器件。</p>
+</blockquote>
+<p>所谓可编程，即是可以由用户自己设计逻辑表达式，<br>
+<em>由Verilog就可以看出：编程的行为模式和数据流模式是等价的。</em><br>
+而一切表达式都可以转化为最小项表达式，<br>
+因此对于最小项表达式，最基本的结构：</p>
+<ul>
+<li>与门阵列</li>
+<li>或门阵列</li>
+</ul>
+<p>由此构成与非（最小项）表达式。</p>
+<blockquote>
+<p>本节知识点：</p>
+<ul>
+<li>根据电路图写出表达式</li>
+<li>根据表达式画出电路图</li>
+</ul>
+</blockquote>
+<h3 id="一pld的结构表示方法及分类">一、PLD的结构、表示方法及分类</h3>
+<p>P - Program 可编程<br>
+L - Logic 逻辑<br>
+D - Device 器件</p>
+<h4 id="1-pld的基本结构">1. PLD的基本结构</h4>
+<p><img src="images/Combinational%20Logic%20Circuit--11-09_12-01-00.png" alt="图 20"  /></p>
+<h4 id="2-pld的逻辑符号表示方式">2. PLD的逻辑符号表示方式</h4>
+<ol>
+<li>不可编程单元 - 硬线连接单元<br>
+代表恒为接通状态。<br>
+<figure style="flex-grow: 108; flex-basis: 260px">
+		<a href="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-35.png" data-size="114x105"><img src="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-35.png"
+				srcset="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-35_hua0b187c8f1430a9e27a2792e5037f7e8_1406_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-35_hua0b187c8f1430a9e27a2792e5037f7e8_1406_1024x0_resize_box_2.png 1024w"
+				width="114"
+				height="105"
+				loading="lazy"
+				alt="硬线连接单元">
+		</a><figcaption>硬线连接单元</figcaption></figure></li>
+<li>可编程单元
+<ol>
+<li>被编程接通单元<br>
+代表由用户自定义的接通状态。<br>
+<figure style="flex-grow: 110; flex-basis: 265px">
+		<a href="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-53.png" data-size="114x103"><img src="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-53.png"
+				srcset="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-53_hub4df67043f80dd192deb1039212b326b_1801_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-53_hub4df67043f80dd192deb1039212b326b_1801_1024x0_resize_box_2.png 1024w"
+				width="114"
+				height="103"
+				loading="lazy"
+				alt="被编程接通单元">
+		</a><figcaption>被编程接通单元</figcaption></figure></li>
+<li>被编程擦除单元<br>
+代表由用户自定义的断开状态。<br>
+<figure style="flex-grow: 103; flex-basis: 249px">
+		<a href="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-36-15.png" data-size="108x104"><img src="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-36-15.png"
+				srcset="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-36-15_hu2c2a500ba192f911008a150adf04bd1d_1211_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-36-15_hu2c2a500ba192f911008a150adf04bd1d_1211_1024x0_resize_box_2.png 1024w"
+				width="108"
+				height="104"
+				loading="lazy"
+				alt="被编程接通单元">
+		</a><figcaption>被编程接通单元</figcaption></figure></li>
+</ol>
+</li>
+</ol>
+<p>特殊的组合表达：</p>
+<ol>
+<li>输出恒为0的与门：<figure style="flex-grow: 189; flex-basis: 454px">
+		<a href="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-38.png" data-size="299x158"><img src="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-38.png"
+				srcset="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-38_hu025fad3747eb53b81320411964402c4b_10059_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-38_hu025fad3747eb53b81320411964402c4b_10059_1024x0_resize_box_2.png 1024w"
+				width="299"
+				height="158"
+				loading="lazy"
+				alt="图 4">
+		</a><figcaption>图 4</figcaption></figure></li>
+<li>输出恒为1的与门：<figure style="flex-grow: 163; flex-basis: 392px">
+		<a href="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-58.png" data-size="257x157"><img src="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-58.png"
+				srcset="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-58_hue47931a6abb18118c91fbbaf4b4889c1_7986_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-58_hue47931a6abb18118c91fbbaf4b4889c1_7986_1024x0_resize_box_2.png 1024w"
+				width="257"
+				height="157"
+				loading="lazy"
+				alt="图 5">
+		</a><figcaption>图 5</figcaption></figure></li>
+<li>互补输入缓冲器：<figure style="flex-grow: 252; flex-basis: 605px">
+		<a href="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-16.png" data-size="275x109"><img src="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-16.png"
+				srcset="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-16_hu45ff1bf181ff03edf7e6d34e8423bd81_5513_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-16_hu45ff1bf181ff03edf7e6d34e8423bd81_5513_1024x0_resize_box_2.png 1024w"
+				width="275"
+				height="109"
+				loading="lazy"
+				alt="图 6">
+		</a><figcaption>图 6</figcaption></figure></li>
+<li>三态输出缓冲器：<figure style="flex-grow: 137; flex-basis: 330px">
+		<a href="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-30.png" data-size="260x189"><img src="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-30.png"
+				srcset="/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-30_huab1b896a85bca33933899b00545dcfb0_10330_480x0_resize_box_2.png 480w, /p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-30_huab1b896a85bca33933899b00545dcfb0_10330_1024x0_resize_box_2.png 1024w"
+				width="260"
+				height="189"
+				loading="lazy"
+				alt="图 7">
+		</a><figcaption>图 7</figcaption></figure></li>
+</ol>
+<blockquote>
+<p>例1：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-16_09-57-55.png" alt="图 1"  /></p>
+<p>例2：<br>
+<img src="images/Combinational%20Logic%20Circuit--11-16_10-00-35.png" alt="图 2"  /><br>
+注意图中的新颖点 - 反馈：<br>
+即将输出结果由用来当作输入变量。</p>
+</blockquote>
+<h4 id="3-编程连接技术">3. 编程连接技术</h4>
+<ol>
+<li>早期<br>
+采用金属熔丝技术，<br>
+通过大电流将金属丝熔断，完成编程。<br>
+<strong>只能进行一次编程。</strong></li>
+<li>CMOS中<br>
+采用可擦除的编程方式，<br>
+用浮栅MOS代替熔丝。<br>
+可以多次编程。</li>
+</ol>
+<h4 id="4-分类">4. 分类</h4>
+<ol>
+<li>按集成密度划分：
+<ul>
+<li>低密度可编程逻辑器件</li>
+<li>高密度可编程逻辑器件</li>
+</ul>
+</li>
+<li>按结构特点划分：
+<ul>
+<li>简单PLD</li>
+<li>复杂的可编程器件(CPLD)</li>
+<li>现场可编程门阵列(FPGA)</li>
+</ul>
+</li>
+<li>按与、或阵列是否编程划分：
+<ol>
+<li>与阵列固定，或阵列可编程(PROM)</li>
+<li>与阵列、或阵列均可编程(PLA)</li>
+<li>与阵列可编程，或称列固定(PAL、GAL)</li>
+</ol>
+</li>
+</ol>
+<hr>
+<p>由于实际上比较简单（只需要根据表达式，再需要的点上画<code>X</code>即可），<br>
+故不额外讲述本节。</p>
+<h2 id="第六节-用verilog描述组合逻辑电路">第六节 用Verilog描述组合逻辑电路</h2>
+<p>一般语法结构：</p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="c1">//只用于本课学习的方面
+</span><span class="c1"></span><span class="k">module</span> <span class="err">模块名</span><span class="p">(</span><span class="err">端口</span><span class="n">_1</span><span class="p">,</span> <span class="err">端口</span><span class="n">_2</span><span class="p">,</span> <span class="err">端口</span><span class="n">_3</span><span class="p">,</span> <span class="p">...);</span> <span class="c1">//注意这里有分号
+</span><span class="c1"></span>  <span class="k">input</span> <span class="err">输入端口</span><span class="n">_1</span><span class="p">,</span> <span class="p">...;</span>
+  <span class="k">output</span> <span class="err">输出端口</span><span class="n">_1</span><span class="p">,</span> <span class="p">...;</span>
+  <span class="err">数据类型定义</span><span class="p">((</span><span class="kt">wire</span><span class="p">,)</span> <span class="kt">reg</span><span class="p">);</span> <span class="c1">//也可以与input、output合并为：`input(output) wire(reg) ...;`
+</span><span class="c1"></span>  <span class="err">其他变量申明</span><span class="p">(</span><span class="kt">wire</span><span class="p">,</span> <span class="kt">reg</span><span class="p">,</span> <span class="k">integer</span><span class="p">,</span> <span class="p">...);</span> <span class="c1">//比如用作循环变量的i，需要声明为`integer i`;
+</span><span class="c1"></span>  <span class="cm">/* 再补充关于wire和reg：
+</span><span class="cm">  门级电路描述时：所有用来代表连接的结点，都需要定义为wire
+</span><span class="cm">  数据流描述时：只要为赋值语句左边的变量，都需要定义为wire
+</span><span class="cm">  注意：input和output默认定义的是wire，即`input wire in_1`，所以在上述两种中其实可以相当于不加。但最严谨的是：input、output所有端口以及临时节点都加上wire
+</span><span class="cm">
+</span><span class="cm">  行为描述时：只要赋值语句左边的变量，必须要定义为reg（输出需要额外定义）
+</span><span class="cm">  */</span>
+
+  <span class="c1">//门级描述
+</span><span class="c1"></span>  <span class="err">基本门级元件</span><span class="p">(</span><span class="k">not</span><span class="p">,</span> <span class="k">and</span><span class="p">,</span> <span class="k">or</span><span class="p">);</span> <span class="c1">//e,g, `not(out_1, in_1);`//注意输出在前，输入在后！
+</span><span class="c1"></span>  <span class="c1">//数据流描述
+</span><span class="c1"></span>  <span class="err">连续赋值语句</span><span class="p">(</span><span class="k">assign</span><span class="p">);</span> <span class="c1">//e.g. `assign out_1 = (in_1 &amp; A) | （in_2 &amp; ~B);`//注意电路中法国逻辑运算一般为按位，即要用`&amp;`,`|`,`~`,`^`,`~^`。
+</span><span class="c1"></span>  <span class="c1">//行为描述
+</span><span class="c1"></span>  <span class="err">过程块结构</span><span class="p">(</span><span class="k">initial</span><span class="p">,</span> <span class="k">always</span><span class="p">)</span> <span class="c1">//e,g. `always @(...)`
+</span><span class="c1"></span>  <span class="k">begin</span>
+    <span class="err">行为描述语句</span><span class="p">;</span> <span class="c1">//一句话不用加begin, end
+</span><span class="c1"></span>  <span class="k">end</span> <span class="c1">//就是基本的C语言结构了
+</span></code></pre></div><p>额外补充几点：</p>
+<ul>
+<li>用基数形式表示是，位宽指的是二进制下的位数。<br>
+如<code>5'H0CFF</code>→<code>0000_1100_1111_1111</code>→<code>1_1111</code>，与<code>5'H1F</code>一样。</li>
+</ul>
+<h3 id="1-组合逻辑电路的行为级建模">1. 组合逻辑电路的行为级建模</h3>
+<ol>
+<li>
+<p><code>if</code> - 跟C一样。</p>
+</li>
+<li>
+<p><code>case</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="k">case</span> <span class="p">(</span><span class="n">case_expr</span><span class="p">)</span>
+  <span class="nl">item_expr1:</span> <span class="c1">//一种情况多个语句
+</span><span class="c1"></span>  <span class="k">begin</span>
+    <span class="n">statement1_1</span><span class="p">;</span>
+    <span class="n">statement1_2</span><span class="p">;</span>
+  <span class="k">end</span>
+  <span class="nl">item_expr2:</span> <span class="n">statement2</span><span class="p">;</span> <span class="c1">//一种情况一个语句
+</span><span class="c1"></span>  <span class="p">...</span>
+  <span class="k">default</span><span class="o">:</span> <span class="n">default_statement</span><span class="p">;</span> <span class="c1">//可省略
+</span><span class="c1"></span><span class="k">endcase</span>
+
+<span class="k">casex</span> <span class="p">(...)</span> <span class="c1">//包含未知项（优先编码器）
+</span><span class="c1"></span> <span class="mh">4</span><span class="mb">&#39;b1</span><span class="nl">xxx:</span> <span class="p">...;</span>
+<span class="k">endcase</span>
+
+<span class="k">casez</span> <span class="p">(...)</span> <span class="c1">//包含高阻态
+</span><span class="c1"></span><span class="k">endcase</span>
+</code></pre></div></li>
+<li>
+<p><code>for</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="k">integer</span> <span class="n">k</span><span class="p">;</span>
+<span class="p">...</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">k</span> <span class="o">=</span> <span class="mh">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;=</span> <span class="mh">7</span><span class="p">;</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span>
+<span class="k">begin</span> <span class="c1">//一条语句不用
+</span><span class="c1"></span>  <span class="p">...</span>
+<span class="k">end</span>
+</code></pre></div></li>
+</ol>
+<h3 id="2-分模块分层次的电路设计">2. 分模块、分层次的电路设计</h3>
+<p>一般采用“自顶向下”的设计方法。</p>
+<p><img src="images/Combinational%20Logic%20Circuit--11-16_10-36-10.png" alt="图 3"  /></p>
+<p>从最开始要求的设计，一步步划分，直到得出每个模块最基本的元件。</p>
+<hr>
+<p><em>模块的引用，与C++的函数还是有点区别。</em></p>
+<p>父模块引用（调用）子模块时：</p>
+<ol>
+<li>实例引用名不能省略。</li>
+<li>实例引用名在父模块中必须且唯一。</li>
+</ol>
+<p>调用方法：</p>
+<ol>
+<li>
+<p>位置关联法：<br>
+变量与子模块申明的参数顺序位置一样。</p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="c1">//子模块设计
+</span><span class="c1"></span><span class="k">module</span> <span class="n">halfadder</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">);</span>
+  <span class="p">...</span>
+<span class="k">endmodule</span>
+
+<span class="c1">//父模块开始引用
+</span><span class="c1"></span><span class="k">module</span> <span class="n">main</span><span class="p">(...);</span>
+  <span class="n">halfadder</span> <span class="n">HA1</span><span class="p">(</span><span class="n">Sum</span><span class="p">,</span> <span class="n">out_C</span><span class="p">,</span> <span class="n">in_A</span><span class="p">,</span> <span class="n">in_B</span><span class="p">);</span> <span class="c1">//必须要求顺序严格对应
+</span><span class="c1"></span><span class="k">endmodule</span>
+</code></pre></div></li>
+<li>
+<p>名称关联法：<br>
+<code>.A</code>是子模块中的参数。<br>
+<code>(B)</code>是主模块中的参数。</p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="k">module</span> <span class="n">main</span><span class="p">(...);</span>
+  <span class="n">halfadder</span> <span class="n">HA2</span><span class="p">(.</span><span class="n">A</span><span class="p">(</span><span class="n">in_A</span><span class="p">),</span> <span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="n">Sum</span><span class="p">),</span> <span class="p">.</span><span class="n">B</span><span class="p">(</span><span class="n">in_B</span><span class="p">),</span> <span class="p">.</span><span class="n">C</span><span class="p">(</span><span class="n">out_C</span><span class="p">));</span> <span class="c1">//顺序可以打乱
+</span><span class="c1"></span>  <span class="c1">//.A, .S为子模块中参数名称
+</span><span class="c1"></span>  <span class="c1">//(S1), (Sum)为父模块中变量名称
+</span><span class="c1"></span><span class="k">endmodule</span>
+</code></pre></div></li>
+</ol>
+<blockquote>
+<p>例： 完整的4位加法器</p>
+<div class="highlight"><pre class="chroma"><code class="language-verilog" data-lang="verilog"><span class="k">module</span> <span class="n">halfadder</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">);</span> <span class="c1">//用门级电路描述的1位半加器
+</span><span class="c1"></span>                              <span class="c1">//采用一个与门一个异或门构成。
+</span><span class="c1"></span>  <span class="k">input</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">;</span>
+  <span class="k">output</span> <span class="n">S</span><span class="p">,</span> <span class="n">C</span><span class="p">;</span>
+
+  <span class="k">xor</span> <span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">);</span>
+  <span class="k">and</span> <span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">);</span>
+<span class="k">endmodule</span>
+
+<span class="k">module</span> <span class="n">fulladder</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">C_o</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C_i</span><span class="p">);</span> <span class="c1">//用门级电路描述的1位全加器
+</span><span class="c1"></span>                                     <span class="c1">//采用两个1位半加器和一个或门构成。
+</span><span class="c1"></span>  <span class="k">input</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C_i</span><span class="p">;</span>
+  <span class="k">output</span> <span class="n">S</span><span class="p">,</span> <span class="n">C_o</span><span class="p">;</span>
+  <span class="kt">wire</span> <span class="n">S1</span><span class="p">,</span><span class="n">C_1</span><span class="p">,</span><span class="n">C_2</span><span class="p">;</span> <span class="c1">//内部节点信号
+</span><span class="c1"></span>
+  <span class="n">halfadder</span> <span class="n">HA1</span><span class="p">(</span><span class="n">S1</span><span class="p">,</span> <span class="n">C_1</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">);</span>
+  <span class="n">halfadder</span> <span class="n">HA2</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">C_2</span><span class="p">,</span> <span class="n">S1</span><span class="p">,</span> <span class="n">C_i</span><span class="p">);</span> <span class="c1">//本位结果输出
+</span><span class="c1"></span>  <span class="k">or</span> <span class="n">gate_1</span><span class="p">(</span><span class="n">C_o</span><span class="p">,</span> <span class="n">C_1</span><span class="p">,</span> <span class="n">C_2</span><span class="p">);</span> <span class="c1">//进位输出
+</span><span class="c1"></span><span class="k">endmodule</span>
+
+<span class="k">module</span> <span class="mh">4</span><span class="n">bit_adder</span> <span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">C_o</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C_i</span><span class="p">);</span> <span class="c1">//用门级电路描述的4位加法器
+</span><span class="c1"></span>                                       <span class="c1">//采用四个1位全加器构成。
+</span><span class="c1"></span>  <span class="k">input</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="p">;</span> <span class="c1">//4bit输入
+</span><span class="c1"></span>  <span class="k">input</span> <span class="n">C_i</span><span class="p">;</span>
+  <span class="k">output</span><span class="p">[</span><span class="mh">3</span><span class="o">:</span><span class="mh">0</span><span class="p">]</span> <span class="n">S</span><span class="p">;</span> <span class="c1">//4bit输出
+</span><span class="c1"></span>  <span class="k">output</span> <span class="n">C_o</span><span class="p">;</span>
+  <span class="kt">wire</span> <span class="n">C1</span><span class="p">,</span><span class="n">C2</span><span class="p">,</span><span class="n">C3</span><span class="p">;</span> <span class="c1">//内部进位信号
+</span><span class="c1"></span>
+  <span class="n">fulladder</span> <span class="n">FA_0</span> <span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mh">0</span><span class="p">],</span> <span class="n">C_1</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mh">0</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="mh">0</span><span class="p">],</span> <span class="n">C_i</span><span class="p">),</span>
+            <span class="n">FA_1</span> <span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mh">1</span><span class="p">],</span> <span class="n">C_2</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mh">1</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="mh">1</span><span class="p">],</span> <span class="n">C_1</span><span class="p">),</span>
+            <span class="n">FA_2</span> <span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mh">2</span><span class="p">],</span> <span class="n">C_3</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mh">2</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="mh">2</span><span class="p">],</span> <span class="n">C_2</span><span class="p">),</span> 
+            <span class="n">FA_3</span> <span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mh">3</span><span class="p">],</span> <span class="n">C_o</span><span class="p">,</span> <span class="n">A</span><span class="p">[</span><span class="mh">3</span><span class="p">],</span> <span class="n">B</span><span class="p">[</span><span class="mh">3</span><span class="p">],</span> <span class="n">C_3</span><span class="p">);</span>
+<span class="k">endmodule</span>
+</code></pre></div></blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">大学课程</a>
+        
+            <a href="/tags/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF/">数字电子技术</a>
+        
+            <a href="/tags/%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF/">组合逻辑电路</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/74542521" target="_blank" rel="noopener">74542521</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-psycho_phy-prac-4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-psycho_phy-prac-4/pixiv61483143.d2be93400bdf313d058b9f10ab70ae7a_hu12c1b5a9a5e516caec4f044d40d3022b_1819672_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Psycho_Phy-prac-4" 
+                        data-hash="md5-0r6TQAvfMT0Fi58Qq3Cueg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">生理心理学 - 第四章作业……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-activity-summary_2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-activity-summary_2/Yande-303578.18d7631c4f321b29333bd4aba5e5107c_hu4ac8284d9d64ce4dd805253e9d934d3e_1697426_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-activity-summary_2" 
+                        data-hash="md5-GNdjHE8yGykzO9SrpeUQfA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">近代史活动 - 制作阶段安排……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-activity-summary/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-activity-summary/Yande-364526.bdaf98854fd9bfb11b0dfc269b8e100c_hu060b1d1a848b90f2358cba9689228f00_3707348_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-activity-summary" 
+                        data-hash="md5-va&#43;YhU/Zv7EbDfwmm44QDA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">近代史活动会议总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-cpp-prac-array/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-cpp-prac-array/Yande-314214.b700022004ddf7967763ecf51d2f97c5_hua49f15ef087bdbbd47ec4ec6c539acdb_2635208_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-CPP-prac-array" 
+                        data-hash="md5-twACIATd95Z3Y&#43;z1HS&#43;XxQ==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">程序设计——数组习题……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-intro_psychol-ne/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-intro_psychol-ne/67450790_p0.269736b9e0af3be25460f469fa2c06f4_hu64a059195139e470f4d36bc000798f35_624654_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Intro_Psychol-NE" 
+                        data-hash="md5-Jpc2ueCvO&#43;JUYPRp&#43;iwG9A==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">心理学导论——名词解释……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

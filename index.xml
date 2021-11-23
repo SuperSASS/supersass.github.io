@@ -6,7 +6,914 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Fri, 01 Oct 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>数字电子技术——第四章……</title>
+        <link>https://blog.supersassw.com/p/univ-digital_electronic-ep4/</link>
+        <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/univ-digital_electronic-ep4/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/univ-digital_electronic-ep4/74542521_p0.png" alt="Featured image of post 数字电子技术——第四章……" /&gt;&lt;h1 id=&#34;ep4-组合逻辑电路&#34;&gt;Ep.4 组合逻辑电路&lt;/h1&gt;
+&lt;h2 id=&#34;第二节-组合逻辑电路的设计&#34;&gt;第二节 组合逻辑电路的设计&lt;/h2&gt;
+&lt;h3 id=&#34;一-设计&#34;&gt;一、 设计&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;对于不可能出现的情况，应将其作为无关项。&lt;/li&gt;
+&lt;li&gt;对于较多情况，可以用多位二进制的组合来表示。&lt;br&gt;
+e.g. 血型A、B、AB、O，可以用两位来表示。而不是用4bit分别表示。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;二-优化&#34;&gt;二、 优化&lt;/h3&gt;
+&lt;h4 id=&#34;1-单输出电路&#34;&gt;1. 单输出电路&lt;/h4&gt;
+&lt;p&gt;通过对逻辑表达式进行变换，以减少芯片资源的种类。&lt;/p&gt;
+&lt;p&gt;比如将$L=AB+CD$转换为$L=\overline{\overline{AB}\cdot\overline{CD}}$，&lt;br&gt;
+将两个与门一个或门转换为三个与非门。&lt;/p&gt;
+&lt;h4 id=&#34;2-多输出电路&#34;&gt;2. 多输出电路&lt;/h4&gt;
+&lt;p&gt;利用多项表达式中公共部分，减少逻辑门数目。&lt;/p&gt;
+&lt;p&gt;比如2个输出，其表达式都含有一项$AB$，&lt;br&gt;
+则$AB$这一项可以共同连接到两个输出，而不是两个输出分别整一个$AB$。&lt;/p&gt;
+&lt;h4 id=&#34;3-多级逻辑电路&#34;&gt;3. 多级逻辑电路&lt;/h4&gt;
+&lt;p&gt;提取公因子后，可以将扇入数（输入端口数）减少。&lt;/p&gt;
+&lt;p&gt;比如$L=ABCD+AB\overline{C}E+ABD\overline{F}$，转换为$L=AB(CD+\overline{C}E+D\overline{F})$，&lt;br&gt;
+可以将扇入数从$4$降到$3$。&lt;/p&gt;
+&lt;h2 id=&#34;第三节-组合逻辑电路的竞争-冒险&#34;&gt;第三节 组合逻辑电路的竞争-冒险&lt;/h2&gt;
+&lt;p&gt;现实情况下，任何逻辑电路从输入到输出总是会有延迟。
+所以会产生竞争-冒险现象。
+导致在稳态电路下本应输出某种结果，实际上却并不是该结果，&lt;/p&gt;
+&lt;h3 id=&#34;一-产生的竞争冒险的原因&#34;&gt;一、 产生的竞争冒险的原因&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例子：&lt;/p&gt;
+&lt;p&gt;但$L=AB$，其中$B=\overline{A}$时，
+若不考虑延迟，则$L=0$。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 328; flex-basis: 788px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-19-08.png&#34; data-size=&#34;1327x404&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-19-08.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-19-08_hub6f9f5c9281f0b02486c110267386ba7_151506_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-19-08_hub6f9f5c9281f0b02486c110267386ba7_151506_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1327&#34;
+				height=&#34;404&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 1&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 1&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;但因为经过一个逻辑元件会产生一定的延时，所以非门的输入会晚一些，&lt;br&gt;
+导致$L$的处理在短时间内会产生错误。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;竞争：当一个逻辑门的两个输入端的信号同时向相反方向变化，而变化的时间有差异的现象。&lt;/li&gt;
+&lt;li&gt;冒险：由竞争而可能产生输出干扰脉冲的现象。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由竞争不一定有冒险。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 94; flex-basis: 226px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-24-23.png&#34; data-size=&#34;744x790&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-24-23.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-24-23_hu5eab25cb67cc64ddc511f96ddfe33033_369866_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-24-23_hu5eab25cb67cc64ddc511f96ddfe33033_369866_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;744&#34;
+				height=&#34;790&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 2&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 2&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;⭐总结：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;表达式&lt;strong&gt;最终是一个$L=M+\overline{M}$&lt;/strong&gt;&lt;br&gt;
+（只是要求两变量高低电平反向即可，不一定是同一变量）&lt;/li&gt;
+&lt;li&gt;对于与门：其中一个先从$0$到$1$&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-10_13-39-44.png&#34; alt=&#34;图 1&#34;  /&gt;&lt;/li&gt;
+&lt;li&gt;对于或门：其中一个先从$1$到$0$&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-10_14-49-19.png&#34; alt=&#34;图 3&#34;  /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;二-消除竞争冒险的方法&#34;&gt;二、 消除竞争冒险的方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;消除&lt;strong&gt;互补变量相乘&lt;/strong&gt;$A \overline{A}$ - 直接可以消去&lt;br&gt;
+比如$L=(A+B)(\overline{A}+C)$，展开后直接消除$A\overline{A}$。&lt;/li&gt;
+&lt;li&gt;消除&lt;strong&gt;互补变量相加&lt;/strong&gt;$A + \overline{A}$ - 增加乘积项&lt;br&gt;
+对于$L=X_AM+X_B \overline{M} \rightarrow L=X_AM+X_B \overline{M} + X_AX_B$&lt;br&gt;
+此时当$X_A=X_B=1$时，$L+M+\overline{M}+1$，使得恒为$1$，消去互补项相加。&lt;/li&gt;
+&lt;li&gt;*输出端并连电容器&lt;br&gt;
+&lt;em&gt;为物理技术，不在本课讨论范围。&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;第四节-若干典型的组合逻辑电路&#34;&gt;第四节 若干典型的组合逻辑电路&lt;/h2&gt;
+&lt;h3 id=&#34;一-编码器encoder&#34;&gt;一、 编码器(Encoder)&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;赋予二进制代码&lt;strong&gt;特定含义&lt;/strong&gt;的过程成为编码。&lt;br&gt;
+&lt;em&gt;或者反过来说，将一串有特定含义的代码，转化为二进制代码。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;如8421BCD，用1000表示8；
+如ASCII，用各种二进制表示字符。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;必须确保一种特定含义与一个编码&lt;strong&gt;一一对应&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输入：特定含义的信号&lt;/li&gt;
+&lt;li&gt;输出：其二进制代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入输出关系：$N$位输入→$\log N$位输出。&lt;/p&gt;
+&lt;p&gt;因为有特定含义，所以只能一位对应一种含义，&lt;br&gt;
+也就是说，只能&lt;strong&gt;同时存在一个有效信号&lt;/strong&gt;。&lt;br&gt;
+有多少种“特定含义”，输入端就有多少位。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;比如有八个人，则&lt;code&gt;00000001&lt;/code&gt;代表第一个人，&lt;code&gt;00010000&lt;/code&gt;代表第五个人，&lt;code&gt;10000000&lt;/code&gt;代表第八个人，&lt;br&gt;
+而对于&lt;code&gt;00100010&lt;/code&gt;，是没有意义的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;而如果不规定只能以一位有效对应某一特定含义的话，则在编码时会发生混乱，不满足一一对应的关系。&lt;br&gt;
+可以见下面“有两个以上的输出信号时会出现异常”。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;分类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;普通编码器：任何时候&lt;strong&gt;只允许一个&lt;/strong&gt;有效输入信号，否则输出发生混乱。&lt;/li&gt;
+&lt;li&gt;优先编码器：允许同时输入两个以上的有效输入信号。&lt;br&gt;
+当同时输入几个有效信号时，&lt;strong&gt;只对优先级最高的进行编码&lt;/strong&gt;。&lt;br&gt;
+&lt;em&gt;并不是指多个有效输入信号代表一个特定含义，还是一位有效信号代表特定含义。&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;1-普通编码器---4线-2线普通二进制编码器&#34;&gt;1. 普通编码器 - 4线-2线普通二进制编码器&lt;/h4&gt;
+&lt;p&gt;真值表：
+&lt;figure style=&#34;flex-grow: 339; flex-basis: 813px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-47-20.png&#34; data-size=&#34;1353x399&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-47-20.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-47-20_hu1bdf923fc4b20238469638ea4bb4a4f1_85802_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_10-47-20_hu1bdf923fc4b20238469638ea4bb4a4f1_85802_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1353&#34;
+				height=&#34;399&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 1&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 1&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可由表得逻辑式：
+$$
+Y_1=\bar{I_0}I_1\bar{I_2}\bar{I_3}+\bar{I_0}\bar{I_1}\bar{I_2}I_3 \&lt;br&gt;
+Y_0=\bar{I_0}\bar{I_1}I_2\bar{I_3}+\bar{I_0}\bar{I_1}\bar{I_2}I_3
+$$&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//Behavior
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;encoder4to2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;reg&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;always&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;@(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;begin&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b0001&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b00&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b0010&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b01&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b0100&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b1000&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b00&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;endcase&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;异常分析：&lt;/p&gt;
+&lt;p&gt;当$I_3=1$时，$Y_1Y_0=11$，&lt;br&gt;
+而当$I_1=I_2=1$时，$Y_1Y_0=11$，&lt;br&gt;
+故当有两个以上的输出信号时会出现异常。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;也解释了为什么只能以一位有效信号代表某个特定含义。&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-优先编码器---4线-2线优先二进制编码器&#34;&gt;2. 优先编码器 - 4线-2线优先二进制编码器&lt;/h4&gt;
+&lt;p&gt;根据事情的轻重缓急，实现规定好输入端口的优先级，
+当有多个输入信号输入时，只处理优先级高的。&lt;/p&gt;
+&lt;p&gt;真值表：
+&lt;figure style=&#34;flex-grow: 396; flex-basis: 950px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-03-27.png&#34; data-size=&#34;1339x338&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-03-27.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-03-27_hu74b23b28e78e5de962fab294348af98b_75407_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-03-27_hu74b23b28e78e5de962fab294348af98b_75407_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1339&#34;
+				height=&#34;338&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 2&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 2&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;异常分析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;当所有输入信号为0时，输出为0&lt;/li&gt;
+&lt;li&gt;当$I_1=1$时，输出也为0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//Behavior
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;encoder4to2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;reg&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;always&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;@(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;begin&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;casex&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b0001&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b00&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b001&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;x:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b01&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b01&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;xx:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b1&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;xxx:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b11&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b00&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;endcase&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;可以看出上述两种编码均存在问题（输入与输出不是一一对应），&lt;br&gt;
+故一般用下面的集成电路优先编码器。&lt;/p&gt;
+&lt;p&gt;常用集成电路优先编码器种类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;74X147 - 10线-4线优先编码器&lt;br&gt;
+输入：低电平有效&lt;br&gt;
+输出：8421BCD码&lt;/li&gt;
+&lt;li&gt;74X148 - 8线-3线优先编码器&lt;br&gt;
+输入：低电平有效&lt;br&gt;
+输出：二进制代码&lt;/li&gt;
+&lt;li&gt;CD4532 - 8线-3线优先编码器&lt;br&gt;
+输入：高电平有效&lt;br&gt;
+输出：二进制代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;3-8线-3线优先二进制编码器&#34;&gt;3. 8线-3线优先二进制编码器&lt;/h4&gt;
+&lt;p&gt;即为上述的CD4532。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-21_18-46-20.png&#34; alt=&#34;CD4532示意图&#34;  /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;EI - 使能控制信号，当为$0$时不工作&lt;/li&gt;
+&lt;li&gt;EO - 异常输出信号，当为$1$时说明输入全为0&lt;/li&gt;
+&lt;li&gt;GS - 正常输出信号，当为$1$时说明正常工作（输出不全为0）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-21_18-51-06.png&#34; alt=&#34;特殊端口功效图&#34;  /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;二-译码器数据分配器decoder&#34;&gt;二、 译码器/数据分配器(Decoder)&lt;/h3&gt;
+&lt;h4 id=&#34;1-定义与分类&#34;&gt;1. 定义与分类&lt;/h4&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将二进制码翻译成代表某一特定含义的信号（即电路的某种状态）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;即为上述编码的逆过程。&lt;/p&gt;
+&lt;p&gt;分类：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;唯一地址译码器 - 将一系列代码转化为与之一一对应的特定有效信号
+&lt;ul&gt;
+&lt;li&gt;二进制译码器&lt;/li&gt;
+&lt;li&gt;二-十进制译码器&lt;/li&gt;
+&lt;li&gt;显示译码器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;代码转换器 - 将一种代码转换为另一种代码&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;2-二进制译码器&#34;&gt;2. 二进制译码器&lt;/h4&gt;
+&lt;p&gt;这种才是真正上面编码器的译码器。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输入：二进制代码&lt;/li&gt;
+&lt;li&gt;输出：其特定含义的信号&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;输入输出关系：$M$位输入→$2^M$位输出。&lt;/p&gt;
+&lt;p&gt;因此也需要保证一种编码，只对应一种“一个有效信号”情况的输出。&lt;/p&gt;
+&lt;p&gt;而正因为这种特性，相当于每一种输出代表一个最小项，&lt;br&gt;
+故也称“最小项译码器”。&lt;/p&gt;
+&lt;h5 id=&#34;-2线-4线译码器74hc139&#34;&gt;① 2线-4线译码器(74HC139)&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-21_18-55-55.png&#34; alt=&#34;符号示意图&#34;  /&gt;&lt;br&gt;
+⭐注：端口变量符号上有横线，或者端口接线处有圆圈，代表为&lt;strong&gt;低电平有效&lt;/strong&gt;。&lt;br&gt;
+特别是在&lt;strong&gt;逻辑表达式中&lt;/strong&gt;，低电平有效的符号（如上图的$\overline{E}$）不能当作“非”而消去，而要&lt;strong&gt;一直保留&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 122; flex-basis: 295px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-29-43.png&#34; data-size=&#34;503x409&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-29-43.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-29-43_hu77d8bbd92321a63417e7ba62d5a13f5c_66490_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-29-43_hu77d8bbd92321a63417e7ba62d5a13f5c_66490_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;503&#34;
+				height=&#34;409&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;逻辑图&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;逻辑图&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//Dataflow
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;decoder_df&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;assign&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;assign&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;assign&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;assign&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A0&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;~&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;-3线-8线译码器74hc138&#34;&gt;② 3线-8线译码器(74HC138)&lt;/h5&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 163; flex-basis: 391px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-46-10.png&#34; data-size=&#34;1251x767&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-46-10.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-46-10_hu81981b0c4c5579a2ad9c8396ba4956af_222381_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-46-10_hu81981b0c4c5579a2ad9c8396ba4956af_222381_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;1251&#34;
+				height=&#34;767&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;逻辑图与符号示意图&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;逻辑图与符号示意图&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;输出均为低电平有效。&lt;br&gt;
+数据输入为高电平有效。&lt;/p&gt;
+&lt;p&gt;控制信号：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$E_1$ - 低电平有效&lt;/li&gt;
+&lt;li&gt;$E_2$ - 低电平有效&lt;/li&gt;
+&lt;li&gt;$E_3$ - 高电平有效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果&lt;strong&gt;只用这一片74HC138&lt;/strong&gt;，则三个控制端口$E_1$、$E_2$、$E_3$，就当成&lt;strong&gt;简单的控制开关&lt;/strong&gt;。&lt;br&gt;
+即&lt;strong&gt;只有满足：$E_1$、$E_2$端口为低电平输入、$E_3$端口为高电平输入&lt;/strong&gt;（均为有效输入），才能使得该电路正常工作。&lt;br&gt;
+否则只要有一个不为有效输入，则会使得输出全为$1$（全为无效输出，注意输出也为低电平有效）。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;而当需要用两片74HC138，构成一个“4线-16线译码器”的时候，这三个控制端口才有特定用途。&lt;br&gt;
+对于其中一个译码器$A$：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$E_3$ - 用于接收输入信号其额外的第$4$位。&lt;br&gt;
+其需要连接到另一片译码器$B$的$E_2$端口，用来代表选择哪个译码器工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于另一片译码器$B$：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$E_2$ - 用于与第一片译码器$A$的$E_3$端口构成选择器。&lt;br&gt;
+当第$4$位为$0$选择$B$工作，为$1$选择$A$工作。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;构成示意图见下：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-21_19-10-54.png&#34; alt=&#34;2片74HC138构成4-16线译码器&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;具体分析可见：&lt;br&gt;
+&lt;a class=&#34;link&#34; href=&#34;https://www.zhihu.com/question/412229206/answer/1828350505&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;三八译码器74HC138的 使能端 的工作原理是什么?为什么设计三个使能端？ - 周辰峰的回答 - 知乎&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//Behavior
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ecoder3to8_bh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;En&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;En&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;reg&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;integer&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;always&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;@(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;begin&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;8&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b1111&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_1111&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;En&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt;
+        &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;得到每个输出端口唯一的输入情况：&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 44; flex-basis: 105px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-53-12.png&#34; data-size=&#34;258x585&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-53-12.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-53-12_hud881157078803352513b6283b492c784_61426_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/04-11-02_11-53-12_hud881157078803352513b6283b492c784_61426_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;258&#34;
+				height=&#34;585&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 5&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 5&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可以看出：每一项可以代表一个&lt;strong&gt;最小项（的非）&lt;/strong&gt;，故也称为&lt;strong&gt;最小项译码器&lt;/strong&gt;。
+能很方便实现三变量逻辑函数。&lt;/p&gt;
+&lt;p&gt;用74HC138实现三变量逻辑运算：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;先将表达式转换为&lt;strong&gt;最小项之和&lt;/strong&gt;的形式。&lt;/li&gt;
+&lt;li&gt;再还原律+摩尔根，变为&lt;strong&gt;最小项的非的与&lt;/strong&gt;形式。&lt;/li&gt;
+&lt;li&gt;用&lt;strong&gt;与非门连接&lt;/strong&gt;在一起。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拓展 - 用74HC138实现$L=\overline{A}\ \overline{C}+AB$&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_10-00-20.png&#34; alt=&#34;图 2&#34;  /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;3-二-十进制译码器&#34;&gt;3. 二-十进制译码器&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;其实根上述的二进制译码器差不多，不过为BCD8421译为十进制数。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;有$4$个输入端口，代表$4$位8421BCD码，&lt;br&gt;
+有$10$个输出端口，分别代表十进制$0~9$。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-21_19-20-57.png&#34; alt=&#34;二-十进制译码器&#34;  /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;4-显示译码器&#34;&gt;4. 显示译码器&lt;/h4&gt;
+&lt;p&gt;将输入的4位BCD码（一般为8421BCD）代表的十进制数，翻译成“七段码”送给数码管，&lt;br&gt;
+以便数码管能够显示各个BCD码所对应的十进制数字。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;与前面两种译码器的区别：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前面两种：一种输入信号，只会有一个输出端口输出有效电平。&lt;/li&gt;
+&lt;li&gt;显示译码器：一种输入信后，可能会有多个输出端口输出有效电平。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_10-10-03.png&#34; alt=&#34;显示器分段布局图&#34;  /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;共阴极电路：所有阴极接地，输出信号为高电平有效&lt;/li&gt;
+&lt;li&gt;共阳极电路：所有阳极接地，输出信号为低电平有效&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;常用的为：集成七段显示译码器(74HC4511)&lt;/p&gt;
+&lt;p&gt;真值表（功能表）：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_10-12-45.png&#34; alt=&#34;74HC4511功能表 1&#34;  /&gt;&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_10-17-34.png&#34; alt=&#34;74HC4511功能表 2&#34;  /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;灯测试$\overline{LT}$优先级最高 - 正常为1。但只要为0，灯全亮。&lt;/li&gt;
+&lt;li&gt;灭灯$\overline{BL}$优先级第二 - 正常为1。但只要为$BL=0(LT=0)$，灯全灭。&lt;/li&gt;
+&lt;li&gt;锁存$LE$ - 正常为0。但只要$LE=1(LT=1, BL=1)$，则输出信号锁定。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;需要注意这三个控制位&lt;strong&gt;与二进制译码器&lt;/strong&gt;（74HC138等）的&lt;strong&gt;三个使能位不同&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;这三个有具体作用，所以正常工作要置为无效（如低电平有效则置高电平）；&lt;br&gt;
+而二进制译码器的是控制是否工作，所以正常工作要置为有效（如低电平有效则置低电平）。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//Behavior
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;seg7_decoder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LE&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;BL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;LT&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;reg&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;always&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;@(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;begin&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LT&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//灯测试
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b1111111&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BL&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//灭灯
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b0000000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;LE&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//锁存
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
+    &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//开始判断
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;      &lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;D3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;})&lt;/span&gt;
+        &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;&amp;#39;d0&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b1111110&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+        &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;&amp;#39;d1&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b0110000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+          &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;//以下类推
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b0000000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+      &lt;span class=&#34;k&#34;&gt;endcase&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;拓展 - 由1个显示译码器、1个译码器和4个七段显示器显示$4$位数字&lt;/p&gt;
+&lt;p&gt;本来一个显示译码器只能显示$1$位，&lt;br&gt;
+但搭配74HC139，在极短的时间内依次输出4个不同的电位，同时变动显示译码器要输出的数字，&lt;br&gt;
+即在很短的时间内依次在4个七段显示器上显示每一位，&lt;br&gt;
+再利用人的视觉残留，可以看到稳定的$4$位数字。&lt;/p&gt;
+&lt;p&gt;此时接在译码器的输入信号则称为“位选择信号”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;5-数据分配器&#34;&gt;5. 数据分配器&lt;/h4&gt;
+&lt;p&gt;将公共数据线（一个公共输入端口）上的数据，&lt;br&gt;
+按照需要，发送到不同的通道（某个特定的输出端口）上去。&lt;/p&gt;
+&lt;p&gt;相当于“一个输入”对应“多个输出”的单刀多掷开关。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原理：&lt;/p&gt;
+&lt;p&gt;对于74HC138，当$E_2=0, E_3=1$时，&lt;br&gt;
+将$E_1$作为公共输入端口，&lt;br&gt;
+可以通过不同的$A_0, A_1, A_2$，可以将$E_1$输出到不同的$Y$端口。&lt;/p&gt;
+&lt;p&gt;如$A_0=0, A_1=1, A_2=0$，&lt;br&gt;
+则$Y_2=E_1$，从$Y_2$端口原样输出。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;可以分别将$E_1, E_2, E_3$作为输入端口，并其余两个调整为有效信号即可。&lt;br&gt;
+但注意：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$E_1, E_2$ - 输出跟输入一样。（均为低电平有效）&lt;/li&gt;
+&lt;li&gt;$E_3$ - 输出是输入取非。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_10-45-12.png&#34; alt=&#34;功能表&#34;  /&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;具体的分配电路实现方式：&lt;br&gt;
+利用二进制译码器(74HC139、74HC138)，搭配$n$个三态门来实现。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例 - 实现一个数据分配器，分配到$4$个通道。&lt;br&gt;
+需求非控制的输出通道为高阻态。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-21_19-31-45.png&#34; alt=&#34;电路图&#34;  /&gt;&lt;br&gt;
+其中黑色部分即为74HC139，蓝色部分为4个三态门。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;三数据选择器&#34;&gt;三、数据选择器&lt;/h3&gt;
+&lt;p&gt;与数据分配器互补：&lt;br&gt;
+相当于“多个输入”对应“一个输出”的单刀多掷开关。&lt;/p&gt;
+&lt;p&gt;在选择信号的作用下，将多个通道的数据选择其中一个，传输到公共的输出数据通道中。&lt;/p&gt;
+&lt;h4 id=&#34;1-最基础的数据选择器---2选1数据选择器&#34;&gt;1. 最基础的数据选择器 - 2选1数据选择器&lt;/h4&gt;
+&lt;h5 id=&#34;-基本介绍&#34;&gt;① 基本介绍&lt;/h5&gt;
+&lt;p&gt;电路图：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_10-58-49.png&#34; alt=&#34;电路图&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;逻辑符号：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_10-58-22.png&#34; alt=&#34;逻辑符号&#34;  /&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//Dataflow
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mux2x1_df&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SEL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SEL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;assign&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;L&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SEL&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;//Behavior
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mux2x1_bh&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;D1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;reg&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;always&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;@(&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;*&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;c1&#34;&gt;//一句话，不用加begin
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;    &lt;span class=&#34;n&#34;&gt;L&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;SEL&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;?&lt;/span&gt; &lt;span class=&#34;nl&#34;&gt;D1:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;D0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h5 id=&#34;-构成n选1数据选择器&#34;&gt;② 构成n选1数据选择器&lt;/h5&gt;
+&lt;p&gt;由该数据选择器可以组合成n选1数据选择器。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如4选1数据选择器：&lt;br&gt;
+可由$3$个2选1选择器构成。&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-00-11.png&#34; alt=&#34;电路图&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_10-59-59.png&#34; alt=&#34;逻辑符号&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;表达式：$Y=D_0\overline{S_1}\ \overline{S_0} + D_1\overline{S_1}S_0 + D_2S_1\overline{S_0} + D_3S_1S_0$&lt;br&gt;
+改为选择信号的最小项$Y=D_0m_0+D_1m_1+D_2m_2+D_3m_3$&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;即组合成$n$选$1$数据选择器：&lt;br&gt;
+则有$n$个数据输入端口；&lt;br&gt;
+有$\lceil\log_2n\rceil$个控制输入端口，&lt;br&gt;
+其中同一级的$2$选$1$，用一个控制端口共同控制。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;原因：&lt;/p&gt;
+&lt;p&gt;当前一级的控制端取的$0$的话，这一级的下方选择器便没有用了，&lt;br&gt;
+而如果前一级取$1$的话，这一级的上方便没有用了。&lt;br&gt;
+所以这一级的控制端，能唯一确定某个通路。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&#34;-运算功能&#34;&gt;③ 运算功能&lt;/h5&gt;
+&lt;p&gt;上例看出：也可以将表达式改为&lt;strong&gt;最小项表达&lt;/strong&gt;，&lt;br&gt;
+故也&lt;strong&gt;可以进行数据运算&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;通过数据输入端口$D_m\sim D_0$的不同确定取值，&lt;br&gt;
+可组合成关于&lt;strong&gt;控制输入端口&lt;/strong&gt;$S_n\sim S_0$的不同最小项组合。&lt;/p&gt;
+&lt;p&gt;但如果变量数多于“控制端口”数，&lt;br&gt;
+则需要把多余的变量被迫安排到“输入端口”。&lt;/p&gt;
+&lt;p&gt;此时根据“控制端口”的变量的不同取值，&lt;br&gt;
+得到输出$L$与剩余（位于“输入端口”的）变量关系式，&lt;br&gt;
+然后根据关系式，确定该“控制端口”的状态（如$(D_1,D_0)=10$）下，“输入端口”的变量该如何连接至该状态的端口（如连接至$10$端口）。&lt;/p&gt;
+&lt;p&gt;即枚举位于控制端口的变量，然后对于每种状态得到一个剩余变量的表达式，&lt;br&gt;
+再将剩余变量按照该表达式连接至对应状态端口。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例 - 利用2选1数据选择器，实现$L=AB+A\overline{C}+BC$。&lt;/p&gt;
+&lt;p&gt;本来2选1只支持$1$个控制输入端，但这里有$3$个变量，&lt;br&gt;
+因此需要指定另外$2$个变量为“输入端”。&lt;/p&gt;
+&lt;p&gt;定$A$为控制端，则真值表：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-13-21.png&#34; alt=&#34;真值表&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;也就是说，枚举控制端口的$A$：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$A=0 \rightarrow L=BC$&lt;/li&gt;
+&lt;li&gt;$A=1 \rightarrow L=B+\overline{C}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;则将BC连入$0$这个状态（第一种输入），&lt;br&gt;
+将$B+\overline{C}$连入$1$这个状态（第二种输入）。&lt;/p&gt;
+&lt;p&gt;实现电路如图：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-13-57.png&#34; alt=&#34;电路图&#34;  /&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;总结：&lt;/p&gt;
+&lt;p&gt;都是优先&lt;strong&gt;把变量接入控制输入端口$S$&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;变量数 = &lt;strong&gt;控制&lt;/strong&gt;输入端口数&lt;br&gt;
+则直接把函数转化为最小项表达式，然后根据保留情况，直接确定输出端口$D$为确定的值。&lt;br&gt;
+这个时候$D$是常量。&lt;/li&gt;
+&lt;li&gt;变量数 &amp;lt; &lt;strong&gt;控制&lt;/strong&gt;输入端口数
+把没被用到的选择端口置任意值，然后对有可能输出的端口进行控制（置1）即可。（其余则置0）&lt;/li&gt;
+&lt;li&gt;变量数 &amp;gt; &lt;strong&gt;控制&lt;/strong&gt;输入端口数
+&lt;ul&gt;
+&lt;li&gt;如果支持其他逻辑元件（如与门等）：&lt;br&gt;
+将部分变量当输入信号，根据不同的控制信号，得出每个情况的表达式，然后再设计该种情况的电路。&lt;br&gt;
+这个时候$D$是变量。&lt;/li&gt;
+&lt;li&gt;如果不支持其他逻辑元件（只能用选择器）：&lt;br&gt;
+则需要用该选择器，组合成$n$选$1$选择器，使得$n&amp;gt;=\textrm{变量数}$。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;-构成查找器lut&#34;&gt;④ *构成查找器LUT&lt;/h5&gt;
+&lt;p&gt;数据选择器构成查找表LUT(Look-Up-Table)：&lt;br&gt;
+&lt;em&gt;约等于一个8选1数据选择器&lt;/em&gt;&lt;br&gt;
+输出给定逻辑函数，&lt;br&gt;
+其中输入端口为选择器的控制端口，而数据端口为常量。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-21_19-49-16.png&#34; alt=&#34;图 7&#34;  /&gt;&lt;br&gt;
+一定注意$D$端为设计好了的&lt;strong&gt;常量&lt;/strong&gt;。&lt;/p&gt;
+&lt;h4 id=&#34;2-典型集成电路---8选1数据选择器74hc151&#34;&gt;2. 典型集成电路 - 8选1数据选择器（74HC151）&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-21_19-51-54.png&#34; alt=&#34;逻辑符号&#34;  /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$E$ - 低电平有效。为$1$时不工作（$Y$输出0、$\overline{Y}$输出1）。&lt;/li&gt;
+&lt;li&gt;$Y$ - 输出由$S$所选择的信号&lt;/li&gt;
+&lt;li&gt;$\overline{Y}$ - 输出所选择信号的非&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;扩展：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;多位的8选1（$N$bit，均按照相同的$S$选择）：&lt;br&gt;
+简单的几个8选1直接并联。&lt;/li&gt;
+&lt;li&gt;16选1：&lt;br&gt;
+将两个8选1并联，&lt;br&gt;
+并将使能端$\overline{E}$利用起来，作为第二个8选1是否启用的控制信号（即选择$8\sim15$）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;四数值比较器&#34;&gt;四、数值比较器&lt;/h3&gt;
+&lt;p&gt;对&lt;strong&gt;两个数字&lt;/strong&gt;进行比较，以判断其大小的逻辑电路。&lt;/p&gt;
+&lt;h4 id=&#34;1-1位数值比较器&#34;&gt;1. 1位数值比较器&lt;/h4&gt;
+&lt;p&gt;最基本的1位数值比较器：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2个输入：$A$、$B$&lt;/li&gt;
+&lt;li&gt;3个输出：$F_{A&amp;gt;B}$、$F_{A=B}$、$F_{A&amp;lt;B}$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;可由1位数值比较器构成n位数值比较器。&lt;br&gt;
+当高位不相等时，则直接输出高位的比较信息，&lt;br&gt;
+否则进行下一位的比较。&lt;/p&gt;
+&lt;h4 id=&#34;2-2位数值比较器&#34;&gt;2. 2位数值比较器&lt;/h4&gt;
+&lt;p&gt;按照上面的分析，直接构成。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-35-12.png&#34; alt=&#34;真值表&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 183; flex-basis: 440px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_20-01-56.jpg&#34; data-size=&#34;643x350&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_20-01-56.jpg&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_20-01-56_hu8f247dc7b2ed912aa7dfae59c851bfd4_227266_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_20-01-56_hu8f247dc7b2ed912aa7dfae59c851bfd4_227266_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;643&#34;
+				height=&#34;350&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;逻辑图&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;逻辑图&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h4 id=&#34;3-集成数值比较器---4位数值比较器74hc85&#34;&gt;3. 集成数值比较器 - 4位数值比较器(74HC85)&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-39-58.png&#34; alt=&#34;74HC85示意图&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;从高位$A_3$、$B_3$开始判断，&lt;br&gt;
+如果相等则往低位判断。&lt;/p&gt;
+&lt;p&gt;如果四位全相等，直接输出地位比较结果。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;拓展 - 组成$4n$位数值比较器：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;串联扩展方式&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-42-46.png&#34; alt=&#34;图 15&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;但注意：可能存在延时情况。&lt;br&gt;
+最坏情况：每次都比较到最后一位才得出结果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;并联拓展方式&lt;br&gt;
+多用一片4位比较器，用来综合考虑其他4个4位的比较结果。&lt;br&gt;
+相当于把4位整合成1位比较。&lt;/p&gt;
+&lt;p&gt;注意被整合的4位的比较器，其低位输出要为相等$I_A=I_B$。
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-44-59.png&#34; alt=&#34;图 16&#34;  /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;五算术运算电路&#34;&gt;五、算术运算电路&lt;/h3&gt;
+&lt;h4 id=&#34;1-半加器和全加器&#34;&gt;1. 半加器和全加器&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;半加：不考虑低位的进位&lt;/li&gt;
+&lt;li&gt;全加：考虑低位的进位&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;-1位半加器half-adder&#34;&gt;① 1位半加器(Half Adder)&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-46-35.png&#34; alt=&#34;图 17&#34;  /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;$S$ - 本位的运算结果&lt;br&gt;
+逻辑表达式：$S=A \oplus B$&lt;/li&gt;
+&lt;li&gt;$C$ - 是否产生进位&lt;br&gt;
+逻辑表达式：$C=AB$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&#34;-1位全加器full-adder&#34;&gt;② 1位全加器(Full Adder)&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-46-45.png&#34; alt=&#34;图 18&#34;  /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;$C_i$ - 低位的进位信息&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$S$ - 本位的运算结果&lt;br&gt;
+逻辑表达式：$S=A\oplus B\oplus C_i$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;$C_o$ - 是否产生进位&lt;br&gt;
+逻辑表达式：$C_o=AB+(A\oplus B)C_i$&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;可以由两个半加器组成成一个全加器：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_11-50-22.png&#34; alt=&#34;图 19&#34;  /&gt;&lt;br&gt;
+即本位半加后再与进位半加。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;应用 -奇偶校验器：&lt;/p&gt;
+&lt;p&gt;对于全加器，其$S$端输出，即为$3$个输入端是否为奇数个$1$（如果是输出$1$）。&lt;br&gt;
+$\because S=A\oplus B\oplus C_i$，利用的实际上为异或$\oplus$的性质。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;2-多位加法器&#34;&gt;2. 多位加法器&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;略。&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;第五节-组合可编程逻辑器件&#34;&gt;第五节 组合可编程逻辑器件&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一种可以由用户定义和设置逻辑功能的器件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;所谓可编程，即是可以由用户自己设计逻辑表达式，&lt;br&gt;
+&lt;em&gt;由Verilog就可以看出：编程的行为模式和数据流模式是等价的。&lt;/em&gt;&lt;br&gt;
+而一切表达式都可以转化为最小项表达式，&lt;br&gt;
+因此对于最小项表达式，最基本的结构：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;与门阵列&lt;/li&gt;
+&lt;li&gt;或门阵列&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;由此构成与非（最小项）表达式。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本节知识点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;根据电路图写出表达式&lt;/li&gt;
+&lt;li&gt;根据表达式画出电路图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;一pld的结构表示方法及分类&#34;&gt;一、PLD的结构、表示方法及分类&lt;/h3&gt;
+&lt;p&gt;P - Program 可编程&lt;br&gt;
+L - Logic 逻辑&lt;br&gt;
+D - Device 器件&lt;/p&gt;
+&lt;h4 id=&#34;1-pld的基本结构&#34;&gt;1. PLD的基本结构&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-09_12-01-00.png&#34; alt=&#34;图 20&#34;  /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;2-pld的逻辑符号表示方式&#34;&gt;2. PLD的逻辑符号表示方式&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;不可编程单元 - 硬线连接单元&lt;br&gt;
+代表恒为接通状态。&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 108; flex-basis: 260px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-35.png&#34; data-size=&#34;114x105&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-35.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-35_hua0b187c8f1430a9e27a2792e5037f7e8_1406_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-35_hua0b187c8f1430a9e27a2792e5037f7e8_1406_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;114&#34;
+				height=&#34;105&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;硬线连接单元&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;硬线连接单元&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;可编程单元
+&lt;ol&gt;
+&lt;li&gt;被编程接通单元&lt;br&gt;
+代表由用户自定义的接通状态。&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 110; flex-basis: 265px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-53.png&#34; data-size=&#34;114x103&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-53.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-53_hub4df67043f80dd192deb1039212b326b_1801_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-35-53_hub4df67043f80dd192deb1039212b326b_1801_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;114&#34;
+				height=&#34;103&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;被编程接通单元&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;被编程接通单元&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;被编程擦除单元&lt;br&gt;
+代表由用户自定义的断开状态。&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 103; flex-basis: 249px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-36-15.png&#34; data-size=&#34;108x104&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-36-15.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-36-15_hu2c2a500ba192f911008a150adf04bd1d_1211_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-36-15_hu2c2a500ba192f911008a150adf04bd1d_1211_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;108&#34;
+				height=&#34;104&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;被编程接通单元&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;被编程接通单元&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;特殊的组合表达：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;输出恒为0的与门：&lt;figure style=&#34;flex-grow: 189; flex-basis: 454px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-38.png&#34; data-size=&#34;299x158&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-38.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-38_hu025fad3747eb53b81320411964402c4b_10059_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-38_hu025fad3747eb53b81320411964402c4b_10059_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;299&#34;
+				height=&#34;158&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 4&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 4&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;输出恒为1的与门：&lt;figure style=&#34;flex-grow: 163; flex-basis: 392px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-58.png&#34; data-size=&#34;257x157&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-58.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-58_hue47931a6abb18118c91fbbaf4b4889c1_7986_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-40-58_hue47931a6abb18118c91fbbaf4b4889c1_7986_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;257&#34;
+				height=&#34;157&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 5&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 5&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;互补输入缓冲器：&lt;figure style=&#34;flex-grow: 252; flex-basis: 605px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-16.png&#34; data-size=&#34;275x109&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-16.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-16_hu45ff1bf181ff03edf7e6d34e8423bd81_5513_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-16_hu45ff1bf181ff03edf7e6d34e8423bd81_5513_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;275&#34;
+				height=&#34;109&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 6&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 6&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;三态输出缓冲器：&lt;figure style=&#34;flex-grow: 137; flex-basis: 330px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-30.png&#34; data-size=&#34;260x189&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-30.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-30_huab1b896a85bca33933899b00545dcfb0_10330_480x0_resize_box_2.png 480w, https://blog.supersassw.com/p/univ-digital_electronic-ep4/images/Combinational-Logic-Circuit--11-21_22-41-30_huab1b896a85bca33933899b00545dcfb0_10330_1024x0_resize_box_2.png 1024w&#34;
+				width=&#34;260&#34;
+				height=&#34;189&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;图 7&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;图 7&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例1：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-16_09-57-55.png&#34; alt=&#34;图 1&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;例2：&lt;br&gt;
+&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-16_10-00-35.png&#34; alt=&#34;图 2&#34;  /&gt;&lt;br&gt;
+注意图中的新颖点 - 反馈：&lt;br&gt;
+即将输出结果由用来当作输入变量。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;3-编程连接技术&#34;&gt;3. 编程连接技术&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;早期&lt;br&gt;
+采用金属熔丝技术，&lt;br&gt;
+通过大电流将金属丝熔断，完成编程。&lt;br&gt;
+&lt;strong&gt;只能进行一次编程。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;CMOS中&lt;br&gt;
+采用可擦除的编程方式，&lt;br&gt;
+用浮栅MOS代替熔丝。&lt;br&gt;
+可以多次编程。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;4-分类&#34;&gt;4. 分类&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;按集成密度划分：
+&lt;ul&gt;
+&lt;li&gt;低密度可编程逻辑器件&lt;/li&gt;
+&lt;li&gt;高密度可编程逻辑器件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;按结构特点划分：
+&lt;ul&gt;
+&lt;li&gt;简单PLD&lt;/li&gt;
+&lt;li&gt;复杂的可编程器件(CPLD)&lt;/li&gt;
+&lt;li&gt;现场可编程门阵列(FPGA)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;按与、或阵列是否编程划分：
+&lt;ol&gt;
+&lt;li&gt;与阵列固定，或阵列可编程(PROM)&lt;/li&gt;
+&lt;li&gt;与阵列、或阵列均可编程(PLA)&lt;/li&gt;
+&lt;li&gt;与阵列可编程，或称列固定(PAL、GAL)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;由于实际上比较简单（只需要根据表达式，再需要的点上画&lt;code&gt;X&lt;/code&gt;即可），&lt;br&gt;
+故不额外讲述本节。&lt;/p&gt;
+&lt;h2 id=&#34;第六节-用verilog描述组合逻辑电路&#34;&gt;第六节 用Verilog描述组合逻辑电路&lt;/h2&gt;
+&lt;p&gt;一般语法结构：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//只用于本课学习的方面
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;模块名&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;端口&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;端口&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;端口&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//注意这里有分号
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;输入端口&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;输出端口&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...;&lt;/span&gt;
+  &lt;span class=&#34;err&#34;&gt;数据类型定义&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;wire&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,)&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;reg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//也可以与input、output合并为：`input(output) wire(reg) ...;`
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;err&#34;&gt;其他变量申明&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kt&#34;&gt;wire&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;reg&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;integer&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//比如用作循环变量的i，需要声明为`integer i`;
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;cm&#34;&gt;/* 再补充关于wire和reg：
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  门级电路描述时：所有用来代表连接的结点，都需要定义为wire
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  数据流描述时：只要为赋值语句左边的变量，都需要定义为wire
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  注意：input和output默认定义的是wire，即`input wire in_1`，所以在上述两种中其实可以相当于不加。但最严谨的是：input、output所有端口以及临时节点都加上wire
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  行为描述时：只要赋值语句左边的变量，必须要定义为reg（输出需要额外定义）
+&lt;/span&gt;&lt;span class=&#34;cm&#34;&gt;  */&lt;/span&gt;
+
+  &lt;span class=&#34;c1&#34;&gt;//门级描述
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;err&#34;&gt;基本门级元件&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;not&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;and&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;or&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//e,g, `not(out_1, in_1);`//注意输出在前，输入在后！
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//数据流描述
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;err&#34;&gt;连续赋值语句&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;assign&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//e.g. `assign out_1 = (in_1 &amp;amp; A) | （in_2 &amp;amp; ~B);`//注意电路中法国逻辑运算一般为按位，即要用`&amp;amp;`,`|`,`~`,`^`,`~^`。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//行为描述
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;err&#34;&gt;过程块结构&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;initial&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;always&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//e,g. `always @(...)`
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;begin&lt;/span&gt;
+    &lt;span class=&#34;err&#34;&gt;行为描述语句&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//一句话不用加begin, end
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//就是基本的C语言结构了
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;额外补充几点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用基数形式表示是，位宽指的是二进制下的位数。&lt;br&gt;
+如&lt;code&gt;5&#39;H0CFF&lt;/code&gt;→&lt;code&gt;0000_1100_1111_1111&lt;/code&gt;→&lt;code&gt;1_1111&lt;/code&gt;，与&lt;code&gt;5&#39;H1F&lt;/code&gt;一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;1-组合逻辑电路的行为级建模&#34;&gt;1. 组合逻辑电路的行为级建模&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;if&lt;/code&gt; - 跟C一样。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;case&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;k&#34;&gt;case&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;case_expr&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+  &lt;span class=&#34;nl&#34;&gt;item_expr1:&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//一种情况多个语句
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;begin&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;statement1_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+    &lt;span class=&#34;n&#34;&gt;statement1_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+  &lt;span class=&#34;nl&#34;&gt;item_expr2:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;statement2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//一种情况一个语句
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;default&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;default_statement&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//可省略
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endcase&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;casex&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(...)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//包含未知项（优先编码器）
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;mb&#34;&gt;&amp;#39;b1&lt;/span&gt;&lt;span class=&#34;nl&#34;&gt;xxx:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;...;&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endcase&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;casez&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(...)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//包含高阻态
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endcase&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;for&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;k&#34;&gt;integer&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;7&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;++&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;begin&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//一条语句不用
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;2-分模块分层次的电路设计&#34;&gt;2. 分模块、分层次的电路设计&lt;/h3&gt;
+&lt;p&gt;一般采用“自顶向下”的设计方法。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;images/Combinational%20Logic%20Circuit--11-16_10-36-10.png&#34; alt=&#34;图 3&#34;  /&gt;&lt;/p&gt;
+&lt;p&gt;从最开始要求的设计，一步步划分，直到得出每个模块最基本的元件。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;em&gt;模块的引用，与C++的函数还是有点区别。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;父模块引用（调用）子模块时：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;实例引用名不能省略。&lt;/li&gt;
+&lt;li&gt;实例引用名在父模块中必须且唯一。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;调用方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;位置关联法：&lt;br&gt;
+变量与子模块申明的参数顺序位置一样。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;c1&#34;&gt;//子模块设计
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;halfadder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+
+&lt;span class=&#34;c1&#34;&gt;//父模块开始引用
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;halfadder&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HA1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;out_C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;in_B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//必须要求顺序严格对应
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;名称关联法：&lt;br&gt;
+&lt;code&gt;.A&lt;/code&gt;是子模块中的参数。&lt;br&gt;
+&lt;code&gt;(B)&lt;/code&gt;是主模块中的参数。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(...);&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;halfadder&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HA2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in_A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Sum&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;in_B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;));&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//顺序可以打乱
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//.A, .S为子模块中参数名称
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;//(S1), (Sum)为父模块中变量名称
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;例： 完整的4位加法器&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-verilog&#34; data-lang=&#34;verilog&#34;&gt;&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;halfadder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//用门级电路描述的1位半加器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                              &lt;span class=&#34;c1&#34;&gt;//采用一个与门一个异或门构成。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+
+  &lt;span class=&#34;k&#34;&gt;xor&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;and&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fulladder&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_o&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//用门级电路描述的1位全加器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                                     &lt;span class=&#34;c1&#34;&gt;//采用两个1位半加器和一个或门构成。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_o&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;kt&#34;&gt;wire&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//内部节点信号
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;halfadder&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HA1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;halfadder&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;HA2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//本位结果输出
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;or&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;gate_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C_o&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//进位输出
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+
+&lt;span class=&#34;k&#34;&gt;module&lt;/span&gt; &lt;span class=&#34;mh&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;bit_adder&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_o&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//用门级电路描述的4位加法器
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;                                       &lt;span class=&#34;c1&#34;&gt;//采用四个1位全加器构成。
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//4bit输入
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//4bit输出
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;  &lt;span class=&#34;k&#34;&gt;output&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_o&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+  &lt;span class=&#34;kt&#34;&gt;wire&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;C3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;//内部进位信号
+&lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;
+  &lt;span class=&#34;n&#34;&gt;fulladder&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;FA_0&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_i&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;FA_1&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+            &lt;span class=&#34;n&#34;&gt;FA_2&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; 
+            &lt;span class=&#34;n&#34;&gt;FA_3&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_o&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mh&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;C_3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;k&#34;&gt;endmodule&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/blockquote&gt;
+</description>
+        </item>
+        <item>
         <title>西南交通大学转专业指南……</title>
         <link>https://blog.supersassw.com/p/univ-exchange_major/</link>
         <pubDate>Fri, 01 Oct 2021 00:00:00 +0000</pubDate>
@@ -627,7 +1534,7 @@
 &lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://jq.qq.com/?_wv=1027&amp;amp;k=mILzPLVx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;点击此处加入群聊【SWJTU-ACM比赛交流群】&lt;/a&gt;&lt;/p&gt;
+    &gt;点击此处加入群聊【西南交通大学CSP认证报名】&lt;/a&gt;&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;或者加入学校ACM比赛交流群也可以。&lt;/p&gt;
@@ -1142,7 +2049,7 @@
 
 &lt;div class=&#34;timenode&#34;&gt;
 	&lt;div class=&#34;meta&#34;&gt;
-		&lt;p&gt;&lt;div class=&#34;title&#34;&gt;1. 找任课老师联系方式&lt;/div&gt;&lt;/p&gt;
+		&lt;p&gt;1. 找任课老师联系方式&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;div class=&#34;body&#34;&gt;&lt;p&gt;在教务处的“&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/PublicInfoQueryAction?setAction=queryTeacher&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;教师信息查询&lt;/a&gt;”页面，输入你想要申请扩容班级的任课老师，然后查询，&lt;br&gt;
@@ -1189,7 +2096,7 @@
 
 &lt;div class=&#34;timenode&#34;&gt;
 	&lt;div class=&#34;meta&#34;&gt;
-		&lt;p&gt;&lt;div class=&#34;title&#34;&gt;2. 联系老师，提出课程扩容申请&lt;/div&gt;&lt;/p&gt;
+		&lt;p&gt;2. 联系老师，提出课程扩容申请&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;div class=&#34;body&#34;&gt;&lt;p&gt;接下来就用自己的邮箱给老师发送申请了。&lt;br&gt;
 &lt;em&gt;【怎么写就是自己的事了，在表达出自己想要申请课程扩容上随意发挥就行w……&lt;/em&gt;&lt;/p&gt;
@@ -1225,7 +2132,7 @@
 
 &lt;div class=&#34;timenode&#34;&gt;
 	&lt;div class=&#34;meta&#34;&gt;
-		&lt;p&gt;&lt;div class=&#34;title&#34;&gt;3. 等待老师回复，写出书面申请，交给老师签字并交到指定地方&lt;/div&gt;&lt;/p&gt;
+		&lt;p&gt;3. 等待老师回复，写出书面申请，交给老师签字并交到指定地方&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;div class=&#34;body&#34;&gt;&lt;p&gt;老师如果回复同意后，一般会让你写书面申请然后给他签字，最后再交到指定地方完成课程扩容。&lt;/p&gt;
 &lt;p&gt;书面申请一般就简短的写：「因为转专业原因需要学习该课程，但因人数已满故提出课程扩容申请」之类的，&lt;br&gt;
@@ -1237,7 +2144,7 @@
 
 &lt;div class=&#34;timenode&#34;&gt;
 	&lt;div class=&#34;meta&#34;&gt;
-		&lt;p&gt;&lt;div class=&#34;title&#34;&gt;4. 课程扩容成功，在“网上选课”中选择课程&lt;/div&gt;&lt;/p&gt;
+		&lt;p&gt;4. 课程扩容成功，在“网上选课”中选择课程&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;div class=&#34;body&#34;&gt;&lt;p&gt;注意课程扩容只是扩个容，还是需要自己去选课的。&lt;/p&gt;
 &lt;p&gt;交到指定老师处后他会给你说好久扩容成功，到时候注意选择就行。&lt;br&gt;
@@ -1289,7 +2196,7 @@
 
 &lt;div class=&#34;timenode&#34;&gt;
 	&lt;div class=&#34;meta&#34;&gt;
-		&lt;p&gt;&lt;div class=&#34;title&#34;&gt;1. 下载“超学分选课申请表”&lt;/div&gt;&lt;/p&gt;
+		&lt;p&gt;1. 下载“超学分选课申请表”&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;div class=&#34;body&#34;&gt;&lt;p&gt;超学分选课申请表在“教务处 - 表格文档”中搜索“超学分”，&lt;br&gt;
 可以找到“超学分选课申请表”。&lt;/p&gt;
@@ -1318,7 +2225,7 @@
 
 &lt;div class=&#34;timenode&#34;&gt;
 	&lt;div class=&#34;meta&#34;&gt;
-		&lt;p&gt;&lt;div class=&#34;title&#34;&gt;2. 填写表格，并找自己学院的班导师和教务处签字&lt;/div&gt;&lt;/p&gt;
+		&lt;p&gt;2. 填写表格，并找自己学院的班导师和教务处签字&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;div class=&#34;body&#34;&gt;&lt;p&gt;按照表格要求填写好表格后，&lt;br&gt;
 需要在“导师意见”和“院系意见”处分别找班导师和教务处老师进行签字。&lt;/p&gt;
@@ -1343,7 +2250,7 @@
 
 &lt;div class=&#34;timenode&#34;&gt;
 	&lt;div class=&#34;meta&#34;&gt;
-		&lt;p&gt;&lt;div class=&#34;title&#34;&gt;到指定地方呈交表格&lt;/div&gt;&lt;/p&gt;
+		&lt;p&gt;到指定地方呈交表格&lt;/p&gt;
 	&lt;/div&gt;
 	&lt;div class=&#34;body&#34;&gt;&lt;p&gt;填写完毕后，到表格所写的“教务处排课中心综合楼222”交上表格。&lt;/p&gt;
 &lt;div class=&#34;snote warning &#34;&gt;
@@ -1448,7 +2355,7 @@
 &lt;h1 id=&#34;三行大二上学年&#34;&gt;三、行——大二上学年&lt;/h1&gt;
 &lt;div class=&#34;snote quote gray&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;行 —— 尽情展翅高飞吧、姬雏鸟&lt;/p&gt;
+		&lt;p&gt;行 —— 尽情展翅高飞吧、姬雏鸟！&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;h2 id=&#34;进行阶段&#34;&gt;进行阶段&lt;/h2&gt;
@@ -1475,7 +2382,7 @@
 主要考察&lt;strong&gt;C语言&lt;/strong&gt;的掌握情况。&lt;/p&gt;
 &lt;p&gt;其&lt;strong&gt;考察范围到链表&lt;/strong&gt;为止，&lt;br&gt;
 并且不涉及对算法的考察，&lt;strong&gt;只考察基本的语言熟练程度&lt;/strong&gt;。&lt;br&gt;
-具体考察范围可以去购买一本《》，从目录里看，一直到链表之前的内容就是考试范围。&lt;/p&gt;
+具体考察范围可以去购买一本《C语言程序设计基础》，从目录里看，一直到链表之前的内容就是考试范围。&lt;/p&gt;
 &lt;p&gt;如果之前有程序设计经验，比如参加过NOIP信息学竞赛等，那应该机考问题不大。&lt;/p&gt;
 
 
@@ -1921,7 +2828,7 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
 &lt;/div&gt;
 &lt;div class=&#34;snote message gray&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;个人考试就在这里？了好久，怎么释放了数据还在甚至还能读取。&lt;/p&gt;
+		&lt;p&gt;个人考试就在这里？了好久：怎么释放了数据还在甚至还能读取？……&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;hr&gt;
@@ -16365,7 +17272,7 @@ $1 \le h_i,v_i \le 10^4$&lt;/p&gt;
 需注意&lt;strong&gt;重新读入时不会删去之前的字符串&lt;/strong&gt;！&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;如第一次读入了个&lt;code&gt;2333331919&lt;/code&gt;，之后又用这个字符串读了个&lt;code&gt;114514&lt;/code&gt;，&lt;br&gt;
-则新的字符串是&lt;code&gt;1145151919&lt;/code&gt;。&lt;/p&gt;
+则新的字符串是&lt;code&gt;1145141919&lt;/code&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/p&gt;
 	&lt;/div&gt;
