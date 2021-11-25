@@ -1,0 +1,2103 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='Ep.14 - 波动光学……'><title>大学物理 下——第十四章……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/univ-physics-ep14/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='大学物理 下——第十四章……'>
+<meta property='og:description' content='Ep.14 - 波动光学……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/univ-physics-ep14/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='大学课程' /><meta property='article:tag' content='大学物理' /><meta property='article:tag' content='波动光学' /><meta property='article:published_time' content='2021-11-25T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-11-25T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/univ-physics-ep14/93592237_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="大学物理 下——第十四章……">
+<meta name="twitter:description" content="Ep.14 - 波动光学……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/univ-physics-ep14/93592237_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#第十四章-波动光学">第十四章 波动光学</a>
+      <ul>
+        <li><a href="#第一节-光的偏振">第一节 光的偏振</a>
+          <ul>
+            <li><a href="#一光的偏振现象---横波性">一、光的偏振现象 - 横波性</a></li>
+            <li><a href="#二光的五种偏振态">二、光的五种偏振态</a>
+              <ul>
+                <li><a href="#1-自然光">1. 自然光</a></li>
+                <li><a href="#2-线偏振光">2. 线偏振光</a></li>
+                <li><a href="#3-部分偏振光">3. 部分偏振光</a></li>
+                <li><a href="#4-椭圆园偏振光">4. 椭圆、园偏振光</a></li>
+              </ul>
+            </li>
+            <li><a href="#三偏振片起偏-马吕斯定律">三、偏振片起偏 马吕斯定律</a>
+              <ul>
+                <li><a href="#1-偏振片起偏原理">1. 偏振片起偏原理</a></li>
+                <li><a href="#2-效果">2. 效果</a></li>
+                <li><a href="#3-马吕斯定律">3. 马吕斯定律</a></li>
+              </ul>
+            </li>
+            <li><a href="#四反射折射起偏-布儒斯特定律">四、反射折射起偏 布儒斯特定律</a>
+              <ul>
+                <li><a href="#1-反射折射起偏原理">1. 反射折射起偏原理</a></li>
+                <li><a href="#2-布儒斯特定律">2. 布儒斯特定律</a></li>
+                <li><a href="#3-光强关系">3. 光强关系</a></li>
+              </ul>
+            </li>
+            <li><a href="#五双折射现象">五*、双折射现象</a></li>
+            <li><a href="#六检偏及其规律">六、检偏及其规律</a></li>
+          </ul>
+        </li>
+        <li><a href="#第二节-光的干涉">第二节 光的干涉</a>
+          <ul>
+            <li><a href="#一相干光">一、相干光</a>
+              <ul>
+                <li><a href="#1-光">1. 光</a></li>
+                <li><a href="#2-光波与机械波相干性比较">2. 光波与机械波相干性比较</a></li>
+              </ul>
+            </li>
+            <li><a href="#二从普通光获得相干光">二、从普通光获得相干光</a>
+              <ul>
+                <li><a href="#1-分波面法">1. 分波面法</a></li>
+                <li><a href="#2-分振幅法">2. 分振幅法</a></li>
+              </ul>
+            </li>
+            <li><a href="#三光程-光程差">三、光程 光程差</a>
+              <ul>
+                <li><a href="#1-光程">1. 光程</a></li>
+                <li><a href="#2-光程差">2. 光程差</a></li>
+                <li><a href="#3-明暗条纹条件">3. 明暗条纹条件</a></li>
+              </ul>
+            </li>
+            <li><a href="#四分波面法---双缝干涉-空间相干性">四、分波面法 - 双缝干涉 空间相干性</a>
+              <ul>
+                <li><a href="#1-杨氏双缝干涉">1. 杨氏双缝干涉</a></li>
+                <li><a href="#2-其他分波阵面干涉">2. 其他分波阵面干涉</a></li>
+                <li><a href="#3-空间相干性">3. 空间相干性</a></li>
+              </ul>
+            </li>
+            <li><a href="#五分振幅法---薄膜干涉-时间相干性">五、分振幅法 - 薄膜干涉 时间相干性</a>
+              <ul>
+                <li><a href="#1-一般性讨论">1. 一般性讨论</a></li>
+                <li><a href="#2-薄膜等厚干涉">2. 薄膜等厚干涉</a></li>
+                <li><a href="#3-薄膜等倾干涉">3. 薄膜等倾干涉</a></li>
+                <li><a href="#4-薄膜干涉的应用">4. 薄膜干涉的应用</a></li>
+                <li><a href="#5-迈克尔逊干涉仪">5. 迈克尔逊干涉仪</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#第三节-光的衍射">第三节 光的衍射</a>
+          <ul>
+            <li><a href="#一衍射现象">一、衍射现象</a></li>
+            <li><a href="#二惠更斯-菲涅耳原理">二、惠更斯-菲涅耳原理</a>
+              <ul>
+                <li><a href="#1-惠更斯原理">1. 惠更斯原理</a></li>
+                <li><a href="#2-菲涅耳原理">2. 菲涅耳原理</a></li>
+              </ul>
+            </li>
+            <li><a href="#三衍射的分类">三、衍射的分类</a></li>
+            <li><a href="#四单缝夫琅禾费衍射">四、单缝夫琅禾费衍射</a>
+              <ul>
+                <li><a href="#1-菲涅尔半波带法半定量">1. 菲涅尔半波带法（半定量）</a></li>
+                <li><a href="#2-振幅矢量叠加法定量">2. 振幅矢量叠加法（定量）</a></li>
+              </ul>
+            </li>
+            <li><a href="#五圆孔夫琅禾费衍射">五、圆孔夫琅禾费衍射</a>
+              <ul>
+                <li><a href="#1-圆孔夫琅禾费衍射装置">1. 圆孔夫琅禾费衍射装置</a></li>
+                <li><a href="#2-条纹特性">2. 条纹特性</a></li>
+                <li><a href="#3-光学仪器分辨率">3. 光学仪器分辨率</a></li>
+              </ul>
+            </li>
+            <li><a href="#六光栅夫琅禾费衍射">六、光栅夫琅禾费衍射</a>
+              <ul>
+                <li><a href="#1-分类">1. 分类</a></li>
+                <li><a href="#2-透射光栅装置">2. 透射光栅装置</a></li>
+                <li><a href="#2-衍射图样特点">2. 衍射图样特点</a></li>
+                <li><a href="#3-衍射光强分析">3. 衍射光强分析</a></li>
+              </ul>
+            </li>
+            <li><a href="#七晶格衍射x光衍射">七、晶格衍射（X光衍射）</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/univ-physics-ep14/">
+                <img src="/p/univ-physics-ep14/93592237_p0_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_800x0_resize_box_2.png"
+                        srcset="/p/univ-physics-ep14/93592237_p0_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_800x0_resize_box_2.png 800w, /p/univ-physics-ep14/93592237_p0_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_1600x0_resize_box_2.png 1600w"
+                        width="800" 
+                        height="684" 
+                        loading="lazy"
+                        alt="Featured image of post 大学物理 下——第十四章……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/university/" >
+                大学相关
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/univ-physics-ep14/">大学物理 下——第十四章……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            Ep.14 - 波动光学……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2021/11/25</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：15414</div>
+            <div class="time">预计阅读时长： <time>31</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header>
+
+    <section class="article-content">
+    <h1 id="第十四章-波动光学">第十四章 波动光学</h1>
+<h2 id="第一节-光的偏振">第一节 光的偏振</h2>
+<h3 id="一光的偏振现象---横波性">一、光的偏振现象 - 横波性</h3>
+<blockquote>
+<ul>
+<li><strong>偏振(polarization):</strong><br>
+振动方向对于传播方向的非对称分布。</li>
+</ul>
+</blockquote>
+<p>对称分布，指无论偏振片怎样放置，波都能通过；<br>
+而非对称则是偏振片沿一个角度放置，会使得光完全不能通过。<br>
+故<strong>只有横波才有偏振现象</strong>，是区别于纵波的重要性质。</p>
+<ul>
+<li>光$\rightarrow$电磁波$\rightarrow$<strong>横波</strong></li>
+</ul>
+<blockquote>
+<p><strong>概念 - 光矢量：</strong></p>
+<p>引起视觉和化学效应的是电磁场的电场强度矢量$E(t)$，<br>
+故将该矢量成为<strong>光矢量</strong>(light vector)。<br>
+<img src="images/Wave%20Optics--11-06_16-19-05.png" alt="图 1"  /></p>
+</blockquote>
+<p>注意：光的电矢量只与传播方向垂直，<br>
+所以光矢量可以在与传播方向<strong>垂直平面的任意方向</strong>。<br>
+<img src="images/Wave%20Optics--11-06_16-20-53.png" alt="图 2"  /></p>
+<blockquote>
+<ul>
+<li><strong>偏振态(polarization state):</strong><br>
+光矢量$E$在垂直于传播方向的平面内，可以有不同的振动状态，称为光的偏振态。</li>
+</ul>
+</blockquote>
+<h3 id="二光的五种偏振态">二、光的五种偏振态</h3>
+<p><img src="images/Wave%20Optics--11-06_10-03-09.png" alt="图 3"  /></p>
+<h4 id="1-自然光">1. 自然光</h4>
+<blockquote>
+<ul>
+<li><strong>自然光(Natural light):</strong><br>
+各方向光振动的振幅相同，从而强度相同，这样的光称作自然光。</li>
+</ul>
+</blockquote>
+<p>一般即指普通光源发出的光。</p>
+<p>对于每一个光波列：均为横波——可偏振。<br>
+但因为原子发光的独立性和随机性，一段观测时间内<strong>电矢量的统计平均值在空间和时间分布均有均匀性</strong>。
+使得<strong>自然光并不是偏振光</strong>。</p>
+<blockquote>
+<ul>
+<li>空间分布的均匀性：光矢量对传播方向均匀对称分布。——故整体非偏振</li>
+<li>时间分布的均匀性：光振动各个朝向的振幅大小相同。</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-06_16-40-50.png" alt="图 4"  /></p>
+</blockquote>
+<ul>
+<li>图示：
+<img src="images/Wave%20Optics--11-06_16-27-21.png" alt="图 5"  /></li>
+</ul>
+<h4 id="2-线偏振光">2. 线偏振光</h4>
+<blockquote>
+<ul>
+<li><strong>线偏振光(Linearly light):</strong><br>
+只有某一固定方向的光振动的光，称为线偏振光。</li>
+</ul>
+</blockquote>
+<p>光振动<strong>只有一个确定方向</strong>（只有一个振动面）。</p>
+<blockquote>
+<ul>
+<li>振动面：光矢量的振动方向与光的传播方向构成的平面。
+<img src="images/Wave%20Optics--11-06_16-34-07.png" alt="图 6"  /></li>
+</ul>
+</blockquote>
+<ul>
+<li>图示：<br>
+<img src="images/Wave%20Optics--11-06_16-35-33.png" alt="图 7"  /></li>
+</ul>
+<h4 id="3-部分偏振光">3. 部分偏振光</h4>
+<p>是介于线偏振光和自然光之间的一种偏振光，<br>
+在振动面内各个光振动都有，但光强不等，光振动在某方向上有优势，<br>
+正交分解后可以得到两个互相垂直、互相独立但光振动的振幅不相等。</p>
+<p>故可以<strong>当作“自然光”+“线偏振光”</strong>。</p>
+<ul>
+<li>图示：<br>
+<img src="images/Wave%20Optics--11-06_16-47-09.png" alt="图 10"  /></li>
+</ul>
+<h4 id="4-椭圆园偏振光">4. 椭圆、园偏振光</h4>
+<p>虽然只有一个光矢量，但其会旋转，<br>
+故有无数个振动面。</p>
+<p>端点轨迹的截面为椭圆，则是椭圆偏振光，<br>
+为圆，则是圆偏振光。</p>
+<p>可以根据之前的“李萨如图形”，分解为两个方向上的旋转矢量。</p>
+<p><img src="images/Wave%20Optics--11-06_17-11-55.png" alt="圆偏振光 1"  /><br>
+圆偏振光 1</p>
+<p><img src="images/Wave%20Optics--11-06_17-08-10.png" alt="椭圆偏振光 1"  /><br>
+椭圆偏振光 1</p>
+<p>在圆偏振光中，<br>
+当顺着光的传播方向看，电场矢量是逆时针旋转时，称为“左旋圆偏振光”，<br>
+顺时针旋转称为“右旋圆偏振光”。</p>
+<blockquote>
+<p>下部分引问：<br>
+如何获得偏振光？即如何起偏？</p>
+<ol>
+<li>利用光在各向异性介质中的传播。
+<ol>
+<li>偏振片</li>
+<li>双折射现象</li>
+</ol>
+</li>
+<li>利用光在两种介质界面上的反射和折射。</li>
+</ol>
+</blockquote>
+<h3 id="三偏振片起偏-马吕斯定律">三、偏振片起偏 马吕斯定律</h3>
+<h4 id="1-偏振片起偏原理">1. 偏振片起偏原理</h4>
+<blockquote>
+<p>利用晶体的二相色性，只让某一方向（称为<strong>偏振化方向</strong>）振动的光通过，而吸收其他方向的光振动。<br>
+将透明薄片涂有二相色性材料，即形成偏振片。</p>
+</blockquote>
+<h4 id="2-效果">2. 效果</h4>
+<p>“起偏”，得到与“偏振化方向”相同的线偏振光，称为“起偏器”。</p>
+<p>若在其后再放置一个偏振片，并不断旋转，<br>
+则可以检测是否是偏振光，起到“检偏”效果，称为“检偏器”。</p>
+<h4 id="3-马吕斯定律">3. 马吕斯定律</h4>
+<blockquote>
+<p>反应光线通过偏振片后的强度变化规律。</p>
+<ul>
+<li>自然光：
+$$I_0 \rightarrow I=\frac{1}{2}I_0$$</li>
+<li>线偏振光：
+$$I_0 \rightarrow I=I_0\cos^2\alpha$$
+其中$\alpha$为线偏振光振动方向与偏振化方向的夹角。<br>
+<img src="images/Wave%20Optics--11-06_17-35-46.png" alt="夹角图示 1"  /><br>
+夹角图示</li>
+<li>部分偏振光：
+$$I_0 = I_1+I_2 \rightarrow I=\frac{1}{2}I_1 + I_2\cos^2\alpha$$</li>
+</ul>
+</blockquote>
+<h3 id="四反射折射起偏-布儒斯特定律">四、反射折射起偏 布儒斯特定律</h3>
+<h4 id="1-反射折射起偏原理">1. 反射折射起偏原理</h4>
+<p>当光线（自然光）沿界面发生反射和折射时，光的偏振状态会发生改变。</p>
+<ol>
+<li>一般状态入射：<br>
+反射光与折射光都是部分偏振光。
+<img src="images/Wave%20Optics--11-06_17-42-48.png" alt="一般状态入射"  /></li>
+<li>入射角$i$满足某一特殊角度$i_0$：<br>
+反射光是<strong>垂直于入射面</strong>的<strong>线偏振光</strong>，折射光仍是部分偏振光。
+<img src="images/Wave%20Optics--11-06_17-53-56.png" alt="特殊角度入射 1"  /></li>
+</ol>
+<h4 id="2-布儒斯特定律">2. 布儒斯特定律</h4>
+<blockquote>
+<p>上述的$i_0$称为布儒斯特角（起偏角），<br>
+满足条件：
+$$\tan i_0 = \frac{n_o}{n_i}$$</p>
+<ul>
+<li>$n_o$代表出射（折射）处介质的折射率，</li>
+<li>$n_i$代表入射处介质的折射率。</li>
+</ul>
+<p>又$\because \frac{\sin i_0}{\sin \gamma}=\frac{n_o}{n_i}$（折射定律）<br>
+得：
+$$i_0+\gamma = \frac{\pi}{2}$$</p>
+</blockquote>
+<h4 id="3-光强关系">3. 光强关系</h4>
+<p>反射光只包含垂直于入射面的振动的一部分，光强较弱，$I &lt; \frac{1}{2}I_0$。</p>
+<p>但可以通过多次反射，使$I\to I_0$，<br>
+此时起偏装置由许多平行玻璃片组成，称为“玻璃片堆”。</p>
+<p><img src="images/Wave%20Optics--11-06_18-01-03.png" alt="玻璃片堆 1"  /><br>
+玻璃片堆</p>
+<blockquote>
+<p>拓展 - 比较起偏角和全反射临界角：<br>
+<img src="images/Wave%20Optics--11-06_18-03-43.png" alt="图 20"  /></p>
+</blockquote>
+<h3 id="五双折射现象">五*、双折射现象</h3>
+<blockquote>
+<ul>
+<li><strong>双折射现象(birefringence):</strong><br>
+当光进入各向异性介质（如方解石）时，介质中出现<strong>两束折射光线</strong>的现象。</li>
+</ul>
+</blockquote>
+<p>对于两束折射光，可分为：</p>
+<ul>
+<li>o光（寻常光）：遵循折射定律，与入射光线在同一平面。<br>
+$\frac{\sin i}{\sin \gamma}=n_0$，为常量。</li>
+<li>e光（非常光）：不遵循折射定律，一般不在入射面内。<br>
+$\frac{\sin i}{\sin \gamma'}=n_e$，不为常量。</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-06_18-11-13.png" alt="角度定义 1"  /><br>
+角度定义</p>
+<p><img src="images/Wave%20Optics--11-06_18-11-43.png" alt="e光不在入射面示意（垂直入射） 1"  /><br>
+e光不在入射面示意（垂直入射）</p>
+<h3 id="六检偏及其规律">六、检偏及其规律</h3>
+<p>检测光线是否为线偏振光。</p>
+<p>方法：旋转检偏器，观测出射光强的变化情况。</p>
+<p><img src="images/Wave%20Optics--11-06_18-13-11.png" alt="判断方法 1"  /><br>
+判断方法</p>
+<hr>
+<h2 id="第二节-光的干涉">第二节 光的干涉</h2>
+<p>基础知识点：</p>
+<ul>
+<li>波的干涉条件、现象和能量分布</li>
+</ul>
+<h3 id="一相干光">一、相干光</h3>
+<blockquote>
+<ul>
+<li>
+<p><strong>相干光(coherent light):</strong><br>
+当满足相干条件：</p>
+<ol>
+<li>振动方向相同</li>
+<li>频率相同</li>
+<li>相位差恒定</li>
+<li>满足空间相干性</li>
+<li>满足时间相干性</li>
+</ol>
+<p>这样的两束光在空间相遇时，会出现<strong>光强（明暗）在空间“非均匀”“稳定”分布</strong>。<br>
+这种现象称为<strong>光的干涉</strong>，<br>
+这两束光称为<strong>相干光</strong>。</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="1-光">1. 光</h4>
+<ul>
+<li>狭义：可见光，电磁波中的一个狭窄波段</li>
+<li>广义：电磁波</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-07_09-58-31.png" alt="电磁波谱 1"  /><br>
+电磁波谱</p>
+<p><strong>相关名词：</strong></p>
+<ul>
+<li>光波：交变电磁场在空间传播。</li>
+<li>光矢量$\vec{E}$：引起<strong>视觉和感光</strong>作用。</li>
+<li>光振动$\vec{E}(t)$：方向、大小随$t$周期性变化。<br>
+$$E=E_0\cos(\omega t+\varphi)$$</li>
+<li>光强：$I \propto E_0^2$（注意这里的$E$是光振动的振幅）</li>
+<li>相对光强：$I = E_0^2$</li>
+</ul>
+<h4 id="2-光波与机械波相干性比较">2. 光波与机械波相干性比较</h4>
+<blockquote>
+<p>相同处：</p>
+<ul>
+<li>相干条件相同（见上）</li>
+<li>光强分布：
+$$I=I_1+I_2+\underline{2\sqrt{I_1I_2}\cos \Delta\varphi}$$
+（划线部分为干涉项）
+$$\Delta\varphi=\varphi_2-\varphi_1-2\pi\frac{r_2-r_1}{\lambda}$$</li>
+</ul>
+<p>不同处：</p>
+<ul>
+<li>机械波源与光波波源特征不同
+<ul>
+<li>机械波源：容易满足相干条件。</li>
+<li>光波波源：<strong>难以满足</strong>相干条件。</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p>因此对于普通光源，难以满足相干条件。</p>
+<blockquote>
+<p>拓展 - 普通光源发光机制：</p>
+<p>被激发到较高能级的原子跃迁到低能级时，<br>
+以光的形式辐射出多余能量。</p>
+<p>一个原子，一次跃迁，只能发出一个频率、振动方向和初相一定的光波波列，<br>
+并且该光波列<strong>有一定的波列长度，只持续一定的时间</strong>（$L=\tau c (\tau\approx 10^{-8}s)$）</p>
+<p>发光特点：</p>
+<ol>
+<li>自发辐射，具有<strong>间歇性</strong>和<strong>随机性</strong>。</li>
+<li>原子发光的时间很短，只有$10^{-8}$秒。</li>
+<li>各原子发光是完全随机独立的，无固定相位差。</li>
+</ol>
+<p>正因为原子发光的时间极短，<br>
+所以在人的观测反应时间内，干涉现象为平均结果，即：
+$$I=I_1+I_2+2\sqrt{I_1I_2}\frac{1}{\tau}\int_0^\tau\cos\Delta\varphi \rm d t=I_1+I_2$$
+为均匀分布，非相干叠加，故观测不到干涉现象。</p>
+</blockquote>
+<p>则：两普通光源或同一光源的不同部分是不相干的。</p>
+<blockquote>
+<p>拓展 - 发展现状：</p>
+<ol>
+<li>激光
+激光：受激辐射，与普通光源产生机理不同，<strong>具有相干性</strong>。<br>
+其频率、相位、偏振态（振动方向）、转播方向完全相同。</li>
+<li>快速光电接收器件
+精确到皮秒，故可以观测到十分短暂的干涉，甚至观测到两个独立光源的干涉。</li>
+</ol>
+</blockquote>
+<h3 id="二从普通光获得相干光">二、从普通光获得相干光</h3>
+<p>以下两个方法都能保证初相位和频率相同。</p>
+<h4 id="1-分波面法">1. 分波面法</h4>
+<p>对于同一个波阵面</p>
+<p>在光源发出的同一波列的波面上，取出两个次波源，<br>
+对于<strong>同一个波阵面上的两点</strong>，它们的<strong>所有振动状态</strong>完全相同，<br>
+由于它们相位差保持恒定（即便相位会变化），所以构成相干波源。</p>
+<p><img src="images/Wave%20Optics--11-07_11-30-09.png" alt="分波面法 1"  /><br>
+分波面法</p>
+<p><strong>典型应用：杨氏双缝干涉。</strong></p>
+<h4 id="2-分振幅法">2. 分振幅法</h4>
+<p>利用光在两种透明介质交界面的反射和折射，<br>
+使两束光线<strong>来自同一个波列</strong>，它们的<strong>所有振动状态</strong>也完全相同。
+先将光的振幅（能量）分为两部分，再引导他们相遇形成干涉。</p>
+<p><img src="images/Wave%20Optics--11-07_11-40-48.png" alt="分振幅法 1"  /><br>
+分振幅法</p>
+<h3 id="三光程-光程差">三、光程 光程差</h3>
+<p><em>主要就是把只能在同一介质中用的公示，推广到不同介质也能用。</em></p>
+<h4 id="1-光程">1. 光程</h4>
+<blockquote>
+<ul>
+<li>光程(optical path):<br>
+将光在介质中的<strong>几何路程与介质折射率的乘积</strong>定义为等效真空程，称为“光程”。
+$$d'=nd$$</li>
+</ul>
+</blockquote>
+<p>光在折射率为$n$的介质中前进$d$距离引起的相位改变，<br>
+与在真空中前进$nd$距离引起的相位改变相同。</p>
+<p>因此可以将光在不同介质中走过的路程，折算到在真空中的路程加以比较。</p>
+<h4 id="2-光程差">2. 光程差</h4>
+<blockquote>
+<p>引入：<br>
+用相位来表示光强、干涉强弱状态不好想象，<br>
+因此想办法转换为一个距离度量，用空间量来表示。</p>
+</blockquote>
+<p>通过光程差来简化相位差的表达。</p>
+<blockquote>
+<p>推导过程：</p>
+<p>相干光源两束光在$P$点相遇时，其光振动<strong>取决于两个光振动的相位差</strong>：
+$$\Delta\varphi=\varphi_2-\varphi_1-\frac{2\pi(r_2-r_1)}{\lambda}$$
+为了简化讨论，一般都控制初相差为$0$，即：
+$$\Delta\varphi=\frac{2\pi(r_1-r_2)}{\lambda}$$</p>
+<p>在不同介质中，波长会变化，如下图：<br>
+<img src="images/Wave%20Optics--11-07_12-12-38.png" alt="图 4"  /><br>
+则相位差应表示为：
+$$\Delta\varphi=2\pi\frac{r_1}{\lambda}-2\pi(\frac{r_2-d}{\lambda}+\frac{d}{\lambda'})$$</p>
+<p>又$\because \lambda'=\frac{u}{v}=\frac{\frac{c}{n}}{v}=\frac{\lambda}{n}$，可以转化为：
+$$\Delta\varphi=2\pi\frac{r_1}{\lambda}-2\pi(\frac{r_2-d}{\lambda}+\frac{nd}{\lambda})$$
+其中$nd$刚好对应上述的“光程”。</p>
+</blockquote>
+<p>将两束光的光程之差定义为光程差，用$\Delta$表示。<br>
+$$⭐\qquad\Delta\varphi=2\pi\frac{\Delta}{\lambda}$$</p>
+<blockquote>
+<p>上推导过程中，$\Delta=r_1-(r_2-d+nd)=r_1-[r_2+(n-1)d]$</p>
+</blockquote>
+<p>计算光程差的常见情况：</p>
+<ol>
+<li>在真空中放入厚度为$d$折射率为$n$的介质，<br>
+附加（多出来的）光程差：$nd-d=(n-1)d$</li>
+<li>光从<strong>光疏</strong>介质射<strong>到光密</strong>介质并<strong>反射</strong>时，发生<strong>半波损失</strong>，<br>
+附加光程差：$\frac{\lambda}{2}$<strong>（不做证明，但要牢记）</strong></li>
+<li>薄透镜物点与像点间等光程，即经过透镜每一条光线$s_i$是等光程的，<br>
+不引起附加光程差。<br>
+<img src="images/Wave%20Optics--11-07_13-19-41.png" alt="图 5"  /><br>
+<em>虽然两侧的光线透镜里走的短，但真空中走的多；中间的光线透镜里走的多，但真空里走的短。</em></li>
+</ol>
+<h4 id="3-明暗条纹条件">3. 明暗条纹条件</h4>
+<p>因此，相消和相长的条件可以表示为：</p>
+<p>$$
+\Delta \varphi=\varphi_{2}-\varphi_{1}+2\pi\frac{\Delta}{\lambda}=\left{
+\begin{array}{l}
+\pm 2 k\pi &amp; \textsf{（相长）}\<br>
+\pm(2 k+1)\pi &amp;\textsf{（相消）}
+\end{array}
+\right.\qquad(k=0,1,2,\cdots )
+$$</p>
+<p>又因为一般调节$\varphi_1=\varphi_2$，故：</p>
+<blockquote>
+<p>$$⭐\qquad
+\Delta=\left{
+\begin{array}{l}
+\pm k\lambda &amp; \textsf{（明）}\<br>
+\pm \frac{2k+1}{2}\lambda &amp;\textsf{（暗）}
+\end{array}
+\right.\qquad(k=0,1,2,\cdots )
+$$</p>
+</blockquote>
+<h3 id="四分波面法---双缝干涉-空间相干性">四、分波面法 - 双缝干涉 空间相干性</h3>
+<h4 id="1-杨氏双缝干涉">1. 杨氏双缝干涉</h4>
+<h5 id="-装置">① 装置</h5>
+<p><img src="images/Wave%20Optics--11-07_13-55-50.png" alt="装置图 1"  /><br>
+装置图</p>
+<p>称$O$点为“<strong>屏中心</strong>”。</p>
+<p>要求：</p>
+<ul>
+<li>$d \ll D$<br>
+故所有光线与水平轴的夹角$\theta$都很小。<br>
+同时$d$很小，更容易使传到$S_1,S_2$的波来自同一个波列。</li>
+<li>$S_1, S_2$等距分布在$S$两侧。</li>
+</ul>
+<p>光线流程：单色光→单缝→双缝→观察屏。</p>
+<p>$S$的作用是提供点光源，发出柱面波。<br>
+如果直接为点光源可以不用$S$屏。</p>
+<blockquote>
+<p>原理 - 惠更斯原理：</p>
+<p>介质中任意波阵面上的各点都可以看作是发射子波的波源，<br>
+其后任一时刻，这些<strong>子波的包络面就是新的波阵面</strong>。</p>
+</blockquote>
+<h5 id="-明暗纹位置">② 明暗纹位置</h5>
+<p>如上图，记观察屏点$P$距离屏中心$O$的距离为$x$，<br>
+则：</p>
+<blockquote>
+<p>$$⭐\qquad
+x=\left{
+\begin{array}{l}
+\pm k\frac{D}{d}\lambda &amp; \textsf{（明）}\<br>
+\pm \frac{2k+1}{2}\frac{D}{d}\lambda &amp;\textsf{（暗）}
+\end{array}\qquad(k=0,1,2,\cdots)
+\right.
+$$</p>
+</blockquote>
+<p>推导过程见下：</p>
+<blockquote>
+<p>推导过程 - 光程差$\Delta$：<br>
+$\Delta=r_2-r_1\approx d\sin\theta\approx d\frac{x}{D}(\because d \ll D, r_1 \parallel r_2)$<br>
+带入光程差公式：<br>
+$\Delta=d\frac{x}{D}=\left{\begin{array}{l}\pm k\lambda &amp; \textsf{（明）}\\pm \frac{2k+1}{2}\lambda &amp;\textsf{（暗）}\end{array}\qquad(k=0,1,2,\cdots)\right.$</p>
+<p>转换后即为上式。</p>
+</blockquote>
+<h5 id="-条纹特点">③ 条纹特点</h5>
+<ul>
+<li>形态：平行于缝的<strong>等亮度</strong>、<strong>等间距</strong>、明暗相间的条纹。</li>
+<li>条纹亮度：
+<ul>
+<li>亮处：$I_{max}=4I_0$</li>
+<li>暗处：$I_{min}=0$</li>
+</ul>
+</li>
+<li>条纹宽度：
+$$⭐ \Delta x = \frac{D}{d}\lambda$$
+<em>注意这里有近似，所以实际上是不等宽度的。</em>
+<ul>
+<li>$\lambda$一定：$\Delta x \propto D$，$\Delta x \propto \frac{1}{d}$，<br>
+观察屏$D$越远、双缝间隙$d$越小 → 条纹$\Delta x$越宽。</li>
+<li>$d, D$一定：$\Delta x \propto \lambda$，<br>
+波长$\lambda$越长（频率$\nu$越小） → 条纹$\Delta x$越宽。<br>
+即红光的条纹宽度大于紫光：$\Delta x_{\textsf红}&gt;\Delta x_{\textsf{紫}}$。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>拓展 - 白光照射双缝：</p>
+<ul>
+<li>零级明纹：白光。</li>
+<li>其余明纹：彩色光谱（内紫外红）<br>
+高级次会产生重叠（<strong>这一级</strong>$k$的红色重叠<strong>下一级</strong>$k+1$的紫色）</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-07_15-15-34.png" alt="白光照射双缝示意图 1"  /><br>
+白光照射双缝示意图</p>
+<p>重叠，即$k\lambda_\textrm{红}=(k+1)\lambda_\textrm{紫}$，<br>
+解得$k=1.33$。<br>
+故**只有第一级**未重叠，清晰可见。</p>
+</blockquote>
+<h4 id="2-其他分波阵面干涉">2. 其他分波阵面干涉</h4>
+<p>均利用反射或折射形成的虚像。</p>
+<h5 id="-菲涅尔双棱镜">① 菲涅尔双棱镜</h5>
+<p><img src="images/Wave%20Optics--11-07_15-55-28.png" alt="菲涅尔双棱镜 1"  /><br>
+菲涅尔双棱镜</p>
+<p>由$S$向上发发出的两束距离最远的光线，其延长线焦点的虚像可视为新的点光源$S_1$，<br>
+同理，下方也会形成一个虚像点光源$S_2$。</p>
+<p>则在阴影部分，会形成与“双缝干涉”一样效果的干涉条纹。</p>
+<h5 id="-菲涅尔双面镜">② 菲涅尔双面镜</h5>
+<p><img src="images/Wave%20Optics--11-07_16-04-16.png" alt="菲涅尔双面镜 1"  /><br>
+菲涅尔双面镜</p>
+<p>原理与菲涅尔双棱镜差不多一样。</p>
+<h5 id="-洛埃镜劳埃德镜">③ 洛埃镜（劳埃德镜）</h5>
+<p><img src="images/Wave%20Optics--11-07_16-14-10.png" alt="劳埃德镜 1"  /><br>
+劳埃德镜</p>
+<p>$M$为一个水平放置的反射镜，<br>
+点光源$S_1$入射时，一部分直接打到$P$屏上，<br>
+另一部分通过$M$反射打到$P$屏上。</p>
+<p>反射光线同样可以看作虚像点光源$S_2$发出的光线，<br>
+故阴影区也<strong>大致</strong>跟杨氏双缝干涉现象一样。（不完全一样，见下）</p>
+<hr>
+<p>但当我们将$P$屏移到与$M$右端重合时，<br>
+会发现按理论分析出中央条纹应该是明纹，<br>
+实际上却是暗纹。</p>
+<p>这是因为发生了“<strong>半波损失</strong>”的原因，相位突变了$\pi$。</p>
+<ul>
+<li>
+<p><strong>半波损失</strong>：<br>
+在正入射（垂直入射）和一般斜入射情况下。</p>
+<ul>
+<li><strong>光疏入射到光密</strong>，会有半波损失。
+对于反射光线，会有$\pi$的相位突变，光程差会有$\frac{\lambda}{2}$的变化。</li>
+<li>光密入射到光疏，没有半波损失。</li>
+</ul>
+<p><em>在掠入射（入射角将近$90\degree$）的情况下，反射光无论如何都有半波损失。</em><br>
+<em>但平时讨论的干涉衍射的情况很少出现掠入射，所以不用考虑。</em></p>
+<p>对于<strong>透射光</strong>，无论如何都<strong>不会发生半波损失</strong>。</p>
+</li>
+</ul>
+<p>⚠ - 因此对于<strong>反射形成的干涉问题</strong>，要<strong>考虑是否有半波损失</strong>。</p>
+<h4 id="3-空间相干性">3. 空间相干性</h4>
+<blockquote>
+<p>引入：</p>
+<p>考虑是否能通过增加单缝的宽度，使透过的光源更多，来提高干涉条纹的亮度（光强）？</p>
+</blockquote>
+<p>先考虑将点光源沿竖直方向移动，对干涉条纹的影响。<br>
+如下图：<br>
+<img src="images/Wave%20Optics--11-07_17-23-56.png" alt="点光源移动对干涉条纹影响 1"  /><br>
+点光源移动对干涉条纹影响</p>
+<p>因此增加单缝长度（或把单缝换为点光源，增加点光源宽度），<br>
+这些光源各自是非相干光源，
+会使得不同相位的干涉条纹非相干叠加在一起。</p>
+<p><img src="images/Wave%20Optics--11-07_17-32-00.png" alt="双缝干涉的空间相干性 1"  /><br>
+双缝干涉的空间相干性</p>
+<p>当$\Delta=\frac{\lambda}{2}$时，干涉条纹完全模糊（各处光强一样），<br>
+由这个临界点计算得到单缝缝宽的临界值：<br>
+<img src="images/Wave%20Optics--11-07_17-34-16.png" alt="图 16"  />
+$$⭐ b &lt; \frac{B}{d}\lambda$$</p>
+<p>也可以转换为波阵面$d$的关系式：
+$$d &lt; \frac{B}{b}\lambda$$</p>
+<p>因此给出定义：</p>
+<blockquote>
+<ul>
+<li><strong>空间相干性(spatial coherence):</strong>
+光缝宽度$b$（或者宽度为$b$的普通光源），<br>
+他的波阵面距离$d$，需要小于$\frac{B}{b}\lambda$，才能产生干涉现象。<br>
+这一性质称为“空间相干性”。</li>
+</ul>
+</blockquote>
+<h3 id="五分振幅法---薄膜干涉-时间相干性">五、分振幅法 - 薄膜干涉 时间相干性</h3>
+<h4 id="1-一般性讨论">1. 一般性讨论</h4>
+<h5 id="-明暗条纹分析">① 明暗条纹分析</h5>
+<p>初始装置：</p>
+<p><img src="images/Wave%20Optics--11-07_18-44-11.png" alt="等厚干涉装置 1"  /><br>
+等厚干涉装置</p>
+<ul>
+<li>参数：
+<ul>
+<li>$e$ - 等厚薄膜的宽度（很小）</li>
+<li>$n_1$ - 薄膜外介质的折射率（薄膜上下表面）</li>
+<li>$n_2$ - 薄膜的折射率</li>
+</ul>
+</li>
+<li>物体：
+<ul>
+<li>$L$ - 透镜，用于将平行的干涉光线汇聚在一起</li>
+<li>$P$ - 观察屏，在透镜焦平面上</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>第一对相干光 - 反射干涉光：</p>
+<p><img src="images/Wave%20Optics--11-07_18-46-13.png" alt="反射干涉光 1"  /><br>
+反射干涉光</p>
+<ul>
+<li>
+<p>角度：</p>
+<ul>
+<li>$i$ - 入射角</li>
+<li>$\gamma$ - 折射角</li>
+</ul>
+</li>
+<li>
+<p>光波列：</p>
+<ul>
+<li>$1$ - 入射光</li>
+<li>$2$ - 直接反射光</li>
+<li>$3$ - 间接反射光（依次经过一次折射、一次反射、一次折射出射的光线）</li>
+</ul>
+<p>根据前面的“分振幅法”，可以知道$2$、$3$光线为相干光。</p>
+</li>
+<li>
+<p>$P$ - 反射干涉光相遇点</p>
+</li>
+</ul>
+<hr>
+<p>第二对相干光 - 透射干涉光：</p>
+<p><img src="images/Wave%20Optics--11-07_18-51-27.png" alt="透射干涉光 1"  /><br>
+透射干涉光</p>
+<ul>
+<li>
+<p>光波列：</p>
+<ul>
+<li>$4$ - 第一束透射光（经过两次折射）</li>
+<li>$5$ - 第二束透射光（依次经过一次折射、一次反射、一次反射、一次折射出射的光线）</li>
+</ul>
+<p>同理，$4$、$5$也为相干光。</p>
+</li>
+<li>
+<p>如果再在下方加个同样的透镜与观察屏，<br>
+则$4$、$5$会相交于$P'$点，<br>
+为透射干涉光相遇点。</p>
+</li>
+</ul>
+<hr>
+<p>对于$P$、$P'$点的干涉后光强，取决于光程差$\Delta$。</p>
+<ul>
+<li>对于反射干涉光：<br>
+<img src="images/Wave%20Optics--11-07_19-06-41.png" alt="图 20"  />
+<blockquote>
+<p>分析：</p>
+<p>$l_{DLP}=l_{CLP}$
+$\therefore \Delta_\textrm{反}=n_2(AB+BC)-n_1AD$</p>
+<p>但为反射，还需要考虑半波损失。</p>
+<ul>
+<li>
+<p>$n_2&gt;n_1$时：</p>
+<ul>
+<li>对于光线$2$，有$1$个半波损失。</li>
+<li>对于光线$3$，没有半波损失。</li>
+</ul>
+<p>因此总的来说会有一个半波损失。</p>
+</li>
+<li>
+<p>$n_2&lt;n_1时$：</p>
+<ul>
+<li>对于光线$2$，没有半波损失。</li>
+<li>对于光线$3$，有$1$个半波损失。</li>
+</ul>
+<p>因此总的来说会有一个半波损失。</p>
+</li>
+</ul>
+<p>故真正的光程差：$\Delta_\textrm{反}=n_2(AB+BC)-n_1AD+\frac{\lambda}{2}$</p>
+</blockquote>
+<p>由几何关系、折射定律，可以将式子转化为：
+$$\Delta_\textrm{反}=2e\sqrt{n_2^2-n_1^2\sin^2i}+\frac{\lambda}{2}$$</p>
+</li>
+<li>对于透射反射光，同理分析（注意这里面会出现某一束光有两次半波损失的情况，则抵消），<br>
+得光程差：
+$$\Delta_\textrm{透}=2e\sqrt{n_2^2-n_1^2\sin^2i}$$</li>
+</ul>
+<p>无论反射还是透射光，都能<a class="link" href="#3-%e6%98%8e%e6%9a%97%e6%9d%a1%e7%ba%b9%e6%9d%a1%e4%bb%b6" >明暗条纹条件</a>，分析出明暗纹。</p>
+<p>而对于光程差有无$\frac{\lambda}{2}$半波损失项，<br>
+因该<strong>根据具体情况来分析</strong>。</p>
+<p><strong>⚠需要注意</strong>：<br>
+光程差表达式恒为正（含根式），套用明暗条纹条件时<strong>不用加$\plusmn$</strong>，<br>
+但因为半波损失的存在，在<strong>明纹处$k$不能取$0$</strong>，否则会使根式等于负值。</p>
+<p>总结为“<strong>薄膜干涉明暗纹条件</strong>”：
+$$
+\Delta_{(\textrm{反/透})}=\left{
+\begin{array}{l}
+k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\<br>
+\frac{2k+1}{2}\lambda &amp;\textsf{（暗）} &amp; (k=0,1,2,\cdots)
+\end{array}
+\right.
+$$</p>
+<h5 id="-等倾干涉与等厚干涉分类">② 等倾干涉与等厚干涉分类</h5>
+<p>若$\lambda,n_1,n_2$一定，<br>
+则$\Delta$与$e,i$有关。</p>
+<p>对于$\Delta$：
+$$\Delta = 2e\sqrt{n_2^2-n_1^2\sin^2i}(+\frac{\lambda}{2})$$</p>
+<ol>
+<li>
+<p>平行光入射 - $i$一定<br>
+$\Delta$随着膜厚度$e$变化。</p>
+<ul>
+<li>薄膜同一厚度$e$ → 对应同一条干涉条纹</li>
+<li>薄膜不同厚度 → 对应不同干涉条纹</li>
+</ul>
+<p>故<strong>干涉条纹形状与薄膜等厚线相同，</strong><br>
+称为“<strong>等厚干涉</strong>”。</p>
+</li>
+<li>
+<p>薄膜厚度均匀 - $e$一定<br>
+$\Delta$随着入射角$i$变化。</p>
+<ul>
+<li>入射光同一个入射角$i$ → 对应同一条干涉条纹</li>
+<li>入射光不同的入射角 → 对应不同干涉条纹</li>
+</ul>
+<p>故<strong>干涉条纹为一组同心圆环，</strong><br>
+称为“<strong>等倾干涉</strong>”。</p>
+</li>
+</ol>
+<hr>
+<ul>
+<li>等厚干涉 - 平行光入射，厚度不一 - $i$一定、$e$变化 - 劈尖、牛顿环</li>
+<li>等倾干涉 - 点光源入射，厚度相同 - $e$一定、$i$变化 - 略</li>
+</ul>
+<h4 id="2-薄膜等厚干涉">2. 薄膜等厚干涉</h4>
+<h5 id="-劈尖">① 劈尖</h5>
+<p><img src="images/Wave%20Optics--11-07_19-58-08.png" alt="劈尖横截面示意图 1"  /><br>
+劈尖横截面示意图</p>
+<p>光线垂直入射，故$\sin i = 0$<br>
+且$\theta$非常小，可以认为光束①、②重合，不需要透镜和观察屏。</p>
+<p>则光程差近似为：
+$$\Delta=2ne+\frac{\lambda}{2}$$</p>
+<h6 id="-劈尖条纹特点">Ⅰ. 劈尖条纹特点</h6>
+<p>$\Delta=2ne+\frac{\lambda}{2}=\left{\begin{array}{l}k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\frac{2k+1}{2}\lambda &amp;\textsf{（暗）} &amp; (k=0,1,2,\cdots)\end{array}\right.$</p>
+<ul>
+<li>形态：平行于棱边，明、暗相间条纹。</li>
+<li>棱边处($e=0$)：$\Delta=\frac{\lambda}{2}$，为暗纹</li>
+<li>相邻条纹对应的薄膜厚度差：$\Delta e = e_{k+1}-e_k =  \frac{\lambda}{2n}$</li>
+<li><strong>条纹宽度</strong>：$l=\frac{\Delta e}{\sin\theta}=\frac{\lambda}{2n\sin\theta}\approx\frac{\lambda}{2n\theta}$</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-07_20-09-02.png" alt="劈尖条纹示意图 1"  /><br>
+劈尖条纹示意图</p>
+<h6 id="-劈尖条纹变化">Ⅱ. 劈尖条纹变化</h6>
+<p>牢记两点思想：</p>
+<ul>
+<li>$l=\frac{\lambda}{2n\theta}$</li>
+<li>保持厚度一致。</li>
+</ul>
+<blockquote>
+<ol>
+<li>静态变化：<br>
+$n$、$\lambda$一定，$\theta \uparrow l \downarrow$，条纹变密，同时条纹向棱边移动（左移）<br>
+$n$、$\theta$一定，$\lambda \uparrow l \uparrow$，白光入射出现彩条纹，且内紫外红。
+$n$、$\theta$一定，$n \uparrow l \downarrow$，条纹变密（如空气劈尖中注水）</li>
+<li>劈尖上表面平行上移：条纹向棱边方向移动（左移）。</li>
+<li>轻压劈尖上表面：$\theta \downarrow$，间距变宽，条纹远离棱边方向移动（右移）</li>
+<li>劈尖底面有一凹槽：向棱边弯曲（减少$l$）。
+<img src="images/Wave%20Optics--11-07_20-24-32.png" alt="图 23"  /></li>
+</ol>
+</blockquote>
+<h5 id="-牛顿环">② 牛顿环</h5>
+<p><img src="images/Wave%20Optics--11-07_20-28-06.png" alt="牛顿环横截面示意图 1"  /><br>
+牛顿环横截面示意图</p>
+<p>平板玻璃上放置曲率半径很大的平凸透镜，<br>
+也是垂直入射，所以跟劈尖类似，<br>
+光程差：
+$$
+\Delta = 2ne + \frac{\lambda}{2}
+$$</p>
+<h6 id="-牛顿环条纹特点">Ⅰ. 牛顿环条纹特点</h6>
+<p>$\Delta=2ne+\frac{\lambda}{2}=\left{\begin{array}{l}k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\frac{2k+1}{2}\lambda &amp;\textsf{（暗）} &amp; (k=0,1,2,\cdots)\end{array}\right.$</p>
+<ul>
+<li>形态：以接触点为中心的<strong>明暗相间的同心圆环</strong>。<br>
+<img src="images/Wave%20Optics--11-07_20-33-00.png" alt="图 25"  /></li>
+<li>中心($e=0$)：$\Delta=\frac{\lambda}{2}，$<strong>中央一定为暗斑</strong>。</li>
+<li>条纹距离中心的半径$r$：<br>
+<img src="images/Wave%20Optics--11-07_20-42-46.png" alt="图 26"  /><br>
+$r=\left{\begin{array}{l} \sqrt{\frac{(2k-1)R\lambda}{2n}} &amp; \textsf{（明）} &amp; (k=1,2,\cdots) \ \sqrt{\frac{kR\lambda}{n}} &amp; \textsf{（暗）} &amp; (k=0,1,2,\cdots) \end{array}\right.$<strong>（注意明处为$\frac{2k-1}{2}$）</strong>
+<ul>
+<li>$r\propto \sqrt{k}$，条纹内疏外密。</li>
+<li>$r\propto \sqrt{\lambda}$，白光照射出现彩环。（红光在外，紫光在内）
+<img src="images/Wave%20Optics--11-07_20-46-50.png" alt="图 27"  /></li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>总结：条纹的<strong>形状取决于等厚膜线的形状</strong>。<br>
+牛顿环等价于角度逐渐增大的劈尖。</p>
+<h6 id="-牛顿环条纹变化">Ⅱ. 牛顿环条纹变化</h6>
+<ul>
+<li>上移：条纹向里收缩（向减少厚度的地方移动）</li>
+</ul>
+<h4 id="3-薄膜等倾干涉">3. 薄膜等倾干涉</h4>
+<p><img src="images/Wave%20Optics--11-13_15-11-13.png" alt="装置 1"  /><br>
+装置</p>
+<p>厚度统一、均匀。</p>
+<p>影响光程差的关键因素只有<strong>入射角</strong>。</p>
+<p><img src="images/Wave%20Optics--11-07_20-51-34.png" alt="等倾干涉条纹 1"  /><br>
+等倾干涉条纹</p>
+<p><em>跟牛顿环的等厚干涉条纹很类似，不过中央条纹不一定是暗，</em><br>
+<em>而是根据入射角的变动而变动。</em></p>
+<h4 id="4-薄膜干涉的应用">4. 薄膜干涉的应用</h4>
+<h5 id="-测量微小物体的厚度">① 测量微小物体的厚度</h5>
+<p><img src="images/Wave%20Optics--11-07_20-54-35.png" alt="测量微小物体的厚度 1"  /><br>
+测量微小物体的厚度</p>
+<p>$l=\frac{\lambda}{2n\sin\theta}\approx\frac{\lambda}{2n\theta}\=\frac{\lambda}{2n}\frac{L}{d}$</p>
+<p>$\therefore d=\frac{\lambda}{2n}\frac{L}{l}$</p>
+<h5 id="-检测待测平面的平整度">② 检测待测平面的平整度</h5>
+<p><img src="images/Wave%20Optics--11-07_20-55-14.png" alt="检测待测平面的平整度 1"  /><br>
+检测待测平面的平整度</p>
+<p>条纹是<strong>严格的直线为平整</strong>，<br>
+否则有凹槽或者突起。</p>
+<h5 id="-检测光学镜头表面曲率是否合格">③ 检测光学镜头表面曲率是否合格</h5>
+<p>利用器件“验规”。</p>
+<p><img src="images/Wave%20Optics--11-07_20-59-59.jpg" alt="书上例题 P97 1"  /><br>
+书上例题 P97</p>
+<h5 id="-利用牛顿环测量未知单色平行光的波长">④ 利用牛顿环测量未知单色平行光的波长</h5>
+<p>$r=\sqrt{\frac{kR\lambda}{n}}$<br>
+$r_m^2-r_k^2=\frac{mR\lambda-kR\lambda}{n}$<br>
+$\lambda=\frac{(r_m^2-r_k^2)n}{(m-k)R}$</p>
+<h5 id="-利用薄膜干涉制成增透膜或增反膜">⑤ 利用薄膜干涉制成增透膜或增反膜</h5>
+<ul>
+<li>增透膜：减少反射光，反射光的干涉相消。<br>
+光程差满足奇数倍半波长：$\Delta=2e\sqrt{n_2^2-\sin^2i}(+\frac{\lambda}{2}=(2k+1)\frac{\lambda}{2}$<br>
+<em>因为对感光底片最敏感的是黄绿光，所以反射蓝紫光，平时看到镜片都是蓝紫色</em></li>
+<li>增反膜：减少透光率，增加反射光，反射光的干涉相长。</li>
+</ul>
+<h4 id="5-迈克尔逊干涉仪">5. 迈克尔逊干涉仪</h4>
+<p>产生等倾干涉。</p>
+<h5 id="1-迈克尔逊干涉仪装置">1. 迈克尔逊干涉仪装置</h5>
+<p><img src="images/Wave%20Optics--11-07_21-07-48.png" alt="迈克尔逊干涉仪装置 1"  /><br>
+迈克尔逊干涉仪装置</p>
+<ul>
+<li>补偿玻璃板：用于补偿后面光线2的光程差</li>
+</ul>
+<p>光程差$\Delta=2ne$，<br>
+明纹条件：$\Delta=2ne=k\lambda$<br>
+暗纹条件：$\Delta=2ne=\frac{2k+1}{2}\lambda$</p>
+<h5 id="2-条纹特点">2. 条纹特点</h5>
+<ul>
+<li>当$M_1 \perp M_2$时，观察到的是<strong>等倾干涉条纹</strong>；</li>
+<li>不垂直时，形成劈尖，为<strong>等厚干涉条纹</strong>。</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-07_21-17-15.png" alt="条纹特点 1"  /><br>
+条纹特点</p>
+<h5 id="3-计算公式">3. 计算公式</h5>
+<p>调节$M_1$位置，可以改变$e_1$从而改变$\Delta$，引起条纹移动。</p>
+<p>当视线中有一条条纹移动（湮灭或出现），即$k=1$时，$M_1$移动$\frac{\lambda}{2n}$。</p>
+<p>$$\Delta d = \Delta N \cdot \frac{\lambda}{2n}$$</p>
+<ul>
+<li>$\Delta d$ - 移动$M_1$的距离</li>
+<li>$\Delta N$ - 湮灭或出现了多少个条纹</li>
+<li>$n$ - 半透明镀银层的折射率</li>
+<li>$\lambda$ - 波长</li>
+</ul>
+<p>故一般可以用来算波长。</p>
+<h5 id="3-光的时间相干性">3. 光的时间相干性</h5>
+<p>属于<strong>同一光波列</strong>的两部分光相遇能<strong>发生干涉</strong>，
+而<strong>不同光波列</strong>的两部分光相遇<strong>不能干涉</strong>。</p>
+<p><em>为时间相干的原因：正因为原子发出光的时间不同，导致距离过远时无法干涉。</em></p>
+<p>最大光程差$\Delta_{max} &lt; L = c\Delta_t(\textrm{发光时间})$</p>
+<ul>
+<li>空间相干性：反映扩展光源不同部分发光的<strong>独立性</strong>。</li>
+<li>时间相干性：反映原子发光的<strong>间断性</strong>。</li>
+</ul>
+<h2 id="第三节-光的衍射">第三节 光的衍射</h2>
+<h3 id="一衍射现象">一、衍射现象</h3>
+<blockquote>
+<p>定义：</p>
+<p>波在传播过程中遇到障碍物，能够<strong>绕过障碍物的边缘前进</strong>，进入几何阴影区，<br>
+这种偏离直线传播的现象称为衍射。</p>
+<p>光偏离直线传播路径进入几何阴影区，形成光强非均匀稳定分布。</p>
+</blockquote>
+<p><em>衍射是指绕过边缘传播，而不是穿过障碍物传播。</em></p>
+<p><strong>波长和障碍物的大小可相比拟</strong>时就能发生衍射现象，且越相近越明显。<br>
+<em>因此声波的衍射现象比光波更容易观测，因为声波波长(m)远长于光波波长(nm)。</em></p>
+<h3 id="二惠更斯-菲涅耳原理">二、惠更斯-菲涅耳原理</h3>
+<h4 id="1-惠更斯原理">1. 惠更斯原理</h4>
+<p><a class="link" href="#1-%e6%83%a0%e6%9b%b4%e6%96%af%e5%8e%9f%e7%90%86" >前面已经讲述</a>。</p>
+<p>只能定性解释衍射现象，不能定量说明衍射波的强度分布。</p>
+<h4 id="2-菲涅耳原理">2. 菲涅耳原理</h4>
+<p>将波面上的各面元，视作子波源。<br>
+<img src="images/Wave%20Optics--11-09_13-28-00.png" alt="子波源 1"  /><br>
+子波源</p>
+<ul>
+<li>
+<p>各个子波源的初相$\varphi_0$相同</p>
+</li>
+<li>
+<p>子波在$P$点相位：$\omega t+\varphi_0 -2\pi\frac{r}{\lambda}$</p>
+</li>
+<li>
+<p>子波在$P$点振幅：$A=\frac{Cf(\theta)\rm dS}{r}$<br>
+即：</p>
+<ul>
+<li>与面元面积$\rm dS$成正比</li>
+<li>与到$P$点的距离$r$成反比</li>
+<li>和矢径$\overrightarrow{r}$与面元法向量$\overrightarrow{e_n}$的夹角$\theta$有关。</li>
+</ul>
+<p>倾斜因子$f(\theta)$：$f(\theta)=\frac{1}{2}(1+\cos\theta)$</p>
+<ul>
+<li>$\theta=0$时，$f(\theta)=1$</li>
+<li>$\theta=\frac{\pi}{2}$时，$f(\theta)=\frac{1}{2}$</li>
+<li>$\theta=\pi$时，$f(\theta)=0$</li>
+</ul>
+</li>
+</ul>
+<p>故波面$S$发出的所有子波，其相干叠加，得到$P$点振动方程：<br>
+$\Psi=C\int_S \frac{\rm dS}{2r}(1+\cos\theta)\cos(\omega t +\phi_0-2\pi\frac{r}{\lambda})$</p>
+<p>因此惠更斯-菲涅尔原理揭示了：<strong>衍射现象的本质是各子波的干涉叠加</strong>。<br>
+同时解释了为什么干涉条纹是明暗相间的。</p>
+<blockquote>
+<p>如果波面完全不被遮蔽，则所有子波在任意点的叠加结果就是光沿直线传播的结果，光强一致。<br>
+但如果波面不完整，叠加的时候少了部分子波的参与，<br>
+导致有个明暗条纹的衍射图象。</p>
+</blockquote>
+<p>但因为定量计算过于复杂，故一般采用以下的近似过程来计算。</p>
+<blockquote>
+<p>区别 - 干涉和衍射：</p>
+<ul>
+<li>干涉 - 有限个 分立 的相干波相干叠加</li>
+<li>衍射 - 无限个 连续分布 的子波源相干叠加</li>
+</ul>
+</blockquote>
+<h3 id="三衍射的分类">三、衍射的分类</h3>
+<ol>
+<li>
+<p>菲涅耳衍射（近场衍射）<br>
+波源$\xrightarrow{\textrm{有限距离}}$障碍物$\xrightarrow{\textrm{有限距离}}$屏</p>
+<p>一般障碍物为孔，但较难分析衍射现象。</p>
+</li>
+<li>
+<p>⭐夫琅禾费衍射（远场衍射/平行光衍射）<br>
+<img src="images/Wave%20Optics--11-09_14-08-37.png" alt="夫琅禾费衍射 1"  /><br>
+夫琅禾费衍射</p>
+<p>$L_1$、$L_2$为两个透镜，使得点光源和平行光转化，<br>
+对于平行光，由于没有交点，所以就相当于从无穷远的点光源发出的。<br>
+之后又需要个透镜将平行光汇聚观测干涉图样。
+所以即平行光衍射。</p>
+</li>
+<li>
+<p>信息光学（现代光学分支）</p>
+</li>
+</ol>
+<h3 id="四单缝夫琅禾费衍射">四、单缝夫琅禾费衍射</h3>
+<p>装置如图：<br>
+<img src="images/Wave%20Optics--11-09_14-28-08.png" alt="装置 1"  /><br>
+装置</p>
+<ul>
+<li>缝宽$a$：其上每一点均为子波源，发出球面波。</li>
+<li>衍射角$\varphi$：这一组衍射光线与波面法线的夹角。</li>
+</ul>
+<p>可以把衍射角相同的光线分为一组，按组去讨论问题。</p>
+<p>并且装置可以简化为不要$L_1$透镜，直接单色平行光入射。<br>
+<img src="images/Wave%20Optics--11-09_14-34-35.png" alt="简化装置 1"  /><br>
+简化装置</p>
+<ul>
+<li>$\varphi=0$，衍射光线汇集于$L_2$焦点$F$，<br>
+光程差$\Delta=0$，故形成中央明纹中心。</li>
+<li>$\varphi\ne 0$，折射光线汇聚于$L_2$焦平面某点$P$，<br>
+光程差$\Delta\ne0$，$P$处光强需要由菲涅尔公式计算。</li>
+</ul>
+<hr>
+<p><strong>以下讲述光强分析的两种方法：</strong></p>
+<p>首先<strong>只有汇聚在一点的光线才会产生干涉现象</strong>，<br>
+而只有平行光通过透镜后才汇聚到一点，<br>
+所以我们才按衍射角将光线分组，并按组讨论情况。</p>
+<p>而一组光线汇聚到屏上的位置，<br>
+是由几何光学来决定的。</p>
+<p>对于光线明暗，则是根据振动干涉叠加的结果而决定的。</p>
+<h4 id="1-菲涅尔半波带法半定量">1. 菲涅尔半波带法（半定量）</h4>
+<blockquote>
+<p>分析：</p>
+<p>一组光线中，最大的光程差为$\Delta=AC=a\sin\varphi$。<br>
+用$\frac{\lambda}{2}$分割$\Delta$，即设$\Delta=n\cdot\frac{\lambda}{2}$，<br>
+则将该组光线分为$n$个“<strong>半波带</strong>”。</p>
+<p><img src="images/Wave%20Optics--11-09_14-46-33.png" alt="图 5"  /></p>
+<p>当缝宽一定时，<strong>半波带个数由衍射角确定。</strong></p>
+<p>对于$n$有以下三种情况：</p>
+<ol>
+<li><strong>当$n=0$时</strong>，对应$\varphi=0$：<br>
+对应<strong>中央明纹中心</strong>。</li>
+<li><strong>当$n$为偶数时</strong>：<br>
+相邻两半波带中对应光线$\Delta=\frac{\lambda}{2},\Delta\varphi=\pi$，<br>
+两两相消，故<strong>为暗纹</strong>。</li>
+<li><strong>当$n$为奇数时</strong>：<br>
+剩余一个半波带衍射光线无法抵消，故<strong>为明纹</strong>。</li>
+</ol>
+</blockquote>
+<p>故综上：</p>
+<p>⭐<strong>明暗纹条件：</strong></p>
+<blockquote>
+<p>$$⭐
+\Delta=a\sin\varphi=\left{
+\begin{array}{l}
+0 &amp; （\textrm{中央明纹中心）}\<br>
+\pm (2k+1)\frac{\lambda}{2} &amp;\textsf{（各级明纹中心）} \<br>
+\pm k\lambda &amp; \textsf{（暗纹中心）}
+\end{array}(k=1,2,\cdots)
+\right.
+$$
+注意$k\ne0$。<em>（原因见下讨论）</em></p>
+</blockquote>
+<p><img src="images/Wave%20Optics--11-09_20-22-25.png" alt="明暗纹示意图 1"  /><br>
+明暗纹示意图</p>
+<p><em>级数越高，被分出的半波带越多，抵消越多，故光强越小。</em><br>
+<em>故可以解释级数越高、光强越弱的原因。</em></p>
+<hr>
+<p>由明暗纹条件可得推论：</p>
+<ul>
+<li>
+<p>条纹角位置：<br>
+<em>（明暗纹条件$a$除过去）</em><br>
+$\sin\varphi\approx\varphi=\left{\begin{array}{l}0 &amp; （\textrm{中央明纹中心）}\\pm \frac{(2k+1)}{2}\frac{\lambda}{a} &amp;\textsf{（各级明纹中心）} \\pm k\frac{\lambda}{a} &amp; \textsf{（暗纹中心）} \end{array}(k=1,2,\cdots)\right.$</p>
+<p>⚠注意：这里<strong>只适用$\varphi$很小的情况</strong>，如果角度$\varphi$很大，请用$a\sin\varphi$来推。</p>
+<ul>
+<li>中央明纹：$\varphi=0$</li>
+<li>其他明纹：$\varphi=\pm \frac{(2k+1)}{2}\frac{\lambda}{a} (k=1,2,\cdots)$</li>
+<li>其他暗纹：$\varphi=\pm k\frac{\lambda}{a} (k=1,2,\cdots)$</li>
+</ul>
+</li>
+<li>
+<p>条纹角宽度：<br>
+<em>（上式子$\Delta k=1$）</em></p>
+<ul>
+<li>中央明纹：$\Delta\varphi = \frac{2\lambda}{a}$</li>
+<li>其余条纹：$\Delta\varphi = \frac{\lambda}{a}$</li>
+</ul>
+</li>
+<li>
+<p>条纹位置：<br>
+$x=f\tan\varphi$</p>
+</li>
+<li>
+<p>衍射条纹线宽度：<br>
+$\begin{aligned}x=f\tan\varphi \rightarrow \Delta x &amp; =f(\tan\varphi_2-\tan\varphi_1)\approx f(\varphi_2-\varphi_1)\ &amp; =f\cdot\Delta\varphi\end{aligned}$<br>
+其中$f$为透镜的焦距。</p>
+<ul>
+<li>中央明纹：$\Delta x =f\cdot\frac{2\lambda}{a}$</li>
+<li>其他条纹：$\Delta x =f\cdot\frac{\lambda}{a}$</li>
+</ul>
+<p><em>注意这里采用了近似，所以实际上衍射条纹不是等间距的，只是等角宽度。</em></p>
+</li>
+</ul>
+<p>各参数如图：<br>
+<img src="images/Wave%20Optics--11-09_20-35-43.png" alt="图 29"  /></p>
+<blockquote>
+<p>讨论：</p>
+<ol>
+<li>为什么明暗纹条件的$k \ne 0$
+<ul>
+<li>暗纹公式中：$k=0,\Delta=0$，为中央明纹。</li>
+<li>明纹公式中：$\frac{\lambda}{2}$还在第一级暗纹前，处于中央明纹中。</li>
+</ul>
+</li>
+<li>单缝衍射与双缝干涉的区别
+<ul>
+<li>单缝衍射：是两束光的叠加。光程差为半波长偶数倍$k\lambda$，代表两束光相位相同，为明纹。<br>
+$\Delta=\left{\begin{array}{l}\pm k\lambda &amp;\textrm{明} \ \pm (2k+1)\frac{\lambda}{2} &amp; \textrm{暗}\end{array}k=0,1,2,\cdots\right.$</li>
+<li>双缝干涉：是<strong>无限光</strong>的叠加。光程差为半波长偶数倍$k\lambda$，代表两堆光相互抵消，为暗纹。<br>
+$\Delta=\left{\begin{array}{l}\pm (2k+1)\frac{\lambda}{2} &amp; \textrm{明} \ \pm k\lambda &amp;\textrm{暗}\end{array}k=1,2,\cdots\right.$（$k\ne0$）</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<hr>
+<p><strong>衍射条纹变化：</strong></p>
+<p>参数：波长$\lambda$、单缝宽度$a$。</p>
+<p>运用公式：</p>
+<ul>
+<li>中央明纹宽度：$\Delta\varphi=\frac{2\lambda}{a}$</li>
+<li>其余明纹宽度：$\Delta\varphi=\frac{\lambda}{a}$</li>
+</ul>
+<ol>
+<li>波长$\lambda$一定：
+<ul>
+<li>$a\downarrow \quad \Delta\varphi \uparrow$，衍射会变得显著；<br>
+$a\downdownarrows$，光强太弱。</li>
+<li>$a\uparrow \quad \Delta\varphi \downarrow$，衍射不明显；<br>
+$a\upuparrows$，直线传播。</li>
+</ul>
+</li>
+<li>$a$一定：
+<ul>
+<li>$\lambda\uparrow \quad \Delta\varphi\uparrow$<br>
+白光照射：中央白光；其余条纹内紫外红，并在高层次重叠。
+<blockquote>
+<p>单缝干涉中也是$k=1.33$，只有第一级清晰可见。</p>
+</blockquote>
+</li>
+<li>$\lambda\downarrow \quad \Delta\varphi\downarrow$<br>
+浸入液体中（$n\uparrow\rightarrow\lambda\downarrow$），条纹变密集。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p><strong>非垂直入射：</strong></p>
+<p>光程差$\Delta$会变化，<br>
+将变化后的$\Delta'$带入原条件即可得新的明暗纹条件：</p>
+<p><img src="images/Wave%20Optics--11-09_21-08-39.png" alt="图 30"  /></p>
+<h4 id="2-振幅矢量叠加法定量">2. 振幅矢量叠加法（定量）</h4>
+<blockquote>
+<p>将$a$划分为$N$个等宽($\frac{a}{N}$)的狭窄波带，<br>
+设每个波带内能量集中于图中所示光线。<br>
+每条光线在屏上引起光振动振幅相同，即$A_1=A_2=\cdots=A_N$（向量的大小相同）<br>
+<img src="images/Wave%20Optics--11-09_16-18-27.png" alt="图 6"  /></p>
+<ul>
+<li>两相邻光线光程差：$\Delta = \frac{a}{N}\sin\varphi$（不一定为$\frac{\lambda}{2}$）</li>
+<li>两相邻光线相位差：$\delta = 2\pi\frac{\Delta}{\lambda} = \frac{2\pi}{\lambda} \cdot \frac{a}{N}\sin\varphi$（向量的相位差恒定）</li>
+</ul>
+<p>然后用多边形法则，进行$N$个大小相等、两两依次相差为$\delta$的光振动的合成。<br>
+<img src="images/Wave%20Optics--11-09_21-16-36.png" alt="图 31"  /></p>
+<p>由之前振动章节 <em>(书P17.例1)</em> 可知：<br>
+合成后矢量大小$A=A_1\frac{\sin(N\delta/2)}{\sin(\delta/2)}\approx A_1\frac{\sin(N\delta/2)}{\delta/2}\=NA_1\frac{\sin(N\delta/2)}{N\delta/2}$</p>
+<p>再令：</p>
+<ul>
+<li>$A_0=NA_1$（代表意义：中央明纹中心($\sin\varphi=0$)的振幅（$N$个$A_1$直接相加)</li>
+<li>$\alpha=\frac{N\delta}{2}\xrightarrow{\delta= \frac{2\pi}{\lambda} \cdot \frac{a}{N}\sin\varphi}=\frac{\pi a \sin\varphi}{\lambda}$</li>
+</ul>
+<p>则可将$A$表示为：<br>
+$$A=A_0\frac{\sin\alpha}{\alpha}$$
+$$I=I_0(\frac{\sin\alpha}{\alpha})^2$$</p>
+</blockquote>
+<p>结论：
+$$⭐A=A_0\frac{\sin\alpha}{\alpha}$$
+$$I=I_0(\frac{\sin\alpha}{\alpha})^2$$</p>
+<p>其中：
+$$A_0=NA_1$$
+$$\alpha=\pi\frac{a \sin\varphi}{\lambda}$$
+$A_0$代表中央明纹振幅，$I_0$代表中央明纹光强。</p>
+<hr>
+<p>对$A$求$\alpha$的导数，可得极大值和极小值，<br>
+即明纹和暗纹的位置。</p>
+<ul>
+<li>极值位置：<br>
+提醒：$a\sin\varphi$为光程差$\Delta$
+<ul>
+<li>极大值 - 对应各级明纹：<br>
+$\alpha=\tan\alpha (\alpha\ne0)$<br>
+<img src="images/Wave%20Optics--11-09_16-24-11.png" alt="图 7"  /></li>
+<li>极小值 - 对应各级暗纹：<br>
+$\sin\alpha = 0 (\alpha\ne0)$
+<ul>
+<li>$\alpha=k\pi (k=\pm1,\pm2,\cdots)$</li>
+<li>$\Delta = a\sin\varphi = k\lambda$</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>光强：<br>
+如下图的验证。
+<blockquote>
+<p>验证 - 菲涅尔半波带法的正确性：</p>
+<p><img src="images/Wave%20Optics--11-09_16-27-45.png" alt="图 8"  /><br>
+可见差别并不大。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="五圆孔夫琅禾费衍射">五、圆孔夫琅禾费衍射</h3>
+<h4 id="1-圆孔夫琅禾费衍射装置">1. 圆孔夫琅禾费衍射装置</h4>
+<p><img src="images/Wave%20Optics--11-09_16-29-58.png" alt="圆孔夫琅禾费衍射装置 1"  /><br>
+圆孔夫琅禾费衍射装置</p>
+<h4 id="2-条纹特性">2. 条纹特性</h4>
+<p>形状为明暗相同的同心圆环。</p>
+<p>中央亮纹 - 爱里斑：</p>
+<ul>
+<li>集中了大部分能量</li>
+<li>角宽度为其他的两倍</li>
+<li>半角宽度：$\Delta\varphi = 1.22\frac{\lambda}{D} (D\textrm{为圆孔直径})$（推导不能，直接给结果）<br>
+<em>对比单缝衍射$\Delta\varphi=\frac{\lambda}{a}$</em>
+<ul>
+<li>$\lambda \uparrow \qquad \Delta\varphi\uparrow$，衍射现象越显著。</li>
+<li>$D\downarrow \qquad \Delta\varphi\uparrow$，衍射现象越显著。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-光学仪器分辨率">3. 光学仪器分辨率</h4>
+<p>对于平常的摄像仪器：</p>
+<ul>
+<li>物镜 - 圆孔</li>
+<li>成像原理 - 衍射图样</li>
+</ul>
+<blockquote>
+<p>定义 - 瑞利准则：</p>
+<p>第一个像的爱里斑的中心，恰与第二个像的爱里斑的边缘重合时，<br>
+或者说两个爱里斑的中心的距离，为爱里斑的半径时，<br>
+是恰能分辨两个像的临界点。<br>
+此时称$\Delta\varphi$为最小分辨角，记为$\theta_R$</p>
+<p>例：</p>
+<ul>
+<li><img src="images/Wave%20Optics--11-09_16-34-10.png" alt="图 10"  /><br>
+$\theta=\theta_R$，此时完全可以分辨出这两个物点。</li>
+<li><img src="images/Wave%20Optics--11-13_15-12-37.png" alt="图 2"  /><br>
+$\theta&lt;\theta_R$，此时完全分辨不出这两个物点。</li>
+<li><img src="images/Wave%20Optics--11-13_15-12-59.png" alt="图 3"  /><br>
+$\theta&gt;\theta_R$，此时恰好处于临界状态。</li>
+</ul>
+</blockquote>
+<p>故最小分辨角：$\Delta\varphi = 1.22\frac{\lambda}{D}$</p>
+<p>光学仪器的临界角越小，则分辨力越高，<br>
+故将光学仪器<strong>分辨率定义为</strong>：
+$$\frac{1}{\Delta\varphi}$$<br>
+为$\frac{D}{1.22\lambda}$。</p>
+<p>提高分辨率途径：</p>
+<ul>
+<li>$D\uparrow$，如天文望远镜。</li>
+<li>$\lambda\downarrow$</li>
+</ul>
+<p>几个常见的显微镜分辨率：</p>
+<ul>
+<li>光学显微镜：$0.2\mu\textrm{m}$</li>
+<li>电子显微镜：$1\overset{\circ}{A}$（$1\overset{\circ}{A}=10^{-10}\textrm{m}$）</li>
+<li>扫描隧道显微镜：$0.01\overset{\circ}{A}$</li>
+</ul>
+<h3 id="六光栅夫琅禾费衍射">六、光栅夫琅禾费衍射</h3>
+<blockquote>
+<p>引例 - 用单缝夫琅禾费衍射来测量光波长</p>
+<p>单缝衍射中：$\Delta\varphi_{\textrm{中央}}=\frac{2\lambda}{a}$</p>
+<p>为了便于观察条纹，虽然可以通过减小缝宽$a$，来使条纹宽度变大，<br>
+但相应的光强会减弱，反而导致难以观察。</p>
+<p>解决方法：<br>
+采用一系列的狭缝，每个衍射光纤叠加。</p>
+</blockquote>
+<h4 id="1-分类">1. 分类</h4>
+<ol>
+<li>衍射光栅（透射光栅）<br>
+<img src="images/Wave%20Optics--11-09_16-50-19.png" alt="图 11"  /></li>
+<li>反射光栅（闪耀光栅）<br>
+<img src="images/Wave%20Optics--11-09_16-50-29.png" alt="图 12"  /></li>
+</ol>
+<p><em>以下将采用透射光栅讲解。</em></p>
+<h4 id="2-透射光栅装置">2. 透射光栅装置</h4>
+<p><strong>透射光栅</strong>：<br>
+通常采用刻痕玻璃的方法，<br>
+在玻璃片上刻画出一系列平行等距的划痕，<br>
+刻过的地方不透光，没刻过的地方透光。</p>
+<p><img src="images/Wave%20Optics--11-13_16-22-04.png" alt="透射光栅装置 1"  /><br>
+透射光栅装置</p>
+<p><img src="images/Wave%20Optics--11-09_16-53-28.png" alt="投射光栅衍射装置 1"  /><br>
+透射光栅衍射实验示意图</p>
+<ul>
+<li>$a$ - 一条未刻痕区域的长度</li>
+<li>$b$ - 一条刻痕区域的长度</li>
+<li><strong>光栅常数</strong>：$⭐d=a+b=\frac{l}{N}\qquad(10^{-3}\sim10^{-4}\textrm{cm})$</li>
+</ul>
+<h4 id="2-衍射图样特点">2. 衍射图样特点</h4>
+<p>宽大的弱暗背景中出现强度不等的明亮明窄条纹。<br>
+<img src="images/Wave%20Optics--11-09_16-54-57.png" alt="图 14"  /></p>
+<p>当复色光入射时，波长不同，角度不同，<br>
+故可以用作分光装置，形成光谱。</p>
+<h4 id="3-衍射光强分析">3. 衍射光强分析</h4>
+<blockquote>
+<p>思路：</p>
+<ol>
+<li>先不考虑缝宽，认为一条光缝只发出一条线光源。<br>
+故问题变为：讨论$N$个几个线光源的干涉。</li>
+<li>再考虑缝宽。</li>
+</ol>
+</blockquote>
+<h5 id="step1-不计缝宽">Step.1 不计缝宽</h5>
+<ul>
+<li>光线光振动的振幅一样：$A_1=A_2=\cdots=A_n$</li>
+<li>相邻光线光程差：$\Delta=d\sin\varphi$<em>（与之前不同，这里不是$\frac{a}{N}\sin\varphi$，没有$N$，故不能令$\beta=\frac{N\delta}{2}$）</em></li>
+<li>相邻光线相位差：$\delta=\Delta\varphi=\frac{d\sin\varphi}{\lambda}2\pi$</li>
+</ul>
+<p>故又可以转换为向量合成：<br>
+<img src="images/Wave%20Optics--11-09_16-59-13.png" alt="图 15"  /></p>
+<p>令：$\beta=\frac{\delta}{2}$</p>
+<p>则：
+$$A=A_1\cdot\frac{\sin N\beta}{\sin\beta}$$
+$$I=I_1\cdot(\frac{\sin N\beta}{\sin\beta})^2$$</p>
+<p>对其求极值，可得明暗纹的关系式。</p>
+<ul>
+<li>最大值 - 中央明纹位置：$\beta=k\pi$</li>
+<li>极小值 - 暗纹位置：$\sin N\beta = 0$</li>
+<li>极大值 - 明纹位置：$\tan N\beta = N \tan\beta$</li>
+</ul>
+<p>对于$(\frac{\sin N\beta}{\sin\beta})^2$，函数大致如下：<br>
+<img src="images/Wave%20Optics--11-13_21-37-57.png" alt="图 15"  /></p>
+<hr>
+<p>最大值 - 中央明纹位置：$\beta=k\pi$<br>
+对应向量合成图如下：<br>
+<img src="images/Wave%20Optics--11-13_21-20-12.png" alt="图 11"  /></p>
+<p>可得如下式子：</p>
+<ul>
+<li>主明纹位置公式（<strong>光栅公式</strong>）：
+$$⭐d\sin\varphi = \pm k\lambda\qquad(k=0,1,2,\cdots)$$
+<ul>
+<li>位置：$\sin\varphi=\pm k\frac{\lambda}{d}$</li>
+<li>亮度：$I=N^2I_1$（$N$是光栅刻痕数目）</li>
+<li><strong>最高级次</strong>：$k_m &lt; \frac{d}{\lambda}$<br>
+$\because |\sin\varphi| &lt; 1$<br>
+$\therefore k_m &lt; \frac{d}{\lambda}$<br>
+<em>所以如果用红光照射可能看到$3$条，而紫光则可能看到$5$条。</em></li>
+</ul>
+</li>
+<li>主明纹角宽度：$\Delta\varphi=\frac{2\lambda}{Nd}(\Delta k'=2)$<br>
+注意这里可不是$k$级和$k+1$级之间的长度，<br>
+而是<strong>在$kN-1$和$kN+1$级暗纹之间的长度</strong>。<br>
+可见：$N\uparrow$，主明纹越细窄、明亮，故光栅的分辨本领很高。</li>
+</ul>
+<hr>
+<p>极小值 - 暗纹位置：$\sin N\beta = 0$<br>
+对应向量合成图如下：<br>
+<img src="images/Wave%20Optics--11-09_17-06-36.png" alt="图 16"  /></p>
+<p>可得如下关系：</p>
+<ul>
+<li>暗纹位置公式：
+$$\sin\varphi=\pm \frac{k'}{N}\cdot\frac{\lambda}{d}\qquad(k'\ne Nk)$$
+⚠注意$k'\ne Nk$，否则就是明纹。</li>
+</ul>
+<p>$k$和$k'$的取值举例：<br>
+<img src="images/Wave%20Optics--11-13_21-18-54.png" alt="图 10"  /><br>
+可见相邻两条<strong>主明纹间有$N-1$条暗纹</strong>。</p>
+<hr>
+<p>极大值 - 明纹位置：$\tan N\beta = N \tan\beta$
+对应向量合成图如下：<br>
+<img src="images/Wave%20Optics--11-13_21-20-57.png" alt="图 12"  /></p>
+<p>由$I=I_1(\frac{\sin N\beta}{\sin\beta})^2$的函数图像可知：<br>
+$N=7$时，
+<img src="images/Wave%20Optics--11-13_21-24-35.png" alt="图 13"  /><br>
+$N=9$时，<br>
+<img src="images/Wave%20Optics--11-13_21-26-20.png" alt="图 14"  /></p>
+<p>故<strong>两条主极大之间</strong>，<br>
+<strong>有$N-1$条暗纹</strong>，<br>
+<strong>有$N-2$条次极大</strong>。</p>
+<p>由于$N$一般很大，<br>
+所以次极大的光强一般不超过主极大的$\frac{1}{23}$，<br>
+故两个主极大之间近似看成宽大的暗背景。</p>
+<hr>
+<p>分辨率：<br>
+对于不同波长的两束光，其恰能分辨的情况如下：<br>
+<img src="images/Wave%20Optics--11-13_22-04-02.png" alt="图 16"  /></p>
+<p>需要同时满足：<br>
+$\left{\begin{array}{l}d \sin \varphi=k \lambda_{1} \d \sin \varphi=\frac{k N-1}{N} \cdot \lambda_{2}\end{array}\right.$<br>
+联立解得：<br>
+$\frac{\Delta\lambda}{\lambda}=\frac{\lambda_2-\lambda_1}{\lambda_2}=\frac{1}{kN}$</p>
+<p>定义分辨率：
+$$R=\frac{\lambda}{\Delta\lambda}=kN$$</p>
+<p>可见只与刻痕数$N$有关，呈正比。</p>
+<hr>
+<p>小结：</p>
+<ul>
+<li>两个主极大间：$N-1$个暗纹，$N-2$条次极大。</li>
+<li>明纹位置（光栅公式）：$d\sin\varphi=\pm k\lambda\qquad(k=0,1,2,\cdots)$</li>
+<li>暗纹位置：$d\sin\varphi=\frac{k'}{N}\lambda\qquad(k'\ne Nk)$</li>
+</ul>
+<blockquote>
+<p>拓展 - 为什么公式与单缝衍射差不多，最终结果差别巨大</p>
+<p>需要明确的是，单缝中有极限的思想。<br>
+我们将划分个数$N\to\infty$，导致$\delta\to0$，才能使得分母的$\sin(\delta/2)\approx(\delta/2)$。</p>
+<p>公式仍有一点不同，我们强行将其化为相同格式，<br>
+具体如下图：<br>
+<img src="images/Wave%20Optics--11-13_21-07-42.png" alt="图 9"  /></p>
+</blockquote>
+<h5 id="step2-考虑缝宽">Step.2 考虑缝宽</h5>
+<p><strong>每个缝的单缝衍射条纹彼此重合，故影响一致。</strong></p>
+<p>对于缝宽$a$：</p>
+<ul>
+<li>若分为偶数个半波带：
+缝内：自身干涉相消$I_i=0$，<br>
+故即使缝间干涉相长，合成的也是$I=N^2I_i=0$，<br>
+故主极大不出现，<strong>称为“缺级”现象</strong>。</li>
+<li>分为奇数个半波带：
+缝内光线部分干涉相消，<br>
+且条纹级数越高，相消越多。<br>
+故越级数高越暗，称为“光亮调制”。</li>
+</ul>
+<p>$$I=I_0(\frac{\sin\alpha}{\alpha})^2\cdot(\frac{\sin N\beta}{\sin\beta})^2$$</p>
+<ul>
+<li>$(\frac{\sin\alpha}{\alpha})^2$ - 单缝衍射因子（$\alpha=\frac{\pi a\sin\varphi}{\lambda}$）</li>
+<li>$(\frac{\sin N\beta}{\sin\beta})^2$ - 多缝干涉因子（$\beta=\frac{\pi d\sin\varphi}{\lambda}$）</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-09_17-37-47.png" alt="图 18"  /></p>
+<ul>
+<li>a - 单缝</li>
+<li>b - 光栅 - 不考虑缝宽</li>
+<li>c - 光栅 - 考虑缝宽后</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-09_17-40-50.png" alt="图 19"  /></p>
+<p>故影响光栅衍射光强的因素：</p>
+<ul>
+<li>缝宽$a$</li>
+<li>光栅常数$d=a+b$</li>
+<li>衍射角$\varphi$</li>
+</ul>
+<hr>
+<p><strong>缺级现象：</strong></p>
+<p>需要满足如下条件</p>
+<ul>
+<li>光栅中 - 主明纹：$d\sin\varphi=(a+b)\sin\varphi=\pm k\lambda (k=0,1,2,\cdots)$</li>
+<li>单缝中 - 暗明纹：$a\sin\varphi=\pm k'\lambda (k'=1,2,\cdots)$</li>
+</ul>
+<p>联立得，缺级：
+$$k=\pm \frac{d}{a}\cdot k'(k'=1,2,\cdots)$$</p>
+<p><strong>中央明纹区的主极大条数：</strong></p>
+<p>对应$k'=1$，故$k=\frac{d}{a}$<br>
+若为整数，则$k=2\frac{d}{a}$+$1$条中央明纹-$2$缺级。<br>
+如果不为整数，则不会有缺级，向上取整后可以把减的$2$补回来。</p>
+<p>则极大条数：$2\lceil\frac{d}{a}\rceil-1$（向上取整）</p>
+<h3 id="七晶格衍射x光衍射">七、晶格衍射（X光衍射）</h3>
+<ul>
+<li>单晶：分立开的</li>
+<li>多晶、孪晶：连续的</li>
+</ul>
+<p><strong>布拉格公式：</strong></p>
+<ul>
+<li>掠射角$\theta$：X射线到晶面时与晶面夹角。</li>
+<li>晶格常数$d$：两层晶体分子的距离。</li>
+</ul>
+<p><img src="images/Wave%20Optics--11-13_22-32-34.png" alt="图 17"  /></p>
+<p>故可得光程差：$\Delta=2d\sin\theta$</p>
+<p>明纹（加强）条件：
+$$2d\sin\theta=k\lambda (k=0,1,2,\cdots)$$</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">大学课程</a>
+        
+            <a href="/tags/%E5%A4%A7%E5%AD%A6%E7%89%A9%E7%90%86/">大学物理</a>
+        
+            <a href="/tags/%E6%B3%A2%E5%8A%A8%E5%85%89%E5%AD%A6/">波动光学</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/93592237" target="_blank" rel="noopener">93592237</a>
+            </span>
+        </section></footer>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-digital_electronic-summary/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-digital_electronic-summary/88331974_p0.05bed36c1169445e737754f8da82efa6_hu5438825b9b6d1014226d20d231e650c2_1781408_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Digital_Electronic-summary" 
+                        data-hash="md5-Bb7TbBFpRF5zd1T42oLvpg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数字电子技术 - 考点总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-digital_electronic-ep4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-digital_electronic-ep4/74542521_p0.4e73708a10191e973742b77a1ab44e06_hu41b7815279cac48aae43ea80d2335b45_1737627_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Digital_Electronic-Ep4" 
+                        data-hash="md5-TnNwihAZHpc3Qrd6GrROBg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数字电子技术——第四章……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-psycho_phy-prac-4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-psycho_phy-prac-4/pixiv61483143.d2be93400bdf313d058b9f10ab70ae7a_hu12c1b5a9a5e516caec4f044d40d3022b_1819672_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Psycho_Phy-prac-4" 
+                        data-hash="md5-0r6TQAvfMT0Fi58Qq3Cueg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">生理心理学 - 第四章作业……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-activity-summary_2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-activity-summary_2/Yande-303578.18d7631c4f321b29333bd4aba5e5107c_hu4ac8284d9d64ce4dd805253e9d934d3e_1697426_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-activity-summary_2" 
+                        data-hash="md5-GNdjHE8yGykzO9SrpeUQfA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">近代史活动 - 制作阶段安排……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-activity-summary/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-activity-summary/Yande-364526.bdaf98854fd9bfb11b0dfc269b8e100c_hu060b1d1a848b90f2358cba9689228f00_3707348_250x150_fill_box_smart1_2.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-activity-summary" 
+                        data-hash="md5-va&#43;YhU/Zv7EbDfwmm44QDA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">近代史活动会议总结……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2021 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

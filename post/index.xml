@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 23 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>大学物理 下——第十四章……</title>
+      <link>https://blog.supersassw.com/p/univ-physics-ep14/</link>
+      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-physics-ep14/</guid>
+      <description>第十四章 波动光学 第一节 光的偏振 一、光的偏振现象 - 横波性 偏振(polarization): 振动方向对于传播方向的非对称分布。 对称分布，指无论偏</description>
+    </item>
+    
     <item>
       <title>数字电子技术 - 考点总结……</title>
       <link>https://blog.supersassw.com/p/univ-digital_electronic-summary/</link>
@@ -437,15 +446,6 @@
       
       <guid>https://blog.supersassw.com/p/acm-writeup-2020_10_24/</guid>
       <description>比赛链接 SWJTU Online Judge 题解文件 点击下载：月赛题解（预赛）.zip 总结范围 *A *C D E *G H J K 注：前面带*号的题因题目简单，为简略总结。 D、E因简单而未总</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://blog.supersassw.com/p/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.supersassw.com/p/</guid>
-      <description></description>
     </item>
     
   </channel>
