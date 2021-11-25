@@ -13,7 +13,7 @@
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/acm-prac-2021_04_13/</guid>
-      <description>题目链接 P2034 选择数字 题目分析 贪心想法及其问题 要使得“不能有超过$k$个连续的数被选中”， 可以转化为： 在$k+1$个连续的数中，选择一个数舍去，</description>
+      <description>题目链接 P2034 选择数字 题目分析 贪心想法及其问题 要使得“不能有超过\(k\)个连续的数被选中”， 可以转化为： 在\(k+1\)个连续的数中，选择一个</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/acm-template/</guid>
-      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 线性筛素数 用途：对一定范围$n$内的数，构造素数表。</description>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 线性筛素数 用途：对一定范围\(n\)内的数，构造素数</description>
     </item>
     
   </channel>

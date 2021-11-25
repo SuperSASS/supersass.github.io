@@ -287,8 +287,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-note-stl/">
-                <img src="/p/acm-note-stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_800x0_resize_box_2.png"
-                        srcset="/p/acm-note-stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_800x0_resize_box_2.png 800w, /p/acm-note-stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-note-stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_800x0_resize_box_3.png"
+                        srcset="/p/acm-note-stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_800x0_resize_box_3.png 800w, /p/acm-note-stl/79059953_p0_hudcdceb022a1e552a3fbecef4125cea72_897862_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="553" 
                         loading="lazy"
@@ -367,7 +367,7 @@ if (!doNotTrack) {
 <p>其中<strong>不允许有重复元素</strong>。<br>
 并且set中的元素是<strong>排好序的</strong>（升序）。</p>
 <h3 id="用法">用法</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">STL_set</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">STL_set</span><span class="p">;</span>
 <span class="c1">//---对整体的操作---
 </span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>	<span class="c1">//清空
 </span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>	<span class="c1">//返回是否为空
@@ -385,7 +385,7 @@ if (!doNotTrack) {
 </span></code></pre></div><h3 id="自定义性">自定义性</h3>
 <p>set可支持自定义类型，但需要重载<code>&lt;</code>运算符。</p>
 <blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">type</span>   <span class="c1">//用来存棋盘状态
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">type</span>   <span class="c1">//用来存棋盘状态
 </span><span class="c1"></span><span class="p">{</span>
 	<span class="p">...;</span>
 
@@ -414,7 +414,7 @@ if (!doNotTrack) {
 每一对中的第一个值称之为关键字(key)（也称键值），每个<strong>关键字只能</strong>在map中<strong>出现一次</strong>。<br>
 第二个称之为该关键字的对应值(value)（也称实值）。</p>
 <h3 id="用法-1">用法</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">STL_map</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">STL_map</span><span class="p">;</span>
 <span class="c1">//---初始构造---
 </span><span class="c1"></span><span class="n">STL_map</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">},{</span><span class="mi">2</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">}};</span>		<span class="c1">//为c++11标准
 </span><span class="c1">//---数组操作---
@@ -436,7 +436,7 @@ if (!doNotTrack) {
 </span></code></pre></div><h3 id="自定义性-1">自定义性</h3>
 <p>set可支持自定义类型，但需要重载<code>&lt;</code>运算符。</p>
 <blockquote>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">type</span>   <span class="c1">//用来存棋盘状态
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">type</span>   <span class="c1">//用来存棋盘状态
 </span><span class="c1"></span><span class="p">{</span>
 	<span class="p">...;</span>
 
@@ -487,27 +487,22 @@ if (!doNotTrack) {
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -527,7 +522,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -549,7 +544,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -615,7 +610,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-segment_tree/67957130_p0.c5cb31194a7e4ca539d9a4fb08d8c6ec_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-segment_tree/67957130_p0.c5cb31194a7e4ca539d9a4fb08d8c6ec_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

@@ -8,6 +8,15 @@
     <language>zh-CN</language>
     <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>LaTeX相关……</title>
+      <link>https://blog.supersassw.com/p/test-latex/</link>
+      <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/test-latex/</guid>
+      <description>LaTeX存在的问题 在Markdown博客中，对于LaTeX的渲染可能会存在一个通病： Markdown中的转义字符会对LaTeX的渲染产生干</description>
+    </item>
+    
+    <item>
       <title>大学物理 下——第十四章……</title>
       <link>https://blog.supersassw.com/p/univ-physics-ep14/</link>
       <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
@@ -22,7 +31,7 @@
       <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/univ-digital_electronic-summary/</guid>
-      <description>第一章 数字逻辑概论 第一节 数字信号与数字电路 比特率：每秒传输数据的位数。 占空比：脉冲作用时间（高电平）$t_w$占整个周期$T$的百分比。 $$q(%)=\frac{t_w}{T}\times 100%$$</description>
+      <description>第一章 数字逻辑概论 第一节 数字信号与数字电路 比特率：每秒传输数据的位数。 占空比：脉冲作用时间（高电平）\(t_w\)占整个周期\(T\)的百分</description>
     </item>
     
     <item>
@@ -58,7 +67,7 @@
       <pubDate>Tue, 13 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/acm-prac-2021_04_13/</guid>
-      <description>题目链接 P2034 选择数字 题目分析 贪心想法及其问题 要使得“不能有超过$k$个连续的数被选中”， 可以转化为： 在$k+1$个连续的数中，选择一个数舍去，</description>
+      <description>题目链接 P2034 选择数字 题目分析 贪心想法及其问题 要使得“不能有超过\(k\)个连续的数被选中”， 可以转化为： 在\(k+1\)个连续的数中，选择一个</description>
     </item>
     
     <item>
@@ -94,7 +103,7 @@
       <pubDate>Wed, 10 Mar 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/acm-writeup-2021_3_10/</guid>
-      <description>比赛链接 Codeforces Round #706 (Div. 2) 总结范围 A B C D E F A. Split it! 比赛状态：AC 题目链接 题目大意 问题描述 给定一个字符串$s$和一个数$k$， 判断字符串是否存在$k</description>
+      <description>比赛链接 Codeforces Round #706 (Div. 2) 总结范围 A B C D E F A. Split it! 比赛状态：AC 题目链接 题目大意 问题描述 给定一个字符串\(s\)和一个数\(k\)， 判断字符串是否</description>
     </item>
     
     <item>
@@ -229,7 +238,7 @@
       <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/univ-am-formula/</guid>
-      <description>LaTex显示好像有误，待修复 定积分 $\int_0^{\frac{\pi}{2}} f(\sin x)\mathrm{d}x = \int_0^{\frac{\pi}{2}} f(\cos x) \mathrm{d}x$ $\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x) \mathrm{d}x$ e.g. $\int_0^\pi \frac{x\sin x}{1+cos^2x} \mathrm{d}x = \frac{\pi}{2}\int_0^\pi \frac{\sin x}{2-sin^2x} \mathrm{d}x$ Walls公式： $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{3}{4}\cdot\frac{1}{2}\cdot\frac{\pi}{2}\quad (\text{n is even}) \\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{4}{5}\cdot\frac{2}{3}\quad (\text{n is odd, n&amp;gt;1})\end{cases}$</description>
+      <description>LaTex显示好像有误，待修复 定积分 \(\int_0^{\frac{\pi}{2}} f(\sin x)\mathrm{d}x = \int_0^{\frac{\pi}{2}} f(\cos x) \mathrm{d}x\) \(\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x) \mathrm{d}x\) e.g. \(\int_0^\pi \frac{x\sin x}{1+cos^2x} \mathrm{d}x = \frac{\pi}{2}\int_0^\pi \frac{\sin x}{2-sin^2x} \mathrm{d}x\) Walls公式： \(I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\\=\begin{cases}\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{3}{4}\cdot\frac{1}{2}\cdot\frac{\pi}{2}\quad (\text{n is even}) \\\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{4}{5}\cdot\frac{2}{3}\quad (\text{n is odd, n1})\end{cases}\)</description>
     </item>
     
     <item>
@@ -238,7 +247,7 @@
       <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/univ-cpp-note-array/</guid>
-      <description>一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列$a_i$： 当$i=1$</description>
+      <description>一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列\(a_i\)： 当\(i</description>
     </item>
     
     <item>
@@ -305,21 +314,12 @@
     </item>
     
     <item>
-      <title>页面测试……</title>
-      <link>https://blog.supersassw.com/p/test-chinese/</link>
-      <pubDate>Fri, 18 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.supersassw.com/p/test-chinese/</guid>
-      <description>正文测试 而这些并不是完全重要，更加重要的问题是， 带着这些问题，我们来审视一下学生会退会。 既然如何， 对我个人而言，学生会退会不仅仅是一个重大的</description>
-    </item>
-    
-    <item>
       <title>ACM学习笔记 - 总模板……</title>
       <link>https://blog.supersassw.com/p/acm-template/</link>
       <pubDate>Thu, 17 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/acm-template/</guid>
-      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 线性筛素数 用途：对一定范围$n$内的数，构造素数表。</description>
+      <description>该笔记目前直接复制的之前的笔记，还未调整格式。页面格式、内容、链接等可能存在混乱错误…… 线性筛素数 用途：对一定范围\(n\)内的数，构造素数</description>
     </item>
     
     <item>
@@ -409,7 +409,7 @@
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/acm-prac-2020_11_10/</guid>
-      <description>题目链接 P4838 P哥破解密码 题目分析 考点：矩阵动规…… 典例：斐波拉契数列…… 方法：矩阵快速幂…… 标准动规思想，每个次序有三个决策，分别为选$1$个</description>
+      <description>题目链接 P4838 P哥破解密码 题目分析 考点：矩阵动规…… 典例：斐波拉契数列…… 方法：矩阵快速幂…… 标准动规思想，每个次序有三个决策，分别为选\(1\</description>
     </item>
     
     <item>

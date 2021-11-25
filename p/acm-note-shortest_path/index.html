@@ -299,8 +299,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-note-shortest_path/">
-                <img src="/p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_800x0_resize_box_2.png"
-                        srcset="/p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_800x0_resize_box_2.png 800w, /p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_800x0_resize_box_3.png"
+                        srcset="/p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_800x0_resize_box_3.png 800w, /p/acm-note-shortest_path/Yande-298884_hu402752953fd669a3c7e7255c09a0516f_1637023_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="1028" 
                         loading="lazy"
@@ -354,7 +354,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1829</div>
+            <div class="char">文章字数：1881</div>
             <div class="time">预计阅读时长： <time>4</time> 分钟</div>
         </div>
     </footer>
@@ -383,26 +383,26 @@ if (!doNotTrack) {
 <p><strong>以下都基于有最短路情况讨论（即没有负环）。</strong></p>
 <h3 id="符号定义">符号定义</h3>
 <ul>
-<li>$N$——节点个数</li>
-<li>$M$——边个数</li>
-<li>$S$——源点</li>
-<li>$dist[v]$——源点$S$到点$v$的<strong>当前</strong>距离</li>
-<li>$ralax(u,v)$——以$u$为<strong>中继点</strong>，判断经过此中继点到点$v$的距离是否更短，如是则覆盖$dist[v]$</li>
+<li><span class="math inline">\(N\)</span>——节点个数</li>
+<li><span class="math inline">\(M\)</span>——边个数</li>
+<li><span class="math inline">\(S\)</span>——源点</li>
+<li><span class="math inline">\(dist[v]\)</span>——源点<span class="math inline">\(S\)</span>到点<span class="math inline">\(v\)</span>的<strong>当前</strong>距离</li>
+<li><span class="math inline">\(ralax(u,v)\)</span>——以<span class="math inline">\(u\)</span>为<strong>中继点</strong>，判断经过此中继点到点<span class="math inline">\(v\)</span>的距离是否更短，如是则覆盖<span class="math inline">\(dist[v]\)</span></li>
 </ul>
 <h3 id="操作">操作</h3>
 <ol>
-<li>先对dist赋初值，对于$S=0$，对于其他点为$dist=∞$。</li>
-<li>每次遍历所有的边，并对其进行$relax$操作。</li>
+<li>先对dist赋初值，对于<span class="math inline">\(S=0\)</span>，对于其他点为<span class="math inline">\(dist=∞\)</span>。</li>
+<li>每次遍历所有的边，并对其进行<span class="math inline">\(relax\)</span>操作。</li>
 <li>直到没有松弛操作成功，证明已经找到全局最短路，退出循环。</li>
 </ol>
 <p>动态演示：<a class="link" href="https://www.bilibili.com/video/av83268252"  target="_blank" rel="noopener"
     >图解贝尔曼-福特算法</a></p>
 <h3 id="分析">分析</h3>
-<p>由于一次松弛操作会使最短路的边数至少$+1$（考虑极端情况为链）<br>
-而最短路的边数最多为$n-1$。（即源点与每个点都链接）</p>
-<p>所以最多执行$n-1$次松弛操作，即最多循环$n-1$次。</p>
+<p>由于一次松弛操作会使最短路的边数至少<span class="math inline">\(+1\)</span>（考虑极端情况为链）<br>
+而最短路的边数最多为<span class="math inline">\(n-1\)</span>。（即源点与每个点都链接）</p>
+<p>所以最多执行<span class="math inline">\(n-1\)</span>次松弛操作，即最多循环<span class="math inline">\(n-1\)</span>次。</p>
 <h3 id="伪代码">伪代码</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-&gt;</span> <span class="n">N</span><span class="p">)</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">INF</span><span class="p">,</span> <span class="n">dist</span><span class="p">[</span><span class="n">S</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>	<span class="c1">//初始化dist
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-&gt;</span> <span class="n">N</span><span class="p">)</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">INF</span><span class="p">,</span> <span class="n">dist</span><span class="p">[</span><span class="n">S</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>	<span class="c1">//初始化dist
 </span><span class="c1"></span>
 <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-&gt;</span> <span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>		<span class="c1">//最多执行N-1次全局松弛
 </span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="n">ALL</span> <span class="n">edge</span><span class="p">)</span> <span class="n">relax</span><span class="p">(</span><span class="n">edge</span><span class="p">.</span><span class="n">s</span><span class="p">,</span> <span class="n">edge</span><span class="p">.</span><span class="n">e</span><span class="p">);</span>	<span class="c1">//遍历每条边
@@ -412,12 +412,12 @@ if (!doNotTrack) {
 	<span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">]</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">v</span><span class="p">],</span> <span class="n">dist</span><span class="p">[</span><span class="n">u</span><span class="p">]</span><span class="o">+</span><span class="n">edge_len</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">));</span>
 <span class="p">}</span>
 </code></pre></div><h3 id="时间复杂度">时间复杂度</h3>
-<p>$O(NM)$（不理解可以看上方动态演示）</p>
+<p><span class="math inline">\(O(NM)\)</span>（不理解可以看上方动态演示）</p>
 <h3 id="额外应用">额外应用</h3>
 <ul>
 <li>判断是否存在负环
 <blockquote>
-<p>跑Bellman-Ford算法，如果在$n-1$次之内求得最短路算法结束，则不存在负环，反之一定存在。</p>
+<p>跑Bellman-Ford算法，如果在<span class="math inline">\(n-1\)</span>次之内求得最短路算法结束，则不存在负环，反之一定存在。</p>
 </blockquote>
 </li>
 </ul>
@@ -431,8 +431,8 @@ if (!doNotTrack) {
 而且判断负环方式稍有不同。【故单独写出来祭奠一下x……</p>
 <h3 id="额外符号定义">额外符号定义</h3>
 <ul>
-<li>$que[]$——存被松驰过的点的队列</li>
-<li>$in_queue[u]$——<code>u</code>点是否在松弛队列里</li>
+<li><span class="math inline">\(que[]\)</span>——存被松驰过的点的队列</li>
+<li><span class="math inline">\(in_queue[u]\)</span>——<code>u</code>点是否在松弛队列里</li>
 </ul>
 <h3 id="分析-1">分析</h3>
 <p>很多时候我们并不需要那么多<strong>无用的松弛操作</strong>。<br>
@@ -446,7 +446,7 @@ if (!doNotTrack) {
 <li>SPFA一个点可能在出队后<strong>再次进入队列</strong>。（因为当前relax的可能会被别的relax再找到较短路。也就是说一个点修改过其他点后，过了一段时间可能会由其他点获得更短路劲，于是又可以用来修改其他点，这样反复循环。即是为接近最优解而非直接到达）</li>
 </ul>
 <h3 id="伪代码-1">伪代码</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">que</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">que</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">S</span><span class="p">);</span>
 <span class="n">in_queue</span><span class="p">[</span><span class="n">S</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
 <span class="k">while</span> <span class="p">(</span><span class="o">!</span><span class="n">q</span><span class="p">.</span><span class="n">empty</span><span class="p">())</span>
 <span class="p">{</span>
@@ -461,8 +461,8 @@ if (!doNotTrack) {
 		<span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div><h3 id="时间复杂度-1">时间复杂度</h3>
-<p>期望：$O(KE)$（$K$为常数，平均值为$2$；$E$为边数）<br>
-最坏：$O(NM)$</p>
+<p>期望：<span class="math inline">\(O(KE)\)</span>（<span class="math inline">\(K\)</span>为常数，平均值为<span class="math inline">\(2\)</span>；<span class="math inline">\(E\)</span>为边数）<br>
+最坏：<span class="math inline">\(O(NM)\)</span></p>
 <p>仅为Bellman-Ford的优化，极端情况退化成Bellman-Ford。</p>
 <h3 id="应用判断负环">应用——判断负环</h3>
 <ol>
@@ -516,10 +516,10 @@ if (!doNotTrack) {
 <td>没有负环的图</td>
 </tr>
 <tr>
-<td>$O(N^3)$</td>
-<td>$O(NM)$</td>
-<td>$O(M\log M)$</td>
-<td>$O(NM\log M)$</td>
+<td><span class="math inline">\(O(N^3)\)</span></td>
+<td><span class="math inline">\(O(NM)\)</span></td>
+<td><span class="math inline">\(O(M\log M)\)</span></td>
+<td><span class="math inline">\(O(NM\log M)\)</span></td>
 </tr>
 </tbody>
 </table>
@@ -581,27 +581,22 @@ if (!doNotTrack) {
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -621,7 +616,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-template/56669571_p0.06c35c2723200628f0b52947c29bf54b_hu2d9efed420e5413c9e9ff3384c8a765c_856728_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-template/56669571_p0.06c35c2723200628f0b52947c29bf54b_hu2d9efed420e5413c9e9ff3384c8a765c_856728_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -643,7 +638,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-offline/75470755_p0.295fb3b722cb6243a128a81c27c54e4f_hub4303ba1cffa5ba06cb6a01bf1816187_2872336_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-offline/75470755_p0.295fb3b722cb6243a128a81c27c54e4f_hub4303ba1cffa5ba06cb6a01bf1816187_2872336_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -665,7 +660,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -687,7 +682,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

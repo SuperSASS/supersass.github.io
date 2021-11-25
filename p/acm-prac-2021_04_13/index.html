@@ -223,12 +223,10 @@ if (!doNotTrack) {
         <li><a href="#动态规划想法">动态规划想法</a>
           <ul>
             <li><a href="#动态转移方程推导">动态转移方程推导</a></li>
-            <li><a href="#单调队列优化">单调队列优化</a></li>
           </ul>
         </li>
       </ul>
     </li>
-    <li><a href="#个人代码">个人代码</a></li>
   </ul>
 </nav>
                 </div>
@@ -335,8 +333,8 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1762</div>
-            <div class="time">预计阅读时长： <time>4</time> 分钟</div>
+            <div class="char">文章字数：1455</div>
+            <div class="time">预计阅读时长： <time>3</time> 分钟</div>
         </div>
     </footer>
 </div>
@@ -352,11 +350,11 @@ if (!doNotTrack) {
 </div>
 <h1 id="题目分析">题目分析</h1>
 <h2 id="贪心想法及其问题">贪心想法及其问题</h2>
-<p>要使得“不能有超过$k$个连续的数被选中”，<br>
+<p>要使得“不能有超过<span class="math inline">\(k\)</span>个连续的数被选中”，<br>
 可以转化为：</p>
 <blockquote>
-<p>在$k+1$个连续的数中，选择一个数舍去，断开成两个小于$k$个连续的数。<br>
-再从断开的节点往后$k+1$个连续的数中，再选择一个数断去。</p>
+<p>在<span class="math inline">\(k+1\)</span>个连续的数中，选择一个数舍去，断开成两个小于<span class="math inline">\(k\)</span>个连续的数。<br>
+再从断开的节点往后<span class="math inline">\(k+1\)</span>个连续的数中，再选择一个数断去。</p>
 </blockquote>
 <p>刚开始很容易想到一种<strong>贪心的思路</strong>。
 <div class="snote idea cyan">
@@ -368,40 +366,44 @@ if (!doNotTrack) {
 发现是存在反悔情况的。</p>
 <blockquote>
 <p>对于数据：</p>
-<pre><code class="language-none" data-lang="none">8 5
+<pre tabindex="0"><code class="language-none" data-lang="none">8 5
 2 100 ∞ ∞ ∞ ∞ ∞ 1
-</code></pre><p>若采用上述贪心，则会舍去$2,100,1$三个数。<br>
-但实际最开始的$2$并不用舍去，造成了反悔情况。</p>
+</code></pre><p>若采用上述贪心，则会舍去<span class="math inline">\(2,100,1\)</span>三个数。<br>
+但实际最开始的<span class="math inline">\(2\)</span>并不用舍去，造成了反悔情况。</p>
 </blockquote>
 <p>如果写带反悔的贪心可能过于复杂，<br>
 所以这里直接退用<strong>动态规划</strong>来写。</p>
 <h2 id="动态规划想法">动态规划想法</h2>
 <h3 id="动态转移方程推导">动态转移方程推导</h3>
-<p>记：$dp[i]$为前面$i$项最优的解。</p>
-<p>对于$dp[i]$，有以下几种取值情况：</p>
+<p>记：<span class="math inline">\(dp[i]\)</span>为前面<span class="math inline">\(i\)</span>项最优的解。</p>
+<p>对于<span class="math inline">\(dp[i]\)</span>，有以下几种取值情况：</p>
 <ol>
 <li>
-<p>不选择第$i$项。<br>
+<p>不选择第<span class="math inline">\(i\)</span>项。<br>
 直接用前面的最优的解。<br>
-即为：$dp[i-1]$。</p>
+即为：<span class="math inline">\(dp[i-1]\)</span>。</p>
 </li>
 <li>
-<p>选择第$i$项。<br>
-则需从前面$k$项中，任选第$j$项舍去，<br>
+<p>选择第<span class="math inline">\(i\)</span>项。<br>
+则需从前面<span class="math inline">\(k\)</span>项中，任选第<span class="math inline">\(j\)</span>项舍去，<br>
 并取所有选择中的最优情况。</p>
-<p>舍去第$j$项后，值为$\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i]$（即前面第$j+1 \sim i-1$项的和，加上$dp[j-1]$）<br>
-最优情况即为：$\max(\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i]) (j∈[i-k,i-1])$。</p>
+<p>舍去第<span class="math inline">\(j\)</span>项后，值为<span class="math inline">\(\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i]\)</span>（即前面第<span class="math inline">\(j+1 \sim i-1\)</span>项的和，加上<span class="math inline">\(dp[j-1]\)</span>）<br>
+最优情况即为：<span class="math inline">\(\max(\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i]) (j∈[i-k,i-1])\)</span>。</p>
 </li>
 </ol>
-<p>综上，动态转移方程为：<br>
-$$dp[i]=\max(dp[i-1],\max(\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i] (j∈[i-k,i-1])))$$</p>
-<p>最后答案即为$dp[n]$。</p>
-<h3 id="单调队列优化">单调队列优化</h3>
-<p>对于方程中的$\max(\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i] (j∈[i-k,i-1]))$，<br>
-如果每次都用<code>for</code>遍历$j$来求得，肯定喜得TLE。</p>
-<p>在之前分析过程中，我们就能隐约感觉到：<br>
-这个<strong>找前$k$项中的最优情况</strong>，<br>
-跟之前做过的滑动窗口这道题有点像！</p>
+<p>综上，动态转移方程为：</p>
+<p><span class="math display">\[
+最后答案即为$dp[n]$。
+
+### 单调队列优化
+
+对于方程中的$\max(\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i] (j∈[i-k,i-1]))$，  
+如果每次都用`for`遍历$j$来求得，肯定喜得TLE。
+
+在之前分析过程中，我们就能隐约感觉到：  
+这个**找前$k$项中的最优情况**，  
+跟之前做过的滑动窗口这道题有点像！
+
 
 
 <details class="sc-details" >
@@ -420,117 +422,135 @@ $$dp[i]=\max(dp[i-1],\max(\sum_{t=j+1}^{i-1}a[t]+dp[j-1]+a[i] (j∈[i-k,i-1])))$
 </div>
 </div>
 </details>
-<p>其思想就是<strong>单调队列</strong>。</p>
-<hr>
-<p>用单调队列，来记录前面$k$项中的$\sum_{t=j+1}^{i-1}a[t]+dp[j-1]$（没包含$a[i]$）的情况。</p>
-<p>窗口移动到$i$时，队列新增(<code>push</code>)的项就为$dp[i-1]$（因为此时$j=i-1$，$\sum$值为$0$)。</p>
+
+其思想就是**单调队列**。
+
+---
+
+用单调队列，来记录前面$k$项中的$\sum_{t=j+1}^{i-1}a[t]+dp[j-1]$（没包含$a[i]$）的情况。
+
+窗口移动到$i$时，队列新增(`push`)的项就为$dp[i-1]$（因为此时$j=i-1$，$\sum$值为$0$)。
+
 
 
 <div class="snote warning ">
 	<div class="snote-content">
 		<p><p>但这里需要注意：</p>
-<p>当窗口移动时，窗口内<strong>所有项的$\sum$的值会变</strong>，<br>
-其均会增加 新移动到的这项$a[i]$。</p>
+<p>当窗口移动时，窗口内<strong>所有项的<span class="math inline">\(\sum\)</span>的值会变</strong>，<br>
+其均会增加 新移动到的这项<span class="math inline">\(a[i]\)</span>。</p>
 </p>
 	</div>
 </div>
-<p>但如果直接在单调队列中所有项进行增加，则又会回到$O(n^2)$的复杂度。</p>
-<p>因此可以用个变量$inc$，记录窗口中所有项要增加的值，<br>
-每移动次窗口，就让<code>inc+=a[i]</code>。</p>
-<p>在计算$dp[i]$时，再加上$inc$即可，<br>
+
+但如果直接在单调队列中所有项进行增加，则又会回到$O(n^2)$的复杂度。
+
+因此可以用个变量$inc$，记录窗口中所有项要增加的值，  
+每移动次窗口，就让`inc+=a[i]`。
+
+在计算$dp[i]$时，再加上$inc$即可，  
 即将动态转移方程变为了：
 $$dp[i]=max(dp[i-1],top+inc+a[i])$$
-其中$top$表示优先队列中首项。</p>
+其中$top$表示优先队列中首项。
+
 
 
 <div class="snote warning ">
 	<div class="snote-content">
 		<p><p>然后又要注意：</p>
-<p>在入队<code>push</code>的时候，需要减去$inc$的值，<br>
+<p>在入队<code>push</code>的时候，需要减去<span class="math inline">\(inc\)</span>的值，<br>
 即<code>push(dp[i-1]-inc)</code>。</p>
-<p>否则在计算$dp[i]$的$top+inc+a[i]$时，<br>
-会多加$inc$的值。</p>
+<p>否则在计算<span class="math inline">\(dp[i]\)</span>的<span class="math inline">\(top+inc+a[i]\)</span>时，<br>
+会多加<span class="math inline">\(inc\)</span>的值。</p>
 </p>
 	</div>
 </div>
-<hr>
-<p>然后对于<strong>最开始的$1 \sim k$项</strong>来说：<br>
-舍弃第$j$项的最优情况，就是前$k$项的和减去$a[j]$。</p>
-<p>所以可以先让$inc=\sum_{i=1}^ka_i$，<br>
-则每次<code>push(-val[i])</code>，<br>
-加上$inc$后，即为最开始$k$项的最优情况。</p>
-<h1 id="个人代码">个人代码</h1>
+
+---
+
+然后对于**最开始的$1 \sim k$项**来说：  
+舍弃第$j$项的最优情况，就是前$k$项的和减去$a[j]$。
+
+所以可以先让$inc=\sum_{i=1}^ka_i$，  
+则每次`push(-val[i])`，  
+加上$inc$后，即为最开始$k$项的最优情况。
+
+# 个人代码
+
 <div class="snote link green">
 	<div class="snote-content">
 		<p><a class="link" href="https://paste.ubuntu.com/p/XdTbTBDDTG/"  target="_blank" rel="noopener"
     >Pastebin链接</a></p>
 	</div>
 </div>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//P2034 [选择数字](https://www.luogu.com.cn/problem/P2034)
-</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp">#define ALL(NAME_i, BEGIN, TO) \
-</span><span class="cp">    int NAME_i = BEGIN;        \
-</span><span class="cp">    NAME_i &lt;= TO;              \
-</span><span class="cp">    NAME_i++
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
-<span class="cp">#define MAX_N 100000
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="n">val</span><span class="p">[</span><span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span> <span class="c1">//*可优化这个空间，因为不用记录读入的值
-</span><span class="c1"></span><span class="n">LL</span> <span class="n">dp</span><span class="p">[</span><span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>   <span class="c1">//dp[i] - 前i个数最优情况
-</span><span class="c1"></span>
-<span class="k">struct</span> <span class="nc">windowType</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">head</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">tail</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="k">struct</span> <span class="nc">lineType</span>
-    <span class="p">{</span>
-        <span class="n">LL</span> <span class="n">val</span><span class="p">;</span>
-        <span class="kt">int</span> <span class="n">index</span><span class="p">;</span>
 
-        <span class="n">lineType</span><span class="p">()</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">index</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
-        <span class="n">lineType</span><span class="p">(</span><span class="n">LL</span> <span class="n">_val</span><span class="p">,</span> <span class="kt">int</span> <span class="n">_index</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">_val</span><span class="p">),</span> <span class="n">index</span><span class="p">(</span><span class="n">_index</span><span class="p">)</span> <span class="p">{}</span>
-    <span class="p">}</span> <span class="n">line</span><span class="p">[</span><span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>
+```c++
+//P2034 [选择数字](https://www.luogu.com.cn/problem/P2034)
+#include <bits/stdc++.h>
+#define ALL(NAME_i, BEGIN, TO) \
+    int NAME_i = BEGIN;        \
+    NAME_i <= TO;              \
+    NAME_i++
+using namespace std;
+typedef long long LL;
+#define MAX_N 100000
 
-    <span class="n">LL</span> <span class="nf">top</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">line</span><span class="p">[</span><span class="n">head</span><span class="p">].</span><span class="n">val</span><span class="p">;</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">push</span><span class="p">(</span><span class="k">const</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">index</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">head</span> <span class="o">&lt;=</span> <span class="n">tail</span> <span class="o">&amp;&amp;</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="n">line</span><span class="p">[</span><span class="n">tail</span><span class="p">].</span><span class="n">val</span><span class="p">)</span>
-            <span class="n">tail</span><span class="o">--</span><span class="p">;</span>
-        <span class="n">line</span><span class="p">[</span><span class="o">++</span><span class="n">tail</span><span class="p">]</span> <span class="o">=</span> <span class="n">lineType</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">index</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">update</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">range</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="n">head</span><span class="p">].</span><span class="n">index</span> <span class="o">&lt;</span> <span class="n">range</span><span class="p">)</span>
-            <span class="n">head</span><span class="o">++</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span> <span class="n">window</span><span class="p">;</span> <span class="c1">//单调队列——记录前k个中最优的选择（去除某点后的结果）
-</span><span class="c1"></span><span class="n">LL</span> <span class="n">inc</span><span class="p">;</span>   <span class="c1">//单调队列中每个元素要加的值
-</span><span class="c1"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">k</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">k</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">k</span><span class="p">))</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">]),</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">window</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="o">-</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">i</span><span class="p">);</span> <span class="c1">//对最开始k项的处理 - 直接push(-a[i])
-</span><span class="c1"></span>    <span class="n">inc</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">k</span><span class="p">];</span>                                                                   <span class="c1">//对最开始k项的处理 - 刚开始的inc令为sum(a[1]~a[k])
-</span><span class="c1"></span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
-    <span class="p">{</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>                                <span class="c1">//0. 读入a[i]
-</span><span class="c1"></span>        <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span> <span class="n">window</span><span class="p">.</span><span class="n">top</span><span class="p">()</span> <span class="o">+</span> <span class="n">inc</span> <span class="o">+</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span> <span class="c1">//1. 动态转移方程计算dp
-</span><span class="c1"></span>        <span class="n">inc</span> <span class="o">+=</span> <span class="n">val</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>                                       <span class="c1">//2. inc += val
-</span><span class="c1"></span>        <span class="n">window</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">inc</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>                     <span class="c1">//3. 入队
-</span><span class="c1"></span>        <span class="n">window</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>                            <span class="c1">//4. 出队 - 维护队首
-</span><span class="c1"></span>    <span class="p">}</span>
+int val[MAX_N + 5]; //*可优化这个空间，因为不用记录读入的值
+LL dp[MAX_N + 5];   //dp[i] - 前i个数最优情况
 
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">n</span><span class="p">]);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="cm">/* WA 记录：
-</span><span class="cm">1st. 单调队列中出队的过程写错了，  
-</span><span class="cm">不能直接判断窗口是否满了，而要看是否超出窗口范围。
-</span><span class="cm">*/</span>
-</code></pre></div>
+struct windowType
+{
+    int head = 1, tail = 0;
+    struct lineType
+    {
+        LL val;
+        int index;
+
+        lineType() : val(0), index(0) {}
+        lineType(LL _val, int _index) : val(_val), index(_index) {}
+    } line[MAX_N + 5];
+
+    LL top() { return line[head].val; }
+    void push(const LL &val, const int &index)
+    {
+        while (head <= tail && val > line[tail].val)
+            tail--;
+        line[++tail] = lineType(val, index);
+    }
+    void update(const int &range)
+    {
+        if (line[head].index < range)
+            head++;
+    }
+} window; //单调队列——记录前k个中最优的选择（去除某点后的结果）
+LL inc;   //单调队列中每个元素要加的值
+
+int main()
+{
+    int n, k;
+    scanf("%d%d", &n, &k);
+    for (ALL(i, 1, k))
+        scanf("%d", &val[i]), dp[i] = dp[i - 1] + val[i], window.push(-val[i], i); //对最开始k项的处理 - 直接push(-a[i])
+    inc = dp[k];                                                                   //对最开始k项的处理 - 刚开始的inc令为sum(a[1]~a[k])
+
+    for (ALL(i, k + 1, n))
+    {
+        scanf("%d", &val[i]);                                //0. 读入a[i]
+        dp[i] = max(dp[i - 1], window.top() + inc + val[i]); //1. 动态转移方程计算dp
+        inc += val[i];                                       //2. inc += val
+        window.push(dp[i - 1] - inc, i);                     //3. 入队
+        window.update(i - k + 1);                            //4. 出队 - 维护队首
+    }
+
+    printf("%lld", dp[n]);
+    return 0;
+}
+/* WA 记录：
+1st. 单调队列中出队的过程写错了，  
+不能直接判断窗口是否满了，而要看是否超出窗口范围。
+*/
+```
+\]</span></p>
+
 </section>
 
 
@@ -574,27 +594,22 @@ $$dp[i]=max(dp[i-1],top+inc+a[i])$$
     </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -614,7 +629,7 @@ $$dp[i]=max(dp[i-1],top+inc+a[i])$$
         
         
             <div class="article-image">
-                <img src="/p/acm-prac-2020_11_10/pixiv61483143.bb6873637641e2f612a05a16c806394a_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-prac-2020_11_10/pixiv61483143.bb6873637641e2f612a05a16c806394a_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -658,7 +673,7 @@ $$dp[i]=max(dp[i-1],top+inc+a[i])$$
         
         
             <div class="article-image">
-                <img src="/p/acm-prac-2021_01_25/Yande-199983.1f5f9a85cad48cc7667c6c62f7482b4f_hu24344327ed1750f50cc0e0aab802591d_7554577_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-prac-2021_01_25/Yande-199983.1f5f9a85cad48cc7667c6c62f7482b4f_hu24344327ed1750f50cc0e0aab802591d_7554577_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -680,7 +695,7 @@ $$dp[i]=max(dp[i-1],top+inc+a[i])$$
         
         
             <div class="article-image">
-                <img src="/p/acm-prac-2020_11_09/66020781_p0.de40274def3ec5e4e170dd4c2bd7ab36_hu83615bf817a735cca528325790529168_964835_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-prac-2020_11_09/66020781_p0.de40274def3ec5e4e170dd4c2bd7ab36_hu83615bf817a735cca528325790529168_964835_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

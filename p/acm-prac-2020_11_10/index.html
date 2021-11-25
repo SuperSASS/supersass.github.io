@@ -270,8 +270,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-prac-2020_11_10/">
-                <img src="/p/acm-prac-2020_11_10/pixiv61483143_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_800x0_resize_box_2.png"
-                        srcset="/p/acm-prac-2020_11_10/pixiv61483143_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_800x0_resize_box_2.png 800w, /p/acm-prac-2020_11_10/pixiv61483143_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-prac-2020_11_10/pixiv61483143_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_800x0_resize_box_3.png"
+                        srcset="/p/acm-prac-2020_11_10/pixiv61483143_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_800x0_resize_box_3.png 800w, /p/acm-prac-2020_11_10/pixiv61483143_hudb8b3bdf2d089baf7c03e9c67779ccab_1896816_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="600" 
                         loading="lazy"
@@ -326,7 +326,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1052</div>
+            <div class="char">文章字数：1065</div>
             <div class="time">预计阅读时长： <time>3</time> 分钟</div>
         </div>
     </footer>
@@ -350,11 +350,11 @@ if (!doNotTrack) {
 </li>
 <li>方法：矩阵快速幂……</li>
 </ul>
-<p>标准动规思想，每个次序有三个决策，分别为选$1$个$A$，选$2$个$A$，选$B$……</p>
-<p>$f[i][A_1] = f[i-1][B]$<br>
-$f[i][A_2] = f[i-1][A_1]$<br>
-$f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
-最后输出：$f[n][A_1] + f[n][A_2] + f[n][B]$</p>
+<p>标准动规思想，每个次序有三个决策，分别为选<span class="math inline">\(1\)</span>个<span class="math inline">\(A\)</span>，选<span class="math inline">\(2\)</span>个<span class="math inline">\(A\)</span>，选<span class="math inline">\(B\)</span>……</p>
+<p><span class="math inline">\(f[i][A_1] = f[i-1][B]\)</span><br>
+<span class="math inline">\(f[i][A_2] = f[i-1][A_1]\)</span><br>
+<span class="math inline">\(f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]\)</span><br>
+最后输出：<span class="math inline">\(f[n][A_1] + f[n][A_2] + f[n][B]\)</span></p>
 <p>但直接动规求会TLE，发现满足矩阵动规性质，则采用动规优化——矩阵动规……</p>
 <h1 id="矩阵动规讲解">矩阵动规讲解</h1>
 <ul>
@@ -368,7 +368,7 @@ $f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
     >Pastebin链接</a></p>
 	</div>
 </div>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//P4838 [P哥破解密码](https://www.luogu.com.cn/problem/P4838)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//P4838 [P哥破解密码](https://www.luogu.com.cn/problem/P4838)
 </span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="c1">//#define MAX 10000000	//dp中的状态存储图表最大大小（历史遗留垃圾x……
@@ -430,7 +430,7 @@ $f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
 
 <details class="sc-details" >
 	<summary>附：初始代码——基础动规方法</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">dp</span>
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">dp</span>
 <span class="p">{</span>
 	<span class="kt">long</span> <span class="kt">long</span> <span class="n">A_1</span><span class="p">,</span> <span class="n">A_2</span><span class="p">,</span> <span class="n">B</span><span class="p">;</span>
 <span class="p">}</span> <span class="n">dp</span><span class="p">[</span><span class="n">MAX</span><span class="p">];</span>
@@ -461,7 +461,7 @@ $f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
 <span class="p">}</span>
 </code></pre></div><h2 id="初始代码分析">初始代码分析</h2>
 <p>最开始整体的动规思路是正确的，并且正确的求出了具体的状态转移方程……<br>
-但首先，动规从开始到结束直接求出来，是$O(n)$的复杂度，要TLE……</p>
+但首先，动规从开始到结束直接求出来，是<span class="math inline">\(O(n)\)</span>的复杂度，要TLE……</p>
 <p>考虑动规的优化之一——矩阵DP+快速矩阵幂……</p>
 <p>同时即便用基本的动规，个人实现方法中也有两个问题……</p>
 <ol>
@@ -515,27 +515,22 @@ $f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
     </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -599,7 +594,7 @@ $f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
         
         
             <div class="article-image">
-                <img src="/p/acm-prac-2021_01_25/Yande-199983.1f5f9a85cad48cc7667c6c62f7482b4f_hu24344327ed1750f50cc0e0aab802591d_7554577_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-prac-2021_01_25/Yande-199983.1f5f9a85cad48cc7667c6c62f7482b4f_hu24344327ed1750f50cc0e0aab802591d_7554577_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -621,7 +616,7 @@ $f[i][B] = f[i-1][A_1] + f[i-1][A_2] + f[i-1][B]$<br>
         
         
             <div class="article-image">
-                <img src="/p/acm-prac-2020_11_09/66020781_p0.de40274def3ec5e4e170dd4c2bd7ab36_hu83615bf817a735cca528325790529168_964835_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-prac-2020_11_09/66020781_p0.de40274def3ec5e4e170dd4c2bd7ab36_hu83615bf817a735cca528325790529168_964835_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

@@ -292,8 +292,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/univ-cpp-prac-point/">
-                <img src="/p/univ-cpp-prac-point/Yande-308381_hubfc4b78b5f13c939fbd8620a241a68e1_9631758_800x0_resize_box_2.png"
-                        srcset="/p/univ-cpp-prac-point/Yande-308381_hubfc4b78b5f13c939fbd8620a241a68e1_9631758_800x0_resize_box_2.png 800w, /p/univ-cpp-prac-point/Yande-308381_hubfc4b78b5f13c939fbd8620a241a68e1_9631758_1600x0_resize_box_2.png 1600w"
+                <img src="/p/univ-cpp-prac-point/Yande-308381_hubfc4b78b5f13c939fbd8620a241a68e1_9631758_800x0_resize_box_3.png"
+                        srcset="/p/univ-cpp-prac-point/Yande-308381_hubfc4b78b5f13c939fbd8620a241a68e1_9631758_800x0_resize_box_3.png 800w, /p/univ-cpp-prac-point/Yande-308381_hubfc4b78b5f13c939fbd8620a241a68e1_9631758_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="571" 
                         loading="lazy"
@@ -347,7 +347,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：3862</div>
+            <div class="char">文章字数：3930</div>
             <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
@@ -402,7 +402,7 @@ if (!doNotTrack) {
 <h3 id="第二题">第二题</h3>
 <div class="snote question cyan">
 	<div class="snote-content">
-		<p>能够直接赋值给指针变量的<strong>整数</strong>是$0$和$1$。</p>
+		<p>能够直接赋值给指针变量的<strong>整数</strong>是<span class="math inline">\(0\)</span>和<span class="math inline">\(1\)</span>。</p>
 	</div>
 </div>
 
@@ -426,12 +426,12 @@ if (!doNotTrack) {
 	</div>
 </div>
 <h2 id="分析">分析</h2>
-<p>整数中，<strong>只有</strong>$0$才可以赋值指针，代表空地址（<code>NULL</code>）。</p>
+<p>整数中，<strong>只有</strong><span class="math inline">\(0\)</span>才可以赋值指针，代表空地址（<code>NULL</code>）。</p>
 <h3 id="书上原话">书上原话</h3>
 <div class="snote quote ">
 	<div class="snote-content">
-		<p>“地址”，可以是变量的地址、数组名、函数名等，也可以是数值$0$（或<code>NULL</code>）。<br>
-没有任何对象会被分配到地址<code>0</code>（或<code>NULL</code>），因此数值$0$（或<code>NULL</code>）是可以直接赋给指针变量的唯一整数。</p>
+		<p>“地址”，可以是变量的地址、数组名、函数名等，也可以是数值<span class="math inline">\(0\)</span>（或<code>NULL</code>）。<br>
+没有任何对象会被分配到地址<code>0</code>（或<code>NULL</code>），因此数值<span class="math inline">\(0\)</span>（或<code>NULL</code>）是可以直接赋给指针变量的唯一整数。</p>
 	</div>
 </div>
 </div>
@@ -573,7 +573,7 @@ if (!doNotTrack) {
 <li>关系运算（<code>a &lt; b</code>）<br>
 代表<code>a</code>和<code>b</code>位置关系。【一般用于数组中，代表谁指向前面谁指向后面】</li>
 <li><strong>减法运算</strong>（<code>a - b</code>）
-代表<code>a</code>到<code>b</code>之间的距离。【一般用于数组中，如<code>a = &amp;arr[5]</code>，<code>b =&amp; arr[7]</code>，则<code>a-b</code>为$2$】</li>
+代表<code>a</code>到<code>b</code>之间的距离。【一般用于数组中，如<code>a = &amp;arr[5]</code>，<code>b =&amp; arr[7]</code>，则<code>a-b</code>为<span class="math inline">\(2\)</span>】</li>
 </ol>
 </blockquote>
 <p>上述题错在：<strong>没有加法运算</strong>。</p>
@@ -692,13 +692,13 @@ if (!doNotTrack) {
 	<div class="sc-tabs--content"><div class="snote question cyan ">
 	<div class="snote-content">
 		<p><p>设有如下程序段，输出的值为（）</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span><span class="o">++</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </code></pre></div><hr>
-<p><strong>A.</strong> $8$<br>
-<strong>B.</strong> $9$<br>
-<strong>C.</strong> $8$的地址<br>
-<strong>D.</strong> $9$的地址</p>
+<p><strong>A.</strong> <span class="math inline">\(8\)</span><br>
+<strong>B.</strong> <span class="math inline">\(9\)</span><br>
+<strong>C.</strong> <span class="math inline">\(8\)</span>的地址<br>
+<strong>D.</strong> <span class="math inline">\(9\)</span>的地址</p>
 </p>
 	</div>
 </div>
@@ -710,9 +710,9 @@ if (!doNotTrack) {
 	</div>
 </div>
 <h2 id="分析">分析</h2>
-<p>这里面先是运算<code>*p</code>，得到值$8$，<br>
+<p>这里面先是运算<code>*p</code>，得到值<span class="math inline">\(8\)</span>，<br>
 然后就变成了<code>cout &lt;&lt; 8++ &lt;&lt; endl;</code>，这个时候就是先返回结果再运算。</p>
-<p>也就是先输出$8$，然后再<code>*p = *p + 1</code>变成$9$。</p>
+<p>也就是先输出<span class="math inline">\(8\)</span>，然后再<code>*p = *p + 1</code>变成<span class="math inline">\(9\)</span>。</p>
 </div>
 </details>
 </div><input type="radio" class="sc-tabs--toggle" name="tabs-34x35x37x38" id="tabs-34x35x37x38-1"  />
@@ -720,13 +720,13 @@ if (!doNotTrack) {
 	<div class="sc-tabs--content"><div class="snote question cyan ">
 	<div class="snote-content">
 		<p><p>设有如下程序段，输出的值为（）</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">;</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">++*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 </code></pre></div><hr>
-<p><strong>A.</strong> $8$<br>
-<strong>B.</strong> $9$<br>
-<strong>C.</strong> $8$的地址<br>
-<strong>D.</strong> $9$的地址</p>
+<p><strong>A.</strong> <span class="math inline">\(8\)</span><br>
+<strong>B.</strong> <span class="math inline">\(9\)</span><br>
+<strong>C.</strong> <span class="math inline">\(8\)</span>的地址<br>
+<strong>D.</strong> <span class="math inline">\(9\)</span>的地址</p>
 </p>
 	</div>
 </div>
@@ -738,9 +738,9 @@ if (!doNotTrack) {
 	</div>
 </div>
 <h2 id="分析">分析</h2>
-<p>注意这里面还是先运算<code>*p</code>，得到值$8$，<br>
+<p>注意这里面还是先运算<code>*p</code>，得到值<span class="math inline">\(8\)</span>，<br>
 然后就变成了<code>cout &lt;&lt; ++8 &lt;&lt; endl;</code>，这个时候就变成了先运算再返回结果。</p>
-<p>也就是先<code>*p = *p + 1</code>变成$9$，然后再输出$9$。</p>
+<p>也就是先<code>*p = *p + 1</code>变成<span class="math inline">\(9\)</span>，然后再输出<span class="math inline">\(9\)</span>。</p>
 <p>总之前两道题，都是<strong>先运算<code>*p</code></strong>。</p>
 </div>
 </details>
@@ -749,8 +749,8 @@ if (!doNotTrack) {
 	<div class="sc-tabs--content"><div class="snote question cyan ">
 	<div class="snote-content">
 		<p><p>设有定义语句：</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span><span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
-</code></pre></div><p>则数值不为$3$的表达式为（）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">},</span><span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</code></pre></div><p>则数值不为<span class="math inline">\(3\)</span>的表达式为（）。</p>
 <hr>
 <p><strong>A.</strong> <code>a[3]</code><br>
 <strong>B.</strong> <code>p[3]</code><br>
@@ -774,16 +774,16 @@ if (!doNotTrack) {
 	</div>
 </div>
 <h2 id="分析">分析</h2>
-<p>首先<strong>A</strong>、<strong>B</strong>选项，直接能看出<code>a[3]</code>和<code>p[3]</code>均为数组第四个元素，即为$3$。<br>
+<p>首先<strong>A</strong>、<strong>B</strong>选项，直接能看出<code>a[3]</code>和<code>p[3]</code>均为数组第四个元素，即为<span class="math inline">\(3\)</span>。<br>
 所以讨论<strong>C</strong>、<strong>D</strong>选项。</p>
 <p>注意这里的指针，变成了<strong>指向数组的指针</strong>。<br>
 所以是可以进行加法操作的，代表指向位置的移动。</p>
-<p>刚开始均有一个<code>p += 2</code>，也就是指向了第三项<code>a[2]</code>为$2$。<br>
+<p>刚开始均有一个<code>p += 2</code>，也就是指向了第三项<code>a[2]</code>为<span class="math inline">\(2\)</span>。<br>
 然后这里打了括号，所以肯定先是运算括号里的东西。</p>
 <p>那么<code>p++</code>和<code>++p</code>的区别，也就在于是先返回值还是先加一。</p>
 <ul>
-<li>对于<code>++p</code>，先运算，也就指向了<code>a[3]</code>，再返回值。那么还是$3$。</li>
-<li>对于<code>p++</code>，先返回值，也就是<code>a[2]</code>，那么<code>a[2]</code>的值就为$2$了。</li>
+<li>对于<code>++p</code>，先运算，也就指向了<code>a[3]</code>，再返回值。那么还是<span class="math inline">\(3\)</span>。</li>
+<li>对于<code>p++</code>，先返回值，也就是<code>a[2]</code>，那么<code>a[2]</code>的值就为<span class="math inline">\(2\)</span>了。</li>
 </ul>
 <p>故选择<strong>C</strong>。</p>
 </div>
@@ -793,7 +793,7 @@ if (!doNotTrack) {
 	<div class="sc-tabs--content"><div class="snote question cyan ">
 	<div class="snote-content">
 		<p><p>设<code>int x[] = {1,2,3,4,5,6}, *p = x;</code><br>
-则数值为$3$的表达式是（）。</p>
+则数值为<span class="math inline">\(3\)</span>的表达式是（）。</p>
 <hr>
 <p><strong>A.</strong> <code>p += 2, *++p</code><br>
 <strong>B.</strong> <code>p += 2, *p++</code><br>
@@ -866,7 +866,7 @@ if (!doNotTrack) {
 	<div class="sc-tabs--content"><div class="snote question cyan ">
 	<div class="snote-content">
 		<p><p>有下面语句<code>int a[10] = {10,9,8,7,6,5,4,3,2,1}, *p = a</code>，<br>
-则数值为$2$的表达式是（）。</p>
+则数值为<span class="math inline">\(2\)</span>的表达式是（）。</p>
 <hr>
 <p><strong>A.</strong> <code>a[9]</code><br>
 <strong>B.</strong> <code>*p[8]</code><br>
@@ -891,10 +891,10 @@ if (!doNotTrack) {
 </div>
 <h2 id="分析">分析</h2>
 <ul>
-<li><strong>A</strong>、<code>a[9]</code>，代表的是数组第十个元素，也就是$1$。</li>
+<li><strong>A</strong>、<code>a[9]</code>，代表的是数组第十个元素，也就是<span class="math inline">\(1\)</span>。</li>
 <li><strong>B</strong>、<code>p[8]</code>的时候，已经代表的是第九个元素的<strong>值</strong>了，所以不能再加<code>*</code>。<br>
 也就是说如果选项是<code>p[8]</code>就是对的，<code>*p[8]</code>存在语法错误。</li>
-<li><strong>C</strong>、<code>*(a+8)</code>，也就相当于<code>a[8]</code>，故为$2$，正确。</li>
+<li><strong>C</strong>、<code>*(a+8)</code>，也就相当于<code>a[8]</code>，故为<span class="math inline">\(2\)</span>，正确。</li>
 <li><strong>D</strong>、<code>p+8</code>，代表的是第九个元素的<strong>地址</strong>，不是里面的值。<br>
 也就是说如果选项是<code>*(p+8)</code>就是对的。</li>
 </ul>
@@ -969,7 +969,7 @@ if (!doNotTrack) {
 </div>
 <p><strong>C</strong>是很明显的<strong>数组越界</strong>。</p>
 <p><strong>D</strong>中，前面的题（第十题）介绍过，指针间存在减法运算。<br>
-那么这道题中<code>p-a</code>的运算结果为$0$（因为指向同一位置<code>a[0]</code>，之间不存在距离），<br>
+那么这道题中<code>p-a</code>的运算结果为<span class="math inline">\(0\)</span>（因为指向同一位置<code>a[0]</code>，之间不存在距离），<br>
 然后<code>a[0]</code>是正确使用。</p>
 </div>
 </details>
@@ -1001,8 +1001,8 @@ if (!doNotTrack) {
 	</div>
 </div>
 <h2 id="分析">分析</h2>
-<p><code>*(p+5)</code>，也就是从字符串开头往后数$5$位。</p>
-<p>会发现，最后只能往后数$4$位到<code>o</code>，<br>
+<p><code>*(p+5)</code>，也就是从字符串开头往后数<span class="math inline">\(5\)</span>位。</p>
+<p>会发现，最后只能往后数<span class="math inline">\(4\)</span>位到<code>o</code>，<br>
 别忘了在字符数组<code>char []</code>中，最末尾还会有一个看不见的<code>\0</code>这个东西，<br>
 所以存在<code>*(p+5)</code>，代表的就是<code>\0</code>。</p>
 </div>
@@ -1053,7 +1053,7 @@ if (!doNotTrack) {
 <div class="snote question cyan ">
 	<div class="snote-content">
 		<p><p>若有定义：<code>int a[] = {1,2,3,4,5,6,7,8,9,10}, *p = a;</code>，<br>
-则数值为$7$的表达式为（）。</p>
+则数值为<span class="math inline">\(7\)</span>的表达式为（）。</p>
 <hr>
 <p><strong>A.</strong> <code>*(p+7)</code><br>
 <strong>B.</strong> <code>p[*(a+6)]</code><br>
@@ -1079,11 +1079,11 @@ if (!doNotTrack) {
 	</div>
 </div>
 <h2 id="分析">分析</h2>
-<p>首先很容易判断出<strong>A</strong>，其数值为$8$，<br>
-<strong>C</strong>，其没有加<code>*</code>，故代表的是<code>a[6]</code>的地址。只有加了<code>*</code>，即<code>*(p+6)</code>才数值为$7$。</p>
+<p>首先很容易判断出<strong>A</strong>，其数值为<span class="math inline">\(8\)</span>，<br>
+<strong>C</strong>，其没有加<code>*</code>，故代表的是<code>a[6]</code>的地址。只有加了<code>*</code>，即<code>*(p+6)</code>才数值为<span class="math inline">\(7\)</span>。</p>
 <p>而<strong>B</strong>、<strong>D</strong>，关键要先把<code>[]</code>内部的给运算出来，<br>
-<strong>D</strong>中，<code>*(p+5)</code>的值为$6$,而<code>a[6]</code>的值为$7$，<br>
-所以<strong>D</strong>的最终值为$7$，符合题意。</p>
+<strong>D</strong>中，<code>*(p+5)</code>的值为<span class="math inline">\(6\)</span>,而<code>a[6]</code>的值为<span class="math inline">\(7\)</span>，<br>
+所以<strong>D</strong>的最终值为<span class="math inline">\(7\)</span>，符合题意。</p>
 </div>
 </details>
 <hr>
@@ -1184,27 +1184,22 @@ if (!doNotTrack) {
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -1224,7 +1219,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/univ-cpp-prac-array/Yande-314214.b700022004ddf7967763ecf51d2f97c5_hua49f15ef087bdbbd47ec4ec6c539acdb_2635208_250x150_fill_box_smart1_2.png" 
+                <img src="/p/univ-cpp-prac-array/Yande-314214.b700022004ddf7967763ecf51d2f97c5_hua49f15ef087bdbbd47ec4ec6c539acdb_2635208_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -1268,7 +1263,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/univ-cpp-summary/58541644_p0.1e235997ae27140b549bbc119d661b06_hu0c218c74dadec57d38928125b7e7f710_1153603_250x150_fill_box_smart1_2.png" 
+                <img src="/p/univ-cpp-summary/58541644_p0.1e235997ae27140b549bbc119d661b06_hu0c218c74dadec57d38928125b7e7f710_1153603_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -1290,7 +1285,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/univ-physics-ep14/93592237_p0.55b84634970f429710e4d12877e29e8e_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_250x150_fill_box_smart1_2.png" 
+                <img src="/p/univ-physics-ep14/93592237_p0.55b84634970f429710e4d12877e29e8e_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

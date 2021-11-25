@@ -337,7 +337,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1142</div>
+            <div class="char">文章字数：1193</div>
             <div class="time">预计阅读时长： <time>3</time> 分钟</div>
         </div>
     </footer>
@@ -349,9 +349,10 @@ if (!doNotTrack) {
 <h2 id="第一节-数字信号与数字电路">第一节 数字信号与数字电路</h2>
 <ul>
 <li>比特率：每秒传输数据的位数。</li>
-<li>占空比：脉冲作用时间（高电平）$t_w$占整个周期$T$的百分比。
-$$q(%)=\frac{t_w}{T}\times 100%$$</li>
-<li>上升时间$t_r$和下降时间$t_f$：从脉冲幅值$10%$上升到$90%$（或者反之）所经历的时间。<br>
+<li>占空比：脉冲作用时间（高电平）<span class="math inline">\(t_w\)</span>占整个周期<span class="math inline">\(T\)</span>的百分比。
+<p><span class="math display">\[\]</span></p>
+</li>
+<li>上升时间<span class="math inline">\(t_r\)</span>和下降时间<span class="math inline">\(t_f\)</span>：从脉冲幅值<span class="math inline">\(10\%\)</span>上升到<span class="math inline">\(90\%\)</span>（或者反之）所经历的时间。<br>
 <img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_22-53-49.png" alt="图 1"  /></li>
 </ul>
 <h2 id="第二节-数制">第二节 数制</h2>
@@ -363,7 +364,7 @@ $$q(%)=\frac{t_w}{T}\times 100%$$</li>
 </ul>
 </li>
 <li>二转十：直接乘基数<br>
-$(N)<em>D=b</em>{m}\times2^{m}+b_{m-1}\times2^{m-1}+\cdots+b_1\times2^1+b_0\times2^0+b_{-1}\times2^{-1}+\cdots+\cdots+b_{-n}\times2^{-n}$</li>
+<span class="math inline">\((N)_D=b_{m}\times2^{m}+b_{m-1}\times2^{m-1}+\cdots+b_1\times2^1+b_0\times2^0+b_{-1}\times2^{-1}+\cdots+\cdots+b_{-n}\times2^{-n}\)</span></li>
 <li>二转八、十六：按照3位（八进制）/4位（十六进制）分开看，每个划分单独转成相应进制（包括小数也如此转）</li>
 <li>八、十六转二：每一位转成对应的3位（八进制）/4位（十六进制）</li>
 </ul>
@@ -388,16 +389,16 @@ $(N)<em>D=b</em>{m}\times2^{m}+b_{m-1}\times2^{m-1}+\cdots+b_1\times2^1+b_0\time
 </li>
 <li>三种码表示范围（n位时）
 <ul>
-<li>原码：$-(2^{n-1}-1)\sim+(2^{n-1}-1)$，表示$2^n-1$个数。</li>
-<li>反码：$-(2^{n-1}-1)\sim+(2^{n-1}-1)$，表示$2^n-1$个数。</li>
-<li>补码：$-2^{n-1}\sim+(2^{n-1}-1)$，可以<strong>表示$2^n$个数</strong>。</li>
+<li>原码：<span class="math inline">\(-(2^{n-1}-1)\sim+(2^{n-1}-1)\)</span>，表示<span class="math inline">\(2^n-1\)</span>个数。</li>
+<li>反码：<span class="math inline">\(-(2^{n-1}-1)\sim+(2^{n-1}-1)\)</span>，表示<span class="math inline">\(2^n-1\)</span>个数。</li>
+<li>补码：<span class="math inline">\(-2^{n-1}\sim+(2^{n-1}-1)\)</span>，可以<strong>表示<span class="math inline">\(2^n\)</span>个数</strong>。</li>
 </ul>
 </li>
 <li>补码的运算：<br>
 两数之和/差的补码，等于两数的补码之和/差。<br>
 符号位也同样参与运算，运算结果的符号位是由运算得出。</li>
 <li>溢出的判断：<br>
-当进位位与数的符号位（$b_{n-1}$位）相反时，则产生了溢出。</li>
+当进位位与数的符号位（<span class="math inline">\(b_{n-1}\)</span>位）相反时，则产生了溢出。</li>
 </ul>
 <h2 id="第四节-二进制代码">第四节 二进制代码</h2>
 <ul>
@@ -429,12 +430,12 @@ $(N)<em>D=b</em>{m}\times2^{m}+b_{m-1}\times2^{m-1}+\cdots+b_1\times2^1+b_0\time
 <li>与：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-09.png" alt="图 1"  /></li>
 <li>或：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-24.png" alt="图 2"  /></li>
 <li>非：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-32-35.png" alt="图 3"  /><br>
-<strong>很特殊</strong>，中间为$1$。（不过看一个输入端口可以看出）</li>
+<strong>很特殊</strong>，中间为<span class="math inline">\(1\)</span>。（不过看一个输入端口可以看出）</li>
 <li>与非、或非：即在与、或的输出端口加上圆圈即可。</li>
 <li>异或：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-33-54.png" alt="图 4"  /><br>
-中间为$=1$</li>
+中间为<span class="math inline">\(=1\)</span></li>
 <li>同或：<img src="images/%E8%80%83%E7%82%B9%E6%80%BB%E7%BB%93--11-22_12-34-21.png" alt="图 5"  /><br>
-中间为$=$，而不是异或加非。</li>
+中间为<span class="math inline">\(=\)</span>，而不是异或加非。</li>
 </ul>
 </li>
 </ul>
@@ -443,9 +444,9 @@ $(N)<em>D=b</em>{m}\times2^{m}+b_{m-1}\times2^{m-1}+\cdots+b_1\times2^1+b_0\time
 <ul>
 <li>对偶规则
 <blockquote>
-<p>对函数$L$，将其与或、01互换后的式子称为对偶式，记作$L'$。<br>
-满足性质：函数$L$的对偶式$L'$有相同的值。或者说某等式成立，则其对偶等式也成立。<br>
-e.g. $A+\overline{A}B=A+B\Rightarrow A(\overline{A}+B)=AB$</p>
+<p>对函数<span class="math inline">\(L\)</span>，将其与或、01互换后的式子称为对偶式，记作<span class="math inline">\(L'\)</span>。<br>
+满足性质：函数<span class="math inline">\(L\)</span>的对偶式<span class="math inline">\(L'\)</span>有相同的值。或者说某等式成立，则其对偶等式也成立。<br>
+e.g. <span class="math inline">\(A+\overline{A}B=A+B\Rightarrow A(\overline{A}+B)=AB\)</span></p>
 </blockquote>
 </li>
 </ul>
@@ -453,15 +454,15 @@ e.g. $A+\overline{A}B=A+B\Rightarrow A(\overline{A}+B)=AB$</p>
 <ul>
 <li>符号表达形式
 <ul>
-<li>最小项表达式，可以记为$\sum m(&hellip;)$</li>
-<li>最大项表达式，可以记为$\Pi m(&hellip;)$</li>
+<li>最小项表达式，可以记为<span class="math inline">\(\sum m(...)\)</span></li>
+<li>最大项表达式，可以记为<span class="math inline">\(\Pi m(...)\)</span></li>
 </ul>
 </li>
-<li>最小项是从$\overline{ABC}$开始，$m_0=\overline{ABC}$；<br>
-最大项是从$A+B+C$开始，$m_0=A+B+C$。</li>
+<li>最小项是从<span class="math inline">\(\overline{ABC}\)</span>开始，<span class="math inline">\(m_0=\overline{ABC}\)</span>；<br>
+最大项是从<span class="math inline">\(A+B+C\)</span>开始，<span class="math inline">\(m_0=A+B+C\)</span>。</li>
 <li>对于最大项表达式，其与最小项互补。
 <blockquote>
-<p>e.g. $L(A,B,C)=\sum m(3,5,6) \rightarrow \Pi m(0,1,2,4,7)$</p>
+<p>e.g. <span class="math inline">\(L(A,B,C)=\sum m(3,5,6) \rightarrow \Pi m(0,1,2,4,7)\)</span></p>
 </blockquote>
 </li>
 </ul>
@@ -520,27 +521,22 @@ e.g. <code>A=1'b1</code>、<code>B=2'b10</code>、<code>C=2'b00</code>
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -560,7 +556,7 @@ e.g. <code>A=1'b1</code>、<code>B=2'b10</code>、<code>C=2'b00</code>
         
         
             <div class="article-image">
-                <img src="/p/univ-digital_electronic-ep4/74542521_p0.4e73708a10191e973742b77a1ab44e06_hu41b7815279cac48aae43ea80d2335b45_1737627_250x150_fill_box_smart1_2.png" 
+                <img src="/p/univ-digital_electronic-ep4/74542521_p0.4e73708a10191e973742b77a1ab44e06_hu41b7815279cac48aae43ea80d2335b45_1737627_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -582,7 +578,7 @@ e.g. <code>A=1'b1</code>、<code>B=2'b10</code>、<code>C=2'b00</code>
         
         
             <div class="article-image">
-                <img src="/p/univ-cpp-summary/58541644_p0.1e235997ae27140b549bbc119d661b06_hu0c218c74dadec57d38928125b7e7f710_1153603_250x150_fill_box_smart1_2.png" 
+                <img src="/p/univ-cpp-summary/58541644_p0.1e235997ae27140b549bbc119d661b06_hu0c218c74dadec57d38928125b7e7f710_1153603_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -604,7 +600,7 @@ e.g. <code>A=1'b1</code>、<code>B=2'b10</code>、<code>C=2'b00</code>
         
         
             <div class="article-image">
-                <img src="/p/univ-physics-ep14/93592237_p0.55b84634970f429710e4d12877e29e8e_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_250x150_fill_box_smart1_2.png" 
+                <img src="/p/univ-physics-ep14/93592237_p0.55b84634970f429710e4d12877e29e8e_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -626,7 +622,7 @@ e.g. <code>A=1'b1</code>、<code>B=2'b10</code>、<code>C=2'b00</code>
         
         
             <div class="article-image">
-                <img src="/p/univ-psycho_phy-prac-4/pixiv61483143.d2be93400bdf313d058b9f10ab70ae7a_hu12c1b5a9a5e516caec4f044d40d3022b_1819672_250x150_fill_box_smart1_2.png" 
+                <img src="/p/univ-psycho_phy-prac-4/pixiv61483143.d2be93400bdf313d058b9f10ab70ae7a_hu12c1b5a9a5e516caec4f044d40d3022b_1819672_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -648,7 +644,7 @@ e.g. <code>A=1'b1</code>、<code>B=2'b10</code>、<code>C=2'b00</code>
         
         
             <div class="article-image">
-                <img src="/p/univ-activity-summary_2/Yande-303578.18d7631c4f321b29333bd4aba5e5107c_hu4ac8284d9d64ce4dd805253e9d934d3e_1697426_250x150_fill_box_smart1_2.png" 
+                <img src="/p/univ-activity-summary_2/Yande-303578.18d7631c4f321b29333bd4aba5e5107c_hu4ac8284d9d64ce4dd805253e9d934d3e_1697426_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

@@ -344,7 +344,7 @@ if (!doNotTrack) {
 只是在例题中自我总结了一点相关知识_(:з」∠)_……</p>
 <p>日后可能专门总结成笔记……</p>
 <h1 id="源码">源码</h1>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cm">/*
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cm">/*
 </span><span class="cm">并查集算法
 </span><span class="cm">用father数组记录每个节点的父节点，数据结构类似于树
 </span><span class="cm">关键操作：合并、查询
@@ -482,27 +482,22 @@ if (!doNotTrack) {
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -522,7 +517,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-segment_tree/67957130_p0.c5cb31194a7e4ca539d9a4fb08d8c6ec_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-segment_tree/67957130_p0.c5cb31194a7e4ca539d9a4fb08d8c6ec_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -544,7 +539,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -566,7 +561,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -610,7 +605,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-template/56669571_p0.06c35c2723200628f0b52947c29bf54b_hu2d9efed420e5413c9e9ff3384c8a765c_856728_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-template/56669571_p0.06c35c2723200628f0b52947c29bf54b_hu2d9efed420e5413c9e9ff3384c8a765c_856728_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

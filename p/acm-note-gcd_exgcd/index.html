@@ -294,8 +294,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-note-gcd_exgcd/">
-                <img src="/p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_800x0_resize_box_2.png"
-                        srcset="/p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_800x0_resize_box_2.png 800w, /p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_800x0_resize_box_3.png"
+                        srcset="/p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_800x0_resize_box_3.png 800w, /p/acm-note-gcd_exgcd/73415224_p0_hu09ddeb20de934db6dbd54dd691a098a4_1500993_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="525" 
                         loading="lazy"
@@ -349,7 +349,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：3321</div>
+            <div class="char">文章字数：3426</div>
             <div class="time">预计阅读时长： <time>7</time> 分钟</div>
         </div>
     </footer>
@@ -368,15 +368,15 @@ if (!doNotTrack) {
 主要是他的求解方法：<strong>欧几里得算法</strong>(Euclidean algorithm)（即：辗转相除法）。</p>
 <h2 id="欧几里得算法">欧几里得算法</h2>
 <p>也不多讲，证明也懒得_(:з」∠)_……<br>
-主要是他的扩展：**扩展欧几里得定理**(Extended Euclidean algorithm, EXGCD)【没有在套娃xddd……</p>
-<p>主要依靠式子：$\gcd(a,b)=\gcd(b,a\mod b)$<br>
-当 $b=0$ 时，此时算出来的 $a$ 即为最终 $\gcd(a,b)$ 的结果。</p>
-<p>时间复杂度为$O(\log n)$。</p>
+主要是他的扩展：<strong>扩展欧几里得定理</strong>(Extended Euclidean algorithm, EXGCD)【没有在套娃xddd……</p>
+<p>主要依靠式子：<span class="math inline">\(\gcd(a,b)=\gcd(b,a\mod b)\)</span><br>
+当 <span class="math inline">\(b=0\)</span> 时，此时算出来的 <span class="math inline">\(a\)</span> 即为最终 <span class="math inline">\(\gcd(a,b)\)</span> 的结果。</p>
+<p>时间复杂度为<span class="math inline">\(O(\log n)\)</span>。</p>
 <h3 id="实现代码">实现代码</h3>
 <ul>
 <li>递归实现：</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">gcd</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">{</span>
 	<span class="c1">//if (a &lt; b)
 </span><span class="c1"></span>	<span class="c1">//	return gcd(b, a);
@@ -395,15 +395,15 @@ if (!doNotTrack) {
 </code></pre></div><ul>
 <li>迭代实现：</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">gcd_iteration</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">gcd_iteration</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">b</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">while</span> <span class="p">(</span><span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">%=</span> <span class="n">b</span><span class="p">);</span>	<span class="c1">//b^=a^=b^=a为交换两变量操作，最后以b的值为循环条件。
 </span><span class="c1"></span>    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><h2 id="多个数的最大公约数">多个数的最大公约数</h2>
-<p>求 $a_1,a_2,\cdots,a_n$ 个数的最大公约数，<br>
-直接为 $\gcd(a_1,a_2,\cdots,a_n)$。</p>
-<p>先算$\gcd(a_1,a_2)$，所得结果$d_1$，再$\gcd(d,a_3)$，反复进行。</p>
+<p>求 <span class="math inline">\(a_1,a_2,\cdots,a_n\)</span> 个数的最大公约数，<br>
+直接为 <span class="math inline">\(\gcd(a_1,a_2,\cdots,a_n)\)</span>。</p>
+<p>先算<span class="math inline">\(\gcd(a_1,a_2)\)</span>，所得结果<span class="math inline">\(d_1\)</span>，再<span class="math inline">\(\gcd(d,a_3)\)</span>，反复进行。</p>
 <p><em>此处以上为基础部分。</em></p>
 <hr>
 <h1 id="裴蜀定理贝祖定理">裴蜀定理（贝祖定理）</h1>
@@ -417,46 +417,46 @@ if (!doNotTrack) {
     >OI-Wiki</a></em></p>
 <h2 id="定义">定义</h2>
 <blockquote>
-<p>若 $a,b$ 是不全为零的整数，记：$\gcd(a,b)=d$，<br>
-则对于任意的整数 $x,y$ ， $ax+by$ 都一定是 $d$ 的整数倍。</p>
+<p>若 <span class="math inline">\(a,b\)</span> 是不全为零的整数，记：<span class="math inline">\(\gcd(a,b)=d\)</span>，<br>
+则对于任意的整数 <span class="math inline">\(x,y\)</span> ， <span class="math inline">\(ax+by\)</span> 都一定是 <span class="math inline">\(d\)</span> 的整数倍。</p>
 <ul>
-<li>特别的：一定存在整数 $x,y$ ，使 $ax+by=d$ 成立。</li>
+<li>特别的：一定存在整数 <span class="math inline">\(x,y\)</span> ，使 <span class="math inline">\(ax+by=d\)</span> 成立。</li>
 </ul>
 </blockquote>
 <ul>
 <li>
 <p><strong>为充要条件</strong>，即：<br>
-若 $ax+by=c$ 有解，<br>
-则 $\gcd(a,b)\mid c$ 。（其中 $\mid$ 为整除符号，代表$c$能被$\gcd(a,b)$整除）<br>
-（或者说 $c$ 是 $\gcd(a,b)$的整数倍）</p>
+若 <span class="math inline">\(ax+by=c\)</span> 有解，<br>
+则 <span class="math inline">\(\gcd(a,b)\mid c\)</span> 。（其中 <span class="math inline">\(\mid\)</span> 为整除符号，代表<span class="math inline">\(c\)</span>能被<span class="math inline">\(\gcd(a,b)\)</span>整除）<br>
+（或者说 <span class="math inline">\(c\)</span> 是 <span class="math inline">\(\gcd(a,b)\)</span>的整数倍）</p>
 <ul>
-<li>特别的：如果 $ax+by=1$ ，则 $a,b$ 互质（$\gcd(a,b)=1$）。</li>
+<li>特别的：如果 <span class="math inline">\(ax+by=1\)</span> ，则 <span class="math inline">\(a,b\)</span> 互质（<span class="math inline">\(\gcd(a,b)=1\)</span>）。</li>
 </ul>
 <p><em>这个即为二元一次不定方程存在解的条件。</em></p>
 </li>
 </ul>
 <p>简洁一点则为：</p>
 <blockquote>
-<p>若 $a,b$ 是不全为零的整数，<br>
-则存在整数 $x,y$ , 使得 $ax+by=\gcd(a,b)$ 。</p>
+<p>若 <span class="math inline">\(a,b\)</span> 是不全为零的整数，<br>
+则存在整数 <span class="math inline">\(x,y\)</span> , 使得 <span class="math inline">\(ax+by=\gcd(a,b)\)</span> 。</p>
 </blockquote>
 <p>这个定理只是个概念，让你知道有这样的解存在，但并没有实际告诉你该怎么解。</p>
 <h2 id="推论">推论</h2>
 <ol>
 <li>有关<strong>互质</strong>：
 <blockquote>
-<p>$a,b$ 互质（$\gcd(a,b)=1$）的充要条件为：<br>
-存在整数 $x,y$ ，使得$ab+by=1$</p>
+<p><span class="math inline">\(a,b\)</span> 互质（<span class="math inline">\(\gcd(a,b)=1\)</span>）的充要条件为：<br>
+存在整数 <span class="math inline">\(x,y\)</span> ，使得<span class="math inline">\(ab+by=1\)</span></p>
 </blockquote>
 </li>
-<li><strong>推广到$n$个数</strong>的情况：
+<li><strong>推广到<span class="math inline">\(n\)</span>个数</strong>的情况：
 <blockquote>
-<p>设存在$n$个整数 $a_1,a_2,\cdots,a_n$ ， $d= \gcd(a_1,a_2,\cdots,a_n)$ ，<br>
-则存在整数 $x_1,x_2,\cdots,x_n$ ， $x_1a_1+x_2a_2+\cdots+x_na_n=d$ 有解。</p>
+<p>设存在<span class="math inline">\(n\)</span>个整数 <span class="math inline">\(a_1,a_2,\cdots,a_n\)</span> ， <span class="math inline">\(d= \gcd(a_1,a_2,\cdots,a_n)\)</span> ，<br>
+则存在整数 <span class="math inline">\(x_1,x_2,\cdots,x_n\)</span> ， <span class="math inline">\(x_1a_1+x_2a_2+\cdots+x_na_n=d\)</span> 有解。</p>
 <ul>
 <li>特别的：<br>
-如果 $a_1,a_2,\cdots,a_n$ 互质，（<strong>不是两两互质，而是存在两个数互质</strong>，即：$\gcd(a_1,a_2,\cdots,a_n)=1$）<br>
-则存在整数 $x_1,x_2,\cdots,x_n$ ，使得 $x_1a_1+x_2a_2+\cdots+x_na_n=1$ 。</li>
+如果 <span class="math inline">\(a_1,a_2,\cdots,a_n\)</span> 互质，（<strong>不是两两互质，而是存在两个数互质</strong>，即：<span class="math inline">\(\gcd(a_1,a_2,\cdots,a_n)=1\)</span>）<br>
+则存在整数 <span class="math inline">\(x_1,x_2,\cdots,x_n\)</span> ，使得 <span class="math inline">\(x_1a_1+x_2a_2+\cdots+x_na_n=1\)</span> 。</li>
 </ul>
 </blockquote>
 </li>
@@ -466,27 +466,27 @@ if (!doNotTrack) {
 <h2 id="基本应用例题">基本应用（例题）</h2>
 <blockquote>
 <p>例题：Codeforces Round #290 (Div. 2) D. Fox And Jumping<br>
-给出$n$张卡片，分别有$l_i$和$c_i$。在一条无限长的纸带上，你可以选择花$c_i$的钱来购买卡片$i$，从此以后可以向左或向右跳$l_i$个单位。
-问你至少花多少元钱才能够跳到纸带上全部位置。若不行，输出$-1$。</p>
+给出<span class="math inline">\(n\)</span>张卡片，分别有<span class="math inline">\(l_i\)</span>和<span class="math inline">\(c_i\)</span>。在一条无限长的纸带上，你可以选择花<span class="math inline">\(c_i\)</span>的钱来购买卡片<span class="math inline">\(i\)</span>，从此以后可以向左或向右跳<span class="math inline">\(l_i\)</span>个单位。
+问你至少花多少元钱才能够跳到纸带上全部位置。若不行，输出<span class="math inline">\(-1\)</span>。</p>
 </blockquote>
 <p>分析该问题：<br>
-如果每个格子都想要被跳到，则必须选出一些数，使得<strong>数次加减</strong>后绝对值为$1$。【我们定加减后值就为$1$。因为如果为$-1$，可以通过反向跳跃（取相反数）使得值为$1$。】<br>
-这样通过每次移动$1$格，便能满足跳到每个格子上，否则一定不能满足。</p>
+如果每个格子都想要被跳到，则必须选出一些数，使得<strong>数次加减</strong>后绝对值为<span class="math inline">\(1\)</span>。【我们定加减后值就为<span class="math inline">\(1\)</span>。因为如果为<span class="math inline">\(-1\)</span>，可以通过反向跳跃（取相反数）使得值为<span class="math inline">\(1\)</span>。】<br>
+这样通过每次移动<span class="math inline">\(1\)</span>格，便能满足跳到每个格子上，否则一定不能满足。</p>
 <p>由上述<strong>裴蜀定理</strong>的“推论2”可知：<br>
-如果要满足 $x_1<em>a_1+x_2</em>a_2+\cdots+x_n*a_n=1$ ，<br>
-则必须满足 $\gcd(a_1,a_2,\cdots,a_n)=1$ 。</p>
+如果要满足 <span class="math inline">\(x_1*a_1+x_2*a_2+\cdots+x_n*a_n=1\)</span> ，<br>
+则必须满足 <span class="math inline">\(\gcd(a_1,a_2,\cdots,a_n)=1\)</span> 。</p>
 <p>但又由于有代价的存在，【分析了这么多，那么代价呢x……<br>
-所以可以用$dp$思想：</p>
+所以可以用<span class="math inline">\(dp\)</span>思想：</p>
 <blockquote>
 <p>用个<code>dp</code>表存跳某步的代价最小值。</p>
 <p>那么每读入一个，则对所存的状态进行遍历，<br>
-求取其与某状态的$\gcd$，算出来<strong>是多少</strong>，则这两个数可以通过数次加减后<strong>走多少格</strong>。</p>
+求取其与某状态的<span class="math inline">\(\gcd\)</span>，算出来<strong>是多少</strong>，则这两个数可以通过数次加减后<strong>走多少格</strong>。</p>
 <p>不断更新，最后如果<code>dp[1]</code>存在，则输出，否则输出<code>-1</code>。</p>
 </blockquote>
 <p>又因为数据范围太大，故用<code>map</code>来代替基本的数组来存。<br>
 【OI-Wiki上说可以用<code>unordered_map</code>。但由于这里要遍历，故我觉得还是要用<code>map</code>。<code>unordered_map</code>由于其内部是用哈希表实现的，遍历时可能访问不全。</p>
 <h3 id="部分代码">部分代码</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">dp</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">dp</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">?</span> <span class="n">min</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">l</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">:</span> <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	<span class="c1">//如果存在要去最小
@@ -502,46 +502,46 @@ if (!doNotTrack) {
 <h1 id="扩展欧几里得定理">扩展欧几里得定理</h1>
 <div class="snote quote ">
 	<div class="snote-content">
-		<p>扩展欧几里得定理（Extended Euclidean algorithm, EXGCD），常用于求 $ax+by= \gcd(a,b)$ 的一组可行解。</p>
+		<p>扩展欧几里得定理（Extended Euclidean algorithm, EXGCD），常用于求 <span class="math inline">\(ax+by= \gcd(a,b)\)</span> 的一组可行解。</p>
 	</div>
 </div>
 <p><em>引自：<a class="link" href="https://oi-wiki.org/math/gcd/#_7"  target="_blank" rel="noopener"
     >OI-Wiki</a></em></p>
 <h2 id="方法详解">方法详解</h2>
-<p>求 $ax+by= \gcd(a,b)$ 的一组可行解：</p>
-<p>设:$a&gt;b$，则有以下两种情况</p>
+<p>求 <span class="math inline">\(ax+by= \gcd(a,b)\)</span> 的一组可行解：</p>
+<p>设:<span class="math inline">\(a>b\)</span>，则有以下两种情况</p>
 <ol>
 <li>
-<p>当$b=0$时，$\gcd(a,b) = a$，所以存在一组解$\left{\begin{array}{ll}x  = 1\y =0\end{array}\right.$</p>
+<p>当<span class="math inline">\(b=0\)</span>时，<span class="math inline">\(\gcd(a,b) = a\)</span>，所以存在一组解<span class="math inline">\(\left\{\begin{array}{ll}x  = 1\\y =0\end{array}\right.\)</span></p>
 </li>
 <li>
-<p>当$a=0$时，$\gcd(a,b)=\gcd(b,0)$，一样的结果。</p>
+<p>当<span class="math inline">\(a=0\)</span>时，<span class="math inline">\(\gcd(a,b)=\gcd(b,0)\)</span>，一样的结果。</p>
 </li>
 <li>
-<p>当$ab\neq0$时：</p>
+<p>当<span class="math inline">\(ab\neq0\)</span>时：</p>
 <blockquote>
 <p>设：<br>
-$\left{\begin{array}{ll} ax_1+by_1=\gcd(a,b) \ bx_2+(a \mod b)y_2=\gcd(b,a \mod b) \end{array}\right.$</p>
-<p>由欧几里得算法可知： $\gcd(a,b) = \gcd(b,a \mod b)$<br>
-故： $ax_1+by_1 = bx_2+(a \mod b)y_2$</p>
-<p>又因为： $a \mod b = a-(\lfloor \frac{a}{b} \rfloor \times b)$<br>
+<span class="math inline">\(\left\{\begin{array}{ll} ax_1+by_1=\gcd(a,b) \\ bx_2+(a \mod b)y_2=\gcd(b,a \mod b) \end{array}\right.\)</span></p>
+<p>由欧几里得算法可知： <span class="math inline">\(\gcd(a,b) = \gcd(b,a \mod b)\)</span><br>
+故： <span class="math inline">\(ax_1+by_1 = bx_2+(a \mod b)y_2\)</span></p>
+<p>又因为： <span class="math inline">\(a \mod b = a-(\lfloor \frac{a}{b} \rfloor \times b)\)</span><br>
 所以：<br>
-$ax_1+by_1$<br>
-$= bx_2+[a-(\lfloor \frac{a}{b} \rfloor \times b)]y_2$<br>
-$= ay_2+bx_2 - \lfloor \frac{a}{b} \rfloor \times by_2$<br>
-$= ay_2+b(x_2 - \lfloor \frac{a}{b} \rfloor \times y_2)$</p>
-<p>因为上下两式中： $a=a,b=b$<br>
-所以：$\left{\begin{array}{ll} x_1=y_2 \ y_1=x_2-\lfloor \frac{a}{b} \rfloor \times y_2 \end{array}\right.$</p>
+<span class="math inline">\(ax_1+by_1\)</span><br>
+<span class="math inline">\(= bx_2+[a-(\lfloor \frac{a}{b} \rfloor \times b)]y_2\)</span><br>
+<span class="math inline">\(= ay_2+bx_2 - \lfloor \frac{a}{b} \rfloor \times by_2\)</span><br>
+<span class="math inline">\(= ay_2+b(x_2 - \lfloor \frac{a}{b} \rfloor \times y_2)\)</span></p>
+<p>因为上下两式中： <span class="math inline">\(a=a,b=b\)</span><br>
+所以：<span class="math inline">\(\left\{\begin{array}{ll} x_1=y_2 \\ y_1=x_2-\lfloor \frac{a}{b} \rfloor \times y_2 \end{array}\right.\)</span></p>
 </blockquote>
-<p>便可得到<strong>递归式</strong>：$\textup{exgcd}(x,y)=\textup{exgcd}(y,x-\lfloor \frac{a}{b} \rfloor \times y)$（此时的$a,b$是属于$\textup{exgcd}(x,y)$状态的$a,b$）<br>
-<strong>终止条件</strong>： $b=0$时，$\left{\begin{array}{ll}x  = 1\y =0\end{array}\right.$</p>
+<p>便可得到<strong>递归式</strong>：<span class="math inline">\(\textup{exgcd}(x,y)=\textup{exgcd}(y,x-\lfloor \frac{a}{b} \rfloor \times y)\)</span>（此时的<span class="math inline">\(a,b\)</span>是属于<span class="math inline">\(\textup{exgcd}(x,y)\)</span>状态的<span class="math inline">\(a,b\)</span>）<br>
+<strong>终止条件</strong>： <span class="math inline">\(b=0\)</span>时，<span class="math inline">\(\left\{\begin{array}{ll}x  = 1\\y =0\end{array}\right.\)</span></p>
 <blockquote>
-<p>虽然$\gcd(a,b)$和$\textup{exgcd}(a,b)$都有递归式，<br>
-但$\textup{exgcd}$不同于求$\gcd$：</p>
+<p>虽然<span class="math inline">\(\gcd(a,b)\)</span>和<span class="math inline">\(\textup{exgcd}(a,b)\)</span>都有递归式，<br>
+但<span class="math inline">\(\textup{exgcd}\)</span>不同于求<span class="math inline">\(\gcd\)</span>：</p>
 <ul>
-<li>求解$\gcd$是<strong>知道</strong>最开始的<strong>初状态</strong>，一直<strong>递归求得末状态</strong>。</li>
-<li>求解$\textup{exgcd}$只是<strong>知道末状态</strong>，要根据末状态再<strong>倒推回去求解初状态（一组解）</strong>。<br>
-则需要不断递归到末状态，再由末状态反推到初状态。故可配合$\gcd$求得$\textup{ecgcd}$</li>
+<li>求解<span class="math inline">\(\gcd\)</span>是<strong>知道</strong>最开始的<strong>初状态</strong>，一直<strong>递归求得末状态</strong>。</li>
+<li>求解<span class="math inline">\(\textup{exgcd}\)</span>只是<strong>知道末状态</strong>，要根据末状态再<strong>倒推回去求解初状态（一组解）</strong>。<br>
+则需要不断递归到末状态，再由末状态反推到初状态。故可配合<span class="math inline">\(\gcd\)</span>求得<span class="math inline">\(\textup{ecgcd}\)</span></li>
 </ul>
 </blockquote>
 </li>
@@ -550,7 +550,7 @@ $= ay_2+b(x_2 - \lfloor \frac{a}{b} \rfloor \times y_2)$</p>
 <ul>
 <li>递归实现：</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//函数返回值为gcd，过程中计算x,y。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//函数返回值为gcd，过程中计算x,y。
 </span><span class="c1"></span><span class="kt">int</span> <span class="nf">Exgcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//代表通过gcd求得末状态，
@@ -567,25 +567,29 @@ $= ay_2+b(x_2 - \lfloor \frac{a}{b} \rfloor \times y_2)$</p>
 </code></pre></div><ul>
 <li>
 <p>迭代实现：</p>
-<p>有关$\textup{exgcd}$的迭代方式，可以采用<strong>矩阵乘法</strong>的思路理解。</p>
+<p>有关<span class="math inline">\(\textup{exgcd}\)</span>的迭代方式，可以采用<strong>矩阵乘法</strong>的思路理解。</p>
 <blockquote>
-<p>这是我们找到的递归式：<br>
-$$\textup{exgcd}(x,y)=\textup{exgcd}(y,x-\lfloor \frac{a}{b} \rfloor \times y)$$<br>
-或写为：$\left{\begin{array}{ll} x=y' \ y=x'- \lfloor \frac{a}{b} \rfloor \times y' \end{array}\right.$（此时的$a,b$是属于$\textup{exgcd}(x,y)$状态下的$a,b$）</p>
-<p>变成矩阵形式：
-$$\begin{pmatrix} x \ y \end{pmatrix}=\begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \end{pmatrix}\begin{pmatrix} x' \ y' \end{pmatrix}$$
-其中$d_1$表示第一次迭代（初状态）的$\lfloor\frac{a}{b}\rfloor$。</p>
-<p>然后就可以一直乘下去展开，直到最终状态：
-$$\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \end{pmatrix} \begin{pmatrix} 0&amp;1 \ 1&amp;-d_2 \end{pmatrix} \cdots \begin{pmatrix} 0&amp;1 \ 1&amp;-d_n \end{pmatrix} \begin{pmatrix} 1 \ 0 \end{pmatrix}$$
-因此就可以顺着迭代：计算出<strong>中间$n$个二阶矩阵$\begin{pmatrix} 0&amp;1 \ 1&amp;-d_i \end{pmatrix}$的乘积</strong>。最后到最终状态乘$\begin{pmatrix} 1 \ 0 \end{pmatrix}$，也就是直接取<strong>最终算出的二阶矩阵$\begin{pmatrix} x_1&amp;x_2 \ y_1&amp;y_2 \end{pmatrix}$的$x_1,x_2$</strong></p>
-<hr>
-<p>我们还可以调整一下，设定一个初矩阵，然后直接乘每次的$\begin{pmatrix} 0&amp;1 \ 1&amp;-d_i \end{pmatrix}$，就不用额外处理初状态，直接顺着迭代着走就可以了。<br>
-否则需要额外处理初状态，要令初矩阵为$\begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \end{pmatrix}$，然后还要迭代次$\gcd(a,b)$才能进入循环。<br>
-易知这个初状态就是单位矩阵$\begin{pmatrix} 1&amp;0 \ 0&amp;1 \end{pmatrix}$。</p>
+<p>这是我们找到的递归式：</p>
+<p><span class="math display">\[或写为：$\left\{\begin{array}{ll} x=y' \\ y=x'- \lfloor \frac{a}{b} \rfloor \times y' \end{array}\right.$（此时的$a,b$是属于$\textup{exgcd}(x,y)$状态下的$a,b$）
+
+变成矩阵形式：
+$$\begin{pmatrix} x \\ y \end{pmatrix}=\begin{pmatrix} 0&1 \\ 1&-d_1 \end{pmatrix}\begin{pmatrix} x' \\ y' \end{pmatrix}$$
+其中$d_1$表示第一次迭代（初状态）的$\lfloor\frac{a}{b}\rfloor$。
+
+然后就可以一直乘下去展开，直到最终状态：
+$$\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0&1 \\ 1&-d_1 \end{pmatrix} \begin{pmatrix} 0&1 \\ 1&-d_2 \end{pmatrix} \cdots \begin{pmatrix} 0&1 \\ 1&-d_n \end{pmatrix} \begin{pmatrix} 1 \\ 0 \end{pmatrix}$$
+因此就可以顺着迭代：计算出**中间$n$个二阶矩阵$\begin{pmatrix} 0&1 \\ 1&-d_i \end{pmatrix}$的乘积**。最后到最终状态乘$\begin{pmatrix} 1 \\ 0 \end{pmatrix}$，也就是直接取**最终算出的二阶矩阵$\begin{pmatrix} x_1&x_2 \\ y_1&y_2 \end{pmatrix}$的$x_1,x_2$**
+
+---
+
+我们还可以调整一下，设定一个初矩阵，然后直接乘每次的$\begin{pmatrix} 0&1 \\ 1&-d_i \end{pmatrix}$，就不用额外处理初状态，直接顺着迭代着走就可以了。  
+否则需要额外处理初状态，要令初矩阵为$\begin{pmatrix} 0&1 \\ 1&-d_1 \end{pmatrix}$，然后还要迭代次$\gcd(a,b)$才能进入循环。  
+易知这个初状态就是单位矩阵$\begin{pmatrix} 1&0 \\ 0&1 \end{pmatrix}$。
+\]</span></p>
 </blockquote>
 </li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">Exgcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">Exgcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>           <span class="c1">//初矩阵：1 0
 </span><span class="c1"></span>    <span class="kt">int</span> <span class="n">x1</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>     <span class="c1">//       0 1
@@ -656,27 +660,22 @@ $$\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \en
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -696,7 +695,7 @@ $$\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \en
         
         
             <div class="article-image">
-                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -718,7 +717,7 @@ $$\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \en
         
         
             <div class="article-image">
-                <img src="/p/acm-note-matrix/64382354_p0.bf122a6b61c7b412c4ce5a9da4a4ea34_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-matrix/64382354_p0.bf122a6b61c7b412c4ce5a9da4a4ea34_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -762,7 +761,7 @@ $$\begin{pmatrix} x \ y \end{pmatrix} = \begin{pmatrix} 0&amp;1 \ 1&amp;-d_1 \en
         
         
             <div class="article-image">
-                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

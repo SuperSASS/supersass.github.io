@@ -13,7 +13,7 @@
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/acm-prac-2020_11_10/</guid>
-      <description>题目链接 P4838 P哥破解密码 题目分析 考点：矩阵动规…… 典例：斐波拉契数列…… 方法：矩阵快速幂…… 标准动规思想，每个次序有三个决策，分别为选$1$个</description>
+      <description>题目链接 P4838 P哥破解密码 题目分析 考点：矩阵动规…… 典例：斐波拉契数列…… 方法：矩阵快速幂…… 标准动规思想，每个次序有三个决策，分别为选\(1\</description>
     </item>
     
   </channel>

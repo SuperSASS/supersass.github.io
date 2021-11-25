@@ -278,8 +278,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-note-matrix/">
-                <img src="/p/acm-note-matrix/64382354_p0_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_800x0_resize_box_2.png"
-                        srcset="/p/acm-note-matrix/64382354_p0_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_800x0_resize_box_2.png 800w, /p/acm-note-matrix/64382354_p0_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-note-matrix/64382354_p0_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_800x0_resize_box_3.png"
+                        srcset="/p/acm-note-matrix/64382354_p0_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_800x0_resize_box_3.png 800w, /p/acm-note-matrix/64382354_p0_hu61b6ab99624e6082e1431a5ffad1ba52_1252024_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="636" 
                         loading="lazy"
@@ -333,7 +333,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：527</div>
+            <div class="char">文章字数：562</div>
             <div class="time">预计阅读时长： <time>2</time> 分钟</div>
         </div>
     </footer>
@@ -361,10 +361,10 @@ if (!doNotTrack) {
 <blockquote>
 <p>当前的结果取决于前两个数字（状态），<br>
 但这两个数字就是这两个数字，相当于只有一种决策……</p>
-<p>即$dp[n][1] \leftarrow dp[n-1][1] \&amp; dp[n-2][1]$……</p>
+<p>即<span class="math inline">\(dp[n][1] \leftarrow dp[n-1][1] \\& dp[n-2][1]\)</span>……</p>
 <p>只有一种决策，便可以把列维度给省去……</p>
 <blockquote>
-<p>$mat[1],mat[2]$分别为前一个数和当前数……</p>
+<p><span class="math inline">\(mat[1],mat[2]\)</span>分别为前一个数和当前数……</p>
 </blockquote>
 </blockquote>
 <hr>
@@ -372,10 +372,10 @@ if (!doNotTrack) {
     >P哥破解密码</a>中：</p>
 <blockquote>
 <p>当前的结果取决于上一次状态的三种决策。</p>
-<p>即$dp[n][1 \sim 3] \leftarrow dp[n-1][1 \sim 3]$……</p>
+<p>即<span class="math inline">\(dp[n][1 \sim 3] \leftarrow dp[n-1][1 \sim 3]\)</span>……</p>
 <blockquote>
-<p>$mat[1][],mat[2][]$就是上一次、这一次两状态…<br>
-$mat[][1],mat[][2],mat[][3]$就是选$1$个$A$、选$2$个$A$、选$B$的决策……</p>
+<p><span class="math inline">\(mat[1][],mat[2][]\)</span>就是上一次、这一次两状态…<br>
+<span class="math inline">\(mat[][1],mat[][2],mat[][3]\)</span>就是选<span class="math inline">\(1\)</span>个<span class="math inline">\(A\)</span>、选<span class="math inline">\(2\)</span>个<span class="math inline">\(A\)</span>、选<span class="math inline">\(B\)</span>的决策……</p>
 </blockquote>
 </blockquote>
 <ul>
@@ -383,8 +383,8 @@ $mat[][1],mat[][2],mat[][3]$就是选$1$个$A$、选$2$个$A$、选$B$的决策�
     >做题记录</a></em></li>
 </ul>
 <h3 id="递推矩阵计算">递推矩阵计算</h3>
-<p>构造完状态矩阵后，只需要手动模拟递推，需要加这个元素的令为$1$（要乘$n$便令为$n$），不需要的令为$0$……</p>
-<p>若状态矩阵大小为$n*m$，则递推矩阵大小：$m*m$……</p>
+<p>构造完状态矩阵后，只需要手动模拟递推，需要加这个元素的令为<span class="math inline">\(1\)</span>（要乘<span class="math inline">\(n\)</span>便令为<span class="math inline">\(n\)</span>），不需要的令为<span class="math inline">\(0\)</span>……</p>
+<p>若状态矩阵大小为<span class="math inline">\(n\*m\)</span>，则递推矩阵大小：<span class="math inline">\(m\*m\)</span>……</p>
 <h3 id="矩阵快速幂">矩阵快速幂</h3>
 <p>即为标准快速幂，改为矩阵乘法罢了……</p>
 <div class="snote link cyan">
@@ -395,7 +395,7 @@ $mat[][1],mat[][2],mat[][3]$就是选$1$个$A$、选$2$个$A$、选$B$的决策�
 </div>
 <h3 id="优点">优点</h3>
 <ol>
-<li>时间复杂度：$O(\log n)$</li>
+<li>时间复杂度：<span class="math inline">\(O(\log n)\)</span></li>
 <li>因为时间短，便可在较少询问次数的时候，只需要一个矩阵直接去计算，不需要空间开销来存下状态。</li>
 </ol>
 
@@ -451,27 +451,22 @@ $mat[][1],mat[][2],mat[][3]$就是选$1$个$A$、选$2$个$A$、选$B$的决策�
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -491,7 +486,7 @@ $mat[][1],mat[][2],mat[][3]$就是选$1$个$A$、选$2$个$A$、选$B$的决策�
         
         
             <div class="article-image">
-                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -513,7 +508,7 @@ $mat[][1],mat[][2],mat[][3]$就是选$1$个$A$、选$2$个$A$、选$B$的决策�
         
         
             <div class="article-image">
-                <img src="/p/acm-note-gcd_exgcd/73415224_p0.a7190ef993ac04cbeec0529fdbb8d39f_hu09ddeb20de934db6dbd54dd691a098a4_1500993_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-gcd_exgcd/73415224_p0.a7190ef993ac04cbeec0529fdbb8d39f_hu09ddeb20de934db6dbd54dd691a098a4_1500993_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -557,7 +552,7 @@ $mat[][1],mat[][2],mat[][3]$就是选$1$个$A$、选$2$个$A$、选$B$的决策�
         
         
             <div class="article-image">
-                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

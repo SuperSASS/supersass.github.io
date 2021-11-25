@@ -276,8 +276,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-writeup-2020_10_31/">
-                <img src="/p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_800x0_resize_box_2.png"
-                        srcset="/p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_800x0_resize_box_2.png 800w, /p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_800x0_resize_box_3.png"
+                        srcset="/p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_800x0_resize_box_3.png 800w, /p/acm-writeup-2020_10_31/87698192_p0_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="450" 
                         loading="lazy"
@@ -331,7 +331,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1330</div>
+            <div class="char">文章字数：1363</div>
             <div class="time">预计阅读时长： <time>3</time> 分钟</div>
         </div>
     </footer>
@@ -400,37 +400,37 @@ if (!doNotTrack) {
 	<summary>题面搬运</summary>
 	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
 <p>世界任务：是芭芭拉还是⑨⑨拉</p>
-<p>班尼特又误伤了自己，现在$n$个班尼特正找芭芭拉治疗。</p>
-<p>对于每个班尼特，芭芭拉需要给他补血$h_i$，然后获得一个价值$v_i$的圣遗物。</p>
-<p>治疗每一个班尼特都会获得一个收益，治疗第$i$个班尼特的收益$w_i$等于前面治疗的所有班尼特的$v$之和减去$h_i$。</p>
+<p>班尼特又误伤了自己，现在<span class="math inline">\(n\)</span>个班尼特正找芭芭拉治疗。</p>
+<p>对于每个班尼特，芭芭拉需要给他补血<span class="math inline">\(h_i\)</span>，然后获得一个价值<span class="math inline">\(v_i\)</span>的圣遗物。</p>
+<p>治疗每一个班尼特都会获得一个收益，治疗第<span class="math inline">\(i\)</span>个班尼特的收益<span class="math inline">\(w_i\)</span>等于前面治疗的所有班尼特的<span class="math inline">\(v\)</span>之和减去<span class="math inline">\(h_i\)</span>。</p>
 <p>芭芭拉想让治疗每个班尼特收益的最小值最大。<br>
-也就是说，请重新给班尼特排队，要求是最大化$\min_{i=1}^n{-h_i+\sum_{j=1}^i v_j}$
+也就是说，请重新给班尼特排队，要求是最大化<span class="math inline">\(\min_{i=1}^n\{-h_i+\sum_{j=1}^i v_j\}\)</span>
 ，并输出这个值。</p>
 <p>芭芭拉并不擅长数学，因此请身为骑士团荣誉骑士的你帮帮她吧。</p>
 <p>任务奖励：10个原石，角色芭芭拉，以及月赛增加一个AC</p>
 <h2 id="数据范围">数据范围</h2>
-<p>$1 \le n \le 10^5$<br>
-$1 \le h_i,v_i \le 10^4$</p>
+<p><span class="math inline">\(1 \le n \le 10^5\)</span><br>
+<span class="math inline">\(1 \le h_i,v_i \le 10^4\)</span></p>
 <h2 id="输入格式">输入格式</h2>
-<p>第一行有一个整数$n$。</p>
-<p>接下来有$n$行，每行有两个数字$h$,$v$，代表这个班尼特的补血量和圣遗物。</p>
+<p>第一行有一个整数<span class="math inline">\(n\)</span>。</p>
+<p>接下来有<span class="math inline">\(n\)</span>行，每行有两个数字<span class="math inline">\(h$,$v\)</span>，代表这个班尼特的补血量和圣遗物。</p>
 <h2 id="输出格式">输出格式</h2>
 <p>一行，只有一个整数，代表所有最小值中的最大值。</p>
 <h2 id="样例数据">样例数据</h2>
 <h3 id="第一组">第一组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">3</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">3</span>
 <span class="mi">100</span> <span class="mi">200</span>
 <span class="mi">300</span> <span class="mi">500</span>
 <span class="mi">400</span> <span class="mi">700</span>
 </code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">300</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">300</span>
 </code></pre></div></div></div>
 <p><strong>解释：</strong></p>
-<p>若顺序为($100,200)(300,500)(400,700)$，则收益为$100,400,1000$，最小收益为$100$。<br>
-若顺序为$(300,500)(100,200)(400,700)$，则收益为$200,600,1000$，最小收益为$200$。<br>
-若顺序为$(400,700)(100,200)(300,500)$，则收益为$300,600,1100$，最小收益为$300$。</p>
-<p>还有其它顺序，但最小收益不会超过$300$，因此答案为$300$。</p>
+<p>若顺序为(<span class="math inline">\(100,200)(300,500)(400,700)\)</span>，则收益为<span class="math inline">\(100,400,1000\)</span>，最小收益为<span class="math inline">\(100\)</span>。<br>
+若顺序为<span class="math inline">\((300,500)(100,200)(400,700)\)</span>，则收益为<span class="math inline">\(200,600,1000\)</span>，最小收益为<span class="math inline">\(200\)</span>。<br>
+若顺序为<span class="math inline">\((400,700)(100,200)(300,500)\)</span>，则收益为<span class="math inline">\(300,600,1100\)</span>，最小收益为<span class="math inline">\(300\)</span>。</p>
+<p>还有其它顺序，但最小收益不会超过<span class="math inline">\(300\)</span>，因此答案为<span class="math inline">\(300\)</span>。</p>
 </div>
 </details>
 <h2 id="标准思路">标准思路</h2>
@@ -439,11 +439,11 @@ $1 \le h_i,v_i \le 10^4$</p>
 它把决定相邻两个元素先后的决策推广到整个序列，从而获得最优解。</li>
 </ul>
 <p>这个题本身就是通过给数据排序，不同的排序方法会有不同的收益最小值，然后要比较所有排序方法，选让这个收益最值最大那种方法……<br>
-所以排序的话我们就每次选两个人比较，标记为$i$和$j$……</p>
-<p>然后这两个人又有两种情况，要不就是$i$站在$j$前面，要不就是$j$站在$i$前面……<br>
-这两种情况分别会有个当前两个人的收益最小值，如果目前这种方法（$i$站在$j$前面）的这个最值小于后者方法（$j$站在$i$前面），那肯定我就选后者，让收益最大化，就让他们交换顺序……<br>
+所以排序的话我们就每次选两个人比较，标记为<span class="math inline">\(i\)</span>和<span class="math inline">\(j\)</span>……</p>
+<p>然后这两个人又有两种情况，要不就是<span class="math inline">\(i\)</span>站在<span class="math inline">\(j\)</span>前面，要不就是<span class="math inline">\(j\)</span>站在<span class="math inline">\(i\)</span>前面……<br>
+这两种情况分别会有个当前两个人的收益最小值，如果目前这种方法（<span class="math inline">\(i\)</span>站在<span class="math inline">\(j\)</span>前面）的这个最值小于后者方法（<span class="math inline">\(j\)</span>站在<span class="math inline">\(i\)</span>前面），那肯定我就选后者，让收益最大化，就让他们交换顺序……<br>
 就相当于把比较时候的最值看成短板，每次比较一次选最高的那个，就会把短板提上去一点，这样最后得到的就是最高的短板……</p>
-<p>用公式来说的话就是$\text{if} \quad (\min(Wi_1,Wj_1) &lt; \min(Wi_2,Wj_2)) \quad \text{swap}((h,v)_i,(h,v)_j)$……<br>
+<p>用公式来说的话就是<span class="math inline">\(\text{if} \quad (\min(Wi_1,Wj_1) < \min(Wi_2,Wj_2)) \quad \text{swap}((h,v)_i,(h,v)_j)\)</span>……<br>
 最终分析得知就是<code>if (vi-hi &lt; vj-hj) swap(i,j);</code>……</p>
 <div class="snote info ">
 	<div class="snote-content">
@@ -462,7 +462,7 @@ $1 \le h_i,v_i \le 10^4$</p>
 
 <details class="sc-details" >
 	<summary>标程代码</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//理解了就很简单，就不给标程加注释了……
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//理解了就很简单，就不给标程加注释了……
 </span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
@@ -546,27 +546,22 @@ $1 \le h_i,v_i \le 10^4$</p>
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -586,7 +581,7 @@ $1 \le h_i,v_i \le 10^4$</p>
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2020_10_24/85632010_p0.e54e77f0b0c902e78ff199ef0a6a2145_hu1a4360dbf172a18f1159639719209d07_2635798_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2020_10_24/85632010_p0.e54e77f0b0c902e78ff199ef0a6a2145_hu1a4360dbf172a18f1159639719209d07_2635798_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -608,7 +603,7 @@ $1 \le h_i,v_i \le 10^4$</p>
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2021_3_10/Yande-275846.7984145da990010bee0cd0ce9bce6170_hu5d6f7221a57c96d4dc2f53997133279c_589479_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2021_3_10/Yande-275846.7984145da990010bee0cd0ce9bce6170_hu5d6f7221a57c96d4dc2f53997133279c_589479_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -630,7 +625,7 @@ $1 \le h_i,v_i \le 10^4$</p>
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2020_11_13/64344151_p0.e902b7d7815ccda1bfdee53f5d115fbc_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2020_11_13/64344151_p0.e902b7d7815ccda1bfdee53f5d115fbc_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

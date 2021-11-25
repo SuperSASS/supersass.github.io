@@ -301,8 +301,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-note-segment_tree/">
-                <img src="/p/acm-note-segment_tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_800x0_resize_box_2.png"
-                        srcset="/p/acm-note-segment_tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_800x0_resize_box_2.png 800w, /p/acm-note-segment_tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-note-segment_tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_800x0_resize_box_3.png"
+                        srcset="/p/acm-note-segment_tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_800x0_resize_box_3.png 800w, /p/acm-note-segment_tree/67957130_p0_hu2c7318d0e2072da042ef7a1c5115b73e_4170699_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="587" 
                         loading="lazy"
@@ -356,7 +356,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：3936</div>
+            <div class="char">文章字数：3994</div>
             <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
@@ -383,7 +383,7 @@ if (!doNotTrack) {
 <li>等等</li>
 </ul>
 <h1 id="描述">描述</h1>
-<p>线段树会将一个非点区间（即长度大于$1$）利用<strong>递归</strong>的思想，<strong>二分</strong>为两个子区间来进行操作。<br>
+<p>线段树会将一个非点区间（即长度大于<span class="math inline">\(1\)</span>）利用<strong>递归</strong>的思想，<strong>二分</strong>为两个子区间来进行操作。<br>
 这样就会将一个线段划分转化成一个树形结构。</p>
 <p><img src="./Picture/seg-description.png" alt="线段树描述"  /><br>
 其中：紫色的<code>a[]</code>是原数组，红色的<code>d[]</code>是线段树：存储的区间的和，黄色范围代表管辖区间。</p>
@@ -391,7 +391,7 @@ if (!doNotTrack) {
 可根据题目要求，确定自己所需存储维护的信息。</p>
 <h1 id="实现方法">实现方法</h1>
 <h2 id="提前的宏定义">提前的宏定义</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#define NOW_Node node[index]		</span><span class="c1">//代表当前节点
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#define NOW_Node node[index]		</span><span class="c1">//代表当前节点
 </span><span class="c1"></span><span class="cp">#define NOW_LSon node[index].sonL	</span><span class="c1">//代表当前节点左儿子下标
 </span><span class="c1"></span><span class="cp">#define NOW_RSon node[index].sonR	</span><span class="c1">//代表当前节点右儿子下标
 </span></code></pre></div><h2 id="0x00-建树">0x00 建树</h2>
@@ -399,43 +399,43 @@ if (!doNotTrack) {
 <p>根据上图可发现几个要点：</p>
 <ul>
 <li>每一个节点<code>i</code>的左儿子下标是<code>2i</code>，右儿子下标是<code>2i+1</code>。</li>
-<li>记：<code>i</code>管辖的区间为$[s,t]$。<br>
-令：$mid=\frac{s+t}{2}$。<br>
-则左儿子<code>2i</code>管辖区间为$[s,mid]$，右儿子<code>2i+1</code>管辖区间为$[mid+1,t]$。</li>
+<li>记：<code>i</code>管辖的区间为<span class="math inline">\([s,t]\)</span>。<br>
+令：<span class="math inline">\(mid=\frac{s+t}{2}\)</span>。<br>
+则左儿子<code>2i</code>管辖区间为<span class="math inline">\([s,mid]\)</span>，右儿子<code>2i+1</code>管辖区间为<span class="math inline">\([mid+1,t]\)</span>。</li>
 </ul>
 <h3 id="实现方法-1">实现方法</h3>
 <p>之前已经介绍了递归的思想，那么只需要确定递归边界。<br>
-由上图很容易看出，递归边界就是当长度为$1$的点。</p>
-<p>记：当前点为<code>node[index]</code>，代表区间为$[l,r]$。原数组为<code>arr[]</code><br>
-当$l=r$的时候，说明到达递归边界，这个时候的值直接为对应区间的值。<br>
+由上图很容易看出，递归边界就是当长度为<span class="math inline">\(1\)</span>的点。</p>
+<p>记：当前点为<code>node[index]</code>，代表区间为<span class="math inline">\([l,r]\)</span>。原数组为<code>arr[]</code><br>
+当<span class="math inline">\(l=r\)</span>的时候，说明到达递归边界，这个时候的值直接为对应区间的值。<br>
 也就是<code>node[index] = arr[r]</code></p>
-<p>因为二分的操作使得递归的深度不会大于$log(n)$，故完全可以采用递归的方式简化代码，不用担心递归的栈溢出等缺点。</p>
+<p>因为二分的操作使得递归的深度不会大于<span class="math inline">\(log(n)\)</span>，故完全可以采用递归的方式简化代码，不用担心递归的栈溢出等缺点。</p>
 <h3 id="储存方法">储存方法</h3>
 <h4 id="方法1">方法1、</h4>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span>
 <span class="p">{</span>
 	<span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">len</span><span class="p">;</span>	<span class="c1">//val代表储存的值，L、R分别代表区间左、右端点，mid代表区间中点，len代表区间长度
 </span><span class="c1"></span><span class="p">}</span><span class="n">node</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
 </code></pre></div><p>直接用左儿子下标为<code>2i</code>，右儿子下标为<code>2i+1</code>转递。<br>
 函数为<code>build(int index, int l, int r)</code>，建左儿子用则为<code>build(2*i, l, r)</code>。</p>
 <ul>
-<li>空间范围：<strong>反正直接把长度设置为$4n$。</strong><br>
-因为该线段树深度为$\lceil log(n) \rceil$，又因为为完全二叉树，总节点个数为$2^{\lceil log(n) \rceil +1}-1$。但建树的时候最后一层不一定从左往右建，也可能很右边会有一个，所以要预留出所有的最后一层的节点位置，即开$4N$。<br>
+<li>空间范围：<strong>反正直接把长度设置为<span class="math inline">\(4n\)</span>。</strong><br>
+因为该线段树深度为<span class="math inline">\(\lceil log(n) \rceil\)</span>，又因为为完全二叉树，总节点个数为<span class="math inline">\(2^{\lceil log(n) \rceil +1}-1\)</span>。但建树的时候最后一层不一定从左往右建，也可能很右边会有一个，所以要预留出所有的最后一层的节点位置，即开<span class="math inline">\(4N\)</span>。<br>
 具体分析见<a class="link" href="https://zhuanlan.zhihu.com/p/65943900"  target="_blank" rel="noopener"
     >关于线段树的数组到底是开2N还是4N</a>。</li>
 </ul>
 <h4 id="方法2">方法2、</h4>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span>
 <span class="p">{</span>
 	<span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">sonL</span><span class="p">,</span> <span class="n">sonR</span><span class="p">;</span>	<span class="c1">//多了个sonL和sonR，代表左儿子的index和右儿子的index
 </span><span class="c1"></span><span class="p">}</span><span class="n">node</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
 </code></pre></div><p><code>build()</code>的时候需要多一个计数器变量<code>cnt</code>，记录总过有多少节点。<br>
 函数为<code>build(int &amp;index, int l, int r)</code>。其中传引用会在伪代码中解释。<br>
-这里多存了个左儿子和右儿子的下标，使得可以保证从按顺序建，不会出现空间浪费，于是可以开$2N$。<br>
+这里多存了个左儿子和右儿子的下标，使得可以保证从按顺序建，不会出现空间浪费，于是可以开<span class="math inline">\(2N\)</span>。<br>
 相较于方法2空间消耗会少一点。</p>
 <p>以下采用“方法2”的方式来储存。</p>
 <h3 id="伪代码">伪代码</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeSegment</span><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeSegment</span><span class="p">{</span>
 	<span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//记录node节点的数量，便可实现按顺序建树
 </span><span class="c1"></span>
 	<span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
@@ -464,7 +464,7 @@ if (!doNotTrack) {
 	<span class="p">}</span>
 <span class="p">}</span><span class="n">Segment</span><span class="p">;</span>	<span class="c1">//直接用个总结构体，便于模板化。//其实就是个个人癖好orz……
 </span></code></pre></div><h2 id="0x01-区间查询">0x01 区间查询</h2>
-<p>对区间进行值的条件查询，如对区间$[L,R]$求总和，求区间最值等操作。</p>
+<p>对区间进行值的条件查询，如对区间<span class="math inline">\([L,R]\)</span>求总和，求区间最值等操作。</p>
 <h3 id="实现方法-2">实现方法</h3>
 <p>将要查询的区间，拆成几个在<strong>其范围里的节点</strong>的区间进行求解计算。（类似于分块思想）</p>
 <ul>
@@ -483,7 +483,7 @@ if (!doNotTrack) {
 </ul>
 <p>【直接给代码吧ヾ(•ω•`)o……</p>
 <h3 id="伪代码-1">伪代码</h3>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_R</span><span class="p">)</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_R</span><span class="p">)</span>
 <span class="p">{</span>
 	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">q_R</span><span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span><span class="p">)</span> <span class="k">return</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span><span class="p">;</span>
 	<span class="c1">//当前区间直接在查询区间里，直接返回值
@@ -497,23 +497,23 @@ if (!doNotTrack) {
 </span><span class="c1"></span>	<span class="k">return</span> <span class="n">tmpAns</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div><h2 id="0x02-区间修改">0x02 区间修改</h2>
-<p>对区间进行值的修改，如区间$[L,R]$加上或乘上一个数。</p>
+<p>对区间进行值的修改，如区间<span class="math inline">\([L,R]\)</span>加上或乘上一个数。</p>
 <h3 id="最初实现方法">(最初)实现方法</h3>
 <p>跟查询的方法一样，找到对应区间后直接修改值。</p>
 <p>但注意，如果不是长度为1的区间，值的修改要<strong>乘上对应修改区间的长度</strong>。</p>
 <blockquote>
-<p>比如对$[1,2]$这个区间加上$2$。</p>
-<p>$[1,1]$和$[2,2]$这两个子区间会加$2$。<br>
-但$[1,2]$则个大的区间应该加的就是$4$。</p>
-<p>同理，$[1,4]$这个大区间就该加$8$了。</p>
+<p>比如对<span class="math inline">\([1,2]\)</span>这个区间加上<span class="math inline">\(2\)</span>。</p>
+<p><span class="math inline">\([1,1]\)</span>和<span class="math inline">\([2,2]\)</span>这两个子区间会加<span class="math inline">\(2\)</span>。<br>
+但<span class="math inline">\([1,2]\)</span>则个大的区间应该加的就是<span class="math inline">\(4\)</span>。</p>
+<p>同理，<span class="math inline">\([1,4]\)</span>这个大区间就该加<span class="math inline">\(8\)</span>了。</p>
 </blockquote>
 <h3 id="缺点分析">缺点分析</h3>
 <p>【诶我说停停，先别着急写啊，不要啪的一下就写起来了很快啊……</p>
 <p>如果碰上这样的情况：</p>
 <blockquote>
 <ol>
-<li>对区间$[1,10000]$加上$10000$次$233$。</li>
-<li>查询区间$[23333,23333]$的值。</li>
+<li>对区间<span class="math inline">\([1,10000]\)</span>加上<span class="math inline">\(10000\)</span>次<span class="math inline">\(233\)</span>。</li>
+<li>查询区间<span class="math inline">\([23333,23333]\)</span>的值。</li>
 </ol>
 </blockquote>
 <p>怎么样，有没有觉得自己被耍了！</p>
@@ -537,7 +537,7 @@ if (!doNotTrack) {
 <ul>
 <li>区间修改：</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
 	<span class="kt">int</span> <span class="p">...,</span> <span class="n">lazy</span><span class="p">;</span>	<span class="c1">//这里多定义个lazy，用来存偷懒没修改的值
 </span><span class="c1"></span><span class="p">}</span>
 
@@ -560,7 +560,7 @@ if (!doNotTrack) {
 </code></pre></div><ul>
 <li>有lazy的区间查询：</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
 
 	<span class="p">...</span>
 
@@ -589,7 +589,7 @@ if (!doNotTrack) {
 <h1 id="最终代码">最终代码</h1>
 <p>洛谷P3372 <a class="link" href="https://www.luogu.com.cn/problem/P3372"  target="_blank" rel="noopener"
     >【模板】线段树 1</a></p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="cp">#define N 100000
 </span><span class="cp"></span>
@@ -738,27 +738,22 @@ if (!doNotTrack) {
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -800,7 +795,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -822,7 +817,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -866,7 +861,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-template/56669571_p0.06c35c2723200628f0b52947c29bf54b_hu2d9efed420e5413c9e9ff3384c8a765c_856728_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-template/56669571_p0.06c35c2723200628f0b52947c29bf54b_hu2d9efed420e5413c9e9ff3384c8a765c_856728_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

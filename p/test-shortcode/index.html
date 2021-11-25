@@ -354,11 +354,11 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>内嵌Shortcode</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="kd">type</span> <span class="nx">content</span> <span class="p">&gt;}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="kd">type</span> <span class="nx">content</span> <span class="p">&gt;}}</span>
 </code></pre></div></li>
 <li>
 <p>Shortcode块</p>
-<div class="highlight"><pre class="chroma"><code class="language-py" data-lang="py"><span class="p">{{</span><span class="o">&lt;</span> <span class="nb">type</span> <span class="o">&gt;</span><span class="p">}}</span> 
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="p">{{</span><span class="o">&lt;</span> <span class="nb">type</span> <span class="o">&gt;</span><span class="p">}}</span> 
 <span class="n">content</span>
 <span class="p">{{</span><span class="o">&lt;</span> \<span class="nb">type</span> <span class="o">&gt;</span><span class="p">}}</span>
 </code></pre></div></li>
@@ -368,11 +368,11 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>内容解析为HTML</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="o">...</span> <span class="p">&gt;}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="o">...</span> <span class="p">&gt;}}</span>
 </code></pre></div></li>
 <li>
 <p>内容解析为Markdown</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{</span><span class="o">%</span> <span class="o">...</span> <span class="o">%</span><span class="p">}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{</span><span class="o">%</span> <span class="o">...</span> <span class="o">%</span><span class="p">}}</span>
 </code></pre></div><p><em>一般这个不常用，个人自写的所有Shotrcode都是基于<code>&lt;&gt;</code>来处理的……</em></p>
 </li>
 </ol>
@@ -393,7 +393,7 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>使用方法：</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">bilibili</span> <span class="nx">BV1754y1R7Nd</span> <span class="p">&gt;}}</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">bilibili</span> <span class="nx">BV1754y1R7Nd</span> <span class="p">&gt;}}</span>
 </code></pre></div></li>
 </ul>
 <p>默认为BV号。</p>
@@ -447,27 +447,22 @@ if (!doNotTrack) {
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -487,7 +482,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/test-shortcode-extend/Yande-312231.c3018c552c2021ee965eebb196255ee1_hub297abc0e6f09948596897695fbb9840_1998731_250x150_fill_box_smart1_2.png" 
+                <img src="/p/test-shortcode-extend/Yande-312231.c3018c552c2021ee965eebb196255ee1_hub297abc0e6f09948596897695fbb9840_1998731_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -505,11 +500,33 @@ if (!doNotTrack) {
                 
                     
 <article class="has-image">
+    <a href="/p/test-latex/">
+        
+        
+            <div class="article-image">
+                <img src="/p/test-latex/Yande-331204.8b63ec764bac656e5fdc6d39dad690c2_hu78842091091c5acfc10d1d28fbf3f867_2198432_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="test-latex" 
+                        data-hash="md5-i2PsdkusZW5f3G052taQwg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">LaTeX相关……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
     <a href="/p/test-toc/">
         
         
             <div class="article-image">
-                <img src="/p/test-toc/66488487_p0.ad3ac9c568972143af7eff0869d35247_hu927bcdeee8a2673c7ad35386c9152871_481055_250x150_fill_box_smart1_2.png" 
+                <img src="/p/test-toc/66488487_p0.ad3ac9c568972143af7eff0869d35247_hu927bcdeee8a2673c7ad35386c9152871_481055_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -565,28 +582,6 @@ if (!doNotTrack) {
 
         <div class="article-details">
             <h2 class="article-title">NoteBlock测试……</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/test-player/">
-        
-        
-            <div class="article-image">
-                <img src="/p/test-player/84038692_p0.e570ef7d9fa2f2f0a68d40974bab4049_hu3b9cb195d3b981b9da74048e9a17f8de_395719_250x150_fill_q75_box_smart1.jpg" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy" 
-                        data-key="test-player" 
-                        data-hash="md5-5XDvfZ&#43;i8vCmjUCXS6tASQ==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">音乐播放器测试……</h2>
         </div>
     </a>
 </article>

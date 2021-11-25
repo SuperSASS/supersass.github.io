@@ -223,61 +223,8 @@ if (!doNotTrack) {
         <li><a href="#题目大意">题目大意</a>
           <ul>
             <li><a href="#问题描述">问题描述</a></li>
-            <li><a href="#读入格式">读入格式</a></li>
-            <li><a href="#输出格式">输出格式</a></li>
-            <li><a href="#数据范围">数据范围</a></li>
           </ul>
         </li>
-        <li><a href="#分析">分析</a></li>
-        <li><a href="#代码">代码</a></li>
-      </ul>
-    </li>
-    <li><a href="#b-max-and-mex">B. Max and Mex</a>
-      <ul>
-        <li><a href="#题目大意-1">题目大意</a>
-          <ul>
-            <li><a href="#问题描述-1">问题描述</a></li>
-            <li><a href="#读入格式-1">读入格式</a></li>
-            <li><a href="#输出格式-1">输出格式</a></li>
-            <li><a href="#数据范围-1">数据范围</a></li>
-          </ul>
-        </li>
-        <li><a href="#分析-1">分析</a></li>
-        <li><a href="#代码-1">代码</a></li>
-      </ul>
-    </li>
-    <li><a href="#c-diamond-miner">C. Diamond Miner</a>
-      <ul>
-        <li><a href="#题目大意-2">题目大意</a>
-          <ul>
-            <li><a href="#问题描述-2">问题描述</a></li>
-            <li><a href="#读入格式-2">读入格式</a></li>
-            <li><a href="#输出格式-2">输出格式</a></li>
-            <li><a href="#数据范围-2">数据范围</a></li>
-          </ul>
-        </li>
-        <li><a href="#分析-2">分析</a></li>
-        <li><a href="#代码-2">代码</a></li>
-      </ul>
-    </li>
-    <li><a href="#d-lets-go-hiking">D. Let&rsquo;s Go Hiking</a>
-      <ul>
-        <li><a href="#题目大意-3">题目大意</a>
-          <ul>
-            <li><a href="#问题描述-3">问题描述</a></li>
-            <li><a href="#读入格式-3">读入格式</a></li>
-            <li><a href="#输出格式-3">输出格式</a></li>
-            <li><a href="#数据范围-3">数据范围</a></li>
-            <li><a href="#样例数据">样例数据</a>
-              <ul>
-                <li><a href="#第一组">第一组</a></li>
-                <li><a href="#第二组">第二组</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li><a href="#分析-3">分析</a></li>
-        <li><a href="#代码-3">代码</a></li>
       </ul>
     </li>
   </ul>
@@ -330,8 +277,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-writeup-2021_3_10/">
-                <img src="/p/acm-writeup-2021_3_10/Yande-275846_hu5d6f7221a57c96d4dc2f53997133279c_589479_800x0_resize_box_2.png"
-                        srcset="/p/acm-writeup-2021_3_10/Yande-275846_hu5d6f7221a57c96d4dc2f53997133279c_589479_800x0_resize_box_2.png 800w, /p/acm-writeup-2021_3_10/Yande-275846_hu5d6f7221a57c96d4dc2f53997133279c_589479_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-writeup-2021_3_10/Yande-275846_hu5d6f7221a57c96d4dc2f53997133279c_589479_800x0_resize_box_3.png"
+                        srcset="/p/acm-writeup-2021_3_10/Yande-275846_hu5d6f7221a57c96d4dc2f53997133279c_589479_800x0_resize_box_3.png 800w, /p/acm-writeup-2021_3_10/Yande-275846_hu5d6f7221a57c96d4dc2f53997133279c_589479_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="552" 
                         loading="lazy"
@@ -385,7 +332,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：6010</div>
+            <div class="char">文章字数：5881</div>
             <div class="time">预计阅读时长： <time>12</time> 分钟</div>
         </div>
     </footer>
@@ -421,62 +368,79 @@ if (!doNotTrack) {
 </ul>
 <h2 id="题目大意">题目大意</h2>
 <h3 id="问题描述">问题描述</h3>
-<p>给定一个字符串$s$和一个数$k$，<br>
-判断字符串是否存在$k+1$个<strong>非空子串</strong>，满足：
-$$s=a_1+a_2+\cdots+a_k+a_{k+1}+R(a_k)+R(a_{k-1})+\cdots+R(a_1)$$</p>
-<p>其中$R(a_i)$代表倒置字符串$a_i$，<br>
-如$R(nico)=ocin$。</p>
-<h3 id="读入格式">读入格式</h3>
-<p>$T$组数据。</p>
-<p>每组第一行为字符串长度$n$和$k$，<br>
-第二行为长度为$n$的字符串$s$。</p>
-<h3 id="输出格式">输出格式</h3>
-<p>如满足，输出一行<code>YES</code>，<br>
-如不满足，输出一行<code>NO</code>。</p>
-<h3 id="数据范围">数据范围</h3>
-<p>$1\le t\le 100$</p>
-<p>$1 \le n \le 100$<br>
-$0 \le k \le \lfloor \frac{n}{2} \rfloor$</p>
-<h2 id="分析">分析</h2>
-<p>先假设所有子串$a_i$的长度均为$1$，<br>
-则$R(a_i)=a_i$。</p>
-<p>条件就变成了$s=a_1+a_2+\cdots+a_k+a_{k+1}+a_k+\cdots+a_2+a_1$，<br>
-也就是$s$要为<b>回文字符串</b>。</p>
-<p>对于$a_{k+1}$，由于条件中只有一个，<br>
-故<b>这个子串可以为任意字符串</b>，<br>
-所以只需要字符串$s$<b>两边有回文字符</b>即可。</p>
-<blockquote>
-<p>如：<code>abc iowfen cba</code>（为了区分$a_{k+1}$和其两边，用空格隔开）<br>
-其中<code>abc</code>便为回文字符，有三个。</p>
-</blockquote>
-<p>对于$a_1\sim a_k$中的一子串$a_i$，如长度为$n$，<br>
-则其可以拆成$n$个长度为$1$的子串，也使得条件满足。</p>
-<blockquote>
-<p>如上例中<code>abciowfencba</code></p>
-<p>可以为$a_1=abc$、$a_2=iowfen$，<br>
-满足$s=a_1+a_2+R(a_1)$，</p>
-<p>也可以拆成$a_1=a$、$a_2=b$、$a_3=c$、$a_4=iowfen$，<br>
-满足$s=a_1+a_2+a_3+a_4+R(a_3)+R(a_2)+R(a_1)$</p>
-</blockquote>
-<p>即如果两边有$cnt$个回文字符，<br>
-则可以通过组合，变为$1\sim l$个满足条件的$a_i$。</p>
-<p>综上：<br>
-即从字符串$s$<strong>两边开始找有多少个回文字符</strong>，记为$cnt$个，<br>
-如果$k\le cnt$，则满足条件输出<code>YES</code>，否则输出<code>NO</code>。</p>
-<hr>
+<p>给定一个字符串<span class="math inline">\(s\)</span>和一个数<span class="math inline">\(k\)</span>，<br>
+判断字符串是否存在<span class="math inline">\(k+1\)</span>个<strong>非空子串</strong>，满足：</p>
+<p><span class="math display">\[
+其中$R(a_i)$代表倒置字符串$a_i$，  
+如$R(nico)=ocin$。
+
+### 读入格式
+
+$T$组数据。
+
+每组第一行为字符串长度$n$和$k$，  
+第二行为长度为$n$的字符串$s$。
+
+### 输出格式
+
+如满足，输出一行`YES`，  
+如不满足，输出一行`NO`。
+
+### 数据范围
+
+$1\le t\le 100$  
+
+$1 \le n \le 100$  
+$0 \le k \le \lfloor \frac{n}{2} \rfloor$
+
+## 分析
+
+先假设所有子串$a_i$的长度均为$1$，  
+则$R(a_i)=a_i$。
+
+条件就变成了$s=a_1+a_2+\cdots+a_k+a_{k+1}+a_k+\cdots+a_2+a_1$，  
+也就是$s$要为<b>回文字符串</b>。
+
+对于$a_{k+1}$，由于条件中只有一个，  
+故<b>这个子串可以为任意字符串</b>，  
+所以只需要字符串$s$<b>两边有回文字符</b>即可。
+> 如：`abc iowfen cba`（为了区分$a_{k+1}$和其两边，用空格隔开）  
+> 其中`abc`便为回文字符，有三个。
+
+对于$a_1\sim a_k$中的一子串$a_i$，如长度为$n$，  
+则其可以拆成$n$个长度为$1$的子串，也使得条件满足。
+> 如上例中`abciowfencba`
+>
+> 可以为$a_1=abc$、$a_2=iowfen$，  
+> 满足$s=a_1+a_2+R(a_1)$，  
+>
+> 也可以拆成$a_1=a$、$a_2=b$、$a_3=c$、$a_4=iowfen$，  
+> 满足$s=a_1+a_2+a_3+a_4+R(a_3)+R(a_2)+R(a_1)$
+
+即如果两边有$cnt$个回文字符，  
+则可以通过组合，变为$1\sim l$个满足条件的$a_i$。
+
+综上：  
+即从字符串$s$**两边开始找有多少个回文字符**，记为$cnt$个，  
+如果$k\le cnt$，则满足条件输出`YES`，否则输出`NO`。
+
+---
+
 
 
 <div class="snote warning ">
 	<div class="snote-content">
 		<p><p>需要注意的是：</p>
-<p>$a_{k+1}$必须存在（非空），<br>
+<p><span class="math inline">\(a_{k+1}\)</span>必须存在（非空），<br>
 所以判断范围为<code>(n - 1) / 2 - 1</code>。</p>
-<p>也就是对于奇数长度字符串<code>abcba</code>，判断范围为$0\sim1$（字符串下标从$0$开始），<br>
-对于偶数长度字符串<code>abccba</code>，判断范围也为$0\sim1$。</p>
+<p>也就是对于奇数长度字符串<code>abcba</code>，判断范围为<span class="math inline">\(0\sim1\)</span>（字符串下标从<span class="math inline">\(0\)</span>开始），<br>
+对于偶数长度字符串<code>abccba</code>，判断范围也为<span class="math inline">\(0\sim1\)</span>。</p>
 </p>
 	</div>
 </div>
-<h2 id="代码">代码</h2>
+
+## 代码
+
 <div class="snote link green">
 	<div class="snote-content">
 		<p><a class="link" href="https://paste.ubuntu.com/p/Bm2fV9pg3Q/"  target="_blank" rel="noopener"
@@ -485,9 +449,10 @@ $0 \le k \le \lfloor \frac{n}{2} \rfloor$</p>
 </div>
 
 
+
 <details class="sc-details" >
 	<summary>代码</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="cp">#define ALL(NAME_i, BEGIN, TO) \
 </span><span class="cp">    int NAME_i = BEGIN;        \
 </span><span class="cp">    NAME_i &lt;= TO;              \
@@ -524,97 +489,128 @@ $0 \le k \le \lfloor \frac{n}{2} \rfloor$</p>
 <span class="p">}</span>
 </code></pre></div></div>
 </details>
-<h1 id="b-max-and-mex">B. Max and Mex</h1>
+
+# B. Max and Mex
+
 <div class="snote done ">
 	<div class="snote-content">
 		<p>比赛状态：AC</p>
 	</div>
 </div>
-<ul>
-<li><a class="link" href="https://codeforces.com/contest/1496/problem/B"  target="_blank" rel="noopener"
-    >题目链接</a></li>
-</ul>
-<h2 id="题目大意-1">题目大意</h2>
-<h3 id="问题描述-1">问题描述</h3>
-<p>对于一个集合$S$，其包含$n$个<strong>不同元素</strong>$a_i$。</p>
-<p>定义一次操作，为向该集合$S$中添加元素$\lceil\frac{a+b}{2}\rceil$，<br>
-其中$a=mex(S)$、$b=max(S)$。</p>
-<p>对于函数$mex(S)$，其意义为：$S$集合中<strong>最小的不存在的非负数</strong>。<br>
-对于函数$max(S)$，其意义为：$S$集合中<strong>最大的元素</strong>。</p>
-<blockquote>
-<p>e.g.</p>
-<p>$mex(\{1,4,0,2\})=3$<br>
-$mex(\{3,5,6,7\})=0$</p>
-<p>$max(\{2,5,1\})=5$</p>
-</blockquote>
-<p>如果该操作添加的元素$\lceil\frac{a+b}{2}\rceil$已存在于集合$S$中，<br>
-则会重复添加。</p>
-<blockquote>
-<p>e.g.</p>
-<p>$S=\{1,3,4,6\}$</p>
-<p>如该操作要添加的元素为$4$，<br>
-则新集合$S'=\{1,3,4,4,6\}$。</p>
-</blockquote>
-<hr>
-<p>现在要求对某集合$S$进行$k$次操作，<br>
-问：$k$次操作后，集合<strong>有多少个不同元素</strong>。</p>
-<h3 id="读入格式-1">读入格式</h3>
-<p>$T$组数据。</p>
-<p>每组第一行为集合初始元素个数$n$和操作次数$k$，<br>
-第二行为集合$S$的$n$个元素$a_i$。</p>
-<h3 id="输出格式-1">输出格式</h3>
-<p>输出$k$次操作后集合$S$的不同元素个数。</p>
-<h3 id="数据范围-1">数据范围</h3>
-<p>$1\le t\le 100$</p>
-<p>$1 \le n \le 10^5$<br>
-$0 \le k \le 10^9$<br>
-$0 \le a_i \le 10^9$</p>
-<p>保证$n$总和不超过$10^5$。</p>
-<h2 id="分析-1">分析</h2>
-<p>易知道：<br>
-$a=mex(S)$结果为集合中不存在的元素，<br>
-$b=max(S)$结果为集合中存在的元素。<br>
-所以一定满足$a \ne b$。</p>
-<p>记：添加的元素$\lceil\frac{a+b}{2}\rceil$为$x$，<br>
-当$a &lt; b$时，则$a &lt; x \le b$（且仅当$a=b-1$时，$x=b$）</p>
-<p>因此向$S$添加$x$过后，是不会更改$mex(S)$和$max(S)$的值的，<br>
-所以经过一次操作后，下一次操作添加的元素仍为$x$。</p>
-<p>也就是说：<br>
-<strong>$a &lt; b$时</strong>，<br>
-<strong>若$x \not∈ S$</strong>，则$k$此操作后只会添加$1$个元素，<strong>答案为$n+1$</strong>。（并且注意$k\ne0$）<br>
-<strong>若$x ∈ S$或者$k=0$</strong>，$k$此操作均不会向$S$添加新的不同元素，<strong>答案为$n$</strong>。</p>
-<hr>
-<p>但仍存在$a&gt;b$的情况。</p>
-<blockquote>
-<p>e.g.</p>
-<p>$S=\{0,1,2,3\}$</p>
-<p>则$a=mex(S)=4$，<br>
-$b=max(S)=3$。</p>
-</blockquote>
-<p>且仅能是这种元素从$0$到$n-1$均存在的集合。<br>
-如中间任意存在一处空缺，则会导致$mex(S)&lt;max(S)$。</p>
-<p>那么这个时候$x=a$，则会向$S$中添加新元素$a$，<br>
-一次操作过后，新的$a,b$则会变化：<br>
-$a'=a$、$b'=a$，<br>
-则又会添加新的元素。</p>
-<blockquote>
-<p>e.g.</p>
-<p>上例中：添加了$x=4$后，<br>
-$S'=\{0,1,2,3,4\}$。</p>
-<p>则新的$a'=5$、$b'=4$，<br>
-$x'=5$。</p>
-<p>$S''=\{0,1,2,3,4,5\}$</p>
-</blockquote>
-<p><strong>所以对于这种情况($a&gt;b$)，最终$S$中不同元素为$n+k$个。</strong></p>
-<hr>
-<p>综上：
-$$
-ans=
+
+* [题目链接](https://codeforces.com/contest/1496/problem/B)
+
+## 题目大意
+
+### 问题描述
+
+对于一个集合$S$，其包含$n$个**不同元素**$a_i$。
+
+定义一次操作，为向该集合$S$中添加元素$\lceil\frac{a+b}{2}\rceil$，  
+其中$a=mex(S)$、$b=max(S)$。
+
+对于函数$mex(S)$，其意义为：$S$集合中**最小的不存在的非负数**。  
+对于函数$max(S)$，其意义为：$S$集合中**最大的元素**。
+> e.g.
+>
+> $mex(\\{1,4,0,2\\})=3$  
+> $mex(\\{3,5,6,7\\})=0$
+>
+> $max(\\{2,5,1\\})=5$
+
+如果该操作添加的元素$\lceil\frac{a+b}{2}\rceil$已存在于集合$S$中，  
+则会重复添加。
+> e.g.
+>
+> $S=\\{1,3,4,6\\}$
+>
+> 如该操作要添加的元素为$4$，  
+> 则新集合$S'=\\{1,3,4,4,6\\}$。
+
+---
+
+现在要求对某集合$S$进行$k$次操作，  
+问：$k$次操作后，集合**有多少个不同元素**。
+
+### 读入格式
+
+$T$组数据。
+
+每组第一行为集合初始元素个数$n$和操作次数$k$，  
+第二行为集合$S$的$n$个元素$a_i$。
+
+### 输出格式
+
+输出$k$次操作后集合$S$的不同元素个数。
+
+### 数据范围
+
+$1\le t\le 100$  
+
+$1 \le n \le 10^5$  
+$0 \le k \le 10^9$  
+$0 \le a_i \le 10^9$
+
+保证$n$总和不超过$10^5$。
+
+## 分析
+
+易知道：  
+$a=mex(S)$结果为集合中不存在的元素，  
+$b=max(S)$结果为集合中存在的元素。  
+所以一定满足$a \ne b$。
+
+记：添加的元素$\lceil\frac{a+b}{2}\rceil$为$x$，  
+当$a < b$时，则$a < x \le b$（且仅当$a=b-1$时，$x=b$）
+
+因此向$S$添加$x$过后，是不会更改$mex(S)$和$max(S)$的值的，  
+所以经过一次操作后，下一次操作添加的元素仍为$x$。
+
+也就是说：  
+**$a < b$时**，  
+**若$x \not∈ S$**，则$k$此操作后只会添加$1$个元素，**答案为$n+1$**。（并且注意$k\ne0$）  
+**若$x ∈ S$或者$k=0$**，$k$此操作均不会向$S$添加新的不同元素，**答案为$n$**。
+
+---
+
+但仍存在$a>b$的情况。
+> e.g.
+>
+> $S=\\{0,1,2,3\\}$
+>
+> 则$a=mex(S)=4$，  
+> $b=max(S)=3$。
+
+且仅能是这种元素从$0$到$n-1$均存在的集合。  
+如中间任意存在一处空缺，则会导致$mex(S)<max(S)$。
+
+那么这个时候$x=a$，则会向$S$中添加新元素$a$，  
+一次操作过后，新的$a,b$则会变化：  
+$a'=a$、$b'=a$，  
+则又会添加新的元素。
+> e.g.
+>
+> 上例中：添加了$x=4$后，  
+> $S'=\\{0,1,2,3,4\\}$。
+>
+> 则新的$a'=5$、$b'=4$，  
+> $x'=5$。
+>
+> $S''=\\{0,1,2,3,4,5\\}$
+
+**所以对于这种情况($a>b$)，最终$S$中不同元素为$n+k$个。**
+
+---
+
+综上：
+\]</span></p>
+<p>ans=
 \begin{cases}
 n+1 &amp; (a&lt;b &amp; and &amp; (k\ne0 &amp; and &amp; x\not∈S)) \\ n &amp; (a&lt;b &amp; and &amp; (k=0 &amp; or &amp; x∈S)) \\ n+k &amp; (a&gt;b)
-\end{cases}
-$$</p>
-<h2 id="代码-1">代码</h2>
+\end{cases}</p>
+<p><span class="math display">\[
+## 代码
+
 <div class="snote link green">
 	<div class="snote-content">
 		<p><a class="link" href="https://paste.ubuntu.com/p/rhKm5tjY2m/"  target="_blank" rel="noopener"
@@ -623,9 +619,10 @@ $$</p>
 </div>
 
 
+
 <details class="sc-details" >
 	<summary>代码</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="cp">#define ALL(NAME_i, BEGIN, TO) \
 </span><span class="cp">    int NAME_i = BEGIN;        \
 </span><span class="cp">    NAME_i &lt;= TO;              \
@@ -679,65 +676,93 @@ $$</p>
 <span class="p">}</span>
 </code></pre></div></div>
 </details>
-<h1 id="c-diamond-miner">C. Diamond Miner</h1>
+
+# C. Diamond Miner
+
 <div class="snote error ">
 	<div class="snote-content">
 		<p>比赛状态：未完成（看过题目未在时间内做出）</p>
 	</div>
 </div>
-<ul>
-<li><a class="link" href="https://codeforces.com/contest/1496/problem/C"  target="_blank" rel="noopener"
-    >题目链接</a></li>
-</ul>
-<h2 id="题目大意-2">题目大意</h2>
-<h3 id="问题描述-2">问题描述</h3>
-<p>平面直角坐标系$xOy$中，<br>
-有$n$个矿工，均在$y$轴上，<br>
-有$n$处矿物，均在$x$轴上。</p>
-<p>其中一位矿工只能挖一处矿物，一处矿物只能被一个矿工挖，<br>
-即$x$和$y$轴上的点<strong>要一一配对</strong>。</p>
-<p>若每个矿工采矿代价是两点间距离$\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$，<br>
-问：<strong>如何安排，使得总代价最小</strong>，并输出最小代价。</p>
-<h3 id="读入格式-2">读入格式</h3>
-<p>$T$组数据。</p>
-<p>每组第一行为矿工和矿物个数$n$，<br>
-接下来$2n$行为矿工或矿物的坐标$x,y$（注意<strong>是无序的</strong>，不一定先全为矿工）。</p>
-<h3 id="输出格式-2">输出格式</h3>
-<p>输出每组数据的最小总代价，精确到$15$位小数。</p>
-<h3 id="数据范围-2">数据范围</h3>
-<p>$1\le t\le 10$</p>
-<p>$1 \le n \le 10^5$<br>
-$-10^8 \le x_i \le 10^8$<br>
-$-10^8 \le y_u \le 10^8$</p>
-<p>保证$n$总和不超过$10^5$。</p>
-<h2 id="分析-2">分析</h2>
-<p>采用贪心思想中的<strong>排序型贪心</strong>。</p>
-<p>对于任意两个矿工，其纵坐标分别为$y_a,y_b$，<br>
-假设现在他们分别匹配到横坐标为$x_a,x_b$的两处矿。</p>
-<p>那么现在的代价为$\sqrt{x_a^2+y_a^2}+\sqrt{x_b^2+y_b^2}$。</p>
-<p>如果两个矿工匹配的矿对换，<br>
-则代价变为$\sqrt{x_b^2+y_a^2}+\sqrt{x_a^2+y_b^2}$。</p>
-<p>那么对换的条件就是：
-$$\sqrt{x_a^2+y_a^2}+\sqrt{x_b^2+y_b^2} &gt; \sqrt{x_b^2+y_a^2}+\sqrt{x_a^2+y_b^2}$$</p>
-<p>开始化简：</p>
-<p>$$2\sqrt{x_a^2+y_a^2}\sqrt{x_b^2+y_b^2} &gt; 2\sqrt{x_a^2+y_b^2}\sqrt{x_b^2+y_a^2}$$
-$$(x_a^2+y_a^2)(x_b^2+y_b^2) &gt; (x_a^2+y_b^2)(x_b^2+y_a^2)$$
-$$x_a^2y_b^2+x_b^2y_a^2 &gt; x_a^2y_a^2+x_b^2y_b^2$$</p>
-<p>移项消去，可得两条件：
-$$
-\begin{cases}
+
+* [题目链接](https://codeforces.com/contest/1496/problem/C)
+
+## 题目大意
+
+### 问题描述
+
+平面直角坐标系$xOy$中，  
+有$n$个矿工，均在$y$轴上，  
+有$n$处矿物，均在$x$轴上。
+
+其中一位矿工只能挖一处矿物，一处矿物只能被一个矿工挖，  
+即$x$和$y$轴上的点**要一一配对**。
+
+若每个矿工采矿代价是两点间距离$\sqrt{(x_1-x_2)^2+(y_1-y_2)^2}$，  
+问：**如何安排，使得总代价最小**，并输出最小代价。
+
+### 读入格式
+
+$T$组数据。
+
+每组第一行为矿工和矿物个数$n$，  
+接下来$2n$行为矿工或矿物的坐标$x,y$（注意**是无序的**，不一定先全为矿工）。
+
+### 输出格式
+
+输出每组数据的最小总代价，精确到$15$位小数。
+
+### 数据范围
+
+$1\le t\le 10$  
+
+$1 \le n \le 10^5$  
+$-10^8 \le x_i \le 10^8$  
+$-10^8 \le y_u \le 10^8$
+
+保证$n$总和不超过$10^5$。
+
+## 分析
+
+采用贪心思想中的**排序型贪心**。  
+
+对于任意两个矿工，其纵坐标分别为$y_a,y_b$，  
+假设现在他们分别匹配到横坐标为$x_a,x_b$的两处矿。
+
+那么现在的代价为$\sqrt{x_a^2+y_a^2}+\sqrt{x_b^2+y_b^2}$。
+
+如果两个矿工匹配的矿对换，  
+则代价变为$\sqrt{x_b^2+y_a^2}+\sqrt{x_a^2+y_b^2}$。
+
+那么对换的条件就是：
+$$\sqrt{x_a^2+y_a^2}+\sqrt{x_b^2+y_b^2} > \sqrt{x_b^2+y_a^2}+\sqrt{x_a^2+y_b^2}$$
+
+开始化简：
+
+$$2\sqrt{x_a^2+y_a^2}\sqrt{x_b^2+y_b^2} > 2\sqrt{x_a^2+y_b^2}\sqrt{x_b^2+y_a^2}$$
+$$(x_a^2+y_a^2)(x_b^2+y_b^2) > (x_a^2+y_b^2)(x_b^2+y_a^2)$$
+$$x_a^2y_b^2+x_b^2y_a^2 > x_a^2y_a^2+x_b^2y_b^2$$
+
+移项消去，可得两条件：
+\]</span></p>
+<p>\begin{cases}
 |x_a|&gt;|x_b| \\ |y_a|&lt;|y_b|
-\end{cases}
-$$</p>
-<p>于是这样排序后最终效果，<br>
-就是$|y_i|$越大的，匹配的$|x_i|$也就越大。</p>
-<hr>
-<p>也就是说，<br>
-我们可以直接<strong>对$x$和$y$数组进行排序</strong>，<br>
-条件分别为$|x_i|$大小和$|y_i|$大小。</p>
-<p>这样排序后，也就是<strong>越大$|y_i|$对应越大的$|x_i|$</strong>，<br>
-没要求输出方案，直接遍历计算结果即可。</p>
-<h2 id="代码-2">代码</h2>
+\end{cases}</p>
+<p><span class="math display">\[
+于是这样排序后最终效果，  
+就是$|y_i|$越大的，匹配的$|x_i|$也就越大。
+
+---
+
+也就是说，  
+我们可以直接**对$x$和$y$数组进行排序**，  
+条件分别为$|x_i|$大小和$|y_i|$大小。
+
+这样排序后，也就是**越大$|y_i|$对应越大的$|x_i|$**，  
+没要求输出方案，直接遍历计算结果即可。
+
+## 代码
+
 <div class="snote link green">
 	<div class="snote-content">
 		<p><a class="link" href="https://paste.ubuntu.com/p/42ZMkh8SCb/"  target="_blank" rel="noopener"
@@ -746,9 +771,10 @@ $$</p>
 </div>
 
 
+
 <details class="sc-details" >
 	<summary>代码</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="cp">#define ALL(NAME_i, BEGIN, TO) \
 </span><span class="cp">    int NAME_i = BEGIN;        \
 </span><span class="cp">    NAME_i &lt;= TO;              \
@@ -808,161 +834,185 @@ $$</p>
 <span class="p">}</span>
 </code></pre></div></div>
 </details>
-<h1 id="d-lets-go-hiking">D. Let&rsquo;s Go Hiking</h1>
+
+# D. Let's Go Hiking
+
 <div class="snote warning ">
 	<div class="snote-content">
 		<p>比赛状态：未完成（时间不足）</p>
 	</div>
 </div>
-<ul>
-<li><a class="link" href="https://codeforces.com/contest/1496/problem/D"  target="_blank" rel="noopener"
-    >题目链接</a></li>
-</ul>
-<h2 id="题目大意-3">题目大意</h2>
-<h3 id="问题描述-3">问题描述</h3>
-<p>Qingshan和Daniel玩游戏。</p>
-<p>存在任意$n$个数字$p_i$。<br>
-Qingshan为先手，其先选择这串数字的一个下标$x(1\le x \le n)$，<br>
-Daniel为后手，其再选择一个下标$y(1\le y\le n)$，并且$y \ne x$。</p>
-<p>游戏操作为回合制，两人具体操作为：</p>
-<ul>
-<li>
-<p>Qingshan的回合中，其需要选择一个新的$x'(1\le x' \le n)$，其要满足三个条件：</p>
-<ul>
-<li>在$x$附近。($|x'-x|=1$)</li>
-<li>不与$y$相同。($x' \ne y$)</li>
-<li><strong>要比原来的数小（下山）。</strong>($p_{x'}&lt;p_x$)</li>
-</ul>
-<p>当成功选择出$x'$，会把$x'$赋给当前的$x$($x=x'$)。</p>
-</li>
-<li>
-<p>Daniel的回合中，其需要选择一个新的$y'(1\le y' \le n)$，其要满足三个条件：</p>
-<ul>
-<li>在$y$附近。($|y'-y|=1$)</li>
-<li>不与$x$相同。($y' \ne x$)</li>
-<li><strong>要比原来的数大（上山）。</strong>($p_{y'}&gt;p_y$)</li>
-</ul>
-<p>当成功选择出$y'$，会把$y'$赋给当前的$y$($y=y'$)。</p>
-</li>
-</ul>
-<p>当某人没法找到新的$x$或$y$（无路可走）时，判这名玩家输。</p>
-<hr>
-<p>你的任务是：<br>
-判断这组数字$p$中，有多少个$p_i$，使得其作为Qingshan初始选择的$x$时，Qingshan必赢。</p>
-<h3 id="读入格式-3">读入格式</h3>
-<p>第一行为数字个数$n$，<br>
-第二行为$n$个数字$p_i$。</p>
-<h3 id="输出格式-3">输出格式</h3>
-<p>输出有多少种初始的$x$，使得Qingshan必赢。</p>
-<h3 id="数据范围-3">数据范围</h3>
-<p>$2 \le n \le 10^5$<br>
-$1 \le p_i \le n$</p>
-<p>保证$n$总和不超过$10^5$。</p>
-<h3 id="样例数据">样例数据</h3>
-<h4 id="第一组">第一组</h4>
+
+* [题目链接](https://codeforces.com/contest/1496/problem/D)
+
+## 题目大意
+
+### 问题描述
+
+Qingshan和Daniel玩游戏。  
+
+存在任意$n$个数字$p_i$。  
+Qingshan为先手，其先选择这串数字的一个下标$x(1\le x \le n)$，  
+Daniel为后手，其再选择一个下标$y(1\le y\le n)$，并且$y \ne x$。
+
+游戏操作为回合制，两人具体操作为：
+
+* Qingshan的回合中，其需要选择一个新的$x'(1\le x' \le n)$，其要满足三个条件：
+  * 在$x$附近。($|x'-x|=1$)
+  * 不与$y$相同。($x' \ne y$)
+  * **要比原来的数小（下山）。**($p_{x'}<p_x$)
+
+  当成功选择出$x'$，会把$x'$赋给当前的$x$($x=x'$)。
+
+* Daniel的回合中，其需要选择一个新的$y'(1\le y' \le n)$，其要满足三个条件：
+  * 在$y$附近。($|y'-y|=1$)
+  * 不与$x$相同。($y' \ne x$)
+  * **要比原来的数大（上山）。**($p_{y'}>p_y$)
+
+  当成功选择出$y'$，会把$y'$赋给当前的$y$($y=y'$)。
+
+当某人没法找到新的$x$或$y$（无路可走）时，判这名玩家输。
+
+---
+
+你的任务是：  
+判断这组数字$p$中，有多少个$p_i$，使得其作为Qingshan初始选择的$x$时，Qingshan必赢。
+
+### 读入格式
+
+第一行为数字个数$n$，  
+第二行为$n$个数字$p_i$。
+
+### 输出格式
+
+输出有多少种初始的$x$，使得Qingshan必赢。
+
+### 数据范围
+
+$2 \le n \le 10^5$  
+$1 \le p_i \le n$
+
+保证$n$总和不超过$10^5$。
+
+### 样例数据
+
+#### 第一组
+
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">5</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">5</span>
 <span class="mi">1</span> <span class="mi">2</span> <span class="mi">5</span> <span class="mi">4</span> <span class="mi">3</span>
 </code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span>
 </code></pre></div></div></div>
-<p><strong>解释：</strong></p>
-<p>Qingshan只能选择$x=3$。<br>
-选择此处后，无论Danie选择哪里，之后的行动都总会使Danie被堵死。</p>
-<p>而Qingshan选择其他地方时，Danie总有办法将Qingshan堵死。</p>
-<p>故答案为$1$。</p>
-<h4 id="第二组">第二组</h4>
+
+**解释：**
+
+Qingshan只能选择$x=3$。  
+选择此处后，无论Danie选择哪里，之后的行动都总会使Danie被堵死。
+
+而Qingshan选择其他地方时，Danie总有办法将Qingshan堵死。
+
+故答案为$1$。
+
+#### 第二组
+
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">7</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">7</span>
 <span class="mi">1</span> <span class="mi">2</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">5</span> <span class="mi">3</span> <span class="mi">7</span>
 </code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">0</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">0</span>
 </code></pre></div></div></div>
-<p><strong>解释：</strong></p>
-<p>Qingshan无论怎么选择$x$，都总被Danie或边界堵死。</p>
-<p>如$x=4$时，则$y=1$便能使Qingshan一定输掉游戏：</p>
-<ul>
-<li>当Qingshan选择$x'=3$，Danie选择$y'=2$，这之后Qingshan被Danie堵死，输掉游戏。</li>
-<li>当Qingshan选择$x'=5$，Danie选择$y'=2$，<br>
-行动到最后$x=7$，$y=4$，这个时候时Qingshan的回合，但Qingshan被边界堵死，输掉游戏。</li>
-</ul>
-<p>如$x=3$时，则$y=4$便能使Qingshan一定输掉游戏：</p>
-<ul>
-<li>Qingshan只能选择$x'=2$，这个时候Danie选择$y'=5$从右侧下山。<br>
-那么到最后，Qingshan会被边界堵死，输掉游戏。</li>
-</ul>
-<p>故答案为$0$。</p>
-<h2 id="分析-3">分析</h2>
-<p>这串数字可以分成一段段坡路（上坡路和下坡路可以相互转换）和平路。</p>
-<p>首先两人都只能走上坡或者下坡，故只分析坡路。</p>
-<p>对于Qingshan，如果其$x$选择一段不是最长的坡路，从顶往下走，<br>
-那么Danie只用选择最长的那条坡路，从底往上走，<br>
-这样就能把Qingshan耗死，使得最终Qingshan被边界堵死。</p>
-<p>所以Qingshan<strong>只能选择最长的坡路开始走</strong>。</p>
-<hr>
-<p>对于最长的坡路，记其数量为$c$条，</p>
-<ul>
-<li>
-<p>当$c=1$时：</p>
-<p>则无论Qingshan怎么选择起点（当然不能是最低点），<br>
-Danie都能<strong>选择在他旁边低处</strong>，使得刚开始就被堵死，<strong>Qingshan输掉游戏</strong>。</p>
-</li>
-<li>
-<p>当$c\ge3$时：</p>
-<p>则无论Qingshan选择哪条路，从顶往下走，<br>
-Danie都能<strong>选择另外一条与他不会碰见的路</strong>，最终把Qingshan耗死，<strong>Qingshan输掉游戏</strong>。</p>
-</li>
-<li>
-<p>当$c=2$时：</p>
-<p>由$c\ge3$的情况可知，如果两条路毫不相关（<strong>中间被隔开</strong>），<br>
-Danie也<strong>总能选择一条与他不会碰见的路</strong>把Qingshan耗死，<strong>Qingshan输掉游戏</strong>。</p>
-<p>那么对于不被隔开的两条路，只有<strong>形如&quot;V&quot;和&quot;Λ&quot;的两种情况</strong>。</p>
-<ul>
-<li>
-<p>对于&quot;V&quot;型：</p>
-<p>Qingshan无论是选择左边还是右边的顶点向下走，<br>
-Danie只用选择中间的<strong>最低点，朝着Qingshan下来的反方向走</strong>，就能把Qingshan耗死，<strong>Qingshan输掉游戏</strong>。</p>
-</li>
-<li>
-<p>对于&quot;Λ&quot;型：<br>
-<em>也就是样例1中的情况。</em></p>
-<ul>
-<li>
-<p>如果路的长度$len$为奇数：</p>
-<p>那么Qingshan<strong>能且仅能选择顶点</strong>，<br>
-再根据Danie选择的$y$的方向，朝着他走，就能使Danie被堵死，<strong>Qingshan赢得游戏，并且只有一种方案</strong>。</p>
-</li>
-<li>
-<p>如果路的长度$len$为偶数：</p>
-<p>那么Qingshan选择顶点后：
-如果不选Danie上山的方向，就会被耗死；<br>
-如果选Danie上山的方向，就会被堵死。<br>
-最终都是<strong>Qingshan输掉游戏</strong>。</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<p>综上：</p>
-<p>只有满足以下四个条件，Qingshan才能赢得游戏，且<strong>答案仅能为$1$</strong>：</p>
-<ol>
-<li>$c=2$。</li>
-<li>两条路无间隔。</li>
-<li>两条路为&quot;Λ&quot;型。</li>
-<li>$len$为偶数。</li>
-</ol>
-<hr>
-<p>可以将每条坡路的信息存下来：</p>
-<ul>
-<li>记录每条坡路从左到右看，是上坡还是下坡，记为$state$。</li>
-<li>记录每条坡路的长度$len$。</li>
-<li>记录每条坡路的编号（是第几条路）$index$。</li>
-</ul>
-<p>对于$2$号条件，可以判断$index$之差的绝对值是否为$1￥$。如果为$1$证明无间隔。<br>
-对于$3$号条件，可以判断$road[1]$的$state$是否为上坡，$road[2]$的$state$是否为下坡。</p>
-<h2 id="代码-3">代码</h2>
+
+**解释：**
+
+Qingshan无论怎么选择$x$，都总被Danie或边界堵死。
+
+如$x=4$时，则$y=1$便能使Qingshan一定输掉游戏：
+
+* 当Qingshan选择$x'=3$，Danie选择$y'=2$，这之后Qingshan被Danie堵死，输掉游戏。  
+* 当Qingshan选择$x'=5$，Danie选择$y'=2$，  
+  行动到最后$x=7$，$y=4$，这个时候时Qingshan的回合，但Qingshan被边界堵死，输掉游戏。
+
+如$x=3$时，则$y=4$便能使Qingshan一定输掉游戏：
+
+* Qingshan只能选择$x'=2$，这个时候Danie选择$y'=5$从右侧下山。  
+  那么到最后，Qingshan会被边界堵死，输掉游戏。
+
+故答案为$0$。
+
+## 分析
+
+这串数字可以分成一段段坡路（上坡路和下坡路可以相互转换）和平路。
+
+首先两人都只能走上坡或者下坡，故只分析坡路。
+
+对于Qingshan，如果其$x$选择一段不是最长的坡路，从顶往下走，  
+那么Danie只用选择最长的那条坡路，从底往上走，  
+这样就能把Qingshan耗死，使得最终Qingshan被边界堵死。
+
+所以Qingshan**只能选择最长的坡路开始走**。
+
+---
+
+对于最长的坡路，记其数量为$c$条，  
+
+* 当$c=1$时：
+
+  则无论Qingshan怎么选择起点（当然不能是最低点），  
+  Danie都能**选择在他旁边低处**，使得刚开始就被堵死，**Qingshan输掉游戏**。
+* 当$c\ge3$时：
+
+  则无论Qingshan选择哪条路，从顶往下走，  
+  Danie都能**选择另外一条与他不会碰见的路**，最终把Qingshan耗死，**Qingshan输掉游戏**。
+* 当$c=2$时：
+
+  由$c\ge3$的情况可知，如果两条路毫不相关（**中间被隔开**），  
+  Danie也**总能选择一条与他不会碰见的路**把Qingshan耗死，**Qingshan输掉游戏**。
+  
+  那么对于不被隔开的两条路，只有**形如"V"和"Λ"的两种情况**。
+  * 对于"V"型：
+
+    Qingshan无论是选择左边还是右边的顶点向下走，  
+    Danie只用选择中间的**最低点，朝着Qingshan下来的反方向走**，就能把Qingshan耗死，**Qingshan输掉游戏**。
+  * 对于"Λ"型：  
+    *也就是样例1中的情况。*
+
+    * 如果路的长度$len$为奇数：  
+
+      那么Qingshan**能且仅能选择顶点**，  
+      再根据Danie选择的$y$的方向，朝着他走，就能使Danie被堵死，**Qingshan赢得游戏，并且只有一种方案**。
+
+    * 如果路的长度$len$为偶数：
+
+      那么Qingshan选择顶点后：
+      如果不选Danie上山的方向，就会被耗死；  
+      如果选Danie上山的方向，就会被堵死。  
+      最终都是**Qingshan输掉游戏**。
+
+---
+
+综上：
+
+只有满足以下四个条件，Qingshan才能赢得游戏，且**答案仅能为$1$**：
+
+1. $c=2$。
+2. 两条路无间隔。
+3. 两条路为"Λ"型。
+4. $len$为偶数。  
+
+---
+
+可以将每条坡路的信息存下来：
+
+* 记录每条坡路从左到右看，是上坡还是下坡，记为$state$。
+* 记录每条坡路的长度$len$。
+* 记录每条坡路的编号（是第几条路）$index$。
+
+对于$2$号条件，可以判断$index$之差的绝对值是否为$1￥$。如果为$1$证明无间隔。  
+对于$3$号条件，可以判断$road[1]$的$state$是否为上坡，$road[2]$的$state$是否为下坡。
+
+## 代码
+
 <div class="snote link green">
 	<div class="snote-content">
 		<p><a class="link" href="https://paste.ubuntu.com/p/tkZ5mz24jh/"  target="_blank" rel="noopener"
@@ -971,9 +1021,10 @@ Danie只用选择中间的<strong>最低点，朝着Qingshan下来的反方向�
 </div>
 
 
+
 <details class="sc-details" >
 	<summary>代码</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="cp">#define ALL(NAME_i, BEGIN, TO) \
 </span><span class="cp">    int NAME_i = BEGIN;        \
 </span><span class="cp">    NAME_i &lt;= TO;              \
@@ -1027,6 +1078,7 @@ Danie只用选择中间的<strong>最低点，朝着Qingshan下来的反方向�
 <span class="p">}</span>
 </code></pre></div></div>
 </details>
+\]</span></p>
 
 </section>
 
@@ -1068,27 +1120,22 @@ Danie只用选择中间的<strong>最低点，朝着Qingshan下来的反方向�
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -1108,7 +1155,7 @@ Danie只用选择中间的<strong>最低点，朝着Qingshan下来的反方向�
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2020_11_13/64344151_p0.e902b7d7815ccda1bfdee53f5d115fbc_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2020_11_13/64344151_p0.e902b7d7815ccda1bfdee53f5d115fbc_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -1130,7 +1177,7 @@ Danie只用选择中间的<strong>最低点，朝着Qingshan下来的反方向�
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2020_10_31/87698192_p0.bb84022293b0f828caae07318f56421b_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2020_10_31/87698192_p0.bb84022293b0f828caae07318f56421b_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -1152,7 +1199,7 @@ Danie只用选择中间的<strong>最低点，朝着Qingshan下来的反方向�
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2020_10_24/85632010_p0.e54e77f0b0c902e78ff199ef0a6a2145_hu1a4360dbf172a18f1159639719209d07_2635798_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2020_10_24/85632010_p0.e54e77f0b0c902e78ff199ef0a6a2145_hu1a4360dbf172a18f1159639719209d07_2635798_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

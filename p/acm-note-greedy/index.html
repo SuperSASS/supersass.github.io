@@ -283,8 +283,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-note-greedy/">
-                <img src="/p/acm-note-greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_800x0_resize_box_2.png"
-                        srcset="/p/acm-note-greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_800x0_resize_box_2.png 800w, /p/acm-note-greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-note-greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_800x0_resize_box_3.png"
+                        srcset="/p/acm-note-greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_800x0_resize_box_3.png 800w, /p/acm-note-greedy/80942286_p0_hu1614f1e19d3d1ca6099df8f8b769c088_1500547_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="450" 
                         loading="lazy"
@@ -338,7 +338,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：928</div>
+            <div class="char">文章字数：930</div>
             <div class="time">预计阅读时长： <time>2</time> 分钟</div>
         </div>
     </footer>
@@ -382,7 +382,7 @@ if (!doNotTrack) {
 <h3 id="实现方法">实现方法</h3>
 <ol>
 <li>根据题意，分析每种状态的<code>ans</code>如何计算，以及题目要求取<code>ans</code>的什么最值。</li>
-<li>采用邻项交换排序思想，选取相邻两项$i,i+1$，比较两种状态的<code>ans</code>，选择最优的<code>ans</code>。由此可以推出一种基于数据比较的<strong>决策方案</strong>。</li>
+<li>采用邻项交换排序思想，选取相邻两项<span class="math inline">\(i,i+1\)</span>，比较两种状态的<code>ans</code>，选择最优的<code>ans</code>。由此可以推出一种基于数据比较的<strong>决策方案</strong>。</li>
 <li>按照该决策方案排序，算出排序后状态的<code>ans</code>值，即为结果。</li>
 </ol>
 <h3 id="邻项交换排序">邻项交换排序</h3>
@@ -452,27 +452,22 @@ if (!doNotTrack) {
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -492,7 +487,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-neighbor_sort/71111285_p0.af7df8fc45491ad0333c518aac5d00c1_hud2648e021785c2a9f9434e425c67999f_2056049_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-neighbor_sort/71111285_p0.af7df8fc45491ad0333c518aac5d00c1_hud2648e021785c2a9f9434e425c67999f_2056049_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -514,7 +509,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-sort/86036732_p0.dea056919188b7a781873db2af723a1d_hud48aef1ba1119480544a4ab4b9f32654_3422651_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-sort/86036732_p0.dea056919188b7a781873db2af723a1d_hud48aef1ba1119480544a4ab4b9f32654_3422651_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -536,7 +531,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-game_theory/71973806_p1.adf492f4c366cdde212a88f7745a4588_hu8cb585ba1ac5484ad579bc8855a3cf71_269338_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -558,7 +553,7 @@ if (!doNotTrack) {
         
         
             <div class="article-image">
-                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-note-discrete/Yande-312234.e20a971c4f0b5f46a23b6305841977b6_hu74e31cf7a8be9f78c1abc828bcffbc8e_3268181_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 

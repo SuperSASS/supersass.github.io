@@ -292,8 +292,8 @@ if (!doNotTrack) {
     <header class="article-header">
         <div class="article-image">
             <a href="/p/acm-writeup-2020_10_24/">
-                <img src="/p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_800x0_resize_box_2.png"
-                        srcset="/p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_800x0_resize_box_2.png 800w, /p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_1600x0_resize_box_2.png 1600w"
+                <img src="/p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_800x0_resize_box_3.png"
+                        srcset="/p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_800x0_resize_box_3.png 800w, /p/acm-writeup-2020_10_24/85632010_p0_hu1a4360dbf172a18f1159639719209d07_2635798_1600x0_resize_box_3.png 1600w"
                         width="800" 
                         height="400" 
                         loading="lazy"
@@ -347,7 +347,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：5276</div>
+            <div class="char">文章字数：5440</div>
             <div class="time">预计阅读时长： <time>11</time> 分钟</div>
         </div>
     </footer>
@@ -424,7 +424,7 @@ if (!doNotTrack) {
 </div>
 <h2 id="标准思路">标准思路</h2>
 <p>采用<strong>位运算</strong>。</p>
-<p>$2n+1$个数中，其中只有$1$个数只出现了<strong>奇数次</strong>，<br>
+<p><span class="math inline">\(2n+1\)</span>个数中，其中只有<span class="math inline">\(1\)</span>个数只出现了<strong>奇数次</strong>，<br>
 则对所有数进行异或，则可找出出现奇数次的数。</p>
 <h1 id="c---新概念丢手绢">*C - 新概念丢手绢</h1>
 <ul>
@@ -437,7 +437,7 @@ if (!doNotTrack) {
 	</div>
 </div>
 <p>不难的题，没去认真思考。</p>
-<p>思考后会发现：按$1,2, \cdots ,n$这样排列，就是最高分，即输出$n$。</p>
+<p>思考后会发现：按<span class="math inline">\(1,2, \cdots ,n\)</span>这样排列，就是最高分，即输出<span class="math inline">\(n\)</span>。</p>
 <h1 id="g---生活委员">*G - 生活委员</h1>
 <ul>
 <li><a class="link" href="https://oj.swjtu.edu.cn/contest/22/problem/G"  target="_blank" rel="noopener"
@@ -449,7 +449,7 @@ if (!doNotTrack) {
 	</div>
 </div>
 <ul>
-<li><strong>知识点：</strong>$\gcd(Fib(a), Fib(b)) = Fib(\gcd(a, b))$</li>
+<li><strong>知识点：</strong><span class="math inline">\(\gcd(Fib(a), Fib(b)) = Fib(\gcd(a, b))\)</span></li>
 </ul>
 <h1 id="h---胖生的数学题">H - 胖生的数学题</h1>
 <div class="snote error ">
@@ -468,27 +468,27 @@ if (!doNotTrack) {
 	<summary>题面搬运</summary>
 	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
 <ul>
-<li>连乘符号：$\prod_{i=a}^bn=n_a*n_{a+1}*\cdots*n_{b-1}*n_b$</li>
+<li>连乘符号：<span class="math inline">\(\prod_{i=a}^bn=n_a*n_{a+1}*\cdots*n_{b-1}*n_b\)</span></li>
 </ul>
 <p>最近，小胖生学习了一个新的东西：GCD，他发现GCD真是一个神奇的东西，今天，老师给他布置了一道关于GCD的题，他很快就算出来了，因此，为了寻找优越感，他想考考你，看你会不会。</p>
 <p>题目如下：</p>
-<p>输入一行包含六个正整数$a,b,c,d,x,y$,求$\prod_{i=a}^{b}\prod_{j=c}^{d}\gcd(x^{i},y^{j}) \mod 998244353$。</p>
-<p>注：这里$\gcd(a,b)$表示a和b的最大公约数。</p>
+<p>输入一行包含六个正整数<span class="math inline">\(a,b,c,d,x,y\)</span>,求<span class="math inline">\(\prod_{i=a}^{b}\prod_{j=c}^{d}\gcd(x^{i},y^{j}) \mod 998244353\)</span>。</p>
+<p>注：这里<span class="math inline">\(\gcd(a,b)\)</span>表示a和b的最大公约数。</p>
 <ul>
 <li>题目理解补充：<br>
-这里两个连乘符号代表的是分别乘$\gcd(x^{a\sim b},y^{c\sim d})$。
+这里两个连乘符号代表的是分别乘<span class="math inline">\(\gcd(x^{a\sim b},y^{c\sim d})\)</span>。
 <blockquote>
 <p>如：<br>
-$a=1,b=2$；$c=3,d=4$<br>
-则为：$\gcd(x^1,y^3)<em>\gcd(x^1,y^4)</em>\gcd(x^2,y^3)*\gcd(x^2,y^4)$</p>
+<span class="math inline">\(a=1,b=2\)</span>；<span class="math inline">\(c=3,d=4\)</span><br>
+则为：<span class="math inline">\(\gcd(x^1,y^3)*\gcd(x^1,y^4)*\gcd(x^2,y^3)*\gcd(x^2,y^4)\)</span></p>
 </blockquote>
 </li>
 </ul>
 <h2 id="数据范围">数据范围</h2>
-<p>$0 \le a,b,c,d \le 3e6$<br>
-$a \le b$<br>
-$c \le d$</p>
-<p>$0&lt;x,y \le 1e9$</p>
+<p><span class="math inline">\(0 \le a,b,c,d \le 3e6\)</span><br>
+<span class="math inline">\(a \le b\)</span><br>
+<span class="math inline">\(c \le d\)</span></p>
+<p><span class="math inline">\(0<x,y \le 1e9\)</span></p>
 <h2 id="输入格式">输入格式</h2>
 <p>一行，包含六个正整数。</p>
 <h2 id="输出格式">输出格式</h2>
@@ -496,61 +496,61 @@ $c \le d$</p>
 <h2 id="样例数据">样例数据</h2>
 <h3 id="第一组">第一组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">8</span> <span class="mi">4</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">8</span> <span class="mi">4</span>
 </code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">2048</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">2048</span>
 </code></pre></div></div></div>
 <h3 id="第二组">第二组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">120</span> <span class="mi">180</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">120</span> <span class="mi">180</span>
 </code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">235140177</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">235140177</span>
 </code></pre></div></div></div>
 <p><strong>解释：</strong></p>
-<p>$\gcd(120^1,180^3)=120$<br>
-$\gcd(120^1,180^4)=120$<br>
-$\gcd(120^2,180^3)=14400$<br>
-$\gcd(120^2,180^3)=14400$</p>
-<p>$\prod_{i=1}^{2}\prod_{j=3}^{4}\gcd(x^{i},y^{j})=2985984000000$<br>
-$2985984000000 \mod 998244353=235140177$</p>
+<p><span class="math inline">\(\gcd(120^1,180^3)=120\)</span><br>
+<span class="math inline">\(\gcd(120^1,180^4)=120\)</span><br>
+<span class="math inline">\(\gcd(120^2,180^3)=14400\)</span><br>
+<span class="math inline">\(\gcd(120^2,180^3)=14400\)</span></p>
+<p><span class="math inline">\(\prod_{i=1}^{2}\prod_{j=3}^{4}\gcd(x^{i},y^{j})=2985984000000\)</span><br>
+<span class="math inline">\(2985984000000 \mod 998244353=235140177\)</span></p>
 </div>
 </details>
 <h2 id="标准思路-1">标准思路</h2>
-<p>暴力的话两个<code>for</code>，$O(n^2)$，而$a,b \le 3e6$，会超时。</p>
+<p>暴力的话两个<code>for</code>，<span class="math inline">\(O(n^2)\)</span>，而<span class="math inline">\(a,b \le 3e6\)</span>，会超时。</p>
 <div class="snote quote ">
 	<div class="snote-content">
 		<p>看到求gcd，就应该尝试对给出的数分解质因数。</p>
 	</div>
 </div>
 <p><em>引自：标准题解</em></p>
-<p>回到求$\gcd$的本质：</p>
+<p>回到求<span class="math inline">\(\gcd\)</span>的本质：</p>
 <blockquote>
-<p>$\gcd$，为求两个数的最大公约数（因数）。<br>
+<p><span class="math inline">\(\gcd\)</span>，为求两个数的最大公约数（因数）。<br>
 故可将两个数分别<strong>分解质因数</strong>，然后寻找两数所有共同的质因数，则结果为两数共同质因数的乘积。</p>
 <blockquote>
 <p>如：<br>
-$\gcd(120,180)$：<br>
-$120=\underline{2} \times \underline{2} \times 2 \times \underline{3} \times \underline{5}$<br>
-$180=\underline{2} \times \underline{2} \times \underline{3} \times \underline{5} \times 5$</p>
-<p>则$\gcd(120,180)=2\times2\times3\times5=60$。</p>
+<span class="math inline">\(\gcd(120,180)\)</span>：<br>
+<span class="math inline">\(120=\underline{2} \times \underline{2} \times 2 \times \underline{3} \times \underline{5}\)</span><br>
+<span class="math inline">\(180=\underline{2} \times \underline{2} \times \underline{3} \times \underline{5} \times 5\)</span></p>
+<p>则<span class="math inline">\(\gcd(120,180)=2\times2\times3\times5=60\)</span>。</p>
 </blockquote>
 </blockquote>
-<p>由于这里为多项$\gcd$的连乘，又由上述可知本身$\gcd$的运算就为乘积运算，<br>
+<p>由于这里为多项<span class="math inline">\(\gcd\)</span>的连乘，又由上述可知本身<span class="math inline">\(\gcd\)</span>的运算就为乘积运算，<br>
 故总的运算就可以写为<strong>各个项共同质因数</strong>的总乘积。</p>
 <p>我们又可以从本质中发现，我们所取的每项质因数的次数，都是<strong>两数中出现次数较少的次数</strong>，以下统称为<strong>最小次数</strong>。</p>
 <blockquote>
-<p>如上例中对$2$这个质因数所取次数：<br>
-$120$有$3$个$2$，<br>
-$180$有$2$个$2$。<br>
-则$\gcd(120,180)$有关$2$这一项则取$2$个。（$\gcd(120,180)=2\times2\times\cdots$）</p>
+<p>如上例中对<span class="math inline">\(2\)</span>这个质因数所取次数：<br>
+<span class="math inline">\(120\)</span>有<span class="math inline">\(3\)</span>个<span class="math inline">\(2\)</span>，<br>
+<span class="math inline">\(180\)</span>有<span class="math inline">\(2\)</span>个<span class="math inline">\(2\)</span>。<br>
+则<span class="math inline">\(\gcd(120,180)\)</span>有关<span class="math inline">\(2\)</span>这一项则取<span class="math inline">\(2\)</span>个。（<span class="math inline">\(\gcd(120,180)=2\times2\times\cdots\)</span>）</p>
 </blockquote>
 <p>而有关<strong>幂操作</strong>，就相当于对于每项<strong>质因数的次数进行幂操作</strong>。</p>
 <blockquote>
 <p>例：<br>
-$180^3=2^{2^{\underline{3}}}\times3^{2^{\underline{3}}}\times5^{1^{\underline{3}}}$</p>
+<span class="math inline">\(180^3=2^{2^{\underline{3}}}\times3^{2^{\underline{3}}}\times5^{1^{\underline{3}}}\)</span></p>
 </blockquote>
 <p><strong>综上：</strong><br>
-对于原题两个数的某范围中的幂，分别求$\gcd$，<br>
+对于原题两个数的某范围中的幂，分别求<span class="math inline">\(\gcd\)</span>，<br>
 可以转换为两数共同质因数，其每一项在其范围中的幂，取两者<strong>最小次数</strong>为该次运算的结果。<br>
 所有最小次数<strong>之和</strong>即为这一项的幂次，幂出来就是这一项质因数所求得的最小公约数。<br>
 然后所有项的最小公约数<strong>之积</strong>就是最终结果。</p>
@@ -560,41 +560,41 @@ $180^3=2^{2^{\underline{3}}}\times3^{2^{\underline{3}}}\times5^{1^{\underline{3}
 <ul>
 <li>
 <p>对于第一个数的<code>base</code>个数确定：<br>
-先确定一个$i∈[a,b]$，则当前第一个数的<code>base</code>个数为$x*i$。</p>
+先确定一个<span class="math inline">\(i∈[a,b]\)</span>，则当前第一个数的<code>base</code>个数为<span class="math inline">\(x*i\)</span>。</p>
 <p>然后计算出来一个界点<code>min</code>。（由于这里幂是整数，所以我们暂对<code>min</code>向下取整）</p>
 </li>
 <li>
 <p>对于第二个数的<code>base</code>个数分析：<br>
-$y * c \sim y * d$中任意一个$y*k\quad (k∈[c,d])$</p>
+<span class="math inline">\(y * c \sim y * d\)</span>中任意一个<span class="math inline">\(y*k\quad (k∈[c,d])\)</span></p>
 <ul>
-<li>当$k \le$<code>min</code>时，$x * i \ge y * k$，则这个时候$\gcd$取$y * k$</li>
-<li>当$k&gt;$<code>min</code>时，$x * i &lt; y * k$，则这个时候$\gcd$取$x * i$</li>
+<li>当<span class="math inline">\(k \le\)</span><code>min</code>时，<span class="math inline">\(x * i \ge y * k\)</span>，则这个时候<span class="math inline">\(\gcd\)</span>取<span class="math inline">\(y * k\)</span></li>
+<li>当<span class="math inline">\(k>\)</span><code>min</code>时，<span class="math inline">\(x * i < y * k\)</span>，则这个时候<span class="math inline">\(\gcd\)</span>取<span class="math inline">\(x * i\)</span></li>
 </ul>
 </li>
 </ul>
 <p><em>【也可以用向上取整，但会更难想。</em></p>
 <p>min计算方法：</p>
 <ul>
-<li>$min = ⌊x * i / y⌋$。（程序里直接写<code>min = x*i/y</code>）</li>
+<li><span class="math inline">\(min = ⌊x * i / y⌋\)</span>。（程序里直接写<code>min = x*i/y</code>）</li>
 </ul>
 <p>sum计算方法：</p>
 <ul>
-<li>当$k∈[c,min]$，$sum+=y * k$（条件：$min &gt;= c$）。<br>
-则这部分区间的总和为：$sum+=y * sum(k)$（可算得$sum(k)=(c + min) * (min-c+1)/2）$。</li>
-<li>当$k∈(min,d]$，$sum+=x * i$（条件：$min &lt; d$）。<br>
-则这部分区间的总和为：$sum+=x * i * len(k)$（可算得$len(k) = d - min$）。<br>
-【但因为$min=d$时，$len(k) = 0$，所以条件也可写为$min \le d$】</li>
+<li>当<span class="math inline">\(k∈[c,min]\)</span>，<span class="math inline">\(sum+=y * k\)</span>（条件：<span class="math inline">\(min >= c\)</span>）。<br>
+则这部分区间的总和为：<span class="math inline">\(sum+=y * sum(k)\)</span>（可算得<span class="math inline">\(sum(k)=(c + min) * (min-c+1)/2）\)</span>。</li>
+<li>当<span class="math inline">\(k∈(min,d]\)</span>，<span class="math inline">\(sum+=x * i\)</span>（条件：<span class="math inline">\(min < d\)</span>）。<br>
+则这部分区间的总和为：<span class="math inline">\(sum+=x * i * len(k)\)</span>（可算得<span class="math inline">\(len(k) = d - min\)</span>）。<br>
+【但因为<span class="math inline">\(min=d\)</span>时，<span class="math inline">\(len(k) = 0\)</span>，所以条件也可写为<span class="math inline">\(min \le d\)</span>】</li>
 </ul>
 <hr>
 <p>所以我们可以先将两个原数分别<strong>分解质因数</strong>。<br>
 然后对每个共同的质因数项<strong>讨论其幂次</strong>。</p>
 <p>对于任一项质因数，选一个原数<code>for</code>遍历其幂次，<br>
 则对另一个原数，便可直接用上述的<code>min</code>确定<strong>选择最小次数</strong>的其区间临界点，直接可求得其<strong>不同幂次的每次的结果</strong>。</p>
-<p>故可将两个<code>for</code>的$O(n^2)$时间复杂度降下一层来为$O(n)$。</p>
+<p>故可将两个<code>for</code>的<span class="math inline">\(O(n^2)\)</span>时间复杂度降下一层来为<span class="math inline">\(O(n)\)</span>。</p>
 <hr>
 <p><strong>需要注意的点：</strong><br>
 选好最小次数后求和时，如果要对幂次取模，<br>
-按照欧拉/费马小定理，模数应该取$\varphi (998244353)$（为欧拉函数）。</p>
+按照欧拉/费马小定理，模数应该取<span class="math inline">\(\varphi (998244353)\)</span>（为欧拉函数）。</p>
 <p><em><a class="link" href="https://oi-wiki.org/math/fermat/"  target="_blank" rel="noopener"
     >欧拉函数讲解</a>。</em></p>
 <h2 id="标程代码">标程代码</h2>
@@ -608,7 +608,7 @@ $y * c \sim y * d$中任意一个$y*k\quad (k∈[c,d])$</p>
 
 <details class="sc-details" >
 	<summary>标程代码（附个人注释）</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
 </span><span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp">
 </span><span class="cp"></span>
 <span class="k">const</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">MOD</span> <span class="o">=</span> <span class="mi">998244353</span><span class="p">;</span>
@@ -709,44 +709,44 @@ $y * c \sim y * d$中任意一个$y*k\quad (k∈[c,d])$</p>
 <details class="sc-details" >
 	<summary>题面搬运</summary>
 	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
-<p>有$L$个方块排成一排，从左到右标记为$1,\cdots,L$</p>
-<p>$L$个方块上站了$n$个人，从左到右标记为$1,\cdots,n$。第$i$个人站在第$a_i$个方块上</p>
+<p>有<span class="math inline">\(L\)</span>个方块排成一排，从左到右标记为<span class="math inline">\(1,\cdots,L\)</span></p>
+<p><span class="math inline">\(L\)</span>个方块上站了<span class="math inline">\(n\)</span>个人，从左到右标记为<span class="math inline">\(1,\cdots,n\)</span>。第<span class="math inline">\(i\)</span>个人站在第<span class="math inline">\(a_i\)</span>个方块上</p>
 <p>你可以做以下操作任意次：</p>
 <p>选择一个人，令他向左或向右移动。这个人会一直移动直到前方没有空的格子。也就是说，当前方没有格子或前方的格子上有人时他才会停止移动。</p>
-<p>举个例子，假设$n=3,L=10$，$n$个人一开始在$(2,3,7)$。现在我们让第$2$个人向右走，他会走到$6$停止，如果我们让第$3$个人往右走，他会走到最右侧$10$停止。</p>
-<p>你的任务是使第$i$个人到达$b_i$位置，判定是否可行并找到最少操作次数。</p>
+<p>举个例子，假设<span class="math inline">\(n=3,L=10\)</span>，<span class="math inline">\(n\)</span>个人一开始在<span class="math inline">\((2,3,7)\)</span>。现在我们让第<span class="math inline">\(2\)</span>个人向右走，他会走到<span class="math inline">\(6\)</span>停止，如果我们让第<span class="math inline">\(3\)</span>个人往右走，他会走到最右侧<span class="math inline">\(10\)</span>停止。</p>
+<p>你的任务是使第<span class="math inline">\(i\)</span>个人到达<span class="math inline">\(b_i\)</span>位置，判定是否可行并找到最少操作次数。</p>
 <h2 id="数据范围">数据范围</h2>
-<p>$1 \le N \le 10^5$<br>
-$N \le L \le 10^9$</p>
-<p>$1 \le A_1 \lt A_2 \lt \cdots \lt A_N \le L$<br>
-$1 \le B_1 \lt B_2 \lt \cdots \lt B_N \le L$</p>
+<p><span class="math inline">\(1 \le N \le 10^5\)</span><br>
+<span class="math inline">\(N \le L \le 10^9\)</span></p>
+<p><span class="math inline">\(1 \le A_1 \lt A_2 \lt \cdots \lt A_N \le L\)</span><br>
+<span class="math inline">\(1 \le B_1 \lt B_2 \lt \cdots \lt B_N \le L\)</span></p>
 <ul>
 <li>所有输入均为整数。</li>
 </ul>
 <h2 id="输入格式">输入格式</h2>
 <blockquote>
-<p>$N \quad L$<br>
-$A_1 \quad A_2 \quad\cdots \quad A_N$<br>
-$B_1 \quad B_2 \quad\cdots \quad B_N$</p>
+<p><span class="math inline">\(N \quad L\)</span><br>
+<span class="math inline">\(A_1 \quad A_2 \quad\cdots \quad A_N\)</span><br>
+<span class="math inline">\(B_1 \quad B_2 \quad\cdots \quad B_N\)</span></p>
 </blockquote>
 <h2 id="输出格式">输出格式</h2>
 <p>如果目标不可达，输出-1，否则输出最小指令数。</p>
 <h2 id="样例数据">样例数据</h2>
 <h3 id="第一组">第一组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">4</span> <span class="mi">11</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">4</span> <span class="mi">11</span>
 <span class="mi">3</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">10</span>
 <span class="mi">1</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">11</span>
 </code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">3</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">3</span>
 </code></pre></div></div></div>
 <h3 id="第二组">第二组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">3</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">3</span>
 <span class="mi">1</span>
 <span class="mi">2</span>
 </code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="o">-</span><span class="mi">1</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="o">-</span><span class="mi">1</span>
 </code></pre></div></div></div>
 </div>
 </details>
@@ -764,7 +764,7 @@ $B_1 \quad B_2 \quad\cdots \quad B_N$</p>
 
 <details class="sc-details" >
 	<summary>个人代码</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="cp">#define Length 100005
 </span><span class="cp">#define to_Left toLoc - 1
 </span><span class="cp">#define to_Right toLoc + 1
@@ -882,16 +882,16 @@ $B_1 \quad B_2 \quad\cdots \quad B_N$</p>
 </div>
 <blockquote>
 <p>比如：<br>
-$L=6$，点为$2,5$，转换为区间长为$1,2,1$。<br>
-如要把$2$向左移，即区间长变为$3(1+2),0,1$。</p>
+<span class="math inline">\(L=6\)</span>，点为<span class="math inline">\(2,5\)</span>，转换为区间长为<span class="math inline">\(1,2,1\)</span>。<br>
+如要把<span class="math inline">\(2\)</span>向左移，即区间长变为<span class="math inline">\(3(1+2),0,1\)</span>。</p>
 </blockquote>
 
 
 <div class="snote quote ">
 	<div class="snote-content">
-		<p>考虑两个人之间的空位，记为$x_1,x_2,x_3,&hellip;,x_n$。<br>
-$x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为第$i$个人和第$i-1$个人之间的空位。<br>
-让第i个人往左相当于$x_i += x_{i-1}, x_{i-1} = 0$，往右相当于$x_{i-1} += x_i, x_i = 0$。</p>
+		<p>考虑两个人之间的空位，记为<span class="math inline">\(x_1,x_2,x_3,...,x_n\)</span>。<br>
+<span class="math inline">\(x_1\)</span>为最左侧空格子数，<span class="math inline">\(x_n\)</span>为最右侧空格子数，其余<span class="math inline">\(x_i\)</span>为第<span class="math inline">\(i\)</span>个人和第<span class="math inline">\(i-1\)</span>个人之间的空位。<br>
+让第i个人往左相当于<span class="math inline">\(x_i += x_{i-1}, x_{i-1} = 0\)</span>，往右相当于<span class="math inline">\(x_{i-1} += x_i, x_i = 0\)</span>。</p>
 	</div>
 </div>
 <p><em>引自：标准题解</em></p>
@@ -901,9 +901,9 @@ $x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为�
 故若若干个区间合并后，长度<strong>超过却不能等于</strong>，则这个区间一定不能达成，证明不能移动得到，输出<code>-1</code>。</p>
 <p>故从左到右遍历，碰到<strong>存在长度的终状态</strong>区间，就开始寻找从<strong>初状态未被合并过</strong>的区间找若干个<strong>存在长度的区间</strong>尝试合并。<br>
 若成功合并，则移动次数就是<strong>左侧合并了多少个区间</strong>加上<strong>右边合并了多少个区间</strong>。<br>
-公式为：$ans += max(i-l,0) + max(r-i,0)$。</p>
+公式为：<span class="math inline">\(ans += max(i-l,0) + max(r-i,0)\)</span>。</p>
 <ul>
-<li>这里用个$max(\cdots,0)$，是因为存在减为负数的情况。【可以参见标程代码中的例子】</li>
+<li>这里用个<span class="math inline">\(max(\cdots,0)\)</span>，是因为存在减为负数的情况。【可以参见标程代码中的例子】</li>
 </ul>
 <h2 id="标程代码-1">标程代码</h2>
 <div class="snote link green">
@@ -916,7 +916,7 @@ $x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为�
 
 <details class="sc-details" >
 	<summary>标程代码（附个人注释）</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
 </span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
@@ -1028,27 +1028,22 @@ $x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为�
         </section></footer>
 
     
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
-    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
-    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
-    crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
-    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
-    onload="StackLaTeX()"></script>
-
-<script>
-    function StackLaTeX() {
-        renderMathInElement(document.querySelector(`.article-content`), {
-            delimiters: [
-                { left: "$$", right: "$$", display: true },
-                { left: "$", right: "$", display: false },
-                { left: "\\(", right: "\\)", display: false },
-                { left: "\\[", right: "\\]", display: true }
-            ]
+        <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']], 
+                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
+                processEscapes: true,
+                processEnvironments: true,
+                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
+                TeX: {
+                    equationNumbers: { autoNumber: "AMS" },
+                    extensions: ["AMSmath.js", "AMSsymbols.js"]
+                }
+            }
         });
-    }
-</script>
+    </script>
     
 </article>
 
@@ -1068,7 +1063,7 @@ $x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为�
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2020_10_31/87698192_p0.bb84022293b0f828caae07318f56421b_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2020_10_31/87698192_p0.bb84022293b0f828caae07318f56421b_hu8e7e420eeb9b421e908212b9c71edf3f_2179230_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -1090,7 +1085,7 @@ $x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为�
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2021_3_10/Yande-275846.7984145da990010bee0cd0ce9bce6170_hu5d6f7221a57c96d4dc2f53997133279c_589479_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2021_3_10/Yande-275846.7984145da990010bee0cd0ce9bce6170_hu5d6f7221a57c96d4dc2f53997133279c_589479_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
@@ -1112,7 +1107,7 @@ $x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为�
         
         
             <div class="article-image">
-                <img src="/p/acm-writeup-2020_11_13/64344151_p0.e902b7d7815ccda1bfdee53f5d115fbc_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_250x150_fill_box_smart1_2.png" 
+                <img src="/p/acm-writeup-2020_11_13/64344151_p0.e902b7d7815ccda1bfdee53f5d115fbc_huf34c6936fd999bfe995d7fe57ee76eb0_1258122_250x150_fill_box_smart1_3.png" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
