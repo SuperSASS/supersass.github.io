@@ -227,6 +227,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#1-行间模式必须单独成行">1. 行间模式必须单独成行</a></li>
         <li><a href="#2-多个行间模式之间必须隔开">2. 多个行间模式之间必须隔开</a></li>
+        <li><a href="#3-引用块中用行间模式会有问题">3. 引用块中用行间模式会有问题</a></li>
       </ul>
     </li>
   </ul>
@@ -334,14 +335,12 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1927</div>
-            <div class="time">预计阅读时长： <time>4</time> 分钟</div>
+            <div class="char">文章字数：2124</div>
+            <div class="time">预计阅读时长： <time>5</time> 分钟</div>
         </div>
     </footer>
 </div>
-</header>
-
-    <section class="article-content">
+</header><section class="article-content">
     <h1 id="latex存在的问题">LaTeX存在的问题</h1>
 <p>在Markdown博客中，对于LaTeX的渲染可能会存在一个通病：<br>
 <div class="snote warning ">
@@ -589,14 +588,35 @@ $$
 </div>
 </div></div>
 <hr>
-<p>暂时不知道是什么成因……<br>
+<p>以上两个问题暂时不知道是什么成因……<br>
 但因为这个确实是目前能找到的最好的解决方法，所以【ry……<br>
 然后慢慢改下自己记笔记时用<code>$$ $$</code>的习惯吧_(:з」∠)_……</p>
+<h2 id="3-引用块中用行间模式会有问题">3. 引用块中用行间模式会有问题</h2>
+<p>在引用(<code>&lt;blockquote&gt;</code>)中如果用了行间模式，会将其后一行又变为引用……</p>
+<p>比如这样：</p>
+<p><figure style="flex-grow: 705; flex-basis: 1692px">
+		<a href="/p/test-latex/images/index--11-25_16-40-28.png" data-size="705x100"><img src="/p/test-latex/images/index--11-25_16-40-28.png"
+				srcset="/p/test-latex/images/index--11-25_16-40-28_hufe4bb289fcce4ceffdfc56f8d3493177_11666_480x0_resize_box_3.png 480w, /p/test-latex/images/index--11-25_16-40-28_hufe4bb289fcce4ceffdfc56f8d3493177_11666_1024x0_resize_box_3.png 1024w"
+				width="705"
+				height="100"
+				loading="lazy"
+				alt="源码">
+		</a><figcaption>源码</figcaption></figure> <figure style="flex-grow: 317; flex-basis: 762px">
+		<a href="/p/test-latex/images/index--11-25_16-41-01.png" data-size="766x241"><img src="/p/test-latex/images/index--11-25_16-41-01.png"
+				srcset="/p/test-latex/images/index--11-25_16-41-01_hu195d774e04958523cbd79b50e10b8dfc_40830_480x0_resize_box_3.png 480w, /p/test-latex/images/index--11-25_16-41-01_hu195d774e04958523cbd79b50e10b8dfc_40830_1024x0_resize_box_3.png 1024w"
+				width="766"
+				height="241"
+				loading="lazy"
+				alt="效果">
+		</a><figcaption>效果</figcaption></figure></p>
+<p>可以看到“其中……”这句话被标记为了引用块……</p>
+<p>应该是&quot;goldmark-mathjax&quot;插件的问题……<br>
+这篇文章写完后才发现……<br>
+有点不舒适，但也不是什么大问题【……</p>
+<p>还是先准备考试，后面有时间再提个issue吧'_&gt;'……</p>
 
 </section>
-
-
-    <footer class="article-footer">
+<footer class="article-footer">
     
     <section class="article-tags">
         
@@ -631,22 +651,8 @@ $$
         </section></footer>
 
     
-        <script type="text/javascript" async
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-        MathJax.Hub.Config({
-            tex2jax: {
-                inlineMath: [['$', '$'], ['\\(', '\\)']], 
-                displayMath: [['$$', '$$'], ['\\[', '\\]']], 
-                processEscapes: true,
-                processEnvironments: true,
-                skipTags: ['code', 'script', 'noscript', 'style', 'textarea', 'pre'],
-                TeX: {
-                    equationNumbers: { autoNumber: "AMS" },
-                    extensions: ["AMSmath.js", "AMSsymbols.js"]
-                }
-            }
-        });
-    </script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
 </article>
 

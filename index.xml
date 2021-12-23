@@ -259,9 +259,32 @@ $$
 &lt;/div&gt;
 &lt;/div&gt;&lt;/div&gt;
 &lt;hr&gt;
-&lt;p&gt;暂时不知道是什么成因……&lt;br&gt;
+&lt;p&gt;以上两个问题暂时不知道是什么成因……&lt;br&gt;
 但因为这个确实是目前能找到的最好的解决方法，所以【ry……&lt;br&gt;
 然后慢慢改下自己记笔记时用&lt;code&gt;$$ $$&lt;/code&gt;的习惯吧_(:з」∠)_……&lt;/p&gt;
+&lt;h2 id=&#34;3-引用块中用行间模式会有问题&#34;&gt;3. 引用块中用行间模式会有问题&lt;/h2&gt;
+&lt;p&gt;在引用(&lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt;)中如果用了行间模式，会将其后一行又变为引用……&lt;/p&gt;
+&lt;p&gt;比如这样：&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 705; flex-basis: 1692px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/test-latex/images/index--11-25_16-40-28.png&#34; data-size=&#34;705x100&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/test-latex/images/index--11-25_16-40-28.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/test-latex/images/index--11-25_16-40-28_hufe4bb289fcce4ceffdfc56f8d3493177_11666_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/test-latex/images/index--11-25_16-40-28_hufe4bb289fcce4ceffdfc56f8d3493177_11666_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;705&#34;
+				height=&#34;100&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;源码&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;源码&lt;/figcaption&gt;&lt;/figure&gt; &lt;figure style=&#34;flex-grow: 317; flex-basis: 762px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/test-latex/images/index--11-25_16-41-01.png&#34; data-size=&#34;766x241&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/test-latex/images/index--11-25_16-41-01.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/test-latex/images/index--11-25_16-41-01_hu195d774e04958523cbd79b50e10b8dfc_40830_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/test-latex/images/index--11-25_16-41-01_hu195d774e04958523cbd79b50e10b8dfc_40830_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;766&#34;
+				height=&#34;241&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;效果&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;效果&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;可以看到“其中……”这句话被标记为了引用块……&lt;/p&gt;
+&lt;p&gt;应该是&amp;quot;goldmark-mathjax&amp;quot;插件的问题……&lt;br&gt;
+这篇文章写完后才发现……&lt;br&gt;
+有点不舒适，但也不是什么大问题【……&lt;/p&gt;
+&lt;p&gt;还是先准备考试，后面有时间再提个issue吧&#39;_&amp;gt;&#39;……&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -270,7 +293,12 @@ $$
         <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
         
         <guid>https://blog.supersassw.com/p/univ-physics-ep14/</guid>
-        <description>&lt;img src="https://blog.supersassw.com/p/univ-physics-ep14/93592237_p0.png" alt="Featured image of post 大学物理 下——第十四章……" /&gt;&lt;h1 id=&#34;第十四章-波动光学&#34;&gt;第十四章 波动光学&lt;/h1&gt;
+        <description>&lt;img src="https://blog.supersassw.com/p/univ-physics-ep14/93592237_p0.png" alt="Featured image of post 大学物理 下——第十四章……" /&gt;&lt;div class=&#34;snote link green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;%e6%80%bb%e7%bb%93.svg&#34; &gt;点击查看本章总结&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;第十四章-波动光学&#34;&gt;第十四章 波动光学&lt;/h1&gt;
 &lt;h2 id=&#34;第一节-光的偏振&#34;&gt;第一节 光的偏振&lt;/h2&gt;
 &lt;h3 id=&#34;一光的偏振现象---横波性&#34;&gt;一、光的偏振现象 - 横波性&lt;/h3&gt;
 &lt;blockquote&gt;
@@ -288,9 +316,9 @@ $$
 &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;概念 - 光矢量：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;引起视觉和化学效应的是电磁场的电场强度矢量&lt;span class=&#34;math inline&#34;&gt;\(E(t)\)&lt;/span&gt;，&lt;br&gt;
-故将该矢量成为&lt;strong&gt;光矢量&lt;/strong&gt;(light vector)。&lt;br&gt;
-&lt;img src=&#34;images/Wave%20Optics--11-06_16-19-05.png&#34; alt=&#34;图 1&#34;  /&gt;&lt;/p&gt;
+故将该矢量成为&lt;strong&gt;光矢量&lt;/strong&gt;(light vector)。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;images/Wave%20Optics--11-06_16-19-05.png&#34; alt=&#34;图 1&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;注意：光的电矢量只与传播方向垂直，&lt;br&gt;
 所以光矢量可以在与传播方向&lt;strong&gt;垂直平面的任意方向&lt;/strong&gt;。&lt;br&gt;
 &lt;img src=&#34;images/Wave%20Optics--11-06_16-20-53.png&#34; alt=&#34;图 2&#34;  /&gt;&lt;/p&gt;
@@ -321,7 +349,7 @@ $$
 &lt;p&gt;&lt;img src=&#34;images/Wave%20Optics--11-06_16-40-50.png&#34; alt=&#34;图 4&#34;  /&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;图示：
+&lt;li&gt;图示：&lt;br&gt;
 &lt;img src=&#34;images/Wave%20Optics--11-06_16-27-21.png&#34; alt=&#34;图 5&#34;  /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;2-线偏振光&#34;&gt;2. 线偏振光&lt;/h4&gt;
@@ -334,7 +362,7 @@ $$
 &lt;p&gt;光振动&lt;strong&gt;只有一个确定方向&lt;/strong&gt;（只有一个振动面）。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;振动面：光矢量的振动方向与光的传播方向构成的平面。
+&lt;li&gt;振动面：光矢量的振动方向与光的传播方向构成的平面。&lt;br&gt;
 &lt;img src=&#34;images/Wave%20Optics--11-06_16-34-07.png&#34; alt=&#34;图 6&#34;  /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
@@ -821,7 +849,7 @@ x=\left\{
 &lt;p&gt;因此给出定义：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;空间相干性(spatial coherence):&lt;/strong&gt;
+&lt;li&gt;&lt;strong&gt;空间相干性(spatial coherence):&lt;/strong&gt;&lt;br&gt;
 光缝宽度&lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt;（或者宽度为&lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt;的普通光源），&lt;br&gt;
 他的波阵面距离&lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;，需要小于&lt;span class=&#34;math inline&#34;&gt;\(\frac{B}{b}\lambda\)&lt;/span&gt;，才能产生干涉现象。&lt;br&gt;
 这一性质称为“空间相干性”。&lt;/li&gt;
@@ -912,7 +940,7 @@ x=\left\{
 &lt;p&gt;因此总的来说会有一个半波损失。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(n_2&lt;n_1时\)&lt;/span&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(n_2&lt;n_1\)&lt;/span&gt;时：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;对于光线&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;，没有半波损失。&lt;/li&gt;
 &lt;li&gt;对于光线&lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;，有&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;个半波损失。&lt;/li&gt;
@@ -937,7 +965,7 @@ x=\left\{
 &lt;p&gt;而对于光程差有无&lt;span class=&#34;math inline&#34;&gt;\(\frac{\lambda}{2}\)&lt;/span&gt;半波损失项，&lt;br&gt;
 因该&lt;strong&gt;根据具体情况来分析&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;⚠需要注意&lt;/strong&gt;：&lt;br&gt;
-光程差表达式恒为正（含根式），套用明暗条纹条件时&lt;strong&gt;不用加&lt;span class=&#34;math inline&#34;&gt;\(\plusmn\)&lt;/span&gt;&lt;/strong&gt;，&lt;br&gt;
+光程差表达式恒为正（含根式），套用明暗条纹条件时&lt;strong&gt;不用加&lt;span class=&#34;math inline&#34;&gt;\(\pm\)&lt;/span&gt;&lt;/strong&gt;，&lt;br&gt;
 但因为半波损失的存在，在&lt;strong&gt;明纹处&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;不能取&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;&lt;/strong&gt;，否则会使根式等于负值。&lt;/p&gt;
 &lt;p&gt;总结为“&lt;strong&gt;薄膜干涉明暗纹条件&lt;/strong&gt;”：&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\Delta_{(\textrm{反/透})}=\left\{
@@ -1076,10 +1104,11 @@ k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\
 &lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(r=\sqrt{\frac{kR\lambda}{n}}\)&lt;/span&gt;&lt;br&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(r_m^2-r_k^2=\frac{mR\lambda-kR\lambda}{n}\)&lt;/span&gt;&lt;br&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(\lambda=\frac{(r_m^2-r_k^2)n}{(m-k)R}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;利用不同明纹（第&lt;span class=&#34;math inline&#34;&gt;\(k=1,m=2\)&lt;/span&gt;级）之间半径的差值计算。&lt;/p&gt;
 &lt;h5 id=&#34;-利用薄膜干涉制成增透膜或增反膜&#34;&gt;⑤ 利用薄膜干涉制成增透膜或增反膜&lt;/h5&gt;
 &lt;ul&gt;
 &lt;li&gt;增透膜：减少反射光，反射光的干涉相消。&lt;br&gt;
-光程差满足奇数倍半波长：&lt;span class=&#34;math inline&#34;&gt;\(\Delta=2e\sqrt{n_2^2-\sin^2i}(+\frac{\lambda}{2}=(2k+1)\frac{\lambda}{2}\)&lt;/span&gt;&lt;br&gt;
+光程差满足奇数倍半波长：&lt;span class=&#34;math inline&#34;&gt;\(\Delta=2e\sqrt{n_2^2-\sin^2i}(+\frac{\lambda}{2})=(2k+1)\frac{\lambda}{2}\)&lt;/span&gt;&lt;br&gt;
 &lt;em&gt;因为对感光底片最敏感的是黄绿光，所以反射蓝紫光，平时看到镜片都是蓝紫色&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;增反膜：减少透光率，增加反射光，反射光的干涉相长。&lt;/li&gt;
 &lt;/ul&gt;
@@ -1380,10 +1409,9 @@ k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[A=A_0\frac{\sin\alpha}{\alpha}
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\]&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;I=I_0(\frac{\sin\alpha}{\alpha})^2&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[I=I_0(\frac{\sin\alpha}{\alpha})^2
+\]&lt;/span&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;结论：&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[⭐A=A_0\frac{\sin\alpha}{\alpha}
@@ -1434,7 +1462,7 @@ k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\
 &lt;ul&gt;
 &lt;li&gt;集中了大部分能量&lt;/li&gt;
 &lt;li&gt;角宽度为其他的两倍&lt;/li&gt;
-&lt;li&gt;半角宽度：&lt;span class=&#34;math inline&#34;&gt;\(\Delta\varphi = 1.22\frac{\lambda}{D} (D\textrm{为圆孔直径})\)&lt;/span&gt;（推导不能，直接给结果）&lt;br&gt;
+&lt;li&gt;中央明纹的半角宽度：&lt;span class=&#34;math inline&#34;&gt;\(\Delta\varphi = 1.22\frac{\lambda}{D} (D\textrm{为圆孔直径})\)&lt;/span&gt;（推导不能，直接给结果）&lt;br&gt;
 &lt;em&gt;对比单缝衍射&lt;span class=&#34;math inline&#34;&gt;\(\Delta\varphi=\frac{\lambda}{a}\)&lt;/span&gt;&lt;/em&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\lambda \uparrow \qquad \Delta\varphi\uparrow\)&lt;/span&gt;，衍射现象越显著。&lt;/li&gt;
@@ -1570,6 +1598,8 @@ k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\
 注意这里可不是&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;级和&lt;span class=&#34;math inline&#34;&gt;\(k+1\)&lt;/span&gt;级之间的长度，&lt;br&gt;
 而是&lt;strong&gt;在&lt;span class=&#34;math inline&#34;&gt;\(kN-1\)&lt;/span&gt;和&lt;span class=&#34;math inline&#34;&gt;\(kN+1\)&lt;/span&gt;级暗纹之间的长度&lt;/strong&gt;。&lt;br&gt;
 可见：&lt;span class=&#34;math inline&#34;&gt;\(N\uparrow\)&lt;/span&gt;，主明纹越细窄、明亮，故光栅的分辨本领很高。&lt;/li&gt;
+&lt;li&gt;变化 - 当斜入射时：&lt;br&gt;
+光栅公式：&lt;span class=&#34;math inline&#34;&gt;\(d\sin\varphi\pm\sin\theta=k\lambda$(\)&lt;/span&gt;\theta$为斜入射角)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;极小值 - 暗纹位置：&lt;span class=&#34;math inline&#34;&gt;\(\sin N\beta = 0\)&lt;/span&gt;&lt;br&gt;
@@ -1590,7 +1620,7 @@ k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\
 对应向量合成图如下：&lt;br&gt;
 &lt;img src=&#34;images/Wave%20Optics--11-13_21-20-57.png&#34; alt=&#34;图 12&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;由&lt;span class=&#34;math inline&#34;&gt;\(I=I_1(\frac{\sin N\beta}{\sin\beta})^2\)&lt;/span&gt;的函数图像可知：&lt;br&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(N=7\)&lt;/span&gt;时，
+&lt;span class=&#34;math inline&#34;&gt;\(N=7\)&lt;/span&gt;时，&lt;br&gt;
 &lt;img src=&#34;images/Wave%20Optics--11-13_21-24-35.png&#34; alt=&#34;图 13&#34;  /&gt;&lt;br&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(N=9\)&lt;/span&gt;时，&lt;br&gt;
 &lt;img src=&#34;images/Wave%20Optics--11-13_21-26-20.png&#34; alt=&#34;图 14&#34;  /&gt;&lt;/p&gt;
@@ -1605,7 +1635,7 @@ k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\
 对于不同波长的两束光，其恰能分辨的情况如下：&lt;br&gt;
 &lt;img src=&#34;images/Wave%20Optics--11-13_22-04-02.png&#34; alt=&#34;图 16&#34;  /&gt;&lt;/p&gt;
 &lt;p&gt;需要同时满足：&lt;br&gt;
-&lt;span class=&#34;math inline&#34;&gt;\(\left\{\begin{array}{l}d \sin \varphi=k \lambda_{1} \\d \sin \varphi=\frac{k N-1}{N} \cdot \lambda_{2}\end{array}\right.\)&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\left\{\begin{array}{l}d \sin \varphi=k \lambda_{1} \\d \sin \varphi=\frac{k N-1}{Nd} \cdot \lambda_{2}\end{array}\right.\)&lt;/span&gt;&lt;br&gt;
 联立解得：&lt;br&gt;
 &lt;span class=&#34;math inline&#34;&gt;\(\frac{\Delta\lambda}{\lambda}=\frac{\lambda_2-\lambda_1}{\lambda_2}=\frac{1}{kN}\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;定义分辨率：&lt;/p&gt;
@@ -1671,9 +1701,9 @@ k\lambda &amp; \textsf{（明）} &amp; (k=1,2,\cdots)\\
 \]&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;中央明纹区的主极大条数：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;对应&lt;span class=&#34;math inline&#34;&gt;\(k&#39;=1\)&lt;/span&gt;，故&lt;span class=&#34;math inline&#34;&gt;\(k=\frac{d}{a}\)&lt;/span&gt;&lt;br&gt;
-若为整数，则&lt;span class=&#34;math inline&#34;&gt;\(k=2\frac{d}{a}$+$1\)&lt;/span&gt;条中央明纹-&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;缺级。&lt;br&gt;
+若为整数，则中央明纹区&lt;span class=&#34;math inline&#34;&gt;\(2\frac{d}{a}\)&lt;/span&gt;条次极大&lt;span class=&#34;math inline&#34;&gt;\(+1\)&lt;/span&gt;条中央明纹&lt;span class=&#34;math inline&#34;&gt;\(-2\)&lt;/span&gt;条缺级&lt;span class=&#34;math inline&#34;&gt;\(=2\frac{d}{a}-1\)&lt;/span&gt;。&lt;br&gt;
 如果不为整数，则不会有缺级，向上取整后可以把减的&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;补回来。&lt;/p&gt;
-&lt;p&gt;则极大条数：&lt;span class=&#34;math inline&#34;&gt;\(2\lceil\frac{d}{a}\rceil-1\)&lt;/span&gt;（向上取整）&lt;/p&gt;
+&lt;p&gt;则中央明纹区主极大条数：&lt;span class=&#34;math inline&#34;&gt;\(2\lceil\frac{d}{a}\rceil-1\)&lt;/span&gt;（向上取整）&lt;/p&gt;
 &lt;h3 id=&#34;七晶格衍射x光衍射&#34;&gt;七、晶格衍射（X光衍射）&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;单晶：分立开的&lt;/li&gt;
@@ -2789,7 +2819,7 @@ D - Device 器件&lt;/p&gt;
 &lt;h2 id=&#34;个人基本信息&#34;&gt;个人基本信息&lt;/h2&gt;
 &lt;p&gt;这里先提前说下个人转专业的基本情况：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;年纪：2020级&lt;/li&gt;
+&lt;li&gt;年级：2020级&lt;/li&gt;
 &lt;li&gt;原专业与学院：应用心理学 - 心理研究与咨询中心&lt;/li&gt;
 &lt;li&gt;转入专业与学院：计算机科学与技术 - 计算机与人工智能学院&lt;/li&gt;
 &lt;/ul&gt;
@@ -3486,7 +3516,7 @@ D - Device 器件&lt;/p&gt;
 		&lt;/a&gt;&lt;figcaption&gt;准入课程 - 交运学院&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;有些可能还会有备注成绩要求，不过普遍在要求上都很低，实际上能成功转入的分数可能远远高于要求分数。&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;有些准入课可能没标注年纪，这种情况个人认为是大一大二都是这些准入课，但&lt;strong&gt;具体情况还请咨询学院教务处&lt;/strong&gt;。&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;有些准入课可能没标注年级，这种情况个人认为是大一大二都是这些准入课，但&lt;strong&gt;具体情况还请咨询学院教务处&lt;/strong&gt;。&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;有些可能是从几个准入课程中选择，这种选课会更加灵活：&lt;br&gt;
 &lt;figure style=&#34;flex-grow: 65; flex-basis: 156px&#34;&gt;
@@ -5223,7 +5253,7 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
 		&lt;p&gt;&lt;p&gt;最主要的是，个人其实就是如上图同学一样的情况，因为&lt;strong&gt;要修准入课学分不够就要退掉原专业的部分课程&lt;/strong&gt;……&lt;br&gt;
 并且咨询了直系学长学姐，说的就是要退原专业的必修课……&lt;/p&gt;
 &lt;p&gt;自己也没有去咨询教务，直接按照学长学姐的方式进行选课……&lt;br&gt;
-各种东选西退，才勉强在&lt;strong&gt;保证准入课的情况&lt;/strong&gt;下选择必修课凑到大一年纪满学分（32学分）……&lt;/p&gt;
+各种东选西退，才勉强在&lt;strong&gt;保证准入课的情况&lt;/strong&gt;下选择必修课凑到大一年级满学分（32学分）……&lt;/p&gt;
 &lt;p&gt;但这位同学却被这样处理，确实感觉很恐怖与同情，并且也感觉到了转专业机制的混乱……&lt;br&gt;
 也将之前在“了解转专业机制”中写的主要咨询成功转专业的学长学姐改成了咨询教务处……&lt;br&gt;
 还是人家说了算啊果然.jpg……&lt;/p&gt;
