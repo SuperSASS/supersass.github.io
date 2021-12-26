@@ -6,7 +6,245 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Thu, 25 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>大学物理实验Ⅱ——考点总结……</title>
+        <link>https://blog.supersassw.com/p/univ-physics_experiment-2/</link>
+        <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/univ-physics_experiment-2/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/univ-physics_experiment-2/Yande-337927.png" alt="Featured image of post 大学物理实验Ⅱ——考点总结……" /&gt;&lt;h2 id=&#34;1迈克尔逊干涉仪&#34;&gt;1、迈克尔逊干涉仪&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;调节工具：
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(M_1\)&lt;/span&gt;手轮 - 调节反光镜&lt;span class=&#34;math inline&#34;&gt;\(M_1\)&lt;/span&gt;的位置&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(M_1,M_2\)&lt;/span&gt;背后的调节螺钉 - 调节各自的方位&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(M_2\)&lt;/span&gt;下面的水平和垂直拉簧螺钉 - 对&lt;span class=&#34;math inline&#34;&gt;\(M_2\)&lt;/span&gt;方位的精细调节&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;读数：&lt;span class=&#34;math inline&#34;&gt;\(7\)&lt;/span&gt;位有效数字&lt;span class=&#34;math inline&#34;&gt;\(AA.BBCCC\)&lt;/span&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(AA\)&lt;/span&gt; - 主尺读数，不估读&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(BB\)&lt;/span&gt; - 读数窗口，不估读&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(CCC\)&lt;/span&gt; - 微调手轮，最后一位估读&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;注意避免“&lt;strong&gt;走空程&lt;/strong&gt;”&lt;/li&gt;
+&lt;li&gt;补偿板&lt;span class=&#34;math inline&#34;&gt;\(G_2\)&lt;/span&gt;作用：&lt;br&gt;
+光线&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;先后两次通过&lt;span class=&#34;math inline&#34;&gt;\(G_1\)&lt;/span&gt;，故需要补偿板使光线&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;先后两次通过&lt;span class=&#34;math inline&#34;&gt;\(G_2\)&lt;/span&gt;来平衡。&lt;/li&gt;
+&lt;li&gt;光程差：&lt;span class=&#34;math inline&#34;&gt;\(\Delta=2d\cos i\)&lt;/span&gt;，调节&lt;span class=&#34;math inline&#34;&gt;\(i=0\)&lt;/span&gt;&lt;br&gt;
+计算公式：
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[2(\Delta d)=(\Delta k)\lambda
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\Delta k\)&lt;/span&gt;为湮灭或出现条纹的个数&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\Delta d\)&lt;/span&gt;为&lt;span class=&#34;math inline&#34;&gt;\(M_1\)&lt;/span&gt;移动量&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;2霍尔元件&#34;&gt;2、霍尔元件&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;霍尔电压计算公式：
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[U_H=Blv=\frac{1}{ne}\frac{I_s}{d}B=R_H\frac{I_s}{d}B=K_HI_sB
+\]&lt;/span&gt;&lt;/p&gt;
+其中&lt;span class=&#34;math inline&#34;&gt;\(l\)&lt;/span&gt;为宽度，&lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;为高度，&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(R_H\)&lt;/span&gt;为霍尔系数，&lt;span class=&#34;math inline&#34;&gt;\(K_H\)&lt;/span&gt;为灵敏度。&lt;/li&gt;
+&lt;li&gt;霍尔系数&lt;span class=&#34;math inline&#34;&gt;\(R_H\)&lt;/span&gt;，灵敏度&lt;span class=&#34;math inline&#34;&gt;\(K_H\)&lt;/span&gt;：
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[K_H=\frac{U_H}{I_sB}\qquad R_H=\frac{U_Hd}{I_sB}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;载流子浓度：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[n=\frac{1}{eR_H}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;载流子迁移率&lt;span class=&#34;math inline&#34;&gt;\(\mu\)&lt;/span&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\mu=K_H\frac{L}{l}\frac{I_s}{U_s}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;电导率&lt;span class=&#34;math inline&#34;&gt;\(\sigma\)&lt;/span&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\sigma=\frac{L}{dl}\frac{I_s}{U_s}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;误差电势：&lt;br&gt;
+&lt;img src=&#34;images/%E8%A6%81%E7%82%B9--12-23_22-48-35.png&#34; alt=&#34;图 10&#34;  /&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(1Gs=10^5T\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;3调制波法测光速&#34;&gt;3、调制波法测光速&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;方法：
+&lt;ul&gt;
+&lt;li&gt;等距法（等距移动小车）&lt;/li&gt;
+&lt;li&gt;等相位法（看波形移动一个周期）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;公式：&lt;span class=&#34;math inline&#34;&gt;\(\frac{\varphi_i}{2\pi}=\frac{2D_i}{\lambda}\)&lt;/span&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\lambda=\frac{2\pi}{\varphi_i}\cdot 2D_i
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;采用双踪示波器法连接线路时，如果将“参考”相位信号接至&lt;span class=&#34;math inline&#34;&gt;\(CH_1\)&lt;/span&gt;，“信号”相位信号接至&lt;span class=&#34;math inline&#34;&gt;\(CH_2\)&lt;/span&gt;；并用触发扫描，显示方式应为“&lt;strong&gt;断续&lt;/strong&gt;”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;避免高频下测相的困难 - &lt;strong&gt;差频法&lt;/strong&gt;&lt;br&gt;
+高频：&lt;span class=&#34;math inline&#34;&gt;\(100 MHz\)&lt;/span&gt;
+低频：&lt;span class=&#34;math inline&#34;&gt;\(455 kHz\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;与光速&lt;span class=&#34;math inline&#34;&gt;\(C\)&lt;/span&gt;无关物理量 - 质子、中子等基本粒子的结构&lt;/li&gt;
+&lt;li&gt;光 - &lt;span class=&#34;math inline&#34;&gt;\(10^{14}Hz\)&lt;/span&gt;；调制波 - &lt;span class=&#34;math inline&#34;&gt;\(10^8Hz\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;两次过&lt;span class=&#34;math inline&#34;&gt;\(x_0\)&lt;/span&gt;位置时的读数值&lt;strong&gt;相差&lt;span class=&#34;math inline&#34;&gt;\(0.1°\)&lt;/span&gt;要重测&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;端口
+&lt;ul&gt;
+&lt;li&gt;触发源信号 - 基准正弦波端口&lt;/li&gt;
+&lt;li&gt;调制波频率 - 测频端口&lt;/li&gt;
+&lt;li&gt;被测信号 - 测相端口&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;4光电效应测普朗克&#34;&gt;4、光电效应测普朗克&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;实验原理 - 减速电位法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;光电效应方程：&lt;span class=&#34;math inline&#34;&gt;\(h\nu=\frac{1}{2}mv_0^2+W\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;截止电压：&lt;span class=&#34;math inline&#34;&gt;\(eU_c=\frac{1}{2}mv_0^2\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;逸出功：&lt;span class=&#34;math inline&#34;&gt;\(W=h\nu_0\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;得：&lt;span class=&#34;math inline&#34;&gt;\(U_c=\frac{h}{e}(\nu-\nu_0)\)&lt;/span&gt;&lt;br&gt;
+转化为：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[h=Ke
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;其中&lt;span class=&#34;math inline&#34;&gt;\(K\)&lt;/span&gt;为&lt;span class=&#34;math inline&#34;&gt;\(U_c-\nu\)&lt;/span&gt;关系直线的斜率。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;误差影响：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;暗电流：没有光照也能产生微弱的电流。&lt;/li&gt;
+&lt;li&gt;阳极光电流：为反向电流。&lt;/li&gt;
+&lt;li&gt;本底光电流：杂散光形成。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;消除误差：
+从&lt;strong&gt;反向增大&lt;/strong&gt;&lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;到&lt;span class=&#34;math inline&#34;&gt;\(I=0\)&lt;/span&gt;，保持&lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;不变遮光，记下此时&lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt;值，&lt;br&gt;
+再通光，调节&lt;span class=&#34;math inline&#34;&gt;\(U\)&lt;/span&gt;到&lt;span class=&#34;math inline&#34;&gt;\(I\)&lt;/span&gt;，此时即为准确的截止电压&lt;span class=&#34;math inline&#34;&gt;\(U_c\)&lt;/span&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;测伏安特性曲线：&lt;br&gt;
+&lt;em&gt;就扒拉电压就完事了。&lt;/em&gt;&lt;br&gt;
+在测量变化快的区域要慢点变化。&lt;br&gt;
+需要利用之前测的暗电流对这一频率的光电流&lt;strong&gt;进行修正&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;5液晶光电效应&#34;&gt;5、液晶光电效应&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;原理 - 旋光效应&lt;br&gt;
+液晶上下表面为偏振方向垂直的偏振片。（由在沟槽里的液晶分子形成）&lt;/p&gt;
+&lt;p&gt;未通电前，液晶分子上下螺旋排布，整体扭曲&lt;span class=&#34;math inline&#34;&gt;\(90°\)&lt;/span&gt;，&lt;br&gt;
+故光进入时，偏振光随着每层的螺旋，最终旋转&lt;span class=&#34;math inline&#34;&gt;\(90°\)&lt;/span&gt;，与下表面平行能出射。&lt;/p&gt;
+&lt;p&gt;通电后，液晶分子随电场偏转，螺旋变为均匀分布&lt;br&gt;
+故光进入时不会偏转，最终与下表面垂直不能出射。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;常白模式：没通电光透过，通电光截至。&lt;br&gt;
+常黑模式：没通电光截至，通电光透过。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;光电特性：&lt;br&gt;
+对于常白模式的液晶，透射率随着外加电压的升高而逐渐降低。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;阈值电压：透过率为&lt;span class=&#34;math inline&#34;&gt;\(90\%\)&lt;/span&gt;的驱动电压。&lt;/li&gt;
+&lt;li&gt;关断电压：透过率为&lt;span class=&#34;math inline&#34;&gt;\(10\%\)&lt;/span&gt;的驱动电压。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;时间响应特性：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;上升时间：透过率由&lt;span class=&#34;math inline&#34;&gt;\(10\%\)&lt;/span&gt;升到&lt;span class=&#34;math inline&#34;&gt;\(90\%\)&lt;/span&gt;所需时间。&lt;/li&gt;
+&lt;li&gt;下降时间：透过率由&lt;span class=&#34;math inline&#34;&gt;\(90\%\)&lt;/span&gt;降到&lt;span class=&#34;math inline&#34;&gt;\(10\%\)&lt;/span&gt;所需时间。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;视角特性：&lt;br&gt;
+液晶的对比度与垂直和水平视角都有关，且具有&lt;strong&gt;不对称性&lt;/strong&gt;。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;6示波器测声速&#34;&gt;6、示波器测声速&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;方法：
+&lt;ul&gt;
+&lt;li&gt;驻波法（看波形变化一周期）&lt;/li&gt;
+&lt;li&gt;相位比较法（看比萨如图形重回直线）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;压电效应：&lt;br&gt;
+在受到压力时能产生电场，为正压电效应；施加电场时产生振动，为逆压电效应。&lt;/li&gt;
+&lt;li&gt;理想气体中的声速：
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[v=331.45\sqrt{1+\frac{t}{T_0}}
+\]&lt;/span&gt;&lt;/p&gt;
+其中&lt;span class=&#34;math inline&#34;&gt;\(T_0=273.14K\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(t\)&lt;/span&gt;单位为摄氏度。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;驻波法：&lt;/p&gt;
+&lt;p&gt;只测接收头&lt;span class=&#34;math inline&#34;&gt;\(S_2\)&lt;/span&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;驻波方程：
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[Y=2A\sin(2\pi\frac{X}{\lambda})\sin(\omega t)
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;计算方程：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[v=f\lambda=2f\Delta L
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\Delta L\)&lt;/span&gt;为从第&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;个极大值移动到第&lt;span class=&#34;math inline&#34;&gt;\(n+1\)&lt;/span&gt;个极大值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相位比较法：&lt;/p&gt;
+&lt;p&gt;测发射头&lt;span class=&#34;math inline&#34;&gt;\(S_1\)&lt;/span&gt;和接收头&lt;span class=&#34;math inline&#34;&gt;\(S_2\)&lt;/span&gt;的合成图形&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;相位差表示：
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\varphi=2\pi\frac{L}{\lambda}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择直线为起点，当重新变回直线时，&lt;br&gt;
+所&lt;strong&gt;移动距离&lt;span class=&#34;math inline&#34;&gt;\(\Delta L\)&lt;/span&gt;，即为波长&lt;span class=&#34;math inline&#34;&gt;\(\lambda\)&lt;/span&gt;&lt;/strong&gt;。&lt;br&gt;
+故：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[v=f\lambda=f\Delta L
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;7偏振光&#34;&gt;7、偏振光&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{4}\)&lt;/span&gt;波片：
+&lt;ul&gt;
+&lt;li&gt;线偏振光
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(0°\)&lt;/span&gt;或&lt;span class=&#34;math inline&#34;&gt;\(90°\)&lt;/span&gt; - 线偏振光&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(45°\)&lt;/span&gt; - 圆偏振光&lt;/li&gt;
+&lt;li&gt;其他 - 椭圆&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;圆 - 线偏振光&lt;/li&gt;
+&lt;li&gt;椭圆 - 线偏振光（其实是类似于线偏振光）&lt;/li&gt;
+&lt;li&gt;自然光经过仍是自然光；部分经过仍是部分&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\frac{1}{2}\)&lt;/span&gt;波片 - 只改变振动方向，原来是什么还是什么。&lt;/li&gt;
+&lt;li&gt;偏振片 - 二向色性的晶体&lt;/li&gt;
+&lt;li&gt;光轴定义了一个方向，光线沿该方向入射时，在晶体内部不发生双折射现象。&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(o\)&lt;/span&gt;光电矢量平行于光轴，&lt;span class=&#34;math inline&#34;&gt;\(e\)&lt;/span&gt;光平行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;8光栅&#34;&gt;8、光栅&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;利用“光的&lt;strong&gt;透射&lt;/strong&gt;”&lt;/li&gt;
+&lt;li&gt;实验室所用的光栅，用光学感光技术制成。&lt;/li&gt;
+&lt;li&gt;光栅周期：&lt;span class=&#34;math inline&#34;&gt;\(N=\frac{\sin\varphi}{k\lambda}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;分光计的测量精度为：1分&lt;br&gt;
+分光计的游标盘为：30个小格&lt;/li&gt;
+&lt;li&gt;黄光577nm与579nm分不开，主要是调节：拉伸平行光管&lt;/li&gt;
+&lt;li&gt;测光栅负1、2级时，应该：向左转动主刻度盘&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>LaTeX相关……</title>
         <link>https://blog.supersassw.com/p/test-latex/</link>
         <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
