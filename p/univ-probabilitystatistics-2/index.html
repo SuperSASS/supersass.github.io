@@ -1,0 +1,754 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='总体是研究对象的一个不确定的属性……'><title>概率论中有关总体的认识……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/univ-probabilitystatistics-2/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='概率论中有关总体的认识……'>
+<meta property='og:description' content='总体是研究对象的一个不确定的属性……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/univ-probabilitystatistics-2/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='大学课程' /><meta property='article:tag' content='概率论与数理统计' /><meta property='article:tag' content='个人理解' /><meta property='article:published_time' content='2022-01-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-01-02T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/univ-probabilitystatistics-2/Yande-311903.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="概率论中有关总体的认识……">
+<meta name="twitter:description" content="总体是研究对象的一个不确定的属性……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/univ-probabilitystatistics-2/Yande-311903.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#有关总体">有关总体</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/univ-probabilitystatistics-2/">
+                <img src="/p/univ-probabilitystatistics-2/Yande-311903_huf38710f708e70daa5cec2f0ef3fd57ed_10436802_800x0_resize_box_3.png"
+                        srcset="/p/univ-probabilitystatistics-2/Yande-311903_huf38710f708e70daa5cec2f0ef3fd57ed_10436802_800x0_resize_box_3.png 800w, /p/univ-probabilitystatistics-2/Yande-311903_huf38710f708e70daa5cec2f0ef3fd57ed_10436802_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="557" 
+                        loading="lazy"
+                        alt="Featured image of post 概率论中有关总体的认识……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/university/" >
+                大学相关
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/univ-probabilitystatistics-2/">概率论中有关总体的认识……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            总体是研究对象的一个不确定的属性……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2022/01/02</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：2445</div>
+            <div class="time">预计阅读时长： <time>5</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header><section class="article-content">
+    <h2 id="有关总体">有关总体</h2>
+<ul>
+<li>总体：研究<strong>对象</strong>的一个<strong>不确定</strong>的<strong>属性</strong>。</li>
+</ul>
+<p>关键词：对象、属性、不确定。</p>
+<p>总体是由若干个个体（即上面的对象）组合而成的，且<strong>个体数目是确定</strong>的，可以记为<span class="math inline">\(N\)</span>。<br>
+<em>（区别于样本容量<span class="math inline">\(n\)</span>，这里还没涉及到样本！先不管样本这个东西！）</em><br>
+总体里可能有<span class="math inline">\(2\)</span>个个体，可能有<span class="math inline">\(n\)</span>个个体，可能有<span class="math inline">\(\infty\)</span>个个体，<strong>总之是确定的</strong>。<br>
+不确定的只是个体的某个属性。（身高、分数、或者如果个体就是没有实际意义的数字，属性就是数值）</p>
+<p>我们用<span class="math inline">\(X\)</span>代表总体，这个<span class="math inline">\(X\)</span>是将总体中所有个体的属性抽象表达，<br>
+因此如果要真正完全表达这个总体，应该用个<span class="math inline">\(N\)</span>元组<span class="math inline">\((X_1,X_2,\cdots,X_N)\)</span>。<br>
+那么<span class="math inline">\(X_i\)</span>，则代表其中一个个体的属性。</p>
+<p>回到总体的定义，必须是个<strong>不确定</strong>的属性。<br>
+因此判断某个说法是不是总体，就任选一个个体，看这个属性是否不确定，<br>
+也就是如果我们不具体抽样调查，这个属性<span class="math inline">\(X_i\)</span>取多少是<strong>随机的</strong>。</p>
+<p>举例：<br>
+✔️的代表是总体的表述，❌的则不是。</p>
+<ul>
+<li>
+<p>学生的身高 — ✔️<br>
+<span class="math inline">\(X_i=200,100,150\cdots\)</span>均可以，有无限取值。</p>
+<ul>
+<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取合适的值都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（学生）<span class="math inline">\(i\)</span>的属性（身高）<span class="math inline">\(X_i\)</span>不一样。</li>
+</ul>
+</li>
+<li>
+<p>学生的平均身高 — ❌<br>
+因为总体的每一个个体都是确定的，这里“平均身高”只能是一个具体的数！比如<span class="math inline">\(175\)</span>米。<br>
+因此该总体<span class="math inline">\((X_1,X_2,\cdots,X_N)\)</span>，每一个<span class="math inline">\(X_i\)</span>均是确定的值<span class="math inline">\(175\)</span>。</p>
+<ul>
+<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>就是<span class="math inline">\(175\)</span>，是确定的。</li>
+<li>或者说我们多次取一个个体，每个个体（学生）<span class="math inline">\(i\)</span>的属性（平均身高）<span class="math inline">\(X_i\)</span>都一样。</li>
+</ul>
+</li>
+<li>
+<p>若干产品，每一个产品的好坏情况 — ✔️<br>
+<span class="math inline">\(X_i=\textrm{好}(0),\textrm{坏}(1)\)</span>，只有这两个取值。</p>
+<ul>
+<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取个<span class="math inline">\(0,1\)</span>都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（每一个产品）<span class="math inline">\(i\)</span>的属性（好坏情况）<span class="math inline">\(X_i\)</span>不一样。</li>
+</ul>
+</li>
+<li>
+<p>若干产品，这一堆产品的次品数 — ❌<br>
+因为总体的每一个个体都是确定的，这里“次品数”只能是一个具体的数！比如<span class="math inline">\(50\)</span>个。<br>
+因此该总体<span class="math inline">\((X_1,X_2,\cdots,X_N)\)</span>，每一个<span class="math inline">\(X_i\)</span>均是确定的值<span class="math inline">\(50\)</span>。</p>
+<ul>
+<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>就是<span class="math inline">\(50\)</span>，是确定的。</li>
+<li>或者说我们多次取一个个体，每个个体（这一堆产品）<span class="math inline">\(i\)</span>的属性（次品数）<span class="math inline">\(X_i\)</span>都一样。</li>
+</ul>
+</li>
+<li>
+<p>抛<span class="math inline">\(50\)</span>次硬币，进行一次实验，正面朝上次数 — ✔️<br>
+<span class="math inline">\(X_i=0,24,25,26,50,\cdots\)</span>，有无限取值。</p>
+<ul>
+<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取合适的值都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（抛50次硬币后正面朝上的硬币）<span class="math inline">\(i\)</span>的属性（好坏情况）<span class="math inline">\(X_i\)</span>不一样。</li>
+</ul>
+</li>
+<li>
+<p>抛<span class="math inline">\(50\)</span>次硬币，进行一次实验，是否正面朝上<span class="math inline">\(25\)</span>次 — ✔️<br>
+因为这一次实验，总体的每一个个体都是确定的，<br>
+这里“是否正面朝上<span class="math inline">\(25\)</span>次”只能是一个具体的值！只能是否(<span class="math inline">\(0\)</span>)或是(<span class="math inline">\(1\)</span>)，比如为否(<span class="math inline">\(0\)</span>)。<br>
+因此该总体<span class="math inline">\((X_1,X_2,\cdots,X_N)\)</span>，每一个<span class="math inline">\(X_i\)</span>均是确定的值否(<span class="math inline">\(0\)</span>)。</p>
+<ul>
+<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>就是<span class="math inline">\(0\)</span>，是确定的。</li>
+<li>或者说我们多次取一个个体，每个个体（这一次实验）<span class="math inline">\(i\)</span>的属性（是否正面朝上<span class="math inline">\(25\)</span>次）<span class="math inline">\(X_i\)</span>都一样。</li>
+</ul>
+</li>
+</ul>
+<p>对于这些总体，我们会发现共性是：<strong>每个个体都是确定的</strong>。<br>
+因此这些总体也称为“<strong>静态总体</strong>”。</p>
+<p>静态总体没有“时间”这一维度，<br>
+总体的每个个体无论如何都不会变化，<br>
+如：</p>
+<ul>
+<li>某学校某年测量的学生身高，不会变。</li>
+<li>若干产品某次检测的品质，不会变。</li>
+</ul>
+<blockquote>
+<p>在前面我说总体中个体个数时。没有说可能有<span class="math inline">\(1\)</span>个个体，<br>
+原因就是如果只有一个个体，这个<strong>属性就是确定</strong>的了。</p>
+<p>我们研究：某产品（对象）的好坏情况（属性），<br>
+如果只有一个个体，那么总体就是<span class="math inline">\((X_1)\)</span>，<br>
+他每个个体，属性是确定的（因为只有一个个体，所以属性就是好或坏）。<br>
+我们不管去不去抽样调查，这个个体是好的就是好的，是坏的就是坏的。</p>
+<p>即便是著名的“薛定谔的猫”，即便我们不去看猫，这个猫是死是活他也是确定的，<br>
+不管去不去抽样调查（观测），他的“生死”这一属性也是确定的。<em>（论外：爱因斯坦便是如此认为）</em></p>
+</blockquote>
+<hr>
+<p>与之相对的，就有“<strong>动态总体</strong>”这一说，<br>
+也就是：每个个体都是不确定的。</p>
+<p>动态总体加入了“时间”这一维度，<br>
+总体的个体会变化，<br>
+如：</p>
+<ul>
+<li>某学校每年都测一次学生身高，是哪一年测，每个学生升高就不一样，会变。</li>
+<li>若干产品每小时都检测一次品质，是哪一小时检测，每个产品的品质就不一样，会变。</li>
+</ul>
+<p>因此对于动态总体，举例为：</p>
+<ul>
+<li>
+<p>若干产品，每次抽<span class="math inline">\(n\)</span>(5)件，这<span class="math inline">\(n\)</span>(5)件产品的次品数（<span class="math inline">\(n\)</span>必须也只能是个确定的常数，这里举例为<span class="math inline">\(5\)</span>） — ✔️<br>
+<span class="math inline">\(X_i=0,1,2,3,4,5\)</span>，有<span class="math inline">\(6\)</span>个取值。</p>
+<p>而注意：这里的个体个数<span class="math inline">\(N\)</span>，就是<span class="math inline">\(\infty\)</span>，因为我们可以进行无限次实验（每次抽5件抽无限次）</p>
+<ul>
+<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取合适的值都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（某一次抽的这<span class="math inline">\(5\)</span>件）<span class="math inline">\(i\)</span>的属性（次品数）<span class="math inline">\(X_i\)</span>不一样。</li>
+</ul>
+</li>
+<li>
+<p>抛<span class="math inline">\(50\)</span>次硬币，重复进行<span class="math inline">\(n\)</span>次实验，其中结果为正面朝上<span class="math inline">\(25\)</span>次的实验次数 — ✔️<br>
+<span class="math inline">\(X_i=0,1,2,\cdots,n\)</span>，有<span class="math inline">\(n+1\)</span>个取值。</p>
+<p>而注意：这里的个体个数<span class="math inline">\(N\)</span>，就是<span class="math inline">\(\infty\)</span>，因为我们可以进行无限次实验（每次抛50次硬币抛无限次）</p>
+<ul>
+<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取合适的值都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（某一时刻重复进行的<span class="math inline">\(n\)</span>次实验）<span class="math inline">\(i\)</span>的属性（满足条件的次数）<span class="math inline">\(X_i\)</span>不一样。</li>
+</ul>
+</li>
+</ul>
+
+</section>
+<footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/">大学课程</a>
+        
+            <a href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA%E4%B8%8E%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1/">概率论与数理统计</a>
+        
+            <a href="/tags/%E4%B8%AA%E4%BA%BA%E7%90%86%E8%A7%A3/">个人理解</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-letter-y" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 4l5 9l5 -9" />
+  <line x1="12" y1="13" x2="12" y2="20" />
+</svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Yandere ID：<a href="https://yande.re/post/show/311903" target="_blank" rel="noopener">311903</a>
+            </span>
+        </section></footer>
+
+    
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-physics_experiment-2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-physics_experiment-2/Yande-337927.cfabd344155b9617987eb8ec549949ea_hub5d1827db05ab8b04dc3400a656c42e6_834621_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Physics_Experiment-2" 
+                        data-hash="md5-z6vTRBVblheYfrjsVJlJ6g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">大学物理实验Ⅱ——考点总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-physics-ep14/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-physics-ep14/93592237_p0.55b84634970f429710e4d12877e29e8e_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Physics-Ep14" 
+                        data-hash="md5-VbhGNJcPQpcQ5NEod&#43;Kejg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">大学物理 下——第十四章……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-digital_electronic-summary/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-digital_electronic-summary/88331974_p0.05bed36c1169445e737754f8da82efa6_hu5438825b9b6d1014226d20d231e650c2_1781408_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Digital_Electronic-summary" 
+                        data-hash="md5-Bb7TbBFpRF5zd1T42oLvpg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数字电子技术 - 考点总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-digital_electronic-ep4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-digital_electronic-ep4/74542521_p0.4e73708a10191e973742b77a1ab44e06_hu41b7815279cac48aae43ea80d2335b45_1737627_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Digital_Electronic-Ep4" 
+                        data-hash="md5-TnNwihAZHpc3Qrd6GrROBg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数字电子技术——第四章……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-psycho_phy-prac-4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-psycho_phy-prac-4/pixiv61483143.d2be93400bdf313d058b9f10ab70ae7a_hu12c1b5a9a5e516caec4f044d40d3022b_1819672_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Psycho_Phy-prac-4" 
+                        data-hash="md5-0r6TQAvfMT0Fi58Qq3Cueg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">生理心理学 - 第四章作业……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

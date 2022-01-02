@@ -6,7 +6,136 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Sun, 26 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 02 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>概率论中有关总体的认识……</title>
+        <link>https://blog.supersassw.com/p/univ-probabilitystatistics-2/</link>
+        <pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/univ-probabilitystatistics-2/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/univ-probabilitystatistics-2/Yande-311903.png" alt="Featured image of post 概率论中有关总体的认识……" /&gt;&lt;h2 id=&#34;有关总体&#34;&gt;有关总体&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;总体：研究&lt;strong&gt;对象&lt;/strong&gt;的一个&lt;strong&gt;不确定&lt;/strong&gt;的&lt;strong&gt;属性&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;关键词：对象、属性、不确定。&lt;/p&gt;
+&lt;p&gt;总体是由若干个个体（即上面的对象）组合而成的，且&lt;strong&gt;个体数目是确定&lt;/strong&gt;的，可以记为&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt;。&lt;br&gt;
+&lt;em&gt;（区别于样本容量&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;，这里还没涉及到样本！先不管样本这个东西！）&lt;/em&gt;&lt;br&gt;
+总体里可能有&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;个个体，可能有&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;个个体，可能有&lt;span class=&#34;math inline&#34;&gt;\(\infty\)&lt;/span&gt;个个体，&lt;strong&gt;总之是确定的&lt;/strong&gt;。&lt;br&gt;
+不确定的只是个体的某个属性。（身高、分数、或者如果个体就是没有实际意义的数字，属性就是数值）&lt;/p&gt;
+&lt;p&gt;我们用&lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;代表总体，这个&lt;span class=&#34;math inline&#34;&gt;\(X\)&lt;/span&gt;是将总体中所有个体的属性抽象表达，&lt;br&gt;
+因此如果要真正完全表达这个总体，应该用个&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt;元组&lt;span class=&#34;math inline&#34;&gt;\((X_1,X_2,\cdots,X_N)\)&lt;/span&gt;。&lt;br&gt;
+那么&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;，则代表其中一个个体的属性。&lt;/p&gt;
+&lt;p&gt;回到总体的定义，必须是个&lt;strong&gt;不确定&lt;/strong&gt;的属性。&lt;br&gt;
+因此判断某个说法是不是总体，就任选一个个体，看这个属性是否不确定，&lt;br&gt;
+也就是如果我们不具体抽样调查，这个属性&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;取多少是&lt;strong&gt;随机的&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;举例：&lt;br&gt;
+✔️的代表是总体的表述，❌的则不是。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;学生的身高 — ✔️&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(X_i=200,100,150\cdots\)&lt;/span&gt;均可以，有无限取值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不去抽样调查，&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;取合适的值都可以，是随机的。&lt;/li&gt;
+&lt;li&gt;或者说我们多次取一个个体，每个个体（学生）&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;的属性（身高）&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;不一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;学生的平均身高 — ❌&lt;br&gt;
+因为总体的每一个个体都是确定的，这里“平均身高”只能是一个具体的数！比如&lt;span class=&#34;math inline&#34;&gt;\(175\)&lt;/span&gt;米。&lt;br&gt;
+因此该总体&lt;span class=&#34;math inline&#34;&gt;\((X_1,X_2,\cdots,X_N)\)&lt;/span&gt;，每一个&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;均是确定的值&lt;span class=&#34;math inline&#34;&gt;\(175\)&lt;/span&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不去抽样调查，&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;就是&lt;span class=&#34;math inline&#34;&gt;\(175\)&lt;/span&gt;，是确定的。&lt;/li&gt;
+&lt;li&gt;或者说我们多次取一个个体，每个个体（学生）&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;的属性（平均身高）&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;都一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若干产品，每一个产品的好坏情况 — ✔️&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(X_i=\textrm{好}(0),\textrm{坏}(1)\)&lt;/span&gt;，只有这两个取值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不去抽样调查，&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;取个&lt;span class=&#34;math inline&#34;&gt;\(0,1\)&lt;/span&gt;都可以，是随机的。&lt;/li&gt;
+&lt;li&gt;或者说我们多次取一个个体，每个个体（每一个产品）&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;的属性（好坏情况）&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;不一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;若干产品，这一堆产品的次品数 — ❌&lt;br&gt;
+因为总体的每一个个体都是确定的，这里“次品数”只能是一个具体的数！比如&lt;span class=&#34;math inline&#34;&gt;\(50\)&lt;/span&gt;个。&lt;br&gt;
+因此该总体&lt;span class=&#34;math inline&#34;&gt;\((X_1,X_2,\cdots,X_N)\)&lt;/span&gt;，每一个&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;均是确定的值&lt;span class=&#34;math inline&#34;&gt;\(50\)&lt;/span&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不去抽样调查，&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;就是&lt;span class=&#34;math inline&#34;&gt;\(50\)&lt;/span&gt;，是确定的。&lt;/li&gt;
+&lt;li&gt;或者说我们多次取一个个体，每个个体（这一堆产品）&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;的属性（次品数）&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;都一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抛&lt;span class=&#34;math inline&#34;&gt;\(50\)&lt;/span&gt;次硬币，进行一次实验，正面朝上次数 — ✔️&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(X_i=0,24,25,26,50,\cdots\)&lt;/span&gt;，有无限取值。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不去抽样调查，&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;取合适的值都可以，是随机的。&lt;/li&gt;
+&lt;li&gt;或者说我们多次取一个个体，每个个体（抛50次硬币后正面朝上的硬币）&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;的属性（好坏情况）&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;不一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抛&lt;span class=&#34;math inline&#34;&gt;\(50\)&lt;/span&gt;次硬币，进行一次实验，是否正面朝上&lt;span class=&#34;math inline&#34;&gt;\(25\)&lt;/span&gt;次 — ✔️&lt;br&gt;
+因为这一次实验，总体的每一个个体都是确定的，&lt;br&gt;
+这里“是否正面朝上&lt;span class=&#34;math inline&#34;&gt;\(25\)&lt;/span&gt;次”只能是一个具体的值！只能是否(&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;)或是(&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;)，比如为否(&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;)。&lt;br&gt;
+因此该总体&lt;span class=&#34;math inline&#34;&gt;\((X_1,X_2,\cdots,X_N)\)&lt;/span&gt;，每一个&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;均是确定的值否(&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;)。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不去抽样调查，&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;就是&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;，是确定的。&lt;/li&gt;
+&lt;li&gt;或者说我们多次取一个个体，每个个体（这一次实验）&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;的属性（是否正面朝上&lt;span class=&#34;math inline&#34;&gt;\(25\)&lt;/span&gt;次）&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;都一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;对于这些总体，我们会发现共性是：&lt;strong&gt;每个个体都是确定的&lt;/strong&gt;。&lt;br&gt;
+因此这些总体也称为“&lt;strong&gt;静态总体&lt;/strong&gt;”。&lt;/p&gt;
+&lt;p&gt;静态总体没有“时间”这一维度，&lt;br&gt;
+总体的每个个体无论如何都不会变化，&lt;br&gt;
+如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;某学校某年测量的学生身高，不会变。&lt;/li&gt;
+&lt;li&gt;若干产品某次检测的品质，不会变。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在前面我说总体中个体个数时。没有说可能有&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;个个体，&lt;br&gt;
+原因就是如果只有一个个体，这个&lt;strong&gt;属性就是确定&lt;/strong&gt;的了。&lt;/p&gt;
+&lt;p&gt;我们研究：某产品（对象）的好坏情况（属性），&lt;br&gt;
+如果只有一个个体，那么总体就是&lt;span class=&#34;math inline&#34;&gt;\((X_1)\)&lt;/span&gt;，&lt;br&gt;
+他每个个体，属性是确定的（因为只有一个个体，所以属性就是好或坏）。&lt;br&gt;
+我们不管去不去抽样调查，这个个体是好的就是好的，是坏的就是坏的。&lt;/p&gt;
+&lt;p&gt;即便是著名的“薛定谔的猫”，即便我们不去看猫，这个猫是死是活他也是确定的，&lt;br&gt;
+不管去不去抽样调查（观测），他的“生死”这一属性也是确定的。&lt;em&gt;（论外：爱因斯坦便是如此认为）&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;与之相对的，就有“&lt;strong&gt;动态总体&lt;/strong&gt;”这一说，&lt;br&gt;
+也就是：每个个体都是不确定的。&lt;/p&gt;
+&lt;p&gt;动态总体加入了“时间”这一维度，&lt;br&gt;
+总体的个体会变化，&lt;br&gt;
+如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;某学校每年都测一次学生身高，是哪一年测，每个学生升高就不一样，会变。&lt;/li&gt;
+&lt;li&gt;若干产品每小时都检测一次品质，是哪一小时检测，每个产品的品质就不一样，会变。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;因此对于动态总体，举例为：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;若干产品，每次抽&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;(5)件，这&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;(5)件产品的次品数（&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;必须也只能是个确定的常数，这里举例为&lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt;） — ✔️&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(X_i=0,1,2,3,4,5\)&lt;/span&gt;，有&lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt;个取值。&lt;/p&gt;
+&lt;p&gt;而注意：这里的个体个数&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt;，就是&lt;span class=&#34;math inline&#34;&gt;\(\infty\)&lt;/span&gt;，因为我们可以进行无限次实验（每次抽5件抽无限次）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不去抽样调查，&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;取合适的值都可以，是随机的。&lt;/li&gt;
+&lt;li&gt;或者说我们多次取一个个体，每个个体（某一次抽的这&lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt;件）&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;的属性（次品数）&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;不一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抛&lt;span class=&#34;math inline&#34;&gt;\(50\)&lt;/span&gt;次硬币，重复进行&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;次实验，其中结果为正面朝上&lt;span class=&#34;math inline&#34;&gt;\(25\)&lt;/span&gt;次的实验次数 — ✔️&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(X_i=0,1,2,\cdots,n\)&lt;/span&gt;，有&lt;span class=&#34;math inline&#34;&gt;\(n+1\)&lt;/span&gt;个取值。&lt;/p&gt;
+&lt;p&gt;而注意：这里的个体个数&lt;span class=&#34;math inline&#34;&gt;\(N\)&lt;/span&gt;，就是&lt;span class=&#34;math inline&#34;&gt;\(\infty\)&lt;/span&gt;，因为我们可以进行无限次实验（每次抛50次硬币抛无限次）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;我们不去抽样调查，&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;取合适的值都可以，是随机的。&lt;/li&gt;
+&lt;li&gt;或者说我们多次取一个个体，每个个体（某一时刻重复进行的&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;次实验）&lt;span class=&#34;math inline&#34;&gt;\(i\)&lt;/span&gt;的属性（满足条件的次数）&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;不一样。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>大学物理实验Ⅱ——考点总结……</title>
         <link>https://blog.supersassw.com/p/univ-physics_experiment-2/</link>
         <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
