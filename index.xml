@@ -73,7 +73,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;抛&lt;span class=&#34;math inline&#34;&gt;\(50\)&lt;/span&gt;次硬币，进行一次实验，是否正面朝上&lt;span class=&#34;math inline&#34;&gt;\(25\)&lt;/span&gt;次 — ✔️&lt;br&gt;
+&lt;p&gt;抛&lt;span class=&#34;math inline&#34;&gt;\(50\)&lt;/span&gt;次硬币，进行一次实验，是否正面朝上&lt;span class=&#34;math inline&#34;&gt;\(25\)&lt;/span&gt;次 — ❌&lt;br&gt;
 因为这一次实验，总体的每一个个体都是确定的，&lt;br&gt;
 这里“是否正面朝上&lt;span class=&#34;math inline&#34;&gt;\(25\)&lt;/span&gt;次”只能是一个具体的值！只能是否(&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;)或是(&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;)，比如为否(&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;)。&lt;br&gt;
 因此该总体&lt;span class=&#34;math inline&#34;&gt;\((X_1,X_2,\cdots,X_N)\)&lt;/span&gt;，每一个&lt;span class=&#34;math inline&#34;&gt;\(X_i\)&lt;/span&gt;均是确定的值否(&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;)。&lt;/p&gt;
