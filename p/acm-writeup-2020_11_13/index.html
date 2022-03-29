@@ -256,6 +256,37 @@ if (!doNotTrack) {
         <li><a href="#个人分析">个人分析</a></li>
         <li><a href="#个人代码">个人代码</a></li>
         <li><a href="#题解分析">题解分析</a></li>
+        <li><a href="#题解代码">题解代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#d-powerful-ksenia">D. Powerful Ksenia</a>
+      <ul>
+        <li><a href="#题目大意-3">题目大意</a>
+          <ul>
+            <li><a href="#问题描述-3">问题描述</a></li>
+            <li><a href="#读入格式-3">读入格式</a></li>
+            <li><a href="#输出格式-3">输出格式</a></li>
+          </ul>
+        </li>
+        <li><a href="#题解分析-1">题解分析</a></li>
+        <li><a href="#题解代码-1">题解代码</a></li>
+      </ul>
+    </li>
+    <li><a href="#e-yurii-can-do-everything">E. Yurii Can Do Everything</a>
+      <ul>
+        <li><a href="#题目大意-4">题目大意</a>
+          <ul>
+            <li><a href="#问题描述-4">问题描述</a></li>
+            <li><a href="#读入格式-4">读入格式</a></li>
+            <li><a href="#输出格式-4">输出格式</a></li>
+            <li><a href="#数据范围">数据范围</a></li>
+          </ul>
+        </li>
+        <li><a href="#题解分析-2">题解分析</a>
+          <ul>
+            <li><a href="#题解代码-2">题解代码</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -363,7 +394,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：5857</div>
+            <div class="char">文章字数：5744</div>
             <div class="time">预计阅读时长： <time>12</time> 分钟</div>
         </div>
     </footer>
@@ -637,9 +668,9 @@ if (!doNotTrack) {
 <p>根据矩阵元素的奇偶性决定是否<span class="math inline">\(+1\)</span>。</p>
 <p>因为如果使矩阵满足如下结构，<br>
 则必定保证相邻两个元素奇偶性不同，两元素数也必然不同。</p>
-<p><span class="math display">\[
-## 题解代码
-
+<p><span class="math display">\[\begin{matrix} odd & even & odd & ... \\\ even & odd & even & ... \\\ odd & even & odd & ... \\\ ... & ... & ... & ...  \end{matrix}
+\]</span></p>
+<h2 id="题解代码">题解代码</h2>
 
 
 <details class="sc-details" >
@@ -670,130 +701,168 @@ if (!doNotTrack) {
 <span class="p">}</span>
 </code></pre></div></div>
 </details>
-
-# D. Powerful Ksenia
-
+<h1 id="d-powerful-ksenia">D. Powerful Ksenia</h1>
 <div class="snote warning ">
 	<div class="snote-content">
 		<p>比赛状态：未完成（没有时间看题）</p>
 	</div>
 </div>
-
-* [题目链接](https://codeforces.com/contest/1438/problem/D)
-
-## 题目大意
-
-### 问题描述
-
-给定$n$个数，每次操作能选择其中三个数$x,y,z$皆变为它们的亦或$x \oplus y \oplus z$，问能否进行不超过$n$次操作使这$n$个数均相等。
-
-### 读入格式
-
-第一行读入一个$n$，接下来一行读入$n$个数。
-
-### 输出格式
-
-输出是否能满足条件：
-
-* 如果能，输出一行`YES`，并在下一行输出所需的操作数`m`，在下一行输出`m`个所分别选择的三个数`x,y,z`。
-* 如果不能，直接输出一行`NO`。
-
-## 题解分析
-
+<ul>
+<li><a class="link" href="https://codeforces.com/contest/1438/problem/D"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题目大意-3">题目大意</h2>
+<h3 id="问题描述-3">问题描述</h3>
+<p>给定<span class="math inline">\(n\)</span>个数，每次操作能选择其中三个数<span class="math inline">\(x,y,z\)</span>皆变为它们的亦或<span class="math inline">\(x \oplus y \oplus z\)</span>，问能否进行不超过<span class="math inline">\(n\)</span>次操作使这<span class="math inline">\(n\)</span>个数均相等。</p>
+<h3 id="读入格式-3">读入格式</h3>
+<p>第一行读入一个<span class="math inline">\(n\)</span>，接下来一行读入<span class="math inline">\(n\)</span>个数。</p>
+<h3 id="输出格式-3">输出格式</h3>
+<p>输出是否能满足条件：</p>
+<ul>
+<li>如果能，输出一行<code>YES</code>，并在下一行输出所需的操作数<code>m</code>，在下一行输出<code>m</code>个所分别选择的三个数<code>x,y,z</code>。</li>
+<li>如果不能，直接输出一行<code>NO</code>。</li>
+</ul>
+<h2 id="题解分析-1">题解分析</h2>
 <div class="snote info ">
 	<div class="snote-content">
 		<p>参考自<a class="link" href="https://zhuanlan.zhihu.com/p/293954703"  target="_blank" rel="noopener"
     >“哈哈哈哈哈哈”在知乎上的题解</a>。</p>
 	</div>
 </div>
-
-首先了解位运算中“三者异或”的基本性质：
-
-1. $x \oplus x \oplus y = 0 \oplus y = y$  
-   即**两个相同的数**与另一个不同数三者异或，答案为不同的数。加上本题的要求，则三者均会变成相同的数$y$。
-2. 对三($n$)者异或，转成二进制后，**某一位的$1$的个数的奇偶性不变**，如表格所示：
-   | (x,y,z) | 1的个数奇偶性 | 结果 | 1个数的奇偶性 |
-   | ------- | ------------- | ---- | ------------- |
-   | (0,0,0) | **偶**（0个） | 0    | **偶**（0个） |
-   | (0,0,1) | **奇**（1个） | 1    | **奇**（1个） |
-   | (0,1,0) | **奇**（1个） | 1    | **奇**（1个） |
-   | (0,1,1) | **偶**（2个） | 0    | **偶**（0个） |
-   | (1,0,0) | **奇**（1个） | 1    | **奇**（1个） |
-   | (1,0,1) | **偶**（2个） | 0    | **偶**（0个） |
-   | (1,1,0) | **偶**（2个） | 0    | **偶**（0个） |
-   | (1,1,1) | **奇**（3个） | 1    | **奇**（1个） |
-
----
-
-基于**第一性质**：如果我们能把数列分为$n$个$2$个相同的数$(x,x)$，最终加上任意一个数$y$，我们便能将该数列变为符合题意的均为$y$数列。  
-每经过一次操作后，我们都能得到三个相同的数；而下一次操作如果我们再用上一次操作中的任意一个数，上一次操作便能得到**两个相同的数**。
-
-* 经过简化：若我们按照$(1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),...$这样的顺序操作下去，最终便能得到$(x_1,x_1,x_2,x_2,x_3,x_3,...,x_{n-1},x_{n-1},x_n,x_n,x_n)$这样一个数列。再按照**第一性质**得到结果。  
-而要能使用这一种操作，则须满足数列个数为$2*n+1$个，即为**奇数个**。
-
-即：**若数列个数为奇数个，则必定可以通过上述操作满足题意。**
-
----
-
-那分析**数列个数为偶数个**的情况：
-
-对于最终态分析：  
-如果我们能满足题意，即变成**个数为偶数个的相同元素$x$的数列**：  
-对$x$的每一个**二进制数位**($5_{(10)}$--->$101_{(2)}$)分析，其每一位$1$的个数必定全是$0$或者为偶数个$1$，即**所有数位$1$的个数均为偶数个**。
-
-又因为**第二性质**——**异或后某一数位的$1$的个数的奇偶性不变**  
-对最初态数列的**任意一数位**假设：
-> 如：
->
-> 第三位： 0 1 0 1 1 0  
-> 第二位： 0 1 1 0 1 1  
-> 第一位： 1 1 0 0 0 0
->
-> （原数列:1 7 2 4 6 2）
-
-令：该数列长度为$2n$。
-
-1. $1$的个数为偶数个：
-   我们**任选**一个数$x_i$，将这个数放在最后分析，先操作剩下的$2n-1$个数。  
-   可知这$2n-1$个数为奇数。  
-   而对于选中的$x_i$，又有两种情况：
-   1. 该位为$0$：  
-      则剩下的$2n-1$个数，该为$1$的个数仍为偶数个，但数却有奇数个。  
-	  要达到最后所有数相同的情况（即该位全是$1$或全是$0$），只能最终全部为$0$。  
-	  因此$x_i$的该位与剩下的$2n-1$个数操作后的该位结果相同。  
-	  又因为为**任意一数位**，故**最终$x_i$这个数必须与剩下的$2n-1$个数操作后的数值相同**。
-   2. 该位为$1$：  
-      则剩下的$2n-1$个数，该为$1$的个数变为奇数个，而数也有奇数个。  
-	  同理，则最终全部为$1$，也**相同**。
-
-   又因为$x_i$也为任选。  
-   即**任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，只有$x_i=m$时**，才能满足题意。
-2. $1$的个数为奇数个——不成立：  
-   由第二性质可直接得出矛盾——最初态该数位的$1$的个数(奇数个)与最终态(偶数个)的奇偶性不一致。  
-   但同理分析，可以得出**任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，必定$x_i \neq m$**
-
----
-
-综上：只有**任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，只有$x_i=m$时**，才能满足题意。  
-
-* 经过简化：若我们仍然按照$(1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),...$这样的顺序操作下去，  
-  最终得到$(x_1,x_1,x_2,x_2,x_3,x_3,...,x_{n-1},x_{n-1},x_n,x_n,x_n,y)$这样一个数列。
-  
-  按照**奇数个数**的操作对前$2n-1$个操作，得到相同值$m$。  
-  若$m=y$，则一定满足题意，否则一定不满足。
-
-即：  
-若数列个数为偶数个，将前$2n-1$个变为相同数$m$，只有最后一个数$x_{2n}=m$，才能满足题意。
-
-## 题解代码
-
+<p>首先了解位运算中“三者异或”的基本性质：</p>
+<ol>
+<li><span class="math inline">\(x \oplus x \oplus y = 0 \oplus y = y\)</span><br>
+即<strong>两个相同的数</strong>与另一个不同数三者异或，答案为不同的数。加上本题的要求，则三者均会变成相同的数<span class="math inline">\(y\)</span>。</li>
+<li>对三(<span class="math inline">\(n\)</span>)者异或，转成二进制后，<strong>某一位的<span class="math inline">\(1\)</span>的个数的奇偶性不变</strong>，如表格所示：
+<table>
+<thead>
+<tr>
+<th>(x,y,z)</th>
+<th>1的个数奇偶性</th>
+<th>结果</th>
+<th>1个数的奇偶性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(0,0,0)</td>
+<td><strong>偶</strong>（0个）</td>
+<td>0</td>
+<td><strong>偶</strong>（0个）</td>
+</tr>
+<tr>
+<td>(0,0,1)</td>
+<td><strong>奇</strong>（1个）</td>
+<td>1</td>
+<td><strong>奇</strong>（1个）</td>
+</tr>
+<tr>
+<td>(0,1,0)</td>
+<td><strong>奇</strong>（1个）</td>
+<td>1</td>
+<td><strong>奇</strong>（1个）</td>
+</tr>
+<tr>
+<td>(0,1,1)</td>
+<td><strong>偶</strong>（2个）</td>
+<td>0</td>
+<td><strong>偶</strong>（0个）</td>
+</tr>
+<tr>
+<td>(1,0,0)</td>
+<td><strong>奇</strong>（1个）</td>
+<td>1</td>
+<td><strong>奇</strong>（1个）</td>
+</tr>
+<tr>
+<td>(1,0,1)</td>
+<td><strong>偶</strong>（2个）</td>
+<td>0</td>
+<td><strong>偶</strong>（0个）</td>
+</tr>
+<tr>
+<td>(1,1,0)</td>
+<td><strong>偶</strong>（2个）</td>
+<td>0</td>
+<td><strong>偶</strong>（0个）</td>
+</tr>
+<tr>
+<td>(1,1,1)</td>
+<td><strong>奇</strong>（3个）</td>
+<td>1</td>
+<td><strong>奇</strong>（1个）</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<hr>
+<p>基于<strong>第一性质</strong>：如果我们能把数列分为<span class="math inline">\(n\)</span>个<span class="math inline">\(2\)</span>个相同的数<span class="math inline">\((x,x)\)</span>，最终加上任意一个数<span class="math inline">\(y\)</span>，我们便能将该数列变为符合题意的均为<span class="math inline">\(y\)</span>数列。<br>
+每经过一次操作后，我们都能得到三个相同的数；而下一次操作如果我们再用上一次操作中的任意一个数，上一次操作便能得到<strong>两个相同的数</strong>。</p>
+<ul>
+<li>经过简化：若我们按照<span class="math inline">\((1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),...\)</span>这样的顺序操作下去，最终便能得到<span class="math inline">\((x_1,x_1,x_2,x_2,x_3,x_3,...,x_{n-1},x_{n-1},x_n,x_n,x_n)\)</span>这样一个数列。再按照<strong>第一性质</strong>得到结果。<br>
+而要能使用这一种操作，则须满足数列个数为<span class="math inline">\(2*n+1\)</span>个，即为<strong>奇数个</strong>。</li>
+</ul>
+<p>即：<strong>若数列个数为奇数个，则必定可以通过上述操作满足题意。</strong></p>
+<hr>
+<p>那分析<strong>数列个数为偶数个</strong>的情况：</p>
+<p>对于最终态分析：<br>
+如果我们能满足题意，即变成<strong>个数为偶数个的相同元素<span class="math inline">\(x\)</span>的数列</strong>：<br>
+对<span class="math inline">\(x\)</span>的每一个<strong>二进制数位</strong>(<span class="math inline">\(5_{(10)}\)</span>&mdash;&gt;<span class="math inline">\(101_{(2)}\)</span>)分析，其每一位<span class="math inline">\(1\)</span>的个数必定全是<span class="math inline">\(0\)</span>或者为偶数个<span class="math inline">\(1\)</span>，即<strong>所有数位<span class="math inline">\(1\)</span>的个数均为偶数个</strong>。</p>
+<p>又因为<strong>第二性质</strong>——<strong>异或后某一数位的<span class="math inline">\(1\)</span>的个数的奇偶性不变</strong><br>
+对最初态数列的<strong>任意一数位</strong>假设：</p>
+<blockquote>
+<p>如：</p>
+<p>第三位： 0 1 0 1 1 0<br>
+第二位： 0 1 1 0 1 1<br>
+第一位： 1 1 0 0 0 0</p>
+<p>（原数列:1 7 2 4 6 2）</p>
+</blockquote>
+<p>令：该数列长度为<span class="math inline">\(2n\)</span>。</p>
+<ol>
+<li>
+<p><span class="math inline">\(1\)</span>的个数为偶数个：
+我们<strong>任选</strong>一个数<span class="math inline">\(x_i\)</span>，将这个数放在最后分析，先操作剩下的<span class="math inline">\(2n-1\)</span>个数。<br>
+可知这<span class="math inline">\(2n-1\)</span>个数为奇数。<br>
+而对于选中的<span class="math inline">\(x_i\)</span>，又有两种情况：</p>
+<ol>
+<li>该位为<span class="math inline">\(0\)</span>：<br>
+则剩下的<span class="math inline">\(2n-1\)</span>个数，该为<span class="math inline">\(1\)</span>的个数仍为偶数个，但数却有奇数个。<br>
+要达到最后所有数相同的情况（即该位全是<span class="math inline">\(1\)</span>或全是<span class="math inline">\(0\)</span>），只能最终全部为<span class="math inline">\(0\)</span>。<br>
+因此<span class="math inline">\(x_i\)</span>的该位与剩下的<span class="math inline">\(2n-1\)</span>个数操作后的该位结果相同。<br>
+又因为为<strong>任意一数位</strong>，故<strong>最终<span class="math inline">\(x_i\)</span>这个数必须与剩下的<span class="math inline">\(2n-1\)</span>个数操作后的数值相同</strong>。</li>
+<li>该位为<span class="math inline">\(1\)</span>：<br>
+则剩下的<span class="math inline">\(2n-1\)</span>个数，该为<span class="math inline">\(1\)</span>的个数变为奇数个，而数也有奇数个。<br>
+同理，则最终全部为<span class="math inline">\(1\)</span>，也<strong>相同</strong>。</li>
+</ol>
+<p>又因为<span class="math inline">\(x_i\)</span>也为任选。<br>
+即<strong>任意一数<span class="math inline">\(x_i\)</span>，其剩下的<span class="math inline">\(2n-1\)</span>个数经过异或操作后变为相同数<span class="math inline">\(m\)</span>，只有<span class="math inline">\(x_i=m\)</span>时</strong>，才能满足题意。</p>
+</li>
+<li>
+<p><span class="math inline">\(1\)</span>的个数为奇数个——不成立：<br>
+由第二性质可直接得出矛盾——最初态该数位的<span class="math inline">\(1\)</span>的个数(奇数个)与最终态(偶数个)的奇偶性不一致。<br>
+但同理分析，可以得出<strong>任意一数<span class="math inline">\(x_i\)</span>，其剩下的<span class="math inline">\(2n-1\)</span>个数经过异或操作后变为相同数<span class="math inline">\(m\)</span>，必定<span class="math inline">\(x_i \neq m\)</span></strong></p>
+</li>
+</ol>
+<hr>
+<p>综上：只有<strong>任意一数<span class="math inline">\(x_i\)</span>，其剩下的<span class="math inline">\(2n-1\)</span>个数经过异或操作后变为相同数<span class="math inline">\(m\)</span>，只有<span class="math inline">\(x_i=m\)</span>时</strong>，才能满足题意。</p>
+<ul>
+<li>
+<p>经过简化：若我们仍然按照<span class="math inline">\((1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),...\)</span>这样的顺序操作下去，<br>
+最终得到<span class="math inline">\((x_1,x_1,x_2,x_2,x_3,x_3,...,x_{n-1},x_{n-1},x_n,x_n,x_n,y)\)</span>这样一个数列。</p>
+<p>按照<strong>奇数个数</strong>的操作对前<span class="math inline">\(2n-1\)</span>个操作，得到相同值<span class="math inline">\(m\)</span>。<br>
+若<span class="math inline">\(m=y\)</span>，则一定满足题意，否则一定不满足。</p>
+</li>
+</ul>
+<p>即：<br>
+若数列个数为偶数个，将前<span class="math inline">\(2n-1\)</span>个变为相同数<span class="math inline">\(m\)</span>，只有最后一个数<span class="math inline">\(x_{2n}=m\)</span>，才能满足题意。</p>
+<h2 id="题解代码-1">题解代码</h2>
 <div class="snote link green">
 	<div class="snote-content">
 		<p><a class="link" href="https://paste.ubuntu.com/p/C8WRsStq5b/"  target="_blank" rel="noopener"
     >Pastebin链接</a></p>
 	</div>
 </div>
-
 
 
 <details class="sc-details" >
@@ -846,105 +915,87 @@ if (!doNotTrack) {
 </div>
 </div>
 </details>
-
-# E. Yurii Can Do Everything
-
+<h1 id="e-yurii-can-do-everything">E. Yurii Can Do Everything</h1>
 <div class="snote warning ">
 	<div class="snote-content">
 		<p>比赛状态：未完成（没有时间看题）</p>
 	</div>
 </div>
-
-* [题目链接](https://codeforces.com/contest/1438/problem/E)
-
-## 题目大意
-
-### 问题描述
-
-给定一个数组`a[n]`，要求输出满足以下条件的子数组`a[l..r]`的个数：
-
-1. $l+1\leq r-1$，即子数组长度至少为$3$。
-2. $(a_l \oplus a_r) = (a_{l+1}+a_{l+2}+...+a_{r-2}+a_{r-1})$，即两端点异或的值等于中间所有数之和。
-
-### 读入格式
-
-第一行为数组长度$n$，接下来一行为长度为$n$的数组$a_i$的读入。
-
-### 输出格式
-
-输出满足条件子数组个数。
-
-### 数据范围
-
-* $3\leq n \leq 2*10^5$
-* $1\leq a_i \leq 2^{30}$
-
-## 题解分析
-
+<ul>
+<li><a class="link" href="https://codeforces.com/contest/1438/problem/E"  target="_blank" rel="noopener"
+    >题目链接</a></li>
+</ul>
+<h2 id="题目大意-4">题目大意</h2>
+<h3 id="问题描述-4">问题描述</h3>
+<p>给定一个数组<code>a[n]</code>，要求输出满足以下条件的子数组<code>a[l..r]</code>的个数：</p>
+<ol>
+<li><span class="math inline">\(l+1\leq r-1\)</span>，即子数组长度至少为<span class="math inline">\(3\)</span>。</li>
+<li><span class="math inline">\((a_l \oplus a_r) = (a_{l+1}+a_{l+2}+...+a_{r-2}+a_{r-1})\)</span>，即两端点异或的值等于中间所有数之和。</li>
+</ol>
+<h3 id="读入格式-4">读入格式</h3>
+<p>第一行为数组长度<span class="math inline">\(n\)</span>，接下来一行为长度为<span class="math inline">\(n\)</span>的数组<span class="math inline">\(a_i\)</span>的读入。</p>
+<h3 id="输出格式-4">输出格式</h3>
+<p>输出满足条件子数组个数。</p>
+<h3 id="数据范围">数据范围</h3>
+<ul>
+<li><span class="math inline">\(3\leq n \leq 2*10^5\)</span></li>
+<li><span class="math inline">\(1\leq a_i \leq 2^{30}\)</span></li>
+</ul>
+<h2 id="题解分析-2">题解分析</h2>
 <div class="snote info ">
 	<div class="snote-content">
 		<p>参考自<a class="link" href="https://zhuanlan.zhihu.com/p/293954703"  target="_blank" rel="noopener"
     >“哈哈哈哈哈哈”在知乎上的题解</a>。</p>
 	</div>
 </div>
-
-异或的基本性质的补充：
-
-1. 任意两数异或，其**结果不可能超过他们最大的二进制数位**  
-   根据异或计算结果：
-   > $0 \oplus 0 = 0$
-
-   最高位往后均为$0$，异或后结果也为0，因此结果的数位不可能超过最高位。
-
-   如：$(3)\_{10} \oplus (6)\_{10} = (11)\_2\oplus (110)\_2 = (5)\_{10}/(101)\_2$，位数不可能超过最高位即$3$。  
-   最大情况为：$(3)\_{10}\oplus (4)\_{10} = (11)\_2\oplus (100)\_2 = (7)\_{10}/(111)\_2$
-
-   但异或后的数值不能保证与两原数大小的直接关系，但由于数位可以保证，令两数分别为$x,y$，其二进制位数分别为$m,n$。  
-   故**可确定$x\oplus y<2^{max(m,n)}$。**
-   > 假设最大为$x=(31)_{10}$，$(x)\_2=(11111)\_2$，  
-   > 则$m=5$，$2^m=(32)\_{10}=(100000)\_2$
-
----
-
-这题如果暴力搜索的话，$O(n^2)$TLE。  
-但由于以上的性质存在，可以跨级别性剪枝。
-
-根据以上性质我们可以粗略感觉到一个剪枝条件：  
-> 当$\sum_{i=l+1}^{r-1}a_i\geq 2^{max(m,n)}$时，则证明该区间不满足条件。
-
-但如果搭配暴力搜索，假如选定$l$遍历$r$，$max(m,n)$选择的值可能因为$r$的改变而改变，使得无法通过这个条件来中止后续搜索。
-
-因此我们可以更暴力一点【？】，选定$l$后，我们就**假定$max(m,n)$选择的值为$m$**，即$l$的位数始终最大。然后向右遍历$r$。  
-这样当我们找到不满足条件的情况后，**后续的搜索便可以中止**。
-
-可能会问，如果这样选择的区间最大值却是$n$，是否会出现问题？  
-但如果最大值选的$n$，则一定满足情况$\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n$，这个区间也符合条件，不会影响的抬走下一个x……
-
-但这样的话，可能有区间就是以$n$，即右端点$r$为最大位数，但$2^m\leq \sum_{i=l+1}^{r-1}a_i\leq 2^n$。  
-因此我**们再从右向左，选定$r$，令$max(m,n)$选择的是$n$，向左遍历$l$便可解决这种问题**。
-
-这样肯定能**保证不漏**，但很明显**会重复计算**。  
-即若有区间满足$\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n$或$\sum_{i=l+1}^{r-1}a_i\leq 2^n \leq 2^m$，则从左向右和从右向左均满足，会被计算两次。
-
-故**用“Hash+\<STL\>set”可以去重计数**。
-
----
-
-但为什么这样剪枝能跨级别性剪枝呢！？……
-
-因为如果要遍历较长的$l\sim r$，则数列应构造为$1,2,4,8,...,2^n$【从右向左$r=n$时，就能让$l$取到最左即$l=1$而中间求和仍少于$2^n$。
-
-这样反而限定了遍历范围为$log_2a_i$，则总复杂度为$O(2nloga_i)$。
-
-### 题解代码
-
+<p>异或的基本性质的补充：</p>
+<ol>
+<li>
+<p>任意两数异或，其<strong>结果不可能超过他们最大的二进制数位</strong><br>
+根据异或计算结果：</p>
+<blockquote>
+<p><span class="math inline">\(0 \oplus 0 = 0\)</span></p>
+</blockquote>
+<p>最高位往后均为<span class="math inline">\(0\)</span>，异或后结果也为0，因此结果的数位不可能超过最高位。</p>
+<p>如：<span class="math inline">\((3)_{10} \oplus (6)_{10} = (011)_2\oplus (110)_2 = (101)_2 = (5)_{10}\)</span>，位数不可能超过最高位即<span class="math inline">\(3\)</span>。<br>
+最大情况为：<span class="math inline">\((3)_{10}\oplus (4)_{10} = (011)_2\oplus (100)_2 = (111)_2 = (7)_{10}\)</span></p>
+<p>但异或后的数值不能保证与两原数大小的直接关系，但由于数位可以保证，<br>
+令两数分别为<span class="math inline">\(x,y\)</span>，其二进制位数分别为<span class="math inline">\(m,n\)</span>。<br>
+<strong>可确定<span class="math inline">\(x\oplus y<2^{max(m,n)}\)</span>。</strong></p>
+<blockquote>
+<p>假设最大为<span class="math inline">\(x=(31)_{10}\)</span>，<span class="math inline">\((x)_2=(11111)_2\)</span>，<br>
+则<span class="math inline">\(m=5\)</span>，<span class="math inline">\(2^m=(32)_{10}=(100000)_2\)</span></p>
+</blockquote>
+</li>
+</ol>
+<hr>
+<p>这题如果暴力搜索的话，<span class="math inline">\(O(n^2)\)</span>TLE。<br>
+但由于以上的性质存在，可以跨级别性剪枝。</p>
+<p>根据以上性质我们可以粗略感觉到一个剪枝条件：</p>
+<blockquote>
+<p>当<span class="math inline">\(\sum_{i=l+1}^{r-1}a_i\geq 2^{max(m,n)}\)</span>时，则证明该区间不满足条件。</p>
+</blockquote>
+<p>但如果搭配暴力搜索，假如选定<span class="math inline">\(l\)</span>遍历<span class="math inline">\(r\)</span>，<span class="math inline">\(max(m,n)\)</span>选择的值可能因为<span class="math inline">\(r\)</span>的改变而改变，使得无法通过这个条件来中止后续搜索。</p>
+<p>因此我们可以更暴力一点【？】，选定<span class="math inline">\(l\)</span>后，我们就<strong>假定<span class="math inline">\(max(m,n)\)</span>选择的值为<span class="math inline">\(m\)</span></strong>，即<span class="math inline">\(l\)</span>的位数始终最大。然后向右遍历<span class="math inline">\(r\)</span>。<br>
+这样当我们找到不满足条件的情况后，<strong>后续的搜索便可以中止</strong>。</p>
+<p>可能会问，如果这样选择的区间最大值却是<span class="math inline">\(n\)</span>，是否会出现问题？<br>
+但如果最大值选的<span class="math inline">\(n\)</span>，则一定满足情况<span class="math inline">\(\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n\)</span>，这个区间也符合条件，不会影响的抬走下一个x……</p>
+<p>但这样的话，可能有区间就是以<span class="math inline">\(n\)</span>，即右端点<span class="math inline">\(r\)</span>为最大位数，但<span class="math inline">\(2^m\leq \sum_{i=l+1}^{r-1}a_i\leq 2^n\)</span>。<br>
+因此我<strong>们再从右向左，选定<span class="math inline">\(r\)</span>，令<span class="math inline">\(max(m,n)\)</span>选择的是<span class="math inline">\(n\)</span>，向左遍历<span class="math inline">\(l\)</span>便可解决这种问题</strong>。</p>
+<p>这样肯定能<strong>保证不漏</strong>，但很明显<strong>会重复计算</strong>。<br>
+即若有区间满足<span class="math inline">\(\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n\)</span>或<span class="math inline">\(\sum_{i=l+1}^{r-1}a_i\leq 2^n \leq 2^m\)</span>，则从左向右和从右向左均满足，会被计算两次。</p>
+<p>故<strong>用“Hash+&lt;STL&gt;set”可以去重计数</strong>。</p>
+<hr>
+<p>但为什么这样剪枝能跨级别性剪枝呢！？……</p>
+<p>因为如果要遍历较长的<span class="math inline">\(l\sim r\)</span>，则数列应构造为<span class="math inline">\(1,2,4,8,...,2^n\)</span>【从右向左<span class="math inline">\(r=n\)</span>时，就能让<span class="math inline">\(l\)</span>取到最左即<span class="math inline">\(l=1\)</span>而中间求和仍少于<span class="math inline">\(2^n\)</span>。</p>
+<p>这样反而限定了遍历范围为<span class="math inline">\(\log_2a_i\)</span>，则总复杂度为<span class="math inline">\(O(2n\log a_i)\)</span>。</p>
+<h3 id="题解代码-2">题解代码</h3>
 <div class="snote link green">
 	<div class="snote-content">
 		<p><a class="link" href="https://paste.ubuntu.com/p/wwWJ2K4dRC/"  target="_blank" rel="noopener"
     >Pastebin链接</a></p>
 	</div>
 </div>
-
 
 
 <details class="sc-details" >
@@ -994,7 +1045,6 @@ if (!doNotTrack) {
 </div>
 </div>
 </details>
-\]</span></p>
 
 </section>
 <footer class="article-footer">

@@ -3750,15 +3750,20 @@ D - Device 器件&lt;/p&gt;
 		&lt;/a&gt;&lt;figcaption&gt;CSP认证报名信息&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;可以加入学校的CSP认证报名群，里面会发送通知。&lt;/p&gt;
-&lt;p&gt;群号：960670162&lt;br&gt;
-&lt;figure style=&#34;flex-grow: 55; flex-basis: 133px&#34;&gt;
+&lt;p&gt;群号：960670162&lt;/p&gt;
+
+
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;CSP认证报名群 - 群聊二维码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;figure style=&#34;flex-grow: 55; flex-basis: 133px&#34;&gt;
 		&lt;a href=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/QQgroup_code_3.jpg&#34; data-size=&#34;750x1344&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/QQgroup_code_3.jpg&#34;
 				srcset=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/QQgroup_code_3_hu07e01802bfa4a2c3c66187b589acbf9b_72899_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/univ-exchange_major/pic/QQgroup_code_3_hu07e01802bfa4a2c3c66187b589acbf9b_72899_1024x0_resize_q75_box.jpg 1024w&#34;
 				width=&#34;750&#34;
 				height=&#34;1344&#34;
 				loading=&#34;lazy&#34;
 				alt=&#34;群聊二维码&#34;&gt;
-		&lt;/a&gt;&lt;figcaption&gt;群聊二维码&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+		&lt;/a&gt;&lt;figcaption&gt;群聊二维码&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;/details&gt;
 &lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://jq.qq.com/?_wv=1027&amp;amp;k=mILzPLVx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -3766,21 +3771,26 @@ D - Device 器件&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;或者加入学校ACM比赛交流群也可以。&lt;/p&gt;
-&lt;p&gt;群号：671974794&lt;br&gt;
-&lt;figure style=&#34;flex-grow: 95; flex-basis: 228px&#34;&gt;
+&lt;p&gt;群号：671974794&lt;/p&gt;
+&lt;p&gt;
+
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;ACM比赛交流群 - 群聊二维码&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;figure style=&#34;flex-grow: 95; flex-basis: 228px&#34;&gt;
 		&lt;a href=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/QQgroup_code_2.png&#34; data-size=&#34;238x250&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/QQgroup_code_2.png&#34;
 				srcset=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/QQgroup_code_2_hu75480ab7a25485037d4a5c72262d2fad_7539_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-exchange_major/pic/QQgroup_code_2_hu75480ab7a25485037d4a5c72262d2fad_7539_1024x0_resize_box_3.png 1024w&#34;
 				width=&#34;238&#34;
 				height=&#34;250&#34;
 				loading=&#34;lazy&#34;
 				alt=&#34;群聊二维码&#34;&gt;
-		&lt;/a&gt;&lt;figcaption&gt;群聊二维码&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+		&lt;/a&gt;&lt;figcaption&gt;群聊二维码&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;
+&lt;/details&gt;
 &lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://jq.qq.com/?_wv=1027&amp;amp;k=mbQFeURY&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;点击此处加入群聊【SWJTU-ACM比赛交流群】&lt;/a&gt;&lt;/p&gt;
 	&lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
 &lt;h1 id=&#34;二备大一上学年末期x大一下学年&#34;&gt;二、备——大一上学年末期x大一下学年&lt;/h1&gt;
 &lt;div class=&#34;snote quote gray&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
@@ -5292,7 +5302,7 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
 		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;file/%e8%bd%ac%e4%b8%93%e4%b8%9a%e5%ad%a6%e7%94%9f%e8%af%be%e7%a8%8b%e6%9b%bf%e4%bb%a3%e8%ae%a4%e5%ae%9a%e8%a1%a8.doc.doc&#34; &gt;点击此处下载文档&lt;/a&gt;&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;p&gt;还会有其他注意事项，比如&lt;strong&gt;截至时间&lt;/strong&gt;、只能打印、一式两份等，&lt;br&gt;
+&lt;p&gt;还会有其他注意事项，比如&lt;strong&gt;截止时间&lt;/strong&gt;、只能打印、一式两份等，&lt;br&gt;
 注意&lt;strong&gt;看清楚要求&lt;/strong&gt;。&lt;/p&gt;
 
 
@@ -5351,8 +5361,8 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
 &lt;div class=&#34;snote warning red &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;&lt;p&gt;&lt;strong&gt;需要注意：&lt;/strong&gt;&lt;br&gt;
-冲突选课存在截至时间，一般为第三次选课结束后一周内（&lt;strong&gt;不一定刚好为一周&lt;/strong&gt;）。&lt;/p&gt;
-&lt;p&gt;同时，该截至时间不一定通知在“冲突选课流程”的通知里，&lt;br&gt;
+冲突选课存在截止时间，一般为第三次选课结束后一周内（&lt;strong&gt;不一定刚好为一周&lt;/strong&gt;）。&lt;/p&gt;
+&lt;p&gt;同时，该截止时间不一定通知在“冲突选课流程”的通知里，&lt;br&gt;
 也有可能存在于第三次选课的通知内。&lt;/p&gt;
 &lt;p&gt;比如2021年的就是这种情况：&lt;/p&gt;
 &lt;div class=&#34;sc-columns&#34;&gt;&lt;div class=&#34;sc-columns--inner&#34;&gt;&lt;figure style=&#34;flex-grow: 139; flex-basis: 334px&#34;&gt;
@@ -5375,7 +5385,7 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
 &lt;/div&gt;
 &lt;div class=&#34;snote message &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;所以个人就以为截至时间如通知上所说的整整一周内，结果恰好28号过去的时候结束不予受理了【……&lt;/p&gt;
+		&lt;p&gt;所以个人就以为截止时间如通知上所说的整整一周内，结果恰好28号过去的时候结束不予受理了【……&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;hr&gt;
@@ -5501,7 +5511,7 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
     &gt;(2021年)关于大学物理实验II课程中心网站选课的通知&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;这则通知会告诉如何进行实验选课以及相关注意事项，&lt;br&gt;
-但因为时间截至一般会在转专业工作完成之前，所以转专业同学并不能按照正常流程选择实验。&lt;/p&gt;
+但因为时间截止一般会在转专业工作完成之前，所以转专业同学并不能按照正常流程选择实验。&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;对于转专业同学，会额外设置一个时间集中处理。&lt;/p&gt;
 &lt;p&gt;转专业工作结束后，中心会再次发布一条集中处理的通知。&lt;br&gt;
@@ -5643,7 +5653,7 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
 希望能帮助到在这条十分艰苦的路上前行的各位……&lt;/p&gt;
 &lt;p&gt;由于个人之前并没有写过这么长的指南方面的文章，所以在排版、叙述上可能存在很多问题……&lt;br&gt;
 希望各位同学们能谅解……&lt;/p&gt;
-&lt;p&gt;同时截至写完时大部分内容都是以自己的主观经验来叙述的……&lt;br&gt;
+&lt;p&gt;同时截止写完时大部分内容都是以自己的主观经验来叙述的……&lt;br&gt;
 所以内容上可能存在很大的主观性以及偏差……&lt;br&gt;
 之后会去询问相关同学，并补充和修正部分内容……&lt;/p&gt;
 &lt;p&gt;所以，如果有什么建议和指正的话，非常欢迎向我提出！……&lt;/p&gt;
@@ -16548,6 +16558,7 @@ h &amp; v \\\ \vdots &amp; \vdots(sum) \\\ h_j &amp; v_j \\\ h_i &amp; v_i \\\ \
 &lt;/blockquote&gt;
 &lt;p&gt;则本题中：&lt;br&gt;
 展开为&lt;span class=&#34;math inline&#34;&gt;\(\text{if} \quad ((w_{i1}&lt;w_{i2} \quad and \quad w_{i1}&lt;w_{j2}) \quad or \quad (w_{j1}&lt;w_{i2} \quad and \quad w_{j1}&lt;w_{j2})) \quad \text{swap}\)&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;Test:&lt;span class=&#34;math inline&#34;&gt;\(a&lt; b=c\)&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;发现&lt;span class=&#34;math inline&#34;&gt;\(w_{i1}&lt;w_{i2}\)&lt;/span&gt;恒成立：
 &lt;blockquote&gt;
@@ -17807,262 +17818,230 @@ $$\begin{pmatrix} x \\ y \end{pmatrix} = \begin{pmatrix} 0&amp;1 \\ 1&amp;-d_1 \
 个人所采用的是：&lt;span class=&#34;math inline&#34;&gt;\(a \equiv b \pmod m\)&lt;/span&gt;，代表&lt;span class=&#34;math inline&#34;&gt;\(a \bmod m = b \bmod m\)&lt;/span&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;需要牢记一个转换式：&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-## 整除
-
-$\mid$：是数论中的表示**整除**符号。  
-用法：$a \mid d$
-
-注意：  
-这里的整除就是整除，不是被整除。  
-如上例：是$a$整除$b$，或说$b$被$a$整除。
-&gt; 如：  
-&gt; $2\mid14$  
-&gt; 则是$2$整除$14$，$14$被$2$整除。
-
-整除也代表两者大除小余数为$0$，故同余还可以写为：  
-$m \mid (a-b)$  
-$\implies (a-b) \bmod n = 0$  
-$\implies a \equiv b \pmod n$
-
-## 学习顺序
-
-1. 裴蜀定理
-2. 扩展欧几里得
-3. 初步认识线性同余方程
-4. 认识乘法逆元并求解
-5. 求解线性同余方程
-
-其中：
-
-* 1、2为[$\gcd$内容](1.%20GCD&amp;EXGCD.md)，  
-* 3、4、5为本章（线性同余方程）内容。
-
-# 0x01 初步认识
-
-## 定义
-
-形如$f(x) \equiv 0 \pmod m$的方程称为同余方程，  
-其中$f(x)=a_nx^n+a_{n-1}x^{n_1}+\cdots+a_1x+a_0$。
-
-记：$f(x)$最高次数为$n$，则称为$n$次同余方程。  
-特别的：当$n=1$时，称为一次同余方程，又称线性同余方程。
-
-即：  
-**形如$ax \equiv b \pmod m$的方程**，  
-被称为**线性同余方程**(Congruence Equation)。
-
-&gt; 如：  
-&gt; $12x \equiv 9 \pmod {15}$  
-&gt; 解得：$x=\cdots,-3,2,7,12,17,\cdots,5n+2(n∈Z)$
-&gt;
-&gt; 当$x=-3$时，$12*-3=36$，$-36 \bmod 15 = 9$，满足方程。  
-&gt; 当$x=2$时，$12*2=24$，$24 \bmod 15 = 9$，满足方程。  
-&gt; 当$x=7$时，$12*7=84$，$84 \bmod 15 = 9$，满足方程。
-
-&gt; 同样，对于这个方程，  
-&gt; 我们也需要对其快速建立自己的理解方法。
-&gt;
-&gt; 个人理解方法是：  
-&gt; 当$x$取某一值时，则$ax$对$m$取模的结果就是$b$。
-
----
-
-与普通的一元线性方程不同的是：  
-普通的一元线性方程肯定存在唯一解（如$2x+3=5$）；  
-而线性同余方程若**有解**，需要**存在一定条件**。
-
-## 有解条件
-
-对于线性同余方程$ax \equiv b \pmod m$，其存在解的条件是：  
-$b$能够被$a$与$m$的最大公约数整除。
-
-表示为：
-$$\gcd(a,m) \mid b$$
-
-&gt; 如上例中：  
-&gt; $12x \equiv 9 \pmod {15}$
-&gt;
-&gt; 因为$\gcd(12,15)=3$，而$3$能整除$9$，  
-&gt; 即$\gcd(12,15) \mid 9$，  
-&gt; 所以有解。
-
-&gt; 如：  
-&gt; $3x \equiv 5 \pmod 6$，
-&gt;
-&gt; 因为$\gcd(3,6)=3$，而$3$不能整除$5$，  
-&gt; 故该同余方程无解，  
-&gt; 也就是说无论你$x$取何值，都不能满足$3x$对$6$取模后值为$5$。
-
----
-
-注意到，若$x_0$是线性同余方程$ax \equiv b \pmod m$的一个解，  
-那么对于$x_n \equiv x_0 \pmod m$，$x_n$也是该线性同余方程的解。  
-或者说$mk+x_0(k∈Z)$均为解。
-&gt; 如上例中：  
-&gt; $12x \equiv 9 \pmod {15}$
-&gt;
-&gt; $x_0=2$时为一解，  
-&gt; 因此$15k+2(k∈Z)$均为解，即$2,17,32,\cdots$均为解。
-&gt;
-&gt; $x_0=7$时为一解，  
-&gt; 因此$15k+7(k∈Z)$均为解，即$7,22,37,\cdots$均为解。
-&gt;
-&gt; $x_0=12$时为一解，  
-&gt; 因此$15k+12(k∈Z)$均为解，即$12,27,42,\cdots$均为解。
-
-因此对于线性同余方程的**解的个数**，我们定义为：  
-在$0 \sim (m-1)$中解的个数。
-&gt; 如上例中：  
-&gt; $12x \equiv 9 \pmod {15}$
-&gt;
-&gt; 解的个数就为$3$个，分别为$2,7,12$。
-
-## 解的性质
-
-对于线性同余方程$ax \equiv b \pmod m$，记$\gcd(a,m)=d$  
-若存在解，则会满足以下性质：
-
-1. 对于$x_0$为该线性同余方程的任意一解，记，  
-   则通解可以表示为$\frac{m}{d}k + x_0 (k∈Z)$。
-   &gt; 如上例中：  
-   &gt; $12x \equiv 9 \pmod {15}$  
-   &gt; $d=\gcd(12,15)=3$
-   &gt;
-   &gt; 得到一解$x_0=2$，  
-   &gt; 则通解可以表示为$5k+2(k∈Z)$。
-2. 解的个数恰为$d$个。
-   &gt; 如上例中：  
-   &gt; $12x \equiv 9 \pmod {15}$
-   &gt;
-   &gt; 则在$0 \sim 14$范围中，解为$2,7,12$。  
-   &gt; 个数为$d=\gcd(12,15)=3$，即$3$个。
-3. **唯一解定理**：  
-     当$d=1$时，该同余方程有且仅有唯一解。
-
-# 0x02 乘法逆元
-
-## 定义
-
-如果一个线性同余方程$ax \equiv 1 \pmod m$，存在解$x$，  
-则$x$称为$a \bmod m$的逆元，记作$a^{-1}$。
-&gt; 如：  
-&gt; $5x \equiv 1 \pmod{14}$，
-&gt;
-&gt; 当$x=3$时，$15 \bmod 14 = 1$，满足方程。  
-&gt; 所以$3$为$5$关于$14$的逆元。
-
-## 性质
-
-对于一个线性同余方程$ax \equiv 1 \pmod m$，  
-记$a$关于$m$的逆元$x$为$a^{-1}$。  
-
-1. **存在充要条件**：$a,m$互素，$\gcd(a,m)=1$。
-2. **唯一性**：$a^{-1}$在$[0,m-1]$范围内唯一。
-   &gt; 证明：
-   &gt;
-   &gt; 我们先假设$a$有两个不相等逆元：$a&#39;$ 和$a&#39;&#39;$，  
-   &gt; 那么一定有：$a*a&#39; \equiv a*a&#39;&#39; \equiv 1 \pmod m$
-   &gt;
-   &gt; 不妨设$a&#39;∈[0,m-1]$，$a&#39;&lt;a&#39;&#39;$且$a&#39;&#39;-a&#39;=k$，  
-   &gt; 那么由于$a\ne0$，所以$k$一定是$k \equiv 0 \pmod m$ ，即$k=cm(c∈Z,c\ne0)$（见[最上的转换式](#其他点)）  
-   &gt; 所以$a&#39;&#39;=a&#39; + cm(c∈Z,c\ne0)$，  
-   &gt; 所以$a&#39;&#39;∈[cm,(c+1)m-1] (c∈Z,c\ne0)$，一定不在$[0,m-1]$范围内，  
-   &gt; 所以$a$在$[0,m-1]$范围内只能有一个逆元。
-3. 完全积性：$a^{-1} \cdot b^{-1} = (a \cdot b)^{-1}$
-4. $\gcd(a^{-1},m)=1$。
-5. ${(a^{-1})}^{-1} \equiv a \pmod m$
-
-## 作用
-
-### 1. 对除法取模
-
-首先对于取模运算，存在以下性质：  
-$(a + b) \bmod p = ((a\bmod p) + (b\bmod p)) \bmod p$ （对）  
-$(a - b) \bmod p = ((a\bmod p) - (b\bmod p)) \bmod p$ （对）  
-$(a \times b) \bmod p = ((a\bmod p) \times (b\bmod p)) \bmod p$ （对）
-
-$(a \div b) \bmod p = ((a\bmod p) \div (b\bmod p)) \bmod p$ **（错）**
-&gt; 如：  
-&gt; $(100/50)\bmod20 = 2$  
-&gt; $\nRightarrow((100\bmod20)/(50\bmod20))\bmod20=0$
-
-因此如果对于一些题目，如果运算要求求余，但该运算为除法，  
-我们就不能**直接像加减乘运算一样拆开求余**。
-
-但如果被除数，除数也超范围，那是不是只能用高精度了？  
-并不是这样，我们可以利**用乘法逆元来拆开求余**。
-
----
-
-乘法逆元又称为数论倒数。  
-既然这么称呼，那么乘法逆元就跟倒数有相似之处。
-
-对于普通的数学运算$a \div b$，  
-其也可以写成$a \times \frac{1}{b}$。
-
-因此对于求余运算$(a/b) \bmod m$，  
-其也可以写成$(a \cdot b^{-1}) \bmod m$，  
-
-这时便可以拆开求余为$((a\bmod m) \cdot (b^{-1}\bmod m))\bmod m$。
-
----
-
-**即存在性质**：
-$$a/b \bmod m = a \cdot b^{-1} \bmod m$$
-
-*参考自“Aloof__”的[「乘法逆元的作用（逆元的作用是什么）」](https://blog.csdn.net/weixin_43872728/article/details/99687168)。*
-
-#### 证明
-
-根据逆元的定义，存在：
-$$b \cdot b^{-1} \equiv 1 \pmod m$$
-
-同余式两边同乘$a$，得到：
-$$ab \cdot b^{-1} \equiv a \pmod m$$
-
-同余式两边同除$b$，得到：
-$$a \cdot b^{-1} \equiv a/b \pmod m$$
-
-得证。
-
-### 2. 线性同余方程的反函数
-
-对于线性同余方程$ax \equiv b \pmod m$，  
-表示为函数的形式即为$f(x) = ax \bmod m$。
-
-如果知道函数值$f(x)$，  
-那么反求解$x$的方法为：$x = f(x) \cdot a^{-1}$。
-
-需要满足$x&lt;m$，  
-否则为$x \equiv f(x) \cdot a^{-1} \pmod m$。
-&gt; 如：  
-&gt; $2x \equiv f(x) \pmod{11}$。
-&gt; 当$x = 13$时，$f(x) = 4。
-&gt;
-&gt; $2$对$11$的逆元是$6$，  
-&gt; $4 \times 6 = 24$。
-&gt;
-&gt; $24 \equiv x(13) \pmod{11}$，  
-&gt; 而不是$24 = x(13)$。
-
----
-
-主要应用于CTF中仿射加密的解密。
-
-#### 证明
-
-很简单的证明。
-
-$$ax \equiv f(x) \pmod m$$
-$$ax \cdot a^{-1} \equiv f(x) \cdot a^{-1} \pmod m$$
-$$x \equiv f(x) \cdot a^{-1} \pmod m$$
-得证。
-
-## 求解方法
-
-待补充！……
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[a \equiv b \pmod m \implies a = mk + b (k∈Z)
 \]&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;整除&#34;&gt;整除&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(\mid\)&lt;/span&gt;：是数论中的表示&lt;strong&gt;整除&lt;/strong&gt;符号。&lt;br&gt;
+用法：&lt;span class=&#34;math inline&#34;&gt;\(a \mid d\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;注意：&lt;br&gt;
+这里的整除就是整除，不是被整除。&lt;br&gt;
+如上例：是&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;整除&lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt;，或说&lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt;被&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;整除。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(2\mid14\)&lt;/span&gt;&lt;br&gt;
+则是&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;整除&lt;span class=&#34;math inline&#34;&gt;\(14\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(14\)&lt;/span&gt;被&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;整除。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;整除也代表两者大除小余数为&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;，故同余还可以写为：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(m \mid (a-b)\)&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\implies (a-b) \bmod n = 0\)&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\implies a \equiv b \pmod n\)&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;学习顺序&#34;&gt;学习顺序&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;裴蜀定理&lt;/li&gt;
+&lt;li&gt;扩展欧几里得&lt;/li&gt;
+&lt;li&gt;初步认识线性同余方程&lt;/li&gt;
+&lt;li&gt;认识乘法逆元并求解&lt;/li&gt;
+&lt;li&gt;求解线性同余方程&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1、2为&lt;a class=&#34;link&#34; href=&#34;1.%20GCD&amp;amp;EXGCD.md&#34; &gt;&lt;span class=&#34;math inline&#34;&gt;\(\gcd\)&lt;/span&gt;内容&lt;/a&gt;，&lt;/li&gt;
+&lt;li&gt;3、4、5为本章（线性同余方程）内容。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;0x01-初步认识&#34;&gt;0x01 初步认识&lt;/h1&gt;
+&lt;h2 id=&#34;定义-1&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;形如&lt;span class=&#34;math inline&#34;&gt;\(f(x) \equiv 0 \pmod m\)&lt;/span&gt;的方程称为同余方程，&lt;br&gt;
+其中&lt;span class=&#34;math inline&#34;&gt;\(f(x)=a_nx^n+a_{n-1}x^{n_1}+\cdots+a_1x+a_0\)&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;记：&lt;span class=&#34;math inline&#34;&gt;\(f(x)\)&lt;/span&gt;最高次数为&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;，则称为&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;次同余方程。&lt;br&gt;
+特别的：当&lt;span class=&#34;math inline&#34;&gt;\(n=1\)&lt;/span&gt;时，称为一次同余方程，又称线性同余方程。&lt;/p&gt;
+&lt;p&gt;即：&lt;br&gt;
+&lt;strong&gt;形如&lt;span class=&#34;math inline&#34;&gt;\(ax \equiv b \pmod m\)&lt;/span&gt;的方程&lt;/strong&gt;，&lt;br&gt;
+被称为&lt;strong&gt;线性同余方程&lt;/strong&gt;(Congruence Equation)。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(12x \equiv 9 \pmod {15}\)&lt;/span&gt;&lt;br&gt;
+解得：&lt;span class=&#34;math inline&#34;&gt;\(x=\cdots,-3,2,7,12,17,\cdots,5n+2(n∈Z)\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;当&lt;span class=&#34;math inline&#34;&gt;\(x=-3\)&lt;/span&gt;时，&lt;span class=&#34;math inline&#34;&gt;\(12*-3=36\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(-36 \bmod 15 = 9\)&lt;/span&gt;，满足方程。&lt;br&gt;
+当&lt;span class=&#34;math inline&#34;&gt;\(x=2\)&lt;/span&gt;时，&lt;span class=&#34;math inline&#34;&gt;\(12*2=24\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(24 \bmod 15 = 9\)&lt;/span&gt;，满足方程。&lt;br&gt;
+当&lt;span class=&#34;math inline&#34;&gt;\(x=7\)&lt;/span&gt;时，&lt;span class=&#34;math inline&#34;&gt;\(12*7=84\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(84 \bmod 15 = 9\)&lt;/span&gt;，满足方程。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;同样，对于这个方程，&lt;br&gt;
+我们也需要对其快速建立自己的理解方法。&lt;/p&gt;
+&lt;p&gt;个人理解方法是：&lt;br&gt;
+当&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;取某一值时，则&lt;span class=&#34;math inline&#34;&gt;\(ax\)&lt;/span&gt;对&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;取模的结果就是&lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;与普通的一元线性方程不同的是：&lt;br&gt;
+普通的一元线性方程肯定存在唯一解（如&lt;span class=&#34;math inline&#34;&gt;\(2x+3=5\)&lt;/span&gt;）；&lt;br&gt;
+而线性同余方程若&lt;strong&gt;有解&lt;/strong&gt;，需要&lt;strong&gt;存在一定条件&lt;/strong&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;有解条件&#34;&gt;有解条件&lt;/h2&gt;
+&lt;p&gt;对于线性同余方程&lt;span class=&#34;math inline&#34;&gt;\(ax \equiv b \pmod m\)&lt;/span&gt;，其存在解的条件是：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt;能够被&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;与&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;的最大公约数整除。&lt;/p&gt;
+&lt;p&gt;表示为：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\gcd(a,m) \mid b
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如上例中：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(12x \equiv 9 \pmod {15}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;因为&lt;span class=&#34;math inline&#34;&gt;\(\gcd(12,15)=3\)&lt;/span&gt;，而&lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;能整除&lt;span class=&#34;math inline&#34;&gt;\(9\)&lt;/span&gt;，&lt;br&gt;
+即&lt;span class=&#34;math inline&#34;&gt;\(\gcd(12,15) \mid 9\)&lt;/span&gt;，&lt;br&gt;
+所以有解。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(3x \equiv 5 \pmod 6\)&lt;/span&gt;，&lt;/p&gt;
+&lt;p&gt;因为&lt;span class=&#34;math inline&#34;&gt;\(\gcd(3,6)=3\)&lt;/span&gt;，而&lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;不能整除&lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt;，&lt;br&gt;
+故该同余方程无解，&lt;br&gt;
+也就是说无论你&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;取何值，都不能满足&lt;span class=&#34;math inline&#34;&gt;\(3x\)&lt;/span&gt;对&lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt;取模后值为&lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;注意到，若&lt;span class=&#34;math inline&#34;&gt;\(x_0\)&lt;/span&gt;是线性同余方程&lt;span class=&#34;math inline&#34;&gt;\(ax \equiv b \pmod m\)&lt;/span&gt;的一个解，&lt;br&gt;
+那么对于&lt;span class=&#34;math inline&#34;&gt;\(x_n \equiv x_0 \pmod m\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(x_n\)&lt;/span&gt;也是该线性同余方程的解。&lt;br&gt;
+或者说&lt;span class=&#34;math inline&#34;&gt;\(mk+x_0(k∈Z)\)&lt;/span&gt;均为解。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如上例中：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(12x \equiv 9 \pmod {15}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(x_0=2\)&lt;/span&gt;时为一解，&lt;br&gt;
+因此&lt;span class=&#34;math inline&#34;&gt;\(15k+2(k∈Z)\)&lt;/span&gt;均为解，即&lt;span class=&#34;math inline&#34;&gt;\(2,17,32,\cdots\)&lt;/span&gt;均为解。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(x_0=7\)&lt;/span&gt;时为一解，&lt;br&gt;
+因此&lt;span class=&#34;math inline&#34;&gt;\(15k+7(k∈Z)\)&lt;/span&gt;均为解，即&lt;span class=&#34;math inline&#34;&gt;\(7,22,37,\cdots\)&lt;/span&gt;均为解。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(x_0=12\)&lt;/span&gt;时为一解，&lt;br&gt;
+因此&lt;span class=&#34;math inline&#34;&gt;\(15k+12(k∈Z)\)&lt;/span&gt;均为解，即&lt;span class=&#34;math inline&#34;&gt;\(12,27,42,\cdots\)&lt;/span&gt;均为解。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此对于线性同余方程的&lt;strong&gt;解的个数&lt;/strong&gt;，我们定义为：&lt;br&gt;
+在&lt;span class=&#34;math inline&#34;&gt;\(0 \sim (m-1)\)&lt;/span&gt;中解的个数。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如上例中：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(12x \equiv 9 \pmod {15}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;解的个数就为&lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;个，分别为&lt;span class=&#34;math inline&#34;&gt;\(2,7,12\)&lt;/span&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;解的性质&#34;&gt;解的性质&lt;/h2&gt;
+&lt;p&gt;对于线性同余方程&lt;span class=&#34;math inline&#34;&gt;\(ax \equiv b \pmod m\)&lt;/span&gt;，记&lt;span class=&#34;math inline&#34;&gt;\(\gcd(a,m)=d\)&lt;/span&gt;&lt;br&gt;
+若存在解，则会满足以下性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;对于&lt;span class=&#34;math inline&#34;&gt;\(x_0\)&lt;/span&gt;为该线性同余方程的任意一解，记，&lt;br&gt;
+则通解可以表示为&lt;span class=&#34;math inline&#34;&gt;\(\frac{m}{d}k + x_0 (k∈Z)\)&lt;/span&gt;。
+&lt;blockquote&gt;
+&lt;p&gt;如上例中：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(12x \equiv 9 \pmod {15}\)&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(d=\gcd(12,15)=3\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;得到一解&lt;span class=&#34;math inline&#34;&gt;\(x_0=2\)&lt;/span&gt;，&lt;br&gt;
+则通解可以表示为&lt;span class=&#34;math inline&#34;&gt;\(5k+2(k∈Z)\)&lt;/span&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;解的个数恰为&lt;span class=&#34;math inline&#34;&gt;\(d\)&lt;/span&gt;个。
+&lt;blockquote&gt;
+&lt;p&gt;如上例中：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(12x \equiv 9 \pmod {15}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;则在&lt;span class=&#34;math inline&#34;&gt;\(0 \sim 14\)&lt;/span&gt;范围中，解为&lt;span class=&#34;math inline&#34;&gt;\(2,7,12\)&lt;/span&gt;。&lt;br&gt;
+个数为&lt;span class=&#34;math inline&#34;&gt;\(d=\gcd(12,15)=3\)&lt;/span&gt;，即&lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;个。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;唯一解定理&lt;/strong&gt;：&lt;br&gt;
+当&lt;span class=&#34;math inline&#34;&gt;\(d=1\)&lt;/span&gt;时，该同余方程有且仅有唯一解。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;0x02-乘法逆元&#34;&gt;0x02 乘法逆元&lt;/h1&gt;
+&lt;h2 id=&#34;定义-2&#34;&gt;定义&lt;/h2&gt;
+&lt;p&gt;如果一个线性同余方程&lt;span class=&#34;math inline&#34;&gt;\(ax \equiv 1 \pmod m\)&lt;/span&gt;，存在解&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;，&lt;br&gt;
+则&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;称为&lt;span class=&#34;math inline&#34;&gt;\(a \bmod m\)&lt;/span&gt;的逆元，记作&lt;span class=&#34;math inline&#34;&gt;\(a^{-1}\)&lt;/span&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(5x \equiv 1 \pmod{14}\)&lt;/span&gt;，&lt;/p&gt;
+&lt;p&gt;当&lt;span class=&#34;math inline&#34;&gt;\(x=3\)&lt;/span&gt;时，&lt;span class=&#34;math inline&#34;&gt;\(15 \bmod 14 = 1\)&lt;/span&gt;，满足方程。&lt;br&gt;
+所以&lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;为&lt;span class=&#34;math inline&#34;&gt;\(5\)&lt;/span&gt;关于&lt;span class=&#34;math inline&#34;&gt;\(14\)&lt;/span&gt;的逆元。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;性质-1&#34;&gt;性质&lt;/h2&gt;
+&lt;p&gt;对于一个线性同余方程&lt;span class=&#34;math inline&#34;&gt;\(ax \equiv 1 \pmod m\)&lt;/span&gt;，&lt;br&gt;
+记&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;关于&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;的逆元&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;为&lt;span class=&#34;math inline&#34;&gt;\(a^{-1}\)&lt;/span&gt;。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;存在充要条件&lt;/strong&gt;：&lt;span class=&#34;math inline&#34;&gt;\(a,m\)&lt;/span&gt;互素，&lt;span class=&#34;math inline&#34;&gt;\(\gcd(a,m)=1\)&lt;/span&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;唯一性&lt;/strong&gt;：&lt;span class=&#34;math inline&#34;&gt;\(a^{-1}\)&lt;/span&gt;在&lt;span class=&#34;math inline&#34;&gt;\([0,m-1]\)&lt;/span&gt;范围内唯一。
+&lt;blockquote&gt;
+&lt;p&gt;证明：&lt;/p&gt;
+&lt;p&gt;我们先假设&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;有两个不相等逆元：&lt;span class=&#34;math inline&#34;&gt;\(a&#39;\)&lt;/span&gt; 和&lt;span class=&#34;math inline&#34;&gt;\(a&#39;&#39;\)&lt;/span&gt;，&lt;br&gt;
+那么一定有：&lt;span class=&#34;math inline&#34;&gt;\(a*a&#39; \equiv a*a&#39;&#39; \equiv 1 \pmod m\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;不妨设&lt;span class=&#34;math inline&#34;&gt;\(a&#39;∈[0,m-1]\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(a&#39;&lt;a&#39;&#39;\)&lt;/span&gt;且&lt;span class=&#34;math inline&#34;&gt;\(a&#39;&#39;-a&#39;=k\)&lt;/span&gt;，&lt;br&gt;
+那么由于&lt;span class=&#34;math inline&#34;&gt;\(a\ne0\)&lt;/span&gt;，所以&lt;span class=&#34;math inline&#34;&gt;\(k\)&lt;/span&gt;一定是&lt;span class=&#34;math inline&#34;&gt;\(k \equiv 0 \pmod m\)&lt;/span&gt; ，即&lt;span class=&#34;math inline&#34;&gt;\(k=cm(c∈Z,c\ne0)\)&lt;/span&gt;（见&lt;a class=&#34;link&#34; href=&#34;#%e5%85%b6%e4%bb%96%e7%82%b9&#34; &gt;最上的转换式&lt;/a&gt;）&lt;br&gt;
+所以&lt;span class=&#34;math inline&#34;&gt;\(a&#39;&#39;=a&#39; + cm(c∈Z,c\ne0)\)&lt;/span&gt;，&lt;br&gt;
+所以&lt;span class=&#34;math inline&#34;&gt;\(a&#39;&#39;∈[cm,(c+1)m-1] (c∈Z,c\ne0)\)&lt;/span&gt;，一定不在&lt;span class=&#34;math inline&#34;&gt;\([0,m-1]\)&lt;/span&gt;范围内，&lt;br&gt;
+所以&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;在&lt;span class=&#34;math inline&#34;&gt;\([0,m-1]\)&lt;/span&gt;范围内只能有一个逆元。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;完全积性：&lt;span class=&#34;math inline&#34;&gt;\(a^{-1} \cdot b^{-1} = (a \cdot b)^{-1}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(\gcd(a^{-1},m)=1\)&lt;/span&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\({(a^{-1})}^{-1} \equiv a \pmod m\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;作用&#34;&gt;作用&lt;/h2&gt;
+&lt;h3 id=&#34;1-对除法取模&#34;&gt;1. 对除法取模&lt;/h3&gt;
+&lt;p&gt;首先对于取模运算，存在以下性质：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\((a + b) \bmod p = ((a\bmod p) + (b\bmod p)) \bmod p\)&lt;/span&gt; （对）&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\((a - b) \bmod p = ((a\bmod p) - (b\bmod p)) \bmod p\)&lt;/span&gt; （对）&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\((a \times b) \bmod p = ((a\bmod p) \times (b\bmod p)) \bmod p\)&lt;/span&gt; （对）&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\((a \div b) \bmod p = ((a\bmod p) \div (b\bmod p)) \bmod p\)&lt;/span&gt; &lt;strong&gt;（错）&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\((100/50)\bmod20 = 2\)&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(\nRightarrow((100\bmod20)/(50\bmod20))\bmod20=0\)&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;因此如果对于一些题目，如果运算要求求余，但该运算为除法，&lt;br&gt;
+我们就不能&lt;strong&gt;直接像加减乘运算一样拆开求余&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;但如果被除数，除数也超范围，那是不是只能用高精度了？&lt;br&gt;
+并不是这样，我们可以利&lt;strong&gt;用乘法逆元来拆开求余&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;乘法逆元又称为数论倒数。&lt;br&gt;
+既然这么称呼，那么乘法逆元就跟倒数有相似之处。&lt;/p&gt;
+&lt;p&gt;对于普通的数学运算&lt;span class=&#34;math inline&#34;&gt;\(a \div b\)&lt;/span&gt;，&lt;br&gt;
+其也可以写成&lt;span class=&#34;math inline&#34;&gt;\(a \times \frac{1}{b}\)&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;因此对于求余运算&lt;span class=&#34;math inline&#34;&gt;\((a/b) \bmod m\)&lt;/span&gt;，&lt;br&gt;
+其也可以写成&lt;span class=&#34;math inline&#34;&gt;\((a \cdot b^{-1}) \bmod m\)&lt;/span&gt;，&lt;/p&gt;
+&lt;p&gt;这时便可以拆开求余为&lt;span class=&#34;math inline&#34;&gt;\(((a\bmod m) \cdot (b^{-1}\bmod m))\bmod m\)&lt;/span&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;即存在性质&lt;/strong&gt;：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[a/b \bmod m = a \cdot b^{-1} \bmod m
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;参考自“Aloof__”的&lt;a class=&#34;link&#34; href=&#34;https://blog.csdn.net/weixin_43872728/article/details/99687168&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「乘法逆元的作用（逆元的作用是什么）」&lt;/a&gt;。&lt;/em&gt;&lt;/p&gt;
+&lt;h4 id=&#34;证明&#34;&gt;证明&lt;/h4&gt;
+&lt;p&gt;根据逆元的定义，存在：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[b \cdot b^{-1} \equiv 1 \pmod m
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;同余式两边同乘&lt;span class=&#34;math inline&#34;&gt;\(a\)&lt;/span&gt;，得到：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ab \cdot b^{-1} \equiv a \pmod m
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;同余式两边同除&lt;span class=&#34;math inline&#34;&gt;\(b\)&lt;/span&gt;，得到：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[a \cdot b^{-1} \equiv a/b \pmod m
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;得证。&lt;/p&gt;
+&lt;h3 id=&#34;2-线性同余方程的反函数&#34;&gt;2. 线性同余方程的反函数&lt;/h3&gt;
+&lt;p&gt;对于线性同余方程&lt;span class=&#34;math inline&#34;&gt;\(ax \equiv b \pmod m\)&lt;/span&gt;，&lt;br&gt;
+表示为函数的形式即为&lt;span class=&#34;math inline&#34;&gt;\(f(x) = ax \bmod m\)&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;如果知道函数值&lt;span class=&#34;math inline&#34;&gt;\(f(x)\)&lt;/span&gt;，&lt;br&gt;
+那么反求解&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;的方法为：&lt;span class=&#34;math inline&#34;&gt;\(x = f(x) \cdot a^{-1}\)&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;需要满足&lt;span class=&#34;math inline&#34;&gt;\(x&lt;m\)&lt;/span&gt;，&lt;br&gt;
+否则为&lt;span class=&#34;math inline&#34;&gt;\(x \equiv f(x) \cdot a^{-1} \pmod m\)&lt;/span&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如：&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(2x \equiv f(x) \pmod{11}\)&lt;/span&gt;。
+当&lt;span class=&#34;math inline&#34;&gt;\(x = 13\)&lt;/span&gt;时，$f(x) = 4。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;对&lt;span class=&#34;math inline&#34;&gt;\(11\)&lt;/span&gt;的逆元是&lt;span class=&#34;math inline&#34;&gt;\(6\)&lt;/span&gt;，&lt;br&gt;
+&lt;span class=&#34;math inline&#34;&gt;\(4 \times 6 = 24\)&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(24 \equiv x(13) \pmod{11}\)&lt;/span&gt;，&lt;br&gt;
+而不是&lt;span class=&#34;math inline&#34;&gt;\(24 = x(13)\)&lt;/span&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;p&gt;主要应用于CTF中仿射加密的解密。&lt;/p&gt;
+&lt;h4 id=&#34;证明-1&#34;&gt;证明&lt;/h4&gt;
+&lt;p&gt;很简单的证明。&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ax \equiv f(x) \pmod m
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[ax \cdot a^{-1} \equiv f(x) \cdot a^{-1} \pmod m
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[x \equiv f(x) \cdot a^{-1} \pmod m
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;得证。&lt;/p&gt;
+&lt;h2 id=&#34;求解方法&#34;&gt;求解方法&lt;/h2&gt;
+&lt;p&gt;待补充！……&lt;/p&gt;
 </description>
         </item>
         <item>
@@ -18447,9 +18426,9 @@ $$x \equiv f(x) \cdot a^{-1} \pmod m$$
 &lt;p&gt;根据矩阵元素的奇偶性决定是否&lt;span class=&#34;math inline&#34;&gt;\(+1\)&lt;/span&gt;。&lt;/p&gt;
 &lt;p&gt;因为如果使矩阵满足如下结构，&lt;br&gt;
 则必定保证相邻两个元素奇偶性不同，两元素数也必然不同。&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[
-## 题解代码
-
+&lt;p&gt;&lt;span class=&#34;math display&#34;&gt;\[\begin{matrix} odd &amp; even &amp; odd &amp; ... \\\ even &amp; odd &amp; even &amp; ... \\\ odd &amp; even &amp; odd &amp; ... \\\ ... &amp; ... &amp; ... &amp; ...  \end{matrix}
+\]&lt;/span&gt;&lt;/p&gt;
+&lt;h2 id=&#34;题解代码&#34;&gt;题解代码&lt;/h2&gt;
 
 
 &lt;details class=&#34;sc-details&#34; &gt;
@@ -18480,130 +18459,168 @@ $$x \equiv f(x) \cdot a^{-1} \pmod m$$
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;/details&gt;
-
-# D. Powerful Ksenia
-
+&lt;h1 id=&#34;d-powerful-ksenia&#34;&gt;D. Powerful Ksenia&lt;/h1&gt;
 &lt;div class=&#34;snote warning &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;比赛状态：未完成（没有时间看题）&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-
-* [题目链接](https://codeforces.com/contest/1438/problem/D)
-
-## 题目大意
-
-### 问题描述
-
-给定$n$个数，每次操作能选择其中三个数$x,y,z$皆变为它们的亦或$x \oplus y \oplus z$，问能否进行不超过$n$次操作使这$n$个数均相等。
-
-### 读入格式
-
-第一行读入一个$n$，接下来一行读入$n$个数。
-
-### 输出格式
-
-输出是否能满足条件：
-
-* 如果能，输出一行`YES`，并在下一行输出所需的操作数`m`，在下一行输出`m`个所分别选择的三个数`x,y,z`。
-* 如果不能，直接输出一行`NO`。
-
-## 题解分析
-
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1438/problem/D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;题目链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;题目大意-3&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-3&#34;&gt;问题描述&lt;/h3&gt;
+&lt;p&gt;给定&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;个数，每次操作能选择其中三个数&lt;span class=&#34;math inline&#34;&gt;\(x,y,z\)&lt;/span&gt;皆变为它们的亦或&lt;span class=&#34;math inline&#34;&gt;\(x \oplus y \oplus z\)&lt;/span&gt;，问能否进行不超过&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;次操作使这&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;个数均相等。&lt;/p&gt;
+&lt;h3 id=&#34;读入格式-3&#34;&gt;读入格式&lt;/h3&gt;
+&lt;p&gt;第一行读入一个&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;，接下来一行读入&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;个数。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式-3&#34;&gt;输出格式&lt;/h3&gt;
+&lt;p&gt;输出是否能满足条件：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果能，输出一行&lt;code&gt;YES&lt;/code&gt;，并在下一行输出所需的操作数&lt;code&gt;m&lt;/code&gt;，在下一行输出&lt;code&gt;m&lt;/code&gt;个所分别选择的三个数&lt;code&gt;x,y,z&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;如果不能，直接输出一行&lt;code&gt;NO&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;题解分析-1&#34;&gt;题解分析&lt;/h2&gt;
 &lt;div class=&#34;snote info &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;参考自&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/293954703&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;“哈哈哈哈哈哈”在知乎上的题解&lt;/a&gt;。&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-
-首先了解位运算中“三者异或”的基本性质：
-
-1. $x \oplus x \oplus y = 0 \oplus y = y$  
-   即**两个相同的数**与另一个不同数三者异或，答案为不同的数。加上本题的要求，则三者均会变成相同的数$y$。
-2. 对三($n$)者异或，转成二进制后，**某一位的$1$的个数的奇偶性不变**，如表格所示：
-   | (x,y,z) | 1的个数奇偶性 | 结果 | 1个数的奇偶性 |
-   | ------- | ------------- | ---- | ------------- |
-   | (0,0,0) | **偶**（0个） | 0    | **偶**（0个） |
-   | (0,0,1) | **奇**（1个） | 1    | **奇**（1个） |
-   | (0,1,0) | **奇**（1个） | 1    | **奇**（1个） |
-   | (0,1,1) | **偶**（2个） | 0    | **偶**（0个） |
-   | (1,0,0) | **奇**（1个） | 1    | **奇**（1个） |
-   | (1,0,1) | **偶**（2个） | 0    | **偶**（0个） |
-   | (1,1,0) | **偶**（2个） | 0    | **偶**（0个） |
-   | (1,1,1) | **奇**（3个） | 1    | **奇**（1个） |
-
----
-
-基于**第一性质**：如果我们能把数列分为$n$个$2$个相同的数$(x,x)$，最终加上任意一个数$y$，我们便能将该数列变为符合题意的均为$y$数列。  
-每经过一次操作后，我们都能得到三个相同的数；而下一次操作如果我们再用上一次操作中的任意一个数，上一次操作便能得到**两个相同的数**。
-
-* 经过简化：若我们按照$(1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),...$这样的顺序操作下去，最终便能得到$(x_1,x_1,x_2,x_2,x_3,x_3,...,x_{n-1},x_{n-1},x_n,x_n,x_n)$这样一个数列。再按照**第一性质**得到结果。  
-而要能使用这一种操作，则须满足数列个数为$2*n+1$个，即为**奇数个**。
-
-即：**若数列个数为奇数个，则必定可以通过上述操作满足题意。**
-
----
-
-那分析**数列个数为偶数个**的情况：
-
-对于最终态分析：  
-如果我们能满足题意，即变成**个数为偶数个的相同元素$x$的数列**：  
-对$x$的每一个**二进制数位**($5_{(10)}$---&gt;$101_{(2)}$)分析，其每一位$1$的个数必定全是$0$或者为偶数个$1$，即**所有数位$1$的个数均为偶数个**。
-
-又因为**第二性质**——**异或后某一数位的$1$的个数的奇偶性不变**  
-对最初态数列的**任意一数位**假设：
-&gt; 如：
-&gt;
-&gt; 第三位： 0 1 0 1 1 0  
-&gt; 第二位： 0 1 1 0 1 1  
-&gt; 第一位： 1 1 0 0 0 0
-&gt;
-&gt; （原数列:1 7 2 4 6 2）
-
-令：该数列长度为$2n$。
-
-1. $1$的个数为偶数个：
-   我们**任选**一个数$x_i$，将这个数放在最后分析，先操作剩下的$2n-1$个数。  
-   可知这$2n-1$个数为奇数。  
-   而对于选中的$x_i$，又有两种情况：
-   1. 该位为$0$：  
-      则剩下的$2n-1$个数，该为$1$的个数仍为偶数个，但数却有奇数个。  
-	  要达到最后所有数相同的情况（即该位全是$1$或全是$0$），只能最终全部为$0$。  
-	  因此$x_i$的该位与剩下的$2n-1$个数操作后的该位结果相同。  
-	  又因为为**任意一数位**，故**最终$x_i$这个数必须与剩下的$2n-1$个数操作后的数值相同**。
-   2. 该位为$1$：  
-      则剩下的$2n-1$个数，该为$1$的个数变为奇数个，而数也有奇数个。  
-	  同理，则最终全部为$1$，也**相同**。
-
-   又因为$x_i$也为任选。  
-   即**任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，只有$x_i=m$时**，才能满足题意。
-2. $1$的个数为奇数个——不成立：  
-   由第二性质可直接得出矛盾——最初态该数位的$1$的个数(奇数个)与最终态(偶数个)的奇偶性不一致。  
-   但同理分析，可以得出**任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，必定$x_i \neq m$**
-
----
-
-综上：只有**任意一数$x_i$，其剩下的$2n-1$个数经过异或操作后变为相同数$m$，只有$x_i=m$时**，才能满足题意。  
-
-* 经过简化：若我们仍然按照$(1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),...$这样的顺序操作下去，  
-  最终得到$(x_1,x_1,x_2,x_2,x_3,x_3,...,x_{n-1},x_{n-1},x_n,x_n,x_n,y)$这样一个数列。
-  
-  按照**奇数个数**的操作对前$2n-1$个操作，得到相同值$m$。  
-  若$m=y$，则一定满足题意，否则一定不满足。
-
-即：  
-若数列个数为偶数个，将前$2n-1$个变为相同数$m$，只有最后一个数$x_{2n}=m$，才能满足题意。
-
-## 题解代码
-
+&lt;p&gt;首先了解位运算中“三者异或”的基本性质：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(x \oplus x \oplus y = 0 \oplus y = y\)&lt;/span&gt;&lt;br&gt;
+即&lt;strong&gt;两个相同的数&lt;/strong&gt;与另一个不同数三者异或，答案为不同的数。加上本题的要求，则三者均会变成相同的数&lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt;。&lt;/li&gt;
+&lt;li&gt;对三(&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;)者异或，转成二进制后，&lt;strong&gt;某一位的&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数的奇偶性不变&lt;/strong&gt;，如表格所示：
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;(x,y,z)&lt;/th&gt;
+&lt;th&gt;1的个数奇偶性&lt;/th&gt;
+&lt;th&gt;结果&lt;/th&gt;
+&lt;th&gt;1个数的奇偶性&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;(0,0,0)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;偶&lt;/strong&gt;（0个）&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;偶&lt;/strong&gt;（0个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(0,0,1)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;奇&lt;/strong&gt;（1个）&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;奇&lt;/strong&gt;（1个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(0,1,0)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;奇&lt;/strong&gt;（1个）&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;奇&lt;/strong&gt;（1个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(0,1,1)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;偶&lt;/strong&gt;（2个）&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;偶&lt;/strong&gt;（0个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(1,0,0)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;奇&lt;/strong&gt;（1个）&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;奇&lt;/strong&gt;（1个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(1,0,1)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;偶&lt;/strong&gt;（2个）&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;偶&lt;/strong&gt;（0个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(1,1,0)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;偶&lt;/strong&gt;（2个）&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;偶&lt;/strong&gt;（0个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;(1,1,1)&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;奇&lt;/strong&gt;（3个）&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;奇&lt;/strong&gt;（1个）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;基于&lt;strong&gt;第一性质&lt;/strong&gt;：如果我们能把数列分为&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;个&lt;span class=&#34;math inline&#34;&gt;\(2\)&lt;/span&gt;个相同的数&lt;span class=&#34;math inline&#34;&gt;\((x,x)\)&lt;/span&gt;，最终加上任意一个数&lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt;，我们便能将该数列变为符合题意的均为&lt;span class=&#34;math inline&#34;&gt;\(y\)&lt;/span&gt;数列。&lt;br&gt;
+每经过一次操作后，我们都能得到三个相同的数；而下一次操作如果我们再用上一次操作中的任意一个数，上一次操作便能得到&lt;strong&gt;两个相同的数&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;经过简化：若我们按照&lt;span class=&#34;math inline&#34;&gt;\((1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),...\)&lt;/span&gt;这样的顺序操作下去，最终便能得到&lt;span class=&#34;math inline&#34;&gt;\((x_1,x_1,x_2,x_2,x_3,x_3,...,x_{n-1},x_{n-1},x_n,x_n,x_n)\)&lt;/span&gt;这样一个数列。再按照&lt;strong&gt;第一性质&lt;/strong&gt;得到结果。&lt;br&gt;
+而要能使用这一种操作，则须满足数列个数为&lt;span class=&#34;math inline&#34;&gt;\(2*n+1\)&lt;/span&gt;个，即为&lt;strong&gt;奇数个&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;即：&lt;strong&gt;若数列个数为奇数个，则必定可以通过上述操作满足题意。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;那分析&lt;strong&gt;数列个数为偶数个&lt;/strong&gt;的情况：&lt;/p&gt;
+&lt;p&gt;对于最终态分析：&lt;br&gt;
+如果我们能满足题意，即变成&lt;strong&gt;个数为偶数个的相同元素&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;的数列&lt;/strong&gt;：&lt;br&gt;
+对&lt;span class=&#34;math inline&#34;&gt;\(x\)&lt;/span&gt;的每一个&lt;strong&gt;二进制数位&lt;/strong&gt;(&lt;span class=&#34;math inline&#34;&gt;\(5_{(10)}\)&lt;/span&gt;&amp;mdash;&amp;gt;&lt;span class=&#34;math inline&#34;&gt;\(101_{(2)}\)&lt;/span&gt;)分析，其每一位&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数必定全是&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;或者为偶数个&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;，即&lt;strong&gt;所有数位&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数均为偶数个&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;又因为&lt;strong&gt;第二性质&lt;/strong&gt;——&lt;strong&gt;异或后某一数位的&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数的奇偶性不变&lt;/strong&gt;&lt;br&gt;
+对最初态数列的&lt;strong&gt;任意一数位&lt;/strong&gt;假设：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;如：&lt;/p&gt;
+&lt;p&gt;第三位： 0 1 0 1 1 0&lt;br&gt;
+第二位： 0 1 1 0 1 1&lt;br&gt;
+第一位： 1 1 0 0 0 0&lt;/p&gt;
+&lt;p&gt;（原数列:1 7 2 4 6 2）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;令：该数列长度为&lt;span class=&#34;math inline&#34;&gt;\(2n\)&lt;/span&gt;。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数为偶数个：
+我们&lt;strong&gt;任选&lt;/strong&gt;一个数&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;，将这个数放在最后分析，先操作剩下的&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数。&lt;br&gt;
+可知这&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数为奇数。&lt;br&gt;
+而对于选中的&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;，又有两种情况：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;该位为&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;：&lt;br&gt;
+则剩下的&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数，该为&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数仍为偶数个，但数却有奇数个。&lt;br&gt;
+要达到最后所有数相同的情况（即该位全是&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;或全是&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;），只能最终全部为&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;。&lt;br&gt;
+因此&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;的该位与剩下的&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数操作后的该位结果相同。&lt;br&gt;
+又因为为&lt;strong&gt;任意一数位&lt;/strong&gt;，故&lt;strong&gt;最终&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;这个数必须与剩下的&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数操作后的数值相同&lt;/strong&gt;。&lt;/li&gt;
+&lt;li&gt;该位为&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;：&lt;br&gt;
+则剩下的&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数，该为&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数变为奇数个，而数也有奇数个。&lt;br&gt;
+同理，则最终全部为&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;，也&lt;strong&gt;相同&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;又因为&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;也为任选。&lt;br&gt;
+即&lt;strong&gt;任意一数&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;，其剩下的&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数经过异或操作后变为相同数&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;，只有&lt;span class=&#34;math inline&#34;&gt;\(x_i=m\)&lt;/span&gt;时&lt;/strong&gt;，才能满足题意。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数为奇数个——不成立：&lt;br&gt;
+由第二性质可直接得出矛盾——最初态该数位的&lt;span class=&#34;math inline&#34;&gt;\(1\)&lt;/span&gt;的个数(奇数个)与最终态(偶数个)的奇偶性不一致。&lt;br&gt;
+但同理分析，可以得出&lt;strong&gt;任意一数&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;，其剩下的&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数经过异或操作后变为相同数&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;，必定&lt;span class=&#34;math inline&#34;&gt;\(x_i \neq m\)&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;综上：只有&lt;strong&gt;任意一数&lt;span class=&#34;math inline&#34;&gt;\(x_i\)&lt;/span&gt;，其剩下的&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个数经过异或操作后变为相同数&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;，只有&lt;span class=&#34;math inline&#34;&gt;\(x_i=m\)&lt;/span&gt;时&lt;/strong&gt;，才能满足题意。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;经过简化：若我们仍然按照&lt;span class=&#34;math inline&#34;&gt;\((1,2,\underline3),(\underline3,4,\underline5),(\underline5,6,7),...\)&lt;/span&gt;这样的顺序操作下去，&lt;br&gt;
+最终得到&lt;span class=&#34;math inline&#34;&gt;\((x_1,x_1,x_2,x_2,x_3,x_3,...,x_{n-1},x_{n-1},x_n,x_n,x_n,y)\)&lt;/span&gt;这样一个数列。&lt;/p&gt;
+&lt;p&gt;按照&lt;strong&gt;奇数个数&lt;/strong&gt;的操作对前&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个操作，得到相同值&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;。&lt;br&gt;
+若&lt;span class=&#34;math inline&#34;&gt;\(m=y\)&lt;/span&gt;，则一定满足题意，否则一定不满足。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;即：&lt;br&gt;
+若数列个数为偶数个，将前&lt;span class=&#34;math inline&#34;&gt;\(2n-1\)&lt;/span&gt;个变为相同数&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;，只有最后一个数&lt;span class=&#34;math inline&#34;&gt;\(x_{2n}=m\)&lt;/span&gt;，才能满足题意。&lt;/p&gt;
+&lt;h2 id=&#34;题解代码-1&#34;&gt;题解代码&lt;/h2&gt;
 &lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://paste.ubuntu.com/p/C8WRsStq5b/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Pastebin链接&lt;/a&gt;&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-
 
 
 &lt;details class=&#34;sc-details&#34; &gt;
@@ -18656,105 +18673,87 @@ $$x \equiv f(x) \cdot a^{-1} \pmod m$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-
-# E. Yurii Can Do Everything
-
+&lt;h1 id=&#34;e-yurii-can-do-everything&#34;&gt;E. Yurii Can Do Everything&lt;/h1&gt;
 &lt;div class=&#34;snote warning &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;比赛状态：未完成（没有时间看题）&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-
-* [题目链接](https://codeforces.com/contest/1438/problem/E)
-
-## 题目大意
-
-### 问题描述
-
-给定一个数组`a[n]`，要求输出满足以下条件的子数组`a[l..r]`的个数：
-
-1. $l+1\leq r-1$，即子数组长度至少为$3$。
-2. $(a_l \oplus a_r) = (a_{l+1}+a_{l+2}+...+a_{r-2}+a_{r-1})$，即两端点异或的值等于中间所有数之和。
-
-### 读入格式
-
-第一行为数组长度$n$，接下来一行为长度为$n$的数组$a_i$的读入。
-
-### 输出格式
-
-输出满足条件子数组个数。
-
-### 数据范围
-
-* $3\leq n \leq 2*10^5$
-* $1\leq a_i \leq 2^{30}$
-
-## 题解分析
-
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://codeforces.com/contest/1438/problem/E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;题目链接&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;题目大意-4&#34;&gt;题目大意&lt;/h2&gt;
+&lt;h3 id=&#34;问题描述-4&#34;&gt;问题描述&lt;/h3&gt;
+&lt;p&gt;给定一个数组&lt;code&gt;a[n]&lt;/code&gt;，要求输出满足以下条件的子数组&lt;code&gt;a[l..r]&lt;/code&gt;的个数：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(l+1\leq r-1\)&lt;/span&gt;，即子数组长度至少为&lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\((a_l \oplus a_r) = (a_{l+1}+a_{l+2}+...+a_{r-2}+a_{r-1})\)&lt;/span&gt;，即两端点异或的值等于中间所有数之和。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;读入格式-4&#34;&gt;读入格式&lt;/h3&gt;
+&lt;p&gt;第一行为数组长度&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;，接下来一行为长度为&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;的数组&lt;span class=&#34;math inline&#34;&gt;\(a_i\)&lt;/span&gt;的读入。&lt;/p&gt;
+&lt;h3 id=&#34;输出格式-4&#34;&gt;输出格式&lt;/h3&gt;
+&lt;p&gt;输出满足条件子数组个数。&lt;/p&gt;
+&lt;h3 id=&#34;数据范围&#34;&gt;数据范围&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(3\leq n \leq 2*10^5\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;math inline&#34;&gt;\(1\leq a_i \leq 2^{30}\)&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;题解分析-2&#34;&gt;题解分析&lt;/h2&gt;
 &lt;div class=&#34;snote info &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;参考自&lt;a class=&#34;link&#34; href=&#34;https://zhuanlan.zhihu.com/p/293954703&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;“哈哈哈哈哈哈”在知乎上的题解&lt;/a&gt;。&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-
-异或的基本性质的补充：
-
-1. 任意两数异或，其**结果不可能超过他们最大的二进制数位**  
-   根据异或计算结果：
-   &gt; $0 \oplus 0 = 0$
-
-   最高位往后均为$0$，异或后结果也为0，因此结果的数位不可能超过最高位。
-
-   如：$(3)\_{10} \oplus (6)\_{10} = (11)\_2\oplus (110)\_2 = (5)\_{10}/(101)\_2$，位数不可能超过最高位即$3$。  
-   最大情况为：$(3)\_{10}\oplus (4)\_{10} = (11)\_2\oplus (100)\_2 = (7)\_{10}/(111)\_2$
-
-   但异或后的数值不能保证与两原数大小的直接关系，但由于数位可以保证，令两数分别为$x,y$，其二进制位数分别为$m,n$。  
-   故**可确定$x\oplus y&lt;2^{max(m,n)}$。**
-   &gt; 假设最大为$x=(31)_{10}$，$(x)\_2=(11111)\_2$，  
-   &gt; 则$m=5$，$2^m=(32)\_{10}=(100000)\_2$
-
----
-
-这题如果暴力搜索的话，$O(n^2)$TLE。  
-但由于以上的性质存在，可以跨级别性剪枝。
-
-根据以上性质我们可以粗略感觉到一个剪枝条件：  
-&gt; 当$\sum_{i=l+1}^{r-1}a_i\geq 2^{max(m,n)}$时，则证明该区间不满足条件。
-
-但如果搭配暴力搜索，假如选定$l$遍历$r$，$max(m,n)$选择的值可能因为$r$的改变而改变，使得无法通过这个条件来中止后续搜索。
-
-因此我们可以更暴力一点【？】，选定$l$后，我们就**假定$max(m,n)$选择的值为$m$**，即$l$的位数始终最大。然后向右遍历$r$。  
-这样当我们找到不满足条件的情况后，**后续的搜索便可以中止**。
-
-可能会问，如果这样选择的区间最大值却是$n$，是否会出现问题？  
-但如果最大值选的$n$，则一定满足情况$\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n$，这个区间也符合条件，不会影响的抬走下一个x……
-
-但这样的话，可能有区间就是以$n$，即右端点$r$为最大位数，但$2^m\leq \sum_{i=l+1}^{r-1}a_i\leq 2^n$。  
-因此我**们再从右向左，选定$r$，令$max(m,n)$选择的是$n$，向左遍历$l$便可解决这种问题**。
-
-这样肯定能**保证不漏**，但很明显**会重复计算**。  
-即若有区间满足$\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n$或$\sum_{i=l+1}^{r-1}a_i\leq 2^n \leq 2^m$，则从左向右和从右向左均满足，会被计算两次。
-
-故**用“Hash+\&lt;STL\&gt;set”可以去重计数**。
-
----
-
-但为什么这样剪枝能跨级别性剪枝呢！？……
-
-因为如果要遍历较长的$l\sim r$，则数列应构造为$1,2,4,8,...,2^n$【从右向左$r=n$时，就能让$l$取到最左即$l=1$而中间求和仍少于$2^n$。
-
-这样反而限定了遍历范围为$log_2a_i$，则总复杂度为$O(2nloga_i)$。
-
-### 题解代码
-
+&lt;p&gt;异或的基本性质的补充：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;任意两数异或，其&lt;strong&gt;结果不可能超过他们最大的二进制数位&lt;/strong&gt;&lt;br&gt;
+根据异或计算结果：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span class=&#34;math inline&#34;&gt;\(0 \oplus 0 = 0\)&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最高位往后均为&lt;span class=&#34;math inline&#34;&gt;\(0\)&lt;/span&gt;，异或后结果也为0，因此结果的数位不可能超过最高位。&lt;/p&gt;
+&lt;p&gt;如：&lt;span class=&#34;math inline&#34;&gt;\((3)_{10} \oplus (6)_{10} = (011)_2\oplus (110)_2 = (101)_2 = (5)_{10}\)&lt;/span&gt;，位数不可能超过最高位即&lt;span class=&#34;math inline&#34;&gt;\(3\)&lt;/span&gt;。&lt;br&gt;
+最大情况为：&lt;span class=&#34;math inline&#34;&gt;\((3)_{10}\oplus (4)_{10} = (011)_2\oplus (100)_2 = (111)_2 = (7)_{10}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;但异或后的数值不能保证与两原数大小的直接关系，但由于数位可以保证，&lt;br&gt;
+令两数分别为&lt;span class=&#34;math inline&#34;&gt;\(x,y\)&lt;/span&gt;，其二进制位数分别为&lt;span class=&#34;math inline&#34;&gt;\(m,n\)&lt;/span&gt;。&lt;br&gt;
+&lt;strong&gt;可确定&lt;span class=&#34;math inline&#34;&gt;\(x\oplus y&lt;2^{max(m,n)}\)&lt;/span&gt;。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;假设最大为&lt;span class=&#34;math inline&#34;&gt;\(x=(31)_{10}\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\((x)_2=(11111)_2\)&lt;/span&gt;，&lt;br&gt;
+则&lt;span class=&#34;math inline&#34;&gt;\(m=5\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(2^m=(32)_{10}=(100000)_2\)&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;p&gt;这题如果暴力搜索的话，&lt;span class=&#34;math inline&#34;&gt;\(O(n^2)\)&lt;/span&gt;TLE。&lt;br&gt;
+但由于以上的性质存在，可以跨级别性剪枝。&lt;/p&gt;
+&lt;p&gt;根据以上性质我们可以粗略感觉到一个剪枝条件：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;当&lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=l+1}^{r-1}a_i\geq 2^{max(m,n)}\)&lt;/span&gt;时，则证明该区间不满足条件。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;但如果搭配暴力搜索，假如选定&lt;span class=&#34;math inline&#34;&gt;\(l\)&lt;/span&gt;遍历&lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;，&lt;span class=&#34;math inline&#34;&gt;\(max(m,n)\)&lt;/span&gt;选择的值可能因为&lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;的改变而改变，使得无法通过这个条件来中止后续搜索。&lt;/p&gt;
+&lt;p&gt;因此我们可以更暴力一点【？】，选定&lt;span class=&#34;math inline&#34;&gt;\(l\)&lt;/span&gt;后，我们就&lt;strong&gt;假定&lt;span class=&#34;math inline&#34;&gt;\(max(m,n)\)&lt;/span&gt;选择的值为&lt;span class=&#34;math inline&#34;&gt;\(m\)&lt;/span&gt;&lt;/strong&gt;，即&lt;span class=&#34;math inline&#34;&gt;\(l\)&lt;/span&gt;的位数始终最大。然后向右遍历&lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;。&lt;br&gt;
+这样当我们找到不满足条件的情况后，&lt;strong&gt;后续的搜索便可以中止&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;可能会问，如果这样选择的区间最大值却是&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;，是否会出现问题？&lt;br&gt;
+但如果最大值选的&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;，则一定满足情况&lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n\)&lt;/span&gt;，这个区间也符合条件，不会影响的抬走下一个x……&lt;/p&gt;
+&lt;p&gt;但这样的话，可能有区间就是以&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;，即右端点&lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;为最大位数，但&lt;span class=&#34;math inline&#34;&gt;\(2^m\leq \sum_{i=l+1}^{r-1}a_i\leq 2^n\)&lt;/span&gt;。&lt;br&gt;
+因此我&lt;strong&gt;们再从右向左，选定&lt;span class=&#34;math inline&#34;&gt;\(r\)&lt;/span&gt;，令&lt;span class=&#34;math inline&#34;&gt;\(max(m,n)\)&lt;/span&gt;选择的是&lt;span class=&#34;math inline&#34;&gt;\(n\)&lt;/span&gt;，向左遍历&lt;span class=&#34;math inline&#34;&gt;\(l\)&lt;/span&gt;便可解决这种问题&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;这样肯定能&lt;strong&gt;保证不漏&lt;/strong&gt;，但很明显&lt;strong&gt;会重复计算&lt;/strong&gt;。&lt;br&gt;
+即若有区间满足&lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=l+1}^{r-1}a_i\leq 2^m \leq 2^n\)&lt;/span&gt;或&lt;span class=&#34;math inline&#34;&gt;\(\sum_{i=l+1}^{r-1}a_i\leq 2^n \leq 2^m\)&lt;/span&gt;，则从左向右和从右向左均满足，会被计算两次。&lt;/p&gt;
+&lt;p&gt;故&lt;strong&gt;用“Hash+&amp;lt;STL&amp;gt;set”可以去重计数&lt;/strong&gt;。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;但为什么这样剪枝能跨级别性剪枝呢！？……&lt;/p&gt;
+&lt;p&gt;因为如果要遍历较长的&lt;span class=&#34;math inline&#34;&gt;\(l\sim r\)&lt;/span&gt;，则数列应构造为&lt;span class=&#34;math inline&#34;&gt;\(1,2,4,8,...,2^n\)&lt;/span&gt;【从右向左&lt;span class=&#34;math inline&#34;&gt;\(r=n\)&lt;/span&gt;时，就能让&lt;span class=&#34;math inline&#34;&gt;\(l\)&lt;/span&gt;取到最左即&lt;span class=&#34;math inline&#34;&gt;\(l=1\)&lt;/span&gt;而中间求和仍少于&lt;span class=&#34;math inline&#34;&gt;\(2^n\)&lt;/span&gt;。&lt;/p&gt;
+&lt;p&gt;这样反而限定了遍历范围为&lt;span class=&#34;math inline&#34;&gt;\(\log_2a_i\)&lt;/span&gt;，则总复杂度为&lt;span class=&#34;math inline&#34;&gt;\(O(2n\log a_i)\)&lt;/span&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;题解代码-2&#34;&gt;题解代码&lt;/h3&gt;
 &lt;div class=&#34;snote link green&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://paste.ubuntu.com/p/wwWJ2K4dRC/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;Pastebin链接&lt;/a&gt;&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-
 
 
 &lt;details class=&#34;sc-details&#34; &gt;
@@ -18804,7 +18803,6 @@ $$x \equiv f(x) \cdot a^{-1} \pmod m$$
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/details&gt;
-\]&lt;/span&gt;&lt;/p&gt;
 </description>
         </item>
         <item>
