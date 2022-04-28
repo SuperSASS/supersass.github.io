@@ -362,7 +362,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：3977</div>
+            <div class="char">文章字数：3733</div>
             <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
@@ -380,40 +380,40 @@ if (!doNotTrack) {
 </div></p>
 <h1 id="0x00-前提知识">0x00 前提知识</h1>
 <h2 id="同余">同余</h2>
-<p><span class="math inline">\(\equiv\)</span>：是数论中表示<strong>同余</strong>的符号。<br>
-用法：<span class="math inline">\(a \equiv b \pmod n\)</span></p>
+<p>$\equiv$：是数论中表示<strong>同余</strong>的符号。<br>
+用法：$a \equiv b \pmod n$</p>
 <h3 id="定义">定义</h3>
 <ul>
-<li>最基本的定义：两个数<span class="math inline">\(a,b\)</span>对另一个数<span class="math inline">\(n\)</span>的取余都相同。</li>
-<li>衍生定义：<span class="math inline">\((a-b) \bmod n = 0\)</span></li>
+<li>最基本的定义：两个数$a,b$对另一个数$n$的取余都相同。</li>
+<li>衍生定义：$(a-b) \bmod n = 0$</li>
 </ul>
-<p>记作：<span class="math inline">\(a \equiv b \pmod n\)</span>，表示<span class="math inline">\(a,b\)</span>对<span class="math inline">\(n\)</span>同余。</p>
+<p>记作：$a \equiv b \pmod n$，表示$a,b$对$n$同余。</p>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(7 \bmod 3 = 1\)</span><br>
-<span class="math inline">\(10 \bmod 3 = 1\)</span><br>
-则：<span class="math inline">\(7 \equiv 10 \pmod 3\)</span></p>
+$7 \bmod 3 = 1$<br>
+$10 \bmod 3 = 1$<br>
+则：$7 \equiv 10 \pmod 3$</p>
 </blockquote>
 <h3 id="性质">性质</h3>
 <p><em>以下部分为个人总结，名称不一定准确。</em></p>
 <ol>
-<li>自反性：<span class="math inline">\(a \equiv a \pmod m\)</span>。</li>
-<li>对称性：若<span class="math inline">\(a \equiv b \pmod m\)</span>，则<span class="math inline">\(b \equiv a \pmod m\)</span>。</li>
-<li>传递性：若<span class="math inline">\(a \equiv b \pmod m\)</span>，<span class="math inline">\(b \equiv c \pmod m\)</span>，则<span class="math inline">\(a \equiv c \pmod m\)</span>。</li>
-<li><strong>替换性</strong>：对于<span class="math inline">\(M \equiv ab \cdot x \pmod m\)</span>，若<span class="math inline">\(ab \equiv c \pmod m\)</span>，则<span class="math inline">\(M \equiv c \cdot x\pmod m\)</span>。</li>
-<li><strong>加减可移项性</strong>：若<span class="math inline">\(a \pm b \equiv c \pmod m\)</span>，则<span class="math inline">\(a \equiv c \mp b \pmod m\)</span></li>
-<li><strong>线性运算</strong>：如果<span class="math inline">\(a \equiv b \pmod m\)</span>，<span class="math inline">\(c \equiv d \pmod m\)</span>，那么有：
+<li>自反性：$a \equiv a \pmod m$。</li>
+<li>对称性：若$a \equiv b \pmod m$，则$b \equiv a \pmod m$。</li>
+<li>传递性：若$a \equiv b \pmod m$，$b \equiv c \pmod m$，则$a \equiv c \pmod m$。</li>
+<li><strong>替换性</strong>：对于$M \equiv ab \cdot x \pmod m$，若$ab \equiv c \pmod m$，则$M \equiv c \cdot x\pmod m$。</li>
+<li><strong>加减可移项性</strong>：若$a \pm b \equiv c \pmod m$，则$a \equiv c \mp b \pmod m$</li>
+<li><strong>线性运算</strong>：如果$a \equiv b \pmod m$，$c \equiv d \pmod m$，那么有：
 <ol>
-<li><span class="math inline">\(a \pm c \equiv b \pm d \pmod m\)</span>。</li>
-<li><span class="math inline">\(ac \equiv bd \pmod m\)</span>。<br>
-推论：若<span class="math inline">\(a \equiv b \pmod m\)</span>，则有<span class="math inline">\(an \equiv bn \pmod m (n\in Z, n \ne 0)\)</span>。</li>
+<li>$a \pm c \equiv b \pm d \pmod m$。</li>
+<li>$ac \equiv bd \pmod m$。<br>
+推论：若$a \equiv b \pmod m$，则有$an \equiv bn \pmod m (n\in Z, n \ne 0)$。</li>
 </ol>
 </li>
-<li>模数的除法：若<span class="math inline">\(ac \equiv bc \pmod m\)</span>，<span class="math inline">\(\gcd(m,c)=d\)</span>，则<span class="math inline">\(a \equiv b \pmod{m/d}\)</span>；<br>
-特别地，当<span class="math inline">\(\gcd(m,c)=1\)</span>时，有<span class="math inline">\(a \equiv b \pmod m\)</span>。</li>
-<li>模数的乘法：若<span class="math inline">\(a \equiv b \pmod m\)</span>，则有<span class="math inline">\(ak \equiv bk \pmod{mk}\)</span>，其中<span class="math inline">\(k\)</span>为大于零的整数；<br>
-推论：若<span class="math inline">\(a \equiv b \pmod m\)</span>，<span class="math inline">\(d\)</span>为<span class="math inline">\(a,b\)</span>及<span class="math inline">\(m\)</span>三者的任一正公约数，则<span class="math inline">\(a/d \equiv b/d \pmod{m/d}\)</span>。</li>
-<li>传递性2：若<span class="math inline">\(a \equiv b \pmod m\)</span>，且<span class="math inline">\(d \mid m\)</span>，则<span class="math inline">\(a \equiv b \pmod d\)</span>。</li>
+<li>模数的除法：若$ac \equiv bc \pmod m$，$\gcd(m,c)=d$，则$a \equiv b \pmod{m/d}$；<br>
+特别地，当$\gcd(m,c)=1$时，有$a \equiv b \pmod m$。</li>
+<li>模数的乘法：若$a \equiv b \pmod m$，则有$ak \equiv bk \pmod{mk}$，其中$k$为大于零的整数；<br>
+推论：若$a \equiv b \pmod m$，$d$为$a,b$及$m$三者的任一正公约数，则$a/d \equiv b/d \pmod{m/d}$。</li>
+<li>传递性2：若$a \equiv b \pmod m$，且$d \mid m$，则$a \equiv b \pmod d$。</li>
 </ol>
 <p><em>参考自“wcwcwch”的<a class="link" href="https://www.cnblogs.com/812-xiao-wen/p/10497924.html"  target="_blank" rel="noopener"
     >「同余的性质」</a>。</em></p>
@@ -422,40 +422,41 @@ if (!doNotTrack) {
 负数也可以进行取模，因此也存在同余。</p>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(-36 \bmod 15\)</span>，<br>
-用除法表示为<span class="math inline">\(-36 \div 15 = -3 \cdots 9\)</span>（验算：<span class="math inline">\(15*-3+9=-36\)</span>），<br>
-即<span class="math inline">\(-36 \bmod 15 = 9\)</span>，</p>
-<p>所以<span class="math inline">\(-36 \equiv 24 \pmod{15}\)</span>。</p>
+$-36 \bmod 15$，<br>
+用除法表示为$-36 \div 15 = -3 \cdots 9$（验算：$15*-3+9=-36$），<br>
+即$-36 \bmod 15 = 9$，</p>
+<p>所以$-36 \equiv 24 \pmod{15}$。</p>
 </blockquote>
 <blockquote>
 <p>由于这个符号很新颖和陌生，导致在学习的时候理解上产生了很大的障碍，<br>
 因此需要尽快适应这个符号的使用方法。</p>
 <p>首先需要知道的是：同余代表的<strong>是一种关系</strong>，而非运算。<br>
 因此才会采用类似于等号的符号来表示。<br>
-但这种等于，并不是像<span class="math inline">\(2=2\)</span>这样直接就可以判断，<br>
+但这种等于，并不是像$2=2$这样直接就可以判断，<br>
 而是要经过稍微的运算，两边同时取模后等于，才叫同余。</p>
 <p>然后对于这个符号，有很多种不同的理解方式，<br>
 建议自己确定一个自己习惯的理解方式并一直用下去。<br>
-个人所采用的是：<span class="math inline">\(a \equiv b \pmod m\)</span>，代表<span class="math inline">\(a \bmod m = b \bmod m\)</span>。</p>
+个人所采用的是：$a \equiv b \pmod m$，代表$a \bmod m = b \bmod m$。</p>
 </blockquote>
-<p>需要牢记一个转换式：</p>
-<p><span class="math display">\[a \equiv b \pmod m \implies a = mk + b (k∈Z)
-\]</span></p>
+<p>需要牢记一个转换式：
+$$
+a \equiv b \pmod m \implies a = mk + b (k∈Z)
+$$</p>
 <h2 id="整除">整除</h2>
-<p><span class="math inline">\(\mid\)</span>：是数论中的表示<strong>整除</strong>符号。<br>
-用法：<span class="math inline">\(a \mid d\)</span></p>
+<p>$\mid$：是数论中的表示<strong>整除</strong>符号。<br>
+用法：$a \mid d$</p>
 <p>注意：<br>
 这里的整除就是整除，不是被整除。<br>
-如上例：是<span class="math inline">\(a\)</span>整除<span class="math inline">\(b\)</span>，或说<span class="math inline">\(b\)</span>被<span class="math inline">\(a\)</span>整除。</p>
+如上例：是$a$整除$b$，或说$b$被$a$整除。</p>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(2\mid14\)</span><br>
-则是<span class="math inline">\(2\)</span>整除<span class="math inline">\(14\)</span>，<span class="math inline">\(14\)</span>被<span class="math inline">\(2\)</span>整除。</p>
+$2\mid14$<br>
+则是$2$整除$14$，$14$被$2$整除。</p>
 </blockquote>
-<p>整除也代表两者大除小余数为<span class="math inline">\(0\)</span>，故同余还可以写为：<br>
-<span class="math inline">\(m \mid (a-b)\)</span><br>
-<span class="math inline">\(\implies (a-b) \bmod n = 0\)</span><br>
-<span class="math inline">\(\implies a \equiv b \pmod n\)</span></p>
+<p>整除也代表两者大除小余数为$0$，故同余还可以写为：<br>
+$m \mid (a-b)$<br>
+$\implies (a-b) \bmod n = 0$<br>
+$\implies a \equiv b \pmod n$</p>
 <h2 id="学习顺序">学习顺序</h2>
 <ol>
 <li>裴蜀定理</li>
@@ -466,144 +467,145 @@ if (!doNotTrack) {
 </ol>
 <p>其中：</p>
 <ul>
-<li>1、2为<a class="link" href="1.%20GCD&amp;EXGCD.md" ><span class="math inline">\(\gcd\)</span>内容</a>，</li>
+<li>1、2为<a class="link" href="1.%20GCD&amp;EXGCD.md" >$\gcd$内容</a>，</li>
 <li>3、4、5为本章（线性同余方程）内容。</li>
 </ul>
 <h1 id="0x01-初步认识">0x01 初步认识</h1>
 <h2 id="定义-1">定义</h2>
-<p>形如<span class="math inline">\(f(x) \equiv 0 \pmod m\)</span>的方程称为同余方程，<br>
-其中<span class="math inline">\(f(x)=a_nx^n+a_{n-1}x^{n_1}+\cdots+a_1x+a_0\)</span>。</p>
-<p>记：<span class="math inline">\(f(x)\)</span>最高次数为<span class="math inline">\(n\)</span>，则称为<span class="math inline">\(n\)</span>次同余方程。<br>
-特别的：当<span class="math inline">\(n=1\)</span>时，称为一次同余方程，又称线性同余方程。</p>
+<p>形如$f(x) \equiv 0 \pmod m$的方程称为同余方程，<br>
+其中$f(x)=a_nx^n+a_{n-1}x^{n_1}+\cdots+a_1x+a_0$。</p>
+<p>记：$f(x)$最高次数为$n$，则称为$n$次同余方程。<br>
+特别的：当$n=1$时，称为一次同余方程，又称线性同余方程。</p>
 <p>即：<br>
-<strong>形如<span class="math inline">\(ax \equiv b \pmod m\)</span>的方程</strong>，<br>
+<strong>形如$ax \equiv b \pmod m$的方程</strong>，<br>
 被称为<strong>线性同余方程</strong>(Congruence Equation)。</p>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(12x \equiv 9 \pmod {15}\)</span><br>
-解得：<span class="math inline">\(x=\cdots,-3,2,7,12,17,\cdots,5n+2(n∈Z)\)</span></p>
-<p>当<span class="math inline">\(x=-3\)</span>时，<span class="math inline">\(12*-3=36\)</span>，<span class="math inline">\(-36 \bmod 15 = 9\)</span>，满足方程。<br>
-当<span class="math inline">\(x=2\)</span>时，<span class="math inline">\(12*2=24\)</span>，<span class="math inline">\(24 \bmod 15 = 9\)</span>，满足方程。<br>
-当<span class="math inline">\(x=7\)</span>时，<span class="math inline">\(12*7=84\)</span>，<span class="math inline">\(84 \bmod 15 = 9\)</span>，满足方程。</p>
+$12x \equiv 9 \pmod {15}$<br>
+解得：$x=\cdots,-3,2,7,12,17,\cdots,5n+2(n∈Z)$</p>
+<p>当$x=-3$时，$12*-3=36$，$-36 \bmod 15 = 9$，满足方程。<br>
+当$x=2$时，$12<em>2=24$，$24 \bmod 15 = 9$，满足方程。<br>
+当$x=7$时，$12</em>7=84$，$84 \bmod 15 = 9$，满足方程。</p>
 </blockquote>
 <blockquote>
 <p>同样，对于这个方程，<br>
 我们也需要对其快速建立自己的理解方法。</p>
 <p>个人理解方法是：<br>
-当<span class="math inline">\(x\)</span>取某一值时，则<span class="math inline">\(ax\)</span>对<span class="math inline">\(m\)</span>取模的结果就是<span class="math inline">\(b\)</span>。</p>
+当$x$取某一值时，则$ax$对$m$取模的结果就是$b$。</p>
 </blockquote>
 <hr>
 <p>与普通的一元线性方程不同的是：<br>
-普通的一元线性方程肯定存在唯一解（如<span class="math inline">\(2x+3=5\)</span>）；<br>
+普通的一元线性方程肯定存在唯一解（如$2x+3=5$）；<br>
 而线性同余方程若<strong>有解</strong>，需要<strong>存在一定条件</strong>。</p>
 <h2 id="有解条件">有解条件</h2>
-<p>对于线性同余方程<span class="math inline">\(ax \equiv b \pmod m\)</span>，其存在解的条件是：<br>
-<span class="math inline">\(b\)</span>能够被<span class="math inline">\(a\)</span>与<span class="math inline">\(m\)</span>的最大公约数整除。</p>
-<p>表示为：</p>
-<p><span class="math display">\[\gcd(a,m) \mid b
-\]</span></p>
+<p>对于线性同余方程$ax \equiv b \pmod m$，其存在解的条件是：<br>
+$b$能够被$a$与$m$的最大公约数整除。</p>
+<p>表示为：
+$$
+\gcd(a,m) \mid b
+$$</p>
 <blockquote>
 <p>如上例中：<br>
-<span class="math inline">\(12x \equiv 9 \pmod {15}\)</span></p>
-<p>因为<span class="math inline">\(\gcd(12,15)=3\)</span>，而<span class="math inline">\(3\)</span>能整除<span class="math inline">\(9\)</span>，<br>
-即<span class="math inline">\(\gcd(12,15) \mid 9\)</span>，<br>
+$12x \equiv 9 \pmod {15}$</p>
+<p>因为$\gcd(12,15)=3$，而$3$能整除$9$，<br>
+即$\gcd(12,15) \mid 9$，<br>
 所以有解。</p>
 </blockquote>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(3x \equiv 5 \pmod 6\)</span>，</p>
-<p>因为<span class="math inline">\(\gcd(3,6)=3\)</span>，而<span class="math inline">\(3\)</span>不能整除<span class="math inline">\(5\)</span>，<br>
+$3x \equiv 5 \pmod 6$，</p>
+<p>因为$\gcd(3,6)=3$，而$3$不能整除$5$，<br>
 故该同余方程无解，<br>
-也就是说无论你<span class="math inline">\(x\)</span>取何值，都不能满足<span class="math inline">\(3x\)</span>对<span class="math inline">\(6\)</span>取模后值为<span class="math inline">\(5\)</span>。</p>
+也就是说无论你$x$取何值，都不能满足$3x$对$6$取模后值为$5$。</p>
 </blockquote>
 <hr>
-<p>注意到，若<span class="math inline">\(x_0\)</span>是线性同余方程<span class="math inline">\(ax \equiv b \pmod m\)</span>的一个解，<br>
-那么对于<span class="math inline">\(x_n \equiv x_0 \pmod m\)</span>，<span class="math inline">\(x_n\)</span>也是该线性同余方程的解。<br>
-或者说<span class="math inline">\(mk+x_0(k∈Z)\)</span>均为解。</p>
+<p>注意到，若$x_0$是线性同余方程$ax \equiv b \pmod m$的一个解，<br>
+那么对于$x_n \equiv x_0 \pmod m$，$x_n$也是该线性同余方程的解。<br>
+或者说$mk+x_0(k∈Z)$均为解。</p>
 <blockquote>
 <p>如上例中：<br>
-<span class="math inline">\(12x \equiv 9 \pmod {15}\)</span></p>
-<p><span class="math inline">\(x_0=2\)</span>时为一解，<br>
-因此<span class="math inline">\(15k+2(k∈Z)\)</span>均为解，即<span class="math inline">\(2,17,32,\cdots\)</span>均为解。</p>
-<p><span class="math inline">\(x_0=7\)</span>时为一解，<br>
-因此<span class="math inline">\(15k+7(k∈Z)\)</span>均为解，即<span class="math inline">\(7,22,37,\cdots\)</span>均为解。</p>
-<p><span class="math inline">\(x_0=12\)</span>时为一解，<br>
-因此<span class="math inline">\(15k+12(k∈Z)\)</span>均为解，即<span class="math inline">\(12,27,42,\cdots\)</span>均为解。</p>
+$12x \equiv 9 \pmod {15}$</p>
+<p>$x_0=2$时为一解，<br>
+因此$15k+2(k∈Z)$均为解，即$2,17,32,\cdots$均为解。</p>
+<p>$x_0=7$时为一解，<br>
+因此$15k+7(k∈Z)$均为解，即$7,22,37,\cdots$均为解。</p>
+<p>$x_0=12$时为一解，<br>
+因此$15k+12(k∈Z)$均为解，即$12,27,42,\cdots$均为解。</p>
 </blockquote>
 <p>因此对于线性同余方程的<strong>解的个数</strong>，我们定义为：<br>
-在<span class="math inline">\(0 \sim (m-1)\)</span>中解的个数。</p>
+在$0 \sim (m-1)$中解的个数。</p>
 <blockquote>
 <p>如上例中：<br>
-<span class="math inline">\(12x \equiv 9 \pmod {15}\)</span></p>
-<p>解的个数就为<span class="math inline">\(3\)</span>个，分别为<span class="math inline">\(2,7,12\)</span>。</p>
+$12x \equiv 9 \pmod {15}$</p>
+<p>解的个数就为$3$个，分别为$2,7,12$。</p>
 </blockquote>
 <h2 id="解的性质">解的性质</h2>
-<p>对于线性同余方程<span class="math inline">\(ax \equiv b \pmod m\)</span>，记<span class="math inline">\(\gcd(a,m)=d\)</span><br>
+<p>对于线性同余方程$ax \equiv b \pmod m$，记$\gcd(a,m)=d$<br>
 若存在解，则会满足以下性质：</p>
 <ol>
-<li>对于<span class="math inline">\(x_0\)</span>为该线性同余方程的任意一解，记，<br>
-则通解可以表示为<span class="math inline">\(\frac{m}{d}k + x_0 (k∈Z)\)</span>。
+<li>对于$x_0$为该线性同余方程的任意一解，记，<br>
+则通解可以表示为$\frac{m}{d}k + x_0 (k∈Z)$。
 <blockquote>
 <p>如上例中：<br>
-<span class="math inline">\(12x \equiv 9 \pmod {15}\)</span><br>
-<span class="math inline">\(d=\gcd(12,15)=3\)</span></p>
-<p>得到一解<span class="math inline">\(x_0=2\)</span>，<br>
-则通解可以表示为<span class="math inline">\(5k+2(k∈Z)\)</span>。</p>
+$12x \equiv 9 \pmod {15}$<br>
+$d=\gcd(12,15)=3$</p>
+<p>得到一解$x_0=2$，<br>
+则通解可以表示为$5k+2(k∈Z)$。</p>
 </blockquote>
 </li>
-<li>解的个数恰为<span class="math inline">\(d\)</span>个。
+<li>解的个数恰为$d$个。
 <blockquote>
 <p>如上例中：<br>
-<span class="math inline">\(12x \equiv 9 \pmod {15}\)</span></p>
-<p>则在<span class="math inline">\(0 \sim 14\)</span>范围中，解为<span class="math inline">\(2,7,12\)</span>。<br>
-个数为<span class="math inline">\(d=\gcd(12,15)=3\)</span>，即<span class="math inline">\(3\)</span>个。</p>
+$12x \equiv 9 \pmod {15}$</p>
+<p>则在$0 \sim 14$范围中，解为$2,7,12$。<br>
+个数为$d=\gcd(12,15)=3$，即$3$个。</p>
 </blockquote>
 </li>
 <li><strong>唯一解定理</strong>：<br>
-当<span class="math inline">\(d=1\)</span>时，该同余方程有且仅有唯一解。</li>
+当$d=1$时，该同余方程有且仅有唯一解。</li>
 </ol>
 <h1 id="0x02-乘法逆元">0x02 乘法逆元</h1>
 <h2 id="定义-2">定义</h2>
-<p>如果一个线性同余方程<span class="math inline">\(ax \equiv 1 \pmod m\)</span>，存在解<span class="math inline">\(x\)</span>，<br>
-则<span class="math inline">\(x\)</span>称为<span class="math inline">\(a \bmod m\)</span>的逆元，记作<span class="math inline">\(a^{-1}\)</span>。</p>
+<p>如果一个线性同余方程$ax \equiv 1 \pmod m$，存在解$x$，<br>
+则$x$称为$a \bmod m$的逆元，记作$a^{-1}$。</p>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(5x \equiv 1 \pmod{14}\)</span>，</p>
-<p>当<span class="math inline">\(x=3\)</span>时，<span class="math inline">\(15 \bmod 14 = 1\)</span>，满足方程。<br>
-所以<span class="math inline">\(3\)</span>为<span class="math inline">\(5\)</span>关于<span class="math inline">\(14\)</span>的逆元。</p>
+$5x \equiv 1 \pmod{14}$，</p>
+<p>当$x=3$时，$15 \bmod 14 = 1$，满足方程。<br>
+所以$3$为$5$关于$14$的逆元。</p>
 </blockquote>
 <h2 id="性质-1">性质</h2>
-<p>对于一个线性同余方程<span class="math inline">\(ax \equiv 1 \pmod m\)</span>，<br>
-记<span class="math inline">\(a\)</span>关于<span class="math inline">\(m\)</span>的逆元<span class="math inline">\(x\)</span>为<span class="math inline">\(a^{-1}\)</span>。</p>
+<p>对于一个线性同余方程$ax \equiv 1 \pmod m$，<br>
+记$a$关于$m$的逆元$x$为$a^{-1}$。</p>
 <ol>
-<li><strong>存在充要条件</strong>：<span class="math inline">\(a,m\)</span>互素，<span class="math inline">\(\gcd(a,m)=1\)</span>。</li>
-<li><strong>唯一性</strong>：<span class="math inline">\(a^{-1}\)</span>在<span class="math inline">\([0,m-1]\)</span>范围内唯一。
+<li><strong>存在充要条件</strong>：$a,m$互素，$\gcd(a,m)=1$。</li>
+<li><strong>唯一性</strong>：$a^{-1}$在$[0,m-1]$范围内唯一。
 <blockquote>
 <p>证明：</p>
-<p>我们先假设<span class="math inline">\(a\)</span>有两个不相等逆元：<span class="math inline">\(a'\)</span> 和<span class="math inline">\(a''\)</span>，<br>
-那么一定有：<span class="math inline">\(a*a' \equiv a*a'' \equiv 1 \pmod m\)</span></p>
-<p>不妨设<span class="math inline">\(a'∈[0,m-1]\)</span>，<span class="math inline">\(a'<a''\)</span>且<span class="math inline">\(a''-a'=k\)</span>，<br>
-那么由于<span class="math inline">\(a\ne0\)</span>，所以<span class="math inline">\(k\)</span>一定是<span class="math inline">\(k \equiv 0 \pmod m\)</span> ，即<span class="math inline">\(k=cm(c∈Z,c\ne0)\)</span>（见<a class="link" href="#%e5%85%b6%e4%bb%96%e7%82%b9" >最上的转换式</a>）<br>
-所以<span class="math inline">\(a''=a' + cm(c∈Z,c\ne0)\)</span>，<br>
-所以<span class="math inline">\(a''∈[cm,(c+1)m-1] (c∈Z,c\ne0)\)</span>，一定不在<span class="math inline">\([0,m-1]\)</span>范围内，<br>
-所以<span class="math inline">\(a\)</span>在<span class="math inline">\([0,m-1]\)</span>范围内只能有一个逆元。</p>
+<p>我们先假设$a$有两个不相等逆元：$a&rsquo;$ 和$a&rsquo;&rsquo;$，<br>
+那么一定有：$a<em>a&rsquo; \equiv a</em>a&rsquo;&rsquo; \equiv 1 \pmod m$</p>
+<p>不妨设$a&rsquo;∈[0,m-1]$，$a&rsquo;&lt;a&rsquo;&rsquo;$且$a&rsquo;&rsquo;-a&rsquo;=k$，<br>
+那么由于$a\ne0$，所以$k$一定是$k \equiv 0 \pmod m$ ，即$k=cm(c∈Z,c\ne0)$（见<a class="link" href="#%e5%85%b6%e4%bb%96%e7%82%b9" >最上的转换式</a>）<br>
+所以$a&rsquo;&rsquo;=a&rsquo; + cm(c∈Z,c\ne0)$，<br>
+所以$a&rsquo;&lsquo;∈[cm,(c+1)m-1] (c∈Z,c\ne0)$，一定不在$[0,m-1]$范围内，<br>
+所以$a$在$[0,m-1]$范围内只能有一个逆元。</p>
 </blockquote>
 </li>
-<li>完全积性：<span class="math inline">\(a^{-1} \cdot b^{-1} = (a \cdot b)^{-1}\)</span></li>
-<li><span class="math inline">\(\gcd(a^{-1},m)=1\)</span>。</li>
-<li><span class="math inline">\({(a^{-1})}^{-1} \equiv a \pmod m\)</span></li>
+<li>完全积性：$a^{-1} \cdot b^{-1} = (a \cdot b)^{-1}$</li>
+<li>$\gcd(a^{-1},m)=1$。</li>
+<li>${(a^{-1})}^{-1} \equiv a \pmod m$</li>
 </ol>
 <h2 id="作用">作用</h2>
 <h3 id="1-对除法取模">1. 对除法取模</h3>
 <p>首先对于取模运算，存在以下性质：<br>
-<span class="math inline">\((a + b) \bmod p = ((a\bmod p) + (b\bmod p)) \bmod p\)</span> （对）<br>
-<span class="math inline">\((a - b) \bmod p = ((a\bmod p) - (b\bmod p)) \bmod p\)</span> （对）<br>
-<span class="math inline">\((a \times b) \bmod p = ((a\bmod p) \times (b\bmod p)) \bmod p\)</span> （对）</p>
-<p><span class="math inline">\((a \div b) \bmod p = ((a\bmod p) \div (b\bmod p)) \bmod p\)</span> <strong>（错）</strong></p>
+$(a + b) \bmod p = ((a\bmod p) + (b\bmod p)) \bmod p$ （对）<br>
+$(a - b) \bmod p = ((a\bmod p) - (b\bmod p)) \bmod p$ （对）<br>
+$(a \times b) \bmod p = ((a\bmod p) \times (b\bmod p)) \bmod p$ （对）</p>
+<p>$(a \div b) \bmod p = ((a\bmod p) \div (b\bmod p)) \bmod p$ <strong>（错）</strong></p>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\((100/50)\bmod20 = 2\)</span><br>
-<span class="math inline">\(\nRightarrow((100\bmod20)/(50\bmod20))\bmod20=0\)</span></p>
+$(100/50)\bmod20 = 2$<br>
+$\nRightarrow((100\bmod20)/(50\bmod20))\bmod20=0$</p>
 </blockquote>
 <p>因此如果对于一些题目，如果运算要求求余，但该运算为除法，<br>
 我们就不能<strong>直接像加减乘运算一样拆开求余</strong>。</p>
@@ -612,55 +614,62 @@ if (!doNotTrack) {
 <hr>
 <p>乘法逆元又称为数论倒数。<br>
 既然这么称呼，那么乘法逆元就跟倒数有相似之处。</p>
-<p>对于普通的数学运算<span class="math inline">\(a \div b\)</span>，<br>
-其也可以写成<span class="math inline">\(a \times \frac{1}{b}\)</span>。</p>
-<p>因此对于求余运算<span class="math inline">\((a/b) \bmod m\)</span>，<br>
-其也可以写成<span class="math inline">\((a \cdot b^{-1}) \bmod m\)</span>，</p>
-<p>这时便可以拆开求余为<span class="math inline">\(((a\bmod m) \cdot (b^{-1}\bmod m))\bmod m\)</span>。</p>
+<p>对于普通的数学运算$a \div b$，<br>
+其也可以写成$a \times \frac{1}{b}$。</p>
+<p>因此对于求余运算$(a/b) \bmod m$，<br>
+其也可以写成$(a \cdot b^{-1}) \bmod m$，</p>
+<p>这时便可以拆开求余为$((a\bmod m) \cdot (b^{-1}\bmod m))\bmod m$。</p>
 <hr>
-<p><strong>即存在性质</strong>：</p>
-<p><span class="math display">\[a/b \bmod m = a \cdot b^{-1} \bmod m
-\]</span></p>
+<p><strong>即存在性质</strong>：
+$$
+a/b \bmod m = a \cdot b^{-1} \bmod m
+$$</p>
 <p><em>参考自“Aloof__”的<a class="link" href="https://blog.csdn.net/weixin_43872728/article/details/99687168"  target="_blank" rel="noopener"
     >「乘法逆元的作用（逆元的作用是什么）」</a>。</em></p>
 <h4 id="证明">证明</h4>
-<p>根据逆元的定义，存在：</p>
-<p><span class="math display">\[b \cdot b^{-1} \equiv 1 \pmod m
-\]</span></p>
-<p>同余式两边同乘<span class="math inline">\(a\)</span>，得到：</p>
-<p><span class="math display">\[ab \cdot b^{-1} \equiv a \pmod m
-\]</span></p>
-<p>同余式两边同除<span class="math inline">\(b\)</span>，得到：</p>
-<p><span class="math display">\[a \cdot b^{-1} \equiv a/b \pmod m
-\]</span></p>
+<p>根据逆元的定义，存在：
+$$
+b \cdot b^{-1} \equiv 1 \pmod m
+$$</p>
+<p>同余式两边同乘$a$，得到：
+$$
+ab \cdot b^{-1} \equiv a \pmod m
+$$</p>
+<p>同余式两边同除$b$，得到：
+$$
+a \cdot b^{-1} \equiv a/b \pmod m
+$$</p>
 <p>得证。</p>
 <h3 id="2-线性同余方程的反函数">2. 线性同余方程的反函数</h3>
-<p>对于线性同余方程<span class="math inline">\(ax \equiv b \pmod m\)</span>，<br>
-表示为函数的形式即为<span class="math inline">\(f(x) = ax \bmod m\)</span>。</p>
-<p>如果知道函数值<span class="math inline">\(f(x)\)</span>，<br>
-那么反求解<span class="math inline">\(x\)</span>的方法为：<span class="math inline">\(x = f(x) \cdot a^{-1}\)</span>。</p>
-<p>需要满足<span class="math inline">\(x<m\)</span>，<br>
-否则为<span class="math inline">\(x \equiv f(x) \cdot a^{-1} \pmod m\)</span>。</p>
+<p>对于线性同余方程$ax \equiv b \pmod m$，<br>
+表示为函数的形式即为$f(x) = ax \bmod m$。</p>
+<p>如果知道函数值$f(x)$，<br>
+那么反求解$x$的方法为：$x = f(x) \cdot a^{-1}$。</p>
+<p>需要满足$x&lt;m$，<br>
+否则为$x \equiv f(x) \cdot a^{-1} \pmod m$。</p>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(2x \equiv f(x) \pmod{11}\)</span>。
-当<span class="math inline">\(x = 13\)</span>时，$f(x) = 4。</p>
-<p><span class="math inline">\(2\)</span>对<span class="math inline">\(11\)</span>的逆元是<span class="math inline">\(6\)</span>，<br>
-<span class="math inline">\(4 \times 6 = 24\)</span>。</p>
-<p><span class="math inline">\(24 \equiv x(13) \pmod{11}\)</span>，<br>
-而不是<span class="math inline">\(24 = x(13)\)</span>。</p>
+$2x \equiv f(x) \pmod{11}$。
+当$x = 13$时，$f(x) = 4。</p>
+<p>$2$对$11$的逆元是$6$，<br>
+$4 \times 6 = 24$。</p>
+<p>$24 \equiv x(13) \pmod{11}$，<br>
+而不是$24 = x(13)$。</p>
 </blockquote>
 <hr>
 <p>主要应用于CTF中仿射加密的解密。</p>
 <h4 id="证明-1">证明</h4>
 <p>很简单的证明。</p>
-<p><span class="math display">\[ax \equiv f(x) \pmod m
-\]</span></p>
-<p><span class="math display">\[ax \cdot a^{-1} \equiv f(x) \cdot a^{-1} \pmod m
-\]</span></p>
-<p><span class="math display">\[x \equiv f(x) \cdot a^{-1} \pmod m
-\]</span></p>
-<p>得证。</p>
+<p>$$
+ax \equiv f(x) \pmod m
+$$</p>
+<p>$$
+ax \cdot a^{-1} \equiv f(x) \cdot a^{-1} \pmod m
+$$</p>
+<p>$$
+x \equiv f(x) \cdot a^{-1} \pmod m
+$$
+得证。</p>
 <h2 id="求解方法">求解方法</h2>
 <p>待补充！……</p>
 

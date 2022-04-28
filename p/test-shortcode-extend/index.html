@@ -360,16 +360,16 @@ if (!doNotTrack) {
 <h2 id="一columns">一、columns</h2>
 <p>分栏显示内容……</p>
 <h3 id="使用方法">使用方法</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">columns</span> <span class="p">&gt;}}</span>
-
-<span class="nf">Content_1</span> <span class="p">(</span><span class="nx">With</span> <span class="nx">Markdown</span><span class="p">)</span>
-
-<span class="o">&lt;---</span><span class="p">&gt;</span>
-
-<span class="nx">Content_2</span>
-
-<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">columns</span> <span class="p">&gt;}}</span>
-</code></pre></div><h3 id="使用例">使用例</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">columns</span> <span class="p">&gt;}}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nf">Content_1</span> <span class="p">(</span><span class="nx">With</span> <span class="nx">Markdown</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;---</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">Content_2</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">columns</span> <span class="p">&gt;}}</span>
+</span></span></code></pre></div><h3 id="使用例">使用例</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h1 id="左侧栏">左侧栏</h1>
 <p>OI的发生，到底需要如何做到，不OI的发生，又会如何产生。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 塞涅卡在不经意间这样说过，真正的人生，只有在经过艰难卓绝的斗争之后才能实现。这启发了我， OI因何而发生?我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 既然如此， 了解清楚OI到底是一种怎么样的存在，是解决一切问题的关键。 既然如何， 现在，解决OI的问题，是非常非常重要的。 所以， 问题的关键究竟为何? 经过上述讨论就我个人来说，OI对我的意义，不能不说非常重大。 所谓OI，关键是OI需要如何写。 一般来讲，我们都必须务必慎重的考虑考虑。 OI的发生，到底需要如何做到，不OI的发生，又会如何产生。 既然如何， 那么， 既然如何， 我们不得不面对一个非常尴尬的事实，那就是， 歌德曾经说过，没有人事先了解自己到底有多大的力量，直到他试过以后才知道。我希望诸位也能好好地体会这句话。</div><div class="sc-columns--inner"><h1 id="中间栏">中间栏</h1>
 <p>俾斯麦曾经说过，对于不屈不挠的人来说，没有失败这回事。带着这句话，我们还要更加慎重的审视这个问题： 要想清楚，OI，到底是一种怎么样的存在。 每个人都不得不面对这些问题。 在面对这种问题时， 培根曾经说过，要知道对好事的称颂过于夸大，也会招来人们的反感轻蔑和嫉妒。我希望诸位也能好好地体会这句话。 生活中，若OI出现了，我们就不得不考虑它出现了的事实。 就我个人来说，OI对我的意义，不能不说非常重大。 既然如何， 塞涅卡在不经意间这样说过，生命如同寓言，其价值不在与长短，而在与内容。我希望诸位也能好好地体会这句话。</div><div class="sc-columns--inner"><h1 id="右侧栏">右侧栏</h1>
@@ -402,10 +402,10 @@ if (!doNotTrack) {
 <p>内容折叠栏……</p>
 <p>使用的为HTML的<code>details</code>标签……</p>
 <h3 id="使用方法-1">使用方法</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="s">&#34;Title&#34;</span> <span class="p">[</span><span class="nx">open</span><span class="p">]</span> <span class="p">&gt;}}</span>
-<span class="nx">content</span>
-<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="s">&#34;Title&#34;</span> <span class="p">[</span><span class="nx">open</span><span class="p">]</span> <span class="p">&gt;}}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">content</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
+</span></span></code></pre></div><ul>
 <li>open为可选项，加入open代表默认打开……</li>
 </ul>
 
@@ -413,18 +413,18 @@ if (!doNotTrack) {
 <div class="snote info ">
 	<div class="snote-content">
 		<p><p>另一种方法：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;Title&#34;</span> <span class="nx">open</span><span class="p">=</span><span class="kc">true</span> <span class="p">&gt;}}</span>
-<span class="nx">content</span>
-<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;Title&#34;</span> <span class="nx">open</span><span class="p">=</span><span class="kc">true</span> <span class="p">&gt;}}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">content</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
+</span></span></code></pre></div></p>
 	</div>
 </div>
 <h3 id="使用例-1">使用例</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="源码">源码</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="s">&#34;折叠内容……&#34;</span> <span class="p">&gt;}}</span>
-<span class="nx">这里面是折叠内容</span><span class="err">……</span>
-<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
-</code></pre></div></div><div class="sc-columns--inner"><h2 id="效果">效果</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">details</span> <span class="s">&#34;折叠内容……&#34;</span> <span class="p">&gt;}}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">这里面是折叠内容</span><span class="err">……</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">details</span> <span class="p">&gt;}}</span>
+</span></span></code></pre></div></div><div class="sc-columns--inner"><h2 id="效果">效果</h2>
 <details class="sc-details" >
 	<summary>折叠内容……</summary>
 	<div class="sc-details--inner">这里面是折叠内容……</div>
@@ -446,15 +446,15 @@ if (!doNotTrack) {
 <hr>
 <p>诶诶还不关上嘛！……</p>
 <p>真拿你没办法，那就给你看看我多年的代码实力吧！【x……</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#inculde(iosteam)
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">qwq</span><span class="p">;</span>
-<span class="kt">int</span> <span class="nf">mian</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
-    <span class="n">cin</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
-    <span class="n">cout</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#inculde(iosteam)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">qwq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">mian</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span><span class="o">&lt;&lt;</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&gt;&gt;</span><span class="n">a</span><span class="o">&gt;&gt;</span><span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <p>诶诶不喜欢嘛？……</p>
 <p>那那来看看<strong>世界第一可爱的童田明治</strong>吧！……</p>
 <details class="sc-details" open>
@@ -519,33 +519,33 @@ if (!doNotTrack) {
 <h2 id="三tabs">三、tabs</h2>
 <p>分标签显示……</p>
 <h3 id="使用方法-2">使用方法</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">tabs</span> <span class="s">&#34;uniqueID&#34;</span> <span class="p">&gt;}}</span>
-<span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;1&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_1</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
-<span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;2&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_2</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
-<span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;3&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_3</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
-<span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span> <span class="p">&gt;}}</span>
-</code></pre></div><p><code>uniqueID</code>为一个独一无二的ID……</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">tabs</span> <span class="s">&#34;uniqueID&#34;</span> <span class="p">&gt;}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;1&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_1</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;2&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_2</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="s">&#34;3&#34;</span> <span class="p">&gt;}}</span> <span class="nx">Content_3</span> <span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span><span class="o">/</span><span class="nx">tab</span> <span class="p">&gt;}}</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="o">/</span><span class="nx">tabs</span> <span class="p">&gt;}}</span>
+</span></span></code></pre></div><p><code>uniqueID</code>为一个独一无二的ID……</p>
 <h3 id="使用例-2">使用例</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="源码">源码</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span> <span class="s2">&#34;1&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
-</span><span class="x">
-</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第一标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
-</span><span class="x">## 天才麻将少女
-</span><span class="x">打麻将真开心啊……
-</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
-</span><span class="x">
-</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第二标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
-</span><span class="x">## 兽娘动物园
-</span><span class="x">是会每天没事干不务正业的Friends呢【指自己……
-</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
-</span><span class="x">
-</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第三标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
-</span><span class="x">## 魔法少女小圆
-</span><span class="x">身体好轻，怀着这么幸福的感觉战斗还是第一次，已经没什么好怕的了，因为我不再是孤单一人了！……
-</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
-</span><span class="x">
-</span><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
-</span></code></pre></div></div><div class="sc-columns--inner"><h2 id="效果">效果</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-tpl" data-lang="tpl"><span class="line"><span class="cl"><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span> <span class="s2">&#34;1&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第一标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">## 天才麻将少女
+</span></span></span><span class="line"><span class="cl"><span class="x">打麻将真开心啊……
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第二标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">## 兽娘动物园
+</span></span></span><span class="line"><span class="cl"><span class="x">是会每天没事干不务正业的Friends呢【指自己……
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="s2">&#34;第三标签页&#34;</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">## 魔法少女小圆
+</span></span></span><span class="line"><span class="cl"><span class="x">身体好轻，怀着这么幸福的感觉战斗还是第一次，已经没什么好怕的了，因为我不再是孤单一人了！……
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span><span class="o">/</span><span class="na">tab</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x">
+</span></span></span><span class="line"><span class="cl"><span class="x"></span><span class="cp">{{</span><span class="o">&lt;</span> <span class="o">/</span><span class="na">tabs</span> <span class="o">&gt;</span><span class="cp">}}</span><span class="x">
+</span></span></span></code></pre></div></div><div class="sc-columns--inner"><h2 id="效果">效果</h2>
 <div class="sc-tabs"><input type="radio" class="sc-tabs--toggle" name="tabs-1" id="tabs-1-0" checked="checked" />
 	<label for="tabs-1-0">第一标签页</label>
 	<div class="sc-tabs--content"><h2 id="天才麻将少女">天才麻将少女</h2>

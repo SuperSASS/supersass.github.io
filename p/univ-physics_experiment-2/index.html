@@ -334,8 +334,8 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：2118</div>
-            <div class="time">预计阅读时长： <time>5</time> 分钟</div>
+            <div class="char">文章字数：1984</div>
+            <div class="time">预计阅读时长： <time>4</time> 分钟</div>
         </div>
     </footer>
 </div>
@@ -344,59 +344,56 @@ if (!doNotTrack) {
 <ul>
 <li>调节工具：
 <ul>
-<li><span class="math inline">\(M_1\)</span>手轮 - 调节反光镜<span class="math inline">\(M_1\)</span>的位置</li>
-<li><span class="math inline">\(M_1,M_2\)</span>背后的调节螺钉 - 调节各自的方位</li>
-<li><span class="math inline">\(M_2\)</span>下面的水平和垂直拉簧螺钉 - 对<span class="math inline">\(M_2\)</span>方位的精细调节</li>
+<li>$M_1$手轮 - 调节反光镜$M_1$的位置</li>
+<li>$M_1,M_2$背后的调节螺钉 - 调节各自的方位</li>
+<li>$M_2$下面的水平和垂直拉簧螺钉 - 对$M_2$方位的精细调节</li>
 </ul>
 </li>
-<li>读数：<span class="math inline">\(7\)</span>位有效数字<span class="math inline">\(AA.BBCCC\)</span>
+<li>读数：$7$位有效数字$AA.BBCCC$
 <ul>
-<li><span class="math inline">\(AA\)</span> - 主尺读数，不估读</li>
-<li><span class="math inline">\(BB\)</span> - 读数窗口，不估读</li>
-<li><span class="math inline">\(CCC\)</span> - 微调手轮，最后一位估读</li>
+<li>$AA$ - 主尺读数，不估读</li>
+<li>$BB$ - 读数窗口，不估读</li>
+<li>$CCC$ - 微调手轮，最后一位估读</li>
 </ul>
 </li>
 <li>注意避免“<strong>走空程</strong>”</li>
-<li>补偿板<span class="math inline">\(G_2\)</span>作用：<br>
-光线<span class="math inline">\(1\)</span>先后两次通过<span class="math inline">\(G_1\)</span>，故需要补偿板使光线<span class="math inline">\(2\)</span>先后两次通过<span class="math inline">\(G_2\)</span>来平衡。</li>
-<li>光程差：<span class="math inline">\(\Delta=2d\cos i\)</span>，调节<span class="math inline">\(i=0\)</span><br>
+<li>补偿板$G_2$作用：<br>
+光线$1$先后两次通过$G_1$，故需要补偿板使光线$2$先后两次通过$G_2$来平衡。</li>
+<li>光程差：$\Delta=2d\cos i$，调节$i=0$<br>
 计算公式：
-<p><span class="math display">\[2(\Delta d)=(\Delta k)\lambda
-\]</span></p>
-<span class="math inline">\(\Delta k\)</span>为湮灭或出现条纹的个数<br>
-<span class="math inline">\(\Delta d\)</span>为<span class="math inline">\(M_1\)</span>移动量</li>
+$$
+2(\Delta d)=(\Delta k)\lambda
+$$
+$\Delta k$为湮灭或出现条纹的个数<br>
+$\Delta d$为$M_1$移动量</li>
 </ul>
 <h2 id="2霍尔元件">2、霍尔元件</h2>
 <ul>
 <li>霍尔电压计算公式：
-<p><span class="math display">\[U_H=Blv=\frac{1}{ne}\frac{I_s}{d}B=R_H\frac{I_s}{d}B=K_HI_sB
-\]</span></p>
-其中<span class="math inline">\(l\)</span>为宽度，<span class="math inline">\(d\)</span>为高度，<br>
-<span class="math inline">\(R_H\)</span>为霍尔系数，<span class="math inline">\(K_H\)</span>为灵敏度。</li>
-<li>霍尔系数<span class="math inline">\(R_H\)</span>，灵敏度<span class="math inline">\(K_H\)</span>：
-<p><span class="math display">\[K_H=\frac{U_H}{I_sB}\qquad R_H=\frac{U_Hd}{I_sB}
-\]</span></p>
-<ul>
-<li>载流子浓度：</li>
-</ul>
-<p><span class="math display">\[n=\frac{1}{eR_H}
-\]</span></p>
-<ul>
-<li>载流子迁移率<span class="math inline">\(\mu\)</span>：</li>
-</ul>
-<p><span class="math display">\[\mu=K_H\frac{L}{l}\frac{I_s}{U_s}
-\]</span></p>
-<ul>
-<li>电导率<span class="math inline">\(\sigma\)</span>：</li>
-</ul>
-<p><span class="math display">\[\sigma=\frac{L}{dl}\frac{I_s}{U_s}
-\]</span></p>
-<ul>
+$$
+U_H=Blv=\frac{1}{ne}\frac{I_s}{d}B=R_H\frac{I_s}{d}B=K_HI_sB
+$$
+其中$l$为宽度，$d$为高度，<br>
+$R_H$为霍尔系数，$K_H$为灵敏度。</li>
+<li>霍尔系数$R_H$，灵敏度$K_H$：<br>
+$$
+K_H=\frac{U_H}{I_sB}\qquad R_H=\frac{U_Hd}{I_sB}
+$$</li>
+<li>载流子浓度：<br>
+$$
+n=\frac{1}{eR_H}
+$$</li>
+<li>载流子迁移率$\mu$：
+$$
+\mu=K_H\frac{L}{l}\frac{I_s}{U_s}
+$$</li>
+<li>电导率$\sigma$：
+$$
+\sigma=\frac{L}{dl}\frac{I_s}{U_s}
+$$</li>
 <li>误差电势：<br>
 <img src="images/%E8%A6%81%E7%82%B9--12-23_22-48-35.png" alt="图 10"  /></li>
-</ul>
-</li>
-<li><span class="math inline">\(1Gs=10^5T\)</span></li>
+<li>$1Gs=10^5T$</li>
 </ul>
 <h2 id="3调制波法测光速">3、调制波法测光速</h2>
 <ul>
@@ -406,19 +403,17 @@ if (!doNotTrack) {
 <li>等相位法（看波形移动一个周期）</li>
 </ul>
 </li>
-<li>公式：<span class="math inline">\(\frac{\varphi_i}{2\pi}=\frac{2D_i}{\lambda}\)</span>
-<p><span class="math display">\[\lambda=\frac{2\pi}{\varphi_i}\cdot 2D_i
-\]</span></p>
-<ul>
-<li>采用双踪示波器法连接线路时，如果将“参考”相位信号接至<span class="math inline">\(CH_1\)</span>，“信号”相位信号接至<span class="math inline">\(CH_2\)</span>；并用触发扫描，显示方式应为“<strong>断续</strong>”</li>
-</ul>
-</li>
+<li>公式：$\frac{\varphi_i}{2\pi}=\frac{2D_i}{\lambda}$
+$$
+\lambda=\frac{2\pi}{\varphi_i}\cdot 2D_i
+$$</li>
+<li>采用双踪示波器法连接线路时，如果将“参考”相位信号接至$CH_1$，“信号”相位信号接至$CH_2$；并用触发扫描，显示方式应为“<strong>断续</strong>”</li>
 <li>避免高频下测相的困难 - <strong>差频法</strong><br>
-高频：<span class="math inline">\(100 MHz\)</span>
-低频：<span class="math inline">\(455 kHz\)</span></li>
-<li>与光速<span class="math inline">\(C\)</span>无关物理量 - 质子、中子等基本粒子的结构</li>
-<li>光 - <span class="math inline">\(10^{14}Hz\)</span>；调制波 - <span class="math inline">\(10^8Hz\)</span></li>
-<li>两次过<span class="math inline">\(x_0\)</span>位置时的读数值<strong>相差<span class="math inline">\(0.1°\)</span>要重测</strong></li>
+高频：$100 MHz$
+低频：$455 kHz$</li>
+<li>与光速$C$无关物理量 - 质子、中子等基本粒子的结构</li>
+<li>光 - $10^{14}Hz$；调制波 - $10^8Hz$</li>
+<li>两次过$x_0$位置时的读数值<strong>相差$0.1°$要重测</strong></li>
 <li>端口
 <ul>
 <li>触发源信号 - 基准正弦波端口</li>
@@ -432,15 +427,16 @@ if (!doNotTrack) {
 <li>
 <p>实验原理 - 减速电位法：</p>
 <ul>
-<li>光电效应方程：<span class="math inline">\(h\nu=\frac{1}{2}mv_0^2+W\)</span></li>
-<li>截止电压：<span class="math inline">\(eU_c=\frac{1}{2}mv_0^2\)</span></li>
-<li>逸出功：<span class="math inline">\(W=h\nu_0\)</span></li>
+<li>光电效应方程：$h\nu=\frac{1}{2}mv_0^2+W$</li>
+<li>截止电压：$eU_c=\frac{1}{2}mv_0^2$</li>
+<li>逸出功：$W=h\nu_0$</li>
 </ul>
-<p>得：<span class="math inline">\(U_c=\frac{h}{e}(\nu-\nu_0)\)</span><br>
-转化为：</p>
-<p><span class="math display">\[h=Ke
-\]</span></p>
-<p>其中<span class="math inline">\(K\)</span>为<span class="math inline">\(U_c-\nu\)</span>关系直线的斜率。</p>
+<p>得：$U_c=\frac{h}{e}(\nu-\nu_0)$<br>
+转化为：
+$$
+h=Ke
+$$
+其中$K$为$U_c-\nu$关系直线的斜率。</p>
 </li>
 <li>
 <p>误差影响：</p>
@@ -452,8 +448,8 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>消除误差：
-从<strong>反向增大</strong><span class="math inline">\(U\)</span>到<span class="math inline">\(I=0\)</span>，保持<span class="math inline">\(U\)</span>不变遮光，记下此时<span class="math inline">\(I\)</span>值，<br>
-再通光，调节<span class="math inline">\(U\)</span>到<span class="math inline">\(I\)</span>，此时即为准确的截止电压<span class="math inline">\(U_c\)</span>。</p>
+从<strong>反向增大</strong>$U$到$I=0$，保持$U$不变遮光，记下此时$I$值，<br>
+再通光，调节$U$到$I$，此时即为准确的截止电压$U_c$。</p>
 </li>
 <li>
 <p>测伏安特性曲线：<br>
@@ -467,8 +463,8 @@ if (!doNotTrack) {
 <li>
 <p>原理 - 旋光效应<br>
 液晶上下表面为偏振方向垂直的偏振片。（由在沟槽里的液晶分子形成）</p>
-<p>未通电前，液晶分子上下螺旋排布，整体扭曲<span class="math inline">\(90°\)</span>，<br>
-故光进入时，偏振光随着每层的螺旋，最终旋转<span class="math inline">\(90°\)</span>，与下表面平行能出射。</p>
+<p>未通电前，液晶分子上下螺旋排布，整体扭曲$90°$，<br>
+故光进入时，偏振光随着每层的螺旋，最终旋转$90°$，与下表面平行能出射。</p>
 <p>通电后，液晶分子随电场偏转，螺旋变为均匀分布<br>
 故光进入时不会偏转，最终与下表面垂直不能出射。</p>
 </li>
@@ -480,15 +476,15 @@ if (!doNotTrack) {
 <p>光电特性：<br>
 对于常白模式的液晶，透射率随着外加电压的升高而逐渐降低。</p>
 <ul>
-<li>阈值电压：透过率为<span class="math inline">\(90\%\)</span>的驱动电压。</li>
-<li>关断电压：透过率为<span class="math inline">\(10\%\)</span>的驱动电压。</li>
+<li>阈值电压：透过率为$90%$的驱动电压。</li>
+<li>关断电压：透过率为$10%$的驱动电压。</li>
 </ul>
 </li>
 <li>
 <p>时间响应特性：</p>
 <ul>
-<li>上升时间：透过率由<span class="math inline">\(10\%\)</span>升到<span class="math inline">\(90\%\)</span>所需时间。</li>
-<li>下降时间：透过率由<span class="math inline">\(90\%\)</span>降到<span class="math inline">\(10\%\)</span>所需时间。</li>
+<li>上升时间：透过率由$10%$升到$90%$所需时间。</li>
+<li>下降时间：透过率由$90%$降到$10%$所需时间。</li>
 </ul>
 </li>
 <li>
@@ -507,46 +503,46 @@ if (!doNotTrack) {
 <li>压电效应：<br>
 在受到压力时能产生电场，为正压电效应；施加电场时产生振动，为逆压电效应。</li>
 <li>理想气体中的声速：
-<p><span class="math display">\[v=331.45\sqrt{1+\frac{t}{T_0}}
-\]</span></p>
-其中<span class="math inline">\(T_0=273.14K\)</span>，<span class="math inline">\(t\)</span>单位为摄氏度。</li>
+$$
+v=331.45\sqrt{1+\frac{t}{T_0}}
+$$
+其中$T_0=273.14K$，$t$单位为摄氏度。</li>
 </ul>
 <p>驻波法：</p>
-<p>只测接收头<span class="math inline">\(S_2\)</span>。</p>
+<p>只测接收头$S_2$。</p>
 <ul>
 <li>驻波方程：
-<p><span class="math display">\[Y=2A\sin(2\pi\frac{X}{\lambda})\sin(\omega t)
-\]</span></p>
-<ul>
-<li>计算方程：</li>
-</ul>
-<p><span class="math display">\[v=f\lambda=2f\Delta L
-\]</span></p>
-<span class="math inline">\(\Delta L\)</span>为从第<span class="math inline">\(n\)</span>个极大值移动到第<span class="math inline">\(n+1\)</span>个极大值。</li>
+$$
+Y=2A\sin(2\pi\frac{X}{\lambda})\sin(\omega t)
+$$</li>
+<li>计算方程：
+$$
+v=f\lambda=2f\Delta L
+$$
+$\Delta L$为从第$n$个极大值移动到第$n+1$个极大值。</li>
 </ul>
 <p>相位比较法：</p>
-<p>测发射头<span class="math inline">\(S_1\)</span>和接收头<span class="math inline">\(S_2\)</span>的合成图形</p>
+<p>测发射头$S_1$和接收头$S_2$的合成图形</p>
 <ul>
 <li>相位差表示：
-<p><span class="math display">\[\varphi=2\pi\frac{L}{\lambda}
-\]</span></p>
-<ul>
+$$
+\varphi=2\pi\frac{L}{\lambda}
+$$</li>
 <li>选择直线为起点，当重新变回直线时，<br>
-所<strong>移动距离<span class="math inline">\(\Delta L\)</span>，即为波长<span class="math inline">\(\lambda\)</span></strong>。<br>
-故：</li>
-</ul>
-<p><span class="math display">\[v=f\lambda=f\Delta L
-\]</span></p>
-</li>
+所<strong>移动距离$\Delta L$，即为波长$\lambda$</strong>。<br>
+故：
+$$
+v=f\lambda=f\Delta L
+$$</li>
 </ul>
 <h2 id="7偏振光">7、偏振光</h2>
 <ul>
-<li><span class="math inline">\(\frac{1}{4}\)</span>波片：
+<li>$\frac{1}{4}$波片：
 <ul>
 <li>线偏振光
 <ul>
-<li><span class="math inline">\(0°\)</span>或<span class="math inline">\(90°\)</span> - 线偏振光</li>
-<li><span class="math inline">\(45°\)</span> - 圆偏振光</li>
+<li>$0°$或$90°$ - 线偏振光</li>
+<li>$45°$ - 圆偏振光</li>
 <li>其他 - 椭圆</li>
 </ul>
 </li>
@@ -555,16 +551,16 @@ if (!doNotTrack) {
 <li>自然光经过仍是自然光；部分经过仍是部分</li>
 </ul>
 </li>
-<li><span class="math inline">\(\frac{1}{2}\)</span>波片 - 只改变振动方向，原来是什么还是什么。</li>
+<li>$\frac{1}{2}$波片 - 只改变振动方向，原来是什么还是什么。</li>
 <li>偏振片 - 二向色性的晶体</li>
 <li>光轴定义了一个方向，光线沿该方向入射时，在晶体内部不发生双折射现象。</li>
-<li><span class="math inline">\(o\)</span>光电矢量平行于光轴，<span class="math inline">\(e\)</span>光平行</li>
+<li>$o$光电矢量平行于光轴，$e$光平行</li>
 </ul>
 <h2 id="8光栅">8、光栅</h2>
 <ul>
 <li>利用“光的<strong>透射</strong>”</li>
 <li>实验室所用的光栅，用光学感光技术制成。</li>
-<li>光栅周期：<span class="math inline">\(N=\frac{\sin\varphi}{k\lambda}\)</span></li>
+<li>光栅周期：$N=\frac{\sin\varphi}{k\lambda}$</li>
 <li>分光计的测量精度为：1分<br>
 分光计的游标盘为：30个小格</li>
 <li>黄光577nm与579nm分不开，主要是调节：拉伸平行光管</li>
@@ -626,6 +622,28 @@ if (!doNotTrack) {
         <h2 class="section-title">相关文章</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-code2product-2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-code2product-2/background.8a15991c746918c41650afc972a65207_hue37b069c78ca69c452c39783d04d66f1_225868_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Code2Product-2" 
+                        data-hash="md5-ihWZHHRpGMQWUK/JcqZSBw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">期中创客项目 - 多功能火灾警报器</h2>
+        </div>
+    </a>
+</article>
                 
                     
 <article class="has-image">
@@ -711,28 +729,6 @@ if (!doNotTrack) {
 
         <div class="article-details">
             <h2 class="article-title">数字电子技术——第四章……</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/univ-psycho_phy-prac-4/">
-        
-        
-            <div class="article-image">
-                <img src="/p/univ-psycho_phy-prac-4/pixiv61483143.d2be93400bdf313d058b9f10ab70ae7a_hu12c1b5a9a5e516caec4f044d40d3022b_1819672_250x150_fill_box_smart1_3.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy" 
-                        data-key="univ-Psycho_Phy-prac-4" 
-                        data-hash="md5-0r6TQAvfMT0Fi58Qq3Cueg==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">生理心理学 - 第四章作业……</h2>
         </div>
     </a>
 </article>

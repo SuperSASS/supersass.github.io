@@ -325,7 +325,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1377</div>
+            <div class="char">文章字数：1331</div>
             <div class="time">预计阅读时长： <time>3</time> 分钟</div>
         </div>
     </footer>
@@ -346,40 +346,40 @@ if (!doNotTrack) {
 	</div>
 </div>
 <p>则分析这道题的具体移动操作。</p>
-<p>对于当前状态<span class="math inline">\([l,r]\)</span>区间，记：</p>
+<p>对于当前状态$[l,r]$区间，记：</p>
 <ul>
-<li><span class="math inline">\(cnt[i]\)</span>为当前某颜色的出现次数，</li>
-<li><span class="math inline">\(ans\)</span>为当前答案（抽到两只颜色相同的袜子的情况总数）。</li>
+<li>$cnt[i]$为当前某颜色的出现次数，</li>
+<li>$ans$为当前答案（抽到两只颜色相同的袜子的情况总数）。</li>
 </ul>
 <hr>
-<p>当扩展区间(<code>l--</code>,<code>r++</code>)时，记增加的颜色为<span class="math inline">\(c\)</span>，<br>
-那么其跟<strong>当前区间<span class="math inline">\([l,r]\)</span>中，颜色相同的袜子都能配对</strong>。</p>
-<p>也就是说，其贡献的满足情况数为<span class="math inline">\(cnt[c]\)</span>，<br>
+<p>当扩展区间(<code>l--</code>,<code>r++</code>)时，记增加的颜色为$c$，<br>
+那么其跟<strong>当前区间$[l,r]$中，颜色相同的袜子都能配对</strong>。</p>
+<p>也就是说，其贡献的满足情况数为$cnt[c]$，<br>
 即<code>ans += cnt[c]</code>。</p>
 <blockquote>
 <p>e.g.</p>
-<p>当前区间为<span class="math inline">\([1,6]\)</span>，袜子颜色分别为<span class="math inline">\(A,A,B,B,B,C\)</span>【为了更好区分，将颜色用字母暂时代替】，<br>
-则答案<span class="math inline">\(ans\)</span>为<span class="math inline">\(4\)</span>。</p>
-<p>若向右扩展区间，新增加的<span class="math inline">\(7\)</span>号袜子颜色为<span class="math inline">\(A\)</span>，<br>
-袜子变为<span class="math inline">\(A,A,B,B,B,C,A\)</span>。</p>
-<p>则其跟之前的<span class="math inline">\(2\)</span>个颜色为<span class="math inline">\(A\)</span>的袜子均能配对，<br>
-所以贡献答案为<span class="math inline">\(cnt[A]\)</span>为<span class="math inline">\(2\)</span>，<span class="math inline">\(ans += 2\)</span>，<br>
-则新的<span class="math inline">\(ans\)</span>等于<span class="math inline">\(6\)</span>。</p>
+<p>当前区间为$[1,6]$，袜子颜色分别为$A,A,B,B,B,C$【为了更好区分，将颜色用字母暂时代替】，<br>
+则答案$ans$为$4$。</p>
+<p>若向右扩展区间，新增加的$7$号袜子颜色为$A$，<br>
+袜子变为$A,A,B,B,B,C,A$。</p>
+<p>则其跟之前的$2$个颜色为$A$的袜子均能配对，<br>
+所以贡献答案为$cnt[A]$为$2$，$ans += 2$，<br>
+则新的$ans$等于$6$。</p>
 </blockquote>
 <p>然后<code>cnt[c]++</code>。</p>
 <hr>
-<p>当缩短区间(<code>l++</code>,<code>r--</code>)时，记删去的颜色为<span class="math inline">\(c\)</span>，<br>
-那么其跟<strong>当前区间<span class="math inline">\([l,r]\)</span>中，颜色相同的其他袜子都不能再配对</strong>。</p>
-<p>也就是说，其损失的满足情况数为<span class="math inline">\(cnt[c]-1\)</span>，<br>
+<p>当缩短区间(<code>l++</code>,<code>r--</code>)时，记删去的颜色为$c$，<br>
+那么其跟<strong>当前区间$[l,r]$中，颜色相同的其他袜子都不能再配对</strong>。</p>
+<p>也就是说，其损失的满足情况数为$cnt[c]-1$，<br>
 即<code>ans -= cnt[c] - 1</code>。</p>
 <p>然后<code>cnt[c]--</code>。</p>
 <hr>
 <p>再次优化（压行），则可得出最终的两个<code>move</code>操作函数。</p>
 <p>扩展函数：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">,</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">+=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">color</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
-</code></pre></div><p>缩短函数：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">dec</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">,</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">-=</span> <span class="o">--</span><span class="n">cnt</span><span class="p">[</span><span class="n">color</span><span class="p">];</span> <span class="p">}</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">,</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">+=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">color</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div><p>缩短函数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">dec</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">,</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">-=</span> <span class="o">--</span><span class="n">cnt</span><span class="p">[</span><span class="n">color</span><span class="p">];</span> <span class="p">}</span>
+</span></span></code></pre></div><hr>
 <p>最后在重点注意一下<code>move</code>时：<code>++</code>和<code>--</code>的前后位置（是<code>l++</code>还是<code>++l</code>），<br>
 在草稿本上自己模拟走一遍就能知道了。</p>
 <p>以及再注意下约分的问题，<br>
@@ -391,104 +391,104 @@ if (!doNotTrack) {
     >Pastebin链接</a></p>
 	</div>
 </div>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//P1494 [小Z的袜子](https://www.luogu.com.cn/problem/P1494)
-</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp">#define ALL(NAME_i, BEGIN, TO) \
-</span><span class="cp">    int NAME_i = BEGIN;        \
-</span><span class="cp">    NAME_i &lt;= TO;              \
-</span><span class="cp">    NAME_i++
-</span><span class="cp">#define ALL_invert(NAME_i, BEGIN, TO) \
-</span><span class="cp">    int NAME_i = BEGIN;               \
-</span><span class="cp">    NAME_i &gt;= TO;                     \
-</span><span class="cp">    NAME_i--
-</span><span class="cp"></span><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="cp">#define MAX_N 50000
-</span><span class="cp">#define MAX_M 50000
-</span><span class="cp"></span>
-<span class="kt">int</span> <span class="n">color</span><span class="p">[</span><span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="n">cnt</span><span class="p">[</span><span class="n">MAX_M</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="n">BLOCK_SIZE</span><span class="p">;</span> <span class="c1">//cnt-当前状态各颜色出现了多少次
-</span><span class="c1"></span><span class="n">LL</span> <span class="n">nume</span><span class="p">[</span><span class="n">MAX_M</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="n">deno</span><span class="p">[</span><span class="n">MAX_M</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span> <span class="c1">//nume-分子，deno-分母
-</span><span class="c1"></span>
-<span class="k">struct</span> <span class="nc">queryType</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">id</span><span class="p">;</span>
-
-    <span class="c1">//bool operator&lt;(const queryType &amp;a) const { return l == a.l ? r &lt; a.r : l &lt; a.l; } //直接排序
-</span><span class="c1"></span>    <span class="c1">//bool operator&lt;(const queryType &amp;a) const { return l / BLOCK_SIZE == a.l / BLOCK_SIZE ? r &lt; a.r : l &lt; a.l; } //分块排序
-</span><span class="c1"></span>    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">queryType</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">l</span> <span class="o">/</span> <span class="n">BLOCK_SIZE</span> <span class="o">==</span> <span class="n">a</span><span class="p">.</span><span class="n">l</span> <span class="o">/</span> <span class="n">BLOCK_SIZE</span> <span class="o">?</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="n">a</span><span class="p">.</span><span class="n">r</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="p">(</span><span class="n">l</span> <span class="o">/</span> <span class="n">BLOCK_SIZE</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">r</span><span class="p">))</span> <span class="o">:</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">l</span><span class="p">;</span> <span class="p">}</span> <span class="c1">//分块排序+奇偶性优化
-</span><span class="c1"></span><span class="p">}</span> <span class="n">query</span><span class="p">[</span><span class="n">MAX_M</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>
-
-<span class="kr">inline</span> <span class="n">LL</span> <span class="nf">C</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">)</span> <span class="c1">//组合数计算函数
-</span><span class="c1"></span><span class="p">{</span>
-    <span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
-        <span class="n">ans</span> <span class="o">*=</span> <span class="n">i</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="n">ans</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
-    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kr">inline</span> <span class="n">LL</span> <span class="nf">GCD</span><span class="p">(</span><span class="k">const</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">b</span> <span class="o">?</span> <span class="n">GCD</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">;</span> <span class="p">}</span>
-<span class="kr">inline</span> <span class="kt">int</span> <span class="nf">intRead</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="kt">char</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-	<span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;</span> <span class="sc">&#39;0&#39;</span> <span class="o">||</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
-		<span class="n">f</span> <span class="o">=</span> <span class="n">t</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">f</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-	<span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
-		<span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">t</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-	<span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">num</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kr">inline</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">,</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">+=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">color</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span> <span class="c1">//增加某一颜色的move操作
-</span><span class="c1"></span><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">dec</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">,</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">-=</span> <span class="o">--</span><span class="n">cnt</span><span class="p">[</span><span class="n">color</span><span class="p">];</span> <span class="p">}</span> <span class="c1">//减少某一颜色的move操作
-</span><span class="c1"></span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">(),</span> <span class="n">m</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">();</span>
-    <span class="n">BLOCK_SIZE</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
-        <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">();</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
-        <span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">l</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">(),</span> <span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">(),</span> <span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-    <span class="n">sort</span><span class="p">(</span><span class="n">query</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">query</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-
-    <span class="kt">int</span> <span class="n">now_l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">now_r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//这里初值l=1,r=0，可以想想为什么。
-</span><span class="c1"></span>    <span class="n">LL</span> <span class="n">now_nume</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-<span class="cp">#define L query[i].l
-</span><span class="cp">#define R query[i].r
-</span><span class="cp">#define ID query[i].id
-</span><span class="cp"></span>    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">L</span> <span class="o">==</span> <span class="n">R</span><span class="p">)</span>	<span class="c1">//L==R情况的特判
-</span><span class="c1"></span>            <span class="n">nume</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">else</span>
-        <span class="p">{</span>
-            <span class="k">while</span> <span class="p">(</span><span class="n">now_l</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">)</span>
-                <span class="n">add</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="o">--</span><span class="n">now_l</span><span class="p">],</span> <span class="n">now_nume</span><span class="p">);</span>
-            <span class="k">while</span> <span class="p">(</span><span class="n">now_r</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">)</span>
-                <span class="n">add</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="o">++</span><span class="n">now_r</span><span class="p">],</span> <span class="n">now_nume</span><span class="p">);</span>
-            <span class="k">while</span> <span class="p">(</span><span class="n">now_l</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">)</span>
-                <span class="n">dec</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="n">now_l</span><span class="o">++</span><span class="p">],</span> <span class="n">now_nume</span><span class="p">);</span>
-            <span class="k">while</span> <span class="p">(</span><span class="n">now_r</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">)</span>
-                <span class="n">dec</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="n">now_r</span><span class="o">--</span><span class="p">],</span> <span class="n">now_nume</span><span class="p">);</span>
-			<span class="c1">//注意这里++和--的前后位置！
-</span><span class="c1"></span>
-            <span class="n">nume</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="n">now_nume</span><span class="p">;</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">now_nume</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="n">R</span> <span class="o">-</span> <span class="n">L</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-                <span class="n">LL</span> <span class="n">gcd</span> <span class="o">=</span> <span class="n">GCD</span><span class="p">(</span><span class="n">nume</span><span class="p">[</span><span class="n">ID</span><span class="p">],</span> <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]);</span>
-                <span class="n">nume</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">/=</span> <span class="n">gcd</span><span class="p">,</span> <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">/=</span> <span class="n">gcd</span><span class="p">;</span> <span class="c1">//约分操作
-</span><span class="c1"></span>            <span class="p">}</span>
-            <span class="k">else</span>
-                <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果计算出ans是0，需要特判，否则求GCD会出错
-</span><span class="c1"></span>        <span class="p">}</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
-        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld/%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">nume</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">deno</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//P1494 [小Z的袜子](https://www.luogu.com.cn/problem/P1494)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define ALL(NAME_i, BEGIN, TO) \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    int NAME_i = BEGIN;        \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    NAME_i &lt;= TO;              \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    NAME_i++
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define ALL_invert(NAME_i, BEGIN, TO) \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    int NAME_i = BEGIN;               \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    NAME_i &gt;= TO;                     \
+</span></span></span><span class="line"><span class="cl"><span class="cp">    NAME_i--
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define MAX_N 50000
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define MAX_M 50000
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">color</span><span class="p">[</span><span class="n">MAX_N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="n">cnt</span><span class="p">[</span><span class="n">MAX_M</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="n">BLOCK_SIZE</span><span class="p">;</span> <span class="c1">//cnt-当前状态各颜色出现了多少次
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">LL</span> <span class="n">nume</span><span class="p">[</span><span class="n">MAX_M</span> <span class="o">+</span> <span class="mi">5</span><span class="p">],</span> <span class="n">deno</span><span class="p">[</span><span class="n">MAX_M</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span> <span class="c1">//nume-分子，deno-分母
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">queryType</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">//bool operator&lt;(const queryType &amp;a) const { return l == a.l ? r &lt; a.r : l &lt; a.l; } //直接排序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//bool operator&lt;(const queryType &amp;a) const { return l / BLOCK_SIZE == a.l / BLOCK_SIZE ? r &lt; a.r : l &lt; a.l; } //分块排序
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">queryType</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">l</span> <span class="o">/</span> <span class="n">BLOCK_SIZE</span> <span class="o">==</span> <span class="n">a</span><span class="p">.</span><span class="n">l</span> <span class="o">/</span> <span class="n">BLOCK_SIZE</span> <span class="o">?</span> <span class="p">(</span><span class="n">r</span> <span class="o">==</span> <span class="n">a</span><span class="p">.</span><span class="n">r</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="p">(</span><span class="n">l</span> <span class="o">/</span> <span class="n">BLOCK_SIZE</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span> <span class="o">^</span> <span class="p">(</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">r</span><span class="p">))</span> <span class="o">:</span> <span class="n">l</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">l</span><span class="p">;</span> <span class="p">}</span> <span class="c1">//分块排序+奇偶性优化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">query</span><span class="p">[</span><span class="n">MAX_M</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="n">LL</span> <span class="nf">C</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">)</span> <span class="c1">//组合数计算函数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">LL</span> <span class="n">ans</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">*=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">m</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="n">LL</span> <span class="nf">GCD</span><span class="p">(</span><span class="k">const</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">b</span> <span class="o">?</span> <span class="n">GCD</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">int</span> <span class="nf">intRead</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;</span> <span class="sc">&#39;0&#39;</span> <span class="o">||</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">f</span> <span class="o">=</span> <span class="n">t</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="n">f</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">t</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">add</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">,</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">+=</span> <span class="n">cnt</span><span class="p">[</span><span class="n">color</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="p">}</span> <span class="c1">//增加某一颜色的move操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">inline</span> <span class="kt">void</span> <span class="nf">dec</span><span class="p">(</span><span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">color</span><span class="p">,</span> <span class="n">LL</span> <span class="o">&amp;</span><span class="n">ans</span><span class="p">)</span> <span class="p">{</span> <span class="n">ans</span> <span class="o">-=</span> <span class="o">--</span><span class="n">cnt</span><span class="p">[</span><span class="n">color</span><span class="p">];</span> <span class="p">}</span> <span class="c1">//减少某一颜色的move操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">(),</span> <span class="n">m</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">BLOCK_SIZE</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">color</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">l</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">(),</span> <span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">r</span> <span class="o">=</span> <span class="n">intRead</span><span class="p">(),</span> <span class="n">query</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">id</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">sort</span><span class="p">(</span><span class="n">query</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">query</span> <span class="o">+</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">now_l</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">now_r</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//这里初值l=1,r=0，可以想想为什么。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">LL</span> <span class="n">now_nume</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cp">#define L query[i].l
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define R query[i].r
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define ID query[i].id
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">L</span> <span class="o">==</span> <span class="n">R</span><span class="p">)</span>	<span class="c1">//L==R情况的特判
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">nume</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="n">now_l</span> <span class="o">&gt;</span> <span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">add</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="o">--</span><span class="n">now_l</span><span class="p">],</span> <span class="n">now_nume</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="n">now_r</span> <span class="o">&lt;</span> <span class="n">R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">add</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="o">++</span><span class="n">now_r</span><span class="p">],</span> <span class="n">now_nume</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="n">now_l</span> <span class="o">&lt;</span> <span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dec</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="n">now_l</span><span class="o">++</span><span class="p">],</span> <span class="n">now_nume</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="n">now_r</span> <span class="o">&gt;</span> <span class="n">R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">dec</span><span class="p">(</span><span class="n">color</span><span class="p">[</span><span class="n">now_r</span><span class="o">--</span><span class="p">],</span> <span class="n">now_nume</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//注意这里++和--的前后位置！
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="n">nume</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="n">now_nume</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">now_nume</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="n">R</span> <span class="o">-</span> <span class="n">L</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">LL</span> <span class="n">gcd</span> <span class="o">=</span> <span class="n">GCD</span><span class="p">(</span><span class="n">nume</span><span class="p">[</span><span class="n">ID</span><span class="p">],</span> <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">nume</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">/=</span> <span class="n">gcd</span><span class="p">,</span> <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">/=</span> <span class="n">gcd</span><span class="p">;</span> <span class="c1">//约分操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="n">deno</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果计算出ans是0，需要特判，否则求GCD会出错
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">ALL</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld/%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">nume</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">deno</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 </section>
 <footer class="article-footer">
     

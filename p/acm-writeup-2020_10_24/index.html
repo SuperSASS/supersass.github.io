@@ -347,7 +347,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：5440</div>
+            <div class="char">文章字数：5274</div>
             <div class="time">预计阅读时长： <time>11</time> 分钟</div>
         </div>
     </footer>
@@ -422,7 +422,7 @@ if (!doNotTrack) {
 </div>
 <h2 id="标准思路">标准思路</h2>
 <p>采用<strong>位运算</strong>。</p>
-<p><span class="math inline">\(2n+1\)</span>个数中，其中只有<span class="math inline">\(1\)</span>个数只出现了<strong>奇数次</strong>，<br>
+<p>$2n+1$个数中，其中只有$1$个数只出现了<strong>奇数次</strong>，<br>
 则对所有数进行异或，则可找出出现奇数次的数。</p>
 <h1 id="c---新概念丢手绢">*C - 新概念丢手绢</h1>
 <ul>
@@ -435,7 +435,7 @@ if (!doNotTrack) {
 	</div>
 </div>
 <p>不难的题，没去认真思考。</p>
-<p>思考后会发现：按<span class="math inline">\(1,2, \cdots ,n\)</span>这样排列，就是最高分，即输出<span class="math inline">\(n\)</span>。</p>
+<p>思考后会发现：按$1,2, \cdots ,n$这样排列，就是最高分，即输出$n$。</p>
 <h1 id="g---生活委员">*G - 生活委员</h1>
 <ul>
 <li><a class="link" href="https://oj.swjtu.edu.cn/contest/22/problem/G"  target="_blank" rel="noopener"
@@ -447,7 +447,7 @@ if (!doNotTrack) {
 	</div>
 </div>
 <ul>
-<li><strong>知识点：</strong><span class="math inline">\(\gcd(Fib(a), Fib(b)) = Fib(\gcd(a, b))\)</span></li>
+<li><strong>知识点：</strong>$\gcd(Fib(a), Fib(b)) = Fib(\gcd(a, b))$</li>
 </ul>
 <h1 id="h---胖生的数学题">H - 胖生的数学题</h1>
 <div class="snote error ">
@@ -466,27 +466,27 @@ if (!doNotTrack) {
 	<summary>题面搬运</summary>
 	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
 <ul>
-<li>连乘符号：<span class="math inline">\(\prod_{i=a}^bn=n_a*n_{a+1}*\cdots*n_{b-1}*n_b\)</span></li>
+<li>连乘符号：$\prod_{i=a}^bn=n_a<em>n_{a+1}</em>\cdots*n_{b-1}*n_b$</li>
 </ul>
 <p>最近，小胖生学习了一个新的东西：GCD，他发现GCD真是一个神奇的东西，今天，老师给他布置了一道关于GCD的题，他很快就算出来了，因此，为了寻找优越感，他想考考你，看你会不会。</p>
 <p>题目如下：</p>
-<p>输入一行包含六个正整数<span class="math inline">\(a,b,c,d,x,y\)</span>,求<span class="math inline">\(\prod_{i=a}^{b}\prod_{j=c}^{d}\gcd(x^{i},y^{j}) \mod 998244353\)</span>。</p>
-<p>注：这里<span class="math inline">\(\gcd(a,b)\)</span>表示a和b的最大公约数。</p>
+<p>输入一行包含六个正整数$a,b,c,d,x,y$,求$\prod_{i=a}^{b}\prod_{j=c}^{d}\gcd(x^{i},y^{j}) \mod 998244353$。</p>
+<p>注：这里$\gcd(a,b)$表示a和b的最大公约数。</p>
 <ul>
 <li>题目理解补充：<br>
-这里两个连乘符号代表的是分别乘<span class="math inline">\(\gcd(x^{a\sim b},y^{c\sim d})\)</span>。
+这里两个连乘符号代表的是分别乘$\gcd(x^{a\sim b},y^{c\sim d})$。
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(a=1,b=2\)</span>；<span class="math inline">\(c=3,d=4\)</span><br>
-则为：<span class="math inline">\(\gcd(x^1,y^3)*\gcd(x^1,y^4)*\gcd(x^2,y^3)*\gcd(x^2,y^4)\)</span></p>
+$a=1,b=2$；$c=3,d=4$<br>
+则为：$\gcd(x^1,y^3)<em>\gcd(x^1,y^4)</em>\gcd(x^2,y^3)*\gcd(x^2,y^4)$</p>
 </blockquote>
 </li>
 </ul>
 <h2 id="数据范围">数据范围</h2>
-<p><span class="math inline">\(0 \le a,b,c,d \le 3e6\)</span><br>
-<span class="math inline">\(a \le b\)</span><br>
-<span class="math inline">\(c \le d\)</span></p>
-<p><span class="math inline">\(0<x,y \le 1e9\)</span></p>
+<p>$0 \le a,b,c,d \le 3e6$<br>
+$a \le b$<br>
+$c \le d$</p>
+<p>$0&lt;x,y \le 1e9$</p>
 <h2 id="输入格式">输入格式</h2>
 <p>一行，包含六个正整数。</p>
 <h2 id="输出格式">输出格式</h2>
@@ -494,61 +494,61 @@ if (!doNotTrack) {
 <h2 id="样例数据">样例数据</h2>
 <h3 id="第一组">第一组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">8</span> <span class="mi">4</span>
-</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">2048</span>
-</code></pre></div></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">8</span> <span class="mi">4</span>
+</span></span></code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">2048</span>
+</span></span></code></pre></div></div></div>
 <h3 id="第二组">第二组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">120</span> <span class="mi">180</span>
-</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">235140177</span>
-</code></pre></div></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">120</span> <span class="mi">180</span>
+</span></span></code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">235140177</span>
+</span></span></code></pre></div></div></div>
 <p><strong>解释：</strong></p>
-<p><span class="math inline">\(\gcd(120^1,180^3)=120\)</span><br>
-<span class="math inline">\(\gcd(120^1,180^4)=120\)</span><br>
-<span class="math inline">\(\gcd(120^2,180^3)=14400\)</span><br>
-<span class="math inline">\(\gcd(120^2,180^3)=14400\)</span></p>
-<p><span class="math inline">\(\prod_{i=1}^{2}\prod_{j=3}^{4}\gcd(x^{i},y^{j})=2985984000000\)</span><br>
-<span class="math inline">\(2985984000000 \mod 998244353=235140177\)</span></p>
+<p>$\gcd(120^1,180^3)=120$<br>
+$\gcd(120^1,180^4)=120$<br>
+$\gcd(120^2,180^3)=14400$<br>
+$\gcd(120^2,180^3)=14400$</p>
+<p>$\prod_{i=1}^{2}\prod_{j=3}^{4}\gcd(x^{i},y^{j})=2985984000000$<br>
+$2985984000000 \mod 998244353=235140177$</p>
 </div>
 </details>
 <h2 id="标准思路-1">标准思路</h2>
-<p>暴力的话两个<code>for</code>，<span class="math inline">\(O(n^2)\)</span>，而<span class="math inline">\(a,b \le 3e6\)</span>，会超时。</p>
+<p>暴力的话两个<code>for</code>，$O(n^2)$，而$a,b \le 3e6$，会超时。</p>
 <div class="snote quote ">
 	<div class="snote-content">
 		<p>看到求gcd，就应该尝试对给出的数分解质因数。</p>
 	</div>
 </div>
 <p><em>引自：标准题解</em></p>
-<p>回到求<span class="math inline">\(\gcd\)</span>的本质：</p>
+<p>回到求$\gcd$的本质：</p>
 <blockquote>
-<p><span class="math inline">\(\gcd\)</span>，为求两个数的最大公约数（因数）。<br>
+<p>$\gcd$，为求两个数的最大公约数（因数）。<br>
 故可将两个数分别<strong>分解质因数</strong>，然后寻找两数所有共同的质因数，则结果为两数共同质因数的乘积。</p>
 <blockquote>
 <p>如：<br>
-<span class="math inline">\(\gcd(120,180)\)</span>：<br>
-<span class="math inline">\(120=\underline{2} \times \underline{2} \times 2 \times \underline{3} \times \underline{5}\)</span><br>
-<span class="math inline">\(180=\underline{2} \times \underline{2} \times \underline{3} \times \underline{5} \times 5\)</span></p>
-<p>则<span class="math inline">\(\gcd(120,180)=2\times2\times3\times5=60\)</span>。</p>
+$\gcd(120,180)$：<br>
+$120=\underline{2} \times \underline{2} \times 2 \times \underline{3} \times \underline{5}$<br>
+$180=\underline{2} \times \underline{2} \times \underline{3} \times \underline{5} \times 5$</p>
+<p>则$\gcd(120,180)=2\times2\times3\times5=60$。</p>
 </blockquote>
 </blockquote>
-<p>由于这里为多项<span class="math inline">\(\gcd\)</span>的连乘，又由上述可知本身<span class="math inline">\(\gcd\)</span>的运算就为乘积运算，<br>
+<p>由于这里为多项$\gcd$的连乘，又由上述可知本身$\gcd$的运算就为乘积运算，<br>
 故总的运算就可以写为<strong>各个项共同质因数</strong>的总乘积。</p>
 <p>我们又可以从本质中发现，我们所取的每项质因数的次数，都是<strong>两数中出现次数较少的次数</strong>，以下统称为<strong>最小次数</strong>。</p>
 <blockquote>
-<p>如上例中对<span class="math inline">\(2\)</span>这个质因数所取次数：<br>
-<span class="math inline">\(120\)</span>有<span class="math inline">\(3\)</span>个<span class="math inline">\(2\)</span>，<br>
-<span class="math inline">\(180\)</span>有<span class="math inline">\(2\)</span>个<span class="math inline">\(2\)</span>。<br>
-则<span class="math inline">\(\gcd(120,180)\)</span>有关<span class="math inline">\(2\)</span>这一项则取<span class="math inline">\(2\)</span>个。（<span class="math inline">\(\gcd(120,180)=2\times2\times\cdots\)</span>）</p>
+<p>如上例中对$2$这个质因数所取次数：<br>
+$120$有$3$个$2$，<br>
+$180$有$2$个$2$。<br>
+则$\gcd(120,180)$有关$2$这一项则取$2$个。（$\gcd(120,180)=2\times2\times\cdots$）</p>
 </blockquote>
 <p>而有关<strong>幂操作</strong>，就相当于对于每项<strong>质因数的次数进行幂操作</strong>。</p>
 <blockquote>
 <p>例：<br>
-<span class="math inline">\(180^3=2^{2^{\underline{3}}}\times3^{2^{\underline{3}}}\times5^{1^{\underline{3}}}\)</span></p>
+$180^3=2^{2^{\underline{3}}}\times3^{2^{\underline{3}}}\times5^{1^{\underline{3}}}$</p>
 </blockquote>
 <p><strong>综上：</strong><br>
-对于原题两个数的某范围中的幂，分别求<span class="math inline">\(\gcd\)</span>，<br>
+对于原题两个数的某范围中的幂，分别求$\gcd$，<br>
 可以转换为两数共同质因数，其每一项在其范围中的幂，取两者<strong>最小次数</strong>为该次运算的结果。<br>
 所有最小次数<strong>之和</strong>即为这一项的幂次，幂出来就是这一项质因数所求得的最小公约数。<br>
 然后所有项的最小公约数<strong>之积</strong>就是最终结果。</p>
@@ -558,41 +558,41 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>对于第一个数的<code>base</code>个数确定：<br>
-先确定一个<span class="math inline">\(i∈[a,b]\)</span>，则当前第一个数的<code>base</code>个数为<span class="math inline">\(x*i\)</span>。</p>
+先确定一个$i∈[a,b]$，则当前第一个数的<code>base</code>个数为$x*i$。</p>
 <p>然后计算出来一个界点<code>min</code>。（由于这里幂是整数，所以我们暂对<code>min</code>向下取整）</p>
 </li>
 <li>
 <p>对于第二个数的<code>base</code>个数分析：<br>
-<span class="math inline">\(y * c \sim y * d\)</span>中任意一个<span class="math inline">\(y*k\quad (k∈[c,d])\)</span></p>
+$y * c \sim y * d$中任意一个$y*k\quad (k∈[c,d])$</p>
 <ul>
-<li>当<span class="math inline">\(k \le\)</span><code>min</code>时，<span class="math inline">\(x * i \ge y * k\)</span>，则这个时候<span class="math inline">\(\gcd\)</span>取<span class="math inline">\(y * k\)</span></li>
-<li>当<span class="math inline">\(k>\)</span><code>min</code>时，<span class="math inline">\(x * i < y * k\)</span>，则这个时候<span class="math inline">\(\gcd\)</span>取<span class="math inline">\(x * i\)</span></li>
+<li>当$k \le$<code>min</code>时，$x * i \ge y * k$，则这个时候$\gcd$取$y * k$</li>
+<li>当$k&gt;$<code>min</code>时，$x * i &lt; y * k$，则这个时候$\gcd$取$x * i$</li>
 </ul>
 </li>
 </ul>
 <p><em>【也可以用向上取整，但会更难想。</em></p>
 <p>min计算方法：</p>
 <ul>
-<li><span class="math inline">\(min = ⌊x * i / y⌋\)</span>。（程序里直接写<code>min = x*i/y</code>）</li>
+<li>$min = ⌊x * i / y⌋$。（程序里直接写<code>min = x*i/y</code>）</li>
 </ul>
 <p>sum计算方法：</p>
 <ul>
-<li>当<span class="math inline">\(k∈[c,min]\)</span>，<span class="math inline">\(sum+=y * k\)</span>（条件：<span class="math inline">\(min >= c\)</span>）。<br>
-则这部分区间的总和为：<span class="math inline">\(sum+=y * sum(k)\)</span>（可算得<span class="math inline">\(sum(k)=(c + min) * (min-c+1)/2）\)</span>。</li>
-<li>当<span class="math inline">\(k∈(min,d]\)</span>，<span class="math inline">\(sum+=x * i\)</span>（条件：<span class="math inline">\(min < d\)</span>）。<br>
-则这部分区间的总和为：<span class="math inline">\(sum+=x * i * len(k)\)</span>（可算得<span class="math inline">\(len(k) = d - min\)</span>）。<br>
-【但因为<span class="math inline">\(min=d\)</span>时，<span class="math inline">\(len(k) = 0\)</span>，所以条件也可写为<span class="math inline">\(min \le d\)</span>】</li>
+<li>当$k∈[c,min]$，$sum+=y * k$（条件：$min &gt;= c$）。<br>
+则这部分区间的总和为：$sum+=y * sum(k)$（可算得$sum(k)=(c + min) * (min-c+1)/2）$。</li>
+<li>当$k∈(min,d]$，$sum+=x * i$（条件：$min &lt; d$）。<br>
+则这部分区间的总和为：$sum+=x * i * len(k)$（可算得$len(k) = d - min$）。<br>
+【但因为$min=d$时，$len(k) = 0$，所以条件也可写为$min \le d$】</li>
 </ul>
 <hr>
 <p>所以我们可以先将两个原数分别<strong>分解质因数</strong>。<br>
 然后对每个共同的质因数项<strong>讨论其幂次</strong>。</p>
 <p>对于任一项质因数，选一个原数<code>for</code>遍历其幂次，<br>
 则对另一个原数，便可直接用上述的<code>min</code>确定<strong>选择最小次数</strong>的其区间临界点，直接可求得其<strong>不同幂次的每次的结果</strong>。</p>
-<p>故可将两个<code>for</code>的<span class="math inline">\(O(n^2)\)</span>时间复杂度降下一层来为<span class="math inline">\(O(n)\)</span>。</p>
+<p>故可将两个<code>for</code>的$O(n^2)$时间复杂度降下一层来为$O(n)$。</p>
 <hr>
 <p><strong>需要注意的点：</strong><br>
 选好最小次数后求和时，如果要对幂次取模，<br>
-按照欧拉/费马小定理，模数应该取<span class="math inline">\(\varphi (998244353)\)</span>（为欧拉函数）。</p>
+按照欧拉/费马小定理，模数应该取$\varphi (998244353)$（为欧拉函数）。</p>
 <p><em><a class="link" href="https://oi-wiki.org/math/fermat/"  target="_blank" rel="noopener"
     >欧拉函数讲解</a>。</em></p>
 <h2 id="标程代码">标程代码</h2>
@@ -606,90 +606,90 @@ if (!doNotTrack) {
 
 <details class="sc-details" >
 	<summary>标程代码（附个人注释）</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="k">const</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">MOD</span> <span class="o">=</span> <span class="mi">998244353</span><span class="p">;</span>
-
-<span class="kt">long</span> <span class="kt">long</span> <span class="nf">q_pow</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">base</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">idx</span><span class="p">)</span>  <span class="c1">//带取模的快速幂
-</span><span class="c1"></span><span class="p">{</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">idx</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">base</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">base</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">base</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
-        <span class="n">idx</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
-
-<span class="kt">long</span> <span class="kt">long</span> <span class="nf">calc</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">y</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">base</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//求算出来最终的幂
-</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">long</span> <span class="kt">long</span> <span class="n">min</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span> <span class="c1">//使得y*k &gt; x*i的最小值
-</span><span class="c1"></span>        <span class="cm">/*有关min用法：
-</span><span class="cm">        【相应的分析放到了“题目分析”里】
-</span><span class="cm">        */</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">d</span><span class="p">)</span> <span class="c1">//这里的处理方式是，如果bound &gt; d，则不存在k∈(mid,d]的区间，直接令min=d，使得后面加这个区间时len(k)=0---&gt;sum+=0。
-</span><span class="c1"></span>            <span class="n">min</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">min</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">)</span> <span class="c1">//同理，如果min &lt; c，则不存在k∈[c,min]的区间，直接令min=c-1，使得后面加这个区间时sum(k)=0---&gt;sum+=0。
-</span><span class="c1"></span>            <span class="n">min</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="n">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="n">min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">min</span> <span class="o">-</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">%</span> <span class="p">(</span><span class="n">MOD</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//对应k∈[c,min]情况
-</span><span class="c1"></span>        <span class="n">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="n">min</span><span class="p">))</span> <span class="o">%</span> <span class="p">(</span><span class="n">MOD</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>                   <span class="c1">//对应k∈(min,d]情况
-</span><span class="c1"></span>        <span class="cm">/* % (MOD - 1)的原因：
-</span><span class="cm">        这里是数论里的欧拉函数应用
-</span><span class="cm">        */</span>
-    <span class="p">}</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">res</span> <span class="o">=</span> <span class="n">q_pow</span><span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">base</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld %lld %lld %lld %lld %lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
-
-    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">factor_nums</span><span class="p">;</span>
-
-    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">//分解x的质因数
-</span><span class="c1"></span>    <span class="p">{</span>
-        <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="o">++</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-            <span class="n">x</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="o">++</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
-
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">//对y按顺序分解质因数
-</span><span class="c1"></span>    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="kt">long</span> <span class="kt">long</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="k">do</span>
-            <span class="p">{</span>
-                <span class="o">++</span><span class="n">count</span><span class="p">;</span>
-                <span class="n">y</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
-            <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-                <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">calc</span><span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">count</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">factor_nums</span><span class="p">[</span><span class="n">y</span><span class="p">])</span> <span class="c1">//y剩下的
-</span><span class="c1"></span>        <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">calc</span><span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">MOD</span> <span class="o">=</span> <span class="mi">998244353</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">q_pow</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">base</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">idx</span><span class="p">)</span>  <span class="c1">//带取模的快速幂
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">idx</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">idx</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">base</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">base</span> <span class="o">=</span> <span class="n">base</span> <span class="o">*</span> <span class="n">base</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">idx</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">answer</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="nf">calc</span><span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">y</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">base</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//求算出来最终的幂
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">long</span> <span class="kt">long</span> <span class="n">min</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="n">y</span><span class="p">;</span> <span class="c1">//使得y*k &gt; x*i的最小值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="cm">/*有关min用法：
+</span></span></span><span class="line"><span class="cl"><span class="cm">        【相应的分析放到了“题目分析”里】
+</span></span></span><span class="line"><span class="cl"><span class="cm">        */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">min</span> <span class="o">&gt;</span> <span class="n">d</span><span class="p">)</span> <span class="c1">//这里的处理方式是，如果bound &gt; d，则不存在k∈(mid,d]的区间，直接令min=d，使得后面加这个区间时len(k)=0---&gt;sum+=0。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">min</span> <span class="o">=</span> <span class="n">d</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">min</span> <span class="o">&lt;</span> <span class="n">c</span><span class="p">)</span> <span class="c1">//同理，如果min &lt; c，则不存在k∈[c,min]的区间，直接令min=c-1，使得后面加这个区间时sum(k)=0---&gt;sum+=0。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">min</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="p">(</span><span class="n">y</span> <span class="o">*</span> <span class="p">(</span><span class="n">c</span> <span class="o">+</span> <span class="n">min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">min</span> <span class="o">-</span> <span class="n">c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">))</span> <span class="o">%</span> <span class="p">(</span><span class="n">MOD</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//对应k∈[c,min]情况
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">sum</span> <span class="o">=</span> <span class="p">(</span><span class="n">sum</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="p">(</span><span class="n">d</span> <span class="o">-</span> <span class="n">min</span><span class="p">))</span> <span class="o">%</span> <span class="p">(</span><span class="n">MOD</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>                   <span class="c1">//对应k∈(min,d]情况
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="cm">/* % (MOD - 1)的原因：
+</span></span></span><span class="line"><span class="cl"><span class="cm">        这里是数论里的欧拉函数应用
+</span></span></span><span class="line"><span class="cl"><span class="cm">        */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">res</span> <span class="o">=</span> <span class="n">q_pow</span><span class="p">((</span><span class="kt">long</span> <span class="kt">long</span><span class="p">)</span><span class="n">base</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld %lld %lld %lld %lld %lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">c</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">long</span> <span class="kt">long</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span><span class="o">&gt;</span> <span class="n">factor_nums</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">x</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">//分解x的质因数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="n">x</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="o">++</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">++</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">x</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">answer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">long</span> <span class="kt">long</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="c1">//对y按顺序分解质因数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">long</span> <span class="kt">long</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">do</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="o">++</span><span class="n">count</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                <span class="n">y</span> <span class="o">/=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span> <span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">calc</span><span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">count</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">y</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">factor_nums</span><span class="p">[</span><span class="n">y</span><span class="p">])</span> <span class="c1">//y剩下的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span> <span class="o">*</span> <span class="n">calc</span><span class="p">(</span><span class="n">factor_nums</span><span class="p">[</span><span class="n">y</span><span class="p">],</span> <span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">answer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div>
 </details>
 <h1 id="k">K</h1>
 <div class="snote error ">
@@ -707,45 +707,45 @@ if (!doNotTrack) {
 <details class="sc-details" >
 	<summary>题面搬运</summary>
 	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
-<p>有<span class="math inline">\(L\)</span>个方块排成一排，从左到右标记为<span class="math inline">\(1,\cdots,L\)</span></p>
-<p><span class="math inline">\(L\)</span>个方块上站了<span class="math inline">\(n\)</span>个人，从左到右标记为<span class="math inline">\(1,\cdots,n\)</span>。第<span class="math inline">\(i\)</span>个人站在第<span class="math inline">\(a_i\)</span>个方块上</p>
+<p>有$L$个方块排成一排，从左到右标记为$1,\cdots,L$</p>
+<p>$L$个方块上站了$n$个人，从左到右标记为$1,\cdots,n$。第$i$个人站在第$a_i$个方块上</p>
 <p>你可以做以下操作任意次：</p>
 <p>选择一个人，令他向左或向右移动。这个人会一直移动直到前方没有空的格子。也就是说，当前方没有格子或前方的格子上有人时他才会停止移动。</p>
-<p>举个例子，假设<span class="math inline">\(n=3,L=10\)</span>，<span class="math inline">\(n\)</span>个人一开始在<span class="math inline">\((2,3,7)\)</span>。现在我们让第<span class="math inline">\(2\)</span>个人向右走，他会走到<span class="math inline">\(6\)</span>停止，如果我们让第<span class="math inline">\(3\)</span>个人往右走，他会走到最右侧<span class="math inline">\(10\)</span>停止。</p>
-<p>你的任务是使第<span class="math inline">\(i\)</span>个人到达<span class="math inline">\(b_i\)</span>位置，判定是否可行并找到最少操作次数。</p>
+<p>举个例子，假设$n=3,L=10$，$n$个人一开始在$(2,3,7)$。现在我们让第$2$个人向右走，他会走到$6$停止，如果我们让第$3$个人往右走，他会走到最右侧$10$停止。</p>
+<p>你的任务是使第$i$个人到达$b_i$位置，判定是否可行并找到最少操作次数。</p>
 <h2 id="数据范围">数据范围</h2>
-<p><span class="math inline">\(1 \le N \le 10^5\)</span><br>
-<span class="math inline">\(N \le L \le 10^9\)</span></p>
-<p><span class="math inline">\(1 \le A_1 \lt A_2 \lt \cdots \lt A_N \le L\)</span><br>
-<span class="math inline">\(1 \le B_1 \lt B_2 \lt \cdots \lt B_N \le L\)</span></p>
+<p>$1 \le N \le 10^5$<br>
+$N \le L \le 10^9$</p>
+<p>$1 \le A_1 \lt A_2 \lt \cdots \lt A_N \le L$<br>
+$1 \le B_1 \lt B_2 \lt \cdots \lt B_N \le L$</p>
 <ul>
 <li>所有输入均为整数。</li>
 </ul>
 <h2 id="输入格式">输入格式</h2>
 <blockquote>
-<p><span class="math inline">\(N \quad L\)</span><br>
-<span class="math inline">\(A_1 \quad A_2 \quad\cdots \quad A_N\)</span><br>
-<span class="math inline">\(B_1 \quad B_2 \quad\cdots \quad B_N\)</span></p>
+<p>$N \quad L$<br>
+$A_1 \quad A_2 \quad\cdots \quad A_N$<br>
+$B_1 \quad B_2 \quad\cdots \quad B_N$</p>
 </blockquote>
 <h2 id="输出格式">输出格式</h2>
 <p>如果目标不可达，输出-1，否则输出最小指令数。</p>
 <h2 id="样例数据">样例数据</h2>
 <h3 id="第一组">第一组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">4</span> <span class="mi">11</span>
-<span class="mi">3</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">10</span>
-<span class="mi">1</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">11</span>
-</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">3</span>
-</code></pre></div></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">4</span> <span class="mi">11</span>
+</span></span><span class="line"><span class="cl"><span class="mi">3</span> <span class="mi">4</span> <span class="mi">6</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">11</span>
+</span></span></code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span></code></pre></div></div></div>
 <h3 id="第二组">第二组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">1</span> <span class="mi">3</span>
-<span class="mi">1</span>
-<span class="mi">2</span>
-</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="o">-</span><span class="mi">1</span>
-</code></pre></div></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">1</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="mi">2</span>
+</span></span></code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="o">-</span><span class="mi">1</span>
+</span></span></code></pre></div></div></div>
 </div>
 </details>
 <h2 id="个人方法-1">个人方法</h2>
@@ -762,115 +762,115 @@ if (!doNotTrack) {
 
 <details class="sc-details" >
 	<summary>个人代码</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp">#define Length 100005
-</span><span class="cp">#define to_Left toLoc - 1
-</span><span class="cp">#define to_Right toLoc + 1
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">start</span><span class="p">[</span><span class="n">Length</span><span class="p">],</span> <span class="n">to</span><span class="p">[</span><span class="n">Length</span><span class="p">],</span> <span class="n">current</span><span class="p">[</span><span class="n">Length</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">},</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="kt">int</span> <span class="nf">check</span><span class="p">(</span><span class="kt">int</span> <span class="n">topPrime</span><span class="p">,</span> <span class="kt">int</span> <span class="n">top</span><span class="p">,</span> <span class="kt">int</span> <span class="n">toLoc</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">==</span> <span class="n">toLoc</span><span class="p">)</span>
-        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="cm">/* FIX&amp;WA
-</span><span class="cm">    FIX.1. 经过已经到达了要去的点，应该直接返回0。
-</span><span class="cm">    WA.2. 第一次改没加to[top]==toLoc，可能在之后的使用中要去的点不是本要去的点，但却在之前current=1
-</span><span class="cm">    */</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//左移
-</span><span class="c1"></span>    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//最左边的节点
-</span><span class="c1"></span>        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//去左墙
-</span><span class="c1"></span>            <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//如果恰好是要去的地方，把current=1
-</span><span class="c1"></span>                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
-                <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span>
-                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">else</span> <span class="c1">//不是最左边的
-</span><span class="c1"></span>        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">topPrime</span> <span class="o">==</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//反复横跳了
-</span><span class="c1"></span>                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-            <span class="kt">int</span> <span class="n">checkToLeft</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">to_Left</span><span class="p">);</span> <span class="c1">//左边那个，能否去要去点的左边
-</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">checkToLeft</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
-                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
-</span><span class="c1"></span>                <span class="k">return</span> <span class="n">checkToLeft</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span>
-                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">&gt;</span> <span class="n">start</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//右移
-</span><span class="c1"></span>    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="c1">//最右边的节点
-</span><span class="c1"></span>        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">l</span><span class="p">)</span> <span class="c1">//去右墙
-</span><span class="c1"></span>            <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
-                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
-</span><span class="c1"></span>                <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span>
-                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="k">else</span> <span class="c1">//不是最右边的
-</span><span class="c1"></span>        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">topPrime</span> <span class="o">==</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//反复横跳了
-</span><span class="c1"></span>                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-            <span class="kt">int</span> <span class="n">checkToLeft</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">to_Right</span><span class="p">);</span> <span class="c1">//右边那个，能否去要去点的右边
-</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">checkToLeft</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
-                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
-</span><span class="c1"></span>                <span class="k">return</span> <span class="n">checkToLeft</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span>
-                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="c1">//不移动
-</span><span class="c1"></span>    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
-        <span class="cm">/* WA
-</span><span class="cm">        WA.3. 有可能这步要让他在原地不动，但不是他最终要去的地方，故这个判断很重要！
-</span><span class="cm">        */</span>
-            <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-            <span class="cm">/* WA
-</span><span class="cm">            WA.1. 不移动的时候要改current=1
-</span><span class="cm">            */</span>
-        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-<span class="kt">signed</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-<span class="cp">#ifdef SuperSASS
-</span><span class="cp"></span>    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;data.in&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
-<span class="cp">#endif
-</span><span class="cp"></span>    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">to</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//从左到右check。
-</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">current</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//如果在某次操作中已经到达最终位置，便不再计算
-</span><span class="c1"></span>        <span class="p">{</span>
-            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-            <span class="p">{</span>
-                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;-1&#34;</span><span class="p">);</span>
-                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-            <span class="p">}</span>
-            <span class="k">else</span>
-                <span class="n">sum</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span>
-        <span class="p">}</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define Length 100005
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define to_Left toLoc - 1
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define to_Right toLoc + 1
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">start</span><span class="p">[</span><span class="n">Length</span><span class="p">],</span> <span class="n">to</span><span class="p">[</span><span class="n">Length</span><span class="p">],</span> <span class="n">current</span><span class="p">[</span><span class="n">Length</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">},</span> <span class="n">n</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">check</span><span class="p">(</span><span class="kt">int</span> <span class="n">topPrime</span><span class="p">,</span> <span class="kt">int</span> <span class="n">top</span><span class="p">,</span> <span class="kt">int</span> <span class="n">toLoc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">&amp;&amp;</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">==</span> <span class="n">toLoc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* FIX&amp;WA
+</span></span></span><span class="line"><span class="cl"><span class="cm">    FIX.1. 经过已经到达了要去的点，应该直接返回0。
+</span></span></span><span class="line"><span class="cl"><span class="cm">    WA.2. 第一次改没加to[top]==toLoc，可能在之后的使用中要去的点不是本要去的点，但却在之前current=1
+</span></span></span><span class="line"><span class="cl"><span class="cm">    */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">&lt;</span> <span class="n">start</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//左移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//最左边的节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//去左墙
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//如果恰好是要去的地方，把current=1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="c1">//不是最左边的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">topPrime</span> <span class="o">==</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//反复横跳了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">checkToLeft</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">top</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">to_Left</span><span class="p">);</span> <span class="c1">//左边那个，能否去要去点的左边
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">checkToLeft</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="n">checkToLeft</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">&gt;</span> <span class="n">start</span><span class="p">[</span><span class="n">top</span><span class="p">])</span> <span class="c1">//右移
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">top</span> <span class="o">==</span> <span class="n">n</span><span class="p">)</span> <span class="c1">//最右边的节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">l</span><span class="p">)</span> <span class="c1">//去右墙
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="c1">//不是最右边的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">topPrime</span> <span class="o">==</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">//反复横跳了
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">checkToLeft</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">top</span><span class="p">,</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">to_Right</span><span class="p">);</span> <span class="c1">//右边那个，能否去要去点的右边
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="n">checkToLeft</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">//如果恰好是要去的地方，把current=1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="k">return</span> <span class="n">checkToLeft</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span> <span class="c1">//不移动
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">toLoc</span> <span class="o">==</span> <span class="n">to</span><span class="p">[</span><span class="n">top</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* WA
+</span></span></span><span class="line"><span class="cl"><span class="cm">        WA.3. 有可能这步要让他在原地不动，但不是他最终要去的地方，故这个判断很重要！
+</span></span></span><span class="line"><span class="cl"><span class="cm">        */</span>
+</span></span><span class="line"><span class="cl">            <span class="n">current</span><span class="p">[</span><span class="n">top</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="cm">/* WA
+</span></span></span><span class="line"><span class="cl"><span class="cm">            WA.1. 不移动的时候要改current=1
+</span></span></span><span class="line"><span class="cl"><span class="cm">            */</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">signed</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#ifdef SuperSASS
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="n">freopen</span><span class="p">(</span><span class="s">&#34;data.in&#34;</span><span class="p">,</span> <span class="s">&#34;r&#34;</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="cp">#endif
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">start</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">to</span> <span class="o">+</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//从左到右check。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">current</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//如果在某次操作中已经到达最终位置，便不再计算
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">check</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">to</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">value</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;-1&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span>
+</span></span><span class="line"><span class="cl">                <span class="n">sum</span> <span class="o">+=</span> <span class="n">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="n">sum</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div>
 </details>
 <h2 id="标准思路-2">标准思路</h2>
 <div class="snote info ">
@@ -880,16 +880,16 @@ if (!doNotTrack) {
 </div>
 <blockquote>
 <p>比如：<br>
-<span class="math inline">\(L=6\)</span>，点为<span class="math inline">\(2,5\)</span>，转换为区间长为<span class="math inline">\(1,2,1\)</span>。<br>
-如要把<span class="math inline">\(2\)</span>向左移，即区间长变为<span class="math inline">\(3(1+2),0,1\)</span>。</p>
+$L=6$，点为$2,5$，转换为区间长为$1,2,1$。<br>
+如要把$2$向左移，即区间长变为$3(1+2),0,1$。</p>
 </blockquote>
 
 
 <div class="snote quote ">
 	<div class="snote-content">
-		<p>考虑两个人之间的空位，记为<span class="math inline">\(x_1,x_2,x_3,...,x_n\)</span>。<br>
-<span class="math inline">\(x_1\)</span>为最左侧空格子数，<span class="math inline">\(x_n\)</span>为最右侧空格子数，其余<span class="math inline">\(x_i\)</span>为第<span class="math inline">\(i\)</span>个人和第<span class="math inline">\(i-1\)</span>个人之间的空位。<br>
-让第i个人往左相当于<span class="math inline">\(x_i += x_{i-1}, x_{i-1} = 0\)</span>，往右相当于<span class="math inline">\(x_{i-1} += x_i, x_i = 0\)</span>。</p>
+		<p>考虑两个人之间的空位，记为$x_1,x_2,x_3,&hellip;,x_n$。<br>
+$x_1$为最左侧空格子数，$x_n$为最右侧空格子数，其余$x_i$为第$i$个人和第$i-1$个人之间的空位。<br>
+让第i个人往左相当于$x_i += x_{i-1}, x_{i-1} = 0$，往右相当于$x_{i-1} += x_i, x_i = 0$。</p>
 	</div>
 </div>
 <p><em>引自：标准题解</em></p>
@@ -899,9 +899,9 @@ if (!doNotTrack) {
 故若若干个区间合并后，长度<strong>超过却不能等于</strong>，则这个区间一定不能达成，证明不能移动得到，输出<code>-1</code>。</p>
 <p>故从左到右遍历，碰到<strong>存在长度的终状态</strong>区间，就开始寻找从<strong>初状态未被合并过</strong>的区间找若干个<strong>存在长度的区间</strong>尝试合并。<br>
 若成功合并，则移动次数就是<strong>左侧合并了多少个区间</strong>加上<strong>右边合并了多少个区间</strong>。<br>
-公式为：<span class="math inline">\(ans += max(i-l,0) + max(r-i,0)\)</span>。</p>
+公式为：$ans += max(i-l,0) + max(r-i,0)$。</p>
 <ul>
-<li>这里用个<span class="math inline">\(max(\cdots,0)\)</span>，是因为存在减为负数的情况。【可以参见标程代码中的例子】</li>
+<li>这里用个$max(\cdots,0)$，是因为存在减为负数的情况。【可以参见标程代码中的例子】</li>
 </ul>
 <h2 id="标程代码-1">标程代码</h2>
 <div class="snote link green">
@@ -914,68 +914,68 @@ if (!doNotTrack) {
 
 <details class="sc-details" >
 	<summary>标程代码（附个人注释）</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
-
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100005</span><span class="p">;</span>
-
-<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">9</span><span class="p">];</span>
-
-<span class="n">LL</span> <span class="n">ans</span><span class="p">;</span>
-
-<span class="kt">void</span> <span class="nf">Get_ans</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="o">++</span><span class="n">n</span><span class="p">;</span>
-    <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>         <span class="c1">//技巧1：最右侧加个墙壁，方便计算最右侧区间长度。
-</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="c1">//把始末状态转换为区间长度，其中a[i]=i-1~i的距离
-</span><span class="c1"></span>        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//从左向右，一直找到终状态存在长度（需要合并操作）的区间。
-</span><span class="c1"></span>            <span class="k">continue</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(;</span> <span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="o">++</span><span class="n">j</span><span class="p">);</span> <span class="c1">//从初状态中未合并过的区间开始向右找，找到存在长度（可以合并）的区间。
-</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span> <span class="c1">//l记录左边开始进行合并的位置。
-</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">sum</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="c1">//尝试进行b[i]=a[l]+a[l+1]+...+a[r-1]+a[r]这个操作
-</span><span class="c1"></span>            <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">^</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//如果无法把b[i]这个区间由若干个a[i]区间拼合而成，则不满足，输出-1
-</span><span class="c1"></span>        <span class="p">{</span>
-            <span class="n">ans</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
-            <span class="k">return</span><span class="p">;</span>
-        <span class="p">}</span>
-        <span class="n">ans</span> <span class="o">+=</span> <span class="n">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">l</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">max</span><span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//ans加上：完成这个区间合并操作所要操作的节点个数（左侧和右侧）。【要合并1——3区间，只需要移动2个节点，即3-1=2……
-</span><span class="c1"></span>
-        <span class="cm">/* 变量解释：
-</span><span class="cm">        i为当前要合并的区间
-</span><span class="cm">        l为操作到最左边的区间
-</span><span class="cm">        j为操作到最右边的区间(由于for的原因，这里j比实际的r多了1)
-</span><span class="cm">          【这里非常巧妙的是：正因为j比实际的r多1，导致下次查找的时候j会跳过之前已找过的区间，不会重复合并。
-</span><span class="cm">        */</span>
-        <span class="cm">/* 是否需要max：
-</span><span class="cm">        是需要的。存在减为负数的情况。
-</span><span class="cm">        如：
-</span><span class="cm">        &gt; 1 2 3 4 5
-</span><span class="cm">        &gt; 6 7 8 9 10
-</span><span class="cm">        a（开始状态）数组为: 0、0、0、0、0、5
-</span><span class="cm">        b（结束状态）数组为: 5、0、0、0、0、0
-</span><span class="cm">        那么i=1、l=6、j=7
-</span><span class="cm">        */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-    <span class="n">Get_ans</span><span class="p">();</span>
-    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">LL</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100005</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">9</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">9</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">LL</span> <span class="n">ans</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">Get_ans</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="o">++</span><span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">m</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>         <span class="c1">//技巧1：最右侧加个墙壁，方便计算最右侧区间长度。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">1</span><span class="p">;</span> <span class="o">--</span><span class="n">i</span><span class="p">)</span> <span class="c1">//把始末状态转换为区间长度，其中a[i]=i-1~i的距离
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//从左向右，一直找到终状态存在长度（需要合并操作）的区间。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">continue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(;</span> <span class="o">!</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span> <span class="o">++</span><span class="n">j</span><span class="p">);</span> <span class="c1">//从初状态中未合并过的区间开始向右找，找到存在长度（可以合并）的区间。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">j</span><span class="p">;</span> <span class="c1">//l记录左边开始进行合并的位置。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span> <span class="p">(;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">&amp;&amp;</span> <span class="n">sum</span> <span class="o">&lt;</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="c1">//尝试进行b[i]=a[l]+a[l+1]+...+a[r-1]+a[r]这个操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="n">sum</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">sum</span> <span class="o">^</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="c1">//如果无法把b[i]这个区间由若干个a[i]区间拼合而成，则不满足，输出-1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ans</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ans</span> <span class="o">+=</span> <span class="n">max</span><span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">l</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">max</span><span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">//ans加上：完成这个区间合并操作所要操作的节点个数（左侧和右侧）。【要合并1——3区间，只需要移动2个节点，即3-1=2……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 变量解释：
+</span></span></span><span class="line"><span class="cl"><span class="cm">        i为当前要合并的区间
+</span></span></span><span class="line"><span class="cl"><span class="cm">        l为操作到最左边的区间
+</span></span></span><span class="line"><span class="cl"><span class="cm">        j为操作到最右边的区间(由于for的原因，这里j比实际的r多了1)
+</span></span></span><span class="line"><span class="cl"><span class="cm">          【这里非常巧妙的是：正因为j比实际的r多1，导致下次查找的时候j会跳过之前已找过的区间，不会重复合并。
+</span></span></span><span class="line"><span class="cl"><span class="cm">        */</span>
+</span></span><span class="line"><span class="cl">        <span class="cm">/* 是否需要max：
+</span></span></span><span class="line"><span class="cl"><span class="cm">        是需要的。存在减为负数的情况。
+</span></span></span><span class="line"><span class="cl"><span class="cm">        如：
+</span></span></span><span class="line"><span class="cl"><span class="cm">        &gt; 1 2 3 4 5
+</span></span></span><span class="line"><span class="cl"><span class="cm">        &gt; 6 7 8 9 10
+</span></span></span><span class="line"><span class="cl"><span class="cm">        a（开始状态）数组为: 0、0、0、0、0、5
+</span></span></span><span class="line"><span class="cl"><span class="cm">        b（结束状态）数组为: 5、0、0、0、0、0
+</span></span></span><span class="line"><span class="cl"><span class="cm">        那么i=1、l=6、j=7
+</span></span></span><span class="line"><span class="cl"><span class="cm">        */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Get_ans</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">ans</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div>
 </details>
 
 </section>

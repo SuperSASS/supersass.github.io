@@ -327,7 +327,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：717</div>
+            <div class="char">文章字数：749</div>
             <div class="time">预计阅读时长： <time>2</time> 分钟</div>
         </div>
     </footer>
@@ -380,15 +380,15 @@ if (!doNotTrack) {
 <ul>
 <li>来个公式：
 <blockquote>
-<p><span class="math display">\[我也不知道这是啥_(:з」∠)_……
-\]</span></p>
+<p>$$[{2{x^T}(t)x(t - \tau ) = {x^T}(t){Q^{ - \frac{1}{2}}}x(t - \tau ) \le \frac{1}{\alpha }{x^T}(t)Px(t) + \alpha {x^T}(t - \tau )x(t - \tau )}]$$
+我也不知道这是啥_(:з」∠)_……</p>
 </blockquote>
 </li>
 <li>来个代码：
 <blockquote>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">freopen</span><span class="p">(</span><span class="s">&#34;ans.out&#34;</span><span class="p">,</span><span class="s">&#34;r&#34;</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
-<span class="n">printf</span><span class="p">(</span><span class="s">&#34;qwq&#34;</span><span class="p">);</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">freopen</span><span class="p">(</span><span class="s">&#34;ans.out&#34;</span><span class="p">,</span><span class="s">&#34;r&#34;</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">printf</span><span class="p">(</span><span class="s">&#34;qwq&#34;</span><span class="p">);</span>
+</span></span></code></pre></div></blockquote>
 </li>
 </ul>
 </div>
@@ -403,7 +403,7 @@ if (!doNotTrack) {
 	<div class="body"><p>实现了！……</p>
 <p>也不知道会不会出问题，反正能跑就行.jpg……</p>
 <p>改后的样式配上这个主题感觉还是很好看的√……</p>
-<p>不过markdown里看着好乱啊也没办法的'_&gt;'……</p>
+<p>不过markdown里看着好乱啊也没办法的&rsquo;_&gt;&rsquo;……</p>
 <p>好累orz……</p>
 </div>
 </div>
@@ -435,20 +435,20 @@ if (!doNotTrack) {
 <h2 id="实现方法">实现方法</h2>
 <p>又又又又又是Shortcode！……</p>
 <p>换行输入模式……</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span> <span class="nx">theme</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="p">&gt;}</span> <span class="p">}</span>
-
-
-<span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="nx">time</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;}</span> <span class="p">}</span>
-<span class="nx">内容</span><span class="o">......</span>
-<span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="p">&gt;}</span> <span class="p">}</span>
-
-<span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="nx">time</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">url</span><span class="p">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;}</span> <span class="p">}</span>
-<span class="nx">内容</span><span class="o">......</span>
-<span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="p">&gt;}</span> <span class="p">}</span>
-
-
-<span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span> <span class="p">&gt;}</span> <span class="p">}</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span> <span class="nx">theme</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="p">&gt;}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="nx">time</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">内容</span><span class="o">......</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="p">&gt;}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="p">{&lt;</span> <span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="nx">time</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">title</span><span class="p">=</span><span class="s">&#34;...&#34;</span> <span class="nx">url</span><span class="p">=</span><span class="s">&#34;...&#34;</span><span class="p">&gt;}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="nx">内容</span><span class="o">......</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span><span class="o">/</span><span class="nx">node</span> <span class="p">&gt;}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span> <span class="p">{&lt;</span> <span class="o">/</span><span class="nx">timeline</span> <span class="p">&gt;}</span> <span class="p">}</span>
+</span></span></code></pre></div><blockquote>
 <p>外层：<br>
 <code>theme</code>（可选项）：为这条时间线的标题……</p>
 <blockquote>

@@ -365,34 +365,34 @@ if (!doNotTrack) {
 <p>其中<strong>不允许有重复元素</strong>。<br>
 并且set中的元素是<strong>排好序的</strong>（升序）。</p>
 <h3 id="用法">用法</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">STL_set</span><span class="p">;</span>
-<span class="c1">//---对整体的操作---
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>	<span class="c1">//清空
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>	<span class="c1">//返回是否为空
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>	<span class="c1">//返回元素个数
-</span><span class="c1">//---对元素的操作---
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">insert</span><span class="p">(...);</span>	<span class="c1">//在集合中插入元素
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">erase</span><span class="p">(...);</span>	<span class="c1">//删除集合中的元素
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">count</span><span class="p">(...);</span>	<span class="c1">//返回元素的个数【由于set不能存在重复元素，故只能返回0或1
-</span><span class="c1">//---迭代器---
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-<span class="n">STL_set</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
-<span class="n">STL_set</span><span class="p">.</span><span class="n">find</span><span class="p">(...);</span>		<span class="c1">//返回一个指向被查找到元素的迭代器，未找到返回set::end()
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(...)</span>	<span class="c1">//返回大于等于某值的第一个元素的迭代器
-</span><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(...)</span>	<span class="c1">//返回大于某个值元素的迭代器
-</span></code></pre></div><h3 id="自定义性">自定义性</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">STL_set</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//---对整体的操作---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>	<span class="c1">//清空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>	<span class="c1">//返回是否为空
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>	<span class="c1">//返回元素个数
+</span></span></span><span class="line"><span class="cl"><span class="c1">//---对元素的操作---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">insert</span><span class="p">(...);</span>	<span class="c1">//在集合中插入元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">erase</span><span class="p">(...);</span>	<span class="c1">//删除集合中的元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">count</span><span class="p">(...);</span>	<span class="c1">//返回元素的个数【由于set不能存在重复元素，故只能返回0或1
+</span></span></span><span class="line"><span class="cl"><span class="c1">//---迭代器---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">STL_set</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">STL_set</span><span class="p">.</span><span class="n">find</span><span class="p">(...);</span>		<span class="c1">//返回一个指向被查找到元素的迭代器，未找到返回set::end()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(...)</span>	<span class="c1">//返回大于等于某值的第一个元素的迭代器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_set</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(...)</span>	<span class="c1">//返回大于某个值元素的迭代器
+</span></span></span></code></pre></div><h3 id="自定义性">自定义性</h3>
 <p>set可支持自定义类型，但需要重载<code>&lt;</code>运算符。</p>
 <blockquote>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">type</span>   <span class="c1">//用来存棋盘状态
-</span><span class="c1"></span><span class="p">{</span>
-	<span class="p">...;</span>
-
-	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">type</span> <span class="n">x</span><span class="p">)</span> <span class="k">const</span>
-	<span class="p">{</span>
-		<span class="k">return</span> <span class="p">...;</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">type</span>   <span class="c1">//用来存棋盘状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="p">...;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">type</span> <span class="n">x</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="p">...;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></blockquote>
 <h3 id="实现">实现</h3>
 <p>内部以红黑树的形式实现。</p>
 <h3 id="应用场景">应用场景</h3>
@@ -412,38 +412,38 @@ if (!doNotTrack) {
 每一对中的第一个值称之为关键字(key)（也称键值），每个<strong>关键字只能</strong>在map中<strong>出现一次</strong>。<br>
 第二个称之为该关键字的对应值(value)（也称实值）。</p>
 <h3 id="用法-1">用法</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">STL_map</span><span class="p">;</span>
-<span class="c1">//---初始构造---
-</span><span class="c1"></span><span class="n">STL_map</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">},{</span><span class="mi">2</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">}};</span>		<span class="c1">//为c++11标准
-</span><span class="c1">//---数组操作---
-</span><span class="c1"></span><span class="n">STL_map</span><span class="p">[</span><span class="mi">25252</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;niconiconi&#34;</span><span class="p">;</span>	<span class="c1">//如果没有对应key则插入，如果已经存在则会修改value
-</span><span class="c1">//---对整体的操作---
-</span><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
-<span class="n">STL_map</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
-<span class="n">STL_map</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-<span class="c1">//---对元素的操作---
-</span><span class="c1"></span>	<span class="c1">//insert过于麻烦不予讲解。
-</span><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">erase</span><span class="p">(...);</span>	<span class="c1">//删除对应key的元素，成功删除返回1，否则返回0
-</span><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">count</span><span class="p">(...);</span>	<span class="c1">//返回对应key元素的个数【由于map不能存在重复key，故只能返回0或1
-</span><span class="c1">//---迭代器---
-</span><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
-<span class="n">STL_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
-<span class="n">STL_map</span><span class="p">.</span><span class="n">find</span><span class="p">(...);</span>	<span class="c1">//返回查找元素的迭代器，未找到返回map::end()
-</span><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(...)</span>	<span class="c1">//返回key大于等于某值的第一个元素的迭代器
-</span><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(...)</span>	<span class="c1">//返回key大于某个值元素的迭代器
-</span></code></pre></div><h3 id="自定义性-1">自定义性</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">STL_map</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//---初始构造---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_map</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="s">&#34;a&#34;</span><span class="p">},{</span><span class="mi">2</span><span class="p">,</span><span class="s">&#34;b&#34;</span><span class="p">}};</span>		<span class="c1">//为c++11标准
+</span></span></span><span class="line"><span class="cl"><span class="c1">//---数组操作---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_map</span><span class="p">[</span><span class="mi">25252</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;niconiconi&#34;</span><span class="p">;</span>	<span class="c1">//如果没有对应key则插入，如果已经存在则会修改value
+</span></span></span><span class="line"><span class="cl"><span class="c1">//---对整体的操作---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">STL_map</span><span class="p">.</span><span class="n">empty</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">STL_map</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//---对元素的操作---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//insert过于麻烦不予讲解。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">erase</span><span class="p">(...);</span>	<span class="c1">//删除对应key的元素，成功删除返回1，否则返回0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">count</span><span class="p">(...);</span>	<span class="c1">//返回对应key元素的个数【由于map不能存在重复key，故只能返回0或1
+</span></span></span><span class="line"><span class="cl"><span class="c1">//---迭代器---
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">STL_map</span><span class="p">.</span><span class="n">end</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">STL_map</span><span class="p">.</span><span class="n">find</span><span class="p">(...);</span>	<span class="c1">//返回查找元素的迭代器，未找到返回map::end()
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">lower_bound</span><span class="p">(...)</span>	<span class="c1">//返回key大于等于某值的第一个元素的迭代器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">STL_map</span><span class="p">.</span><span class="n">upper_bound</span><span class="p">(...)</span>	<span class="c1">//返回key大于某个值元素的迭代器
+</span></span></span></code></pre></div><h3 id="自定义性-1">自定义性</h3>
 <p>set可支持自定义类型，但需要重载<code>&lt;</code>运算符。</p>
 <blockquote>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">type</span>   <span class="c1">//用来存棋盘状态
-</span><span class="c1"></span><span class="p">{</span>
-	<span class="p">...;</span>
-
-	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">type</span> <span class="n">x</span><span class="p">)</span> <span class="k">const</span>
-	<span class="p">{</span>
-		<span class="k">return</span> <span class="p">...;</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">type</span>   <span class="c1">//用来存棋盘状态
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="p">...;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="n">type</span> <span class="n">x</span><span class="p">)</span> <span class="k">const</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="p">...;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></blockquote>
 <h3 id="实现-1">实现</h3>
 <p>内部以红黑树的形式实现。</p>
 <h3 id="应用场景-1">应用场景</h3>

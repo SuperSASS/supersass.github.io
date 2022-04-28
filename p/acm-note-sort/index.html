@@ -338,7 +338,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：532</div>
+            <div class="char">文章字数：530</div>
             <div class="time">预计阅读时长： <time>2</time> 分钟</div>
         </div>
     </footer>
@@ -357,8 +357,8 @@ if (!doNotTrack) {
 <h1 id="排序">排序</h1>
 <h2 id="不考虑算法">不考虑算法</h2>
 <ul>
-<li>选择排序、冒泡排序、插入排序 <span class="math inline">\(O(n^2)\)</span></li>
-<li>计数排序、基数排序、桶排序 <span class="math inline">\(O(n+w)\)</span>
+<li>选择排序、冒泡排序、插入排序 $O(n^2)$</li>
+<li>计数排序、基数排序、桶排序 $O(n+w)$
 
 
 <div class="snote info ">
@@ -386,7 +386,7 @@ if (!doNotTrack) {
 <li>询问最少经过几次（可能为<strong>相邻元素交换</strong>）交换，可使数列有序。</li>
 </ol>
 <blockquote>
-<p>如果限制了为<strong>相邻元素交换</strong>，最开始很容易想到采用冒泡排序来做，但这样<span class="math inline">\(O(n^2)\)</span>很容易TLE……<br>
+<p>如果限制了为<strong>相邻元素交换</strong>，最开始很容易想到采用冒泡排序来做，但这样$O(n^2)$很容易TLE……<br>
 发现即便是相邻交换，也是因为存在了逆序对才交换的……<br>
 而每次交换后，<strong>能且仅能消除一个逆序对</strong>……<br>
 要使序列达到最终有序，则肯定需要消除全部逆序对……<br>

@@ -342,106 +342,106 @@ if (!doNotTrack) {
 只是在例题中自我总结了一点相关知识_(:з」∠)_……</p>
 <p>日后可能专门总结成笔记……</p>
 <h1 id="源码">源码</h1>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cm">/*
-</span><span class="cm">并查集算法
-</span><span class="cm">用father数组记录每个节点的父节点，数据结构类似于树
-</span><span class="cm">关键操作：合并、查询
-</span><span class="cm">详细介绍: https://zhuanlan.zhihu.com/p/93647900
-</span><span class="cm">*/</span>
-<span class="c1">//P3958 奶酪: https://www.luogu.com.cn/problem/P3958
-</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp">#define N 1005
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kr">inline</span> <span class="kt">int</span> <span class="nf">quickRead</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-    <span class="kt">char</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;</span> <span class="sc">&#39;0&#39;</span> <span class="o">||</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
-        <span class="n">f</span> <span class="o">=</span> <span class="n">t</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
-        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">t</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-    <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">num</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="k">struct</span> <span class="nc">typeUnionFind</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="n">father</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">rank</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">//这里rank作用是记录节点深度（真实为深度-1），采用了按秩合并的优化
-</span><span class="c1"></span>    <span class="cm">/*
-</span><span class="cm">    按秩合并指将深度小的合并到深度大的树上，这样可以减少查询次数。
-</span><span class="cm">    这里按秩合并与路径压缩一起使用时，rank可能会因路径压缩操作而变得不准确。
-</span><span class="cm">    因此这里rank只是相对的判断标准，并不一定绝对会将深度小的合并到深度大的
-</span><span class="cm">    */</span>
-
-    <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">num</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-            <span class="n">father</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="kr">inline</span> <span class="kt">int</span> <span class="nf">find</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="n">father</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">==</span> <span class="n">node</span> <span class="o">?</span> <span class="nl">node</span> <span class="p">:</span> <span class="p">(</span><span class="n">father</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">father</span><span class="p">[</span><span class="n">node</span><span class="p">]));</span> <span class="c1">//这里使用了路径压缩优化
-</span><span class="c1"></span>    <span class="p">}</span>
-    <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">node1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">node2</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="kt">int</span> <span class="n">father1</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">node1</span><span class="p">),</span> <span class="n">father2</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">node2</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">father1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">father2</span><span class="p">])</span>
-            <span class="n">father</span><span class="p">[</span><span class="n">father1</span><span class="p">]</span> <span class="o">=</span> <span class="n">father2</span><span class="p">;</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">father1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">father2</span><span class="p">])</span>
-            <span class="n">father</span><span class="p">[</span><span class="n">father2</span><span class="p">]</span> <span class="o">=</span> <span class="n">father1</span><span class="p">;</span>
-        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">father1</span> <span class="o">!=</span> <span class="n">father2</span><span class="p">)</span>
-            <span class="n">father</span><span class="p">[</span><span class="n">father1</span><span class="p">]</span> <span class="o">=</span> <span class="n">father2</span><span class="p">,</span> <span class="n">rank</span><span class="p">[</span><span class="n">father2</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="c1">//如果深度一样且父节点不一样（不为一棵树），合并后新树深度会加一
-</span><span class="c1"></span>    <span class="p">}</span>
-<span class="p">}</span> <span class="n">UnionFind</span><span class="p">;</span>
-
-<span class="k">struct</span> <span class="nc">typeHole</span>
-<span class="p">{</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>
-<span class="p">}</span> <span class="n">hole</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-<span class="kt">bool</span> <span class="nf">ifIntersect</span><span class="p">(</span><span class="n">typeHole</span> <span class="n">hole1</span><span class="p">,</span> <span class="n">typeHole</span> <span class="n">hole2</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">r</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">long</span> <span class="kt">long</span> <span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">;</span>
-    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%lld%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">h</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">);</span>
-        <span class="n">UnionFind</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
-        <span class="n">UnionFind</span><span class="p">.</span><span class="n">father</span><span class="p">[</span><span class="mi">1001</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1001</span><span class="p">,</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">father</span><span class="p">[</span><span class="mi">1002</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1002</span><span class="p">;</span> <span class="c1">//这里用特殊的两个节点，1001代表底，1002代表顶。如果father[1001]==father[1002]则证明连通。
-</span><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-        <span class="p">{</span>
-            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld%lld%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">z</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">z</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span>
-                <span class="n">UnionFind</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="mi">1001</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">z</span> <span class="o">&gt;=</span> <span class="n">h</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span>
-                <span class="n">UnionFind</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="mi">1002</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">num</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span><span class="n">ifIntersect</span><span class="p">(</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hole</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">r</span><span class="p">))</span>
-                    <span class="n">UnionFind</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">UnionFind</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1001</span><span class="p">)</span> <span class="o">==</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1002</span><span class="p">))</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Yes</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
-        <span class="k">else</span>
-            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;No</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="cm">/*
-</span><span class="cm">WA 1st:
-</span><span class="cm">没考虑到只有一个洞以及贯穿的情况……
-</span><span class="cm">修改:
-</span><span class="cm">1. merge(i,1001) ---&gt; mergr(1001,i)
-</span><span class="cm">    实际上完全没必要，因为无论前并后还是后并前，最终都是父节点合并……
-</span><span class="cm">2. if (hole.z&lt;=r) ... else if (hole.z&gt;=h-r) ...; ---&gt; if ...; if ...;
-</span><span class="cm">    当时想着要么是底部相交要么是顶部相交，导致用了个else if，没考虑到直接贯穿的情况……
-</span><span class="cm">
-</span><span class="cm">WA 2nd:
-</span><span class="cm">long long！！！！……
-</span><span class="cm">*/</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">并查集算法
+</span></span></span><span class="line"><span class="cl"><span class="cm">用father数组记录每个节点的父节点，数据结构类似于树
+</span></span></span><span class="line"><span class="cl"><span class="cm">关键操作：合并、查询
+</span></span></span><span class="line"><span class="cl"><span class="cm">详细介绍: https://zhuanlan.zhihu.com/p/93647900
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//P3958 奶酪: https://www.luogu.com.cn/problem/P3958
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define N 1005
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">inline</span> <span class="kt">int</span> <span class="nf">quickRead</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">f</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;</span> <span class="sc">&#39;0&#39;</span> <span class="o">||</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">f</span> <span class="o">=</span> <span class="n">t</span> <span class="o">==</span> <span class="sc">&#39;-&#39;</span> <span class="o">?</span> <span class="o">-</span><span class="mi">1</span> <span class="o">:</span> <span class="mi">1</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&gt;=</span> <span class="sc">&#39;0&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">t</span> <span class="o">&lt;=</span> <span class="sc">&#39;9&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">num</span> <span class="o">=</span> <span class="n">num</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">t</span> <span class="o">-</span> <span class="sc">&#39;0&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">f</span> <span class="o">*</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeUnionFind</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">num</span><span class="p">,</span> <span class="n">father</span><span class="p">[</span><span class="n">N</span><span class="p">],</span> <span class="n">rank</span><span class="p">[</span><span class="n">N</span><span class="p">];</span> <span class="c1">//这里rank作用是记录节点深度（真实为深度-1），采用了按秩合并的优化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">    按秩合并指将深度小的合并到深度大的树上，这样可以减少查询次数。
+</span></span></span><span class="line"><span class="cl"><span class="cm">    这里按秩合并与路径压缩一起使用时，rank可能会因路径压缩操作而变得不准确。
+</span></span></span><span class="line"><span class="cl"><span class="cm">    因此这里rank只是相对的判断标准，并不一定绝对会将深度小的合并到深度大的
+</span></span></span><span class="line"><span class="cl"><span class="cm">    */</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">void</span> <span class="nf">init</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">num</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">father</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">inline</span> <span class="kt">int</span> <span class="nf">find</span><span class="p">(</span><span class="kt">int</span> <span class="n">node</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">father</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">==</span> <span class="n">node</span> <span class="o">?</span> <span class="nl">node</span> <span class="p">:</span> <span class="p">(</span><span class="n">father</span><span class="p">[</span><span class="n">node</span><span class="p">]</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">father</span><span class="p">[</span><span class="n">node</span><span class="p">]));</span> <span class="c1">//这里使用了路径压缩优化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">merge</span><span class="p">(</span><span class="kt">int</span> <span class="n">node1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">node2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">father1</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">node1</span><span class="p">),</span> <span class="n">father2</span> <span class="o">=</span> <span class="n">find</span><span class="p">(</span><span class="n">node2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">father1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">father2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">father</span><span class="p">[</span><span class="n">father1</span><span class="p">]</span> <span class="o">=</span> <span class="n">father2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">rank</span><span class="p">[</span><span class="n">father1</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">rank</span><span class="p">[</span><span class="n">father2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">father</span><span class="p">[</span><span class="n">father2</span><span class="p">]</span> <span class="o">=</span> <span class="n">father1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">father1</span> <span class="o">!=</span> <span class="n">father2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">father</span><span class="p">[</span><span class="n">father1</span><span class="p">]</span> <span class="o">=</span> <span class="n">father2</span><span class="p">,</span> <span class="n">rank</span><span class="p">[</span><span class="n">father2</span><span class="p">]</span><span class="o">++</span><span class="p">;</span> <span class="c1">//如果深度一样且父节点不一样（不为一棵树），合并后新树深度会加一
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">UnionFind</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeHole</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">hole</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">ifIntersect</span><span class="p">(</span><span class="n">typeHole</span> <span class="n">hole1</span><span class="p">,</span> <span class="n">typeHole</span> <span class="n">hole2</span><span class="p">,</span> <span class="kt">long</span> <span class="kt">long</span> <span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">hole1</span><span class="p">.</span><span class="n">z</span> <span class="o">-</span> <span class="n">hole2</span><span class="p">.</span><span class="n">z</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">long</span> <span class="kt">long</span> <span class="n">T</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">T</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">T</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%lld%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">h</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UnionFind</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">UnionFind</span><span class="p">.</span><span class="n">father</span><span class="p">[</span><span class="mi">1001</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1001</span><span class="p">,</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">father</span><span class="p">[</span><span class="mi">1002</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1002</span><span class="p">;</span> <span class="c1">//这里用特殊的两个节点，1001代表底，1002代表顶。如果father[1001]==father[1002]则证明连通。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld%lld%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">z</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">z</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">UnionFind</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="mi">1001</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">z</span> <span class="o">&gt;=</span> <span class="n">h</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">UnionFind</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="mi">1002</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">num</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">num</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="n">j</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="p">(</span><span class="n">ifIntersect</span><span class="p">(</span><span class="n">hole</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">hole</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">r</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">UnionFind</span><span class="p">.</span><span class="n">merge</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">UnionFind</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1001</span><span class="p">)</span> <span class="o">==</span> <span class="n">UnionFind</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1002</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;Yes</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span>
+</span></span><span class="line"><span class="cl">            <span class="n">printf</span><span class="p">(</span><span class="s">&#34;No</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">WA 1st:
+</span></span></span><span class="line"><span class="cl"><span class="cm">没考虑到只有一个洞以及贯穿的情况……
+</span></span></span><span class="line"><span class="cl"><span class="cm">修改:
+</span></span></span><span class="line"><span class="cl"><span class="cm">1. merge(i,1001) ---&gt; mergr(1001,i)
+</span></span></span><span class="line"><span class="cl"><span class="cm">    实际上完全没必要，因为无论前并后还是后并前，最终都是父节点合并……
+</span></span></span><span class="line"><span class="cl"><span class="cm">2. if (hole.z&lt;=r) ... else if (hole.z&gt;=h-r) ...; ---&gt; if ...; if ...;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    当时想着要么是底部相交要么是顶部相交，导致用了个else if，没考虑到直接贯穿的情况……
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">WA 2nd:
+</span></span></span><span class="line"><span class="cl"><span class="cm">long long！！！！……
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span></code></pre></div>
 </section>
 <footer class="article-footer">
     

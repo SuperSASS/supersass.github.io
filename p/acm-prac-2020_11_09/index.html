@@ -350,63 +350,63 @@ if (!doNotTrack) {
     >Pastebin链接</a></p>
 	</div>
 </div>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//P2191 [小Z的情书](https://www.luogu.com.cn/problem/P2191)
-</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="cp">#define MAX (1000 + 5)
-</span><span class="cp"></span>
-<span class="cp">#define node_MAX MAX *MAX
-</span><span class="cp">#define printX node[i].x
-</span><span class="cp">#define printY node[i].y
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">nodeNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="k">struct</span> <span class="nc">typeNode</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
-<span class="p">}</span> <span class="n">node</span><span class="p">[</span><span class="n">node_MAX</span><span class="p">];</span>
-<span class="kt">void</span> <span class="nf">rotate</span><span class="p">()</span> <span class="c1">//转置操作……
-</span><span class="c1"></span><span class="p">{</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">nodeNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
-		<span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">,</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">tmp</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-<span class="kt">int</span> <span class="nf">cmp</span><span class="p">(</span><span class="n">typeNode</span> <span class="n">node1</span><span class="p">,</span> <span class="n">typeNode</span> <span class="n">node2</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">return</span> <span class="n">node1</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">node2</span><span class="p">.</span><span class="n">x</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="p">(</span><span class="n">node1</span><span class="p">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">node2</span><span class="p">.</span><span class="n">x</span> <span class="o">?</span> <span class="n">node1</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">node2</span><span class="p">.</span><span class="nl">y</span> <span class="p">:</span> <span class="mi">1</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">times</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
-	<span class="kt">char</span> <span class="n">letter</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">],</span> <span class="n">t</span><span class="p">;</span>
-	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">N</span><span class="p">);</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-		<span class="p">{</span>
-			<span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-			<span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">!=</span> <span class="sc">&#39;#&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">t</span> <span class="o">!=</span> <span class="sc">&#39;O&#39;</span><span class="p">)</span>
-				<span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-			<span class="n">t</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span> <span class="o">?</span> <span class="n">node</span><span class="p">[</span><span class="o">++</span><span class="n">nodeNum</span><span class="p">].</span><span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span><span class="p">[</span><span class="n">nodeNum</span><span class="p">].</span><span class="n">y</span> <span class="o">=</span> <span class="nl">j</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
-		<span class="p">{</span>
-			<span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-			<span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;</span> <span class="sc">&#39;A&#39;</span> <span class="o">||</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="sc">&#39;Z&#39;</span><span class="p">)</span>
-				<span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
-			<span class="n">letter</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
-		<span class="p">}</span>
-	
-	<span class="k">while</span> <span class="p">(</span><span class="n">times</span><span class="o">--</span><span class="p">)</span> <span class="c1">//times=4，四次操作
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">nodeNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="n">letter</span><span class="p">[</span><span class="n">printX</span><span class="p">][</span><span class="n">printY</span><span class="p">]);</span>
-		<span class="n">rotate</span><span class="p">();</span>
-		<span class="n">sort</span><span class="p">(</span><span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">node</span> <span class="o">+</span> <span class="n">nodeNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cmp</span><span class="p">);</span> <span class="c1">//优化常数：存的只是符合输出的点，并非从头到尾遍历。因此转置后需要按输出顺序排序……
-</span><span class="c1"></span>	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//P2191 [小Z的情书](https://www.luogu.com.cn/problem/P2191)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define MAX (1000 + 5)
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define node_MAX MAX *MAX
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define printX node[i].x
+</span></span></span><span class="line"><span class="cl"><span class="cp">#define printY node[i].y
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">N</span><span class="p">,</span> <span class="n">nodeNum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeNode</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">node</span><span class="p">[</span><span class="n">node_MAX</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">rotate</span><span class="p">()</span> <span class="c1">//转置操作……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">nodeNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">x</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span><span class="p">,</span> <span class="n">node</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">y</span> <span class="o">=</span> <span class="n">N</span> <span class="o">-</span> <span class="n">tmp</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">cmp</span><span class="p">(</span><span class="n">typeNode</span> <span class="n">node1</span><span class="p">,</span> <span class="n">typeNode</span> <span class="n">node2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">node1</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">node2</span><span class="p">.</span><span class="n">x</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="p">(</span><span class="n">node1</span><span class="p">.</span><span class="n">x</span> <span class="o">==</span> <span class="n">node2</span><span class="p">.</span><span class="n">x</span> <span class="o">?</span> <span class="n">node1</span><span class="p">.</span><span class="n">y</span> <span class="o">&lt;</span> <span class="n">node2</span><span class="p">.</span><span class="nl">y</span> <span class="p">:</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">times</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">char</span> <span class="n">letter</span><span class="p">[</span><span class="n">MAX</span><span class="p">][</span><span class="n">MAX</span><span class="p">],</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">N</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			<span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">!=</span> <span class="sc">&#39;#&#39;</span> <span class="o">&amp;&amp;</span> <span class="n">t</span> <span class="o">!=</span> <span class="sc">&#39;O&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			<span class="n">t</span> <span class="o">==</span> <span class="sc">&#39;O&#39;</span> <span class="o">?</span> <span class="n">node</span><span class="p">[</span><span class="o">++</span><span class="n">nodeNum</span><span class="p">].</span><span class="n">x</span> <span class="o">=</span> <span class="n">i</span><span class="p">,</span> <span class="n">node</span><span class="p">[</span><span class="n">nodeNum</span><span class="p">].</span><span class="n">y</span> <span class="o">=</span> <span class="nl">j</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			<span class="k">while</span> <span class="p">(</span><span class="n">t</span> <span class="o">&lt;</span> <span class="sc">&#39;A&#39;</span> <span class="o">||</span> <span class="n">t</span> <span class="o">&gt;</span> <span class="sc">&#39;Z&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="n">t</span> <span class="o">=</span> <span class="n">getchar</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">			<span class="n">letter</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">while</span> <span class="p">(</span><span class="n">times</span><span class="o">--</span><span class="p">)</span> <span class="c1">//times=4，四次操作
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">nodeNum</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%c&#34;</span><span class="p">,</span> <span class="n">letter</span><span class="p">[</span><span class="n">printX</span><span class="p">][</span><span class="n">printY</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">rotate</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="n">sort</span><span class="p">(</span><span class="n">node</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">node</span> <span class="o">+</span> <span class="n">nodeNum</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">cmp</span><span class="p">);</span> <span class="c1">//优化常数：存的只是符合输出的点，并非从头到尾遍历。因此转置后需要按输出顺序排序……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 </section>
 <footer class="article-footer">
     

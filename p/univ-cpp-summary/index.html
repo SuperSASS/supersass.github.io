@@ -354,7 +354,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：4579</div>
+            <div class="char">文章字数：4553</div>
             <div class="time">预计阅读时长： <time>10</time> 分钟</div>
         </div>
     </footer>
@@ -398,24 +398,24 @@ if (!doNotTrack) {
 	</div>
 </div>
 <p>部分代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//赋初值为0
-</span><span class="c1"></span>
-<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//循环3组数据
-</span><span class="c1"></span><span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入第&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;组数据有多少个数：&#34;</span><span class="p">;</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入n个数：&#34;</span><span class="p">;</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//读入并统计这组数据里n个数的和
-</span><span class="c1"></span>    <span class="p">{</span>
-        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
-        <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;这组数据和为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-    <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//关键语句：这里即要注意每读完一组数据要清零！否则会带着上次计算的结果算下一组
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><p>输出：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//赋初值为0
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//循环3组数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入第&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;组数据有多少个数：&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入n个数：&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//读入并统计这组数据里n个数的和
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;这组数据和为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//关键语句：这里即要注意每读完一组数据要清零！否则会带着上次计算的结果算下一组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>输出：</p>
 <ul>
 <li>加了<code>sum = 0;</code>这句清零语句：<br>
 <figure style="flex-grow: 134; flex-basis: 323px">
@@ -480,23 +480,23 @@ if (!doNotTrack) {
 </ol>
 <hr>
 <p>故声明部分为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
-</code></pre></div><p>实现部分为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">max</span><span class="p">(</span><span class="kt">int</span> <span class="n">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num2</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;</span> <span class="n">num2</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">num1</span><span class="p">;</span>
-    <span class="k">else</span>
-        <span class="k">return</span> <span class="n">num2</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>使用部分为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">int</span> <span class="n">max</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;两个数的最大值为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</span></span></code></pre></div><p>实现部分为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">max</span><span class="p">(</span><span class="kt">int</span> <span class="n">num1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">num2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">num1</span> <span class="o">&gt;</span> <span class="n">num2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">num1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">num2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>使用部分为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">max</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span> <span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;两个数的最大值为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">max</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div>
 </details>
 </div><input type="radio" class="sc-tabs--toggle" name="tabs-1" id="tabs-1-1"  />
 	<label for="tabs-1-1">例题二</label>
@@ -515,28 +515,28 @@ if (!doNotTrack) {
 </ol>
 <hr>
 <p>故声明部分为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">bool</span> <span class="nf">if_inside</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span><span class="p">);</span>
-</code></pre></div><p>实现部分为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">bool</span> <span class="nf">if_inside</span><span class="p">(</span><span class="kt">double</span> <span class="n">num</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">arr</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span>	<span class="c1">//如果与数组中某个数相等，代表找到，返回true
-</span><span class="c1"></span>            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>	<span class="c1">//遍历完数组都没找到，代表真的没有，返回false
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><p>使用部分为：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="kt">bool</span> <span class="n">if_inside</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span><span class="p">);</span>
-    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span> <span class="n">if_inside</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>	<span class="c1">//判断n是否在a数组内
-</span><span class="c1"></span>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;n这个数在a数组内&#34;</span><span class="p">;</span>
-    <span class="k">else</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;n这个数不在a数组内&#34;</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">if_inside</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span><span class="p">);</span>
+</span></span></code></pre></div><p>实现部分为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">if_inside</span><span class="p">(</span><span class="kt">double</span> <span class="n">num</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">arr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span>	<span class="c1">//如果与数组中某个数相等，代表找到，返回true
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">return</span> <span class="nb">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>	<span class="c1">//遍历完数组都没找到，代表真的没有，返回false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>使用部分为：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">if_inside</span><span class="p">(</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span> <span class="n">if_inside</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>	<span class="c1">//判断n是否在a数组内
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;n这个数在a数组内&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">else</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;n这个数不在a数组内&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div>
 </details>
 </div></div>
 
@@ -570,30 +570,30 @@ if (!doNotTrack) {
 <li>
 <p><strong>必须写上的代码</strong>（提供随机种子）</p>
 <p>直接写在<code>int main()</code>后面的第一句话就好。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
-
-    <span class="p">...</span>
-<span class="p">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">srand</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="nb">NULL</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
 <li>
 <p>使用方法</p>
 <ul>
-<li>要取得<span class="math inline">\((a,b)\)</span>的随机整数，使用<code>( rand() % (b-a+1) ) + a + 1</code>;</li>
-<li>要取得<span class="math inline">\([a,b)\)</span>的随机整数，使用<code>( rand() % (b-a) ) + a</code>;</li>
-<li>要取得<span class="math inline">\([a,b]\)</span>的随机整数，使用<code>( rand() % (b-a+1) ) + a</code>;</li>
-<li>要取得<span class="math inline">\((a,b]\)</span>的随机整数，使用<code>( rand() % (b-a) ) + a + 1</code>;</li>
+<li>要取得$(a,b)$的随机整数，使用<code>( rand() % (b-a+1) ) + a + 1</code>;</li>
+<li>要取得$[a,b)$的随机整数，使用<code>( rand() % (b-a) ) + a</code>;</li>
+<li>要取得$[a,b]$的随机整数，使用<code>( rand() % (b-a+1) ) + a</code>;</li>
+<li>要取得$(a,b]$的随机整数，使用<code>( rand() % (b-a) ) + a + 1</code>;</li>
 </ul>
 
 
 <details class="sc-details" >
 	<summary>例子——随机生成1到100内的整数（含1和100）</summary>
 	<div class="sc-details--inner"><p>代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-</code></pre></div><p>或者直接写成：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="p">(</span><span class="mi">100</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span></code></pre></div><p>或者直接写成：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="o">=</span> <span class="n">rand</span><span class="p">()</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span></code></pre></div></div>
 </details>
 </li>
 </ol>
@@ -602,9 +602,9 @@ if (!doNotTrack) {
 <div class="snote info ">
 	<div class="snote-content">
 		<p><p>记忆方法：</p>
-<p>想象<span class="math inline">\(rand()\)</span>是能返回完全任意的数。<br>
-当你对这个任意的数<span class="math inline">\(\mod 100\)</span>（对100取余数）后，那么余数范围只能是<span class="math inline">\(0\sim99\)</span>。<br>
-再加个<span class="math inline">\(1\)</span>，范围变成了<span class="math inline">\(1 \sim 100\)</span>。</p>
+<p>想象$rand()$是能返回完全任意的数。<br>
+当你对这个任意的数$\mod 100$（对100取余数）后，那么余数范围只能是$0\sim99$。<br>
+再加个$1$，范围变成了$1 \sim 100$。</p>
 </p>
 	</div>
 </div>
@@ -622,39 +622,39 @@ if (!doNotTrack) {
 
 <div class="sc-tabs"><input type="radio" class="sc-tabs--toggle" name="tabs-2" id="tabs-2-0" checked="checked" />
 	<label for="tabs-2-0">最大公约数（GCD）</label>
-	<div class="sc-tabs--content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//求a和b的最大公约数
-</span><span class="c1"></span><span class="p">{</span>
-    <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="n">r</span><span class="p">;</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//保证a是两数中较小的数
-</span><span class="c1"></span>    <span class="p">{</span>
-        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="n">r</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">;</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">r</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>	<span class="c1">//这个过程背住orz……
-</span><span class="c1"></span>    <span class="p">{</span>
-        <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
-        <span class="n">a</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>	<span class="c1">//最后的a值为求得的结果
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div></div><input type="radio" class="sc-tabs--toggle" name="tabs-2" id="tabs-2-1"  />
+	<div class="sc-tabs--content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//求a和b的最大公约数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">c</span><span class="p">,</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="c1">//保证a是两数中较小的数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">r</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">r</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>	<span class="c1">//这个过程背住orz……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">a</span> <span class="o">=</span> <span class="n">r</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">r</span> <span class="o">=</span> <span class="n">b</span> <span class="o">%</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>	<span class="c1">//最后的a值为求得的结果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></div><input type="radio" class="sc-tabs--toggle" name="tabs-2" id="tabs-2-1"  />
 	<label for="tabs-2-1">最小公倍数（LCM）</label>
-	<div class="sc-tabs--content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">LCM</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>	<span class="c1">//求a和b的最小公倍数
-</span><span class="c1"></span><span class="p">{</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">GCD</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div></div></div>
+	<div class="sc-tabs--content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">LCM</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>	<span class="c1">//求a和b的最小公倍数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">a</span> <span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="o">/</span> <span class="n">GCD</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div></div>
 
 <p>这里用函数的形式来写，以后求解可可以直接用这个函数。如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;和&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span><span class="s">&#34;的最大公约数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">GCD</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;和&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span><span class="s">&#34;的最小公约数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">LCM</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
-</code></pre></div><p>不用函数的话，就把那里面的东西直接写到<code>main()</code>里就行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;和&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span><span class="s">&#34;的最大公约数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">GCD</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;和&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span><span class="s">&#34;的最小公约数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">LCM</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m</span><span class="p">);</span>
+</span></span></code></pre></div><p>不用函数的话，就把那里面的东西直接写到<code>main()</code>里就行。</p>
 <h3 id="更好记的版本">更好记的版本</h3>
 <div class="snote info ">
 	<div class="snote-content">
@@ -662,18 +662,18 @@ if (!doNotTrack) {
 	</div>
 </div>
 <p>可以尝试理解下这个代码，能很好的<strong>锻炼递归思想</strong>。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">return</span> <span class="n">b</span> <span class="o">?</span> <span class="n">GCD</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">;</span>	<span class="c1">//意思是如果b不为0，则a=b,b=a%b辗转相除；否则就返回a
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">b</span> <span class="o">?</span> <span class="n">GCD</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span> <span class="o">:</span> <span class="n">a</span><span class="p">;</span>	<span class="c1">//意思是如果b不为0，则a=b,b=a%b辗转相除；否则就返回a
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><hr>
 <p>或者采用这个递推的思想，极其好记！</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">%=</span> <span class="n">b</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p><em>【但原理就不要求掌握了，其中的<code>^=</code>是位运算……</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">GCD</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">^=</span> <span class="n">b</span> <span class="o">^=</span> <span class="n">a</span> <span class="o">%=</span> <span class="n">b</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">a</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><em>【但原理就不要求掌握了，其中的<code>^=</code>是位运算……</em></p>
 <h2 id="3判断某数是否为质数">3、判断某数是否为质数</h2>
 <p>直接背代码。</p>
 <div class="snote warning ">
@@ -681,28 +681,28 @@ if (!doNotTrack) {
 		<p>代码里有几个要注意的点。</p>
 	</div>
 </div>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">bool</span> <span class="nf">if_Prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
-    <span class="c1">//！特别注意！：当num=1的时候很可能之后会判断失误，故需要“打补丁”：当num=1的时候直接返回false
-</span><span class="c1"></span>
-    <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>	<span class="c1">//刚开始假设是素数
-</span><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//！注意！：这里是(2~num-1)，而不是(2~num)，很容易在这里写错
-</span><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>   <span class="c1">//找到能被(2~num-1)之中的数除尽，证明不是素数，设置flag并退出循环
-</span><span class="c1"></span>        <span class="p">{</span>
-            <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-            <span class="k">break</span><span class="p">;</span>
-        <span class="p">}</span>
-
-    <span class="k">return</span> <span class="n">flag</span><span class="p">;</span>	<span class="c1">//如果循环完都没有被除尽，证明是素数，会返回true；否则会返回flase
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><p>这里用函数的形式来写，以后判断就可以直接用这个函数。如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-<span class="k">if</span> <span class="p">(</span> <span class="n">if_Prime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;是素数&#34;</span><span class="p">;</span>
-<span class="k">else</span>
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;不是素数&#34;</span><span class="p">;</span>
-</code></pre></div><h2 id="4对数组的排序">4、对数组的排序</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">if_Prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">//！特别注意！：当num=1的时候很可能之后会判断失误，故需要“打补丁”：当num=1的时候直接返回false
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">    <span class="kt">bool</span> <span class="n">flag</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>	<span class="c1">//刚开始假设是素数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">num</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//！注意！：这里是(2~num-1)，而不是(2~num)，很容易在这里写错
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">if</span> <span class="p">(</span><span class="n">num</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>   <span class="c1">//找到能被(2~num-1)之中的数除尽，证明不是素数，设置flag并退出循环
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">flag</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">flag</span><span class="p">;</span>	<span class="c1">//如果循环完都没有被除尽，证明是素数，会返回true；否则会返回flase
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>这里用函数的形式来写，以后判断就可以直接用这个函数。如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span> <span class="n">if_Prime</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;是素数&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">n</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;不是素数&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h2 id="4对数组的排序">4、对数组的排序</h2>
 <p>就两种排序方法：</p>
 <ol>
 <li>冒泡排序</li>
@@ -727,8 +727,8 @@ if (!doNotTrack) {
 </div>
 <h1 id="三常用头文件及函数">三、常用头文件及函数</h1>
 <blockquote>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;...&gt;</span><span class="cp">
-</span></code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;...&gt;</span><span class="cp">
+</span></span></span></code></pre></div></blockquote>
 <ol>
 <li>
 <p><code>#include&lt;iostream&gt;</code></p>
@@ -842,7 +842,7 @@ if (!doNotTrack) {
 				loading="lazy"
 				alt="错误2-例">
 		</a><figcaption>错误2-例</figcaption></figure></p>
-<p>橙色划线定义个数组空间为<span class="math inline">\(10\)</span>，即只能用<code>a[0]~a[9]</code>。<br>
+<p>橙色划线定义个数组空间为$10$，即只能用<code>a[0]~a[9]</code>。<br>
 但在红色划线里，却用了<code>a[10]</code>，明显超出了最大范围，即越界了，所以会出现此错。<br>
 故在定义部分<code>int a[10]</code>，把它空间开大点变成<code>int a[11]</code>即可。</p>
 </div>
@@ -894,19 +894,19 @@ if (!doNotTrack) {
 </li>
 <li>循环条件不可能中止。
 <blockquote>
-<p>如<code>for (i = 1; i &gt;= 0; i++)</code>，<span class="math inline">\(i\geq 0\)</span>会一直成立。</p>
+<p>如<code>for (i = 1; i &gt;= 0; i++)</code>，$i\geq 0$会一直成立。</p>
 </blockquote>
 </li>
 <li>循环里不小心改变了循环变量。
 <blockquote>
 <p>如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="p">...</span>
-
-	<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>每次循环<code>i</code>又会变为0，则会一直循环造成死循环。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span><span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>每次循环<code>i</code>又会变为0，则会一直循环造成死循环。</p>
 </blockquote>
 </li>
 </ol>
@@ -942,8 +942,8 @@ if (!doNotTrack) {
 <blockquote>
 <p>如字符串<code>&quot;MinatoAqua&quot;</code></p>
 <ul>
-<li>长度为<span class="math inline">\(10\)</span>。</li>
-<li>存储时存放<span class="math inline">\(11\)</span>个字符串。</li>
+<li>长度为$10$。</li>
+<li>存储时存放$11$个字符串。</li>
 </ul>
 </blockquote>
 </li>
@@ -1116,22 +1116,22 @@ if (!doNotTrack) {
                 
                     
 <article class="has-image">
-    <a href="/p/univ-probabilitystatistics-2/">
+    <a href="/p/univ-code2product-2/">
         
         
             <div class="article-image">
-                <img src="/p/univ-probabilitystatistics-2/Yande-311903.53a2b2b072cdebbec89a1d9c7c7d2e78_huf38710f708e70daa5cec2f0ef3fd57ed_10436802_250x150_fill_box_smart1_3.png" 
+                <img src="/p/univ-code2product-2/background.8a15991c746918c41650afc972a65207_hue37b069c78ca69c452c39783d04d66f1_225868_250x150_fill_q75_box_smart1.jpg" 
                         width="250" 
                         height="150" 
                         loading="lazy" 
-                        data-key="univ-Probability&amp;Statistics-2" 
-                        data-hash="md5-U6KysHLN677Imh2cfH0ueA==">
+                        data-key="univ-Code2Product-2" 
+                        data-hash="md5-ihWZHHRpGMQWUK/JcqZSBw==">
                 
             </div>
         
 
         <div class="article-details">
-            <h2 class="article-title">概率论中有关总体的认识……</h2>
+            <h2 class="article-title">期中创客项目 - 多功能火灾警报器</h2>
         </div>
     </a>
 </article>

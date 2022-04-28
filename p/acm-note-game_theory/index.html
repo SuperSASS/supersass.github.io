@@ -345,7 +345,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：3708</div>
+            <div class="char">文章字数：3685</div>
             <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
@@ -543,18 +543,18 @@ if (!doNotTrack) {
 <p>可将处于必败状态的节点成为P节点，必胜状态的节点成为N节点。</p>
 <h3 id="引例挪动皇后游戏">引例——挪动皇后游戏</h3>
 <p>游戏规则：<br>
-将一个皇后放在棋盘（任意<span class="math inline">\(n*n\)</span>大小）上某一格子内，皇后<strong>只能向左、下、正左下</strong>（即同时向左和向下走相同格数）走任意格且<strong>至少移动1格</strong>，最先到达最左下角的玩家胜利。</p>
+将一个皇后放在棋盘（任意$n*n$大小）上某一格子内，皇后<strong>只能向左、下、正左下</strong>（即同时向左和向下走相同格数）走任意格且<strong>至少移动1格</strong>，最先到达最左下角的玩家胜利。</p>
 <hr>
 <p>我们就这个引例来分析其博弈状态图。</p>
-<p>先可将局面抽象为皇后在棋盘上的坐标，如<span class="math inline">\((2,3)\)</span>、<span class="math inline">\((5,5)\)</span>。<br>
-则对于任意局面<span class="math inline">\((n,m)\)</span>，其后继局面为：</p>
+<p>先可将局面抽象为皇后在棋盘上的坐标，如$(2,3)$、$(5,5)$。<br>
+则对于任意局面$(n,m)$，其后继局面为：</p>
 <ul>
-<li><span class="math inline">\((n-k,m) (k∈N^+)\)</span></li>
-<li><span class="math inline">\((n,m-k) (k∈N^+)\)</span></li>
-<li><span class="math inline">\((n-k,m-k) (k∈N^+)\)</span></li>
+<li>$(n-k,m) (k∈N^+)$</li>
+<li>$(n,m-k) (k∈N^+)$</li>
+<li>$(n-k,m-k) (k∈N^+)$</li>
 </ul>
 <p>我们可以用棋盘本身来代表状态图。<br>
-而对于处于坐标<span class="math inline">\((n,m)\)</span>格子上的皇后，其可移动局面即为横向向左，竖向向下、斜向向左下直线的所有格子。<br>
+而对于处于坐标$(n,m)$格子上的皇后，其可移动局面即为横向向左，竖向向下、斜向向左下直线的所有格子。<br>
 <figure style="flex-grow: 100; flex-basis: 240px">
 		<a href="/p/acm-note-game_theory/pic/move_position.png" data-size="600x600"><img src="/p/acm-note-game_theory/pic/move_position.png"
 				srcset="/p/acm-note-game_theory/pic/move_position_hu04a851dd37bc45bece89b4ccf06575e3_12680_480x0_resize_box_3.png 480w, /p/acm-note-game_theory/pic/move_position_hu04a851dd37bc45bece89b4ccf06575e3_12680_1024x0_resize_box_3.png 1024w"
@@ -564,9 +564,9 @@ if (!doNotTrack) {
 				alt="当前皇后可移动局面（后继局面）">
 		</a><figcaption>当前皇后可移动局面（后继局面）</figcaption></figure></p>
 <hr>
-<p>那么对于这个问题来说，其终止局面为<span class="math inline">\((0,0)\)</span>。<br>
-而从<span class="math inline">\((0,0)\)</span>反推，其右方、上方、右上方的节点均对于（先手）必胜状态。</p>
-<p>则由<span class="math inline">\((0,0)\)</span>局面易得出处于N状态（必胜状态）的局面，如下图绿色区域表示：<br>
+<p>那么对于这个问题来说，其终止局面为$(0,0)$。<br>
+而从$(0,0)$反推，其右方、上方、右上方的节点均对于（先手）必胜状态。</p>
+<p>则由$(0,0)$局面易得出处于N状态（必胜状态）的局面，如下图绿色区域表示：<br>
 <figure style="flex-grow: 100; flex-basis: 240px">
 		<a href="/p/acm-note-game_theory/pic/1_N-position.png" data-size="600x600"><img src="/p/acm-note-game_theory/pic/1_N-position.png"
 				srcset="/p/acm-note-game_theory/pic/1_N-position_hu13839d2dee79d43eb6b0e5f9e8890ccc_8073_480x0_resize_box_3.png 480w, /p/acm-note-game_theory/pic/1_N-position_hu13839d2dee79d43eb6b0e5f9e8890ccc_8073_1024x0_resize_box_3.png 1024w"
@@ -575,7 +575,7 @@ if (!doNotTrack) {
 				loading="lazy"
 				alt="第一次倒推 - N节点">
 		</a><figcaption>第一次倒推 - N节点</figcaption></figure></p>
-<p>接下来根据必胜必败状态的性质，可以发现有且仅有<span class="math inline">\((1,2)\)</span>、<span class="math inline">\((2,1)\)</span>这两点，无论怎么移动都只能到达必胜状态（如蓝箭头所示）。<br>
+<p>接下来根据必胜必败状态的性质，可以发现有且仅有$(1,2)$、$(2,1)$这两点，无论怎么移动都只能到达必胜状态（如蓝箭头所示）。<br>
 因此这两点即为P节点。<br>
 <figure style="flex-grow: 100; flex-basis: 240px">
 		<a href="/p/acm-note-game_theory/pic/2_P-position.png" data-size="600x600"><img src="/p/acm-note-game_theory/pic/2_P-position.png"

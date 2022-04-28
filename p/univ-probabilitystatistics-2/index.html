@@ -326,7 +326,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：2444</div>
+            <div class="char">文章字数：2284</div>
             <div class="time">预计阅读时长： <time>5</time> 分钟</div>
         </div>
     </footer>
@@ -337,69 +337,69 @@ if (!doNotTrack) {
 <li>总体：研究<strong>对象</strong>的一个<strong>不确定</strong>的<strong>属性</strong>。</li>
 </ul>
 <p>关键词：对象、属性、不确定。</p>
-<p>总体是由若干个个体（即上面的对象）组合而成的，且<strong>个体数目是确定</strong>的，可以记为<span class="math inline">\(N\)</span>。<br>
-<em>（区别于样本容量<span class="math inline">\(n\)</span>，这里还没涉及到样本！先不管样本这个东西！）</em><br>
-总体里可能有<span class="math inline">\(2\)</span>个个体，可能有<span class="math inline">\(n\)</span>个个体，可能有<span class="math inline">\(\infty\)</span>个个体，<strong>总之是确定的</strong>。<br>
+<p>总体是由若干个个体（即上面的对象）组合而成的，且<strong>个体数目是确定</strong>的，可以记为$N$。<br>
+<em>（区别于样本容量$n$，这里还没涉及到样本！先不管样本这个东西！）</em><br>
+总体里可能有$2$个个体，可能有$n$个个体，可能有$\infty$个个体，<strong>总之是确定的</strong>。<br>
 不确定的只是个体的某个属性。（身高、分数、或者如果个体就是没有实际意义的数字，属性就是数值）</p>
-<p>我们用<span class="math inline">\(X\)</span>代表总体，这个<span class="math inline">\(X\)</span>是将总体中所有个体的属性抽象表达，<br>
-因此如果要真正完全表达这个总体，应该用个<span class="math inline">\(N\)</span>元组<span class="math inline">\((X_1,X_2,\cdots,X_N)\)</span>。<br>
-那么<span class="math inline">\(X_i\)</span>，则代表其中一个个体的属性。</p>
+<p>我们用$X$代表总体，这个$X$是将总体中所有个体的属性抽象表达，<br>
+因此如果要真正完全表达这个总体，应该用个$N$元组$(X_1,X_2,\cdots,X_N)$。<br>
+那么$X_i$，则代表其中一个个体的属性。</p>
 <p>回到总体的定义，必须是个<strong>不确定</strong>的属性。<br>
 因此判断某个说法是不是总体，就任选一个个体，看这个属性是否不确定，<br>
-也就是如果我们不具体抽样调查，这个属性<span class="math inline">\(X_i\)</span>取多少是<strong>随机的</strong>。</p>
+也就是如果我们不具体抽样调查，这个属性$X_i$取多少是<strong>随机的</strong>。</p>
 <p>举例：<br>
 ✔️的代表是总体的表述，❌的则不是。</p>
 <ul>
 <li>
 <p>学生的身高 — ✔️<br>
-<span class="math inline">\(X_i=200,100,150\cdots\)</span>均可以，有无限取值。</p>
+$X_i=200,100,150\cdots$均可以，有无限取值。</p>
 <ul>
-<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取合适的值都可以，是随机的。</li>
-<li>或者说我们多次取一个个体，每个个体（学生）<span class="math inline">\(i\)</span>的属性（身高）<span class="math inline">\(X_i\)</span>不一样。</li>
+<li>我们不去抽样调查，$X_i$取合适的值都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（学生）$i$的属性（身高）$X_i$不一样。</li>
 </ul>
 </li>
 <li>
 <p>学生的平均身高 — ❌<br>
-因为总体的每一个个体都是确定的，这里“平均身高”只能是一个具体的数！比如<span class="math inline">\(175\)</span>米。<br>
-因此该总体<span class="math inline">\((X_1,X_2,\cdots,X_N)\)</span>，每一个<span class="math inline">\(X_i\)</span>均是确定的值<span class="math inline">\(175\)</span>。</p>
+因为总体的每一个个体都是确定的，这里“平均身高”只能是一个具体的数！比如$175$米。<br>
+因此该总体$(X_1,X_2,\cdots,X_N)$，每一个$X_i$均是确定的值$175$。</p>
 <ul>
-<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>就是<span class="math inline">\(175\)</span>，是确定的。</li>
-<li>或者说我们多次取一个个体，每个个体（学生）<span class="math inline">\(i\)</span>的属性（平均身高）<span class="math inline">\(X_i\)</span>都一样。</li>
+<li>我们不去抽样调查，$X_i$就是$175$，是确定的。</li>
+<li>或者说我们多次取一个个体，每个个体（学生）$i$的属性（平均身高）$X_i$都一样。</li>
 </ul>
 </li>
 <li>
 <p>若干产品，每一个产品的好坏情况 — ✔️<br>
-<span class="math inline">\(X_i=\textrm{好}(0),\textrm{坏}(1)\)</span>，只有这两个取值。</p>
+$X_i=\textrm{好}(0),\textrm{坏}(1)$，只有这两个取值。</p>
 <ul>
-<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取个<span class="math inline">\(0,1\)</span>都可以，是随机的。</li>
-<li>或者说我们多次取一个个体，每个个体（每一个产品）<span class="math inline">\(i\)</span>的属性（好坏情况）<span class="math inline">\(X_i\)</span>不一样。</li>
+<li>我们不去抽样调查，$X_i$取个$0,1$都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（每一个产品）$i$的属性（好坏情况）$X_i$不一样。</li>
 </ul>
 </li>
 <li>
 <p>若干产品，这一堆产品的次品数 — ❌<br>
-因为总体的每一个个体都是确定的，这里“次品数”只能是一个具体的数！比如<span class="math inline">\(50\)</span>个。<br>
-因此该总体<span class="math inline">\((X_1,X_2,\cdots,X_N)\)</span>，每一个<span class="math inline">\(X_i\)</span>均是确定的值<span class="math inline">\(50\)</span>。</p>
+因为总体的每一个个体都是确定的，这里“次品数”只能是一个具体的数！比如$50$个。<br>
+因此该总体$(X_1,X_2,\cdots,X_N)$，每一个$X_i$均是确定的值$50$。</p>
 <ul>
-<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>就是<span class="math inline">\(50\)</span>，是确定的。</li>
-<li>或者说我们多次取一个个体，每个个体（这一堆产品）<span class="math inline">\(i\)</span>的属性（次品数）<span class="math inline">\(X_i\)</span>都一样。</li>
+<li>我们不去抽样调查，$X_i$就是$50$，是确定的。</li>
+<li>或者说我们多次取一个个体，每个个体（这一堆产品）$i$的属性（次品数）$X_i$都一样。</li>
 </ul>
 </li>
 <li>
-<p>抛<span class="math inline">\(50\)</span>次硬币，进行一次实验，正面朝上次数 — ✔️<br>
-<span class="math inline">\(X_i=0,24,25,26,50,\cdots\)</span>，有无限取值。</p>
+<p>抛$50$次硬币，进行一次实验，正面朝上次数 — ✔️<br>
+$X_i=0,24,25,26,50,\cdots$，有无限取值。</p>
 <ul>
-<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取合适的值都可以，是随机的。</li>
-<li>或者说我们多次取一个个体，每个个体（抛50次硬币后正面朝上的硬币）<span class="math inline">\(i\)</span>的属性（好坏情况）<span class="math inline">\(X_i\)</span>不一样。</li>
+<li>我们不去抽样调查，$X_i$取合适的值都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（抛50次硬币后正面朝上的硬币）$i$的属性（好坏情况）$X_i$不一样。</li>
 </ul>
 </li>
 <li>
-<p>抛<span class="math inline">\(50\)</span>次硬币，进行一次实验，是否正面朝上<span class="math inline">\(25\)</span>次 — ❌<br>
+<p>抛$50$次硬币，进行一次实验，是否正面朝上$25$次 — ❌<br>
 因为这一次实验，总体的每一个个体都是确定的，<br>
-这里“是否正面朝上<span class="math inline">\(25\)</span>次”只能是一个具体的值！只能是否(<span class="math inline">\(0\)</span>)或是(<span class="math inline">\(1\)</span>)，比如为否(<span class="math inline">\(0\)</span>)。<br>
-因此该总体<span class="math inline">\((X_1,X_2,\cdots,X_N)\)</span>，每一个<span class="math inline">\(X_i\)</span>均是确定的值否(<span class="math inline">\(0\)</span>)。</p>
+这里“是否正面朝上$25$次”只能是一个具体的值！只能是否($0$)或是($1$)，比如为否($0$)。<br>
+因此该总体$(X_1,X_2,\cdots,X_N)$，每一个$X_i$均是确定的值否($0$)。</p>
 <ul>
-<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>就是<span class="math inline">\(0\)</span>，是确定的。</li>
-<li>或者说我们多次取一个个体，每个个体（这一次实验）<span class="math inline">\(i\)</span>的属性（是否正面朝上<span class="math inline">\(25\)</span>次）<span class="math inline">\(X_i\)</span>都一样。</li>
+<li>我们不去抽样调查，$X_i$就是$0$，是确定的。</li>
+<li>或者说我们多次取一个个体，每个个体（这一次实验）$i$的属性（是否正面朝上$25$次）$X_i$都一样。</li>
 </ul>
 </li>
 </ul>
@@ -413,10 +413,10 @@ if (!doNotTrack) {
 <li>若干产品某次检测的品质，不会变。</li>
 </ul>
 <blockquote>
-<p>在前面我说总体中个体个数时。没有说可能有<span class="math inline">\(1\)</span>个个体，<br>
+<p>在前面我说总体中个体个数时。没有说可能有$1$个个体，<br>
 原因就是如果只有一个个体，这个<strong>属性就是确定</strong>的了。</p>
 <p>我们研究：某产品（对象）的好坏情况（属性），<br>
-如果只有一个个体，那么总体就是<span class="math inline">\((X_1)\)</span>，<br>
+如果只有一个个体，那么总体就是$(X_1)$，<br>
 他每个个体，属性是确定的（因为只有一个个体，所以属性就是好或坏）。<br>
 我们不管去不去抽样调查，这个个体是好的就是好的，是坏的就是坏的。</p>
 <p>即便是著名的“薛定谔的猫”，即便我们不去看猫，这个猫是死是活他也是确定的，<br>
@@ -435,21 +435,21 @@ if (!doNotTrack) {
 <p>因此对于动态总体，举例为：</p>
 <ul>
 <li>
-<p>若干产品，每次抽<span class="math inline">\(n\)</span>(5)件，这<span class="math inline">\(n\)</span>(5)件产品的次品数（<span class="math inline">\(n\)</span>必须也只能是个确定的常数，这里举例为<span class="math inline">\(5\)</span>） — ✔️<br>
-<span class="math inline">\(X_i=0,1,2,3,4,5\)</span>，有<span class="math inline">\(6\)</span>个取值。</p>
-<p>而注意：这里的个体个数<span class="math inline">\(N\)</span>，就是<span class="math inline">\(\infty\)</span>，因为我们可以进行无限次实验（每次抽5件抽无限次）</p>
+<p>若干产品，每次抽$n$(5)件，这$n$(5)件产品的次品数（$n$必须也只能是个确定的常数，这里举例为$5$） — ✔️<br>
+$X_i=0,1,2,3,4,5$，有$6$个取值。</p>
+<p>而注意：这里的个体个数$N$，就是$\infty$，因为我们可以进行无限次实验（每次抽5件抽无限次）</p>
 <ul>
-<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取合适的值都可以，是随机的。</li>
-<li>或者说我们多次取一个个体，每个个体（某一次抽的这<span class="math inline">\(5\)</span>件）<span class="math inline">\(i\)</span>的属性（次品数）<span class="math inline">\(X_i\)</span>不一样。</li>
+<li>我们不去抽样调查，$X_i$取合适的值都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（某一次抽的这$5$件）$i$的属性（次品数）$X_i$不一样。</li>
 </ul>
 </li>
 <li>
-<p>抛<span class="math inline">\(50\)</span>次硬币，重复进行<span class="math inline">\(n\)</span>次实验，其中结果为正面朝上<span class="math inline">\(25\)</span>次的实验次数 — ✔️<br>
-<span class="math inline">\(X_i=0,1,2,\cdots,n\)</span>，有<span class="math inline">\(n+1\)</span>个取值。</p>
-<p>而注意：这里的个体个数<span class="math inline">\(N\)</span>，就是<span class="math inline">\(\infty\)</span>，因为我们可以进行无限次实验（每次抛50次硬币抛无限次）</p>
+<p>抛$50$次硬币，重复进行$n$次实验，其中结果为正面朝上$25$次的实验次数 — ✔️<br>
+$X_i=0,1,2,\cdots,n$，有$n+1$个取值。</p>
+<p>而注意：这里的个体个数$N$，就是$\infty$，因为我们可以进行无限次实验（每次抛50次硬币抛无限次）</p>
 <ul>
-<li>我们不去抽样调查，<span class="math inline">\(X_i\)</span>取合适的值都可以，是随机的。</li>
-<li>或者说我们多次取一个个体，每个个体（某一时刻重复进行的<span class="math inline">\(n\)</span>次实验）<span class="math inline">\(i\)</span>的属性（满足条件的次数）<span class="math inline">\(X_i\)</span>不一样。</li>
+<li>我们不去抽样调查，$X_i$取合适的值都可以，是随机的。</li>
+<li>或者说我们多次取一个个体，每个个体（某一时刻重复进行的$n$次实验）$i$的属性（满足条件的次数）$X_i$不一样。</li>
 </ul>
 </li>
 </ul>
@@ -506,6 +506,28 @@ if (!doNotTrack) {
         <h2 class="section-title">相关文章</h2>
         <div class="related-contents">
             <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-code2product-2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-code2product-2/background.8a15991c746918c41650afc972a65207_hue37b069c78ca69c452c39783d04d66f1_225868_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Code2Product-2" 
+                        data-hash="md5-ihWZHHRpGMQWUK/JcqZSBw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">期中创客项目 - 多功能火灾警报器</h2>
+        </div>
+    </a>
+</article>
                 
                     
 <article class="has-image">
@@ -591,28 +613,6 @@ if (!doNotTrack) {
 
         <div class="article-details">
             <h2 class="article-title">数字电子技术——第四章……</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/univ-psycho_phy-prac-4/">
-        
-        
-            <div class="article-image">
-                <img src="/p/univ-psycho_phy-prac-4/pixiv61483143.d2be93400bdf313d058b9f10ab70ae7a_hu12c1b5a9a5e516caec4f044d40d3022b_1819672_250x150_fill_box_smart1_3.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy" 
-                        data-key="univ-Psycho_Phy-prac-4" 
-                        data-hash="md5-0r6TQAvfMT0Fi58Qq3Cueg==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">生理心理学 - 第四章作业……</h2>
         </div>
     </a>
 </article>

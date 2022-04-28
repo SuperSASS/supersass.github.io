@@ -356,7 +356,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：3994</div>
+            <div class="char">文章字数：3936</div>
             <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
@@ -381,7 +381,7 @@ if (!doNotTrack) {
 <li>等等</li>
 </ul>
 <h1 id="描述">描述</h1>
-<p>线段树会将一个非点区间（即长度大于<span class="math inline">\(1\)</span>）利用<strong>递归</strong>的思想，<strong>二分</strong>为两个子区间来进行操作。<br>
+<p>线段树会将一个非点区间（即长度大于$1$）利用<strong>递归</strong>的思想，<strong>二分</strong>为两个子区间来进行操作。<br>
 这样就会将一个线段划分转化成一个树形结构。</p>
 <p><img src="./Picture/seg-description.png" alt="线段树描述"  /><br>
 其中：紫色的<code>a[]</code>是原数组，红色的<code>d[]</code>是线段树：存储的区间的和，黄色范围代表管辖区间。</p>
@@ -389,80 +389,80 @@ if (!doNotTrack) {
 可根据题目要求，确定自己所需存储维护的信息。</p>
 <h1 id="实现方法">实现方法</h1>
 <h2 id="提前的宏定义">提前的宏定义</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#define NOW_Node node[index]		</span><span class="c1">//代表当前节点
-</span><span class="c1"></span><span class="cp">#define NOW_LSon node[index].sonL	</span><span class="c1">//代表当前节点左儿子下标
-</span><span class="c1"></span><span class="cp">#define NOW_RSon node[index].sonR	</span><span class="c1">//代表当前节点右儿子下标
-</span></code></pre></div><h2 id="0x00-建树">0x00 建树</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#define NOW_Node node[index]		</span><span class="c1">//代表当前节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define NOW_LSon node[index].sonL	</span><span class="c1">//代表当前节点左儿子下标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define NOW_RSon node[index].sonR	</span><span class="c1">//代表当前节点右儿子下标
+</span></span></span></code></pre></div><h2 id="0x00-建树">0x00 建树</h2>
 <h3 id="基本认识">基本认识</h3>
 <p>根据上图可发现几个要点：</p>
 <ul>
 <li>每一个节点<code>i</code>的左儿子下标是<code>2i</code>，右儿子下标是<code>2i+1</code>。</li>
-<li>记：<code>i</code>管辖的区间为<span class="math inline">\([s,t]\)</span>。<br>
-令：<span class="math inline">\(mid=\frac{s+t}{2}\)</span>。<br>
-则左儿子<code>2i</code>管辖区间为<span class="math inline">\([s,mid]\)</span>，右儿子<code>2i+1</code>管辖区间为<span class="math inline">\([mid+1,t]\)</span>。</li>
+<li>记：<code>i</code>管辖的区间为$[s,t]$。<br>
+令：$mid=\frac{s+t}{2}$。<br>
+则左儿子<code>2i</code>管辖区间为$[s,mid]$，右儿子<code>2i+1</code>管辖区间为$[mid+1,t]$。</li>
 </ul>
 <h3 id="实现方法-1">实现方法</h3>
 <p>之前已经介绍了递归的思想，那么只需要确定递归边界。<br>
-由上图很容易看出，递归边界就是当长度为<span class="math inline">\(1\)</span>的点。</p>
-<p>记：当前点为<code>node[index]</code>，代表区间为<span class="math inline">\([l,r]\)</span>。原数组为<code>arr[]</code><br>
-当<span class="math inline">\(l=r\)</span>的时候，说明到达递归边界，这个时候的值直接为对应区间的值。<br>
+由上图很容易看出，递归边界就是当长度为$1$的点。</p>
+<p>记：当前点为<code>node[index]</code>，代表区间为$[l,r]$。原数组为<code>arr[]</code><br>
+当$l=r$的时候，说明到达递归边界，这个时候的值直接为对应区间的值。<br>
 也就是<code>node[index] = arr[r]</code></p>
-<p>因为二分的操作使得递归的深度不会大于<span class="math inline">\(log(n)\)</span>，故完全可以采用递归的方式简化代码，不用担心递归的栈溢出等缺点。</p>
+<p>因为二分的操作使得递归的深度不会大于$log(n)$，故完全可以采用递归的方式简化代码，不用担心递归的栈溢出等缺点。</p>
 <h3 id="储存方法">储存方法</h3>
 <h4 id="方法1">方法1、</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">len</span><span class="p">;</span>	<span class="c1">//val代表储存的值，L、R分别代表区间左、右端点，mid代表区间中点，len代表区间长度
-</span><span class="c1"></span><span class="p">}</span><span class="n">node</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
-</code></pre></div><p>直接用左儿子下标为<code>2i</code>，右儿子下标为<code>2i+1</code>转递。<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeNode</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">len</span><span class="p">;</span>	<span class="c1">//val代表储存的值，L、R分别代表区间左、右端点，mid代表区间中点，len代表区间长度
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="n">node</span><span class="p">[</span><span class="mi">4</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
+</span></span></code></pre></div><p>直接用左儿子下标为<code>2i</code>，右儿子下标为<code>2i+1</code>转递。<br>
 函数为<code>build(int index, int l, int r)</code>，建左儿子用则为<code>build(2*i, l, r)</code>。</p>
 <ul>
-<li>空间范围：<strong>反正直接把长度设置为<span class="math inline">\(4n\)</span>。</strong><br>
-因为该线段树深度为<span class="math inline">\(\lceil log(n) \rceil\)</span>，又因为为完全二叉树，总节点个数为<span class="math inline">\(2^{\lceil log(n) \rceil +1}-1\)</span>。但建树的时候最后一层不一定从左往右建，也可能很右边会有一个，所以要预留出所有的最后一层的节点位置，即开<span class="math inline">\(4N\)</span>。<br>
+<li>空间范围：<strong>反正直接把长度设置为$4n$。</strong><br>
+因为该线段树深度为$\lceil log(n) \rceil$，又因为为完全二叉树，总节点个数为$2^{\lceil log(n) \rceil +1}-1$。但建树的时候最后一层不一定从左往右建，也可能很右边会有一个，所以要预留出所有的最后一层的节点位置，即开$4N$。<br>
 具体分析见<a class="link" href="https://zhuanlan.zhihu.com/p/65943900"  target="_blank" rel="noopener"
     >关于线段树的数组到底是开2N还是4N</a>。</li>
 </ul>
 <h4 id="方法2">方法2、</h4>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">sonL</span><span class="p">,</span> <span class="n">sonR</span><span class="p">;</span>	<span class="c1">//多了个sonL和sonR，代表左儿子的index和右儿子的index
-</span><span class="c1"></span><span class="p">}</span><span class="n">node</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
-</code></pre></div><p><code>build()</code>的时候需要多一个计数器变量<code>cnt</code>，记录总过有多少节点。<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeNode</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">sonL</span><span class="p">,</span> <span class="n">sonR</span><span class="p">;</span>	<span class="c1">//多了个sonL和sonR，代表左儿子的index和右儿子的index
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span><span class="n">node</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">];</span>
+</span></span></code></pre></div><p><code>build()</code>的时候需要多一个计数器变量<code>cnt</code>，记录总过有多少节点。<br>
 函数为<code>build(int &amp;index, int l, int r)</code>。其中传引用会在伪代码中解释。<br>
-这里多存了个左儿子和右儿子的下标，使得可以保证从按顺序建，不会出现空间浪费，于是可以开<span class="math inline">\(2N\)</span>。<br>
+这里多存了个左儿子和右儿子的下标，使得可以保证从按顺序建，不会出现空间浪费，于是可以开$2N$。<br>
 相较于方法2空间消耗会少一点。</p>
 <p>以下采用“方法2”的方式来储存。</p>
 <h3 id="伪代码">伪代码</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeSegment</span><span class="p">{</span>
-	<span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//记录node节点的数量，便可实现按顺序建树
-</span><span class="c1"></span>
-	<span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
-		<span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">sonL</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sonR</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="p">}</span> <span class="n">node</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
-
-	<span class="kt">void</span> <span class="nf">build</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">R</span><span class="p">)</span> <span class="c1">//对区间[L,R]建立节点，下标为index
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="n">index</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
-		<span class="cm">/*引用index的原因：
-</span><span class="cm">		这里因为引用index，在递归时会直接把seg[index].son_赋值为某儿子的index。
-</span><span class="cm">		*/</span>
-		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">=</span> <span class="n">L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">=</span> <span class="n">R</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="n">R</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">R</span> <span class="o">-</span> <span class="n">L</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span><span class="c1">//节点基本信息
-</span><span class="c1"></span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">L</span> <span class="o">==</span> <span class="n">R</span><span class="p">)</span>
-			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">R</span><span class="p">];</span> <span class="c1">//为递归边界，直接为对应区间的值
-</span><span class="c1"></span>		<span class="k">else</span>
-		<span class="p">{</span>
-			<span class="n">build</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">);</span>
-			<span class="c1">//划分建立左区间，注意这里传的index是sed[index].lson
-</span><span class="c1"></span>			<span class="n">build</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">);</span>
-			<span class="c1">//划分建立右区间
-</span><span class="c1"></span>			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">NOW_LSon</span><span class="p">].</span><span class="n">val</span> <span class="o">+</span> <span class="n">node</span><span class="p">[</span><span class="n">NOW_RSon</span><span class="p">].</span><span class="n">val</span><span class="p">;</span>
-			<span class="c1">//计算该区间信息
-</span><span class="c1"></span>		<span class="p">}</span>
-	<span class="p">}</span>
-<span class="p">}</span><span class="n">Segment</span><span class="p">;</span>	<span class="c1">//直接用个总结构体，便于模板化。//其实就是个个人癖好orz……
-</span></code></pre></div><h2 id="0x01-区间查询">0x01 区间查询</h2>
-<p>对区间进行值的条件查询，如对区间<span class="math inline">\([L,R]\)</span>求总和，求区间最值等操作。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeSegment</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//记录node节点的数量，便可实现按顺序建树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">sonL</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sonR</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="n">node</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">build</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">R</span><span class="p">)</span> <span class="c1">//对区间[L,R]建立节点，下标为index
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">index</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="cm">/*引用index的原因：
+</span></span></span><span class="line"><span class="cl"><span class="cm">		这里因为引用index，在递归时会直接把seg[index].son_赋值为某儿子的index。
+</span></span></span><span class="line"><span class="cl"><span class="cm">		*/</span>
+</span></span><span class="line"><span class="cl">		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">=</span> <span class="n">L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">=</span> <span class="n">R</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="n">R</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">R</span> <span class="o">-</span> <span class="n">L</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span><span class="c1">//节点基本信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">L</span> <span class="o">==</span> <span class="n">R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">R</span><span class="p">];</span> <span class="c1">//为递归边界，直接为对应区间的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">build</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//划分建立左区间，注意这里传的index是sed[index].lson
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">build</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//划分建立右区间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">NOW_LSon</span><span class="p">].</span><span class="n">val</span> <span class="o">+</span> <span class="n">node</span><span class="p">[</span><span class="n">NOW_RSon</span><span class="p">].</span><span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//计算该区间信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span><span class="n">Segment</span><span class="p">;</span>	<span class="c1">//直接用个总结构体，便于模板化。//其实就是个个人癖好orz……
+</span></span></span></code></pre></div><h2 id="0x01-区间查询">0x01 区间查询</h2>
+<p>对区间进行值的条件查询，如对区间$[L,R]$求总和，求区间最值等操作。</p>
 <h3 id="实现方法-2">实现方法</h3>
 <p>将要查询的区间，拆成几个在<strong>其范围里的节点</strong>的区间进行求解计算。（类似于分块思想）</p>
 <ul>
@@ -481,37 +481,37 @@ if (!doNotTrack) {
 </ul>
 <p>【直接给代码吧ヾ(•ω•`)o……</p>
 <h3 id="伪代码-1">伪代码</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_R</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">q_R</span><span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span><span class="p">)</span> <span class="k">return</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span><span class="p">;</span>
-	<span class="c1">//当前区间直接在查询区间里，直接返回值
-</span><span class="c1"></span>	<span class="c1">//【我查了，一句返回了，有什么好说的……
-</span><span class="c1"></span>	
-	<span class="c1">//↓ 不完全包含于查询区间里，就要查询两子区间的值计算
-</span><span class="c1"></span>	<span class="kt">int</span> <span class="n">tmpAns</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
-	<span class="c1">//如果要查询区间左端点，比当前区间的中点还大，证明左儿子区间完全不在
-</span><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">q_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>	<span class="c1">//为&gt;，不是&gt;=
-</span><span class="c1"></span>	<span class="k">return</span> <span class="n">tmpAns</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><h2 id="0x02-区间修改">0x02 区间修改</h2>
-<p>对区间进行值的修改，如区间<span class="math inline">\([L,R]\)</span>加上或乘上一个数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">q_R</span><span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span><span class="p">)</span> <span class="k">return</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//当前区间直接在查询区间里，直接返回值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//【我查了，一句返回了，有什么好说的……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	
+</span></span><span class="line"><span class="cl">	<span class="c1">//↓ 不完全包含于查询区间里，就要查询两子区间的值计算
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kt">int</span> <span class="n">tmpAns</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//如果要查询区间左端点，比当前区间的中点还大，证明左儿子区间完全不在
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">if</span> <span class="p">(</span><span class="n">q_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>	<span class="c1">//为&gt;，不是&gt;=
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">return</span> <span class="n">tmpAns</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="0x02-区间修改">0x02 区间修改</h2>
+<p>对区间进行值的修改，如区间$[L,R]$加上或乘上一个数。</p>
 <h3 id="最初实现方法">(最初)实现方法</h3>
 <p>跟查询的方法一样，找到对应区间后直接修改值。</p>
 <p>但注意，如果不是长度为1的区间，值的修改要<strong>乘上对应修改区间的长度</strong>。</p>
 <blockquote>
-<p>比如对<span class="math inline">\([1,2]\)</span>这个区间加上<span class="math inline">\(2\)</span>。</p>
-<p><span class="math inline">\([1,1]\)</span>和<span class="math inline">\([2,2]\)</span>这两个子区间会加<span class="math inline">\(2\)</span>。<br>
-但<span class="math inline">\([1,2]\)</span>则个大的区间应该加的就是<span class="math inline">\(4\)</span>。</p>
-<p>同理，<span class="math inline">\([1,4]\)</span>这个大区间就该加<span class="math inline">\(8\)</span>了。</p>
+<p>比如对$[1,2]$这个区间加上$2$。</p>
+<p>$[1,1]$和$[2,2]$这两个子区间会加$2$。<br>
+但$[1,2]$则个大的区间应该加的就是$4$。</p>
+<p>同理，$[1,4]$这个大区间就该加$8$了。</p>
 </blockquote>
 <h3 id="缺点分析">缺点分析</h3>
 <p>【诶我说停停，先别着急写啊，不要啪的一下就写起来了很快啊……</p>
 <p>如果碰上这样的情况：</p>
 <blockquote>
 <ol>
-<li>对区间<span class="math inline">\([1,10000]\)</span>加上<span class="math inline">\(10000\)</span>次<span class="math inline">\(233\)</span>。</li>
-<li>查询区间<span class="math inline">\([23333,23333]\)</span>的值。</li>
+<li>对区间$[1,10000]$加上$10000$次$233$。</li>
+<li>查询区间$[23333,23333]$的值。</li>
 </ol>
 </blockquote>
 <p>怎么样，有没有觉得自己被耍了！</p>
@@ -535,169 +535,169 @@ if (!doNotTrack) {
 <ul>
 <li>区间修改：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
-	<span class="kt">int</span> <span class="p">...,</span> <span class="n">lazy</span><span class="p">;</span>	<span class="c1">//这里多定义个lazy，用来存偷懒没修改的值
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_R</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_val</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">m_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">&lt;=</span> <span class="n">m_R</span><span class="p">)</span>
-		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">lazy</span> <span class="o">+=</span> <span class="n">m_val</span><span class="p">;</span>	<span class="c1">//当前区间完全在范围里，直接偷懒
-</span><span class="c1"></span>	<span class="k">else</span>
-	<span class="p">{</span>
-		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">+=</span> <span class="p">(</span><span class="n">min</span><span class="p">(</span><span class="n">m_R</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span><span class="p">)</span> <span class="o">-</span> <span class="n">max</span><span class="p">(</span><span class="n">m_L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">m_val</span><span class="p">;</span>	
-		<span class="cm">/*
-</span><span class="cm">		这里是修改所包含区间的值
-</span><span class="cm">		如要修改[4,9]，当前节点区间是(1,6)	//这里为了区分用的小括号，实际上包含端点
-</span><span class="cm">		则只会修改[4,6)，也就是val += (6 - 4 + 1) * 2
-</span><span class="cm">		*/</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">m_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">modify</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">m_L</span><span class="p">,</span> <span class="n">m_R</span><span class="p">,</span> <span class="n">m_val</span><span class="p">);</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">m_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">modify</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">m_L</span><span class="p">,</span> <span class="n">m_R</span><span class="p">,</span> <span class="n">m_val</span><span class="p">);</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="p">...,</span> <span class="n">lazy</span><span class="p">;</span>	<span class="c1">//这里多定义个lazy，用来存偷懒没修改的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_R</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">m_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">&lt;=</span> <span class="n">m_R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">lazy</span> <span class="o">+=</span> <span class="n">m_val</span><span class="p">;</span>	<span class="c1">//当前区间完全在范围里，直接偷懒
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">else</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">+=</span> <span class="p">(</span><span class="n">min</span><span class="p">(</span><span class="n">m_R</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span><span class="p">)</span> <span class="o">-</span> <span class="n">max</span><span class="p">(</span><span class="n">m_L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">m_val</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl">		<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">		这里是修改所包含区间的值
+</span></span></span><span class="line"><span class="cl"><span class="cm">		如要修改[4,9]，当前节点区间是(1,6)	//这里为了区分用的小括号，实际上包含端点
+</span></span></span><span class="line"><span class="cl"><span class="cm">		则只会修改[4,6)，也就是val += (6 - 4 + 1) * 2
+</span></span></span><span class="line"><span class="cl"><span class="cm">		*/</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">m_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">modify</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">m_L</span><span class="p">,</span> <span class="n">m_R</span><span class="p">,</span> <span class="n">m_val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">m_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">modify</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">m_L</span><span class="p">,</span> <span class="n">m_R</span><span class="p">,</span> <span class="n">m_val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
 <li>有lazy的区间查询：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
-
-	<span class="p">...</span>
-
-	<span class="kt">void</span> <span class="n">pushdown</span><span class="p">(</span><span class="n">typeSegment</span> <span class="o">*</span><span class="n">Segment</span><span class="p">)</span>	<span class="c1">//下放也不用太彻底，能摸一层是一层xd……
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="n">val</span> <span class="o">+=</span> <span class="n">len</span> <span class="o">*</span> <span class="n">lazy</span><span class="p">;</span>	
-		<span class="k">if</span> <span class="p">(</span><span class="n">sonL</span><span class="p">)</span> <span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">sonL</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">lazy</span><span class="p">);</span>
-		<span class="c1">//存在子节点才下放【不然我这种结构就会无限下放_(:з」∠)_……
-</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">sonR</span><span class="p">)</span> <span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">sonR</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">lazy</span><span class="p">);</span>
-		<span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//！lazy注意清零！
-</span><span class="c1"></span>	<span class="p">}</span>
-<span class="p">}</span>
-
-<span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_R</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">NOW_Node</span><span class="p">.</span><span class="n">lazy</span><span class="p">)</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">pushdown</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>	<span class="c1">//注意查询的时候，只要有懒标记就必下放【别人都来查岗了你还摸鱼.jpg……
-</span><span class="c1"></span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">&lt;=</span> <span class="n">q_R</span><span class="p">)</span>		<span class="c1">//以下跟普通的查询操作一样
-</span><span class="c1"></span>		<span class="k">return</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span><span class="p">;</span>
-	<span class="kt">int</span> <span class="n">tmpAns</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
-	<span class="k">if</span> <span class="p">(</span><span class="n">q_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
-	<span class="k">return</span> <span class="n">tmpAns</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><p>Tip: 我这里的偷懒是直接连本身都先不修改，而在下放的时候才修改；其他人有些可能会先修改自身。算是个小优化，注意区分一下……</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeNode</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">...</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="n">pushdown</span><span class="p">(</span><span class="n">typeSegment</span> <span class="o">*</span><span class="n">Segment</span><span class="p">)</span>	<span class="c1">//下放也不用太彻底，能摸一层是一层xd……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">val</span> <span class="o">+=</span> <span class="n">len</span> <span class="o">*</span> <span class="n">lazy</span><span class="p">;</span>	
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">sonL</span><span class="p">)</span> <span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">sonL</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">lazy</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//存在子节点才下放【不然我这种结构就会无限下放_(:з」∠)_……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">sonR</span><span class="p">)</span> <span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">sonR</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">lazy</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>	<span class="c1">//！lazy注意清零！
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">NOW_Node</span><span class="p">.</span><span class="n">lazy</span><span class="p">)</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">pushdown</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>	<span class="c1">//注意查询的时候，只要有懒标记就必下放【别人都来查岗了你还摸鱼.jpg……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">&lt;=</span> <span class="n">q_R</span><span class="p">)</span>		<span class="c1">//以下跟普通的查询操作一样
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">return</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">tmpAns</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="n">q_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span> <span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="n">tmpAns</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>Tip: 我这里的偷懒是直接连本身都先不修改，而在下放的时候才修改；其他人有些可能会先修改自身。算是个小优化，注意区分一下……</p>
 <h1 id="最终代码">最终代码</h1>
 <p>洛谷P3372 <a class="link" href="https://www.luogu.com.cn/problem/P3372"  target="_blank" rel="noopener"
     >【模板】线段树 1</a></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp"></span>
-<span class="cp">#define N 100000
-</span><span class="cp"></span>
-<span class="cp">#define NOW_Node node[index]	  </span><span class="c1">//代表当前节点
-</span><span class="c1"></span><span class="cp">#define NOW_LSon node[index].sonL </span><span class="c1">//代表当前节点左儿子下标
-</span><span class="c1"></span><span class="cp">#define NOW_RSon node[index].sonR </span><span class="c1">//代表当前节点右儿子下标
-</span><span class="c1"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">long</span> <span class="kt">long</span> <span class="n">arr</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>
-<span class="k">struct</span> <span class="nc">typeSegment</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//记录node节点的数量，便可实现按顺序建树
-</span><span class="c1"></span>
-	<span class="k">struct</span> <span class="nc">typeNode</span>
-	<span class="p">{</span>
-		<span class="kt">long</span> <span class="kt">long</span> <span class="n">val</span><span class="p">;</span>
-		<span class="kt">int</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">sonL</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sonR</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-
-		<span class="kt">void</span> <span class="nf">pushdown</span><span class="p">(</span><span class="n">typeSegment</span> <span class="o">&amp;</span><span class="n">Segment</span><span class="p">)</span> <span class="c1">//下放也不用太彻底，左右儿子仍加到lazy里。【能摸一层是一层xd……
-</span><span class="c1"></span>		<span class="p">{</span>
-			<span class="n">val</span> <span class="o">+=</span> <span class="n">len</span> <span class="o">*</span> <span class="n">lazy</span><span class="p">;</span>
-			<span class="k">if</span> <span class="p">(</span><span class="n">sonL</span><span class="p">)</span>
-				<span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">sonL</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">lazy</span><span class="p">);</span> <span class="c1">//存在子节点才下放【不然我这种结构就会无限下放
-</span><span class="c1"></span>			<span class="k">if</span> <span class="p">(</span><span class="n">sonR</span><span class="p">)</span>
-				<span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">sonR</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">lazy</span><span class="p">);</span>
-			<span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//lazy注意清零。
-</span><span class="c1"></span>		<span class="p">}</span>
-	<span class="p">}</span> <span class="n">node</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
-
-	<span class="kt">void</span> <span class="nf">build</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">R</span><span class="p">)</span> <span class="c1">//对区间[l,r]建立节点，下标为index
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="n">index</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
-		<span class="c1">//引用原因：
-</span><span class="c1"></span>		<span class="c1">//这里因为引用index的原因，在递归时会直接把seg[index].lson赋值为左儿子的index。
-</span><span class="c1"></span>		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">=</span> <span class="n">L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">=</span> <span class="n">R</span><span class="p">,</span>
-		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="n">R</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">R</span> <span class="o">-</span> <span class="n">L</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
-		<span class="c1">//节点基本信息
-</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">L</span> <span class="o">==</span> <span class="n">R</span><span class="p">)</span>
-			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">R</span><span class="p">];</span> <span class="c1">//为递归边界，直接为对应区间的值
-</span><span class="c1"></span>		<span class="k">else</span>
-		<span class="p">{</span>
-			<span class="n">build</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">);</span>
-			<span class="c1">//划分建立左区间，注意这里传的index是sed[index].lson
-</span><span class="c1"></span>			<span class="n">build</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">);</span>
-			<span class="c1">//划分建立右区间
-</span><span class="c1"></span>			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">NOW_LSon</span><span class="p">].</span><span class="n">val</span> <span class="o">+</span> <span class="n">node</span><span class="p">[</span><span class="n">NOW_RSon</span><span class="p">].</span><span class="n">val</span><span class="p">;</span>
-			<span class="c1">//计算该区间信息
-</span><span class="c1"></span>		<span class="p">}</span>
-	<span class="p">}</span>
-
-	<span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_R</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_val</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">m_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">&lt;=</span> <span class="n">m_R</span><span class="p">)</span>
-			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">lazy</span> <span class="o">+=</span> <span class="n">m_val</span><span class="p">;</span> <span class="c1">//当前区间完全在范围里，直接偷懒。
-</span><span class="c1"></span>		<span class="k">else</span>
-		<span class="p">{</span>
-			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">+=</span> <span class="p">(</span><span class="n">min</span><span class="p">(</span><span class="n">m_R</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span><span class="p">)</span> <span class="o">-</span> <span class="n">max</span><span class="p">(</span><span class="n">m_L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">m_val</span><span class="p">;</span>
-			<span class="cm">/*
-</span><span class="cm">			这里是修改所包含区间的值
-</span><span class="cm">			如要修改[4,9]，当前节点区间是(1,6)	//这里为了区分用的小括号，实际上包含端点
-</span><span class="cm">			则只会修改[4,6)，也就是val += (6 - 4 + 1) * 2
-</span><span class="cm">			*/</span>
-			<span class="k">if</span> <span class="p">(</span><span class="n">m_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span>
-				<span class="n">modify</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">m_L</span><span class="p">,</span> <span class="n">m_R</span><span class="p">,</span> <span class="n">m_val</span><span class="p">);</span>
-			<span class="k">if</span> <span class="p">(</span><span class="n">m_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span>
-				<span class="n">modify</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">m_L</span><span class="p">,</span> <span class="n">m_R</span><span class="p">,</span> <span class="n">m_val</span><span class="p">);</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-	<span class="kt">long</span> <span class="kt">long</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_R</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">NOW_Node</span><span class="p">.</span><span class="n">lazy</span><span class="p">)</span> <span class="c1">//注意查询的时候，只要有懒标记就必下放【别人都来查岗了你还摸鱼.jpg……
-</span><span class="c1"></span>			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">pushdown</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">&lt;=</span> <span class="n">q_R</span><span class="p">)</span>
-			<span class="k">return</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span><span class="p">;</span>
-		<span class="c1">//当前区间直接在查询区间里，直接返回值//【我查了，一句返回了，有什么好说的……
-</span><span class="c1"></span>
-		<span class="c1">//↓ 不完全包含于查询区间里，就要查询两子区间的值计算
-</span><span class="c1"></span>		<span class="kt">long</span> <span class="kt">long</span> <span class="n">tmpAns</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span>
-			<span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
-		<span class="c1">//如果要查询区间左端点，比当前区间的中点还大，证明左儿子区间完全不在
-</span><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">q_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span>
-			<span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
-		<span class="k">return</span> <span class="n">tmpAns</span><span class="p">;</span>
-	<span class="p">}</span>
-<span class="p">}</span> <span class="n">Segment</span><span class="p">;</span> <span class="c1">//直接用个大的结构体，便于模板化。
-</span><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
-	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
-	<span class="n">Segment</span><span class="p">.</span><span class="n">build</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
-	<span class="c1">//Segment.test(1);
-</span><span class="c1"></span>	<span class="k">while</span> <span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">w</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-		<span class="p">{</span>
-			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
-			<span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
-		<span class="p">}</span>
-		<span class="k">else</span>
-		<span class="p">{</span>
-			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">);</span>
-			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">Segment</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">));</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define N 100000
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="cp">#define NOW_Node node[index]	  </span><span class="c1">//代表当前节点
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define NOW_LSon node[index].sonL </span><span class="c1">//代表当前节点左儿子下标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#define NOW_RSon node[index].sonR </span><span class="c1">//代表当前节点右儿子下标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">long</span> <span class="kt">long</span> <span class="n">arr</span><span class="p">[</span><span class="n">N</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">typeSegment</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//记录node节点的数量，便可实现按顺序建树
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="k">struct</span> <span class="nc">typeNode</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">long</span> <span class="kt">long</span> <span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="kt">int</span> <span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">sonL</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sonR</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="kt">void</span> <span class="nf">pushdown</span><span class="p">(</span><span class="n">typeSegment</span> <span class="o">&amp;</span><span class="n">Segment</span><span class="p">)</span> <span class="c1">//下放也不用太彻底，左右儿子仍加到lazy里。【能摸一层是一层xd……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">val</span> <span class="o">+=</span> <span class="n">len</span> <span class="o">*</span> <span class="n">lazy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">sonL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">sonL</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">lazy</span><span class="p">);</span> <span class="c1">//存在子节点才下放【不然我这种结构就会无限下放
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="k">if</span> <span class="p">(</span><span class="n">sonR</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="n">sonR</span><span class="p">,</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="n">lazy</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">lazy</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">//lazy注意清零。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span> <span class="n">node</span><span class="p">[</span><span class="n">N</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">build</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">L</span><span class="p">,</span> <span class="kt">int</span> <span class="n">R</span><span class="p">)</span> <span class="c1">//对区间[l,r]建立节点，下标为index
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">index</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//引用原因：
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="c1">//这里因为引用index的原因，在递归时会直接把seg[index].lson赋值为左儿子的index。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">=</span> <span class="n">L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">=</span> <span class="n">R</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">L</span> <span class="o">+</span> <span class="n">R</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">R</span> <span class="o">-</span> <span class="n">L</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//节点基本信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">L</span> <span class="o">==</span> <span class="n">R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">R</span><span class="p">];</span> <span class="c1">//为递归边界，直接为对应区间的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">build</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//划分建立左区间，注意这里传的index是sed[index].lson
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">build</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">R</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//划分建立右区间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">=</span> <span class="n">node</span><span class="p">[</span><span class="n">NOW_LSon</span><span class="p">].</span><span class="n">val</span> <span class="o">+</span> <span class="n">node</span><span class="p">[</span><span class="n">NOW_RSon</span><span class="p">].</span><span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="c1">//计算该区间信息
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">void</span> <span class="nf">modify</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_R</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">m_val</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">m_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">&lt;=</span> <span class="n">m_R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">lazy</span> <span class="o">+=</span> <span class="n">m_val</span><span class="p">;</span> <span class="c1">//当前区间完全在范围里，直接偷懒。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span> <span class="o">+=</span> <span class="p">(</span><span class="n">min</span><span class="p">(</span><span class="n">m_R</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span><span class="p">)</span> <span class="o">-</span> <span class="n">max</span><span class="p">(</span><span class="n">m_L</span><span class="p">,</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">m_val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">			<span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">			这里是修改所包含区间的值
+</span></span></span><span class="line"><span class="cl"><span class="cm">			如要修改[4,9]，当前节点区间是(1,6)	//这里为了区分用的小括号，实际上包含端点
+</span></span></span><span class="line"><span class="cl"><span class="cm">			则只会修改[4,6)，也就是val += (6 - 4 + 1) * 2
+</span></span></span><span class="line"><span class="cl"><span class="cm">			*/</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">m_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="n">modify</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">m_L</span><span class="p">,</span> <span class="n">m_R</span><span class="p">,</span> <span class="n">m_val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="n">m_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="n">modify</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">m_L</span><span class="p">,</span> <span class="n">m_R</span><span class="p">,</span> <span class="n">m_val</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">long</span> <span class="kt">long</span> <span class="nf">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_L</span><span class="p">,</span> <span class="k">const</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">q_R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">NOW_Node</span><span class="p">.</span><span class="n">lazy</span><span class="p">)</span> <span class="c1">//注意查询的时候，只要有懒标记就必下放【别人都来查岗了你还摸鱼.jpg……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>			<span class="n">NOW_Node</span><span class="p">.</span><span class="n">pushdown</span><span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">L</span> <span class="o">&amp;&amp;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">R</span> <span class="o">&lt;=</span> <span class="n">q_R</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">return</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">val</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//当前区间直接在查询区间里，直接返回值//【我查了，一句返回了，有什么好说的……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//↓ 不完全包含于查询区间里，就要查询两子区间的值计算
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="kt">long</span> <span class="kt">long</span> <span class="n">tmpAns</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">q_L</span> <span class="o">&lt;=</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_LSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="c1">//如果要查询区间左端点，比当前区间的中点还大，证明左儿子区间完全不在
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="k">if</span> <span class="p">(</span><span class="n">q_R</span> <span class="o">&gt;</span> <span class="n">NOW_Node</span><span class="p">.</span><span class="n">mid</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">tmpAns</span> <span class="o">+=</span> <span class="n">query</span><span class="p">(</span><span class="n">NOW_RSon</span><span class="p">,</span> <span class="n">q_L</span><span class="p">,</span> <span class="n">q_R</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">tmpAns</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="n">Segment</span><span class="p">;</span> <span class="c1">//直接用个大的结构体，便于模板化。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">tmp</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span> <span class="o">&gt;&gt;</span> <span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%lld&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">Segment</span><span class="p">.</span><span class="n">build</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//Segment.test(1);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">while</span> <span class="p">(</span><span class="n">m</span><span class="o">--</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">w</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">w</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">Segment</span><span class="p">.</span><span class="n">modify</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">l</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%lld</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">Segment</span><span class="p">.</span><span class="n">query</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">l</span><span class="p">,</span> <span class="n">r</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div>
 </section>
 <footer class="article-footer">
     

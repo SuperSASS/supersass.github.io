@@ -6,7 +6,16 @@
     <description>Recent content in 大学课程 on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 02 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/tags/%E5%A4%A7%E5%AD%A6%E8%AF%BE%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>期中创客项目 - 多功能火灾警报器</title>
+      <link>https://blog.supersassw.com/p/univ-code2product-2/</link>
+      <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-code2product-2/</guid>
+      <description>0x00 小组介绍 小组编号：第20组 小组成员 刘云杰 王翔 蒋添爱 郑然文 王述杰 0x01 项目简介 1. 项目名称 集温度、烟雾、火焰检测于一体的多功能火灾警报器 2. 项目背景</description>
+    </item>
+    
     <item>
       <title>概率论中有关总体的认识……</title>
       <link>https://blog.supersassw.com/p/univ-probabilitystatistics-2/</link>
@@ -22,7 +31,7 @@
       <pubDate>Sun, 26 Dec 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/univ-physics_experiment-2/</guid>
-      <description>1、迈克尔逊干涉仪 调节工具： \(M_1\)手轮 - 调节反光镜\(M_1\)的位置 \(M_1,M_2\)背后的调节螺钉 - 调节各自的方位 \(M_2</description>
+      <description>1、迈克尔逊干涉仪 调节工具： $M_1$手轮 - 调节反光镜$M_1$的位置 $M_1,M_2$背后的调节螺钉 - 调节各自的方位 $M_2$下面的水平和</description>
     </item>
     
     <item>
@@ -40,7 +49,7 @@
       <pubDate>Tue, 23 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/univ-digital_electronic-summary/</guid>
-      <description>第一章 数字逻辑概论 第一节 数字信号与数字电路 比特率：每秒传输数据的位数。 占空比：脉冲作用时间（高电平）\(t_w\)占整个周期\(T\)的百分</description>
+      <description>第一章 数字逻辑概论 第一节 数字信号与数字电路 比特率：每秒传输数据的位数。 占空比：脉冲作用时间（高电平）$t_w$占整个周期$T$的百分比。 $$q(%)=\frac{t_w}{T}\times 100%$$</description>
     </item>
     
     <item>
@@ -89,15 +98,6 @@
     </item>
     
     <item>
-      <title>心理学导论——名词解释……</title>
-      <link>https://blog.supersassw.com/p/univ-intro_psychol-ne/</link>
-      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.supersassw.com/p/univ-intro_psychol-ne/</guid>
-      <description>以下为个人对教材中每章课后练习所出现的名字解释题进行的总结。 教材为：心理学导论（第三版）——人民教育出版社 （黄希庭 郑涌 著） 由于老师跳过了第二</description>
-    </item>
-    
-    <item>
       <title>程序设计——指针习题……</title>
       <link>https://blog.supersassw.com/p/univ-cpp-prac-point/</link>
       <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
@@ -107,21 +107,21 @@
     </item>
     
     <item>
+      <title>心理学导论——名词解释……</title>
+      <link>https://blog.supersassw.com/p/univ-intro_psychol-ne/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-intro_psychol-ne/</guid>
+      <description>以下为个人对教材中每章课后练习所出现的名字解释题进行的总结。 教材为：心理学导论（第三版）——人民教育出版社 （黄希庭 郑涌 著） 由于老师跳过了第二</description>
+    </item>
+    
+    <item>
       <title>高等数学——常用公式……</title>
       <link>https://blog.supersassw.com/p/univ-am-formula/</link>
       <pubDate>Mon, 04 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/univ-am-formula/</guid>
-      <description>LaTex显示好像有误，待修复 定积分 \(\int_0^{\frac{\pi}{2}} f(\sin x)\mathrm{d}x = \int_0^{\frac{\pi}{2}} f(\cos x) \mathrm{d}x\) \(\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x) \mathrm{d}x\) e.g. \(\int_0^\pi \frac{x\sin x}{1+cos^2x} \mathrm{d}x = \frac{\pi}{2}\int_0^\pi \frac{\sin x}{2-sin^2x} \mathrm{d}x\) Walls公式： \(I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\\=\begin{cases}\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{3}{4}\cdot\frac{1}{2}\cdot\frac{\pi}{2}\quad (\text{n is even}) \\\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{4}{5}\cdot\frac{2}{3}\quad (\text{n is odd, n1})\end{cases}\)</description>
-    </item>
-    
-    <item>
-      <title>程序设计——数组……</title>
-      <link>https://blog.supersassw.com/p/univ-cpp-note-array/</link>
-      <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.supersassw.com/p/univ-cpp-note-array/</guid>
-      <description>一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列\(a_i\)： 当\(i</description>
+      <description>LaTex显示好像有误，待修复 定积分 $\int_0^{\frac{\pi}{2}} f(\sin x)\mathrm{d}x = \int_0^{\frac{\pi}{2}} f(\cos x) \mathrm{d}x$ $\int_0^\pi xf(\sin x)\mathrm{d}x = \frac{\pi}{2}\int_0^\pi f(\sin x) \mathrm{d}x$ e.g. $\int_0^\pi \frac{x\sin x}{1+cos^2x} \mathrm{d}x = \frac{\pi}{2}\int_0^\pi \frac{\sin x}{2-sin^2x} \mathrm{d}x$ Walls公式： $I_n=\int_0^\frac{\pi}{2}\sin^nx\mathrm{d}x\=\begin{cases}\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{3}{4}\cdot\frac{1}{2}\cdot\frac{\pi}{2}\quad (\text{n is even}) \\frac{n-1}{n}\cdot\frac{n-3}{n-2}\cdot\ \cdots\ \cdot \frac{4}{5}\cdot\frac{2}{3}\quad (\text{n is odd, n&amp;gt;1})\end{cases}$</description>
     </item>
     
     <item>
@@ -131,6 +131,15 @@
       
       <guid>https://blog.supersassw.com/p/univ-cpp-summary/</guid>
       <description>以下大部分总结于半期考试之前…… 一、注意的点 1、用作为“累加、累乘”的变量的注意事项 例子——累加、累乘的变量 sum1 = sum1 + a;——作为累加求和。 sum2</description>
+    </item>
+    
+    <item>
+      <title>程序设计——数组……</title>
+      <link>https://blog.supersassw.com/p/univ-cpp-note-array/</link>
+      <pubDate>Sat, 26 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/univ-cpp-note-array/</guid>
+      <description>一、什么是数组 1、与数学的联系——数列 关于数组，你可以就把他当作数学上的“数列”，用来存一系列的数。 数学上的一个数列$a_i$： 当$i=1$</description>
     </item>
     
   </channel>

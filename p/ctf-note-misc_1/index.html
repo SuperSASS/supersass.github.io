@@ -367,7 +367,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：5473</div>
+            <div class="char">文章字数：5467</div>
             <div class="time">预计阅读时长： <time>11</time> 分钟</div>
         </div>
     </footer>
@@ -400,7 +400,7 @@ if (!doNotTrack) {
 <em>Tip: 复制16进制的快捷键为<code>Ctrl+Shift+C</code>。</em></li>
 <li>&ldquo;WinHex&rdquo;</li>
 </ol>
-<p><em>其实也称二进制编辑器，因为文件都是以bin二进制来存储的，不过为了阅读方便，将8位2进制串转化为2位16(<span class="math inline">\(2^4=16\)</span>)进制串。</em></p>
+<p><em>其实也称二进制编辑器，因为文件都是以bin二进制来存储的，不过为了阅读方便，将8位2进制串转化为2位16($2^4=16$)进制串。</em></p>
 <h2 id="虚拟机kail">虚拟机——&ldquo;Kail&rdquo;</h2>
 <h3 id="相关命令">相关命令</h3>
 <ul>
@@ -693,7 +693,7 @@ audit.txt则为所分离文件的信息。</p>
 <p>信息也可能隐藏在帧时间间隔中。</p>
 <blockquote>
 <p>e.g.<br>
-很多帧都是<span class="math inline">\(0.1\)</span>s，但某几帧是<span class="math inline">\(0.2\)</span>s，就很有问题.jpg……</p>
+很多帧都是$0.1$s，但某几帧是$0.2$s，就很有问题.jpg……</p>
 </blockquote>
 <p>采用&quot;Ulead GIF&quot;来查看帧时间间隔。</p>
 <h2 id="6-pngbmp">6. png(bmp)</h2>
@@ -798,21 +798,21 @@ audit.txt则为所分离文件的信息。</p>
 <p>脚本爆破来得到真实高度。<br>
 <em>就是暴力的意思，不断修改高度并比对校验和，如果一致则为正确高度。</em><br>
 爆破python代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">binascii</span>
-<span class="kn">import</span> <span class="nn">struct</span>
-<span class="n">misc</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;***.png&#34;</span><span class="p">,</span><span class="s2">&#34;rb&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 请在这里填写要爆破的文件名</span>
-
-<span class="c1"># 爆破高</span>
-<span class="n">crc32_bytes</span> <span class="o">=</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x1d</span><span class="p">:</span><span class="mh">0x20</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 文件IHDR块的crc32的bytes</span>
-<span class="n">crc32_hex_eval</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;0x&#39;</span> <span class="o">+</span> <span class="n">crc32_bytes</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span> <span class="c1"># 将crc32的bytes串 -&gt; hex串 -&gt; 值 </span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4096</span><span class="p">):</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x0c</span><span class="p">:</span><span class="mh">0x0f</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x10</span><span class="p">:</span><span class="mh">0x13</span> <span class="o">+</span><span class="mi">1</span> <span class="p">]</span> <span class="o">+</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&gt;i&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x18</span><span class="p">:</span><span class="mh">0x1c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 爆破IHDR数据</span>
-    <span class="n">crc32</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xffffffff</span> <span class="c1"># 计算当前crc32</span>
-    <span class="k">if</span> <span class="n">crc32</span> <span class="o">==</span> <span class="n">crc32_hex_eval</span> <span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;height:&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;height_hex: &#34;</span> <span class="o">+</span> <span class="nb">hex</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">os</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">binascii</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">struct</span>
+</span></span><span class="line"><span class="cl"><span class="n">misc</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&#34;***.png&#34;</span><span class="p">,</span><span class="s2">&#34;rb&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># 请在这里填写要爆破的文件名</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 爆破高</span>
+</span></span><span class="line"><span class="cl"><span class="n">crc32_bytes</span> <span class="o">=</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x1d</span><span class="p">:</span><span class="mh">0x20</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 文件IHDR块的crc32的bytes</span>
+</span></span><span class="line"><span class="cl"><span class="n">crc32_hex_eval</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="s1">&#39;0x&#39;</span> <span class="o">+</span> <span class="n">crc32_bytes</span><span class="o">.</span><span class="n">hex</span><span class="p">())</span> <span class="c1"># 将crc32的bytes串 -&gt; hex串 -&gt; 值 </span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4096</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">data</span> <span class="o">=</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x0c</span><span class="p">:</span><span class="mh">0x0f</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x10</span><span class="p">:</span><span class="mh">0x13</span> <span class="o">+</span><span class="mi">1</span> <span class="p">]</span> <span class="o">+</span> <span class="n">struct</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="s1">&#39;&gt;i&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="n">misc</span><span class="p">[</span><span class="mh">0x18</span><span class="p">:</span><span class="mh">0x1c</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="c1"># 爆破IHDR数据</span>
+</span></span><span class="line"><span class="cl">    <span class="n">crc32</span> <span class="o">=</span> <span class="n">binascii</span><span class="o">.</span><span class="n">crc32</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xffffffff</span> <span class="c1"># 计算当前crc32</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">crc32</span> <span class="o">==</span> <span class="n">crc32_hex_eval</span> <span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;height:&#34;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;height_hex: &#34;</span> <span class="o">+</span> <span class="nb">hex</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+</span></span></code></pre></div></li>
 </ol>
 <h3 id="数据块idat修改">数据块IDAT修改</h3>
 <p>本来IDAT数据块是写满当前块后再换下一个块，<br>

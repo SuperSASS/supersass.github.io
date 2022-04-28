@@ -335,7 +335,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：2124</div>
+            <div class="char">文章字数：2137</div>
             <div class="time">预计阅读时长： <time>5</time> 分钟</div>
         </div>
     </footer>
@@ -355,14 +355,14 @@ if (!doNotTrack) {
 造成LaTeX在后面的渲染中出错……</p>
 <blockquote>
 <p>比如下面这段LaTeX：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex">x =
-<span class="k">\left\{</span>
-<span class="k">\begin</span><span class="nb">{</span>array<span class="nb">}{</span>l<span class="nb">}</span>
-1 <span class="k">\\</span>
-2
-<span class="k">\end</span><span class="nb">{</span>array<span class="nb">}</span>
-<span class="k">\right</span>.
-</code></pre></div><p>应该被LaTeX渲染成：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl">x =
+</span></span><span class="line"><span class="cl"><span class="k">\left\{</span>
+</span></span><span class="line"><span class="cl"><span class="k">\begin</span><span class="nb">{</span>array<span class="nb">}{</span>l<span class="nb">}</span>
+</span></span><span class="line"><span class="cl">1 <span class="k">\\</span>
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl"><span class="k">\end</span><span class="nb">{</span>array<span class="nb">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">\right</span>.
+</span></span></code></pre></div><p>应该被LaTeX渲染成：
 <figure style="flex-grow: 141; flex-basis: 340px">
 		<a href="/p/test-latex/images/index--11-25_13-51-38.png" data-size="190x134"><img src="/p/test-latex/images/index--11-25_13-51-38.png"
 				srcset="/p/test-latex/images/index--11-25_13-51-38_hu69be7a4a1a08da1e2d5e39a6bd8d22ab_3201_480x0_resize_box_3.png 480w, /p/test-latex/images/index--11-25_13-51-38_hu69be7a4a1a08da1e2d5e39a6bd8d22ab_3201_1024x0_resize_box_3.png 1024w"
@@ -374,28 +374,28 @@ if (!doNotTrack) {
 <p>实际上经过Markdown渲染后，那段markdown会变成：
 <div class="sc-columns"><div class="sc-columns--inner"><blockquote>
 <h3 id="源码">源码</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">$$
-x =
-\left\{
-\begin{array}{l}
-1 \\
-2
-\end{array}
-\right.
-$$
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$$
+</span></span><span class="line"><span class="cl">x =
+</span></span><span class="line"><span class="cl">\left\{
+</span></span><span class="line"><span class="cl">\begin{array}{l}
+</span></span><span class="line"><span class="cl">1 \\
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">\end{array}
+</span></span><span class="line"><span class="cl">\right.
+</span></span><span class="line"><span class="cl">$$
+</span></span></code></pre></div></blockquote>
 </div><div class="sc-columns--inner"><blockquote>
 <h3 id="渲染后的代码">渲染后的代码</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">$$
-x =
-\left{
-\begin{array}{l}
-1 \
-2
-\end{array}
-\right.
-$$
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$$
+</span></span><span class="line"><span class="cl">x =
+</span></span><span class="line"><span class="cl">\left{
+</span></span><span class="line"><span class="cl">\begin{array}{l}
+</span></span><span class="line"><span class="cl">1 \
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">\end{array}
+</span></span><span class="line"><span class="cl">\right.
+</span></span><span class="line"><span class="cl">$$
+</span></span></code></pre></div></blockquote>
 </div></div></p>
 <p>因此这之后LaTeX就会渲染出错，然后不渲染，网页中变成：
 <figure style="flex-grow: 618; flex-basis: 1484px">
@@ -426,23 +426,23 @@ $$
 最好是自己创建一个<code>math.html</code>覆盖，而不是直接修改主题里的<code>math.html</code>……</p>
 <p>打开位置：<code>layouts\partials\article\components</code>，然后创建<code>math.html</code>……</p>
 <p>里面输入这些东西：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">async</span>
-    <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span><span class="p">&gt;</span>
-        <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
-            <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
-                <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span> <span class="s1">&#39;\\)&#39;</span><span class="p">]],</span> <span class="c1">//这里可以修改行内公式支持的符号，比如这里就是$ $和\( \)【注意这里输入\时会被转义……
-</span><span class="c1"></span>                <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$$&#39;</span><span class="p">,</span> <span class="s1">&#39;$$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\[&#39;</span><span class="p">,</span> <span class="s1">&#39;\\]&#39;</span><span class="p">]],</span> <span class="c1">//这里可以修改行间公式支持的符号，这里就是$$ $$\[ \]……
-</span><span class="c1"></span>                <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nx">processEnvironments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-                <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">],</span> <span class="c1">//这里多了个&#39;code&#39;，原因见下……
-</span><span class="c1"></span>                <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span>
-                    <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">&#34;AMS&#34;</span> <span class="p">},</span>
-                    <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;AMSmath.js&#34;</span><span class="p">,</span> <span class="s2">&#34;AMSsymbols.js&#34;</span><span class="p">]</span>
-                <span class="p">}</span>
-            <span class="p">}</span>
-        <span class="p">});</span>
-    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text/javascript&#34;</span> <span class="na">async</span>
+</span></span><span class="line"><span class="cl">    <span class="na">src</span><span class="o">=</span><span class="s">&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">MathJax</span><span class="p">.</span><span class="nx">Hub</span><span class="p">.</span><span class="nx">Config</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">            <span class="nx">tex2jax</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">inlineMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$&#39;</span><span class="p">,</span> <span class="s1">&#39;$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\(&#39;</span><span class="p">,</span> <span class="s1">&#39;\\)&#39;</span><span class="p">]],</span> <span class="c1">//这里可以修改行内公式支持的符号，比如这里就是$ $和\( \)【注意这里输入\时会被转义……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">displayMath</span><span class="o">:</span> <span class="p">[[</span><span class="s1">&#39;$$&#39;</span><span class="p">,</span> <span class="s1">&#39;$$&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;\\[&#39;</span><span class="p">,</span> <span class="s1">&#39;\\]&#39;</span><span class="p">]],</span> <span class="c1">//这里可以修改行间公式支持的符号，这里就是$$ $$\[ \]……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">processEscapes</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">processEnvironments</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">skipTags</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">,</span> <span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;textarea&#39;</span><span class="p">,</span> <span class="s1">&#39;pre&#39;</span><span class="p">],</span> <span class="c1">//这里多了个&#39;code&#39;，原因见下……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="nx">TeX</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">equationNumbers</span><span class="o">:</span> <span class="p">{</span> <span class="nx">autoNumber</span><span class="o">:</span> <span class="s2">&#34;AMS&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">                    <span class="nx">extensions</span><span class="o">:</span> <span class="p">[</span><span class="s2">&#34;AMSmath.js&#34;</span><span class="p">,</span> <span class="s2">&#34;AMSsymbols.js&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">});</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</span></span></code></pre></div>
 
 <details class="sc-details" >
 	<summary>skipTags中多个code的原因</summary>
@@ -482,24 +482,25 @@ $$
 		</a><figcaption>用新生成的hugo替换原来hugo</figcaption></figure></p>
 <p>像这样替换好后，用<code>hugo server</code>查看一下。</p>
 <div class="sc-columns"><div class="sc-columns--inner"><h3 id="markdown中内容">Markdown中内容</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">$$
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$$
+</span></span><span class="line"><span class="cl">x =
+</span></span><span class="line"><span class="cl">\left\{
+</span></span><span class="line"><span class="cl">\begin{array}{l}
+</span></span><span class="line"><span class="cl">1 \\
+</span></span><span class="line"><span class="cl">2
+</span></span><span class="line"><span class="cl">\end{array}
+</span></span><span class="line"><span class="cl">\right.
+</span></span><span class="line"><span class="cl">$$
+</span></span></code></pre></div></div><div class="sc-columns--inner"><h3 id="效果">效果</h3>
+<p>$$
 x =
-\left\{
+\left{
 \begin{array}{l}
-1 \\
+1 \
 2
 \end{array}
 \right.
-$$
-</code></pre></div></div><div class="sc-columns--inner"><h3 id="效果">效果</h3>
-<p><span class="math display">\[x =
-\left\{
-\begin{array}{l}
-1 \\
-2
-\end{array}
-\right.
-\]</span></div></div>
+$$</div></div>
 <p>直接放LaTeX了，发现是正常的，问题暂时解决……</p>
 <h1 id="还有点点小问题">还有点点小问题</h1>
 <p>之所以说是暂时解决，是因为在行间模式的时候会有点问题……<br>
@@ -533,27 +534,27 @@ $$
 <div class="sc-columns"><div class="sc-columns--inner"><div class="snote done ">
 	<div class="snote-content">
 		<p><h2 id="正确的写法">正确的写法</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">$$</span><span class="nb">
-</span><span class="nb">x </span><span class="o">=</span><span class="nb">
-</span><span class="nb"></span><span class="nv">\left\{</span><span class="nb">
-</span><span class="nb"></span><span class="nv">\begin</span><span class="nb">{array}{l}
-</span><span class="nb"></span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
-</span><span class="nb"></span><span class="m">2</span><span class="nb">
-</span><span class="nb"></span><span class="nv">\end</span><span class="nb">{array}
-</span><span class="nb"></span><span class="nv">\right</span><span class="nb">.
-</span><span class="nb"></span><span class="s">$$</span>
-</code></pre></div><p>或者：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">$$</span><span class="nb">
-</span><span class="nb">x </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left\{</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{l} </span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"> </span><span class="m">2</span><span class="nb"> </span><span class="nv">\end</span><span class="nb">{array} </span><span class="nv">\right</span><span class="nb">.
-</span><span class="nb"></span><span class="s">$$</span>
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl"><span class="sb">$$</span><span class="nb">
+</span></span></span><span class="line"><span class="cl"><span class="nb">x </span><span class="o">=</span><span class="nb">
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span><span class="nv">\left\{</span><span class="nb">
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span><span class="nv">\begin</span><span class="nb">{array}{l}
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb">
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span><span class="m">2</span><span class="nb">
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span><span class="nv">\end</span><span class="nb">{array}
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span><span class="nv">\right</span><span class="nb">.
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span><span class="s">$$</span>
+</span></span></code></pre></div><p>或者：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl"><span class="sb">$$</span><span class="nb">
+</span></span></span><span class="line"><span class="cl"><span class="nb">x </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left\{</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{l} </span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"> </span><span class="m">2</span><span class="nb"> </span><span class="nv">\end</span><span class="nb">{array} </span><span class="nv">\right</span><span class="nb">.
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span><span class="s">$$</span>
+</span></span></code></pre></div></p>
 	</div>
 </div>
 </div><div class="sc-columns--inner"><div class="snote error ">
 	<div class="snote-content">
 		<p><h2 id="错误的写法">错误的写法</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="sb">$$</span><span class="nb">x </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left\{</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{l} </span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"> </span><span class="m">2</span><span class="nb"> </span><span class="nv">\end</span><span class="nb">{array} </span><span class="nv">\right</span><span class="nb">.</span><span class="s">$$</span>
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-latex" data-lang="latex"><span class="line"><span class="cl"><span class="sb">$$</span><span class="nb">x </span><span class="o">=</span><span class="nb"> </span><span class="nv">\left\{</span><span class="nb"> </span><span class="nv">\begin</span><span class="nb">{array}{l} </span><span class="m">1</span><span class="nb"> </span><span class="nv">\\</span><span class="nb"> </span><span class="m">2</span><span class="nb"> </span><span class="nv">\end</span><span class="nb">{array} </span><span class="nv">\right</span><span class="nb">.</span><span class="s">$$</span>
+</span></span></code></pre></div></p>
 	</div>
 </div>
 </div></div>
@@ -565,25 +566,26 @@ $$
 <div class="sc-columns"><div class="sc-columns--inner"><div class="snote done ">
 	<div class="snote-content">
 		<p><h3 id="正确的方式">正确的方式</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">$$
-Latex_1...
-$$
-<p>$$
-Latex_2&hellip;
-$$
-</code></pre></div></p>
-</div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$$
+</span></span><span class="line"><span class="cl">Latex_1...
+</span></span><span class="line"><span class="cl">$$
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">\$\$
+</span></span><span class="line"><span class="cl">Latex_2...
+</span></span><span class="line"><span class="cl">\$\$
+</span></span></code></pre></div></p>
+	</div>
 </div>
 </div><div class="sc-columns--inner"><div class="snote error ">
 	<div class="snote-content">
 		<p><h3 id="错误的方式">错误的方式</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown">$$
-Latex_1...
-$$
-$$
-Latex_2...
-$$
-</code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$$
+</span></span><span class="line"><span class="cl">Latex_1...
+</span></span><span class="line"><span class="cl">$$
+</span></span><span class="line"><span class="cl">$$
+</span></span><span class="line"><span class="cl">Latex_2...
+</span></span><span class="line"><span class="cl">$$
+</span></span></code></pre></div></p>
 	</div>
 </div>
 </div></div>
@@ -613,7 +615,7 @@ $$
 <p>应该是&quot;goldmark-mathjax&quot;插件的问题……<br>
 这篇文章写完后才发现……<br>
 有点不舒适，但也不是什么大问题【……</p>
-<p>还是先准备考试，后面有时间再提个issue吧'_&gt;'……</p>
+<p>还是先准备考试，后面有时间再提个issue吧&rsquo;_&gt;&rsquo;……</p>
 
 </section>
 <footer class="article-footer">

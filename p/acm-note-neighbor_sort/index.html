@@ -368,7 +368,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：10256</div>
+            <div class="char">文章字数：10171</div>
             <div class="time">预计阅读时长： <time>21</time> 分钟</div>
         </div>
     </footer>
@@ -384,7 +384,7 @@ if (!doNotTrack) {
 <p>本来的排序型贪心，我们需要<strong>任意两个项都满足决策条件</strong>。<br>
 但我们发现，如果数列每对<strong>相邻两项都满足决策条件</strong>，根据<strong>不等式的传递性</strong>，那么也就可以推出任意两项满足决策条件。</p>
 <p>于是我们分析决策条件时，就不用分析任意两项，可以就分析邻项然后推出决策条件。</p>
-<p>【主要用于如果决策条件复合了其他数据（比如：结果计算为<span class="math inline">\(\sum_{i=1}^na_i\)</span>，复合之前的数列），这样分析可以减少分析难度】</p>
+<p>【主要用于如果决策条件复合了其他数据（比如：结果计算为$\sum_{i=1}^na_i$，复合之前的数列），这样分析可以减少分析难度】</p>
 <ul>
 <li>
 <p>典型例题：<br>
@@ -411,52 +411,55 @@ SWJTU OJ——10.31 A <a class="link" href="https://oj.swjtu.edu.cn/contest/23/p
 <h3 id="1找出每种状态的ans选邻项代入">1、找出每种状态的ans，选邻项代入</h3>
 <blockquote>
 <p>题目描述：<br>
-也就是说，请重新给班尼特排队，要求是最大化<span class="math inline">\(\min_{i=1}^n\{-h_i+\sum_{j=1}^i v_j\}\)</span>。</p>
+也就是说，请重新给班尼特排队，要求是最大化$\min_{i=1}^n{-h_i+\sum_{j=1}^i v_j}$。</p>
 </blockquote>
-<p>那么每种状态的<code>ans</code><span class="math inline">\(=\min_{i=1}^nw_i\)</span>。</p>
-<p>既然要求<span class="math inline">\(\min_{i=1}^n{w_i}\)</span>，所以我们就比较邻项的<span class="math inline">\(w_i,w_j\)</span>，比较其两项的<span class="math inline">\(\min(w_i,w_j)\)</span>，选择最大<code>ans</code>的状态。</p>
+<p>那么每种状态的<code>ans</code>$=\min_{i=1}^nw_i$。</p>
+<p>既然要求$\min_{i=1}^n{w_i}$，所以我们就比较邻项的$w_i,w_j$，比较其两项的$\min(w_i,w_j)$，选择最大<code>ans</code>的状态。</p>
 <ul>
-<li>为什么我们这样排序，能使<code>ans</code><span class="math inline">\(=\min_{i=1}^nw_i\)</span>取得最小？
+<li>为什么我们这样排序，能使<code>ans</code>$=\min_{i=1}^nw_i$取得最小？
 <blockquote>
 <p>就相当于把比较时候的最小值看成短板，每次比较一次选最高的那个，就会把短板提上去一点。<br>
-这样最后得到的就是最高的短板，也就是最大的<span class="math inline">\(\min\)</span>……</p>
+这样最后得到的就是最高的短板，也就是最大的$\min$……</p>
 </blockquote>
 </li>
 </ul>
 <h3 id="2假设相邻位置写出两种状态的ans">2、假设相邻位置，写出两种状态的ans</h3>
 <p>我们首先要把每个位置的<strong>收益表达式</strong>写出来：</p>
 <blockquote>
-<p>题目描述：治疗第<span class="math inline">\(i\)</span>个班尼特的收益<span class="math inline">\(w_i\)</span>等于前面治疗的所有班尼特的<span class="math inline">\(v\)</span>之和减去<span class="math inline">\(h_i\)</span>。</p>
+<p>题目描述：治疗第$i$个班尼特的收益$w_i$等于前面治疗的所有班尼特的$v$之和减去$h_i$。
+$$
+w_i=\sum_{j=1}^iv_j-h_i
+$$</p>
 </blockquote>
-<p><span class="math display">\[w_i=\sum_{j=1}^iv_j-h_i
-\]</span></p>
-<p>那么我们<strong>假设两个相邻位置</strong><span class="math inline">\(i,j\)</span>。其中<span class="math inline">\(i\)</span>在<span class="math inline">\(j\)</span>前，即<span class="math inline">\(i=j-1\)</span>。【必须先假设一个在另一个前后，否则不可能<span class="math inline">\(i\)</span>在<span class="math inline">\(j\)</span>前满足，<span class="math inline">\(j\)</span>在<span class="math inline">\(i\)</span>前也满足】<br>
-记：两者之前的<span class="math inline">\(\sum v\)</span>为<span class="math inline">\(sum\)</span>。【将一些求<span class="math inline">\(w\)</span>要用到的比如<span class="math inline">\(\sum\)</span>记为其他符号表示，可以简化式子】</p>
-<p>然后分别讨论<span class="math inline">\(i\)</span>在<span class="math inline">\(j\)</span>前和<span class="math inline">\(j\)</span>在<span class="math inline">\(i\)</span>前的情况：</p>
+<p>那么我们<strong>假设两个相邻位置</strong>$i,j$。其中$i$在$j$前，即$i=j-1$。【必须先假设一个在另一个前后，否则不可能$i$在$j$前满足，$j$在$i$前也满足】<br>
+记：两者之前的$\sum v$为$sum$。【将一些求$w$要用到的比如$\sum$记为其他符号表示，可以简化式子】</p>
+<p>然后分别讨论$i$在$j$前和$j$在$i$前的情况：</p>
 <ol>
 <li>
-<p>原本状态：<span class="math inline">\(i\)</span>在<span class="math inline">\(j\)</span>前</p>
+<p>原本状态：$i$在$j$前</p>
 <blockquote>
-<p><span class="math display">\[\begin{matrix}
-h & v \\\  \vdots & \vdots(sum) \\\ h_i & v_i \\\ h_j & v_j \\\ \vdots & \vdots
+<p>$$
+\begin{matrix}
+h &amp; v \\  \vdots &amp; \vdots(sum) \\ h_i &amp; v_i \\ h_j &amp; v_j \\ \vdots &amp; \vdots
 \end{matrix}
-\]</span></p>
+$$</p>
 </blockquote>
-<p>对<span class="math inline">\(i\)</span>的收益：<span class="math inline">\(w_{i1}=sum+v_i-h_i\)</span><br>
-对<span class="math inline">\(j\)</span>的收益：<span class="math inline">\(w_{j1}=sum+v_i+v_j-h_j\)</span><br>
-此状态的<code>ans</code>=<span class="math inline">\(\min(w_{i1},w_{j1})\)</span></p>
+<p>对$i$的收益：$w_{i1}=sum+v_i-h_i$<br>
+对$j$的收益：$w_{j1}=sum+v_i+v_j-h_j$<br>
+此状态的<code>ans</code>=$\min(w_{i1},w_{j1})$</p>
 </li>
 <li>
-<p>如果交换：<span class="math inline">\(j\)</span>在<span class="math inline">\(i\)</span>前</p>
+<p>如果交换：$j$在$i$前</p>
 <blockquote>
-<p><span class="math display">\[\begin{matrix}
-h & v \\\ \vdots & \vdots(sum) \\\ h_j & v_j \\\ h_i & v_i \\\ \vdots & \vdots
+<p>$$
+\begin{matrix}
+h &amp; v \\ \vdots &amp; \vdots(sum) \\ h_j &amp; v_j \\ h_i &amp; v_i \\ \vdots &amp; \vdots
 \end{matrix}
-\]</span></p>
+$$</p>
 </blockquote>
-<p>对<span class="math inline">\(i\)</span>的收益：<span class="math inline">\(w_{i2}=sum+v_j+v_i-h_i\)</span>，<br>
-对<span class="math inline">\(j\)</span>的收益：<span class="math inline">\(w_{j2}=sum+v_j-h_j\)</span><br>
-此状态的<code>ans</code>=<span class="math inline">\(\min(w_{i2},w_{j2})\)</span></p>
+<p>对$i$的收益：$w_{i2}=sum+v_j+v_i-h_i$，<br>
+对$j$的收益：$w_{j2}=sum+v_j-h_j$<br>
+此状态的<code>ans</code>=$\min(w_{i2},w_{j2})$</p>
 </li>
 </ol>
 <h3 id="3根据题意写出排序条件并化简得到最终决策方案">3、根据题意写出排序条件并化简，得到最终决策方案</h3>
@@ -464,20 +467,20 @@ h & v \\\ \vdots & \vdots(sum) \\\ h_j & v_j \\\ h_i & v_i \\\ \vdots & \vdots
 <p>题目描述：芭芭拉想让治疗每个班尼特收益的最小值最大。</p>
 </blockquote>
 <p>题意要求使<strong>最小收益最大化</strong>，<br>
-则<strong>最初排序条件</strong>为：<span class="math inline">\(\min(w_{i1},w_{j1})\ge\min(w_{j2},w_{i2})\)</span><br>
-【或者说<strong>交换条件</strong>为：<span class="math inline">\(\text{if} \quad (\min(w_{i1},w_{j1})<\min(w_{j2},w_{i2})) \quad \text{swap}(i,j)\)</span>】</p>
+则<strong>最初排序条件</strong>为：$\min(w_{i1},w_{j1})\ge\min(w_{j2},w_{i2})$<br>
+【或者说<strong>交换条件</strong>为：$\text{if} \quad (\min(w_{i1},w_{j1})&lt;\min(w_{j2},w_{i2})) \quad \text{swap}(i,j)$】</p>
 <blockquote>
-<p><em>其他例子：国王游戏中，是使<strong>最大收益最小化</strong>。则排序条件为：<span class="math inline">\(\max(w_{i1},w_{j1})\le\max(w_{i2},w_{j2})\)</span></em></p>
+<p><em>其他例子：国王游戏中，是使<strong>最大收益最小化</strong>。则排序条件为：$\max(w_{i1},w_{j1})\le\max(w_{i2},w_{j2})$</em></p>
 </blockquote>
 <p>然后对这个决策条件<strong>化简</strong>，使得能直接表达出来。<br>
-【所谓不能直接表达的，便是条件中含有如<span class="math inline">\(\sum\)</span>之类的运算。而我们不可能用循环专门去求，只能通过化简把他消掉】</p>
+【所谓不能直接表达的，便是条件中含有如$\sum$之类的运算。而我们不可能用循环专门去求，只能通过化简把他消掉】</p>
 <blockquote>
 <p>化简方法：</p>
 <p>下列所提到的化简方法参考<a class="link" href="../../../Part%209%20Others/%e5%90%abmax%e3%80%81min%e7%9a%84%e4%b8%8d%e7%ad%89%e5%bc%8f.md" >含max、min的不等式</a>。</p>
 <ol>
 <li>
 <p>利用“<strong>完全展开法则</strong>”，观察是否含有<strong>恒成立或恒不成立</strong>。<br>
-【或者直接观察题目中<span class="math inline">\(w_{i1},w_{j1},w_{j2},w_{i2}\)</span>间的关系，找出恒成立或恒不成立，然后利用“<strong>消元法则</strong>”】</p>
+【或者直接观察题目中$w_{i1},w_{j1},w_{j2},w_{i2}$间的关系，找出恒成立或恒不成立，然后利用“<strong>消元法则</strong>”】</p>
 </li>
 <li>
 <p>利用排序规则下特殊的“<strong>相同无关原则</strong>”，结合“<strong>取反性</strong>、<strong>结合性</strong>”等性质，化简并得到最终的最简决策</p>
@@ -485,25 +488,25 @@ h & v \\\ \vdots & \vdots(sum) \\\ h_j & v_j \\\ h_i & v_i \\\ \vdots & \vdots
 </ol>
 </blockquote>
 <p>则本题中：<br>
-展开为<span class="math inline">\(\text{if} \quad ((w_{i1}<w_{i2} \quad and \quad w_{i1}<w_{j2}) \quad or \quad (w_{j1}<w_{i2} \quad and \quad w_{j1}<w_{j2})) \quad \text{swap}\)</span>。</p>
-<p>Test:<span class="math inline">\(a< b=c\)</span></p>
+展开为$\text{if} \quad ((w_{i1}&lt;w_{i2} \quad and \quad w_{i1}&lt;w_{j2}) \quad or \quad (w_{j1}&lt;w_{i2} \quad and \quad w_{j1}&lt;w_{j2})) \quad \text{swap}$。</p>
+<p>Test:$a&lt; b=c$</p>
 <ul>
-<li>发现<span class="math inline">\(w_{i1}<w_{i2}\)</span>恒成立：
+<li>发现$w_{i1}&lt;w_{i2}$恒成立：
 <blockquote>
-<p><span class="math inline">\(\sout{sum+v_i-h_i} \quad?\quad \sout{sum}+v_j\sout{+v_i-h_i}\)</span><br>
-<span class="math inline">\(\implies 0<v_j\)</span></p>
+<p>$\sout{sum+v_i-h_i} \quad?\quad \sout{sum}+v_j\sout{+v_i-h_i}$<br>
+$\implies 0&lt;v_j$</p>
 </blockquote>
 </li>
-<li>发现<span class="math inline">\(w_{j1}<w_{j2}\)</span>恒不成立：
+<li>发现$w_{j1}&lt;w_{j2}$恒不成立：
 <blockquote>
-<p><span class="math inline">\(\sout{sum}+v_i\sout{+v_j-h_j} \quad?\quad \sout{sum+v_j-h_j}\)</span><br>
-<span class="math inline">\(\implies v_i>0\)</span></p>
+<p>$\sout{sum}+v_i\sout{+v_j-h_j} \quad?\quad \sout{sum+v_j-h_j}$<br>
+$\implies v_i&gt;0$</p>
 </blockquote>
 </li>
 </ul>
 <p>故原式可简化为：<br>
-<span class="math inline">\(\text{if} \quad (w_{i1}<w_{j2}) \quad \text{swap}\)</span><br>
-<span class="math inline">\(\implies \text{if} \quad (v_i-h_i < v_j-h_j) \quad \text{swap}\)</span></p>
+$\text{if} \quad (w_{i1}&lt;w_{j2}) \quad \text{swap}$<br>
+$\implies \text{if} \quad (v_i-h_i &lt; v_j-h_j) \quad \text{swap}$</p>
 <p>这便是化简后的<strong>决策条件</strong>。</p>
 <hr>
 
@@ -542,36 +545,36 @@ h & v \\\ \vdots & \vdots(sum) \\\ h_j & v_j \\\ h_i & v_i \\\ \vdots & \vdots
 </div>
 <hr>
 <h2 id="标程代码">标程代码</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100010</span><span class="p">;</span>
-
-<span class="k">struct</span> <span class="nc">Data</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
-	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Data</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">-</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">v</span> <span class="o">-</span> <span class="n">t</span><span class="p">.</span><span class="n">h</span><span class="p">;</span> <span class="p">}</span> <span class="c1">//以推出的最终最简决策重载&lt;运算符
-</span><span class="c1"></span><span class="p">}</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">);</span>
-
-	<span class="n">sort</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//就一个sort
-</span><span class="c1"></span>
-	<span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">tmp</span> <span class="o">+=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">;</span>
-		<span class="n">res</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">);</span> <span class="c1">//从头到尾遍历，res记录最终答案
-</span><span class="c1"></span>	<span class="p">}</span>
-	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
-	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div><h1 id="使用注意事项">使用注意事项</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;bits/stdc++.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100010</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Data</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Data</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">-</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">v</span> <span class="o">-</span> <span class="n">t</span><span class="p">.</span><span class="n">h</span><span class="p">;</span> <span class="p">}</span> <span class="c1">//以推出的最终最简决策重载&lt;运算符
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">sort</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">//就一个sort
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">tmp</span> <span class="o">+=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">res</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">);</span> <span class="c1">//从头到尾遍历，res记录最终答案
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h1 id="使用注意事项">使用注意事项</h1>
 <p>注意之前我们定义中存在一个推论：</p>
 <blockquote>
 <p>如果数列每对相邻两项都满足决策条件，<strong>根据不等式的传递性</strong>，那么也就可以推出任意两项满足决策条件。</p>
@@ -581,64 +584,64 @@ h & v \\\ \vdots & \vdots(sum) \\\ h_j & v_j \\\ h_i & v_i \\\ \vdots & \vdots
 <h2 id="先前知识严格弱序">先前知识——严格弱序</h2>
 <blockquote>
 <ul>
-<li><span class="math inline">\(X \not< X\)</span>（比较条件非自反性）<br>
-意思是：<span class="math inline">\(X\)</span>与<span class="math inline">\(X\)</span>本身，不满足比较条件。
+<li>$X \not&lt; X$（比较条件非自反性）<br>
+意思是：$X$与$X$本身，不满足比较条件。
 <ul>
-<li>反例：比较条件是<span class="math inline">\(a_i \ge a_j\)</span>。<br>
-那么<span class="math inline">\(X(a_i) \ge X(a_i)\)</span>满足比较条件，为<span class="math inline">\(X < X\)</span>，故不是严格弱序。</li>
+<li>反例：比较条件是$a_i \ge a_j$。<br>
+那么$X(a_i) \ge X(a_i)$满足比较条件，为$X &lt; X$，故不是严格弱序。</li>
 </ul>
 </li>
-<li>若<span class="math inline">\(X < Y\)</span>，则<span class="math inline">\(Y \not< X\)</span>（比较条件非对称性）<br>
-意思是：<span class="math inline">\(X\)</span>和<span class="math inline">\(Y\)</span>比较若满足比较条件，则<span class="math inline">\(Y\)</span>和<span class="math inline">\(X\)</span>比较不会满足条件。
+<li>若$X &lt; Y$，则$Y \not&lt; X$（比较条件非对称性）<br>
+意思是：$X$和$Y$比较若满足比较条件，则$Y$和$X$比较不会满足条件。
 <ul>
-<li>反例：比较条件是<span class="math inline">\(a_i \ge a_j\)</span>。<br>
-那么若<span class="math inline">\(a_i=a_j\)</span>，<span class="math inline">\(X(a_i) \ge Y(a_j)\)</span>满足条件，<br>
-但<span class="math inline">\(Y(a_j) \ge X(a_i)\)</span>也满足条件，故不是严格弱序。</li>
+<li>反例：比较条件是$a_i \ge a_j$。<br>
+那么若$a_i=a_j$，$X(a_i) \ge Y(a_j)$满足条件，<br>
+但$Y(a_j) \ge X(a_i)$也满足条件，故不是严格弱序。</li>
 </ul>
 </li>
-<li>若<span class="math inline">\(X < Y,Y < Z\)</span>，则<span class="math inline">\(X < Z\)</span>（比较条件不等<strong>传递性</strong>）<br>
-意思是：<span class="math inline">\(X\)</span>和<span class="math inline">\(Y\)</span>满足比较条件，<span class="math inline">\(Y\)</span>和<span class="math inline">\(Z\)</span>满足比较条件，则<span class="math inline">\(X\)</span>和<span class="math inline">\(Y\)</span>满足比较条件。
+<li>若$X &lt; Y,Y &lt; Z$，则$X &lt; Z$（比较条件不等<strong>传递性</strong>）<br>
+意思是：$X$和$Y$满足比较条件，$Y$和$Z$满足比较条件，则$X$和$Y$满足比较条件。
 <ul>
 <li>
-<p>反例：比较条件是<span class="math inline">\(\min(a_i,b_j) \le \min(a_j,b_i)\)</span>。<br>
+<p>反例：比较条件是$\min(a_i,b_j) \le \min(a_j,b_i)$。<br>
 那么对于下组数据：</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th><span class="math inline">\(a\)</span></th>
-<th><span class="math inline">\(b\)</span></th>
+<th>$a$</th>
+<th>$b$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="math inline">\(i\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
+<td>$i$</td>
+<td>$2$</td>
+<td>$1$</td>
 </tr>
 <tr>
-<td><span class="math inline">\(j\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
+<td>$j$</td>
+<td>$1$</td>
+<td>$1$</td>
 </tr>
 <tr>
-<td><span class="math inline">\(k\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
+<td>$k$</td>
+<td>$1$</td>
+<td>$2$</td>
 </tr>
 </tbody>
 </table>
-<p><span class="math inline">\(X(\min(a_i,b_j)=1)<Y(\min(a_j,b_i)=1)\)</span><br>
-<span class="math inline">\(Y(\min(a_j,b_k)=1)<Z(\min(a_k,b_j)=1)\)</span><br>
-但<span class="math inline">\(X(\min(a_i,b_k)=2) \not< Z(\min(a_k,b_i)=1)\)</span>，故不是严格弱序。
-【再次提示这里的<span class="math inline">\(<\)</span>并不代表小于，而是代表符合比较条件的意思。】</p>
+<p>$X(\min(a_i,b_j)=1)&lt;Y(\min(a_j,b_i)=1)$<br>
+$Y(\min(a_j,b_k)=1)&lt;Z(\min(a_k,b_j)=1)$<br>
+但$X(\min(a_i,b_k)=2) \not&lt; Z(\min(a_k,b_i)=1)$，故不是严格弱序。
+【再次提示这里的$&lt;$并不代表小于，而是代表符合比较条件的意思。】</p>
 </li>
 </ul>
 </li>
-<li>若<span class="math inline">\(X=Y,Y=Z\)</span>，则<span class="math inline">\(X=Z\)</span>（比较条件相等<strong>传递性</strong>）<br>
+<li>若$X=Y,Y=Z$，则$X=Z$（比较条件相等<strong>传递性</strong>）<br>
 意思同上。<br>
-<em>在“ouuan”dalao的讲解种写的是<span class="math inline">\(x\not<y,y\not<x,y\not<z,z\not<y\)</span>（不可比性的传递性）。我改成这样更好理解。</em><br>
-<em>不过注意判断相等的方法是<span class="math inline">\(x\not<y,y\not<x\)</span>这么判断的。</em>
+<em>在“ouuan”dalao的讲解种写的是$x\not&lt;y,y\not&lt;x,y\not&lt;z,z\not&lt;y$（不可比性的传递性）。我改成这样更好理解。</em><br>
+<em>不过注意判断相等的方法是$x\not&lt;y,y\not&lt;x$这么判断的。</em>
 <ul>
 <li>反例见下引例的「错误分析」</li>
 </ul>
@@ -646,8 +649,8 @@ h & v \\\ \vdots & \vdots(sum) \\\ h_j & v_j \\\ h_i & v_i \\\ \vdots & \vdots
 </ul>
 </blockquote>
 <ul>
-<li>这里的<span class="math inline">\(X\)</span>、<span class="math inline">\(Y\)</span>、<span class="math inline">\(Z\)</span>代表的是取某下标<span class="math inline">\(i\)</span>、<span class="math inline">\(j\)</span>后的<strong>决策条件的一侧元素</strong>。并不一定是某一具体数据。</li>
-<li>这里的<span class="math inline">\(<\)</span>并不代表小于的意思，而是代表<strong>满足比较条件</strong>，那么<span class="math inline">\(\not<\)</span>则代表不满足比较条件。</li>
+<li>这里的$X$、$Y$、$Z$代表的是取某下标$i$、$j$后的<strong>决策条件的一侧元素</strong>。并不一定是某一具体数据。</li>
+<li>这里的$&lt;$并不代表小于的意思，而是代表<strong>满足比较条件</strong>，那么$\not&lt;$则代表不满足比较条件。</li>
 </ul>
 <h2 id="引例-1">引例</h2>
 <blockquote>
@@ -662,62 +665,65 @@ h & v \\\ \vdots & \vdots(sum) \\\ h_j & v_j \\\ h_i & v_i \\\ \vdots & \vdots
 <p>题目描述：<br>
 她想请你来重新安排一下队伍的顺序，使得获得奖金最多的大臣，所获奖金数目尽可能的少。</p>
 </blockquote>
-<p>可知每种状态的<code>ans</code><span class="math inline">\(=\max_{i=1}^nw_i\)</span>。</p>
-<p>那么比较邻项<span class="math inline">\(i,j\)</span>，就是<span class="math inline">\(max(w_i,w_j)\)</span>。</p>
+<p>可知每种状态的<code>ans</code>$=\max_{i=1}^nw_i$。</p>
+<p>那么比较邻项$i,j$，就是$max(w_i,w_j)$。</p>
 </li>
 <li>
 <p>假设相邻位置，写出两种状态的ans</p>
-<p>首先先写收益表达式：</p>
-<p><span class="math display">\[w_i=\max(w_{i-1},\sum_{j=1}^ia_j)+b_i
-\]</span></p>
-<p>【第一位的收益可以合并到这个表达式里，令<span class="math inline">\(w_0=0\)</span>就可以了。】</p>
-<p>假设相邻位置<span class="math inline">\(i,j\)</span>。其中<span class="math inline">\(i\)</span>在<span class="math inline">\(j\)</span>前，即<span class="math inline">\(i=j-1\)</span>。<br>
-记：之前的<span class="math inline">\(\sum a\)</span>为<span class="math inline">\(sum\)</span>，前一项的<span class="math inline">\(c_{i-1}\)</span>为<span class="math inline">\(pre_w\)</span>。</p>
-<p>会发现，由于<span class="math inline">\(a,b>0\)</span>，整个收益表达式中又没出现会使收益变少的运算，故<strong>收益单增</strong>。<br>
+<p>首先先写收益表达式：<br>
+$$
+w_i=\max(w_{i-1},\sum_{j=1}^ia_j)+b_i
+$$
+【第一位的收益可以合并到这个表达式里，令$w_0=0$就可以了。】</p>
+<p>假设相邻位置$i,j$。其中$i$在$j$前，即$i=j-1$。<br>
+记：之前的$\sum a$为$sum$，前一项的$c_{i-1}$为$pre_w$。</p>
+<p>会发现，由于$a,b&gt;0$，整个收益表达式中又没出现会使收益变少的运算，故<strong>收益单增</strong>。<br>
 即在<strong>后面的</strong>大臣的收益<strong>一定大于</strong>在<strong>前面的</strong>。<br>
-<span class="math inline">\(i\)</span>在<span class="math inline">\(j\)</span>前时，则<span class="math inline">\(w_j\)</span>一定大于<span class="math inline">\(w_i\)</span>，所以<span class="math inline">\(\max(w_i,w_j)=w_j\)</span>，可以拆开一层<span class="math inline">\(\max\)</span>。</p>
+$i$在$j$前时，则$w_j$一定大于$w_i$，所以$\max(w_i,w_j)=w_j$，可以拆开一层$\max$。</p>
 <ol>
 <li>
-<p>原本状态：<span class="math inline">\(i\)</span>在<span class="math inline">\(j\)</span>前</p>
+<p>原本状态：$i$在$j$前</p>
 <blockquote>
-<p><span class="math display">\[\begin{matrix}
-a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_i & b_i & w_{i1} \\\ a_j & b_j & w_{j1} \\\ \vdots & \vdots & \vdots
+<p>$$
+\begin{matrix}
+a &amp; b &amp; c \\ \vdots(sum) &amp; \vdots &amp; \vdots(pre_w) \\ a_i &amp; b_i &amp; w_{i1} \\ a_j &amp; b_j &amp; w_{j1} \\ \vdots &amp; \vdots &amp; \vdots
 \end{matrix}
-\]</span></p>
+$$</p>
 </blockquote>
-<p><span class="math inline">\(w_{i1}=\max(pre\_w,sum+a_i)+b_i\)</span><br>
-<span class="math inline">\(w_{j1}=\max(w_{i1},sum+a_i+a_j)+b_j\)</span><br>
-此状态的<code>ans</code>=<span class="math inline">\(\max(w_{i1},w_{j1})=w_{j1}\)</span></p>
+<p>$w_{i1}=\max(pre_w,sum+a_i)+b_i$<br>
+$w_{j1}=\max(w_{i1},sum+a_i+a_j)+b_j$<br>
+此状态的<code>ans</code>=$\max(w_{i1},w_{j1})=w_{j1}$</p>
 </li>
 <li>
-<p>如果交换：<span class="math inline">\(j\)</span>在<span class="math inline">\(i\)</span>前</p>
+<p>如果交换：$j$在$i$前</p>
 <blockquote>
-<p><span class="math display">\[\begin{matrix}
-a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a_i & b_i & w_{i2} \\\ \vdots & \vdots & \vdots
+<p>$$
+\begin{matrix}
+a &amp; b &amp; c \\ \vdots(sum) &amp; \vdots &amp; \vdots(pre_w) \\ a_j &amp; b_j &amp; w_{j2} \\ a_i &amp; b_i &amp; w_{i2} \\ \vdots &amp; \vdots &amp; \vdots
 \end{matrix}
-\]</span></p>
+$$</p>
 </blockquote>
-<p><span class="math inline">\(w_{i2}=\max(w_{j2},sum+a_j+a_i)+b_i\)</span><br>
-<span class="math inline">\(w_{j2}=\max(pre\_w,sum+a_j)+b_j\)</span><br>
-此状态的<code>ans</code>=<span class="math inline">\(\max(w_{i2},w_{j2})=w_{i2}\)</span></p>
+<p>$w_{i2}=\max(w_{j2},sum+a_j+a_i)+b_i$<br>
+$w_{j2}=\max(pre_w,sum+a_j)+b_j$<br>
+此状态的<code>ans</code>=$\max(w_{i2},w_{j2})=w_{i2}$</p>
 </li>
 </ol>
 </li>
 <li>
 <p>根据题意写出排序条件并化简，得到最终决策方案</p>
 <p>题意要求使<strong>最大收益最小化</strong>，<br>
-则<strong>排序条件</strong>：<span class="math inline">\(\max(w_{i1},w_{j1}) \le \max(w_{i2},w_{j2})\)</span></p>
+则<strong>排序条件</strong>：$\max(w_{i1},w_{j1}) \le \max(w_{i2},w_{j2})$</p>
 <p>开始化简：<br>
-<span class="math inline">\(\max(w_{i1},w_{j1}) \le \max(w_{i2},w_{j2})\)</span><br>
-<span class="math inline">\(\implies w_{j1} \le w_{j2}\)</span><br>
-<span class="math inline">\(\implies \max(\sout{pre\_w+b_i+b_j},\underline{sum+a_i}+b_i+\underline{b_j},\underline{sum+a_i}+a_j+\underline{b_j}) \le \max(\sout{pre\_w+b_j+b_i},\underline{sum+a_j}+b_j+\underline{b_i},\underline{sum+a_j}+a_i+\underline{b_i})\)</span><br>
+$\max(w_{i1},w_{j1}) \le \max(w_{i2},w_{j2})$<br>
+$\implies w_{j1} \le w_{j2}$<br>
+$\implies \max(\sout{pre_w+b_i+b_j},\underline{sum+a_i}+b_i+\underline{b_j},\underline{sum+a_i}+a_j+\underline{b_j}) \le \max(\sout{pre_w+b_j+b_i},\underline{sum+a_j}+b_j+\underline{b_i},\underline{sum+a_j}+a_i+\underline{b_i})$<br>
 【删除线的部分代表根据相同无关原则可以消去；下划线的部分代表根据结合性可以提出来】<br>
-<span class="math inline">\(\implies \max(b_i,a_j)+sum+a_i+b_j \le \max(b_j,a+i)+sum+a_j+b_i\)</span><br>
-<span class="math inline">\(\implies \max(b_i,a_j)-a_j-b_i \le \max(b_j,a_i)-a_i-b_j\)</span><br>
-<span class="math inline">\(\implies \max(-a_j,-b_i) \le \max(-a_i,-b_j)\)</span><br>
-<span class="math inline">\(\implies -\min(a_j,b_i) \le -\min(a_i,b_j)\)</span><br>
-<span class="math inline">\(\implies \min(a_j,b_i) > \min(a_i,b_j)\)</span></p>
-<p>最终的<strong>决策条件</strong>：<span class="math inline">\(\min(a_j,b_i) > \min(a_i,b_j)\)</span></p>
+$\implies \max(b_i,a_j)+sum+a_i+b_j \le \max(b_j,a+i)+sum+a_j+b_i$<br>
+$\implies \max(b_i,a_j)-a_j-b_i \le \max(b_j,a_i)-a_i-b_j$<br>
+$\implies \max(-a_j,-b_i) \le \max(-a_i,-b_j)$<br>
+$\implies -\min(a_j,b_i) \le -\min(a_i,b_j)$<br>
+$\implies \min(a_j,b_i) &gt; \min(a_i,b_j)$</p>
+<p>最终的<strong>决策条件</strong>：$\min(a_j,b_i) &gt; \min(a_i,b_j)$</p>
 </li>
 <li>
 <p>那就开写呗……</p>
@@ -728,40 +734,40 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 <h3 id="错误分析">错误分析</h3>
 <p>这里便不满足严格弱序的<strong>相等传递性</strong>这个性质。</p>
 <blockquote>
-<p>当取<span class="math inline">\(i,j\)</span>时，若<span class="math inline">\(\min(a_i,b_j)=\min(a_j,b_i)\)</span>，<br>
-当取<span class="math inline">\(j,k\)</span>时，若<span class="math inline">\(\min(a_j,b_k)=\min(a_k,b_j)\)</span>，<br>
-则需要满足：取<span class="math inline">\(i,k\)</span>时，<span class="math inline">\(\min(a_i,b_k)=\min(a_k,b_i)\)</span></p>
+<p>当取$i,j$时，若$\min(a_i,b_j)=\min(a_j,b_i)$，<br>
+当取$j,k$时，若$\min(a_j,b_k)=\min(a_k,b_j)$，<br>
+则需要满足：取$i,k$时，$\min(a_i,b_k)=\min(a_k,b_i)$</p>
 </blockquote>
 <p>反例：</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th><span class="math inline">\(a\)</span></th>
-<th><span class="math inline">\(b\)</span></th>
+<th>$a$</th>
+<th>$b$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="math inline">\(i\)</span></td>
-<td><span class="math inline">\(3\)</span></td>
-<td><span class="math inline">\(5\)</span></td>
+<td>$i$</td>
+<td>$3$</td>
+<td>$5$</td>
 </tr>
 <tr>
-<td><span class="math inline">\(j\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
+<td>$j$</td>
+<td>$1$</td>
+<td>$1$</td>
 </tr>
 <tr>
-<td><span class="math inline">\(k\)</span></td>
-<td><span class="math inline">\(7\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
+<td>$k$</td>
+<td>$7$</td>
+<td>$2$</td>
 </tr>
 </tbody>
 </table>
-<p>虽然<span class="math inline">\(\min(a_i,b_j)=\min(a_j,b_i)\)</span>和<span class="math inline">\(\min(a_j,b_k)=\min(a_k,b_j)\)</span>都满足，<br>
-但却不满足<span class="math inline">\(\min(a_i,b_k)=\min(a_k,b_i)\)</span>。<br>
-【只需要让<span class="math inline">\(a_j,b_j\)</span>相等，就可以构建众多反例。】</p>
+<p>虽然$\min(a_i,b_j)=\min(a_j,b_i)$和$\min(a_j,b_k)=\min(a_k,b_j)$都满足，<br>
+但却不满足$\min(a_i,b_k)=\min(a_k,b_i)$。<br>
+【只需要让$a_j,b_j$相等，就可以构建众多反例。】</p>
 <h4 id="错误根本原因新内容">错误根本原因（新内容！）</h4>
 <ul>
 <li><strong>为什么不满足严格弱序中传递性就会造成错误</strong>：
@@ -771,8 +777,8 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 但问题就刚好出在这个“直接有序”上。</p>
 <p>之所以在左右都有序后，会认为整个数列直接有序，<br>
 就是因为利用了<strong>严格弱序中的传递性</strong>：<br>
-认为<span class="math inline">\(X < Y,Y < Z\)</span>，则<span class="math inline">\(X < Z\)</span>，<br>
-以及<span class="math inline">\(X = Y,Y = Z\)</span>，则<span class="math inline">\(X = Z\)</span>。</p>
+认为$X &lt; Y,Y &lt; Z$，则$X &lt; Z$，<br>
+以及$X = Y,Y = Z$，则$X = Z$。</p>
 <p>但假如不满足的第一条的话，分治处理过后：<br>
 左侧的数是小于中间的，中间的数也是小于右边的，但左侧的是却不一定小于右边的了。<br>
 会造成很严重的合并后错误。</p>
@@ -784,64 +790,64 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 	</div>
 </div></p>
 <p>但一旦<strong>出现等于条件</strong>的情况，则不<strong>能推得左边的也等于右边的</strong>，<br>
-同时<span class="math inline">\(X=Y, Y<Z \implies X<Z\)</span>、<span class="math inline">\(X<Y, Y=Z \implies X<Z\)</span>也无法推得。</p>
+同时$X=Y, Y&lt;Z \implies X&lt;Z$、$X&lt;Y, Y=Z \implies X&lt;Z$也无法推得。</p>
 <blockquote>
-<p>举例：判断条件为<span class="math inline">\(\min(a_i,b_j) < \min(a_j,b_i)\)</span>【就本题我们推的条件……
+<p>举例：判断条件为$\min(a_i,b_j) &lt; \min(a_j,b_i)$【就本题我们推的条件……
 对以下两组数据：</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th><span class="math inline">\(a\)</span></th>
-<th><span class="math inline">\(b\)</span></th>
+<th>$a$</th>
+<th>$b$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="math inline">\(i\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
+<td>$i$</td>
+<td>$1$</td>
+<td>$1$</td>
 </tr>
 <tr>
-<td><span class="math inline">\(j\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
+<td>$j$</td>
+<td>$1$</td>
+<td>$2$</td>
 </tr>
 <tr>
-<td><span class="math inline">\(k\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
+<td>$k$</td>
+<td>$2$</td>
+<td>$2$</td>
 </tr>
 </tbody>
 </table>
-<p>其中<span class="math inline">\(X(i,j)=Y(j,i),Y(j,k)<Z(k,j)\)</span>，但<span class="math inline">\(X(i,k) \not< Z(k,i)\)</span>，为<span class="math inline">\(X=Z\)</span>。</p>
+<p>其中$X(i,j)=Y(j,i),Y(j,k)&lt;Z(k,j)$，但$X(i,k) \not&lt; Z(k,i)$，为$X=Z$。</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th><span class="math inline">\(a\)</span></th>
-<th><span class="math inline">\(b\)</span></th>
+<th>$a$</th>
+<th>$b$</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="math inline">\(i\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
+<td>$i$</td>
+<td>$1$</td>
+<td>$2$</td>
 </tr>
 <tr>
-<td><span class="math inline">\(j\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
+<td>$j$</td>
+<td>$2$</td>
+<td>$1$</td>
 </tr>
 <tr>
-<td><span class="math inline">\(k\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
+<td>$k$</td>
+<td>$1$</td>
+<td>$1$</td>
 </tr>
 </tbody>
 </table>
-<p>其中<span class="math inline">\(X(i,j)<Y(j,i),Y(j,k)=Z(k,j)\)</span>，但<span class="math inline">\(X(i,k) \not< Z(k,i)\)</span>，为<span class="math inline">\(X=Z\)</span>。</p>
+<p>其中$X(i,j)&lt;Y(j,i),Y(j,k)=Z(k,j)$，但$X(i,k) \not&lt; Z(k,i)$，为$X=Z$。</p>
 </blockquote>
 <p>那么<strong>不满足传递性</strong>，就会导致<strong>虽然序列大部分满足决策条件</strong>，但<strong>并不是任意两项都满足条件的</strong>。<br>
 而回到我们贪心的基本要求：需要<strong>任意两个元素都满足决策条件</strong>。<br>
@@ -863,24 +869,24 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 我们就必须对相等状况作出严格的操作规定了，否则<strong>两种不同的状态</strong>会导致数据<strong>最终结果的不一致</strong>。<br>
 也就是说我们要对<strong>相等状况</strong>进行<strong>特判</strong>。</li>
 </ul>
-<p>那么我们就来考虑在<span class="math inline">\(\max(w_{i1},w_{j1}) = \max(w_{i2},w_{j2})\)</span>的相等条件下，又该加什么判断。<br>
+<p>那么我们就来考虑在$\max(w_{i1},w_{j1}) = \max(w_{i2},w_{j2})$的相等条件下，又该加什么判断。<br>
 也就是说，除了这个很显然的条件在影响<code>ans</code>外，还有没有什么可能影响<code>ans</code>。</p>
 <p>根据个人看法不同，会有很多种可能的条件，以下列举两种正确的：</p>
 <ol>
 <li>
-<p>会发现：<span class="math inline">\(a\)</span>的前缀和会影响<span class="math inline">\(\max(c_{i-1},\sum_{j=1}^ia_j)\)</span>这个的选择，从而影响<span class="math inline">\(w_i\)</span>，从而影响<code>ans</code>。<br>
-因为要找最小的<code>ans</code>，所以我们<strong>把<span class="math inline">\(a\)</span>更小的放在前面</strong>，这样就能让更加保证所得状态是最优的了。</p>
+<p>会发现：$a$的前缀和会影响$\max(c_{i-1},\sum_{j=1}^ia_j)$这个的选择，从而影响$w_i$，从而影响<code>ans</code>。<br>
+因为要找最小的<code>ans</code>，所以我们<strong>把$a$更小的放在前面</strong>，这样就能让更加保证所得状态是最优的了。</p>
 </li>
 <li>
-<p>会发现：两种状态的前后两项<span class="math inline">\(w\)</span>，后者是一样的【我们比较条件就是用的两状态的后者】，因此我们要让前者尽量小，从而确保<code>ans</code>更小。<br>
-所以我们<strong>把<span class="math inline">\(b\)</span>更小的放在前面</strong>。</p>
+<p>会发现：两种状态的前后两项$w$，后者是一样的【我们比较条件就是用的两状态的后者】，因此我们要让前者尽量小，从而确保<code>ans</code>更小。<br>
+所以我们<strong>把$b$更小的放在前面</strong>。</p>
 </li>
 </ol>
 <ul>
 <li>那么假如这两个条件判断出来也是相等的，需不需要再特判呢？
 <blockquote>
-<p>假如<span class="math inline">\(\min(a_j,b_i) = \min(a_i,b_j)\)</span>和<span class="math inline">\(a_i = a_j\)</span>（或者<span class="math inline">\(b_i = b_j\)</span>）同时满足，<br>
-则可以推出<span class="math inline">\(a_i=a_j,b_i=b_j\)</span>，也就是这两项的数据完全一致，并不是比较用数据一致，因此我们这里也可以即交换又不交换，保持模棱两可定义。</p>
+<p>假如$\min(a_j,b_i) = \min(a_i,b_j)$和$a_i = a_j$（或者$b_i = b_j$）同时满足，<br>
+则可以推出$a_i=a_j,b_i=b_j$，也就是这两项的数据完全一致，并不是比较用数据一致，因此我们这里也可以即交换又不交换，保持模棱两可定义。</p>
 </blockquote>
 </li>
 </ul>
@@ -904,7 +910,7 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 1 2<br>
 6 5</p>
 </blockquote>
-<p><em>以下表格中的option表示<span class="math inline">\(\max(c_{i-1},\sum_{j=1}^ia_j)\)</span>选择的哪个</em>。</p>
+<p><em>以下表格中的option表示$\max(c_{i-1},\sum_{j=1}^ia_j)$选择的哪个</em>。</p>
 <ul>
 <li>
 <p>标准答案：<code>27</code></p>
@@ -915,47 +921,47 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 <thead>
 <tr>
 <th></th>
-<th><span class="math inline">\(a\)</span></th>
-<th><span class="math inline">\(b\)</span></th>
-<th><span class="math inline">\(c\)</span></th>
+<th>$a$</th>
+<th>$b$</th>
+<th>$c$</th>
 <th>option</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
-<td><span class="math inline">\(3\)</span></td>
+<td>$1$</td>
+<td>$2$</td>
+<td>$3$</td>
 <td></td>
 </tr>
 <tr>
 <td>2</td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(4\)</span></td>
-<td><span class="math inline">\(c\)</span></td>
+<td>$1$</td>
+<td>$1$</td>
+<td>$4$</td>
+<td>$c$</td>
 </tr>
 <tr>
 <td>3</td>
-<td><span class="math inline">\(4\)</span></td>
-<td><span class="math inline">\(5\)</span></td>
-<td><span class="math inline">\(11\)</span></td>
-<td><span class="math inline">\(\sum a\)</span></td>
+<td>$4$</td>
+<td>$5$</td>
+<td>$11$</td>
+<td>$\sum a$</td>
 </tr>
 <tr>
 <td>4</td>
-<td><span class="math inline">\(9\)</span></td>
-<td><span class="math inline">\(7\)</span></td>
-<td><span class="math inline">\(22\)</span></td>
-<td><span class="math inline">\(\sum a\)</span></td>
+<td>$9$</td>
+<td>$7$</td>
+<td>$22$</td>
+<td>$\sum a$</td>
 </tr>
 <tr>
 <td>5</td>
-<td><span class="math inline">\(6\)</span></td>
-<td><span class="math inline">\(5\)</span></td>
-<td><span class="math inline">\(27\)</span></td>
-<td><span class="math inline">\(c\)</span></td>
+<td>$6$</td>
+<td>$5$</td>
+<td>$27$</td>
+<td>$c$</td>
 </tr>
 </tbody>
 </table>
@@ -967,52 +973,52 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 <thead>
 <tr>
 <th></th>
-<th><span class="math inline">\(a\)</span></th>
-<th><span class="math inline">\(b\)</span></th>
-<th><span class="math inline">\(c\)</span></th>
+<th>$a$</th>
+<th>$b$</th>
+<th>$c$</th>
 <th>option</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>1</td>
-<td><span class="math inline">\(4\)</span></td>
-<td><span class="math inline">\(5\)</span></td>
-<td><span class="math inline">\(9\)</span></td>
+<td>$4$</td>
+<td>$5$</td>
+<td>$9$</td>
 <td></td>
 </tr>
 <tr>
 <td>2</td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(2\)</span></td>
-<td><span class="math inline">\(11\)</span></td>
-<td><span class="math inline">\(c\)</span></td>
+<td>$1$</td>
+<td>$2$</td>
+<td>$11$</td>
+<td>$c$</td>
 </tr>
 <tr>
 <td>3</td>
-<td><span class="math inline">\(9\)</span></td>
-<td><span class="math inline">\(7\)</span></td>
-<td><span class="math inline">\(21\)</span></td>
-<td><span class="math inline">\(\sum a\)</span></td>
+<td>$9$</td>
+<td>$7$</td>
+<td>$21$</td>
+<td>$\sum a$</td>
 </tr>
 <tr>
 <td>4</td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(22\)</span></td>
-<td><span class="math inline">\(c\)</span></td>
+<td>$1$</td>
+<td>$1$</td>
+<td>$22$</td>
+<td>$c$</td>
 </tr>
 <tr>
 <td>5</td>
-<td><span class="math inline">\(6\)</span></td>
-<td><span class="math inline">\(5\)</span></td>
-<td><span class="math inline">\(27\)</span></td>
-<td><span class="math inline">\(c\)</span></td>
+<td>$6$</td>
+<td>$5$</td>
+<td>$27$</td>
+<td>$c$</td>
 </tr>
 </tbody>
 </table>
-<p>会发现<span class="math inline">\(1\)</span>和<span class="math inline">\(2\)</span>（<span class="math inline">\(i=1,j=2\)</span>）这两组数据，<br>
-<strong>其实是不满足<span class="math inline">\(\min(a_i,b_j) < \min(a_j,b_i)\)</span>这个条件的！</strong></p>
+<p>会发现$1$和$2$（$i=1,j=2$）这两组数据，<br>
+<strong>其实是不满足$\min(a_i,b_j) &lt; \min(a_j,b_i)$这个条件的！</strong></p>
 <p>故这也告诉了我们：最优解也<strong>可能存在有两项不满足决策条件</strong>的状态。<br>
 【更准确叙述请查看后面的「有关贪心决策的满足度影响」部分】</p>
 </li>
@@ -1022,136 +1028,136 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 <h2 id="决策条件是否正确的判断方法">决策条件是否正确的判断方法</h2>
 <h3 id="1条件检查器">1、条件检查器</h3>
 <p>基于以上分析，我们发现：<br>
-如果按上述“基本决策寻找方法”得到的决策条件<span class="math inline">\(P\)</span>是正确的，必须要满足基本的排序型贪心的条件：</p>
+如果按上述“基本决策寻找方法”得到的决策条件$P$是正确的，必须要满足基本的排序型贪心的条件：</p>
 <blockquote>
 <p>数列<strong>任意两项满足决策条件</strong>。</p>
 </blockquote>
-<p>如果决策条件<span class="math inline">\(P\)</span>满足以下条件，则可证得排序后一定满足该基本条件：</p>
+<p>如果决策条件$P$满足以下条件，则可证得排序后一定满足该基本条件：</p>
 <ul>
 <li>满足严格弱序中的<strong>两个传递性</strong>。</li>
 </ul>
 <p>根据以上一点，我们可以编写一个条件检查器。<br>
 【这个条件检查器的方法是参考自<a class="link" href="https://ouuan.github.io/post/%E6%B5%85%E8%B0%88%E9%82%BB%E9%A1%B9%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F%E7%9A%84%E5%BA%94%E7%94%A8%E4%BB%A5%E5%8F%8A%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/#%E4%BD%BF%E7%94%A8%E9%82%BB%E9%A1%B9%E4%BA%A4%E6%8D%A2%E6%8E%92%E5%BA%8F%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"  target="_blank" rel="noopener"
     >“ouuan”的博客</a>后了解的，个人在其基础之上有所修改并加入了注释……</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="kt">bool</span> <span class="nf">cmp</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">);</span>
-
-<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">//构造第一组a,b数组数据：用来判断自反性
-</span><span class="c1"></span>        <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1">//不满足自反性。
-</span><span class="c1"></span>                           <span class="c1">//分析知这条对于贪心思路并不是很重要，所以注释了。但如果用sort就很重要。
-</span><span class="c1"></span>                <span class="c1">//printf(&#34;No irreflexivity: %d %d\n&#34;, a[0], b[0]);
-</span><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-                <span class="k">for</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">//构造第二组a,b数组数据：用来判断非对称性
-</span><span class="c1"></span>                <span class="p">{</span>
-                    <span class="k">if</span> <span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1">//非对称性的判断
-</span><span class="c1"></span>                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;No asymmetric: %d %d %d %d&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
-                    <span class="cm">/* 这部分原本是判断 我们新的决策条件 与 最开始分析的决策条件 是否判断一致，但其实可以不用判断。
-</span><span class="cm">                    //同理，在ouuan所写的判断器中：有一个关于「排序完成后任意交换相邻元素均不会使答案更优」这个的判断，但实际上如果满足了严格弱序一定也会满足这个条件，也不用判断。
-</span><span class="cm">                    bool our_judge = cmp(0, 1),
-</span><span class="cm">                         real_judge = min(a[0], b[1]) &lt; min(a[1], b[0]),
-</span><span class="cm">                         if_equal = min(a[0], b[1]) == min(a[1], b[0]);
-</span><span class="cm">                    //注意这里真实判断（以决策条件判断），如果为0：有可能真的不满足，但也有可能是相等情况；如果为1：那就一定是满足
-</span><span class="cm">                    //所以我们要加个if_equal，如果是相同状况则不判断是否与真是判断相同
-</span><span class="cm">                    if (!if_equal &amp;&amp; our_judge != real_judge) //与真正决策条件判断不同
-</span><span class="cm">                        printf(&#34;Not correct(%s): %d %d %d %d\n&#34;, (our_judge == 1 ? &#34;We judge it&#39;s right, but truth is wrong.&#34; : &#34;We judge it&#39;s wrong, but truth is right&#34;), a[0], b[0], a[1], b[1]);
-</span><span class="cm">                    */</span>
-                    <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1">//构造第三组a,b数据：用来判断传递性
-</span><span class="c1"></span>                        <span class="k">for</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
-                        <span class="p">{</span>
-                            <span class="kt">bool</span> <span class="n">flag_inequ</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
-                                 <span class="n">flag_equ</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-                            <span class="kt">bool</span> <span class="n">cmp_01</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-                                 <span class="n">cmp_12</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-                                 <span class="n">cmp_02</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-                            <span class="c1">//注意我们判断两状态是否是用的!cmp(i,j) &amp;&amp; !cmp(j,i)（非对称性的利用）
-</span><span class="c1"></span>                            <span class="kt">bool</span> <span class="n">euqal_01</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-                                 <span class="n">euqal_12</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-                                 <span class="n">euqal_02</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
-                            <span class="k">if</span> <span class="p">((</span><span class="n">cmp_01</span> <span class="o">==</span> <span class="n">cmp_12</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">cmp_01</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="p">(</span><span class="n">cmp_01</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">euqal_01</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">euqal_12</span><span class="p">)))</span> <span class="o">&amp;&amp;</span> <span class="n">cmp_01</span> <span class="o">!=</span> <span class="n">cmp_02</span><span class="p">)</span> <span class="c1">//不符合不等传递性
-</span><span class="c1"></span>                            <span class="p">{</span>
-                                <span class="cm">/* 怎么才算符合不等传递性：
-</span><span class="cm">                                1 1 -&gt; 1
-</span><span class="cm">                                1 0 -&gt; ? (2 &lt; 7, 7 \not&lt; 5 ---&gt; 2 &lt; 5)(2 &lt; 7, 7 \not&lt; 1 ---&gt; 2 \not&lt; 1)
-</span><span class="cm">                                0 1 -&gt; ? (Same way)
-</span><span class="cm">                                0 0 -&gt; 0 //但要注意这里cmp为0：有可能是不满足，也有可能是因为等于的情况。所以要加!euqal来排除等于情况
-</span><span class="cm">                                */</span>
-                                <span class="n">flag_inequ</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-                                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;No transitivity of inequivalence: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-                            <span class="p">}</span>
-                            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">euqal_01</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">euqal_12</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">euqal_01</span> <span class="o">&amp;&amp;</span> <span class="n">euqal_12</span><span class="p">)</span> <span class="o">!=</span> <span class="n">euqal_02</span><span class="p">)</span> <span class="c1">//相等传递性
-</span><span class="c1"></span>                            <span class="p">{</span>
-                                <span class="cm">/* 怎么才算符合相等传递性：
-</span><span class="cm">                                1 1 -&gt; 1
-</span><span class="cm">                                1 0 -&gt; 0
-</span><span class="cm">                                0 1 -&gt; 0
-</span><span class="cm">                                0 0 -&gt; ? (2 ≠ 3, 3 ≠ 2 ---&gt; 2 = 2)//这个很好知道吧【…… 
-</span><span class="cm">                                */</span>
-                                <span class="n">flag_equ</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-                                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;No transitivity of equivalence: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-                            <span class="p">}</span>
-
-                            <span class="k">if</span> <span class="p">(</span><span class="n">flag_inequ</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">flag_equ</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//私货：求证如果满足不等传递性，但不满足相等传递性，是否X=Y,Y&lt;Z---&gt;X&lt;Z；X&lt;Y,Y=Z---&gt;X&lt;Z？
-</span><span class="c1"></span>                            <span class="p">{</span>
-                                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;===In Case===</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
-                                <span class="kt">bool</span> <span class="n">euqal_cmp01</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-                                     <span class="n">ineuq_cmp01</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-                                     <span class="n">euqal_cmp12</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-                                     <span class="n">ineuq_cmp12</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-                                     <span class="n">euqal_cmp02</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
-                                     <span class="n">ineuq_cmp02</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-                                <span class="k">if</span> <span class="p">(</span><span class="n">euqal_cmp01</span> <span class="o">&amp;&amp;</span> <span class="n">ineuq_cmp12</span><span class="p">)</span>
-                                <span class="p">{</span>
-                                    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ineuq_cmp02</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">euqal_cmp02</span><span class="p">)</span>
-                                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;---X=Y,Y&lt;Z---&gt;X not&lt; Z: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-                                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ineuq_cmp02</span><span class="p">)</span>
-                                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;---X=Y,Y&lt;Z---&gt;X = Z: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-                                <span class="p">}</span>
-                                <span class="k">if</span> <span class="p">(</span><span class="n">ineuq_cmp01</span> <span class="o">&amp;&amp;</span> <span class="n">euqal_cmp12</span><span class="p">)</span>
-                                <span class="p">{</span>
-                                    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ineuq_cmp02</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">euqal_cmp02</span><span class="p">)</span>
-                                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;---X&lt;Y,Y=Z---&gt;X not&lt; Z: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-                                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ineuq_cmp02</span><span class="p">)</span>
-                                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;---X&lt;Y,Y=Z---&gt;X = Z: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
-                                <span class="p">}</span>
-                            <span class="p">}</span>
-                        <span class="p">}</span>
-                <span class="p">}</span>
-        <span class="p">}</span>
-
-    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="kt">bool</span> <span class="nf">cmp</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="cm">/* 展开式：【用来debug方便watch的……
-</span><span class="cm">    int min_ij = min(a[i], b[j]),
-</span><span class="cm">        min_ji = min(a[j], b[i]);
-</span><span class="cm">    bool ans = 0;
-</span><span class="cm">    if (min_ij == min_ji)
-</span><span class="cm">        ans = a[i] &lt; a[j];
-</span><span class="cm">    else
-</span><span class="cm">        ans = min_ij &lt; min_ji;
-</span><span class="cm">    return ans;
-</span><span class="cm">    */</span>
-    <span class="k">return</span> <span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>                                                    <span class="c1">//Case.1
-</span><span class="c1"></span>    <span class="c1">//return min(a[i], b[j]) &lt;= min(a[j], b[i]);                                                   //Case.2
-</span><span class="c1"></span>    <span class="c1">//return min(a[i], b[j]) == min(a[j], b[i]) ? a[i] &gt; a[j] : min(a[i], b[j]) &lt; min(a[j], b[i]); //Case.3
-</span><span class="c1"></span>    <span class="c1">//return min(a[i], b[j]) == min(a[j], b[i]) ? a[i] &lt; a[j] : min(a[i], b[j]) &lt; min(a[j], b[i]); //Case.4
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div><p>上述提到了：如果满足了严格弱序一定也会满足「排序完成后任意交换相邻元素均不会使答案更优」这个条件。<br>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">cmp</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="c1">//构造第一组a,b数组数据：用来判断自反性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1">//不满足自反性。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                           <span class="c1">//分析知这条对于贪心思路并不是很重要，所以注释了。但如果用sort就很重要。
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="c1">//printf(&#34;No irreflexivity: %d %d\n&#34;, a[0], b[0]);
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">//构造第二组a,b数组数据：用来判断非对称性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">(</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1">//非对称性的判断
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;No asymmetric: %d %d %d %d&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                    <span class="cm">/* 这部分原本是判断 我们新的决策条件 与 最开始分析的决策条件 是否判断一致，但其实可以不用判断。
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    //同理，在ouuan所写的判断器中：有一个关于「排序完成后任意交换相邻元素均不会使答案更优」这个的判断，但实际上如果满足了严格弱序一定也会满足这个条件，也不用判断。
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    bool our_judge = cmp(0, 1),
+</span></span></span><span class="line"><span class="cl"><span class="cm">                         real_judge = min(a[0], b[1]) &lt; min(a[1], b[0]),
+</span></span></span><span class="line"><span class="cl"><span class="cm">                         if_equal = min(a[0], b[1]) == min(a[1], b[0]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    //注意这里真实判断（以决策条件判断），如果为0：有可能真的不满足，但也有可能是相等情况；如果为1：那就一定是满足
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    //所以我们要加个if_equal，如果是相同状况则不判断是否与真是判断相同
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    if (!if_equal &amp;&amp; our_judge != real_judge) //与真正决策条件判断不同
+</span></span></span><span class="line"><span class="cl"><span class="cm">                        printf(&#34;Not correct(%s): %d %d %d %d\n&#34;, (our_judge == 1 ? &#34;We judge it&#39;s right, but truth is wrong.&#34; : &#34;We judge it&#39;s wrong, but truth is right&#34;), a[0], b[0], a[1], b[1]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">                    */</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">for</span> <span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="c1">//构造第三组a,b数据：用来判断传递性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                        <span class="k">for</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">;</span> <span class="o">++</span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                            <span class="kt">bool</span> <span class="n">flag_inequ</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                                 <span class="n">flag_equ</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                            <span class="kt">bool</span> <span class="n">cmp_01</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                 <span class="n">cmp_12</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                 <span class="n">cmp_02</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                            <span class="c1">//注意我们判断两状态是否是用的!cmp(i,j) &amp;&amp; !cmp(j,i)（非对称性的利用）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                            <span class="kt">bool</span> <span class="n">euqal_01</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                 <span class="n">euqal_12</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                 <span class="n">euqal_02</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">if</span> <span class="p">((</span><span class="n">cmp_01</span> <span class="o">==</span> <span class="n">cmp_12</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">cmp_01</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">||</span> <span class="p">(</span><span class="n">cmp_01</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">euqal_01</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">euqal_12</span><span class="p">)))</span> <span class="o">&amp;&amp;</span> <span class="n">cmp_01</span> <span class="o">!=</span> <span class="n">cmp_02</span><span class="p">)</span> <span class="c1">//不符合不等传递性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                <span class="cm">/* 怎么才算符合不等传递性：
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                1 1 -&gt; 1
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                1 0 -&gt; ? (2 &lt; 7, 7 \not&lt; 5 ---&gt; 2 &lt; 5)(2 &lt; 7, 7 \not&lt; 1 ---&gt; 2 \not&lt; 1)
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                0 1 -&gt; ? (Same way)
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                0 0 -&gt; 0 //但要注意这里cmp为0：有可能是不满足，也有可能是因为等于的情况。所以要加!euqal来排除等于情况
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                */</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">flag_inequ</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;No transitivity of inequivalence: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="p">(</span><span class="n">euqal_01</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">euqal_12</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">euqal_01</span> <span class="o">&amp;&amp;</span> <span class="n">euqal_12</span><span class="p">)</span> <span class="o">!=</span> <span class="n">euqal_02</span><span class="p">)</span> <span class="c1">//相等传递性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                <span class="cm">/* 怎么才算符合相等传递性：
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                1 1 -&gt; 1
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                1 0 -&gt; 0
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                0 1 -&gt; 0
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                0 0 -&gt; ? (2 ≠ 3, 3 ≠ 2 ---&gt; 2 = 2)//这个很好知道吧【…… 
+</span></span></span><span class="line"><span class="cl"><span class="cm">                                */</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">flag_equ</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;No transitivity of equivalence: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                            <span class="k">if</span> <span class="p">(</span><span class="n">flag_inequ</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="n">flag_equ</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//私货：求证如果满足不等传递性，但不满足相等传递性，是否X=Y,Y&lt;Z---&gt;X&lt;Z；X&lt;Y,Y=Z---&gt;X&lt;Z？
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>                            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">printf</span><span class="p">(</span><span class="s">&#34;===In Case===</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                                <span class="kt">bool</span> <span class="n">euqal_cmp01</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                     <span class="n">ineuq_cmp01</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                     <span class="n">euqal_cmp12</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                     <span class="n">ineuq_cmp12</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                     <span class="n">euqal_cmp02</span> <span class="o">=</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">cmp</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">                                     <span class="n">ineuq_cmp02</span> <span class="o">=</span> <span class="n">cmp</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                                <span class="k">if</span> <span class="p">(</span><span class="n">euqal_cmp01</span> <span class="o">&amp;&amp;</span> <span class="n">ineuq_cmp12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ineuq_cmp02</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">euqal_cmp02</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;---X=Y,Y&lt;Z---&gt;X not&lt; Z: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ineuq_cmp02</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;---X=Y,Y&lt;Z---&gt;X = Z: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                                <span class="k">if</span> <span class="p">(</span><span class="n">ineuq_cmp01</span> <span class="o">&amp;&amp;</span> <span class="n">euqal_cmp12</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                                    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ineuq_cmp02</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="n">euqal_cmp02</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;---X&lt;Y,Y=Z---&gt;X not&lt; Z: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">ineuq_cmp02</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                                        <span class="n">printf</span><span class="p">(</span><span class="s">&#34;---X&lt;Y,Y=Z---&gt;X = Z: %d %d %d %d %d %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">                                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">                <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="nf">cmp</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="kt">int</span> <span class="n">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 展开式：【用来debug方便watch的……
+</span></span></span><span class="line"><span class="cl"><span class="cm">    int min_ij = min(a[i], b[j]),
+</span></span></span><span class="line"><span class="cl"><span class="cm">        min_ji = min(a[j], b[i]);
+</span></span></span><span class="line"><span class="cl"><span class="cm">    bool ans = 0;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    if (min_ij == min_ji)
+</span></span></span><span class="line"><span class="cl"><span class="cm">        ans = a[i] &lt; a[j];
+</span></span></span><span class="line"><span class="cl"><span class="cm">    else
+</span></span></span><span class="line"><span class="cl"><span class="cm">        ans = min_ij &lt; min_ji;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    return ans;
+</span></span></span><span class="line"><span class="cl"><span class="cm">    */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">min</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>                                                    <span class="c1">//Case.1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//return min(a[i], b[j]) &lt;= min(a[j], b[i]);                                                   //Case.2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//return min(a[i], b[j]) == min(a[j], b[i]) ? a[i] &gt; a[j] : min(a[i], b[j]) &lt; min(a[j], b[i]); //Case.3
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">//return min(a[i], b[j]) == min(a[j], b[i]) ? a[i] &lt; a[j] : min(a[i], b[j]) &lt; min(a[j], b[i]); //Case.4
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div><p>上述提到了：如果满足了严格弱序一定也会满足「排序完成后任意交换相邻元素均不会使答案更优」这个条件。<br>
 所以我并没有写上“ouuan”博客中的那个条件。<br>
 而且对于严格弱序，我也认为只用判断传递性即可。<br>
 【如果这种修改有误，请务必告诉我！……</p>
-<p>因为决策条件<span class="math inline">\(P\)</span>满足严格弱序后，我们按照<span class="math inline">\(P\)</span>排序后，一定会使任意两项均满足<span class="math inline">\(P\)</span>，则满足我们的贪心的思想，使得肯定这个状态是最优解状态。<br>
+<p>因为决策条件$P$满足严格弱序后，我们按照$P$排序后，一定会使任意两项均满足$P$，则满足我们的贪心的思想，使得肯定这个状态是最优解状态。<br>
 【但这种口头解释没有严格证明可能没有说服力，可以自己在判断器里删掉注释然后验证一下_(:з」∠)_……</p>
 <h3 id="2与选择排序对拍">2、与选择排序对拍</h3>
 <p>当然，我们发现了：用选择排序的话结果是正确的。</p>
@@ -1165,26 +1171,26 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 将其两组数据放到本地测评：<br>
 <img src="./pic/Selection_AC.png" alt="Selection_AC"  /></p>
 </blockquote>
-<p>主要就是因为排序这种绝对的<span class="math inline">\(O(n^2)\)</span>的算法，是<strong>严格让所有数据都两两比较</strong>。</p>
+<p>主要就是因为排序这种绝对的$O(n^2)$的算法，是<strong>严格让所有数据都两两比较</strong>。</p>
 <p>正式因为其两两比较，使得不需要利用满足数据严格弱序的传递性。<br>
-不会像快排或归并等其他非<span class="math inline">\(O(n^2)\)</span>的算法一样，利用严格弱序中的传递性，来对某些情况减少判断，达成了降低复杂度的办法。</p>
+不会像快排或归并等其他非$O(n^2)$的算法一样，利用严格弱序中的传递性，来对某些情况减少判断，达成了降低复杂度的办法。</p>
 <p>也就是说，他们<strong>为了提高速度</strong>，<strong>省略了一些比较</strong>。代价就是数据必须要满足一定的条件，即严格弱序。</p>
-<p>同样，就连冒泡排序这种本来也是<span class="math inline">\(O(n^2)\)</span>的排序算法【但实际上并不是绝对的<span class="math inline">\(O(n^2)\)</span>，其最坏是<span class="math inline">\(\frac{(n-1)n}{2}\)</span>次操作】，<br>
+<p>同样，就连冒泡排序这种本来也是$O(n^2)$的排序算法【但实际上并不是绝对的$O(n^2)$，其最坏是$\frac{(n-1)n}{2}$次操作】，<br>
 因为只是比较相邻的数据，并未严格任意两两比较。也是利用了传递性。</p>
 <h2 id="有关贪心决策的满足度影响">有关贪心决策的满足度影响</h2>
 <p>之前发现：</p>
 <p>让<strong>任意两项都满足决策条件</strong>，是<strong>一定是最优解</strong>的。<br>
 但之前发现：如果<strong>存在两项不满足</strong>，也有<strong>可能是最优解</strong>。</p>
-<p>也就是<strong>任意两项都满足</strong>决策条件的这种状态，是<strong>最优解状态的一种</strong>，为<span class="math inline">\(∈\)</span>关系。</p>
+<p>也就是<strong>任意两项都满足</strong>决策条件的这种状态，是<strong>最优解状态的一种</strong>，为$∈$关系。</p>
 <p>但我们<strong>只能去找任意两项均满足的这种状态</strong>。因为对于存在两项不满足的，也有可能不是最优解，就成了概率问题。<br>
 【而这道题概率出来就是80分……</p>
 <h2 id="有关排序对严格弱序的不同要求">有关排序对严格弱序的不同要求</h2>
 <blockquote>
 <ol>
-<li><span class="math inline">\(X \not< X\)</span>（比较条件非自反性）</li>
-<li>若<span class="math inline">\(X < Y\)</span>，则<span class="math inline">\(Y \not< X\)</span>（比较条件非对称性）</li>
-<li>若<span class="math inline">\(X < Y,Y < Z\)</span>，则<span class="math inline">\(X < Z\)</span>（比较条件不等<strong>传递性</strong>）</li>
-<li>若<span class="math inline">\(X=Y,Y=Z\)</span>，则<span class="math inline">\(X=Z\)</span>（比较条件相等<strong>传递性</strong>）</li>
+<li>$X \not&lt; X$（比较条件非自反性）</li>
+<li>若$X &lt; Y$，则$Y \not&lt; X$（比较条件非对称性）</li>
+<li>若$X &lt; Y,Y &lt; Z$，则$X &lt; Z$（比较条件不等<strong>传递性</strong>）</li>
+<li>若$X=Y,Y=Z$，则$X=Z$（比较条件相等<strong>传递性</strong>）</li>
 </ol>
 </blockquote>
 <p>前面已经说了，对于1、2点，其实对于贪心的题目要求并不严格。<br>
@@ -1198,20 +1204,20 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 【不过我没有具体去看函数内部的代码实现，只是根据网上搜的以及自己实验得出来的，不一定准确。但确实不考虑这两个的话会出现<code>RE</code>……</p>
 </li>
 <li>
-<p>对于其他非<span class="math inline">\(O(n^2)\)</span>排序方法：<br>
+<p>对于其他非$O(n^2)$排序方法：<br>
 如：归并排序<code>merge</code>：<br>
 则不用考虑1、2点。<br>
 【当然还是要根据自己的排序写法来判断是否需要满足1、2点……</p>
 </li>
 </ul>
 <h2 id="有关传递性的简单判断">有关传递性的简单判断</h2>
-<p>我们排序比较时，只会比较两个元素，也就是两个下标，一般用<span class="math inline">\(i,j\)</span>代表。<br>
-而<strong>排序（决策）条件</strong>，也一定是与<span class="math inline">\(a_i\)</span>和<span class="math inline">\(a_j\)</span>的衍生关系。</p>
+<p>我们排序比较时，只会比较两个元素，也就是两个下标，一般用$i,j$代表。<br>
+而<strong>排序（决策）条件</strong>，也一定是与$a_i$和$a_j$的衍生关系。</p>
 <p>那么排序条件的下标会有两种情况：</p>
 <ol>
 <li>
 <p>一侧只有一个下标<br>
-形如：<span class="math inline">\(cmp(x,y)=A_x?A_y\)</span></p>
+形如：$cmp(x,y)=A_x?A_y$</p>
 <p>当比较条件一侧只有一个下标的时候很好理解，就是普通的数列排序。</p>
 <p><strong>单侧下标时</strong>，两个下标的选择<strong>不会影响</strong>其对应的<strong>比较用数据</strong>的值，<br>
 故一般能符合<strong>比较条件不等传递性</strong>和<strong>比较条件相等传递性</strong>。</p>
@@ -1220,21 +1226,21 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 </ul>
 <blockquote>
 <ul>
-<li>条件为<span class="math inline">\(a_i>a_j\)</span><br>
-取<span class="math inline">\(i,j\)</span>：<span class="math inline">\(a_i=a_j\)</span><br>
-取<span class="math inline">\(j,k\)</span>：<span class="math inline">\(a_j=a_k\)</span><br>
-取<span class="math inline">\(i,k\)</span>：<span class="math inline">\(a_i=a_k\)</span></li>
-<li>条件为<span class="math inline">\(a_i+a_{i+1}>a_j+a_{j+1}\)</span><br>
-取<span class="math inline">\(i,j\)</span>：<span class="math inline">\(a_i+a_{i+1}=a_j+a_{j+1}\)</span><br>
-取<span class="math inline">\(j,k\)</span>：<span class="math inline">\(a_j+a_{j+1}=a_k+a_{k+1}\)</span><br>
-【则可直接推得<span class="math inline">\(a_i+a_{i+1}=a_j+a_{j+1}=a_j+a_{j+1}=a_k+a_{k+1}\)</span>】<br>
-取<span class="math inline">\(i,k\)</span>：<span class="math inline">\(a_i+a_{i+1}=a_k+a_{k+1}\)</span></li>
+<li>条件为$a_i&gt;a_j$<br>
+取$i,j$：$a_i=a_j$<br>
+取$j,k$：$a_j=a_k$<br>
+取$i,k$：$a_i=a_k$</li>
+<li>条件为$a_i+a_{i+1}&gt;a_j+a_{j+1}$<br>
+取$i,j$：$a_i+a_{i+1}=a_j+a_{j+1}$<br>
+取$j,k$：$a_j+a_{j+1}=a_k+a_{k+1}$<br>
+【则可直接推得$a_i+a_{i+1}=a_j+a_{j+1}=a_j+a_{j+1}=a_k+a_{k+1}$】<br>
+取$i,k$：$a_i+a_{i+1}=a_k+a_{k+1}$</li>
 </ul>
 </blockquote>
 </li>
 <li>
 <p>一侧两个下标都有<br>
-形如：<span class="math inline">\(cmp(x,y)=A_{x,y}?A_{y,x}\)</span></p>
+形如：$cmp(x,y)=A_{x,y}?A_{y,x}$</p>
 <p>当一侧两种下标都有时，则不同下标的选择<strong>会影响</strong>其对应的<strong>比较用数据</strong>的值。<br>
 故需要具体判断是否<strong>比较条件传递性</strong>和<strong>比较条件相等传递性</strong>。</p>
 <ul>
@@ -1242,11 +1248,11 @@ a & b & c \\\ \vdots(sum) & \vdots & \vdots(pre\_w) \\\ a_j & b_j & w_{j2} \\\ a
 </ul>
 <blockquote>
 <ul>
-<li>条件为<span class="math inline">\(a_i+a_{j+1}>a_j+a_{i+1}\)</span><br>
-取<span class="math inline">\(i,j\)</span>：<span class="math inline">\(a_i+a_{j+1}=a_j+a_{i+1}\)</span><br>
-取<span class="math inline">\(j,k\)</span>：<span class="math inline">\(a_j+a_{k+1}=a_k+a_{j+1}\)</span><br>
-【不可直接推得<span class="math inline">\(a_i+a_{j+1}=a_j+a_{i+1}=a_j+a_{k+1}=a_k+a_{j+1}\)</span>】<br>
-但可证得：取<span class="math inline">\(i,k\)</span>：<span class="math inline">\(a_i+a_{k+1}=a_k+a_{i+1}\)</span></li>
+<li>条件为$a_i+a_{j+1}&gt;a_j+a_{i+1}$<br>
+取$i,j$：$a_i+a_{j+1}=a_j+a_{i+1}$<br>
+取$j,k$：$a_j+a_{k+1}=a_k+a_{j+1}$<br>
+【不可直接推得$a_i+a_{j+1}=a_j+a_{i+1}=a_j+a_{k+1}=a_k+a_{j+1}$】<br>
+但可证得：取$i,k$：$a_i+a_{k+1}=a_k+a_{i+1}$</li>
 </ul>
 </blockquote>
 </li>

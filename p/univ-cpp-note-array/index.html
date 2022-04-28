@@ -346,8 +346,8 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：4020</div>
-            <div class="time">预计阅读时长： <time>9</time> 分钟</div>
+            <div class="char">文章字数：3964</div>
+            <div class="time">预计阅读时长： <time>8</time> 分钟</div>
         </div>
     </footer>
 </div>
@@ -359,16 +359,16 @@ if (!doNotTrack) {
 
 <div class="snote quote ">
 	<div class="snote-content">
-		<p><p>数学上的一个数列<span class="math inline">\(a_i\)</span>：</p>
-<p>当<span class="math inline">\(i=1\)</span>时，代表的是这个数列的第一个数<span class="math inline">\(a_1\)</span>，当<span class="math inline">\(i=3\)</span>时，代表的是这个数列的第三个数<span class="math inline">\(a_3\)</span>……<br>
-同时，这个数列可以叫数列<span class="math inline">\(a_i\)</span>，也可以叫<span class="math inline">\(b_i、{nico}_i\)</span>……<br>
-可以用<span class="math inline">\(i\)</span>来表示第几项（<span class="math inline">\(a_i\)</span>），也可以用<span class="math inline">\(j\)</span>来表示第几项（<span class="math inline">\(a_j\)</span>）……</p>
+		<p><p>数学上的一个数列$a_i$：</p>
+<p>当$i=1$时，代表的是这个数列的第一个数$a_1$，当$i=3$时，代表的是这个数列的第三个数$a_3$……<br>
+同时，这个数列可以叫数列$a_i$，也可以叫$b_i、{nico}_i$……<br>
+可以用$i$来表示第几项（$a_i$），也可以用$j$来表示第几项（$a_j$）……</p>
 </p>
 	</div>
 </div>
 <h2 id="2与数学的不同">2、与数学的不同</h2>
 <ol>
-<li>数学上的数列是从第一项开始的，也就是<span class="math inline">\(a_1\)</span>代表的就是<span class="math inline">\(a\)</span>这个数列的第一项。<br>
+<li>数学上的数列是从第一项开始的，也就是$a_1$代表的就是$a$这个数列的第一项。<br>
 然而编程里的数组，却是从<strong>第零项</strong>开始的，也就是<code>a[1]</code>代表的是<code>a</code>这个数组里第二项，<strong><code>a[0]</code>才是第一项</strong>。</li>
 <li>数学上的数列，我们不需要提前告诉这个数列中会有多少项。<br>
 然而编程里的数组，我们需要<strong>提前告诉</strong>他这个数组里会<strong>有多少项</strong>，也就是<code>int a[100]</code>的<code>100</code>的意思，代表可能会存100项。</li>
@@ -376,14 +376,14 @@ if (!doNotTrack) {
 <h2 id="3编程中的数组">3、编程中的数组</h2>
 <p>那么类比到我们编程里：</p>
 <ul>
-<li>这个<span class="math inline">\(a_i\)</span>的<span class="math inline">\(a\)</span>，就是程序里的这个数组的名字，专业名称叫“<strong>变量名</strong>”。</li>
-<li>这个<span class="math inline">\(a_i\)</span>的<span class="math inline">\(i\)</span>，就是程序里的这个数组的第几项，专业名称叫“<strong>下标</strong>”。</li>
+<li>这个$a_i$的$a$，就是程序里的这个数组的名字，专业名称叫“<strong>变量名</strong>”。</li>
+<li>这个$a_i$的$i$，就是程序里的这个数组的第几项，专业名称叫“<strong>下标</strong>”。</li>
 </ul>
 <p>比如<code>arr[5]</code>代表的就是<code>arr</code>这个数组里的<strong>第6项</strong>。</p>
 <h1 id="二数组的声明">二、数组的声明</h1>
 <p>申明部分，也就是定义。如：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+</span></span></code></pre></div><blockquote>
 <p><code>int</code>——代表的是这个数组的类型：即这个数组存的是一系列int类型的数。<br>
 <code>arr</code>——代表的是这个数组的变量名，之后用这个数组就是<code>arr[2]</code>、<code>arr[i]</code>之类的形式。<br>
 <code>[100]</code>——代表的是这个数组的大小，也就是可能会存多少项。</p>
@@ -396,22 +396,22 @@ if (!doNotTrack) {
 <div class="snote success ">
 	<div class="snote-content">
 		<p><p>正确的例子：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>	<span class="c1">//字面常量（常数）
-</span><span class="c1"></span><span class="kt">int</span> <span class="n">b</span><span class="p">[</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">];</span>	<span class="c1">//字面常量的表达式
-</span><span class="c1"></span>
-<span class="k">const</span> <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="n">len</span><span class="p">];</span>	<span class="c1">//符号常量
-</span><span class="c1"></span><span class="kt">int</span> <span class="n">d</span><span class="p">[</span><span class="n">len</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>	<span class="c1">//符号常量的表达式
-</span></code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>	<span class="c1">//字面常量（常数）
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">b</span><span class="p">[</span><span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">];</span>	<span class="c1">//字面常量的表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">c</span><span class="p">[</span><span class="n">len</span><span class="p">];</span>	<span class="c1">//符号常量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">d</span><span class="p">[</span><span class="n">len</span> <span class="o">*</span> <span class="mi">2</span><span class="p">];</span>	<span class="c1">//符号常量的表达式
+</span></span></span></code></pre></div></p>
 	</div>
 </div>
 <div class="snote error ">
 	<div class="snote-content">
 		<p><p>错误的例子：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
-<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">len</span><span class="p">];</span>	<span class="c1">//len为变量，错误
-</span><span class="c1"></span><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">len</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>	<span class="c1">//len+5为变量相关的表达式，错误
-</span></code></pre></div></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">len</span><span class="p">];</span>	<span class="c1">//len为变量，错误
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">len</span> <span class="o">+</span> <span class="mi">5</span><span class="p">];</span>	<span class="c1">//len+5为变量相关的表达式，错误
+</span></span></span></code></pre></div></p>
 	</div>
 </div>
 </p>
@@ -422,23 +422,23 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>最简单的运用，我们直接把一个常数<code>100</code>存到<code>arr</code>数组里的<strong>第三项</strong>里：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>要把一个变量<code>val</code>存到<code>arr</code>数组里的<strong>第一项</strong>里：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span><span class="p">;</span>
+</span></span></code></pre></div></li>
 <li>
 <p>要输出数组<code>arr</code>中的<strong>第二项</strong>：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+</span></span></code></pre></div></li>
 </ol>
 <h2 id="2对一个数组多个元素的运用">2、对一个数组多个元素的运用</h2>
 <p>很多时候我们不止运用其中的某一个具体的数。<br>
 比如我们要向这个数组<strong>读入10个数</strong>，然后<strong>输出这10个数</strong>，这就涉及了多个元素的操作。</p>
-<p>我们再类比数列，假如我们要对数列<span class="math inline">\(a_i\)</span>的第一项到第十项求和：<br>
-用的是不是<span class="math inline">\(\sum_{i=1}^{10}a_i\)</span>这个公式，<br>
-用个<span class="math inline">\(i\)</span>来代表第几项，然后<span class="math inline">\(i=1\sim10\)</span>，把<span class="math inline">\(a_i\)</span>累加起来。</p>
+<p>我们再类比数列，假如我们要对数列$a_i$的第一项到第十项求和：<br>
+用的是不是$\sum_{i=1}^{10}a_i$这个公式，<br>
+用个$i$来代表第几项，然后$i=1\sim10$，把$a_i$累加起来。</p>
 <p>类比到编程，同样用个<code>i</code>来代表第几项，然后<code>i=0~9</code>，把<code>arr[i]</code>累加起来存到<code>sum</code>里。<br>
 <div class="snote warning ">
 	<div class="snote-content">
@@ -449,9 +449,9 @@ if (!doNotTrack) {
 <ol>
 <li>对数组前十项求和</li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span></code></pre></div></blockquote>
 
 
 <div class="snote info ">
@@ -461,37 +461,37 @@ if (!doNotTrack) {
 以后会提到的概念注意一下。</p>
 	</div>
 </div>
-<p>那么类推一下，要向数组里读入<span class="math inline">\(10\)</span>个数</p>
+<p>那么类推一下，要向数组里读入$10$个数</p>
 <blockquote>
 <ol start="2">
 <li>读入十个数到数组前十项</li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span></code></pre></div></blockquote>
 <p>然后再输出</p>
 <blockquote>
 <ol start="3">
 <li>输出数组中前十项</li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="s">&#34; &#34;</span><span class="p">;</span>
+</span></span></code></pre></div></blockquote>
 <p>总代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">	<span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入十个数：&#34;</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;你刚才输入的十个数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;arr[&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;] = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;总和为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span><span class="p">;</span>
-</code></pre></div><p>效果为：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="mi">100</span><span class="p">],</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入十个数：&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;你刚才输入的十个数为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;arr[&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">i</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;] = &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;总和为：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">sum</span><span class="p">;</span>
+</span></span></code></pre></div><p>效果为：
 <figure style="flex-grow: 109; flex-basis: 263px">
 		<a href="/p/univ-cpp-note-array/1.png" data-size="247x225"><img src="/p/univ-cpp-note-array/1.png"
 				srcset="/p/univ-cpp-note-array/1_huf1159adaf2dbb221f29c607566aac3c5_5229_480x0_resize_box_3.png 480w, /p/univ-cpp-note-array/1_huf1159adaf2dbb221f29c607566aac3c5_5229_1024x0_resize_box_3.png 1024w"
@@ -506,24 +506,24 @@ if (!doNotTrack) {
 <ol start="4">
 <li>读入n个数到数组</li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//注意读n个数是(i=0;i&lt;=n-1)，就像之前读10个数是(i=0;i&lt;=9)
-</span><span class="c1">//也可以写成 for (int i = 0; i &lt; n; i++)，不过最好选择一种格式以后就这样写，不然可能会晕
-</span><span class="c1"></span>	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//注意读n个数是(i=0;i&lt;=n-1)，就像之前读10个数是(i=0;i&lt;=9)
+</span></span></span><span class="line"><span class="cl"><span class="c1">//也可以写成 for (int i = 0; i &lt; n; i++)，不过最好选择一种格式以后就这样写，不然可能会晕
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span></code></pre></div></blockquote>
 <p>其余输出什么的同理。</p>
 <h2 id="3对多个数组的运用">3、对多个数组的运用</h2>
 <p>很多时候我们可能要从<code>a</code>数组拿出一些数放到<code>b</code>数组里，这个时候下标可能就会很疑惑。</p>
 <p>比如我们可能会把<code>arr</code>数组里十个数放到<code>b</code>数组对应位置里。<br>
-这个时候数学表示就是<span class="math inline">\(b_i=arr_i(i=1\sim10)\)</span></p>
+这个时候数学表示就是$b_i=arr_i(i=1\sim10)$</p>
 <blockquote>
 <ol>
 <li>把<code>arr</code>数组十个数放到<code>b</code>数组里</li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">9</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span></code></pre></div></blockquote>
 <p>但不一定每次都是刚好把<code>arr</code>的第i项放到<code>b</code>的第i项，也可能是比如：<br>
 从<code>arr</code>的第五项开始，取5项（即<code>a[4] ~ a[8]</code>，放到<code>b</code>的第十项后面（即(<code>b[9] ~ b[13]</code>)。<br>
 要记住数组的下标<strong>不只是用<code>i</code>来表示</strong>，也可以用其他变量来表示。</p>
@@ -537,14 +537,14 @@ if (!doNotTrack) {
 <ol start="2">
 <li>从<code>arr</code>的第五项开始，取5项，放到<code>b</code>的第十项后面。</li>
 </ol>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="n">j</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>				<span class="c1">//分别代表arr数组和b数组的下标
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>		<span class="c1">//做5次循环，代表取5项
-</span><span class="c1"></span><span class="p">{</span>
-	<span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
-	<span class="n">k</span><span class="o">++</span><span class="p">;</span>
-	<span class="n">j</span><span class="o">++</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="n">j</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>				<span class="c1">//分别代表arr数组和b数组的下标
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">5</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>		<span class="c1">//做5次循环，代表取5项
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="n">k</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">j</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></blockquote>
 <p>这里是<strong>比较难但很重要的点</strong>，如果分析也看不懂，可以手动模拟一下：<br>
 自己按照程序一行一行执行，在本子上画两行表格，一行代表<code>arr</code>数组，一行代表<code>b</code>数组；<code>j=4</code>时就用个箭头指向<code>arr[4]</code>，j++则移动箭头指向<code>arr[5]</code>……<br>
 如果理解了，那数组差不多也都理解了。</p>
@@ -564,46 +564,46 @@ if (!doNotTrack) {
 <p>然后有15个数，但注意到要把计算后的平均值存到<code>a</code>数组最后的<code>a[15]</code>里，即实际上为16个数，长度为16。</p>
 <blockquote>
 <p>故定义数组：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">double</span> <span class="n">a</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">a</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+</span></span></code></pre></div></blockquote>
 <h2 id="3数组刚开始的原样读入原样输出和求平均值">3、数组刚开始的原样读入、原样输出和求平均值</h2>
 <p>如果认真看了之前的“数组的运用”，这里应该问题不大。<br>
 多的点就是要每行五个输出，并且域宽为10。</p>
 <blockquote>
 <p>代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">//求和变量注意清零
-</span><span class="c1"></span>
-<span class="c1">//读入部分
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//i=0~14，读入十五个数
-</span><span class="c1"></span><span class="p">{</span>
-	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>		<span class="c1">//读入a[i]
-</span><span class="c1"></span>	<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	<span class="c1">//顺便对a[i]的所有项求和，方便后面求平均值
-</span><span class="c1"></span><span class="p">}</span>
-
-<span class="c1">//求平均值部分
-</span><span class="c1"></span><span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">15</span><span class="p">;</span>		<span class="c1">//求的总和除以个数，也就算的是平均值，放到题上要求的a[15]里
-</span><span class="c1"></span>
-<span class="c1">//输出部分
-</span><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-<span class="p">{</span>
-	<span class="k">if</span> <span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-	<span class="c1">//这里用如果(i+1)%5==0则换行，也就是i=5,10,15,...的时候换行，达成了每五个换行的效果
-</span><span class="c1"></span>	<span class="c1">//这个可以记下来，如果是每7个换行，就写 if (i%7 == 0) cout&lt;&lt;endl;
-</span><span class="c1"></span>	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	<span class="c1">//输出a[i]，setw为设置域宽
-</span><span class="c1"></span><span class="p">}</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>			<span class="c1">//求和变量注意清零
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//读入部分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//i=0~14，读入十五个数
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>		<span class="c1">//读入a[i]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	<span class="c1">//顺便对a[i]的所有项求和，方便后面求平均值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">//求平均值部分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">15</span><span class="p">;</span>		<span class="c1">//求的总和除以个数，也就算的是平均值，放到题上要求的a[15]里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">//输出部分
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">((</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">//这里用如果(i+1)%5==0则换行，也就是i=5,10,15,...的时候换行，达成了每五个换行的效果
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="c1">//这个可以记下来，如果是每7个换行，就写 if (i%7 == 0) cout&lt;&lt;endl;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>	<span class="c1">//输出a[i]，setw为设置域宽
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></div></blockquote>
 <h2 id="4调整a数组以满足题目条件形式输出">4、调整a数组，以满足题目条件形式输出</h2>
 <p>因为我们要调整<code>a</code>数组里的数，最终输出<code>a</code>数组。<br>
 所以可以先把<code>a</code>数组里的所有数存到<code>b</code>数组里，然后再“遍历”<code>b</code>数组，判断某一个数<code>b[i]</code>跟平均值的关系，如果大于则放到<code>a</code>数组前面，小于则放到后面。</p>
 <p>首先先来写怎么把<code>a</code>数组里的所有数存到<code>b</code>数组里，前面已经写过了这里直接写代码。</p>
 <blockquote>
 <p>代码：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//把a数组放到b数组里
-</span><span class="c1"></span><span class="p">{</span>
-	<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-<span class="p">}</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//把a数组放到b数组里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></blockquote>
 <p>接下来就是难点了，判断出关系后，怎么样才能把<code>b[i]</code>放到<code>a</code>数组前面或者后面。<br>
 之前说过的，下标不一定只能用<code>i</code>，也可以定义新变量来表示下标。</p>
 <blockquote>
@@ -620,7 +620,7 @@ if (!doNotTrack) {
 <em>【注意<code>a[15]</code>为平均值】</em></p>
 </blockquote>
 <blockquote>
-<p>然后遍历<code>b</code>数组，假如第一个数<code>b[i]</code>（<span class="math inline">\(i=1\)</span>）为<span class="math inline">\(3\)</span>，小于平均值<code>a[15]</code>则该放到后面，也就是<code>a[end]</code>。<br>
+<p>然后遍历<code>b</code>数组，假如第一个数<code>b[i]</code>（$i=1$）为$3$，小于平均值<code>a[15]</code>则该放到后面，也就是<code>a[end]</code>。<br>
 先让<code>a[end]=b[i]</code>，<br>
 <figure style="flex-grow: 213; flex-basis: 512px">
 		<a href="/p/univ-cpp-note-array/4.png" data-size="673x315"><img src="/p/univ-cpp-note-array/4.png"
@@ -659,91 +659,91 @@ if (!doNotTrack) {
 <ul>
 <li>代码：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;调整后的数据为:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//把a数组放到b数组里
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-	<span class="p">}</span>
-
-  <span class="kt">int</span> <span class="n">begin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//遍历b数组，跟平均数比较，放回a数组
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">])</span>	<span class="c1">//跟平均数比较
-</span><span class="c1"></span>		<span class="p">{</span>
-			<span class="n">a</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-			<span class="n">end</span><span class="o">--</span><span class="p">;</span>
-		<span class="p">}</span>
-		<span class="k">else</span>
-  	<span class="p">{</span>
-  		<span class="n">a</span><span class="p">[</span><span class="n">begin</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-  		<span class="n">begin</span><span class="o">++</span><span class="p">;</span>
-  	<span class="p">}</span>
-  <span class="p">}</span>
-
-  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//输出a数组
-</span><span class="c1"></span>  <span class="p">{</span>
-  	<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
-  		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-  	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-  <span class="p">}</span>
-</code></pre></div></blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;调整后的数据为:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//把a数组放到b数组里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kt">int</span> <span class="n">begin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//遍历b数组，跟平均数比较，放回a数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">])</span>	<span class="c1">//跟平均数比较
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">a</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="n">end</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">  	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">  		<span class="n">a</span><span class="p">[</span><span class="n">begin</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  		<span class="n">begin</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>	<span class="c1">//输出a数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  	<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span></code></pre></div></blockquote>
 <h2 id="5总代码">5、总代码</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-	<span class="kt">double</span> <span class="n">a</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
-	<span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入15个实型数：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//读入
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-	<span class="p">}</span>
-	<span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">15</span><span class="p">;</span>		 <span class="c1">//求平均值
-</span><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//原样输出
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//【这里加了个i!=0的条件，防止最开始就换行
-</span><span class="c1"></span>		<span class="p">{</span>
-			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-		<span class="p">}</span>
-		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-	<span class="p">}</span>
-
-	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span>
-		 <span class="o">&lt;&lt;</span> <span class="s">&#34;调整后的数据为:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//把a数组放到b数组里
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-	<span class="p">}</span>
-
-	<span class="kt">int</span> <span class="n">begin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//遍历b数组，跟平均数比较，放回a数组
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">])</span>
-		<span class="p">{</span>
-			<span class="n">a</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-			<span class="n">end</span><span class="o">--</span><span class="p">;</span>
-		<span class="p">}</span>
-		<span class="k">else</span>
-		<span class="p">{</span>
-			<span class="n">a</span><span class="p">[</span><span class="n">begin</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-			<span class="n">begin</span><span class="o">++</span><span class="p">;</span>
-		<span class="p">}</span>
-	<span class="p">}</span>
-
-	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//输出a数组【注意这里是遍历输出整个a数组，即a[15]这个存的平均值也要输出，所以变成了(i = 0; i &lt;16; i++)
-</span><span class="c1"></span>	<span class="p">{</span>
-		<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
-			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-	<span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iomanip&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">a</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">b</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">double</span> <span class="n">sum</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;请输入15个实型数：&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//读入
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">		<span class="n">sum</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">+</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span> <span class="o">=</span> <span class="n">sum</span> <span class="o">/</span> <span class="mi">15</span><span class="p">;</span>		 <span class="c1">//求平均值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//原样输出
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="c1">//【这里加了个i!=0的条件，防止最开始就换行
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span>
+</span></span><span class="line"><span class="cl">		 <span class="o">&lt;&lt;</span> <span class="s">&#34;调整后的数据为:&#34;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//把a数组放到b数组里
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">begin</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">end</span> <span class="o">=</span> <span class="mi">14</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//遍历b数组，跟平均数比较，放回a数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">[</span><span class="mi">15</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">a</span><span class="p">[</span><span class="n">end</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="n">end</span><span class="o">--</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="k">else</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="n">a</span><span class="p">[</span><span class="n">begin</span><span class="p">]</span> <span class="o">=</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">			<span class="n">begin</span><span class="o">++</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="c1">//输出a数组【注意这里是遍历输出整个a数组，即a[15]这个存的平均值也要输出，所以变成了(i = 0; i &lt;16; i++)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">setw</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
 <li>这里只讲的老师的第一种方法，更好理解一些。对于第二种方法可以自行尝试，跟这个大致相同，不懂也可以自己在草稿纸上模拟一下。</li>
 </ul>
 <h1 id="五其他提示">五、其他提示</h1>
@@ -758,15 +758,15 @@ if (!doNotTrack) {
 所以如果想按照数学习惯，完全可以从<code>a[1]</code>开始存数。</p>
 <blockquote>
 <p>比如读入15个数，原来可能写成</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</code></pre></div><p>这样就是存在<code>a[0]~a[14]</code>里。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">14</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span></code></pre></div><p>这样就是存在<code>a[0]~a[14]</code>里。</p>
 <p>你也可以写成符合我们习惯的</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
-	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
-</code></pre></div><p>这样就是存在<code>a[1]~a[15]</code>里。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="n">cin</span> <span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span></code></pre></div><p>这样就是存在<code>a[1]~a[15]</code>里。</p>
 </blockquote>
-<p>不过选择好一种自己喜欢的就这么写，不要一会从<span class="math inline">\(0\sim14\)</span>一会又<span class="math inline">\(1\sim15\)</span>，不然会很混乱。</p>
+<p>不过选择好一种自己喜欢的就这么写，不要一会从$0\sim14$一会又$1\sim15$，不然会很混乱。</p>
 </li>
 <li>
 <p>没了。</p>
@@ -894,6 +894,28 @@ if (!doNotTrack) {
                 
                     
 <article class="has-image">
+    <a href="/p/univ-code2product-2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-code2product-2/background.8a15991c746918c41650afc972a65207_hue37b069c78ca69c452c39783d04d66f1_225868_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Code2Product-2" 
+                        data-hash="md5-ihWZHHRpGMQWUK/JcqZSBw==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">期中创客项目 - 多功能火灾警报器</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
     <a href="/p/univ-probabilitystatistics-2/">
         
         
@@ -910,28 +932,6 @@ if (!doNotTrack) {
 
         <div class="article-details">
             <h2 class="article-title">概率论中有关总体的认识……</h2>
-        </div>
-    </a>
-</article>
-                
-                    
-<article class="has-image">
-    <a href="/p/univ-physics_experiment-2/">
-        
-        
-            <div class="article-image">
-                <img src="/p/univ-physics_experiment-2/Yande-337927.cfabd344155b9617987eb8ec549949ea_hub5d1827db05ab8b04dc3400a656c42e6_834621_250x150_fill_box_smart1_3.png" 
-                        width="250" 
-                        height="150" 
-                        loading="lazy" 
-                        data-key="univ-Physics_Experiment-2" 
-                        data-hash="md5-z6vTRBVblheYfrjsVJlJ6g==">
-                
-            </div>
-        
-
-        <div class="article-details">
-            <h2 class="article-title">大学物理实验Ⅱ——考点总结……</h2>
         </div>
     </a>
 </article>

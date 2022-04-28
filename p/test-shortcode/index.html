@@ -352,26 +352,26 @@ if (!doNotTrack) {
 <ol>
 <li>
 <p>内嵌Shortcode</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="kd">type</span> <span class="nx">content</span> <span class="p">&gt;}}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="kd">type</span> <span class="nx">content</span> <span class="p">&gt;}}</span>
+</span></span></code></pre></div></li>
 <li>
 <p>Shortcode块</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="p">{{</span><span class="o">&lt;</span> <span class="nb">type</span> <span class="o">&gt;</span><span class="p">}}</span> 
-<span class="n">content</span>
-<span class="p">{{</span><span class="o">&lt;</span> \<span class="nb">type</span> <span class="o">&gt;</span><span class="p">}}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-py" data-lang="py"><span class="line"><span class="cl"><span class="p">{{</span><span class="o">&lt;</span> <span class="nb">type</span> <span class="o">&gt;</span><span class="p">}}</span> 
+</span></span><span class="line"><span class="cl"><span class="n">content</span>
+</span></span><span class="line"><span class="cl"><span class="p">{{</span><span class="o">&lt;</span> \<span class="nb">type</span> <span class="o">&gt;</span><span class="p">}}</span>
+</span></span></code></pre></div></li>
 </ol>
 <hr>
 <p>对于内容的解析也有两种方法：</p>
 <ol>
 <li>
 <p>内容解析为HTML</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="o">...</span> <span class="p">&gt;}}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="o">...</span> <span class="p">&gt;}}</span>
+</span></span></code></pre></div></li>
 <li>
 <p>内容解析为Markdown</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{</span><span class="o">%</span> <span class="o">...</span> <span class="o">%</span><span class="p">}}</span>
-</code></pre></div><p><em>一般这个不常用，个人自写的所有Shotrcode都是基于<code>&lt;&gt;</code>来处理的……</em></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{</span><span class="o">%</span> <span class="o">...</span> <span class="o">%</span><span class="p">}}</span>
+</span></span></code></pre></div><p><em>一般这个不常用，个人自写的所有Shotrcode都是基于<code>&lt;&gt;</code>来处理的……</em></p>
 </li>
 </ol>
 <hr>
@@ -391,8 +391,8 @@ if (!doNotTrack) {
 <ul>
 <li>
 <p>使用方法：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="p">{{&lt;</span> <span class="nx">bilibili</span> <span class="nx">BV1754y1R7Nd</span> <span class="p">&gt;}}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="p">{{&lt;</span> <span class="nx">bilibili</span> <span class="nx">BV1754y1R7Nd</span> <span class="p">&gt;}}</span>
+</span></span></code></pre></div></li>
 </ul>
 <p>默认为BV号。</p>
 <ul>

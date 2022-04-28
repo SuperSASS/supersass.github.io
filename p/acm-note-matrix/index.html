@@ -333,7 +333,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：562</div>
+            <div class="char">文章字数：527</div>
             <div class="time">预计阅读时长： <time>2</time> 分钟</div>
         </div>
     </footer>
@@ -359,10 +359,10 @@ if (!doNotTrack) {
 <blockquote>
 <p>当前的结果取决于前两个数字（状态），<br>
 但这两个数字就是这两个数字，相当于只有一种决策……</p>
-<p>即<span class="math inline">\(dp[n][1] \leftarrow dp[n-1][1] \\& dp[n-2][1]\)</span>……</p>
+<p>即$dp[n][1] \leftarrow dp[n-1][1] \&amp; dp[n-2][1]$……</p>
 <p>只有一种决策，便可以把列维度给省去……</p>
 <blockquote>
-<p><span class="math inline">\(mat[1],mat[2]\)</span>分别为前一个数和当前数……</p>
+<p>$mat[1],mat[2]$分别为前一个数和当前数……</p>
 </blockquote>
 </blockquote>
 <hr>
@@ -370,10 +370,10 @@ if (!doNotTrack) {
     >P哥破解密码</a>中：</p>
 <blockquote>
 <p>当前的结果取决于上一次状态的三种决策。</p>
-<p>即<span class="math inline">\(dp[n][1 \sim 3] \leftarrow dp[n-1][1 \sim 3]\)</span>……</p>
+<p>即$dp[n][1 \sim 3] \leftarrow dp[n-1][1 \sim 3]$……</p>
 <blockquote>
-<p><span class="math inline">\(mat[1][],mat[2][]\)</span>就是上一次、这一次两状态…<br>
-<span class="math inline">\(mat[][1],mat[][2],mat[][3]\)</span>就是选<span class="math inline">\(1\)</span>个<span class="math inline">\(A\)</span>、选<span class="math inline">\(2\)</span>个<span class="math inline">\(A\)</span>、选<span class="math inline">\(B\)</span>的决策……</p>
+<p>$mat[1][],mat[2][]$就是上一次、这一次两状态…<br>
+$mat[][1],mat[][2],mat[][3]$就是选$1$个$A$、选$2$个$A$、选$B$的决策……</p>
 </blockquote>
 </blockquote>
 <ul>
@@ -381,8 +381,8 @@ if (!doNotTrack) {
     >做题记录</a></em></li>
 </ul>
 <h3 id="递推矩阵计算">递推矩阵计算</h3>
-<p>构造完状态矩阵后，只需要手动模拟递推，需要加这个元素的令为<span class="math inline">\(1\)</span>（要乘<span class="math inline">\(n\)</span>便令为<span class="math inline">\(n\)</span>），不需要的令为<span class="math inline">\(0\)</span>……</p>
-<p>若状态矩阵大小为<span class="math inline">\(n\*m\)</span>，则递推矩阵大小：<span class="math inline">\(m\*m\)</span>……</p>
+<p>构造完状态矩阵后，只需要手动模拟递推，需要加这个元素的令为$1$（要乘$n$便令为$n$），不需要的令为$0$……</p>
+<p>若状态矩阵大小为$n*m$，则递推矩阵大小：$m*m$……</p>
 <h3 id="矩阵快速幂">矩阵快速幂</h3>
 <p>即为标准快速幂，改为矩阵乘法罢了……</p>
 <div class="snote link cyan">
@@ -393,7 +393,7 @@ if (!doNotTrack) {
 </div>
 <h3 id="优点">优点</h3>
 <ol>
-<li>时间复杂度：<span class="math inline">\(O(\log n)\)</span></li>
+<li>时间复杂度：$O(\log n)$</li>
 <li>因为时间短，便可在较少询问次数的时候，只需要一个矩阵直接去计算，不需要空间开销来存下状态。</li>
 </ol>
 

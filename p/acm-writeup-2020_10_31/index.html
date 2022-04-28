@@ -331,7 +331,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1363</div>
+            <div class="char">文章字数：1330</div>
             <div class="time">预计阅读时长： <time>3</time> 分钟</div>
         </div>
     </footer>
@@ -398,37 +398,37 @@ if (!doNotTrack) {
 	<summary>题面搬运</summary>
 	<div class="sc-details--inner"><h2 id="题目描述">题目描述</h2>
 <p>世界任务：是芭芭拉还是⑨⑨拉</p>
-<p>班尼特又误伤了自己，现在<span class="math inline">\(n\)</span>个班尼特正找芭芭拉治疗。</p>
-<p>对于每个班尼特，芭芭拉需要给他补血<span class="math inline">\(h_i\)</span>，然后获得一个价值<span class="math inline">\(v_i\)</span>的圣遗物。</p>
-<p>治疗每一个班尼特都会获得一个收益，治疗第<span class="math inline">\(i\)</span>个班尼特的收益<span class="math inline">\(w_i\)</span>等于前面治疗的所有班尼特的<span class="math inline">\(v\)</span>之和减去<span class="math inline">\(h_i\)</span>。</p>
+<p>班尼特又误伤了自己，现在$n$个班尼特正找芭芭拉治疗。</p>
+<p>对于每个班尼特，芭芭拉需要给他补血$h_i$，然后获得一个价值$v_i$的圣遗物。</p>
+<p>治疗每一个班尼特都会获得一个收益，治疗第$i$个班尼特的收益$w_i$等于前面治疗的所有班尼特的$v$之和减去$h_i$。</p>
 <p>芭芭拉想让治疗每个班尼特收益的最小值最大。<br>
-也就是说，请重新给班尼特排队，要求是最大化<span class="math inline">\(\min_{i=1}^n\{-h_i+\sum_{j=1}^i v_j\}\)</span>
+也就是说，请重新给班尼特排队，要求是最大化$\min_{i=1}^n{-h_i+\sum_{j=1}^i v_j}$
 ，并输出这个值。</p>
 <p>芭芭拉并不擅长数学，因此请身为骑士团荣誉骑士的你帮帮她吧。</p>
 <p>任务奖励：10个原石，角色芭芭拉，以及月赛增加一个AC</p>
 <h2 id="数据范围">数据范围</h2>
-<p><span class="math inline">\(1 \le n \le 10^5\)</span><br>
-<span class="math inline">\(1 \le h_i,v_i \le 10^4\)</span></p>
+<p>$1 \le n \le 10^5$<br>
+$1 \le h_i,v_i \le 10^4$</p>
 <h2 id="输入格式">输入格式</h2>
-<p>第一行有一个整数<span class="math inline">\(n\)</span>。</p>
-<p>接下来有<span class="math inline">\(n\)</span>行，每行有两个数字<span class="math inline">\(h$,$v\)</span>，代表这个班尼特的补血量和圣遗物。</p>
+<p>第一行有一个整数$n$。</p>
+<p>接下来有$n$行，每行有两个数字$h$,$v$，代表这个班尼特的补血量和圣遗物。</p>
 <h2 id="输出格式">输出格式</h2>
 <p>一行，只有一个整数，代表所有最小值中的最大值。</p>
 <h2 id="样例数据">样例数据</h2>
 <h3 id="第一组">第一组</h3>
 <div class="sc-columns"><div class="sc-columns--inner"><h2 id="输入">输入</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">3</span>
-<span class="mi">100</span> <span class="mi">200</span>
-<span class="mi">300</span> <span class="mi">500</span>
-<span class="mi">400</span> <span class="mi">700</span>
-</code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="mi">300</span>
-</code></pre></div></div></div>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">3</span>
+</span></span><span class="line"><span class="cl"><span class="mi">100</span> <span class="mi">200</span>
+</span></span><span class="line"><span class="cl"><span class="mi">300</span> <span class="mi">500</span>
+</span></span><span class="line"><span class="cl"><span class="mi">400</span> <span class="mi">700</span>
+</span></span></code></pre></div></div><div class="sc-columns--inner"><h2 id="输出">输出</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="mi">300</span>
+</span></span></code></pre></div></div></div>
 <p><strong>解释：</strong></p>
-<p>若顺序为(<span class="math inline">\(100,200)(300,500)(400,700)\)</span>，则收益为<span class="math inline">\(100,400,1000\)</span>，最小收益为<span class="math inline">\(100\)</span>。<br>
-若顺序为<span class="math inline">\((300,500)(100,200)(400,700)\)</span>，则收益为<span class="math inline">\(200,600,1000\)</span>，最小收益为<span class="math inline">\(200\)</span>。<br>
-若顺序为<span class="math inline">\((400,700)(100,200)(300,500)\)</span>，则收益为<span class="math inline">\(300,600,1100\)</span>，最小收益为<span class="math inline">\(300\)</span>。</p>
-<p>还有其它顺序，但最小收益不会超过<span class="math inline">\(300\)</span>，因此答案为<span class="math inline">\(300\)</span>。</p>
+<p>若顺序为($100,200)(300,500)(400,700)$，则收益为$100,400,1000$，最小收益为$100$。<br>
+若顺序为$(300,500)(100,200)(400,700)$，则收益为$200,600,1000$，最小收益为$200$。<br>
+若顺序为$(400,700)(100,200)(300,500)$，则收益为$300,600,1100$，最小收益为$300$。</p>
+<p>还有其它顺序，但最小收益不会超过$300$，因此答案为$300$。</p>
 </div>
 </details>
 <h2 id="标准思路">标准思路</h2>
@@ -437,11 +437,11 @@ if (!doNotTrack) {
 它把决定相邻两个元素先后的决策推广到整个序列，从而获得最优解。</li>
 </ul>
 <p>这个题本身就是通过给数据排序，不同的排序方法会有不同的收益最小值，然后要比较所有排序方法，选让这个收益最值最大那种方法……<br>
-所以排序的话我们就每次选两个人比较，标记为<span class="math inline">\(i\)</span>和<span class="math inline">\(j\)</span>……</p>
-<p>然后这两个人又有两种情况，要不就是<span class="math inline">\(i\)</span>站在<span class="math inline">\(j\)</span>前面，要不就是<span class="math inline">\(j\)</span>站在<span class="math inline">\(i\)</span>前面……<br>
-这两种情况分别会有个当前两个人的收益最小值，如果目前这种方法（<span class="math inline">\(i\)</span>站在<span class="math inline">\(j\)</span>前面）的这个最值小于后者方法（<span class="math inline">\(j\)</span>站在<span class="math inline">\(i\)</span>前面），那肯定我就选后者，让收益最大化，就让他们交换顺序……<br>
+所以排序的话我们就每次选两个人比较，标记为$i$和$j$……</p>
+<p>然后这两个人又有两种情况，要不就是$i$站在$j$前面，要不就是$j$站在$i$前面……<br>
+这两种情况分别会有个当前两个人的收益最小值，如果目前这种方法（$i$站在$j$前面）的这个最值小于后者方法（$j$站在$i$前面），那肯定我就选后者，让收益最大化，就让他们交换顺序……<br>
 就相当于把比较时候的最值看成短板，每次比较一次选最高的那个，就会把短板提上去一点，这样最后得到的就是最高的短板……</p>
-<p>用公式来说的话就是<span class="math inline">\(\text{if} \quad (\min(Wi_1,Wj_1) < \min(Wi_2,Wj_2)) \quad \text{swap}((h,v)_i,(h,v)_j)\)</span>……<br>
+<p>用公式来说的话就是$\text{if} \quad (\min(Wi_1,Wj_1) &lt; \min(Wi_2,Wj_2)) \quad \text{swap}((h,v)_i,(h,v)_j)$……<br>
 最终分析得知就是<code>if (vi-hi &lt; vj-hj) swap(i,j);</code>……</p>
 <div class="snote info ">
 	<div class="snote-content">
@@ -460,40 +460,40 @@ if (!doNotTrack) {
 
 <details class="sc-details" >
 	<summary>标程代码</summary>
-	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">//理解了就很简单，就不给标程加注释了……
-</span><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
-</span><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
-
-<span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100010</span><span class="p">;</span>
-
-<span class="k">struct</span> <span class="nc">Data</span>
-<span class="p">{</span>
-	<span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
-	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Data</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">-</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">v</span> <span class="o">-</span> <span class="n">t</span><span class="p">.</span><span class="n">h</span><span class="p">;</span> <span class="p">}</span>
-<span class="p">};</span>
-
-<span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
-<span class="n">Data</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
-<span class="p">{</span>
-	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">);</span>
-	<span class="n">sort</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
-	<span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
-	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
-	<span class="p">{</span>
-		<span class="n">tmp</span> <span class="o">+=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">;</span>
-		<span class="n">res</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">);</span>
-	<span class="p">}</span>
-	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
-	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+	<div class="sc-details--inner"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="c1">//理解了就很简单，就不给标程加注释了……
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstdio&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;cstring&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">const</span> <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">100010</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">Data</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">bool</span> <span class="k">operator</span><span class="o">&lt;</span><span class="p">(</span><span class="k">const</span> <span class="n">Data</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">v</span> <span class="o">-</span> <span class="n">h</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">.</span><span class="n">v</span> <span class="o">-</span> <span class="n">t</span><span class="p">.</span><span class="n">h</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">n</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Data</span> <span class="n">d</span><span class="p">[</span><span class="n">N</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="n">scanf</span><span class="p">(</span><span class="s">&#34;%d%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="n">sort</span><span class="p">(</span><span class="n">d</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">d</span> <span class="o">+</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">res</span> <span class="o">=</span> <span class="mf">1e9</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="n">tmp</span> <span class="o">+=</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">v</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">		<span class="n">res</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">tmp</span> <span class="o">-</span> <span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">h</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="n">printf</span><span class="p">(</span><span class="s">&#34;%d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">res</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></div>
 </details>
 
 </section>
