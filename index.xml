@@ -578,7 +578,12 @@ $$&lt;/li&gt;
         <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
         
         <guid>https://blog.supersassw.com/p/test-latex/</guid>
-        <description>&lt;img src="https://blog.supersassw.com/p/test-latex/Yande-331204.png" alt="Featured image of post LaTeX相关……" /&gt;&lt;h1 id=&#34;latex存在的问题&#34;&gt;LaTeX存在的问题&lt;/h1&gt;
+        <description>&lt;img src="https://blog.supersassw.com/p/test-latex/Yande-331204.png" alt="Featured image of post LaTeX相关……" /&gt;&lt;div class=&#34;snote error red&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;本文所提到的重新生成hugo方法已失效，待重新更新……&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;latex存在的问题&#34;&gt;LaTeX存在的问题&lt;/h1&gt;
 &lt;p&gt;在Markdown博客中，对于LaTeX的渲染可能会存在一个通病：&lt;br&gt;
 &lt;div class=&#34;snote warning &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;

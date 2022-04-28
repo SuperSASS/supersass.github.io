@@ -13,7 +13,7 @@
       <pubDate>Thu, 25 Nov 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.supersassw.com/p/test-latex/</guid>
-      <description>LaTeX存在的问题 在Markdown博客中，对于LaTeX的渲染可能会存在一个通病： Markdown中的转义字符会对LaTeX的渲染产生干</description>
+      <description>本文所提到的重新生成hugo方法已失效，待重新更新…… LaTeX存在的问题 在Markdown博客中，对于LaTeX的渲染可能会存在一个通病：</description>
     </item>
     
     <item>
