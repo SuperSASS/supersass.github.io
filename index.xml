@@ -6,7 +6,454 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Thu, 28 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 28 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>从代码到实物 - 学习日志</title>
+        <link>https://blog.supersassw.com/p/univ-code2product-final/</link>
+        <pubDate>Tue, 28 Jun 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/univ-code2product-final/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/univ-code2product-final/background.png" alt="Featured image of post 从代码到实物 - 学习日志" /&gt;&lt;h1 id=&#34;0x00-小组介绍&#34;&gt;0x00 小组介绍&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;小组编号：第20组&lt;/li&gt;
+&lt;li&gt;小组成员
+&lt;ul&gt;
+&lt;li&gt;刘云杰&lt;/li&gt;
+&lt;li&gt;王翔&lt;/li&gt;
+&lt;li&gt;蒋添爱&lt;/li&gt;
+&lt;li&gt;郑然文&lt;/li&gt;
+&lt;li&gt;王述杰&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;0x01-学习笔记&#34;&gt;0x01 学习笔记&lt;/h1&gt;
+&lt;h2 id=&#34;一有关pcb电路板绘制的学习&#34;&gt;一、有关PCB电路板绘制的学习&lt;/h2&gt;
+
+
+&lt;div class=&#34;snote quote red &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;&lt;strong&gt;设计技巧总结举例：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、电源与地线之间的布线技巧
+1）要在电源、地线之间加上去耦电容。电源一定要经过去耦电容后再连接到芯片的管脚，一方面是让电源的噪声尽量少的影响芯片，另一方面是芯片产生的噪声不要影响到电源。
+2）尽量加宽电源及地线，最好是地线比电源线宽，其关系为：地线&amp;gt;电源线&amp;gt;信号线。
+3）使用大面积的铜层作地线，在印制板上把没被使用的地方都与地相连，作地线使用，或是做成多层板，电源，地线各占用一层。
+2、对于线拐角的处理
+通常，线的拐角处会有粗细变化，会发生一些反射的现象。拐角方式对于线的粗细变化情况，直角是最差的，45度角好一些，圆角最好。但是圆角对PCB设计来讲处理比较麻烦，一般看信号的敏感程度来定，一般的信号用45度角就可以了，只有非常敏感的线才需要用圆角
+3、相邻两层的走线不要重合
+因为层厚度很小，如果相邻两层的走线重合那么从同一个平面看就相当于它们距离很近，这样就会引起串扰影响信号的质量。建议垂直交叉
+4、在原理图设计时就应该按模块化来设计。
+两种形式：1. 在同一张原理图中通过粗线将不同功能模块的电路分隔开；2. 将不同功能模块的电路原理图分别设置在不同的原理图中。&lt;/p&gt;
+&lt;p&gt;—— 王翔&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;二有关焊接技术的学习&#34;&gt;二、有关焊接技术的学习&lt;/h2&gt;
+
+
+&lt;div class=&#34;snote quote cyan &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;通过这次焊接拆除练习，我明白了一些之前从未了解过的知识，每一个电子元件上会标识材料的类别、型号、规格、符号、性能及一般选用知识。初步熟悉了安装焊接的基本工艺知识。初步掌握了手工焊接技术，能够独立地焊接一些电子产品，通过利用松香以及调节合适的温度提高了焊接的效率，避免了一些不必要的浪费，并且提高了整体美观性，保护了器件。在练习拆除时，新人确实难以上手，在对比改善前后的板子拆除时，可以很真切地体会到改进后的板子用来练习有多友好，通过实践，明白了吸锡器的工作原理以及提升技巧-紧靠烙铁，快速按下。本次小任务提高了我的动手能力，增强了我对实际问题的理解能力。&lt;/p&gt;
+&lt;p&gt;—— 郑然文&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;三有关qr-code的学习&#34;&gt;三、有关QR Code的学习&lt;/h2&gt;
+
+
+&lt;div class=&#34;snote quote yellow &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;&lt;strong&gt;QR Code简介：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;QR Code码，是由Denso公司于1994年9月研制的一种矩阵二维码符号，它具有一维条码及其它二维条码所具有的信息容量大、可靠性高、可表示汉字及图象多种文字信息、保密防伪性强等优点。&lt;/p&gt;
+&lt;p&gt;QR Code二维码是有容错率的。首先只要右上，左上，左下3个边角方框形状的区域是不能遮挡或损失，然后总的遮挡面积不超过总面积的三分之一，一般来说都是没问题的，可以正常识别出来,基于此种特性，我们将一张图嵌入在生成的二维码中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;QR Code生成：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;使用python中的qrcode包生成二维码，使用python中的PIL包绘制二维码中间的图片：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;在已有python语言环境下使用pip 是 Python 包管理工具安装qrcode&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在终端中输入
+&lt;code&gt;pip install qrcode&lt;/code&gt;
+即可完成安装。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;安装完成后使用
+&lt;code&gt;pip freeze | findstr qrcode&lt;/code&gt;
+查看是否完成安装：
+&lt;figure style=&#34;flex-grow: 888; flex-basis: 2132px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-31-51.png&#34; data-size=&#34;542x61&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-31-51.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-31-51_hu6d9c857387ad7ba7aaadded78efe9548_7216_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-31-51_hu6d9c857387ad7ba7aaadded78efe9548_7216_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;542&#34;
+				height=&#34;61&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;是否安装完成&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;是否安装完成&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;编写代码&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-py&#34; data-lang=&#34;py&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;PIL&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Image&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;qrcode&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;c1&#34;&gt;### 参数可调 &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https://www.bilibili.com/video/BV12W4y1z7fc/?vd_source=c3e65a68e2613f8b644b7eecd5d36a2a&amp;#39;&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 二维码内的文本信息或者 URL 地址&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;logo_path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sa&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;D:\Desktop\logo.jpg&amp;#34;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# logo路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;out_path&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;./out.png&amp;#39;&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 保存路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;factor&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;6&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 缩放比例&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;c1&#34;&gt;### 生成二维码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;qr&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;qrcode&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;QRCode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;version&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;error_correction&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;qrcode&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;constants&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ERROR_CORRECT_L&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;box_size&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;     &lt;span class=&#34;n&#34;&gt;border&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;qr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;add_data&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;qr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;fit&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;qr&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;make_image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;convert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;RGBA&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;c1&#34;&gt;### 在二维码中心,绘制图片&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;icon&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Image&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;logo_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 打开logo照片&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;img_w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;img_h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;size&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 获取图片的宽高&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;icon_w&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;img_w&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;factor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;icon_h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;img_h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;factor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;icon&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;icon&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;resize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;icon_w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;icon_h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Image&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ANTIALIAS&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;# 重新设置logo的尺寸&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;w&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;img_w&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;icon_w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;((&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;img_h&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;icon_h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;icon&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;icon&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;convert&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;RGBA&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 得到画图的x，y坐标，居中显示&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;paste&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;icon&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;icon&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 根据x,y 黏贴logo照&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;save&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;out_path&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 保存图片&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;n&#34;&gt;img&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;show&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;  &lt;span class=&#34;c1&#34;&gt;# 预览效果&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;—— 刘云杰&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;四有关arduino-uno的学习&#34;&gt;四、有关Arduino UNO的学习&lt;/h2&gt;
+
+
+&lt;div class=&#34;snote quote &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;通过这整个学期的创客学习，我学会了Arduino IDE的使用方法，了解到了Arduino UNO的I/O口的种类以及使用方式，能够熟练运用数字信号和模拟信号。同时，也了解到了串口通信的相关知识，以及通过板子所带的WIFI模块进行硬件控制和通信，最后，也学会了类库的使用和编写。&lt;/p&gt;
+&lt;p&gt;—— 王述杰&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;五有关网页制作的学习&#34;&gt;五、有关网页制作的学习&lt;/h2&gt;
+
+
+&lt;div class=&#34;snote quote green &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;这次个人主要负责整个项目的网页制作，如果自己从头开始制作较为美观的网页会花费大量时间，而利用现成的他人所编写好的主题可以极大程度简化网页的设计难度，将重心放在文章本身内容以及其他知识的学习。&lt;br&gt;
+因此个人利用了hugo网页搭建框架进行了静态HTML页面的生成，在主题方面选择了由“JimmyCai”制作的“Stack”，卡片式布局使得页面整体美观易读。&lt;br&gt;
+同时个人学习了SCSS和TypeScript相关技术，在原本主题的基础上进行了一定程度的修改，增加了如Table of Content（文章目录）、Shortcode（短代码功能）等，增强了自己在网页设计方面的知识和能力。&lt;br&gt;
+最后个人利用Github Pages进行网页托管，在域名方面也采用了自定义域名，并利用CDN加速了在国内访问较慢的Github Pages，并进行了HTTPS相关配置，在网站搭建方面也培养了自己一定的能力。&lt;/p&gt;
+&lt;p&gt;—— 蒋添爱&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;0x02-期中项目&#34;&gt;0x02 期中项目&lt;/h1&gt;
+&lt;h2 id=&#34;一项目简介&#34;&gt;一、项目简介&lt;/h2&gt;
+&lt;h3 id=&#34;1-项目名称&#34;&gt;1. 项目名称&lt;/h3&gt;
+&lt;div class=&#34;sc-stress&#34;&gt;
+	&lt;p&gt;集温度、烟雾、火焰检测于一体的多功能火灾警报器&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;2-项目背景&#34;&gt;2. 项目背景&lt;/h3&gt;
+
+
+&lt;div class=&#34;snote quote gray &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;p&gt;从第一次接触火元素，到学习理解掌握火的奥秘，人类就已经无法脱离火这种充盈着无尽能量的能源体，&lt;br&gt;
+然而，火给生活带来了光明与希望，也给生活带来灰烬与灾难，&lt;br&gt;
+从柔小火苗到冲天炽炎，往往只在顷刻间，人们或奔走哀嚎、或蜷缩哭泣，最终被这焰舌所吞噬，&lt;br&gt;
+即便人们召唤它的本意，只是想让其带来些许温暖。&lt;/p&gt;
+&lt;p&gt;因此，人们依赖火、更敬畏火。&lt;br&gt;
+从能检测周围火场并在即将灾难化自动鸣起警戒之声的火铃、到直接利用水元素与之正面对峙的自动灭火装置，&lt;br&gt;
+人们从未忘记那一场场天罚般的业火，在心中所造成的创伤与疤痕。&lt;br&gt;
+就算到如今人类已能熟练使用火系魔法，成为炎魔导师，火之大泛滥这一灵灾，仍时常袭于人们疏忽之瞬，&lt;br&gt;
+待到红莲燃尽，万物归无，人们才会后悔悲痛于自己当时的那句“没什么”。&lt;/p&gt;
+&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;为了纪念前人与火不断制衡对抗的艰苦历程，加强人们对火的警惕，&lt;br&gt;
+我们组利用所学知识，并加上自己人性化的设计理念，&lt;br&gt;
+最终创制出这杨一个“集温度、烟雾、火焰检测于一体”多功能火灾警报器，&lt;br&gt;
+谨以此实物，纪念所有奋斗在消防事业的人们。&lt;/p&gt;
+&lt;h2 id=&#34;二项目详细记录&#34;&gt;二、项目详细记录&lt;/h2&gt;
+&lt;h3 id=&#34;1-采用元件&#34;&gt;1. 采用元件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Arduino UNO ×1&lt;/li&gt;
+&lt;li&gt;温度传感器LM35模块 ×1&lt;/li&gt;
+&lt;li&gt;火焰传感器模块 ×1&lt;/li&gt;
+&lt;li&gt;MQ2烟雾气体传感器模块 ×1&lt;/li&gt;
+&lt;li&gt;无源蜂鸣器模块 ×1&lt;/li&gt;
+&lt;li&gt;LCD1602 ×1&lt;/li&gt;
+&lt;li&gt;5v电源扩展模块 ×1&lt;/li&gt;
+&lt;li&gt;椴木板 若干&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 173; flex-basis: 417px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Arduino.png&#34; data-size=&#34;692x398&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Arduino.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Arduino_hu85fd36daac571bb3bb70c8b5cff820ca_126728_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/pic/Arduino_hu85fd36daac571bb3bb70c8b5cff820ca_126728_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;692&#34;
+				height=&#34;398&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;Arduino UNO接口示意图&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;Arduino UNO接口示意图&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 83; flex-basis: 201px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_1.png&#34; data-size=&#34;441x526&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_1.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_1_huc8a7821d866ef95b3ac494a3e1157852_260459_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_1_huc8a7821d866ef95b3ac494a3e1157852_260459_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;441&#34;
+				height=&#34;526&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;元件清单 1&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;元件清单 1&lt;/figcaption&gt;&lt;/figure&gt; &lt;figure style=&#34;flex-grow: 67; flex-basis: 162px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_2.png&#34; data-size=&#34;442x653&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_2.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_2_hubb2601939683b6b0524dbcf82a7c67aa_312597_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_2_hubb2601939683b6b0524dbcf82a7c67aa_312597_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;442&#34;
+				height=&#34;653&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;元件清单 2&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;元件清单 2&lt;/figcaption&gt;&lt;/figure&gt; &lt;figure style=&#34;flex-grow: 86; flex-basis: 208px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_3.png&#34; data-size=&#34;442x509&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_3.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_3_hu2af0a3973b4b75b47cd6417ac2f2ffe7_245783_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_3_hu2af0a3973b4b75b47cd6417ac2f2ffe7_245783_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;442&#34;
+				height=&#34;509&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;元件清单 3&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;元件清单 3&lt;/figcaption&gt;&lt;/figure&gt; &lt;figure style=&#34;flex-grow: 108; flex-basis: 259px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_4.png&#34; data-size=&#34;442x409&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_4.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_4_hu4ea0931cdfb6f9b135af40a37b6ca505_167716_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/pic/Elements_4_hu4ea0931cdfb6f9b135af40a37b6ca505_167716_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;442&#34;
+				height=&#34;409&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;元件清单 4&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;元件清单 4&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-采用技术&#34;&gt;2. 采用技术&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;激光切割&lt;/li&gt;
+&lt;li&gt;硬件编程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-实现功能&#34;&gt;3. 实现功能&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;综合烟雾检测&lt;/li&gt;
+&lt;li&gt;火焰检查（波长分析）&lt;/li&gt;
+&lt;li&gt;温度检测&lt;/li&gt;
+&lt;li&gt;火灾自动报警&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-源代码&#34;&gt;4. 源代码&lt;/h3&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;原件使用例程 - &lt;a class=&#34;link&#34; href=&#34;https://gitee.com/SurvivorNo1/learninglogs_from_group_20/tree/1.0/fire_detection_code/units_Demos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Gitee链接&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;snote link green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;主程序源码 - &lt;a class=&#34;link&#34; href=&#34;https://gitee.com/SurvivorNo1/learninglogs_from_group_20/tree/1.0/fire_detection_code/units_Demos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Gitee链接&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;三项目时间线&#34;&gt;三、项目时间线&lt;/h2&gt;
+
+&lt;div class=&#34;timeline&#34;&gt;&lt;p class=&#34;p h2&#34;&gt;项目制作历程&lt;/p&gt;
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2022-3-12&lt;div class=&#34;title&#34;&gt;提出构想&lt;/div&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;小组经过讨论，将焦点集中在生活上的一些常见问题，&lt;br&gt;
+最终提出制作一个火灾警报器的构想。&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2022-3-24&lt;div class=&#34;title&#34;&gt;外壳制作 - 激光切割&lt;/div&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;由王翔同学负责设计警报器的外壳，&lt;br&gt;
+利用CAD软件绘制激光切割路径后，前往工程训练中心利用木材进行激光切割，&lt;br&gt;
+得到实物的外壳。&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2022-4-13&lt;div class=&#34;title&#34;&gt;程序编写 - Arduino开发&lt;/div&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;由王述杰同学负责源码的编写调试，&lt;br&gt;
+除显示屏模块外，利用他人的开源库，&lt;br&gt;
+其余的温度、火焰、烟雾与报警模块均为自主编写。&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2020-4-22&lt;div class=&#34;title&#34;&gt;实物组装&lt;/div&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;由刘云杰同学负责开发板与外壳的组装拼接，&lt;br&gt;
+将开发板与总线连接好后，固定在外壳内部，&lt;br&gt;
+最终通过木板的铆接，完成封装。&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;timenode&#34;&gt;
+	&lt;div class=&#34;meta&#34;&gt;
+		&lt;p&gt;2020-4-28&lt;div class=&#34;title&#34;&gt;项目总结与网页制作&lt;/div&gt;&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class=&#34;body&#34;&gt;&lt;p&gt;由郑然文同学负责总结本次开发项目，&lt;br&gt;
+记录项目的开发背景与经过，形成文档。&lt;/p&gt;
+&lt;p&gt;然后由蒋添爱同学负责根据文档制作项目网页，&lt;br&gt;
+并发布到博客上完成记录。&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+&lt;h2 id=&#34;四成品展示&#34;&gt;四、成品展示&lt;/h2&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 133; flex-basis: 320px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Product_1.jpg&#34; data-size=&#34;1920x1440&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Product_1.jpg&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Product_1_hu82f2de610bf16c02e4d3d4a2843fca28_97998_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/univ-code2product-final/pic/Product_1_hu82f2de610bf16c02e4d3d4a2843fca28_97998_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1440&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;成品展示 1&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;成品展示 1&lt;/figcaption&gt;&lt;/figure&gt; &lt;figure style=&#34;flex-grow: 133; flex-basis: 320px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Product_2.jpg&#34; data-size=&#34;1920x1440&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Product_2.jpg&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/pic/Product_2_hu20186ff152f63385600bc43bb83f6fc4_260576_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/univ-code2product-final/pic/Product_2_hu20186ff152f63385600bc43bb83f6fc4_260576_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1440&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;成品展示 2&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;成品展示 2&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;div class=&#34;snote paperclip blue&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;pic/Product_3.mp4&#34; &gt;效果视频展示&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;0x03-期末项目&#34;&gt;0x03 期末项目&lt;/h1&gt;
+&lt;h2 id=&#34;一项目选题与介绍&#34;&gt;一、项目选题与介绍&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;项目名称：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;sc-stress&#34;&gt;
+	&lt;p&gt;焊接学习用电子钢琴PCB设计&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;项目解决问题：&lt;/strong&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;snote guide &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;电子钢琴共有8个按键，不同按键对应不同的音阶，其原理是NE555定时器被设置为一个振荡器，电路中连接的8个电阻将决定振荡频率，当按下其中一个按键，喇叭将因特定的频率发出声音。&lt;br&gt;
+目前已有的焊接学习套件供电方式使用不便，且存在焊错后改错较为困难、二次焊接易导致电路板损坏、指示单一等问题，本次课题需对以上问题进行解决或优化。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;项目任务：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;根据给定的原理图完成PCB的设计工作。&lt;/li&gt;
+&lt;li&gt;根据使用体验完成焊盘和元件布局的优化。&lt;/li&gt;
+&lt;li&gt;在PCB上附加指导教程。&lt;/li&gt;
+&lt;li&gt;拍摄PCB焊接讲解视频。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;项目要求：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;需掌握不限类型的PCB设计软件的使用（设计采用Altium Designer软件，可一对一教学掌握其使用）。&lt;/li&gt;
+&lt;li&gt;熟练掌握电子焊接技术。&lt;/li&gt;
+&lt;li&gt;不怕麻烦，敢于较真。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;二项目阶段&#34;&gt;二、项目阶段&lt;/h2&gt;
+&lt;h3 id=&#34;1-学习pcb知识&#34;&gt;1. 学习PCB知识&lt;/h3&gt;
+&lt;p&gt;PCB板层：
+&lt;figure style=&#34;flex-grow: 109; flex-basis: 262px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-50-48.jpg&#34; data-size=&#34;363x332&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-50-48.jpg&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-50-48_huac080a961dbcea59e0c9e0760a1d70de_22555_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-50-48_huac080a961dbcea59e0c9e0760a1d70de_22555_1024x0_resize_q75_box.jpg 1024w&#34;
+				width=&#34;363&#34;
+				height=&#34;332&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;PCB板层&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;PCB板层&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;ad常用知识：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;工程创建&lt;/li&gt;
+&lt;li&gt;元件模型创建&lt;/li&gt;
+&lt;li&gt;常用器件（如Netlabel, port, ……）的作用&lt;/li&gt;
+&lt;li&gt;封装创建和管理&lt;/li&gt;
+&lt;li&gt;铺铜等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-尝试画出初代demo&#34;&gt;2. 尝试画出初代demo&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 192; flex-basis: 462px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-14-40.png&#34; data-size=&#34;1373x712&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-14-40.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-14-40_hu35ec1660f54e977320f387089a90ecbe_118147_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-14-40_hu35ec1660f54e977320f387089a90ecbe_118147_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1373&#34;
+				height=&#34;712&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;初代demo&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;初代demo&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-修改完善样板形状参数&#34;&gt;3. 修改完善样板形状参数&lt;/h3&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 182; flex-basis: 437px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-14-50.png&#34; data-size=&#34;2373x1303&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-14-50.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-14-50_huf71805d20f813d5b21dff95e6b850d87_303555_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-14-50_huf71805d20f813d5b21dff95e6b850d87_303555_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;2373&#34;
+				height=&#34;1303&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;完善参数&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;完善参数&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-pcb板下单编写说明书拍摄视频项目总结&#34;&gt;4. PCB板下单&amp;amp;编写说明书&amp;amp;拍摄视频&amp;amp;项目总结&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;PCB下单&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 1877; flex-basis: 4504px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-11-35.png&#34; data-size=&#34;3191x170&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-11-35.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-11-35_hucf5c16bc00935e92f7946e9c397a1f51_78439_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-11-35_hucf5c16bc00935e92f7946e9c397a1f51_78439_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;3191&#34;
+				height=&#34;170&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;PCB下单&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;PCB下单&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;编写说明书&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 133; flex-basis: 320px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-04-45.png&#34; data-size=&#34;4032x3024&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-04-45.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-04-45_hu50ef90b699a2b8c6f4b1624bb5114a2a_9534700_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_21-04-45_hu50ef90b699a2b8c6f4b1624bb5114a2a_9534700_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;4032&#34;
+				height=&#34;3024&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;说明书&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;说明书&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;拍摄并剪切视频&lt;br&gt;
+&lt;figure style=&#34;flex-grow: 72; flex-basis: 174px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-51-28.png&#34; data-size=&#34;235x324&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-51-28.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-51-28_huda373de02c041a5816aed2364a70e709_115840_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-51-28_huda373de02c041a5816aed2364a70e709_115840_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;235&#34;
+				height=&#34;324&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;视频文件&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;视频文件&lt;/figcaption&gt;&lt;/figure&gt;&lt;/li&gt;
+&lt;li&gt;项目总结&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;三成品展示&#34;&gt;三、成品展示&lt;/h2&gt;
+&lt;p&gt;&lt;figure style=&#34;flex-grow: 133; flex-basis: 320px&#34;&gt;
+		&lt;a href=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-50-14.png&#34; data-size=&#34;1920x1440&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-50-14.png&#34;
+				srcset=&#34;https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-50-14_hu8767a044c742a85c74c3123f283c9379_2626501_480x0_resize_box_3.png 480w, https://blog.supersassw.com/p/univ-code2product-final/images/index--06-30_20-50-14_hu8767a044c742a85c74c3123f283c9379_2626501_1024x0_resize_box_3.png 1024w&#34;
+				width=&#34;1920&#34;
+				height=&#34;1440&#34;
+				loading=&#34;lazy&#34;
+				alt=&#34;PCB成品&#34;&gt;
+		&lt;/a&gt;&lt;figcaption&gt;PCB成品&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;div class=&#34;snote paperclip blue&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV12W4y1z7fc/?vd_source=c3e65a68e2613f8b644b7eecd5d36a2a&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;讲解视频链接&lt;/a&gt;&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
         <title>期中创客项目 - 多功能火灾警报器</title>
         <link>https://blog.supersassw.com/p/univ-code2product-2/</link>
         <pubDate>Thu, 28 Apr 2022 00:00:00 +0000</pubDate>
@@ -3668,7 +4115,7 @@ D - Device 器件&lt;/p&gt;
 &lt;p&gt;一般教务咨询方式都会在“转专业细则”中出现，&lt;br&gt;
 如果没有，一般可以到&lt;a class=&#34;link&#34; href=&#34;https://www.swjtu.edu.cn/xysz_/xy.htm&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;目标学院官网&lt;/a&gt;中的学院概况中查到。&lt;/p&gt;
-&lt;p&gt;但也有部分学员官网没有明确写出教务信息，&lt;em&gt;【或者说设置的太神秘我反正是没有找到……&lt;/em&gt;&lt;br&gt;
+&lt;p&gt;但也有部分学院官网没有明确写出教务信息，&lt;em&gt;【或者说设置的太神秘我反正是没有找到……&lt;/em&gt;&lt;br&gt;
 这个时候可以到校教务处的“&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/PublicInfoQueryAction?setAction=queryCollege&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;信息查询&lt;/a&gt;”界面找到各学院的教务办公室和办公电话等信息。
 &lt;figure style=&#34;flex-grow: 184; flex-basis: 443px&#34;&gt;
