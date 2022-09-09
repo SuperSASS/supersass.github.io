@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Super SASS……</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 02 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>富文本按钮测试……</title>
+      <link>https://blog.supersassw.com/p/test-btns/</link>
+      <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.supersassw.com/p/test-btns/</guid>
+      <description>富文本按钮（名片展示） 测试 移植的富文本按钮，用来展示人员名单…… 因此这里命名为“名片展示”。 显示头像、名称以及描述， 目前额外支持利用QQ号进</description>
+    </item>
+    
     <item>
       <title>概率论中有关总体的认识……</title>
       <link>https://blog.supersassw.com/p/univ-probabilitystatistics-2/</link>

@@ -6,7 +6,273 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Sun, 02 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>富文本按钮测试……</title>
+        <link>https://blog.supersassw.com/p/test-btns/</link>
+        <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/test-btns/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/test-btns/34116994_p0.jpg" alt="Featured image of post 富文本按钮测试……" /&gt;&lt;h1 id=&#34;富文本按钮名片展示&#34;&gt;富文本按钮（名片展示）&lt;/h1&gt;
+&lt;h2 id=&#34;测试&#34;&gt;测试&lt;/h2&gt;
+&lt;p&gt;移植的富文本按钮，用来展示人员名单……&lt;br&gt;
+因此这里命名为“名片展示”。&lt;/p&gt;
+&lt;p&gt;显示头像、名称以及描述，&lt;br&gt;
+目前额外支持利用QQ号进行展示的模式。&lt;/p&gt;
+&lt;h3 id=&#34;qq显示模式&#34;&gt;QQ显示模式&lt;/h3&gt;
+&lt;div class=&#34;btns grid6&#34;&gt;
+
+
+
+
+
+
+    &lt;a  class=&#34;btns-cell typeQQ&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; href=&#39;tencent://AddContact/?fromId=45&amp;amp;fromSubId=1&amp;amp;subcmd=all&amp;amp;uin=1021889213&#39; &gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/loading.gif&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt; 名称加载中_(:зゝ∠)_…… &lt;/b&gt;
+        
+        &lt;p class=&#34;btns-cell--QQ&#34;&gt; QQ:1021889213&lt;/p&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;负责博客的建立与运营……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+    &lt;a  class=&#34;btns-cell typeQQ private&#34;&gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/loading.gif&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt; 名称加载中_(:зゝ∠)_…… &lt;/b&gt;
+        
+        &lt;p class=&#34;btns-cell--QQ&#34;&gt; QQ:1072205920&lt;/p&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;负责跟我吃烧烤……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+    &lt;a  class=&#34;btns-cell typeQQ private&#34;&gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/loading.gif&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt; 名称加载中_(:зゝ∠)_…… &lt;/b&gt;
+        
+        &lt;p class=&#34;btns-cell--QQ&#34;&gt; QQ:1105895619&lt;/p&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;负责在床上跳……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+    &lt;a  class=&#34;btns-cell typeQQ private&#34;&gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/loading.gif&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt; 名称加载中_(:зゝ∠)_…… &lt;/b&gt;
+        
+        &lt;p class=&#34;btns-cell--QQ&#34;&gt; QQ:812083429&lt;/p&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;负责带我apex……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+    &lt;a  class=&#34;btns-cell typeQQ private&#34;&gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/loading.gif&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt; 名称加载中_(:зゝ∠)_…… &lt;/b&gt;
+        
+        &lt;p class=&#34;btns-cell--QQ&#34;&gt; QQ:1326213837&lt;/p&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;负责带我bf……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+    &lt;a  class=&#34;btns-cell typeQQ private&#34;&gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/loading.gif&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt; 名称加载中_(:зゝ∠)_…… &lt;/b&gt;
+        
+        &lt;p class=&#34;btns-cell--QQ&#34;&gt; QQ:2501536935&lt;/p&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;负责在群里说怪话……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+    &lt;a  class=&#34;btns-cell typeQQ private&#34;&gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/loading.gif&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt; 名称加载中_(:зゝ∠)_…… &lt;/b&gt;
+        
+        &lt;p class=&#34;btns-cell--QQ&#34;&gt; QQ:1499597214&lt;/p&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;负责催我ff主线orz……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;【这群家伙是这里的亲友们，不希望去打扰哦_(:зゝ∠)_……&lt;/em&gt;&lt;/p&gt;
+&lt;h3 id=&#34;直接显示模式&#34;&gt;直接显示模式&lt;/h3&gt;
+&lt;div class=&#34;btns center&#34;&gt;
+
+
+
+
+
+
+
+    &lt;a class=&#34;btns-cell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;  href=&#39;https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF:Super_SASS&#39; &gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;image/SuperSASS.png&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt;Super SASS……&lt;/b&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;小天使！……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+
+    &lt;a class=&#34;btns-cell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;  href=&#39;https://zh.moegirl.org.cn/%E5%B0%91%E5%A5%B3%E5%89%8D%E7%BA%BF:M14&#39; &gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;image/M14.png&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt;M14……&lt;/b&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;指挥官，M14，不会让您失望的！……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+
+    &lt;a class=&#34;btns-cell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;image/test.jpg&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt;测试！……&lt;/b&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;测试一个短内容……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+
+
+
+
+
+    &lt;a class=&#34;btns-cell&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34; &gt;
+        &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/null.jpg&#39;/&gt;
+        &lt;b class=&#34;btns-cell--title&#34;&gt;测试！……&lt;/b&gt;
+        &lt;p class=&#34;btns-cell--describe&#34;&gt;测试一个长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长内容……&lt;/p&gt;
+    &lt;/a&gt;
+
+
+&lt;/div&gt;
+&lt;p&gt;&lt;em&gt;【这样式好看，好看啊！.jpg……&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用说明&#34;&gt;使用说明&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;btns&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;layout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;gird6&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;btn&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cell&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;direct&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;describe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;image&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;/img/null.jpg&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;url&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;btns&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cell&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;QQ&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;QQ&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;describe&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;...&amp;#34;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;private&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;1&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&amp;lt;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;btns&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;&amp;gt;}&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;外层：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;layout&lt;/code&gt; - 展示方式（默认为&lt;code&gt;gird6&lt;/code&gt;）：
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;选项&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;fill&lt;/td&gt;
+&lt;td&gt;填充布局，自动铺满至少一行，多了会换行。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;center&lt;/td&gt;
+&lt;td&gt;居中，按钮之间是固定间距。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;around&lt;/td&gt;
+&lt;td&gt;居中分散&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;grid2&lt;/td&gt;
+&lt;td&gt;等宽最多 2 列，屏幕变窄会适当减少列数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;grid3&lt;/td&gt;
+&lt;td&gt;等宽最多 3 列，屏幕变窄会适当减少列数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;grid4&lt;/td&gt;
+&lt;td&gt;等宽最多 4 列，屏幕变窄会适当减少列数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;grid5&lt;/td&gt;
+&lt;td&gt;等宽最多 5 列，屏幕变窄会适当减少列数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;grid6&lt;/td&gt;
+&lt;td&gt;等宽最多 6 列，屏幕变窄会适当减少列数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;内层：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;type&lt;/code&gt; - 名片种类，目前只有以下两种（默认为&lt;code&gt;direct&lt;/code&gt;）
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;QQ&lt;/code&gt; - 按照 QQ 号进行展示，按钮会跳唤起 QQ 进行好友添加，含有以下参数：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;QQ&lt;/code&gt; - 设置 QQ 号&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;describe&lt;/code&gt; - 名片的描述&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;private&lt;/code&gt; - 是否设置隐私模式（不展示 QQ 号，点击不会进行好友添加）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;direct&lt;/code&gt; - 直接设置展示，含有以下参数：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;title&lt;/code&gt; - 名片的名称&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;describe&lt;/code&gt; - 名片的描述&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;image&lt;/code&gt; - 头像地址（本地或 URL）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;url&lt;/code&gt; - 点击后跳转的页面&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;扩展记录&#34;&gt;扩展记录&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;我觉得有必要记录下怎么扩展的功能，不然好久回来都忘了orz……&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;首先 CSS 依然来自于“DreamyTZK”的&lt;a class=&#34;link&#34; href=&#34;https://cdn.jsdelivr.net/npm/static-butterfly/dist/css/index.min.css&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「Hexo 博客之 butterfly 主题优雅魔改系列」里的 CSS&lt;/a&gt;，&lt;br&gt;
+找到含有&lt;code&gt;.btns&lt;/code&gt;的样式，复制下来就是这个标签的样式。&lt;br&gt;
+然后在&lt;code&gt;custom.scss&lt;/code&gt;里引入添加的 CSS。&lt;/p&gt;
+&lt;p&gt;然后 Shortcode 可能是自己要动手写吧，也不麻烦参考下之前写的东西就行。&lt;/p&gt;
+&lt;p&gt;如果需要添加TypeScript，在&lt;code&gt;assets/ts&lt;/code&gt;里写好后，要在&lt;code&gt;/layouts/partials/footer/components/script.html&lt;/code&gt;里添加引入。&lt;/p&gt;
+&lt;p&gt;最后再改下 CSS 的适配，记得多用主题的变量。&lt;/p&gt;
+&lt;p&gt;然后就成了！……&lt;/p&gt;
+
+
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;感谢“DreamyTZK”在&lt;a class=&#34;link&#34; href=&#34;https://www.antmoe.com/posts/a811d614/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;「Hexo 博客之 butterfly 主题优雅魔改系列」&lt;/a&gt;提供的 CSS，&lt;br&gt;
+以及“Volantis”&lt;a class=&#34;link&#34; href=&#34;https://volantis.js.org/v5/tag-plugins/#%E5%AF%8C%E6%96%87%E6%9C%AC%E6%8C%89%E9%92%AE&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;提供的样式和用法参考&lt;/a&gt;。&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</description>
+        </item>
+        <item>
         <title>概率论中有关总体的认识……</title>
         <link>https://blog.supersassw.com/p/univ-probabilitystatistics-2/</link>
         <pubDate>Sun, 02 Jan 2022 00:00:00 +0000</pubDate>
@@ -3481,7 +3747,7 @@ D - Device 器件&lt;/p&gt;
 &lt;p&gt;可以先&lt;strong&gt;咨询辅导员或者问问认识的学姐学长&lt;/strong&gt;，问问之前有没有成功转走的直系学长学姐，&lt;br&gt;
 索取到联系方式后，便是克服社恐去多问问了。&lt;/p&gt;
 &lt;p&gt;运气好的话一些学院可能还有自己转专业的群，热心学长学姐可能还会在里面直接指导。&lt;br&gt;
-再之后各阶段所遇到的问题，尤其是有关学业方面的问题（会怎么考试、如何复习等），&lt;br&gt;
+在之后各阶段所遇到的问题，尤其是有关学业方面的问题（会怎么考试、如何复习等），&lt;br&gt;
 找前辈直接问都是很有效的。&lt;em&gt;【如果是比较负责的前辈并且乐于回答的话……&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;因为各原专业的所修课程不同，可能对于转专业会有自己不同的处理方式。&lt;br&gt;
 同时在大一下期的选课阶段，问他们也能知道最适合的处理方式。&lt;br&gt;
@@ -3668,7 +3934,7 @@ D - Device 器件&lt;/p&gt;
 &lt;h2 id=&#34;有关学习&#34;&gt;有关学习&lt;/h2&gt;
 &lt;p&gt;机考不会考什么复杂的内容，只考简单的语言掌握情况。&lt;/p&gt;
 &lt;p&gt;如果一点经验都没有的话，&lt;br&gt;
-可以先去买《C语言程序设计基础》这本书，然后一直学到链表那里就行。&lt;/p&gt;
+可以先去买《C语言程序设计基础》这本书，然后一直&lt;strong&gt;学到文件&lt;/strong&gt;那里就行。&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 46; flex-basis: 110px&#34;&gt;
 		&lt;a href=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/bookInfo_1.jpg&#34; data-size=&#34;886x1920&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/bookInfo_1.jpg&#34;
 				srcset=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/bookInfo_1_hu4cfe787c577eaa691cb480bedd721705_121260_480x0_resize_q75_box.jpg 480w, https://blog.supersassw.com/p/univ-exchange_major/pic/bookInfo_1_hu4cfe787c577eaa691cb480bedd721705_121260_1024x0_resize_q75_box.jpg 1024w&#34;
@@ -3785,7 +4051,7 @@ D - Device 器件&lt;/p&gt;
 &lt;/div&gt;
 &lt;p&gt;或者加入学校ACM比赛交流群也可以。&lt;/p&gt;
 &lt;p&gt;群号：671974794&lt;/p&gt;
-&lt;p&gt;
+
 
 &lt;details class=&#34;sc-details&#34; &gt;
 	&lt;summary&gt;ACM比赛交流群 - 群聊二维码&lt;/summary&gt;
@@ -3803,7 +4069,7 @@ D - Device 器件&lt;/p&gt;
 		&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://jq.qq.com/?_wv=1027&amp;amp;k=mbQFeURY&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;点击此处加入群聊【SWJTU-ACM比赛交流群】&lt;/a&gt;&lt;/p&gt;
 	&lt;/div&gt;
-&lt;/div&gt;&lt;/p&gt;
+&lt;/div&gt;
 &lt;h1 id=&#34;二备大一上学年末期x大一下学年&#34;&gt;二、备——大一上学年末期x大一下学年&lt;/h1&gt;
 &lt;div class=&#34;snote quote gray&#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
@@ -3832,6 +4098,8 @@ D - Device 器件&lt;/p&gt;
 &lt;details class=&#34;sc-details&#34; &gt;
 	&lt;summary&gt;以往通知链接：&lt;/summary&gt;
 	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&amp;amp;viewType=web&amp;amp;newsId=0C0F62F3F20CEB30&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;关于公布2022年各学院转专业实施细则的通知&lt;/a&gt; - 2021/12/18&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&amp;amp;viewType=web&amp;amp;newsId=A2D8ED682A8E583B&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;关于公布2021年各学院转专业实施细则的通知&lt;/a&gt; - 2020/12/31&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&amp;amp;viewType=web&amp;amp;newsId=9C52FAC812FB848E&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4197,7 +4465,7 @@ D - Device 器件&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;⭐需要注意&lt;/strong&gt;：有些课程可能是&lt;strong&gt;针对茅班、詹班等卓越班开设&lt;/strong&gt;的，&lt;br&gt;
-这类课程的难度会偏大，且听说&lt;strong&gt;考试也会增加难度&lt;/strong&gt;。&lt;br&gt;
+这类课程的难度可能会偏大，且听说&lt;strong&gt;考试也会增加难度&lt;/strong&gt;。&lt;br&gt;
 因此在非必要情况下请&lt;strong&gt;不要错选到卓越班课程&lt;/strong&gt;。&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 532; flex-basis: 1278px&#34;&gt;
 		&lt;a href=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/courseDifferent.png&#34; data-size=&#34;1151x216&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/courseDifferent.png&#34;
@@ -4209,6 +4477,7 @@ D - Device 器件&lt;/p&gt;
 		&lt;/a&gt;&lt;figcaption&gt;高等数学Ⅰ- 普通班和卓越班区别&lt;/figcaption&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;可以看见普通班和茅班的区别只在班级信息上：&lt;br&gt;
 &lt;strong&gt;写了(茅班)等注明的为卓越班&lt;/strong&gt;，没写的为普通班。&lt;/p&gt;
+&lt;p&gt;**注：**不一定所有卓越班教学内容和难度不一样，以个人经历来说高数上是不一样的，而概率论又是一样的，建议找任课老师问清楚。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;snote warning red &#34;&gt;
@@ -4226,12 +4495,7 @@ D - Device 器件&lt;/p&gt;
 
 &lt;details class=&#34;sc-details&#34; &gt;
 	&lt;summary&gt;举个例子：&lt;/summary&gt;
-	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote info &#34;&gt;
-	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;由于写作时期选课系统已关闭，无法配图以说明，之后会视情况补上配图说明。&lt;/p&gt;
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;这里以“2020年第二学期选课”为例进行说明：&lt;br&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;p&gt;这里以“2020年第二学期选课”为例进行说明：&lt;br&gt;
 （也就是个人大一下的第一次选课）&lt;/p&gt;
 &lt;p&gt;&lt;figure style=&#34;flex-grow: 184; flex-basis: 443px&#34;&gt;
 		&lt;a href=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/example_chooseCourse_1.png&#34; data-size=&#34;1920x1040&#34;&gt;&lt;img src=&#34;https://blog.supersassw.com/p/univ-exchange_major/pic/example_chooseCourse_1.png&#34;
@@ -4580,6 +4844,8 @@ D - Device 器件&lt;/p&gt;
 &lt;details class=&#34;sc-details&#34; &gt;
 	&lt;summary&gt;以往通知链接：&lt;/summary&gt;
 	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&amp;amp;viewType=web&amp;amp;newsId=68B780B8696CB0FA&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;关于开展2022年本科生转专业相关工作的通知&lt;/a&gt; - 2022/7/11&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&amp;amp;viewType=web&amp;amp;newsId=145C7B6E0890730D&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;关于开展2021年本科生转专业相关工作的通知&lt;/a&gt; - 2021/7/23&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&amp;amp;viewType=web&amp;amp;newsId=9426D03269831795&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
@@ -4591,13 +4857,15 @@ D - Device 器件&lt;/p&gt;
 &lt;/details&gt;
 &lt;h3 id=&#34;2-关于年本科生转专业工作时间调整的通知&#34;&gt;*2. 「关于……年本科生转专业工作时间调整的通知」&lt;/h3&gt;
 &lt;p&gt;有可能因为疫情等原因，转专业工作时间出现时间变动。&lt;/p&gt;
-&lt;p&gt;最主要可能是因为返校延期，所以会导致转专业时间变动，&lt;br&gt;
-如果各位也有延迟返校情况的话注意看教务有没有相关通知就行。&lt;/p&gt;
+&lt;p&gt;最主要可能是因为&lt;strong&gt;返校延期&lt;/strong&gt;，所以会导致&lt;strong&gt;转专业时间变动&lt;/strong&gt;，&lt;br&gt;
+如果各位也有延迟返校情况的话，注意看教务有没有相关通知就行。&lt;/p&gt;
 
 
 &lt;details class=&#34;sc-details&#34; &gt;
 	&lt;summary&gt;以往通知链接：&lt;/summary&gt;
 	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&amp;amp;viewType=web&amp;amp;newsId=23939FE35890B433&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;关于调整2022年本科生转专业考核时间的通知&lt;/a&gt; - 2022/8/24&lt;/li&gt;
 &lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;http://jwc.swjtu.edu.cn/vatuu/WebAction?setAction=newsDetail&amp;amp;viewType=web&amp;amp;newsId=0FB312FCB2B984E4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;关于2021年本科生转专业工作时间调整的通知&lt;/a&gt; - 2021/8/27&lt;/li&gt;
 &lt;/ul&gt;
@@ -4623,11 +4891,22 @@ D - Device 器件&lt;/p&gt;
 &lt;p&gt;如果初审通过，则会收到短信通知，代表拥有进一步考核的资格，&lt;br&gt;
 届时便请按照流程，一步步进行考核。&lt;/p&gt;
 &lt;h4 id=&#34;笔试&#34;&gt;笔试&lt;/h4&gt;
-&lt;div class=&#34;snote error &#34;&gt;
+&lt;div class=&#34;snote info &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
-		&lt;p&gt;由于个人转专业没有笔试环节，正在询问其他转专业同学。此部分待补充……&lt;/p&gt;
+		&lt;p&gt;由于个人转专业没有笔试环节，以下只提供由其他转专业同学分享的经验与例题&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
+
+
+&lt;details class=&#34;sc-details&#34; &gt;
+	&lt;summary&gt;2022年 - 交通运输与物流学院 笔试大致题目&lt;/summary&gt;
+	&lt;div class=&#34;sc-details--inner&#34;&gt;&lt;div class=&#34;snote info green&#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;以下内容来自于“”&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 &lt;h4 id=&#34;机考&#34;&gt;机考&lt;/h4&gt;
 &lt;p&gt;机考，全称“C语言程序设计机考”，&lt;br&gt;
 主要考察&lt;strong&gt;C语言&lt;/strong&gt;的掌握情况。&lt;/p&gt;
