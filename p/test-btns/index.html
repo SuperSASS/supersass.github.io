@@ -333,7 +333,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：1142</div>
+            <div class="char">文章字数：1176</div>
             <div class="time">预计阅读时长： <time>3</time> 分钟</div>
         </div>
     </footer>
@@ -353,7 +353,7 @@ if (!doNotTrack) {
 
 
 
-    <a  class="btns-cell typeQQ" target="_blank" rel="noopener" href='tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=1021889213' >
+    <a  class="btns-cell typeQQ" target="_blank" rel="noopener" href='https://tenapi.cn/qqzlk/?qq=1021889213' >
         <img class="btns-cell--img" src='/img/loading.gif'/>
         <b class="btns-cell--title"> 名称加载中_(:зゝ∠)_…… </b>
         
@@ -557,11 +557,11 @@ if (!doNotTrack) {
 <ul>
 <li><code>type</code> - 名片种类，目前只有以下两种（默认为<code>direct</code>）
 <ol>
-<li><code>QQ</code> - 按照 QQ 号进行展示，按钮会跳唤起 QQ 进行好友添加，含有以下参数：
+<li><code>QQ</code> - 按照 QQ 号进行展示，按钮会唤起 QQ 查看个人资料，含有以下参数：
 <ul>
 <li><code>QQ</code> - 设置 QQ 号</li>
 <li><code>describe</code> - 名片的描述</li>
-<li><code>private</code> - 是否设置隐私模式（不展示 QQ 号，点击不会进行好友添加）</li>
+<li><code>private</code> - 是否设置隐私模式（不展示 QQ 号，点击也不会唤起 QQ）</li>
 </ul>
 </li>
 <li><code>direct</code> - 直接设置展示，含有以下参数：
@@ -584,7 +584,8 @@ if (!doNotTrack) {
 找到含有<code>.btns</code>的样式，复制下来就是这个标签的样式。<br>
 然后在<code>custom.scss</code>里引入添加的 CSS。</p>
 <p>然后 Shortcode 可能是自己要动手写吧，也不麻烦参考下之前写的东西就行。</p>
-<p>如果需要添加TypeScript，在<code>assets/ts</code>里写好后，要在<code>/layouts/partials/footer/components/script.html</code>里添加引入。</p>
+<p>如果需要添加TypeScript，在<code>assets/ts</code>里写好后，要在<code>/layouts/partials/footer/components/script.html</code>里添加引入。<br>
+需要注意调用 API 时的“CROS”跨域问题，目前只能找支持 CROS 响应头的 API 使用。</p>
 <p>最后再改下 CSS 的适配，记得多用主题的变量。</p>
 <p>然后就成了！……</p>
 
