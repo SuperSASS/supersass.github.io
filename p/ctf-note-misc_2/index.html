@@ -10,7 +10,7 @@
 <meta property='og:description' content='涅普计划——数据编码部分的笔记……'>
 <meta property='og:url' content='https://blog.supersassw.com/p/ctf-note-misc_2/'>
 <meta property='og:site_name' content='Super SASS……'>
-<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='涅普计划' /><meta property='article:tag' content='Misc' /><meta property='article:tag' content='数据编码' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2021-02-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2021-02-08T23:51:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/ctf-note-misc_2/87075144_p0.jpg' />
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CTF' /><meta property='article:tag' content='涅普计划' /><meta property='article:tag' content='Misc' /><meta property='article:tag' content='数据编码' /><meta property='article:tag' content='笔记' /><meta property='article:published_time' content='2021-02-02T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-09-13T10:39:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/ctf-note-misc_2/87075144_p0.jpg' />
 <meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="Misc - 数据编码……">
 <meta name="twitter:description" content="涅普计划——数据编码部分的笔记……"><meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content='https://blog.supersassw.com/p/ctf-note-misc_2/87075144_p0.jpg' />
@@ -406,7 +406,7 @@ if (!doNotTrack) {
 </svg>
         </div>
         <div class="article-readingTime--details">
-            <div class="char">文章字数：9731</div>
+            <div class="char">文章字数：9717</div>
             <div class="time">预计阅读时长： <time>20</time> 分钟</div>
         </div>
     </footer>
@@ -849,8 +849,7 @@ ASCII码也是，就是将“a”字符传化为二进制<code>0110 0001</code>�
 <p>其完成的是一种“字符—数字”的一一映射的转换。</p>
 <blockquote>
 <p>比如ASCII码中，对于<code>A</code>这个字符，对应的数字（十进制）为65，也就是将字符<code>A</code>映射到数字<code>65</code>，<br>
-Unicode编码中，对于<code>A</code>这个字符，对应的数字（十进制）为41，也就是将字符<code>A</code>映射到数字<code>41</code>。
-而Unicode编码中，对于</p>
+Unicode编码中，对于<code>A</code>这个字符，对应的数字（十进制）为41，也就是将字符<code>A</code>映射到数字<code>41</code>。</p>
 </blockquote>
 <p>Unicode其实也有个跟ASCII码一样的表，不过太大了所以一张图放不下x……</p>
 <blockquote>
@@ -1006,7 +1005,7 @@ ASCII编码，实际上<strong>是字符集和编码方法的整合</strong>。<
 不过其编码方法十分简单粗暴，字符集对应的序号是多少，编码后就是多少。</p>
 <p>而Unicode中，字符集有了后，<br>
 本来也有跟ASCII一样简单粗暴的编码方法，就是UTF-32，<br>
-但当时的储存代价很高，于是人们将扣的艺术运用到机制，<br>
+但当时的储存代价很高，于是人们将扣的艺术运用到极致，<br>
 创造了UTF-16、甚至UTF-8这些编码方式，减小了储存消耗。</p>
 <p>这也产生了现在的歧义。</p>
 <blockquote>
@@ -1014,7 +1013,7 @@ ASCII编码，实际上<strong>是字符集和编码方法的整合</strong>。<
 如果当时技术力就很高，储存代价极小，<br>
 有可能像ASCII那样，就用UTF-32存，<br>
 不用再去想UTF-8这种抠门方式，<br>
-那应该今天就不会有这种Unicode于UTF-8是什么关系的迷惑了_(:з」∠)_……</p>
+那应该今天就不会有这种Unicode与UTF-8是什么关系的迷惑了_(:з」∠)_……</p>
 </blockquote>
 </div>
 </details>
@@ -1249,7 +1248,7 @@ ASCII编码，实际上<strong>是字符集和编码方法的整合</strong>。<
 
 
         <span class="article-time--modified">
-            最后更新于 2021/02/08 23:51
+            最后更新于 2022/09/13 10:39
         </span>
     </section><section class="article-backgroundID">
             <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>

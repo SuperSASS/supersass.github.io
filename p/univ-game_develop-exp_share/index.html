@@ -1,0 +1,971 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='是给我们游戏开发小组分享推荐的学习资料啦_(:зゝ∠)_……'><title>有关游戏开发可用的资料分享……</title>
+
+<link rel='canonical' href='https://blog.supersassw.com/p/univ-game_develop-exp_share/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='有关游戏开发可用的资料分享……'>
+<meta property='og:description' content='是给我们游戏开发小组分享推荐的学习资料啦_(:зゝ∠)_……'>
+<meta property='og:url' content='https://blog.supersassw.com/p/univ-game_develop-exp_share/'>
+<meta property='og:site_name' content='Super SASS……'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='游戏开发' /><meta property='article:published_time' content='2022-10-03T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-10-03T00:00:00&#43;00:00'/><meta property='og:image' content='https://blog.supersassw.com/p/univ-game_develop-exp_share/97673209_p0.png' />
+<meta name="twitter:site" content="SuperSASS_"><meta name="twitter:title" content="有关游戏开发可用的资料分享……">
+<meta name="twitter:description" content="是给我们游戏开发小组分享推荐的学习资料啦_(:зゝ∠)_……"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://blog.supersassw.com/p/univ-game_develop-exp_share/97673209_p0.png' />
+    <link rel="shortcut icon" href="/img/favicon.ico" />
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" />
+
+
+<link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-186192852-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script>
+    
+    
+<div class="background" id="background">
+	<script>
+		let backgroundElem = document.getElementById("background"),
+			backgroundList = [{"illustrator":"のう","local":true,"pixivID":84038692,"src":"img/background_01.jpg"},{"illustrator":"のう","local":true,"pixivID":84150375,"src":"img/background_02.jpg"},{"illustrator":"のう","local":true,"pixivID":83166664,"src":"img/background_03.jpg"}];
+		_length = backgroundList.length;
+
+		
+		let rand = Math.floor(Math.random() * _length);
+		while (backgroundList[rand].appear == false) rand = Math.floor(Math.random() * _length);
+		let background = backgroundList[rand];
+
+		if (sessionStorage.getItem("background"))	
+			backgroundElem.style.backgroundImage = sessionStorage.getItem("background");	
+		else {
+			let url;
+			if (background.local)
+				url = "url(/" + background.src + ")";	
+			else
+				url = "url(/" + background.src + ")";
+			backgroundElem.style.backgroundImage = url;
+			sessionStorage.setItem("background", url);
+		}
+
+	</script>
+</div>
+
+
+        <div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hub0ab58ae8b72553f595d525edd405dd1_160792_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+                    <span class="emoji">🐺</span>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://blog.supersassw.com/">Super SASS……</a></h1>
+        <h2 class="site-description">万华散尽……</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/about'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>归档</span>
+            </a>
+        </li>
+        
+        
+
+        
+        <li  id='basic'>
+            <a href='/search'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>搜索</span>
+            </a>
+        </li>
+        
+
+        <li id="toc-button">
+                    <a>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-list" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <line x1="9" y1="6" x2="20" y2="6" />
+  <line x1="9" y1="12" x2="20" y2="12" />
+  <line x1="9" y1="18" x2="20" y2="18" />
+  <line x1="5" y1="6" x2="5" y2="6.01" />
+  <line x1="5" y1="12" x2="5" y2="12.01" />
+  <line x1="5" y1="18" x2="5" y2="18.01" />
+</svg>
+                        <span>显示文章目录</span>
+                    </a>
+                </li>
+                <div class="sticky-toc" id="sticky-toc">
+                    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#有关游戏开发可用的资料分享">有关游戏开发可用的资料分享</a>
+      <ul>
+        <li><a href="#基础">基础</a></li>
+        <li><a href="#策划">策划</a>
+          <ul>
+            <li><a href="#游戏故事">游戏故事</a></li>
+            <li><a href="#关卡设计">关卡设计</a></li>
+            <li><a href="#策划其他">策划其他</a></li>
+          </ul>
+        </li>
+        <li><a href="#美工">美工</a>
+          <ul>
+            <li><a href="#需要了解的概念和组件">需要了解的概念和组件</a></li>
+            <li><a href="#2d-相关">2D 相关</a></li>
+            <li><a href="#25d-相关">2.5D 相关</a></li>
+            <li><a href="#3d-相关">3D 相关</a></li>
+            <li><a href="#动画">动画</a></li>
+            <li><a href="#ui">UI</a></li>
+          </ul>
+        </li>
+        <li><a href="#音乐">音乐</a></li>
+        <li><a href="#其他">其他</a>
+          <ul>
+            <li><a href="#项目分享">项目分享</a></li>
+            <li><a href="#资源相关">资源相关</a></li>
+            <li><a href="#插件相关">插件相关</a></li>
+            <li><a href="#工具相关">工具相关</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                </div>
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+
+        
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+
+    <div id="article-toolbar">
+        <a href="https://blog.supersassw.com/" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>主页</span>
+        </a>
+    </div>
+
+    
+
+<article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/p/univ-game_develop-exp_share/">
+                <img src="/p/univ-game_develop-exp_share/97673209_p0_hub73649370fd62ae9af904fd44f8644c3_5575987_800x0_resize_box_3.png"
+                        srcset="/p/univ-game_develop-exp_share/97673209_p0_hub73649370fd62ae9af904fd44f8644c3_5575987_800x0_resize_box_3.png 800w, /p/univ-game_develop-exp_share/97673209_p0_hub73649370fd62ae9af904fd44f8644c3_5575987_1600x0_resize_box_3.png 1600w"
+                        width="800" 
+                        height="566" 
+                        loading="lazy"
+                        alt="Featured image of post 有关游戏开发可用的资料分享……" />
+                
+            </a>
+        </div>
+    
+
+    
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/university/" >
+                大学相关
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/univ-game_develop-exp_share/">有关游戏开发可用的资料分享……</a>
+    </h2>
+
+    
+    <h3 class="article-subtitle">
+            是给我们游戏开发小组分享推荐的学习资料啦_(:зゝ∠)_……
+        </h3><footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">2022/10/03</time>
+    </footer>
+    <footer class="article-readingTime">
+        <div class="article-readingTime--icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-file-invoice" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+  <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
+  <line x1="9" y1="7" x2="10" y2="7" />
+  <line x1="9" y1="13" x2="15" y2="13" />
+  <line x1="13" y1="17" x2="15" y2="17" />
+</svg>
+        </div>
+        <div class="article-readingTime--details">
+            <div class="char">文章字数：4488</div>
+            <div class="time">预计阅读时长： <time>9</time> 分钟</div>
+        </div>
+    </footer>
+</div>
+</header><section class="article-content">
+    <div class="snote info ">
+	<div class="snote-content">
+		<p>个人会将所找到对整个团队有用的资料都分类放在这上面，后续会持续更新；如果其他队员找到什么资料也可以跟我说让我记录在这里！……</p>
+	</div>
+</div>
+<div class="snote info ">
+	<div class="snote-content">
+		<p>以下内容不一定全面，只是个人尽量提到相关知识点了解一些专业术语，要善于多多去自己搜素学习相关知识嗷_(:зゝ∠)_……</p>
+	</div>
+</div>
+<h1 id="有关游戏开发可用的资料分享">有关游戏开发可用的资料分享</h1>
+<h2 id="基础">基础</h2>
+<p>基础的三个概念：<strong>场景、游戏对象、组件</strong>是都需要了解的，<br>
+策划知道根据游戏的场景、对象怎么设计游戏；美术知道是怎么把自己的画转变为游戏场景或对象的。</p>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1fL4y1Y73r"  target="_blank" rel="noopener"
+    >还不懂游戏开发？我从宇宙大爆炸开始讲总可以了吧！【超简短的独立游戏开发教学Ep.01】</a><br>
+重点：游戏开发步骤 - GDD(游戏设计文档)的设计 → 资源制作(图像、声音) → 代码编写</li>
+<li><a class="link" href="https://learn.u3d.cn/tutorial/MagicCollege"  target="_blank" rel="noopener"
+    >教程·从零开始的Unity魔法学堂</a><br>
+是一系列教程，基础部分有以下：<br>
+这个系列教程<strong>我已经付费购买</strong>了，会把我的账号分享到群里。
+<ul>
+<li><em>3.魔法师学徒 - 软件安装</em> - 如何安装 Unity</li>
+<li><em>4.世界的构成 - 基本架构</em> - Unity 游戏开发中的基本概念
+<ul>
+<li><strong>场景</strong>(Sence) - <strong>组成游戏的各个不同画面</strong>，就跟电影中的各个场景画面、小说中的各个章节差不多，是<strong>呈现给玩家看到</strong>的东西。</li>
+<li><strong>游戏对象</strong>(GameObject) - 场景的所有东西都属于游戏<strong>对象</strong><br>
+对象是把所有东西都看作一个对象，比如人、水杯、盒子（里面装有水杯）都是对象。<br>
+对象的基本概念为：<strong>属性</strong>(Property)和<strong>方法</strong>(Method/Function)，属性用来描述对象的特征（游戏角色的身高、肤色；水杯的大小），方法用来描述对象的行为（角色可以移动、攻击，水杯可以购买）。<br>
+若干子对象可以组成一个父对象，如头对象、身体对象、四肢对象可以组成一个人对象；树、草、房子可以组成“游戏背景”对象。</li>
+<li><strong>组件</strong>(Component)：就是<strong>游戏对象的属性和方法</strong><br>
+比如人可以移动（方法），就需要给人对象加上“移动”组件；物体在场景的左上角（位置属性），就需要加上“位置”(Transform)组件。</li>
+</ul>
+</li>
+<li><em>5.初识魔法书 - 引擎界面</em> - Unity 界面的讲解<br>
+在 Unity 中认识什么是“场景”、“游戏对象”和“组件”。</li>
+<li><em>6.提线木偶戏 - 开发流程</em> - 认识其他 Unity 窗口</li>
+<li><em>51.空间的区块 - 场景切换与LOD</em> - 场景的介绍<br>
+前面部分讲解了什么是场景，在这里只用明白：<strong>场景就相当于整个世界的不同区域</strong>就可以。</li>
+</ul>
+</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1dN4y1G7g3"  target="_blank" rel="noopener"
+    >游戏中的混合次元【超简短的独立游戏开发教学Ep.19】</a><br>
+有关<strong>游戏视角</strong>的东西，策划和美术可以一起看：2D、2.5D(3D渲染为2D)、3D、<strong>维度融合</strong>。</li>
+</ul>
+<h2 id="策划">策划</h2>
+<p>游戏策划有很多成熟的知识体系（如简单的起承转合等），<br>
+但个人觉得只用了解和稍微借鉴即可，不用过分拘泥于体系框架约束。</p>
+<p>还是之前会议提到的：<strong>最开始定个整体框架，后面在开发的过程中不断更改完善</strong>。</p>
+<p>以下内容都是大致找的一点，更多的资料可以搜素如&quot;游戏 策划 方法&quot;这类的关键词就可以。</p>
+<h3 id="游戏故事">游戏故事</h3>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1iq4y1P7qr"  target="_blank" rel="noopener"
+    >为了讲故事创造一个世界？【超简短的独立游戏开发教学Ep.10】</a><br>
+有关游戏世界观、人物（自底向上）的介绍。<br>
+这个只是参考一下就好【放出来主要是让各位膜拜一下xddd，这里看完这集后瞬间对up肃然起敬觉得太厉害了……</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1jV4y1H7dU"  target="_blank" rel="noopener"
+    >怎样写好一个故事？【超简短的独立游戏开发教学Ep.20】</a><br>
+剧情/主线/故事的<strong>写作方法</strong>（参考即可）</li>
+</ul>
+<h3 id="关卡设计">关卡设计</h3>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV19L41147Q4"  target="_blank" rel="noopener"
+    >规则的千变万化！超迷你关卡设计【超简短的独立游戏开发教学Ep.06】</a><br>
+游戏核心 - <strong>达成目标</strong><br>
+解谜、关卡类的设计：
+<ul>
+<li>如何进行玩家引导</li>
+<li>障碍甚至敌人</li>
+<li><strong>机制的融合</strong></li>
+<li>奖励（新的能力、道具）</li>
+</ul>
+</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1Uu411o7Bu"  target="_blank" rel="noopener"
+    >你真的选了吗？【超简短的独立游戏开发教学Ep.15】</a><br>
+玩家<strong>关卡引导</strong>的方法：任务（说明式引导）、难题式引导、心理暗示。</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1Fd4y1X74m"  target="_blank" rel="noopener"
+    >游戏之神的箱中庭院【超简短的独立游戏开发教学S2E1】</a><br>
+不同<strong>关卡（场景）的连接</strong>、游戏交互。</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1h14y1e7dS"  target="_blank" rel="noopener"
+    >何为游戏节奏？【超简短的独立游戏开发教学S2E2】</a><br>
+施压-释放模型（了解即可）</li>
+</ul>
+<h3 id="策划其他">策划其他</h3>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1nW4y1q7Qc"  target="_blank" rel="noopener"
+    >怎样设计游戏敌人？【超简短的独立游戏开发教学S2E3】</a><br>
+如果需要设计<strong>敌人</strong>的话可以参考。</li>
+<li><a class="link" href="https://space.bilibili.com/5293771/video"  target="_blank" rel="noopener"
+    >阿书Maker</a><br>
+这位有<strong>一系列有关游戏策划设计</strong>的教程。</li>
+</ul>
+<h2 id="美工">美工</h2>
+<p>下面美工的话其实更多可能偏向<strong>技术美工</strong>(TA)的内容，<br>
+就是既需要懂美术，还需要懂计算机上美术的应用，甚至还需要懂代码(Shader 编程等)。</p>
+<div class="snote info ">
+	<div class="snote-content">
+		<p>因此学习难度可能较大，如果有困难及时提出！</p>
+	</div>
+</div>
+<h3 id="需要了解的概念和组件">需要了解的概念和组件</h3>
+<ul>
+<li><a class="link" href="https://learn.u3d.cn/tutorial/2d-game-art-animation-lighting-for-artists"  target="_blank" rel="noopener"
+    >面向美术师的2D游戏美术、动画和光照</a><br>
+这里面很多抽象的概念和术语，了解即可，知道游戏<strong>美术中有哪些东西模块</strong>（视角、动画、光源、粒子等）。</li>
+<li><a class="link" href="https://learn.u3d.cn/tutorial/MagicCollege"  target="_blank" rel="noopener"
+    >教程·从零开始的Unity魔法学堂</a><br>
+这里选的是<strong>有关 Unity 组件的介绍</strong>，可能比较复杂，但了解过后能更清楚怎么把各位画的画变成游戏中鲜活的角色、场景。
+下面有关代码的部分基本上都不用了解跳过。<br>
+其中有关内容如下：
+<ul>
+<li><em>31.三位成一体 - Transform组件</em> - 有关游戏对象的“<strong>位置</strong>”、“<strong>方向</strong>”和“<strong>大小</strong>”的描述。<br>
+里面有关代码的部分可以跳过（需要物理移动之类的动态变化是程序负责的，美工只用负责初始的静态画面即可）。</li>
+<li><em>32.游玩者之眼 - 渲染与相机</em> - 有关<strong>游戏物体的外貌呈现</strong>和<strong>相机</strong>的知识（后面的键盘输入部分不用了解）
+<ul>
+<li>渲染(Render)：对于 2D 对象来说，只需要材质(Material)，其包括贴图(Textuer)和着色器(Shader)。（其实对于这部分我也不是很清楚，之后我再找详细资料学习并分享）</li>
+<li>相机(Camera)：场景构建好后怎么呈现给玩家，相机照到什么就呈现什么。<br>
+只需要知道作用，方便安排场景的构建。有关相机的移动跟随（代码部分）也不需要了解，程序来实现。</li>
+</ul>
+</li>
+<li><em>33.神说要有光 - 光照</em> - 有关游戏中<strong>光照</strong>的讲解<br>
+引擎中可以提供真实的光照效果，提升画面感觉。<br>
+但如果理解学习困难，又因为 2D 游戏视角固定，可以<strong>直接绘制出简单阴影</strong>（如物体下方用黑色透明圆圈表示阴影），不用过于了解此系统。<br>
+也有很多光照的插件可以直接形成各种光照效果。</li>
+<li><em>41.勇者的视野 - UI系统</em> - 有关游戏 <strong>UI</strong> 界面的讲解<br>
+UI 就是除了游戏操作场景外，呈现给玩家的各种按钮、提示文字等。<br>
+根据概念图布置好相应 UI 即可，而其中的逻辑（按钮按下发生什么、文字何时显示）等程序负责。</li>
+<li><em>43.世界的律动 - 动画系统</em> - 有关<strong>物体动画</strong>的讲解<br>
+可能比较复杂，先了解大概吧【……</li>
+<li><em>44.星火与线条 - 特效系统</em> - 有关<strong>粒子动画</strong>的讲解<br>
+粒子就是一些小物体的运动，如烟、火焰等，了解即可。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2d-相关">2D 相关</h3>
+<ul>
+<li><strong>像素类</strong> 2D 游戏相关
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1F3411Y72v"  target="_blank" rel="noopener"
+    >Unity独立游戏开发基础入门全流程(2D)</a> P2~P11<br>
+介绍<strong>像素资源</strong>的设计绘制</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1F3411Y72v"  target="_blank" rel="noopener"
+    >Unity独立游戏开发基础入门全流程(2D)</a> P26<br>
+<strong>像素场景</strong>的绘制方法</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1F3411Y72v"  target="_blank" rel="noopener"
+    >Unity独立游戏开发基础入门全流程(2D)</a> P27~P28<br>
+<strong>像素物体</strong>的添加方法</li>
+<li><a class="link" href="https://space.bilibili.com/335835274/channel/collectiondetail?sid=206444"  target="_blank" rel="noopener"
+    >Unity2D平台跳跃游戏开发教程</a><br>
+一系列<strong>像素</strong>、<strong>横板</strong>、<strong>动作类</strong>游戏的开发教学</li>
+</ul>
+</li>
+</ul>
+<h3 id="25d-相关">2.5D 相关</h3>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1DT4y1A7DJ"  target="_blank" rel="noopener"
+    >使用Unity制作“饥荒”风格的俯视角2.5D游戏</a><br>
+如何实现<strong>饥荒那种 2.5D</strong>，里面的代码不用在意，只用知道饥荒这种 2.5D 的风格（各物体都是 2D 纸片的，不过跟随摄像机旋转）</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1rb4y187FF"  target="_blank" rel="noopener"
+    >【Unity风格化场景搭建流程】只有纸片也可以搭建3d场景！</a><br>
+之前会议中提到的<strong>纸片风格化 3D</strong>，跟上面 2.5D 区别是存在用纸片进行的 3D 建模。</li>
+</ul>
+<h3 id="3d-相关">3D 相关</h3>
+<ul>
+<li>3D <strong>开发流程</strong>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1iY411873n"  target="_blank" rel="noopener"
+    >【Lee哥】不会设计游戏场景？记住这4个步骤就可以了！| 游戏开发 | 独立游戏 | 工作流程</a><br>
+<strong>3D 游戏场景</strong>开发的流程。</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1SF411H7yk"  target="_blank" rel="noopener"
+    >【Lee哥】创建3D角色？不要以为建模就完了！| 游戏开发 | 独立游戏 | 工作流程</a><br>
+<strong>3D 游戏角色</strong>的开发流程。</li>
+</ul>
+</li>
+<li>3D <strong>建模</strong>相关
+<ul>
+<li><a class="link" href="https://learn.u3d.cn/tutorial/unity-blender-intro"  target="_blank" rel="noopener"
+    >从 Unity 到 Blender 快速入门</a><br>
+之前那位美术说过自己会一点 Blender，这里找了从 Blender 到 Unity 的教程。</li>
+</ul>
+</li>
+<li><strong>Low poly（低多边形）风格</strong>相关<br>
+这种风格算是 3D 中<strong>比较好实现</strong>的风格，不需要复杂的建模且具有特色。
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1a7411w7wy"  target="_blank" rel="noopener"
+    >【C4D】十分钟带你搭建一个Low poly小岛！史上最快乐的3D设计教学！</a><br>
+Low ploy 的设计简单教学。</li>
+</ul>
+</li>
+<li><strong>卡通风格</strong>相关
+<ul>
+<li><a class="link" href="https://learn.u3d.cn/tutorial/cel-shading-cinematics"  target="_blank" rel="noopener"
+    >卡通渲染——风格和影视化探索</a><br>
+这里主要是了解<strong>卡通渲染的风格专有词</strong>：赛璐璐、立绘质感等，具体内容可能不容易理解。</li>
+</ul>
+</li>
+<li><strong>渲染</strong>(Shader)相关
+<ul>
+<li><a class="link" href="https://learn.u3d.cn/tutorial/hi-shader"  target="_blank" rel="noopener"
+    >Hi Shader</a><br>
+如果要有 3D 相关的工作，Shader 肯定是必不可少的内容。<br>
+这里先简单提到一个概念，如果需要这方面内容还需要具体学习。<br>
+而且自学 Shader 一般较难，这里可以学下面的 Shader Graph。</li>
+<li><a class="link" href="https://learn.u3d.cn/tutorial/da-hua-unity-shadergraph"  target="_blank" rel="noopener"
+    >大话Unity之ShaderGraph</a><br>
+<strong>Shader Graph</strong> 是 Shader 的一种可视化编辑工具，纯 Shader 是要写代码的，这个就像那个“附带导航”一样直接用各节点的拼接就行。</li>
+</ul>
+</li>
+</ul>
+<h3 id="动画">动画</h3>
+<ul>
+<li><strong>关键帧</strong>动画<br>
+这种动画方式就是自己一帧帧手画出来形成的动画。
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1sE411L7kV"  target="_blank" rel="noopener"
+    >【Unity 2D游戏开发教程】第1课 如何在Unity中快速导入序列帧动画 Aseprite动画帧导出</a></li>
+</ul>
+</li>
+<li><strong>骨骼</strong>相关<br>
+骨骼是<strong>用来方便添加各种运动的动画</strong>的，是动画的另一种实现方式。<br>
+骨骼做动画<strong>更偏向需要或者想要高表现力的游戏</strong>（运动类游戏、3D游戏），可能不用骨骼做动画所以这里没具体列举，但其实也不是很难而且效果远高于关键帧动画。
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1kK4y1t79f"  target="_blank" rel="noopener"
+    >万物皆可骨骼，unity的2d骨骼教程</a><br>
+<strong>2D</strong> 的简单骨骼教程。</li>
+<li><a class="link" href="https://learn.u3d.cn/tutorial/motion-matching-swt#"  target="_blank" rel="noopener"
+    >制作高质量角色动画 - Motion Matching 教程</a><br>
+利用骨骼系统进行高质量的 <strong>3D</strong> 角色动画。</li>
+</ul>
+</li>
+</ul>
+<h3 id="ui">UI</h3>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1KL4y187mK"  target="_blank" rel="noopener"
+    >UI还能长什么样？【超简短的独立游戏开发教学Ep.08】</a><br>
+这里可以参考，但个人觉得设计一个好的 UI 是很复杂的，建议在别人游戏的基础上修改改进。</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1vB4y1z7q1"  target="_blank" rel="noopener"
+    >【Lee哥】再也不会没有灵感了！值得收藏的游戏UI网站 - Game UI Database | 游戏开发 | 独立游戏</a><br>
+这里介绍的网站&quot;Game UI Database&quot;展示了很多游戏的 UI 界面，可提供参考。</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1zi4y1U7UW"  target="_blank" rel="noopener"
+    >如何高效率开发游戏UI界面 ！（欢迎白嫖）</a> P1~7<br>
+介绍游戏 UI 的摆放设计方式（后面业务逻辑是程序实现的，只用看P1~7即可）</li>
+</ul>
+<h2 id="音乐">音乐</h2>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1Dg411c7WH"  target="_blank" rel="noopener"
+    >草履虫也能看得懂的乐理入门【超简短的独立游戏开发教学Ep.09】</a><br>
+基本的<strong>乐理</strong>【可能有点难懂啊总之我是看一遍只懂个大概的_(:зゝ∠)_……不过知道了对应的概念以及编曲的流程可以再去细学</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1uu411o78J"  target="_blank" rel="noopener"
+    >玩游戏，也要玩音乐【超简短的独立游戏开发教学Ep.14】</a><br>
+游戏音乐与传统音乐的不同：分阶段、音效、环境音、<strong>旋律复用</strong>（基本上游戏都是一段旋律反复复用）、旋律绑定人物。</li>
+</ul>
+<p>【具体的游戏音乐编写我也不是很懂了orz……<br>
+其他更详细的游戏音乐开发教程可以自行搜索，甚至还有自动生成音乐的软件可以尝试。</p>
+<h2 id="其他">其他</h2>
+<h3 id="项目分享">项目分享</h3>
+<ul>
+<li><a class="link" href="https://space.bilibili.com/396395171/channel/collectiondetail?sid=164939"  target="_blank" rel="noopener"
+    >认真的游戏开发者们（每月更新）</a><br>
+Unity 2D <strong>优秀项目</strong>分享，视频都很短，介绍各种有创意的项目，可以有时间<strong>随便看看获得启发或借鉴</strong>。</li>
+</ul>
+<h3 id="资源相关">资源相关</h3>
+<ul>
+<li><a class="link" href="https://space.bilibili.com/396395171/channel/collectiondetail?sid=23665"  target="_blank" rel="noopener"
+    >Unity商店免费素材合集（每月持续更新）</a><br>
+Unity 各种免费资源分享，也是随便看看，看有没有能用的【毕竟免费.jpg……</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1BN4y1G73Q"  target="_blank" rel="noopener"
+    >【Lee哥】这才对味儿！Low Poly国风模型更新，8月篇 | 建筑 | 纪念碑 | 雕像</a><br>
+<strong>国风的 Low ploy 3D 建筑模型</strong>，感觉可以用在我们主题的游戏里（也可以 3D 渲染为 2D）。</li>
+</ul>
+<h3 id="插件相关">插件相关</h3>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1ym4y1o7BU"  target="_blank" rel="noopener"
+    >【Lee哥】谁能拒绝2D萌娘？角色动画插件 - AnyPortrait | Unity | 游戏开发</a><br>
+2D 角色动画插件</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1QP4y1d7F5"  target="_blank" rel="noopener"
+    >【Lee哥】裙摆飘飘！一款广受好评的布料模拟插件 - Magica Cloth | 游戏开发 | 优秀工具</a><br>
+3D 角色细节模拟（头发、布料飘动）插件</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV16Q4y1r7ku"  target="_blank" rel="noopener"
+    >【Lee哥】棱角分明，一样可以美不胜收！| Low Poly Tools Bundle | Humble Bundle | Unity Fantasy</a><br>
+Low poly 场景搭建插件</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1Xg411F766"  target="_blank" rel="noopener"
+    >【Lee哥】搭建游戏关卡？使用这个插件轻松搞定！| Octave3D | Humble Bundle | Unity Fantasy | 游戏开发</a><br>
+游戏场景搭建工具</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1bV4y1u7KY"  target="_blank" rel="noopener"
+    >【Lee哥】不容错过！开发2D和3D俯视图游戏的神器 - TopDown Engine | 游戏开发 | 优秀工具</a><br>
+<strong>俯视</strong>游戏开发工具，适合于俯视的 RPG、ACT 类型的游戏。</li>
+<li><a class="link" href="https://www.bilibili.com/video/BV1Va411g74q"  target="_blank" rel="noopener"
+    >【Lee哥】便宜好用！Unity 2D光照插件 - Smart Lighting 2D | 游戏开发 | 优秀工具</a><br>
+2D 光照工具</li>
+</ul>
+<h3 id="工具相关">工具相关</h3>
+<ul>
+<li><a class="link" href="https://www.bilibili.com/video/BV1ML4y1c7Uk"  target="_blank" rel="noopener"
+    >【Lee哥】你有故事我有酒？优质免费可商用！游戏互动叙事工具 - articy:draft 3 | 游戏开发 | 独立游戏 | 工具介绍</a><br>
+游戏内容（流程）管理软件</li>
+</ul>
+
+</section>
+<footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>采用 CC BY-NC-SA 4.0 许可协议</span>
+    </section>
+    <section class="article-backgroundID">
+            <svg t="1608817880971" class="icon" viewBox="0 0 1156 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2026" width="200" height="200"><path d="M1012.973037 122.680889C922.168889 44.885333 795.003259 0 647.205926 0 262.011259 0 0 291.422815 0 291.422815l73.832296 114.877629s40.846222 3.356444 19.218963-64.312888c18.669037-34.569481 55.220148-81.133037 126.58726-134.874075v765.184c-30.767407 8.51437-71.433481 24.519111-43.70963 51.693038h212.091259c27.998815-27.45837-16.109037-43.984593-42.979555-51.693038V791.789037s145.417481 55.959704 302.165333 55.959704c137.737481 0 263.044741-40.173037 356.257185-112.734815 93.202963-72.144593 153.27763-179.873185 152.907852-302.999704 0.274963-120.888889-52.508444-231.831704-143.397926-309.333333zM900.570074 674.616889c-64.455111 62.388148-158.179556 101.840593-266.30637 101.764741-120.623407 0.056889-222.170074-22.840889-289.21363-55.201186V556.743111 147.095704C418.607407 95.857778 537.92237 64.284444 634.263704 64.474074c117.05837 0.085333 208.981333 43.444148 271.122963 109.255111 62.046815 66.199704 95.924148 154.130963 96.227555 256.341334-0.369778 99.602963-36.589037 181.636741-101.044148 244.54637z" p-id="2027"></path></svg>
+            <span class="article-backgroundID--text">
+                文章封面配图Pixiv ID：<a href="https://www.pixiv.net/artworks/97673209" target="_blank" rel="noopener">97673209</a>
+            </span>
+        </section></footer>
+
+    
+        
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+    integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"
+    integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"
+    crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+    integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+    onload="StackLaTeX()"></script>
+
+<script>
+    function StackLaTeX() {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });
+    }
+</script>
+    
+</article>
+
+    
+    
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-probabilitystatistics-2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-probabilitystatistics-2/Yande-311903.53a2b2b072cdebbec89a1d9c7c7d2e78_huf38710f708e70daa5cec2f0ef3fd57ed_10436802_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Probability&amp;Statistics-2" 
+                        data-hash="md5-U6KysHLN677Imh2cfH0ueA==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">概率论中有关总体的认识……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-physics_experiment-2/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-physics_experiment-2/Yande-337927.cfabd344155b9617987eb8ec549949ea_hub5d1827db05ab8b04dc3400a656c42e6_834621_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Physics_Experiment-2" 
+                        data-hash="md5-z6vTRBVblheYfrjsVJlJ6g==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">大学物理实验Ⅱ——考点总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-physics-ep14/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-physics-ep14/93592237_p0.55b84634970f429710e4d12877e29e8e_hufe91056234b4ecc7a5bbc49e56c9e65c_1873342_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Physics-Ep14" 
+                        data-hash="md5-VbhGNJcPQpcQ5NEod&#43;Kejg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">大学物理 下——第十四章……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-digital_electronic-summary/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-digital_electronic-summary/88331974_p0.05bed36c1169445e737754f8da82efa6_hu5438825b9b6d1014226d20d231e650c2_1781408_250x150_fill_q75_box_smart1.jpg" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Digital_Electronic-summary" 
+                        data-hash="md5-Bb7TbBFpRF5zd1T42oLvpg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数字电子技术 - 考点总结……</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="has-image">
+    <a href="/p/univ-digital_electronic-ep4/">
+        
+        
+            <div class="article-image">
+                <img src="/p/univ-digital_electronic-ep4/74542521_p0.4e73708a10191e973742b77a1ab44e06_hu41b7815279cac48aae43ea80d2335b45_1737627_250x150_fill_box_smart1_3.png" 
+                        width="250" 
+                        height="150" 
+                        loading="lazy" 
+                        data-key="univ-Digital_Electronic-Ep4" 
+                        data-hash="md5-TnNwihAZHpc3Qrd6GrROBg==">
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数字电子技术——第四章……</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <script src="https://utteranc.es/client.js" 
+        repo="supersass/BlogComment"
+        issue-term="title"
+        theme="preferred-color-scheme" 
+        
+        crossorigin="anonymous" 
+        async>
+</script>
+
+<style>
+    .utterances {
+        max-width: unset;
+    }
+</style>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2022 Super SASS……
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+    
+    
+    <section class="icp">
+        <a href="https://icp.gov.moe" target="_blank">萌ICP备 </a><a href="https://icp.gov.moe/?keyword=20210010" target="_blank">20210010号</a> <br />
+        <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备 </a><a>2020037577号</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+
+<script type="text/javascript" src="/ts/tableOfContent.js" defer></script>
+
+
+<script type="text/javascript" src="/ts/hitokoto-description.js" defer></script>
+
+<script type="text/javascript" src="/ts/btns_QQ.js" defer></script>
+
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

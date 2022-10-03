@@ -6,7 +6,313 @@
         <description>Recent content on Super SASS……</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-CN</language>
-        <lastBuildDate>Fri, 09 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 03 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.supersassw.com/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>有关游戏开发可用的资料分享……</title>
+        <link>https://blog.supersassw.com/p/univ-game_develop-exp_share/</link>
+        <pubDate>Mon, 03 Oct 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.supersassw.com/p/univ-game_develop-exp_share/</guid>
+        <description>&lt;img src="https://blog.supersassw.com/p/univ-game_develop-exp_share/97673209_p0.png" alt="Featured image of post 有关游戏开发可用的资料分享……" /&gt;&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;个人会将所找到对整个团队有用的资料都分类放在这上面，后续会持续更新；如果其他队员找到什么资料也可以跟我说让我记录在这里！……&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;以下内容不一定全面，只是个人尽量提到相关知识点了解一些专业术语，要善于多多去自己搜素学习相关知识嗷_(:зゝ∠)_……&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h1 id=&#34;有关游戏开发可用的资料分享&#34;&gt;有关游戏开发可用的资料分享&lt;/h1&gt;
+&lt;h2 id=&#34;基础&#34;&gt;基础&lt;/h2&gt;
+&lt;p&gt;基础的三个概念：&lt;strong&gt;场景、游戏对象、组件&lt;/strong&gt;是都需要了解的，&lt;br&gt;
+策划知道根据游戏的场景、对象怎么设计游戏；美术知道是怎么把自己的画转变为游戏场景或对象的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1fL4y1Y73r&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;还不懂游戏开发？我从宇宙大爆炸开始讲总可以了吧！【超简短的独立游戏开发教学Ep.01】&lt;/a&gt;&lt;br&gt;
+重点：游戏开发步骤 - GDD(游戏设计文档)的设计 → 资源制作(图像、声音) → 代码编写&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.u3d.cn/tutorial/MagicCollege&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;教程·从零开始的Unity魔法学堂&lt;/a&gt;&lt;br&gt;
+是一系列教程，基础部分有以下：&lt;br&gt;
+这个系列教程&lt;strong&gt;我已经付费购买&lt;/strong&gt;了，会把我的账号分享到群里。
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;3.魔法师学徒 - 软件安装&lt;/em&gt; - 如何安装 Unity&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;4.世界的构成 - 基本架构&lt;/em&gt; - Unity 游戏开发中的基本概念
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;场景&lt;/strong&gt;(Sence) - &lt;strong&gt;组成游戏的各个不同画面&lt;/strong&gt;，就跟电影中的各个场景画面、小说中的各个章节差不多，是&lt;strong&gt;呈现给玩家看到&lt;/strong&gt;的东西。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;游戏对象&lt;/strong&gt;(GameObject) - 场景的所有东西都属于游戏&lt;strong&gt;对象&lt;/strong&gt;&lt;br&gt;
+对象是把所有东西都看作一个对象，比如人、水杯、盒子（里面装有水杯）都是对象。&lt;br&gt;
+对象的基本概念为：&lt;strong&gt;属性&lt;/strong&gt;(Property)和&lt;strong&gt;方法&lt;/strong&gt;(Method/Function)，属性用来描述对象的特征（游戏角色的身高、肤色；水杯的大小），方法用来描述对象的行为（角色可以移动、攻击，水杯可以购买）。&lt;br&gt;
+若干子对象可以组成一个父对象，如头对象、身体对象、四肢对象可以组成一个人对象；树、草、房子可以组成“游戏背景”对象。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;组件&lt;/strong&gt;(Component)：就是&lt;strong&gt;游戏对象的属性和方法&lt;/strong&gt;&lt;br&gt;
+比如人可以移动（方法），就需要给人对象加上“移动”组件；物体在场景的左上角（位置属性），就需要加上“位置”(Transform)组件。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;5.初识魔法书 - 引擎界面&lt;/em&gt; - Unity 界面的讲解&lt;br&gt;
+在 Unity 中认识什么是“场景”、“游戏对象”和“组件”。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;6.提线木偶戏 - 开发流程&lt;/em&gt; - 认识其他 Unity 窗口&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;51.空间的区块 - 场景切换与LOD&lt;/em&gt; - 场景的介绍&lt;br&gt;
+前面部分讲解了什么是场景，在这里只用明白：&lt;strong&gt;场景就相当于整个世界的不同区域&lt;/strong&gt;就可以。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1dN4y1G7g3&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;游戏中的混合次元【超简短的独立游戏开发教学Ep.19】&lt;/a&gt;&lt;br&gt;
+有关&lt;strong&gt;游戏视角&lt;/strong&gt;的东西，策划和美术可以一起看：2D、2.5D(3D渲染为2D)、3D、&lt;strong&gt;维度融合&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;策划&#34;&gt;策划&lt;/h2&gt;
+&lt;p&gt;游戏策划有很多成熟的知识体系（如简单的起承转合等），&lt;br&gt;
+但个人觉得只用了解和稍微借鉴即可，不用过分拘泥于体系框架约束。&lt;/p&gt;
+&lt;p&gt;还是之前会议提到的：&lt;strong&gt;最开始定个整体框架，后面在开发的过程中不断更改完善&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;以下内容都是大致找的一点，更多的资料可以搜素如&amp;quot;游戏 策划 方法&amp;quot;这类的关键词就可以。&lt;/p&gt;
+&lt;h3 id=&#34;游戏故事&#34;&gt;游戏故事&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1iq4y1P7qr&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;为了讲故事创造一个世界？【超简短的独立游戏开发教学Ep.10】&lt;/a&gt;&lt;br&gt;
+有关游戏世界观、人物（自底向上）的介绍。&lt;br&gt;
+这个只是参考一下就好【放出来主要是让各位膜拜一下xddd，这里看完这集后瞬间对up肃然起敬觉得太厉害了……&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1jV4y1H7dU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;怎样写好一个故事？【超简短的独立游戏开发教学Ep.20】&lt;/a&gt;&lt;br&gt;
+剧情/主线/故事的&lt;strong&gt;写作方法&lt;/strong&gt;（参考即可）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;关卡设计&#34;&gt;关卡设计&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV19L41147Q4&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;规则的千变万化！超迷你关卡设计【超简短的独立游戏开发教学Ep.06】&lt;/a&gt;&lt;br&gt;
+游戏核心 - &lt;strong&gt;达成目标&lt;/strong&gt;&lt;br&gt;
+解谜、关卡类的设计：
+&lt;ul&gt;
+&lt;li&gt;如何进行玩家引导&lt;/li&gt;
+&lt;li&gt;障碍甚至敌人&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;机制的融合&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;奖励（新的能力、道具）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Uu411o7Bu&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;你真的选了吗？【超简短的独立游戏开发教学Ep.15】&lt;/a&gt;&lt;br&gt;
+玩家&lt;strong&gt;关卡引导&lt;/strong&gt;的方法：任务（说明式引导）、难题式引导、心理暗示。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Fd4y1X74m&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;游戏之神的箱中庭院【超简短的独立游戏开发教学S2E1】&lt;/a&gt;&lt;br&gt;
+不同&lt;strong&gt;关卡（场景）的连接&lt;/strong&gt;、游戏交互。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1h14y1e7dS&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;何为游戏节奏？【超简短的独立游戏开发教学S2E2】&lt;/a&gt;&lt;br&gt;
+施压-释放模型（了解即可）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;策划其他&#34;&gt;策划其他&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1nW4y1q7Qc&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;怎样设计游戏敌人？【超简短的独立游戏开发教学S2E3】&lt;/a&gt;&lt;br&gt;
+如果需要设计&lt;strong&gt;敌人&lt;/strong&gt;的话可以参考。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/5293771/video&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;阿书Maker&lt;/a&gt;&lt;br&gt;
+这位有&lt;strong&gt;一系列有关游戏策划设计&lt;/strong&gt;的教程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;美工&#34;&gt;美工&lt;/h2&gt;
+&lt;p&gt;下面美工的话其实更多可能偏向&lt;strong&gt;技术美工&lt;/strong&gt;(TA)的内容，&lt;br&gt;
+就是既需要懂美术，还需要懂计算机上美术的应用，甚至还需要懂代码(Shader 编程等)。&lt;/p&gt;
+&lt;div class=&#34;snote info &#34;&gt;
+	&lt;div class=&#34;snote-content&#34;&gt;
+		&lt;p&gt;因此学习难度可能较大，如果有困难及时提出！&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;需要了解的概念和组件&#34;&gt;需要了解的概念和组件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.u3d.cn/tutorial/2d-game-art-animation-lighting-for-artists&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;面向美术师的2D游戏美术、动画和光照&lt;/a&gt;&lt;br&gt;
+这里面很多抽象的概念和术语，了解即可，知道游戏&lt;strong&gt;美术中有哪些东西模块&lt;/strong&gt;（视角、动画、光源、粒子等）。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.u3d.cn/tutorial/MagicCollege&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;教程·从零开始的Unity魔法学堂&lt;/a&gt;&lt;br&gt;
+这里选的是&lt;strong&gt;有关 Unity 组件的介绍&lt;/strong&gt;，可能比较复杂，但了解过后能更清楚怎么把各位画的画变成游戏中鲜活的角色、场景。
+下面有关代码的部分基本上都不用了解跳过。&lt;br&gt;
+其中有关内容如下：
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;31.三位成一体 - Transform组件&lt;/em&gt; - 有关游戏对象的“&lt;strong&gt;位置&lt;/strong&gt;”、“&lt;strong&gt;方向&lt;/strong&gt;”和“&lt;strong&gt;大小&lt;/strong&gt;”的描述。&lt;br&gt;
+里面有关代码的部分可以跳过（需要物理移动之类的动态变化是程序负责的，美工只用负责初始的静态画面即可）。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;32.游玩者之眼 - 渲染与相机&lt;/em&gt; - 有关&lt;strong&gt;游戏物体的外貌呈现&lt;/strong&gt;和&lt;strong&gt;相机&lt;/strong&gt;的知识（后面的键盘输入部分不用了解）
+&lt;ul&gt;
+&lt;li&gt;渲染(Render)：对于 2D 对象来说，只需要材质(Material)，其包括贴图(Textuer)和着色器(Shader)。（其实对于这部分我也不是很清楚，之后我再找详细资料学习并分享）&lt;/li&gt;
+&lt;li&gt;相机(Camera)：场景构建好后怎么呈现给玩家，相机照到什么就呈现什么。&lt;br&gt;
+只需要知道作用，方便安排场景的构建。有关相机的移动跟随（代码部分）也不需要了解，程序来实现。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;33.神说要有光 - 光照&lt;/em&gt; - 有关游戏中&lt;strong&gt;光照&lt;/strong&gt;的讲解&lt;br&gt;
+引擎中可以提供真实的光照效果，提升画面感觉。&lt;br&gt;
+但如果理解学习困难，又因为 2D 游戏视角固定，可以&lt;strong&gt;直接绘制出简单阴影&lt;/strong&gt;（如物体下方用黑色透明圆圈表示阴影），不用过于了解此系统。&lt;br&gt;
+也有很多光照的插件可以直接形成各种光照效果。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;41.勇者的视野 - UI系统&lt;/em&gt; - 有关游戏 &lt;strong&gt;UI&lt;/strong&gt; 界面的讲解&lt;br&gt;
+UI 就是除了游戏操作场景外，呈现给玩家的各种按钮、提示文字等。&lt;br&gt;
+根据概念图布置好相应 UI 即可，而其中的逻辑（按钮按下发生什么、文字何时显示）等程序负责。&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;43.世界的律动 - 动画系统&lt;/em&gt; - 有关&lt;strong&gt;物体动画&lt;/strong&gt;的讲解&lt;br&gt;
+可能比较复杂，先了解大概吧【……&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;44.星火与线条 - 特效系统&lt;/em&gt; - 有关&lt;strong&gt;粒子动画&lt;/strong&gt;的讲解&lt;br&gt;
+粒子就是一些小物体的运动，如烟、火焰等，了解即可。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2d-相关&#34;&gt;2D 相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;像素类&lt;/strong&gt; 2D 游戏相关
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1F3411Y72v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unity独立游戏开发基础入门全流程(2D)&lt;/a&gt; P2~P11&lt;br&gt;
+介绍&lt;strong&gt;像素资源&lt;/strong&gt;的设计绘制&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1F3411Y72v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unity独立游戏开发基础入门全流程(2D)&lt;/a&gt; P26&lt;br&gt;
+&lt;strong&gt;像素场景&lt;/strong&gt;的绘制方法&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1F3411Y72v&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unity独立游戏开发基础入门全流程(2D)&lt;/a&gt; P27~P28&lt;br&gt;
+&lt;strong&gt;像素物体&lt;/strong&gt;的添加方法&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/335835274/channel/collectiondetail?sid=206444&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unity2D平台跳跃游戏开发教程&lt;/a&gt;&lt;br&gt;
+一系列&lt;strong&gt;像素&lt;/strong&gt;、&lt;strong&gt;横板&lt;/strong&gt;、&lt;strong&gt;动作类&lt;/strong&gt;游戏的开发教学&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;25d-相关&#34;&gt;2.5D 相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1DT4y1A7DJ&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;使用Unity制作“饥荒”风格的俯视角2.5D游戏&lt;/a&gt;&lt;br&gt;
+如何实现&lt;strong&gt;饥荒那种 2.5D&lt;/strong&gt;，里面的代码不用在意，只用知道饥荒这种 2.5D 的风格（各物体都是 2D 纸片的，不过跟随摄像机旋转）&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1rb4y187FF&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Unity风格化场景搭建流程】只有纸片也可以搭建3d场景！&lt;/a&gt;&lt;br&gt;
+之前会议中提到的&lt;strong&gt;纸片风格化 3D&lt;/strong&gt;，跟上面 2.5D 区别是存在用纸片进行的 3D 建模。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3d-相关&#34;&gt;3D 相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;3D &lt;strong&gt;开发流程&lt;/strong&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1iY411873n&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】不会设计游戏场景？记住这4个步骤就可以了！| 游戏开发 | 独立游戏 | 工作流程&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;3D 游戏场景&lt;/strong&gt;开发的流程。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1SF411H7yk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】创建3D角色？不要以为建模就完了！| 游戏开发 | 独立游戏 | 工作流程&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;3D 游戏角色&lt;/strong&gt;的开发流程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;3D &lt;strong&gt;建模&lt;/strong&gt;相关
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.u3d.cn/tutorial/unity-blender-intro&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;从 Unity 到 Blender 快速入门&lt;/a&gt;&lt;br&gt;
+之前那位美术说过自己会一点 Blender，这里找了从 Blender 到 Unity 的教程。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Low poly（低多边形）风格&lt;/strong&gt;相关&lt;br&gt;
+这种风格算是 3D 中&lt;strong&gt;比较好实现&lt;/strong&gt;的风格，不需要复杂的建模且具有特色。
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1a7411w7wy&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【C4D】十分钟带你搭建一个Low poly小岛！史上最快乐的3D设计教学！&lt;/a&gt;&lt;br&gt;
+Low ploy 的设计简单教学。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;卡通风格&lt;/strong&gt;相关
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.u3d.cn/tutorial/cel-shading-cinematics&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;卡通渲染——风格和影视化探索&lt;/a&gt;&lt;br&gt;
+这里主要是了解&lt;strong&gt;卡通渲染的风格专有词&lt;/strong&gt;：赛璐璐、立绘质感等，具体内容可能不容易理解。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;渲染&lt;/strong&gt;(Shader)相关
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.u3d.cn/tutorial/hi-shader&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Hi Shader&lt;/a&gt;&lt;br&gt;
+如果要有 3D 相关的工作，Shader 肯定是必不可少的内容。&lt;br&gt;
+这里先简单提到一个概念，如果需要这方面内容还需要具体学习。&lt;br&gt;
+而且自学 Shader 一般较难，这里可以学下面的 Shader Graph。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.u3d.cn/tutorial/da-hua-unity-shadergraph&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;大话Unity之ShaderGraph&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;Shader Graph&lt;/strong&gt; 是 Shader 的一种可视化编辑工具，纯 Shader 是要写代码的，这个就像那个“附带导航”一样直接用各节点的拼接就行。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;动画&#34;&gt;动画&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;关键帧&lt;/strong&gt;动画&lt;br&gt;
+这种动画方式就是自己一帧帧手画出来形成的动画。
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1sE411L7kV&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Unity 2D游戏开发教程】第1课 如何在Unity中快速导入序列帧动画 Aseprite动画帧导出&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;骨骼&lt;/strong&gt;相关&lt;br&gt;
+骨骼是&lt;strong&gt;用来方便添加各种运动的动画&lt;/strong&gt;的，是动画的另一种实现方式。&lt;br&gt;
+骨骼做动画&lt;strong&gt;更偏向需要或者想要高表现力的游戏&lt;/strong&gt;（运动类游戏、3D游戏），可能不用骨骼做动画所以这里没具体列举，但其实也不是很难而且效果远高于关键帧动画。
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1kK4y1t79f&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;万物皆可骨骼，unity的2d骨骼教程&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;2D&lt;/strong&gt; 的简单骨骼教程。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://learn.u3d.cn/tutorial/motion-matching-swt#&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;制作高质量角色动画 - Motion Matching 教程&lt;/a&gt;&lt;br&gt;
+利用骨骼系统进行高质量的 &lt;strong&gt;3D&lt;/strong&gt; 角色动画。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ui&#34;&gt;UI&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1KL4y187mK&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;UI还能长什么样？【超简短的独立游戏开发教学Ep.08】&lt;/a&gt;&lt;br&gt;
+这里可以参考，但个人觉得设计一个好的 UI 是很复杂的，建议在别人游戏的基础上修改改进。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1vB4y1z7q1&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】再也不会没有灵感了！值得收藏的游戏UI网站 - Game UI Database | 游戏开发 | 独立游戏&lt;/a&gt;&lt;br&gt;
+这里介绍的网站&amp;quot;Game UI Database&amp;quot;展示了很多游戏的 UI 界面，可提供参考。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1zi4y1U7UW&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;如何高效率开发游戏UI界面 ！（欢迎白嫖）&lt;/a&gt; P1~7&lt;br&gt;
+介绍游戏 UI 的摆放设计方式（后面业务逻辑是程序实现的，只用看P1~7即可）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;音乐&#34;&gt;音乐&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Dg411c7WH&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;草履虫也能看得懂的乐理入门【超简短的独立游戏开发教学Ep.09】&lt;/a&gt;&lt;br&gt;
+基本的&lt;strong&gt;乐理&lt;/strong&gt;【可能有点难懂啊总之我是看一遍只懂个大概的_(:зゝ∠)_……不过知道了对应的概念以及编曲的流程可以再去细学&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1uu411o78J&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;玩游戏，也要玩音乐【超简短的独立游戏开发教学Ep.14】&lt;/a&gt;&lt;br&gt;
+游戏音乐与传统音乐的不同：分阶段、音效、环境音、&lt;strong&gt;旋律复用&lt;/strong&gt;（基本上游戏都是一段旋律反复复用）、旋律绑定人物。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;【具体的游戏音乐编写我也不是很懂了orz……&lt;br&gt;
+其他更详细的游戏音乐开发教程可以自行搜索，甚至还有自动生成音乐的软件可以尝试。&lt;/p&gt;
+&lt;h2 id=&#34;其他&#34;&gt;其他&lt;/h2&gt;
+&lt;h3 id=&#34;项目分享&#34;&gt;项目分享&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/396395171/channel/collectiondetail?sid=164939&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;认真的游戏开发者们（每月更新）&lt;/a&gt;&lt;br&gt;
+Unity 2D &lt;strong&gt;优秀项目&lt;/strong&gt;分享，视频都很短，介绍各种有创意的项目，可以有时间&lt;strong&gt;随便看看获得启发或借鉴&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;资源相关&#34;&gt;资源相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/396395171/channel/collectiondetail?sid=23665&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Unity商店免费素材合集（每月持续更新）&lt;/a&gt;&lt;br&gt;
+Unity 各种免费资源分享，也是随便看看，看有没有能用的【毕竟免费.jpg……&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1BN4y1G73Q&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】这才对味儿！Low Poly国风模型更新，8月篇 | 建筑 | 纪念碑 | 雕像&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;国风的 Low ploy 3D 建筑模型&lt;/strong&gt;，感觉可以用在我们主题的游戏里（也可以 3D 渲染为 2D）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;插件相关&#34;&gt;插件相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1ym4y1o7BU&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】谁能拒绝2D萌娘？角色动画插件 - AnyPortrait | Unity | 游戏开发&lt;/a&gt;&lt;br&gt;
+2D 角色动画插件&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1QP4y1d7F5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】裙摆飘飘！一款广受好评的布料模拟插件 - Magica Cloth | 游戏开发 | 优秀工具&lt;/a&gt;&lt;br&gt;
+3D 角色细节模拟（头发、布料飘动）插件&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV16Q4y1r7ku&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】棱角分明，一样可以美不胜收！| Low Poly Tools Bundle | Humble Bundle | Unity Fantasy&lt;/a&gt;&lt;br&gt;
+Low poly 场景搭建插件&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Xg411F766&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】搭建游戏关卡？使用这个插件轻松搞定！| Octave3D | Humble Bundle | Unity Fantasy | 游戏开发&lt;/a&gt;&lt;br&gt;
+游戏场景搭建工具&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1bV4y1u7KY&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】不容错过！开发2D和3D俯视图游戏的神器 - TopDown Engine | 游戏开发 | 优秀工具&lt;/a&gt;&lt;br&gt;
+&lt;strong&gt;俯视&lt;/strong&gt;游戏开发工具，适合于俯视的 RPG、ACT 类型的游戏。&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1Va411g74q&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】便宜好用！Unity 2D光照插件 - Smart Lighting 2D | 游戏开发 | 优秀工具&lt;/a&gt;&lt;br&gt;
+2D 光照工具&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;工具相关&#34;&gt;工具相关&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;link&#34; href=&#34;https://www.bilibili.com/video/BV1ML4y1c7Uk&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;【Lee哥】你有故事我有酒？优质免费可商用！游戏互动叙事工具 - articy:draft 3 | 游戏开发 | 独立游戏 | 工具介绍&lt;/a&gt;&lt;br&gt;
+游戏内容（流程）管理软件&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        <item>
         <title>富文本按钮测试……</title>
         <link>https://blog.supersassw.com/p/test-btns/</link>
         <pubDate>Fri, 09 Sep 2022 00:00:00 +0000</pubDate>
@@ -6096,8 +6402,6 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
         &lt;img class=&#34;btns-cell--img&#34; src=&#39;https://blog.supersassw.com/img/loading.gif&#39;/&gt;
         &lt;b class=&#34;btns-cell--title&#34;&gt; 名称加载中_(:зゝ∠)_…… &lt;/b&gt;&lt;p class=&#34;btns-cell--contact btns-cell--QQ&#34;&gt; QQ: 1617773893&lt;/p&gt;&lt;p class=&#34;btns-cell--describe&#34;&gt;&lt;/p&gt;&lt;/a&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-&lt;/details&gt;
 &lt;div class=&#34;snote info &#34;&gt;
 	&lt;div class=&#34;snote-content&#34;&gt;
 		&lt;p&gt;2022年因疫情原因，面试从线下转为了线上，使用腾讯会议进行。&lt;/p&gt;
@@ -6131,6 +6435,8 @@ C++中的万能头文件&lt;code&gt;bits/stdc++.h&lt;/code&gt;，在C里面不�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;/div&gt;
+&lt;/details&gt;
 
 
 &lt;details class=&#34;sc-details&#34; &gt;
@@ -10558,8 +10864,7 @@ ASCII码也是，就是将“a”字符传化为二进制&lt;code&gt;0110 0001&l
 &lt;p&gt;其完成的是一种“字符—数字”的一一映射的转换。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;比如ASCII码中，对于&lt;code&gt;A&lt;/code&gt;这个字符，对应的数字（十进制）为65，也就是将字符&lt;code&gt;A&lt;/code&gt;映射到数字&lt;code&gt;65&lt;/code&gt;，&lt;br&gt;
-Unicode编码中，对于&lt;code&gt;A&lt;/code&gt;这个字符，对应的数字（十进制）为41，也就是将字符&lt;code&gt;A&lt;/code&gt;映射到数字&lt;code&gt;41&lt;/code&gt;。
-而Unicode编码中，对于&lt;/p&gt;
+Unicode编码中，对于&lt;code&gt;A&lt;/code&gt;这个字符，对应的数字（十进制）为41，也就是将字符&lt;code&gt;A&lt;/code&gt;映射到数字&lt;code&gt;41&lt;/code&gt;。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Unicode其实也有个跟ASCII码一样的表，不过太大了所以一张图放不下x……&lt;/p&gt;
 &lt;blockquote&gt;
@@ -10715,7 +11020,7 @@ ASCII编码，实际上&lt;strong&gt;是字符集和编码方法的整合&lt;/st
 不过其编码方法十分简单粗暴，字符集对应的序号是多少，编码后就是多少。&lt;/p&gt;
 &lt;p&gt;而Unicode中，字符集有了后，&lt;br&gt;
 本来也有跟ASCII一样简单粗暴的编码方法，就是UTF-32，&lt;br&gt;
-但当时的储存代价很高，于是人们将扣的艺术运用到机制，&lt;br&gt;
+但当时的储存代价很高，于是人们将扣的艺术运用到极致，&lt;br&gt;
 创造了UTF-16、甚至UTF-8这些编码方式，减小了储存消耗。&lt;/p&gt;
 &lt;p&gt;这也产生了现在的歧义。&lt;/p&gt;
 &lt;blockquote&gt;
@@ -10723,7 +11028,7 @@ ASCII编码，实际上&lt;strong&gt;是字符集和编码方法的整合&lt;/st
 如果当时技术力就很高，储存代价极小，&lt;br&gt;
 有可能像ASCII那样，就用UTF-32存，&lt;br&gt;
 不用再去想UTF-8这种抠门方式，&lt;br&gt;
-那应该今天就不会有这种Unicode于UTF-8是什么关系的迷惑了_(:з」∠)_……&lt;/p&gt;
+那应该今天就不会有这种Unicode与UTF-8是什么关系的迷惑了_(:з」∠)_……&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/div&gt;
 &lt;/details&gt;
